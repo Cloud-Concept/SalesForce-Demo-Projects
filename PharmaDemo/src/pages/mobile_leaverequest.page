@@ -1,0 +1,76 @@
+<apex:page standardController="Leave_Request__c" extensions="LeaveRequestExtension"
+           docType="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" showChat="false" >
+  <apex:messages />
+  <apex:composition template="mobile_page">
+    <apex:define name="headerText">
+        {!Leave_Request__c.Leave_Type__c}
+        
+	    <small>
+	      <apex:outputText value="{0,date,'('dd MMM yyyy} -">
+	        <apex:param name="start" value="{!Leave_Request__c.From__c}" />
+	      </apex:outputText>
+	      <apex:outputText value=" {0,date, dd MMM yyyy})">
+	        <apex:param name="end" value="{!Leave_Request__c.To__c}" />
+	      </apex:outputText>
+	    </small>
+       
+    </apex:define>
+    <apex:define name="headerLinks">
+	    <a href="{!URLFOR($Page.mobile_leaverequests)}" data-icon="back" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Back" />
+	    <a href="{!URLFOR($Page.mobile_leaverequest_edit)}?id={!Leave_Request__c.Id}" data-ajax="false" data-icon="plus" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Edit" />
+    </apex:define>
+    <apex:define name="content">
+	    <section class="layoutSection">
+	      <header>              
+              <h4 style="margin: 0px 25px 8px;">Leave Request</h4>
+              <hr /></header>
+	      <fieldset>
+	       <div class="ui-grid-a">
+	          <dl class="ui-block-a">
+	            <dt>Type:</dt>
+	            <dd>{!Leave_Request__c.Leave_Type__c}</dd>
+	          </dl>
+	          <dl class="ui-block-b">
+	            <dt>Status:</dt>
+	            <dd>{!IF(ISBLANK(Leave_Request__c.Approval_Status__c), '-- none --', Leave_Request__c.Approval_Status__c)}</dd>
+	          </dl>
+	        </div>
+	        <div class="ui-grid-a">
+	          <dl class="ui-block-a">
+	            <dt>Approver:</dt>
+	            <dd>
+                {!Leave_Request__c.Approver__r.Name}                
+              </dd>
+	          </dl>
+	          <div class="ui-block-b">
+                  <br/>
+	            <apex:image value="{!IF(ISBLANK(Leave_Request__c.Approver__r.SmallPhotoUrl), URLFOR($Resource.Mobile, 'images/unknown.jpg'), Leave_Request__c.Approver__r.SmallPhotoUrl)}" styleClass="inlineImage" height="48" width="48" />
+	          </div>
+	        </div>
+	        <div class="ui-grid-a">
+	          <dl class="ui-block-a">
+	            <dt>From:</dt>
+	            <dd>{!formattedFrom}</dd>
+	          </dl>
+	          <dl class="ui-block-b">
+	            <dt>To:</dt>
+	            <dd>{!formattedTo}</dd>
+	          </dl>
+	       </div>
+	       <div>
+	          <dl style="padding-left:0px;padding-top:0px;margin-left:0em;">
+	            <dt>Notes:</dt>
+	            <dd>{!Leave_Request__c.Notes__c}</dd>
+	          </dl>
+	       </div>
+	      </fieldset>
+	    </section>
+        
+        <!-- Chatter Feed -->
+      <div data-role="collapsible" data-collapsed="true" data-mini="true">
+          <h3><img src="/img/feeds/feed16.png" align="left"/>&nbsp;&nbsp;Chatter Feed</h3>
+          <chatter:feed entityId="{!Leave_Request__c.id}"/>
+      </div>
+    </apex:define>
+  </apex:composition>
+</apex:page>

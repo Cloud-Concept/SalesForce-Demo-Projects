@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Case Close (Wyeth)</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>PharmaForce</letterhead>
+    <name>Case Close (Wyeth)</name>
+    <style>freeForm</style>
+    <subject>Case {!Case.CaseNumber}:  {!Case.Subject}</subject>
+    <textOnly>Dear {!Account.FirstName}
+
+Thank you for calling the SMA call centre, please find enclosed a summary of you query and answer
+
+{!Case.Solution_Description}
+
+We value your opinion and would be grateful if you could complete the following survey
+
+http://www.clicktools.com/survey?iv=b411616084dcfa3&amp;q1={!Case.AccountId}&amp;q2={!Case.Id}
+
+Please also take the time to visit our website where you can find valuable information about our products, view common questions and submit queries
+
+http://www.seforce.net/hpaster/wyeth/help.html
+
+Thank you,
+{!User.Name}
+{!Organization.Name}
+
+Your comment:
+{!Case.Description}
+
+{!Case.Solution_Attachments}</textOnly>
+    <type>html</type>
+</EmailTemplate>

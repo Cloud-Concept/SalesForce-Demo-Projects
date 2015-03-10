@@ -1,0 +1,107 @@
+<apex:page standardController="CampaignMember" extensions="UpdateCampaignMemberClass" sidebar="false" showHeader="false" cache="false">
+
+<script type="text/javascript"> 
+function updateCMStatus(){
+
+    alert(document.forms["j_id0:theForm"].elements["CMStatus"].value);
+}
+
+function showAlert(variable){
+    CMStatus.value = "RSVP-Yes";
+    alert(variable);
+        alert(document.getElementById("theForm").elements["CMStatus"].value);
+    }
+</script>
+
+<table align="center" bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="800"> 
+    <tbody> 
+        <tr>
+            <td align="left" height="60" valign="top"> 
+            <p><apex:image id="CampaignTop" value="{!$Resource.CampaignTop}"/></p>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="760"> 
+                <tbody> 
+                    <tr>
+                        <td colspan="2" height="60"><strong><font color="#d76d43" face="Arial, Helvetica, sans-serif" size="5">Sign up for Symposia</font></strong></td> 
+                    </tr> 
+                    </tr> 
+                     <tr>
+                     <td align="center" valign="top">
+                        
+                        
+                        
+                        
+                        
+                         <apex:form id="theForm" onsubmit="changeHiddenFieldValues()" >
+
+                         <table border="0" width="500"> 
+                            <tbody> 
+                                <tr> 
+                                    <td> 
+                                        <div align="right"><strong><font face="Arial, Helvetica, sans-serif" size="2"><label for="first_name" style="font-size: 14px;">First Name</label> 
+                                        </font></strong></div> 
+                                    </td> 
+                                    <td>&nbsp;</td> 
+                                    <td><apex:Outputfield value="{!campaignmember.Lead.FirstName}"/><apex:Outputfield value="{!campaignmember.Contact.FirstName}"/></td> 
+                                </tr> 
+                                <tr> 
+                                    <td> 
+                                        <div align="right"><strong><font face="Arial, Helvetica, sans-serif" size="2"><label for="Last_name" style="font-size: 14px;">Last Name</label> 
+                                        </font></strong></div> 
+                                    </td> 
+                                    <td>&nbsp;</td> 
+                                    <td><apex:Outputfield value="{!campaignmember.Lead.LastName}"/><apex:Outputfield value="{!campaignmember.Contact.LastName}"/></td> 
+                                </tr>
+                                <tr> 
+                                    <td> 
+                                        <div align="right"><strong><font face="Arial, Helvetica, sans-serif" size="2"><label for="Interested_In" style="font-size: 14px;">Dietary Requirements</label> 
+                                        </font></strong></div> 
+                                    </td> 
+                                    <td>&nbsp;</td> 
+                                    <td><apex:inputfield value="{!campaignmember.Diet__c}" /></td> 
+                                </tr> 
+                                     
+                                <apex:inputHidden id="CMStatus" value="{!campaignmember.Status}"/> 
+                                <apex:inputHidden id="RSVPYes"  value="{!campaignmember.RSVP_Yes__c}"/>
+                            
+
+                                <script>
+                                    var CMStatus = document.getElementById("{!$Component.CMStatus}");
+                                    var RSVPYes = document.getElementById("{!$Component.RSVPYes}");
+                                </script>
+
+
+                                <tr> 
+                                    <td> 
+                                    </td> 
+                                    <td>&nbsp;</td> 
+
+                                    <td><br><apex:commandButton value="Register Now!" action="{!UpdateCM}" /></td> 
+                                   
+                                </tr> 
+                            </tbody> 
+                        </table> 
+
+                        </apex:form>
+                        
+                        
+                        
+                        <script>
+                            function changeHiddenFieldValues(){
+                                CMStatus.value="RSVP-Yes";
+                                RSVPYes.value=true;
+                            }
+                        </script>
+                            
+
+                        </td> 
+                    </tr> 
+                </tbody> 
+            </table> 
+
+        <apex:image id="CampaignBottom" value="{!$Resource.CampaignBottom}"/>
+
+            </td> 
+        </tr> 
+    </tbody> 
+</table> 
+</apex:page>

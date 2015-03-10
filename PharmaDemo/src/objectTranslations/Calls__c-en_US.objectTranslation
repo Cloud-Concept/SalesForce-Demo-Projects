@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Calls</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Calls</value>
+    </caseValues>
+    <fields>
+        <label><!-- Coverage --></label>
+        <name>Coverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency --></label>
+        <name>Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Month --></label>
+        <name>Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target Frequency --></label>
+        <name>Target_Frequency__c</name>
+        <relationshipLabel><!-- Calls --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Month</masterLabel>
+            <translation><!-- Month --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarter</masterLabel>
+            <translation><!-- Quarter --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Year</masterLabel>
+            <translation><!-- Year --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

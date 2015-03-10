@@ -1,0 +1,50 @@
+<apex:page controller="Wherevantage.WVNoGoodMatchResults" action="{!Instantiate}" >
+  <!-- Begin Default Content REMOVE THIS -->
+  <!-- End Default Content REMOVE THIS -->
+  <apex:form >
+<apex:commandLink value="<- Back to Address Matching" onclick="window.top.location='{!$Page.Wherevantage__WVAddressMatching}'; return false;"/>  
+  <apex:pageBlock >
+        <apex:pageBlockTable value="{!StandardRecordSet}" var="o">
+
+        <apex:column >
+            <apex:facet name="header"></apex:facet>
+            <apex:commandLink value="Find" action="{!DisambiguateAddress}">
+            <apex:param name="recordId" value="{!o.Id}"/>
+            </apex:commandLink> 
+        </apex:column>
+
+        <apex:column >
+            <apex:facet name="header">Name</apex:facet>
+            <apex:outputlabel value="{!o.Name}"/> 
+        </apex:column>
+                        
+        <apex:column >
+            <apex:facet name="header">Address</apex:facet>
+            <apex:outputlabel value="{!o.Address.AddressLine}"/> 
+        </apex:column>
+        
+        <apex:column >
+            <apex:facet name="header">City</apex:facet>
+            <apex:outputlabel value="{!o.Address.Locality}"/> 
+        </apex:column>
+
+        <apex:column >
+            <apex:facet name="header">Postcode</apex:facet>
+            <apex:outputlabel value="{!o.Address.PostalCode}"/> 
+        </apex:column>
+
+        <apex:column >
+            <apex:facet name="header">State/Province</apex:facet>
+            <apex:outputlabel value="{!o.Address.AdminDistrict}"/> 
+        </apex:column>
+
+        <apex:column >
+            <apex:facet name="header">Country</apex:facet>
+            <apex:outputlabel value="{!o.Address.CountryRegion}"/> 
+        </apex:column>        
+        
+        </apex:pageBlockTable>
+  </apex:pageBlock>
+  </apex:form>
+
+</apex:page>

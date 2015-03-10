@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Accompanied Call --></label>
+        <name>Accompanied_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attendees --></label>
+        <name>Attendees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Best Time --></label>
+        <name>Best_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- CallReportId --></label>
+        <name>CallReportId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Notes --></label>
+        <name>Call_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Closed --></label>
+        <name>Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Count --></label>
+        <name>Count__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detail Product - 1 --></label>
+        <name>Detail_Product_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detail Product - 2 --></label>
+        <name>Detail_Product_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detail Product - 3 --></label>
+        <name>Detail_Product_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detail Product Adoption - 1 --></label>
+        <name>Detail_Product_Adoption_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detail Product Adoption - 2 --></label>
+        <name>Detail_Product_Adoption_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Detail Product Adoption - 3 --></label>
+        <name>Detail_Product_Adoption_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Doctors Seen --></label>
+        <name>Doctors_Seen__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dropped Material - Qty --></label>
+        <name>Dropped_Material_Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dropped Material --></label>
+        <name>Dropped_Material__c</name>
+    </fields>
+    <fields>
+        <label><!-- EndDT --></label>
+        <name>EndDT__c</name>
+    </fields>
+    <fields>
+        <label><!-- Interactive Material Presented --></label>
+        <name>Interactive_Material_Presented__c</name>
+    </fields>
+    <fields>
+        <label><!-- Met Doctor --></label>
+        <name>Met_Doctor__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Call Objective --></label>
+        <name>Next_call_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Related Id --></label>
+        <name>Related_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Status - 1 --></label>
+        <name>Sample_1_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Dropped --></label>
+        <name>Sample_Dropped__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Product Lot - 1 --></label>
+        <name>Sample_Product_1_Lot__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Product - 1 --></label>
+        <name>Sample_Product_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Product Lot - 2 --></label>
+        <name>Sample_Product_2_Lot__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Product - 2 --></label>
+        <name>Sample_Product_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Product Lot - 3 --></label>
+        <name>Sample_Product_3_Lot__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Product - 3 --></label>
+        <name>Sample_Product_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Qty - 1 --></label>
+        <name>Sample_Qty_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Qty - 2 --></label>
+        <name>Sample_Qty_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Qty - 3 --></label>
+        <name>Sample_Qty_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Status - 2 --></label>
+        <name>Sample_Status_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Status - 3 --></label>
+        <name>Sample_Status_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- StartDT --></label>
+        <name>StartDT__c</name>
+    </fields>
+    <fields>
+        <label><!-- StartDate --></label>
+        <name>StartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Task Template Id --></label>
+        <name>TaskTemplateId__c</name>
+    </fields>
+    <fields>
+        <name>Type</name>
+        <picklistValues>
+            <masterLabel>Detail</masterLabel>
+            <translation>Réunion</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Detail and Sample</masterLabel>
+            <translation>Réunion et échantillon</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ethical</masterLabel>
+            <translation>Discussion</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Autre</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Presentation</masterLabel>
+            <translation>Présentation</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sample Only</masterLabel>
+            <translation>Échantillon</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation>Formation</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type2__c</name>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visit Made --></label>
+        <name>Visit_Made__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visit Status --></label>
+        <name>Visit_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weekday --></label>
+        <name>Weekday__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wizard --></label>
+        <name>Wizard__c</name>
+    </fields>
+    <layouts>
+        <layout>Appointment Layout</layout>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Call Layout</layout>
+        <sections>
+            <label><!-- Call --></label>
+            <section>Call</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Product Detailed - 1 --></label>
+            <section>Product Detailed - 1</section>
+        </sections>
+        <sections>
+            <label><!-- Product Detailed - 2 --></label>
+            <section>Product Detailed - 2</section>
+        </sections>
+        <sections>
+            <label><!-- Product Detailed - 3 --></label>
+            <section>Product Detailed - 3</section>
+        </sections>
+        <sections>
+            <label><!-- Samples Left - 1 --></label>
+            <section>Samples Left - 1</section>
+        </sections>
+        <sections>
+            <label><!-- Samples Left - 2 --></label>
+            <section>Samples Left - 2</section>
+        </sections>
+        <sections>
+            <label><!-- Samples Left - 3 --></label>
+            <section>Samples Left - 3</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Call Layout - CSR</layout>
+        <sections>
+            <label><!-- Call --></label>
+            <section>Call</section>
+        </sections>
+        <sections>
+            <label><!-- Completed --></label>
+            <section>Completed</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Outcome --></label>
+            <section>Outcome</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Call Layout - CSR (Closed)</layout>
+        <sections>
+            <label><!-- Call --></label>
+            <section>Call</section>
+        </sections>
+        <sections>
+            <label><!-- Completed --></label>
+            <section>Completed</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Outcome --></label>
+            <section>Outcome</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Call Report Layout</layout>
+        <sections>
+            <label>Activité</label>
+            <section>Call</section>
+        </sections>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Campaign Layout</layout>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Group Call</layout>
+        <sections>
+            <label><!-- Call --></label>
+            <section>Call</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Other Attendees --></label>
+            <section>Other Attendees</section>
+        </sections>
+        <sections>
+            <label><!-- Product Detailed - 1 --></label>
+            <section>Product Detailed - 1</section>
+        </sections>
+        <sections>
+            <label><!-- Product Detailed - 2 --></label>
+            <section>Product Detailed - 2</section>
+        </sections>
+        <sections>
+            <label><!-- Product Detailed - 3 --></label>
+            <section>Product Detailed - 3</section>
+        </sections>
+        <sections>
+            <label><!-- Samples Left - 1 --></label>
+            <section>Samples Left - 1</section>
+        </sections>
+        <sections>
+            <label><!-- Samples Left - 2 --></label>
+            <section>Samples Left - 2</section>
+        </sections>
+        <sections>
+            <label><!-- Samples Left - 3 --></label>
+            <section>Samples Left - 3</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Time Off Territory Layout</layout>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label>Rendez-vous</label>
+        <name>Appointment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- CSR - Call --></label>
+        <name>CSR_Call</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- CSR - Call (Closed) --></label>
+        <name>CSR_Call_Closed</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Call --></label>
+        <name>Call</name>
+    </recordTypes>
+    <recordTypes>
+        <label>Réunion</label>
+        <name>CallReport</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Campaign --></label>
+        <name>Campaign</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Group Call --></label>
+        <name>Group_Call</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Time Off Territory --></label>
+        <name>TimeOffTerritory</name>
+    </recordTypes>
+</CustomObjectTranslation>

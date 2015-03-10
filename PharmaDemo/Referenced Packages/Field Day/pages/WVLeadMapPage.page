@@ -1,0 +1,9 @@
+<apex:page standardController="Lead"
+    extensions="Wherevantage.WVGeocodeAddressController"
+    action="{!LeadRedirect}"
+>
+<apex:sectionHeader title=""/>
+<apex:outputPanel >
+{!$Label.wherevantage__WV_InternalError}
+</apex:outputPanel>
+</apex:page>

@@ -1,0 +1,341 @@
+<apex:page >
+<html>
+<head>
+  <title>PharmaForce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{!URLFOR($Resource.Mobile, 'css/bootstrap.css')}" />
+  <link rel="stylesheet" href="{!URLFOR($Resource.Mobile, 'css/jquery.mobile-1.1.0.css')}" />
+  <link rel="stylesheet" href="{!URLFOR($Resource.Mobile, 'css/jquery.mobile.structure-1.1.0.css')}" />
+  <link rel="stylesheet" href="{!URLFOR($Resource.Mobile, 'css/jquery.mobile.theme-1.1.0.css')}" />
+  <link rel="stylesheet" href="{!URLFOR($Resource.Mobile, 'css/mobiscroll-2.0.custom.min.css')}" />
+  <link rel="stylesheet" href="{!URLFOR($Page.mobile_styles)}" />
+  <script src="{!URLFOR($Resource.Mobile, 'js/jquery-1.7.2.js')}"></script>
+  <script src="{!URLFOR($Resource.Mobile, 'js/jquery.mobile-1.1.0.js')}"></script>
+  <script src="{!URLFOR($Resource.Mobile, 'js/mobiscroll-2.0.custom.min.js')}"></script>
+  <script>var __sfdcSessionId = '{!GETSESSIONID()}';</script>
+  <script src="/soap/ajax/25.0/connection.js"></script>
+  <script>
+    (function($) {
+      $(document).bind('pageinit', function() {
+      
+        //format date scroller
+        if (typeof UserContext != 'undefined') {
+          $('input.date').scroller({
+            preset: 'date',
+            theme: 'jqm',
+            dateOrder: 'ddmmy',
+            dateFormat: (UserContext.dateFormat || '').toLowerCase().replace('yyyy', 'yy')
+          });
+        }
+        
+        
+        $('input.lookupField').focus(function() {
+          $('#lookupList li').not('#lookupLoading').remove();
+          
+          load();
+          $.mobile.changePage('#lookupForm');
+          
+          var $this = $(this),
+              parent = $(this).parents('dd');
+              idField = $(getElementByIdCS($this.attr('name') + '_lkid')),
+              textField = $(getElementByIdCS($this.attr('name') + '_lkold')),
+              modField = $(getElementByIdCS($this.attr('name') + '_mod')),
+              currentId = idField.val();
+          
+          idField.val('');
+          modField.val('1');
+          
+          function load() {
+              $('#lookupList li').not('#lookupLoading').remove();
+              $('#lookupLoading').show();
+          }
+          
+          function success(result) {
+            var records = result.getArray('records');
+            $('#lookupList li').not('#lookupLoading').remove();
+            $('#lookupLoading').hide();
+            $.each(records, function(index, item) {
+              if (index < 5) {
+      $('#lookupList').append('<li' + (item.Id.substr(0, 15) == currentId ? ' data-theme="b"' : '') + '><a href="#" data-id="' + item.Id.substr(0, 15) + '" data-value="' + item.Name + '"><h2>' + item.Name + '</h2><p>'+item.City__c + ' - ' + item.Country_Code__c + '</p><p>Vendor code : ' + item.Vendor_Code__c + '</p><p>POrg : ' + item.Co_Code__c + ' / Group : ' + item.Group__c + '</p></a></li>');
+              }
+            });
+            $('#lookupList').listview('refresh');
+          }
+          
+          function search() {
+            load();
+            var str = 'Select Id, Name, City__c, Co_Code__c, Country_Code__c, Vendor_Code__c, Group__c From Vendor__c';
+            if ($(this).val() != '') {
+              str += " Where Name Like '%" + $(this).val() + "%'";
+            }
+            sforce.connection.query(str, success);
+          }
+          
+          function select() {
+            idField.val($(this).data('id'));
+            textField.val($(this).data('value'));
+            $this.val($(this).data('value'));
+            modField.val('1');
+            $('#lookupForm').dialog('close');
+          }
+          
+          $('#lookupSearch').bind('keyup', search);
+          $('#lookupForm .ui-input-search a').bind('click', search);
+          $('#lookupList').delegate('a', 'click', select);
+          sforce.connection.query("Select Id, Name, City__c, Co_Code__c, Country_Code__c, Vendor_Code__c, Group__c From Vendor__c", success);
+        });
+        
+
+        //DVP : Cost Center dialog ************************************************************************
+        $('input.costField').focus(function() { 
+
+            var jsonresponse;
+            var $this = $(this);
+
+            $('#costcenterList li').not('#costcenterLoading').remove();
+            load();
+            $.mobile.changePage('#costcenterForm');
+
+            function load() {
+              $('#costcenterList li').not('#costcenterLoading').remove();
+              $('#costcenterLoading').show();
+            }
+            
+            function search() {
+                load();
+                success(jsonresponse);
+            }
+
+            function select() {                
+                $('.costField').val($(this).data('value'));
+                $('input[id$=costcode]').val($(this).attr('data-id'));
+                $('#costcenterForm').dialog('close');
+            }
+
+            function success(result) {
+                jsonresponse = result;
+                records = result.COSTCENTERLIST.item;
+                $('#costcenterList li').not('#costcenterLoading').remove();
+                $('#costcenterLoading').hide();
+                var searchstring = $('#costcenterSearch').val();
+                var itemstoshow = 0;
+                $.each(records, function(index, item) {             
+                    var cc = item.NAME;
+                    if (cc.toLowerCase().indexOf(searchstring.toLowerCase()) != -1 || item.COSTCENTER.toLowerCase().indexOf(searchstring.toLowerCase()) != -1) {
+$('#costcenterList').append('<li><a href="#" data-id="' + item.COSTCENTER + '" data-value="' + item.NAME + '"><h2>' + item.NAME + '</h2><p><i>Description : '+item.DESCRIPT+'</i></p><p>Cost Center : '+item.COSTCENTER+'</p><p>Co Area : '+item.CO_AREA+'</p></a></li>');
+                        itemstoshow++;
+                        if(itemstoshow > 5) return false;
+                    }
+                });
+                $('#costcenterList').append('<li><a href="#" data-id="Z20330101" data-value="Services to personne"><h2>Services to personne</h2><p><i>Description : Services to personnel</i></p><p>Cost Center : Z20330101</p><p>Co Area : Z200</p></a></li>');
+                
+                $('#costcenterList').listview('refresh');
+            }
+            
+            //get the data
+            //https://castironpoc.w2k.nestle.net/getCostCenters - https://c.na7.visual.force.com/apex/costcenter_json
+            $.getJSON('/apex/costcenter_json', success);
+
+            $('#costcenterSearch').bind('keyup', search);
+            $('#costcenterList').delegate('a', 'click', select);
+        });
+
+        //DVP : Delete service item
+        $('.itemdelete').click( function() {
+            var purchaseitemid = $(this).attr('data-id');
+            var delresult = sforce.connection.deleteIds([purchaseitemid]);
+            $(this).parents('li').remove();
+        }
+        );
+
+
+        // Add Service
+        $('.addService').click(function() {
+          var id = $(this).data('id');
+          
+          $('#serviceList li').not('#serviceLoading').remove();
+          
+          load();
+          $.mobile.changePage('#serviceForm');
+          
+          var $this = $(this);
+          
+          function load() {
+            $('#serviceList li').not('#serviceLoading').remove();
+            $('#serviceLoading').show();
+          }
+          
+          function success(result) {
+            var records = result.getArray('records');
+            $('#serviceLoading').hide();
+            $.each(records, function(index, item) {
+              if (index < 5) {
+                $('#serviceList').append('<li><a href="#" data-id="' + item.Service_Code__c + '" data-value="' + item.Name + '"><h2>' + item.Name + '</h2></a></li>');
+              }
+            });
+            $('#serviceList').listview('refresh');
+          }
+          
+          function search() {
+            load();
+            var str = 'Select Name, Service_Code__c From Service__c';
+            if ($(this).val() != '') {
+              str += " Where Name Like '%" + $(this).val() + "%'";
+            }
+            sforce.connection.query(str, success);
+          }
+          
+          var servicecode;
+          function select() {
+            servicecode = $(this).attr('data-id');
+            $('#serviceAdd h1').text($(this).data('value'));
+            $('#serviceUnitPrice').val('');
+            $('#serviceQuantity').val('');
+            $('#notes').val('');
+            $.mobile.changePage('#serviceAdd');
+            
+          }
+
+
+          $('#serviceAdd .layoutSection a').click(function() {
+              $.mobile.showPageLoadingMsg();
+              var service = new sforce.SObject('Purchase_Requisition_Item__c');
+              service.Description__c = $('#serviceAdd h1').text();
+              service.Unit_Price__c = $('#serviceUnitPrice').val();
+              service.Quantity__c = $('#serviceQuantity').val();
+              service.Purchase_Requisition__c = id;
+              service.Service_Code__c = servicecode;
+              service.Service__c = $('#serviceAdd h1').text();
+              service.Unit_Of_Measure_Code__c = $('#uom').val();
+              service.Unit_Of_Measure__c = $('#uom').find(":selected").text();
+              service.Notes__c = $('#notes').val();
+              var result = sforce.connection.create([service]);
+              $('#serviceAdd').dialog('close');
+            });
+          
+          $('#serviceSearch').bind('keyup', search);
+          $('#serviceForm .ui-input-search a').bind('click', search);
+          $('#serviceList').delegate('a', 'click', select);
+          $('#serviceForm .ui-header').delegate('a', 'click', function(e) {
+            e.stopPropagation();
+            $.mobile.showPageLoadingMsg();
+            location.reload();
+            return false;
+          });
+          sforce.connection.query("Select Name, Service_Code__c From Service__c", success);
+        });
+      });
+    })(jQuery);
+  </script>
+</head>
+<body>
+  <apex:insert name="mobilepage" />
+
+  <!-- Vendor Lookup form -->
+  <div id="lookupForm" data-role="dialog" data-transition="pop">
+    <div data-role="header" data-theme="d">
+      <h1>Lookup Vendors</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview" data-theme="c" data-dividertheme="d">
+        <li data-role="list-divider">
+          <input type="search" id="lookupSearch" name="search" value="" data-mini="true" placeholder="Search a Vendor" />
+        </li>
+      </ul>
+      <ul id="lookupList" data-role="listview" data-theme="c" data-dividertheme="d" style="margin-top: 15px;">
+        <li id="lookupLoading" style="min-height: 46px;">
+          <img class="ui-li-thumb" src="{!URLFOR($Resource.Mobile, 'images/ajax-loader.gif')}" style="opacity: 0.18; margin: 10px;" />
+          <h2 style="margin: .9em 0;">Loading ...</h2>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Service Lookup form -->
+  <div id="serviceForm" data-role="dialog" data-transition="pop">
+    <div data-role="header" data-theme="d">
+      <h1>Lookup Services</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview" data-theme="c" data-dividertheme="d">
+        <li data-role="list-divider">
+          <input type="search" id="serviceSearch" name="search" value="" data-mini="true" placeholder="Search a Service" />
+        </li>
+      </ul>
+      <ul id="serviceList" data-role="listview" data-theme="c" data-dividertheme="d" style="margin-top: 15px;">
+        <li id="serviceLoading" style="min-height: 46px;">
+          <img class="ui-li-thumb" src="{!URLFOR($Resource.Mobile, 'images/ajax-loader.gif')}" style="opacity: 0.18; margin: 10px;" />
+          <h2 style="margin: .9em 0;">Loading ...</h2>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Service Add form -->
+  <div id="serviceAdd" data-role="dialog" data-transition="flip">
+    <div data-role="header" data-theme="d">
+      <h1>Add Service</h1>
+    </div>
+    <div data-role="content">
+      <section class="layoutSection">
+        <header><h4>Add Service</h4><hr /></header>
+        <fieldset>
+            <div class="ui-grid-a">
+              <dl class="ui-block-a">
+                <dt><label for="serviceUnitPrice">Unit Price:</label></dt>
+                <dd><input type="text" id="serviceUnitPrice" /></dd>
+              </dl>
+              <dl class="ui-block-b">
+                <dt><label for="serviceQuantity">Quantity:</label></dt>
+                <dd><input type="text" id="serviceQuantity" /></dd>
+              </dl>
+            </div>
+            <div class="ui-grid-a">
+                <dl class="ui-block-a">
+                <dt>
+                    <label for="uom" class="select">Unit of Measure</label>
+                </dt>
+                <dd>
+                    <select name="uom" id="uom">
+                        <option value="HR">Hours</option>
+                        <option value="D">Days</option>
+                        <option value="MON">Months</option>
+                    </select>
+                </dd>
+              </dl>
+              <dl class="ui-block-a">
+                <dt><label for="notes">Notes</label></dt>
+                <dd><textarea name="notes" id="notes"/></dd>
+              </dl>
+            </div>
+          </fieldset>
+        <p style="text-align: right;">
+          <a href="#" data-role="button" data-theme="b" data-icon="plus" data-inline="true" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Edit">Add Service Item</a>
+        </p>
+      </section>
+    </div>
+  </div>
+
+  <!-- Cost Center Lookup form -->
+  <div id="costcenterForm" data-role="dialog" data-transition="pop">
+    <div data-role="header" data-theme="d">
+      <h1>Lookup Cost Center</h1>
+    </div>
+    <div data-role="content">
+      <ul data-role="listview" data-theme="c" data-dividertheme="d">
+        <li data-role="list-divider">
+          <input type="search" id="costcenterSearch" name="search" value="" data-mini="true" placeholder="Search a Cost Center" />
+        </li>
+      </ul>
+      <ul id="costcenterList" data-role="listview" data-theme="c" data-dividertheme="d" style="margin-top: 15px;">
+        <li id="costcenterLoading" style="min-height: 46px;">
+          <img class="ui-li-thumb" src="{!URLFOR($Resource.Mobile, 'images/ajax-loader.gif')}" style="opacity: 0.18; margin: 10px;" />
+          <h2 style="margin: .9em 0;">Loading ...</h2>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+</html>
+</apex:page>

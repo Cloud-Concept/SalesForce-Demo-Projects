@@ -1,0 +1,4 @@
+<script type="text/javascript"> 
+window.parent.location.href="{!IF(OR( ISNULL(Event.Related_Id__c), $Profile.Name ="Standard User - Developing Market") ,URLFOR($Action.Event.View, Event.Id, null, true), IF(Event.Subject = 'Time-off Territory',URLFOR($Action.Time_off_Territory__c.View, Event.Related_Id__c, null, true),
+IF(Event.Location="Campaign",URLFOR($Action.Campaign.View, Event.Related_Id__c, null, true) ,URLFOR($Action.Call_Report__c.View, Event.Related_Id__c, null, true))))}"; 
+</script>

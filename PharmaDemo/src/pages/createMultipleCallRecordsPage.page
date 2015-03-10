@@ -1,0 +1,19 @@
+<apex:page standardController="Location__c" recordSetVar="contacts" tabStyle="Call_Report__c" extensions="createMultipleCallRecords" action="{!createCallReports}">
+    <apex:sectionHeader title="New" subtitle="Call Reports"/>
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1" title="Call Reports">
+                <apex:pageBlockTable value="{!calls}" var="o">
+                    <apex:column headerValue="View">
+                        <a href="/{!o.Id}" target="_top"><img src = "/img/icon/tasks16.gif"></img></a>
+                    </apex:column>
+                    <apex:column value="{!o.Date__c}"/>                    
+                    <apex:column value="{!o.Type__c}"/>
+                    <apex:column value="{!o.Contact__c}" />
+                    <apex:column value="{!o.Location__c}" />                    
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>SFDC_Acct_Plan__c$Name</field>
+    </columns>
+    <columns>
+        <field>SFDC_Acct_Plan__c.Objectives__r.Activities$ActivityDate</field>
+    </columns>
+    <columns>
+        <field>SFDC_Acct_Plan__c.Objectives__r.Activities$Subject</field>
+    </columns>
+    <columns>
+        <field>SFDC_Acct_Plan__c.Objectives__r.Activities$Status</field>
+    </columns>
+    <columns>
+        <field>SFDC_Acct_Plan__c.Objectives__r.Activities$IsClosed</field>
+    </columns>
+    <currency>GBP</currency>
+    <filter>
+        <criteriaItems>
+            <column>SFDC_Acct_Plan__c$Id</column>
+            <operator>equals</operator>
+            <value></value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Tabular</format>
+    <name>Business Plan Activities</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Business_Plan_Activities__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>SFDC_Acct_Plan__c$CreatedDate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

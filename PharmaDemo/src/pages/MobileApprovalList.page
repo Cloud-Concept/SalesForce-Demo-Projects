@@ -1,0 +1,58 @@
+<apex:page controller="BlackBerryApprovalListController" showHeader="false" standardStylesheets="false" cache="true" title="Salesforce Mobile" >
+
+	<apex:composition template="LeaveRequestTemplate">
+    <apex:define name="content">
+
+
+	<div data-role="page" data-theme="a">
+
+    <div data-role="content">
+
+
+	<!-- Loop over the different object types with pending Approvals -->
+	<ul data-role="listview" data-inset="true"  data-theme="c">
+		 <apex:repeat value="{!approvalItemsCollection}" var="approvalItems">
+		 	<!-- Object Type Header -->
+		 	<li data-role="list-divider">To Approve {!approvalItems.itemsPluralLabel}</li>
+		 	
+		 	<!-- List of item to approve for object -->
+		 	<apex:repeat value="{!approvalItems.itemsList}" var="item">
+			 	<li>
+
+			 		<!-- Approve / Reject Link -->
+			 		<a href="/apex/MobileApproveReject?id={!item.workitem.id}" data-ajax="true" data-transition="flip">
+						{!item.leaverequest.owner.Name}<br/>
+						<apex:outputText value="{0,date, dd MMM yyyy}">
+							 <apex:param value="{!item.leaverequest.From__c}" />
+					    </apex:outputText>
+						 - 
+						<apex:outputText value="{0,date, dd MMM yyyy}">
+							 <apex:param value="{!item.leaverequest.To__c}" />
+					    </apex:outputText><br/>
+					    {!item.leaverequest.Leave_Type__c}
+					</a>
+					
+
+			 	</li>
+		 	</apex:repeat>
+		 
+		 </apex:repeat>      
+    </ul>
+	
+	
+		<apex:outputText rendered="{!noRecordsToShow}" value="No Items to approve" styleClass="standardFont center" />
+
+	<center>
+   		<br/><br/>
+   		<a href="/apex/MobileApprovalList" data-role="button" data-inline="true" data-ajax="false" data-icon="refresh">Refresh</a>
+   	</center>
+	
+	
+	</div>
+	</div>
+	
+	</apex:define>
+	</apex:composition>
+
+
+</apex:page>

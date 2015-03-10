@@ -1,0 +1,36 @@
+<apex:page showHeader="false" standardController="Leave_Request__c" recordSetVar="leaverequests" standardStylesheets="false" cache="false" doctype="html-5.0">
+
+    <apex:composition template="LeaveRequestTemplate">
+    <apex:define name="content">
+        
+        
+<div data-role="page" data-theme="a">
+
+    <div data-role="header">
+        <h1>Leave Requests</h1>
+        <a href="/apex/LeaveRequestDetail" data-role="button" data-inline="true">New</a>
+    </div>
+
+    <div data-role="content">   
+        <ul data-role="listview" data-inset="true"  data-dividertheme="b">
+          <li data-role="list-divider">Leave Requests</li>
+              <apex:repeat var="r" value="{!leaverequests}" id="list">
+                <li>
+                    <a href="/apex/LeaveRequestDetail?id={!r.id}" data-transition="flip">
+                        <apex:outputField value="{!r.Leave_Type__c}"/><br/>
+                        <apex:outputField value="{!r.From__c}"/> - <apex:outputField value="{!r.To__c}"/>
+                    </a>
+                </li>
+          </apex:repeat>
+        </ul>
+    </div>
+    
+    <div data-role="footer">
+        <h4>- - - -</h4>
+    </div>
+    
+</div>
+        
+        </apex:define>
+        </apex:composition>
+</apex:page>

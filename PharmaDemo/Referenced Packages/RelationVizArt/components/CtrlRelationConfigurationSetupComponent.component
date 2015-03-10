@@ -1,0 +1,216 @@
+<apex:component controller="ITBrelViz.CtrlConfiguration" allowDML="true">
+
+<script language="JavaScript" type="text/javascript">
+		
+		var NS4 = (navigator.appName == "Netscape" && parseInt(navigator.appVersion) < 5);
+		
+		function addOption(theSel, theText, theValue)
+		{
+		  var newOpt = new Option(theText, theValue);
+		  var selLength = theSel.length;		  
+		  theSel.options[selLength] = newOpt;
+		  var l = theSel.className.length-4;
+		  var prex = theSel.className.substr(0, 4);
+
+	  	  var sufx = theSel.className.substr(4, l);
+		  var msa = document.getElementById("msa_" + sufx);
+		  
+		  for(i= 0; i< msa.length; i++){
+		  	if(msa.options[i].value == theValue){
+		  		 if(prex == 'msl_'){
+		  			msa.options[i].selected = false;
+		  		}
+		  		else if(prex == 'msr_'){
+		  			msa.options[i].selected = true;
+		  		}
+		  	}
+		  	
+		  }
+
+		}
+		
+		
+		function deleteOption(theSel, theIndex)
+		{ 
+		  var selLength = theSel.length;
+		  if(selLength>0)
+		  {
+		    theSel.options[theIndex] = null;
+		  }
+		}
+		
+		function moveOptions(theSelFrom, theSelTo)
+		{
+		  
+		  var selLength = theSelFrom.length;
+		  var selectedText = new Array();
+		  var selectedValues = new Array();
+		  var selectedCount = 0;
+		  
+		  var i;
+		  
+		  // Find the selected Options in reverse order
+		  // and delete them from the 'from' Select.
+		  for(i=selLength-1; i>=0; i--)
+		  {
+		    if(theSelFrom.options[i].selected)
+		    {
+		      selectedText[selectedCount] = theSelFrom.options[i].text;
+		      selectedValues[selectedCount] = theSelFrom.options[i].value;
+		      deleteOption(theSelFrom, i);
+		      selectedCount++;
+		    }
+		  }
+		  
+		  // Add the selected text/values in reverse order.
+		  // This will add the Options to the 'to' Select
+		  // in the same order as they were in the 'from' Select.
+		  for(i=selectedCount-1; i>=0; i--)
+		  {
+		    addOption(theSelTo, selectedText[i], selectedValues[i]);
+		  }
+		  
+		  if(NS4) history.go(0);
+		}		
+		
+		function DoMove(theSelFrom)
+		{
+			var inputElem = document.getElementsByTagName("select");
+			for(var i=0; i<inputElem.length; i++) {
+				if (inputElem[i].className.substr(0, 4) == "msl_" || inputElem[i].className.substr(0, 4) == "msr_" || inputElem[i].className.substr(0, 4) == "msa_") {
+					inputElem[i].id = inputElem[i].className;
+					
+					var lastIdx = inputElem[i].options.length - 1;
+					while(lastIdx > 0 && inputElem[i].options[lastIdx].disabled) {
+						inputElem[i].options[lastIdx] = null;
+						lastIdx--;
+					}
+				}	
+			}
+			
+			var prex = theSelFrom.className.substr(0, 4);
+			var sufx = theSelFrom.className.substr(4);
+			if(prex == "msl_") {
+				moveOptions(theSelFrom, document.getElementById("msr_" + sufx));
+			}
+			else if(prex == "msr_"){
+				moveOptions(theSelFrom, document.getElementById("msl_" + sufx));
+			}			
+			else if(prex == "msu_") {
+				moveOptions(document.getElementById("msl_" + sufx), document.getElementById("msr_" + sufx));
+			}
+			else {
+				moveOptions(document.getElementById("msr_" + sufx), document.getElementById("msl_" + sufx));
+			}
+		}
+		
+		function DoSelect()
+		{
+			var inputElem = document.getElementsByTagName("select");
+			for(var i=0; i<inputElem.length; i++) {
+				if (inputElem[i].className.substr(0, 4) == "msr_") {
+				  for(var j=0; j<inputElem[i].length; j++)
+				  {
+				   	if(!inputElem[i].options[j].disabled) {
+				    	inputElem[i].options[j].selected = true;
+				    }
+				  }
+				}	
+			}
+		}
+		
+		function UnDoSelect()
+		{
+			var inputElem = document.getElementsByTagName("select");
+			for(var i=0; i<inputElem.length; i++) {
+				if (inputElem[i].className.substr(0, 4) == "msr_") {
+				  for(var j=0; j<inputElem[i].length; j++)
+				  {
+				    inputElem[i].options[j].selected = false;
+				  }
+				}	
+			}
+		}
+		</script>
+
+    <apex:form >
+    
+        <apex:pageBlock id="configBlock">
+        	<apex:pageMessages />
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!saveConfigurations}" value="Save"  rendered="{!editMode}" rerender="configBlock"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"  rendered="{!editMode}" rerender="configBlock"/>
+                <apex:commandButton action="{!editConfigurations}" value="Edit"  rendered="{!!editMode}" rerender="configBlock"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection title="All Configurations" columns="1"  id="configSection">
+            	<apex:pageBlockTable value="{!list_config}" var="item" id="configTable">
+            		<apex:column >
+            			<apex:facet name="header">Name</apex:facet>
+            			{!item.config.Name}
+            		</apex:column>
+            		
+            		<apex:column width="300">
+            			<apex:facet name="header">Description</apex:facet>
+            			{!item.config.ITBrelViz__Description__c}
+            		</apex:column>
+            		
+            		<apex:column width="200">
+            			<apex:facet name="header">Domain Values</apex:facet>
+            				<apex:outputLabel value="{!item.config.ITBrelViz__Domain_Values__c}" rendered="{!IF(item.isText || item.isNumber, true,false)}"/>
+            		</apex:column>
+
+            		<apex:column >
+            			<apex:facet name="header">Value</apex:facet>
+            			<apex:outputPanel rendered="{!!editMode}">
+            				{!item.formatedValue}
+            			</apex:outputPanel>
+            			
+            			<apex:outputPanel rendered="{!editMode}">
+	                        <apex:inputCheckbox value="{!item.value_checkbox}" rendered="{!item.isCheckbox}"/>	                        
+	                        <apex:inputText value="{!item.value_text}" rendered="{!item.isText}"/>	     
+	                        <apex:inputText value="{!item.value_number}" rendered="{!item.isNumber}"/>	                   
+	                        <apex:selectList value="{!item.value_singlePicklist}" size="1" rendered="{!item.isSinglePicklist}">
+								<apex:selectOptions value="{!item.list_optionsSinglePicklist}"/>
+							</apex:selectList>
+							 
+							<apex:outputPanel rendered="{!item.isMultiPicklist}">		
+								<table class='multiSelectPicklistTable' border="0" cellspacing="0" cellpadding="0">
+									<tr class="multiSelectPicklistRow">
+
+										<td align="right" bgcolor="#FFFFFF">
+											<span>
+											<apex:selectList size="4" multiselect="true" styleClass="{!item.multiPicklist.l_id}" value="{!item.multiPicklist.selected_left}" ondblclick="DoMove(this);">
+												<apex:selectOptions value="{!item.multiPicklist.options_left}" />
+											</apex:selectList>
+											</span>
+										</td>
+										<td class="multiSelectPicklistCell" bgcolor="#AAAAAA" width="17">
+											<apex:image value="/img/arrow2_picklist_right.gif" alt="Select" width="17" height="17" style="cursor: pointer;" styleClass="{!item.multiPicklist.u_id}" title="Select" onclick="DoMove(this);" />
+											<br />
+											<br />
+											<apex:image value="/img/arrow2_picklist_left.gif" alt="Delete" width="17" height="17" style="cursor: pointer;" styleClass="{!item.multiPicklist.b_id}" title="Remove" onclick="DoMove(this);" />
+										</td>
+
+										<td bgcolor="#FFFFFF"><span>
+											<apex:selectList size="4" multiselect="true" styleClass="{!item.multiPicklist.r_id}" value="{!item.multiPicklist.selected_right}"  ondblclick="DoMove(this);">
+												<apex:selectOptions value="{!item.multiPicklist.options_right}"/>
+											</apex:selectList>
+											</span>
+										</td>
+										<td bgcolor="#FFFFFF" style="display:none;"><span>
+											<apex:selectList size="4" multiselect="true" styleClass="{!item.multiPicklist.a_id}" value="{!item.multiPicklist.selected_all}">
+												<apex:selectOptions value="{!item.multiPicklist.options_all}"/>
+											</apex:selectList>
+											</span>
+										</td>
+									</tr>
+								</table>
+							</apex:outputPanel>
+	                	</apex:outputPanel>
+            		</apex:column>
+				</apex:pageBlockTable>
+			</apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:component>

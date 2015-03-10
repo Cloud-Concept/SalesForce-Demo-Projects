@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Leave Balance</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Leave Balances</value>
+    </caseValues>
+    <fields>
+        <label><!-- BalanceApprovedQuantity --></label>
+        <name>BalanceApprovedQuantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- BalanceAvailableQuantity --></label>
+        <name>BalanceAvailableQuantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- BalanceEntitlementQuantity --></label>
+        <name>BalanceEntitlementQuantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- BalancePlannedQuantity --></label>
+        <name>BalancePlannedQuantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- BalanceRequestedQuantity --></label>
+        <name>BalanceRequestedQuantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- BalanceUsedQuantity --></label>
+        <name>BalanceUsedQuantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeductionEndDate --></label>
+        <name>DeductionEndDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- DeductionStartDate --></label>
+        <name>DeductionStartDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- End_Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- OwnerSAPID --></label>
+        <name>OwnerSAPID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start_Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- TimeAccountTypeName --></label>
+        <name>TimeAccountTypeName__c</name>
+    </fields>
+    <fields>
+        <label><!-- TimeAccountType --></label>
+        <name>TimeAccountType__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Leave Balances --></relationshipLabel>
+    </fields>
+    <recordTypes>
+        <label><!-- VacationRequest --></label>
+        <name>VacationRequest</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

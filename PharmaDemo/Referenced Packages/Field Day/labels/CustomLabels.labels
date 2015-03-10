@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>WVAccounts</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Accounts</shortDescription>
+        <value>Accounts</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_AccountRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Account Records</shortDescription>
+        <value>Account records:</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_BackgroundGeocoding</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WVAdministration_BackgroundGeocoding</shortDescription>
+        <value>Background Geo-coding:</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_BillingAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Billing Address</shortDescription>
+        <value>Billing Address</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_ContactRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Contact records</shortDescription>
+        <value>Contact records:</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_GeocodingHourly</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WVAdministration_GeocodingHourly</shortDescription>
+        <value>Hourly</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_GeocodingNightly</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WVAdministration_GeocodingNightly</shortDescription>
+        <value>Nightly</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_GeocodingNone</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WVAdministration_GeocodingNone</shortDescription>
+        <value>None</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_Intro</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Aministration Page Introduction</shortDescription>
+        <value>In address matching please use the following fields</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_MailingAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Mailing Address</shortDescription>
+        <value>Mailing Address</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_OtherAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Other Address</shortDescription>
+        <value>Other Address</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_Saving</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Saving</shortDescription>
+        <value>Saving...</value>
+    </labels>
+    <labels>
+        <fullName>WVAdministration_ShippingAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Shipping Address</shortDescription>
+        <value>Shipping Address</value>
+    </labels>
+    <labels>
+        <fullName>WVBingMapsKey</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WVBingMapsKey</shortDescription>
+        <value>ArhEbUhstxTSzYLGrQjT_Zettex96V5kKS4o0jhH-upQqpQedg1PZLYcmyRaROm4</value>
+    </labels>
+    <labels>
+        <fullName>WVContacts</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Contacts</shortDescription>
+        <value>Contacts</value>
+    </labels>
+    <labels>
+        <fullName>WVLeads</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Leads</shortDescription>
+        <value>Leads</value>
+    </labels>
+    <labels>
+        <fullName>WVNoLicense</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>NoLicense</shortDescription>
+        <value>You do not appear to have a license to use Field Day. Please contact your company&apos;s salesforce.com administrator to resolve this. We apologize for any inconvenience that this may cause.</value>
+    </labels>
+    <labels>
+        <fullName>WVOpportunities</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WVOpportunities</shortDescription>
+        <value>Opportunities</value>
+    </labels>
+    <labels>
+        <fullName>WV_AddressFound</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_AddressFound</shortDescription>
+        <value>Address found:</value>
+    </labels>
+    <labels>
+        <fullName>WV_AddressMatchPage_Cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>WV_AddressMatchPage_City</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>City</shortDescription>
+        <value>City:</value>
+    </labels>
+    <labels>
+        <fullName>WV_AddressMatchPage_FindAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Find Address</shortDescription>
+        <value>Find Address</value>
+    </labels>
+    <labels>
+        <fullName>WV_AddressMatchPage_PostalCode</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Postal Code</shortDescription>
+        <value>Zip/Postal:</value>
+    </labels>
+    <labels>
+        <fullName>WV_AddressMatchPage_Requesting</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Requesting</shortDescription>
+        <value>Requesting...</value>
+    </labels>
+    <labels>
+        <fullName>WV_AddressMatchPage_Results</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Results</shortDescription>
+        <value>Results:</value>
+    </labels>
+    <labels>
+        <fullName>WV_AddressMatchPage_SaveAndMap</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Save And Map</shortDescription>
+        <value>Save And Map</value>
+    </labels>
+    <labels>
+        <fullName>WV_AddressMatchPage_State</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>StateOrProvince</shortDescription>
+        <value>State/Province:</value>
+    </labels>
+    <labels>
+        <fullName>WV_AddressMatchPage_Street</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Street</shortDescription>
+        <value>Street:</value>
+    </labels>
+    <labels>
+        <fullName>WV_EmptyStreetAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_EmptyStreetAddress</shortDescription>
+        <value>Empty street address</value>
+    </labels>
+    <labels>
+        <fullName>WV_HaveResult</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_HaveResult</shortDescription>
+        <value>Click save and map to to use the result below for this address.</value>
+    </labels>
+    <labels>
+        <fullName>WV_InProgress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_InProgress</shortDescription>
+        <value>In progress</value>
+    </labels>
+    <labels>
+        <fullName>WV_InternalError</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Internal Error</shortDescription>
+        <value>Internal Error. Please try again later.</value>
+    </labels>
+    <labels>
+        <fullName>WV_Loading</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_Loading</shortDescription>
+        <value>Loading...</value>
+    </labels>
+    <labels>
+        <fullName>WV_MatchFound</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Match found</shortDescription>
+        <value>Match found</value>
+    </labels>
+    <labels>
+        <fullName>WV_NoExactMatch</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_NoExactMatch</shortDescription>
+        <value>No exact match was found for this address. Please modify the address or select one of the following results.</value>
+    </labels>
+    <labels>
+        <fullName>WV_NoGoodMatch</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>No good match</shortDescription>
+        <value>No good match</value>
+    </labels>
+    <labels>
+        <fullName>WV_NoGoodMatchFound</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_NoGoodMatchFound</shortDescription>
+        <value>No good match found:</value>
+    </labels>
+    <labels>
+        <fullName>WV_NoMatches</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_NoMatches</shortDescription>
+        <value>No matches were found for this street address. Please change the address and try again.</value>
+    </labels>
+    <labels>
+        <fullName>WV_NotMatched</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Not matched</shortDescription>
+        <value>Not matched</value>
+    </labels>
+    <labels>
+        <fullName>WV_NumberOfRecords</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_NumberOfRecords</shortDescription>
+        <value>Number of records:</value>
+    </labels>
+    <labels>
+        <fullName>WV_Processed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_Processed</shortDescription>
+        <value>Processed:</value>
+    </labels>
+    <labels>
+        <fullName>WV_RecordsRemainToBeProcessed</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_RecordsRemainToBeProcessed</shortDescription>
+        <value>records remain to be processed.</value>
+    </labels>
+    <labels>
+        <fullName>WV_Save</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>WV_SaveAndNext</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_SaveAndNext</shortDescription>
+        <value>Save &amp; Next</value>
+    </labels>
+    <labels>
+        <fullName>WV_SkipRecord</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_SkipRecord</shortDescription>
+        <value>Skip Record</value>
+    </labels>
+    <labels>
+        <fullName>WV_SkippedAsNoStreetAddress</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>WV_SkippedAsNoStreetAddress</shortDescription>
+        <value>Skipped as PO Box or no street address:</value>
+    </labels>
+</CustomLabels>

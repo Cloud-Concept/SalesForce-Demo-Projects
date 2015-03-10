@@ -1,0 +1,12 @@
+<apex:component >
+    <!-- Attribute Definitions --> 
+    <apex:attribute name="leaverequest" description="Leave Request object" type="Leave_Request__c" />
+    <apex:attribute name="purchase" description="Purchase object" type="Purchase_Requisition__c" />
+
+    <!-- Custom Component Definition --> 
+    <apex:image url="{!URLFOR($Resource.NestlePOCResources, 'Vacation.png')}" rendered="{! (leaverequest.Leave_Type__c == 'Vacation') }" width="32px" height="32px"/>
+    <apex:image url="{!URLFOR($Resource.NestlePOCResources, 'WorkAccident.png')}" rendered="{! (leaverequest.Leave_Type__c == 'Work Accident') }"/>
+    <apex:image url="{!URLFOR($Resource.NestlePOCResources, 'sickleave32x32.png')}" rendered="{! (leaverequest.Leave_Type__c == 'Sick Leave') }"/>
+    <apex:image url="{!URLFOR($Resource.NestlePOCResources, 'unpaidleave32x32.png')}" rendered="{! (leaverequest.Leave_Type__c == 'Unpaid Leave') }"/>
+    <apex:image url="{!URLFOR($Resource.NestlePOCResources, 'sickleave32x32.png')}" rendered="{! (leaverequest.Leave_Type__c == 'Sick Leave (average)') }"/>
+</apex:component>

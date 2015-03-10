@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Country Code Mapping --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Country Code Mapping --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Country Code --></label>
+        <name>Country_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- The value used for the country when written out in full. For example, you may have mappings for U.S., USA, U.S.A, etc. that all map to the US country code, but each of them might have a formatted Country value of &quot;United States&quot;. --></help>
+        <label><!-- Formatted Country Value --></label>
+        <name>Formatted_Country_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Modified By Subscriber --></label>
+        <name>Modified_By_Subscriber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Region --></label>
+        <name>Region__c</name>
+    </fields>
+    <gender><!-- Feminine --></gender>
+</CustomObjectTranslation>

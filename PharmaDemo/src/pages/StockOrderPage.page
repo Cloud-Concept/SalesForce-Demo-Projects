@@ -1,0 +1,98 @@
+<apex:page standardController="Stock_Order__c" extensions="StockOrderPageExtension" tabStyle="Stock_Order__c" sideBar="true" id="thePage">
+    <apex:detail id="pageDetail" relatedList="false"/>
+    <apex:relatedList id="orderLineDetailList" list="Order_Line_Details__r" />
+    <!-- Define the product page block... -->
+    <apex:form >
+    
+    
+        <apex:pageBlock title="Product Select" tabStyle="Stock_Product__c" mode="edit" id="productPageBlock">
+            <apex:pageBlockButtons >
+                    <apex:commandButton value="Save Order" action="{!reviewOrder}" />
+            </apex:pageBlockButtons>
+            
+            
+            <!-- This panel displays a message when an SKU is saved... -->
+            <apex:outputPanel id="messagePanel" rendered="true">
+                <apex:pageMessage title="{!saveMessageTitle}" summary="{!saveMessageDetail}" rendered="{!showSaveMessage}" severity="info" strength="1" >
+                    <apex:commandLink action="{!clearSaveMessage}" rerender="messagePanel" value="Clear Message" />
+                </apex:pageMessage>
+            </apex:outputPanel>
+            
+            
+            <!-- Define the product category section -->
+            <apex:pageBlockSection columns="1" title="Product Category">
+                <br />
+                
+                <!-- Define the categories -->
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Category" for="categoryList" />
+                    <apex:outputPanel >
+                        <apex:selectList value="{!selectedCategory}" multiSelect="false" size="1" id="categoryList">
+                            <!-- Categories are retrieved dynamically... -->
+                            <apex:selectOptions value="{!allProductCategories}" />
+                            <!-- Add action support to query for the products for this category -->
+                            <apex:actionSupport event="onchange" action="{!queryForProducts}" status="productQueryStatus" rerender="productListPanel, productLabelPanel, productPageBlock" />
+                        </apex:selectList>
+                        <apex:actionStatus id="productQueryStatus">
+                                <apex:facet name="start">
+                                    <apex:image url="{!$Resource.AjaxIcon}" alt="Querying..." />
+                                </apex:facet>
+                        </apex:actionStatus>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>  
+                  
+                  
+                <!-- Define the Products List now... -->
+                <apex:pageBlockSectionItem >
+                    <apex:outputPanel id="productLabelPanel">
+                        <apex:outputLabel value="Products" for="productsList" rendered="{!isProductCategoryNotNone}" />
+                    </apex:outputPanel>
+                    <apex:outputPanel id="productListPanel">
+                        <apex:selectList value="{!selectedProduct}" multiSelect="false" size="1" rendered="{!isProductCategoryNotNone}" id="productsList">
+                            <!-- Add the products to the page for the selected Category -->
+                            <apex:selectOptions value="{!allProducts}" />
+                            <!-- Add an actionSupport to query for all SKU's for the selected product -->
+                            <apex:actionSupport event="onchange" action="{!queryForSKUs}" status="SKUQueryStatus" rerender="productPageBlock,SKUPageBlockSection" />
+                        </apex:selectList>
+                        <apex:actionStatus id="SKUQueryStatus">
+                            <apex:facet name="start">
+                                <apex:image url="{!$Resource.AjaxIcon}" alt="Querying..." />
+                            </apex:facet>
+                        </apex:actionStatus>  
+                    </apex:outputPanel>  
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>    
+            
+            <br />
+            
+            <!-- Define the product SKU's section... -->
+            <apex:pageBlockSection title="Available SKU's" id="SKUPageBlockSection" columns="1" rendered="{!showSKUPageBlockSection}" >
+                    <apex:pageBlockTable border="0" columns="5" id="SKUTable" var="skuRecord" value="{!skuRecordsList}" > 
+                        <apex:column >
+                            <apex:facet name="header">SKU#</apex:facet>
+                            <apex:outputText value="{!skuRecord.Name}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Description</apex:facet>
+                            <apex:outputText value="{!skuRecord.Description__c}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Pack Size</apex:facet>
+                            <apex:outputText value="{!skuRecord.Pack_Size__c}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Price</apex:facet>
+                            <apex:outputText value="{!skuRecord.Price__c}" />
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">Quantity</apex:facet>
+                            <apex:inputField value="{!skuRecord.Order_Line_Item_Quantity__c}" style="width:60px;"/>
+                        </apex:column>
+                    </apex:pageBlockTable>
+
+                    <br />
+                    <apex:commandButton value="Add To Order" action="{!addToOrder}" style="margin-left:905px;" rerender="orderLineDetailList,messagePanel,productPageBlock,categoryList,productList"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

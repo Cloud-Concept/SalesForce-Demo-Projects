@@ -1,0 +1,18 @@
+<apex:page >
+  <apex:composition template="mobile_template">
+    <apex:define name="mobilepage">
+      <div data-role="page">
+        <div data-role="header" data-theme="b">
+          <h1><apex:insert name="headerText" /></h1>
+          <div class="cloud"></div>
+          <apex:insert name="headerLinks" />
+        </div>
+        <div data-role="content">
+          <apex:insert name="content" />
+        </div>
+        <img class="logo" src="{!URLFOR($Resource.Mobile, 'images/logo.png')}" alt="Nestlé - Good Food, Good Life" />
+        <apex:insert name="footer" />
+      </div>
+    </apex:define>
+  </apex:composition>
+</apex:page>

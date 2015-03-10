@@ -1,0 +1,179 @@
+<apex:page standardController="Loop__DDP__c" title="Field Tagger" sidebar="false" extensions="Loop.fieldTaggerExt" id="apage">
+	<style>
+		.test {
+			display: none;
+			font-size: 115%;
+			float: left;
+		}
+	</style>
+	<script type="text/javascript" src="{!$Resource.Loop__JQuery}"></script>
+	<script type="text/javascript">
+		jQuery.noConflict(); // Can't use $ because prototype and jQuery will have naming issues.
+		                     // This command fixes that, but you must use "jQuery" instead of "$"
+		                     // for jQuery commands.
+		jQuery(function() {
+		    jQuery("#AppBodyHeader").css('display', 'none');
+		    sizeInputs();
+		    jQuery('[id$=":dateMessages"]').parent().attr('colspan', '3');
+		});
+		
+		function sizeInputs() {
+			jQuery(".test").each(function() {
+				jQuery(this).next().css('width', jQuery(this).innerWidth()+'px');
+			});
+		}
+		
+		function addPrimaryRole() {
+			jQuery('select.contactRole').append(jQuery('<option />').attr('value', 'IsPrimary').text('Primary'));
+		}
+	</script>
+	<apex:sectionHeader title="Field Tagger" help="http://support.drawloop.com/salesforce/looplus/basic/tagging-documents/" />
+	<apex:actionRegion immediate="true">
+		<apex:outputPanel id="pgmsgs">
+			<apex:pageMessages />
+		</apex:outputPanel>
+		<apex:form id="form">
+			<apex:pageBlock title="Find Field" mode="edit" id="pb">
+				<apex:pageBlockButtons location="top">
+					<apex:commandButton value="Reset Options" reRender="form" action="{!changeAvailableObjects}" oncomplete="sizeInputs();" status="changeDDPStatus" />
+					<apex:actionStatus startText="• • •" stopText="" id="changeDDPStatus" />
+				</apex:pageBlockButtons>
+				<apex:pageBlockSection title="Options" columns="2" id="pbs">
+					<apex:inputField value="{!cio.Loop__DDP__c}" required="false" />
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel for="docType" value="Document Type" />
+						<apex:outputPanel >
+							<apex:selectList id="docType" size="1" value="{!documentType}">
+								<apex:selectOption itemLabel="Word/PowerPoint" itemValue="doc" />
+								<apex:selectOption itemLabel="Excel/PDF" itemValue="xls" />
+								<apex:selectOption itemLabel="DocuSign Template" itemValue="dpd" rendered="{!hasDsCio}" />
+								<apex:actionSupport event="onchange" action="{!mainObjectChange}" reRender="aliasLabelPanel,aliasPanel,rolePanel,roleLabelPanel,objectFieldsPanel,lookupFieldsLabelPanel,lookupFieldsPanel,formatLabelPanel,formatPanel,dateMessages,fieldtags,recipientLabelPanel,recipientPanel" oncomplete="sizeInputs();" status="docTypeStatus" />
+							</apex:selectList>
+							<apex:actionStatus startText="• • •" stopText="" id="docTypeStatus" />
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel for="mainObj" value="Main Object" />
+						<apex:outputPanel >
+							<apex:selectList id="mainObj" size="1" value="{!mainObject}">
+								<apex:selectOptions value="{!availableObjects}" />
+								<apex:actionSupport event="onchange" action="{!mainObjectChange}" reRender="aliasLabelPanel,aliasPanel,rolePanel,roleLabelPanel,objectFieldsPanel,lookupFieldsLabelPanel,lookupFieldsPanel,formatLabelPanel,formatPanel,dateMessages,fieldtags,recipientLabelPanel,recipientPanel" oncomplete="sizeInputs();" status="mainObjStatus" />
+							</apex:selectList>
+							<apex:actionStatus startText="• • •" stopText="" id="mainObjStatus" />
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputPanel id="roleLabelPanel">
+							<apex:outputLabel value="Role Name" rendered="{!showContactRoles}" />
+						</apex:outputPanel>
+						<apex:outputPanel id="rolePanel">
+							<apex:outputPanel rendered="{!mainObject=='OpportunityContactRole'}">
+								<apex:inputField value="{!ocr.Role}" styleClass="contactRole">
+									<apex:actionSupport event="onchange" action="{!changeFieldTags}" reRender="fieldtags" oncomplete="sizeInputs();" status="contactRoleStatus" />
+								</apex:inputField>
+							</apex:outputPanel>
+							<apex:outputPanel rendered="{!mainObject=='AccountContactRole'}">
+								<apex:inputField value="{!acr.Role}" styleClass="contactRole">
+									<apex:actionSupport event="onchange" action="{!changeFieldTags}" reRender="fieldtags" oncomplete="sizeInputs();" status="contactRoleStatus" />
+								</apex:inputField>
+							</apex:outputPanel>
+							<apex:outputPanel rendered="{!mainObject=='ContractContactRole'}">
+								<apex:inputField value="{!ccr.Role}" styleClass="contactRole">
+									<apex:actionSupport event="onchange" action="{!changeFieldTags}" reRender="fieldtags" oncomplete="sizeInputs();" status="contactRoleStatus" />
+								</apex:inputField>
+							</apex:outputPanel>
+							<apex:outputPanel rendered="{!mainObject=='CaseContactRole'}">
+								<apex:inputField value="{!cacr.Role}" styleClass="contactRole">
+									<apex:actionSupport event="onchange" action="{!changeFieldTags}" reRender="fieldtags" oncomplete="sizeInputs();" status="contactRoleStatus" />
+								</apex:inputField>
+							</apex:outputPanel>
+							<apex:actionStatus startText="• • •" stopText="" id="contactRoleStatus" />
+							<script>addPrimaryRole();</script>
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputPanel id="recipientLabelPanel">
+							<apex:outputLabel value="{!$ObjectType.Loop__dsRecipient__c.label}" for="recipient" rendered="{!mainObject=='Recipients'}" />
+						</apex:outputPanel>
+						<apex:outputPanel id="recipientPanel">
+							<apex:selectList id="recipient" size="1" rendered="{!mainObject=='Recipients'}" value="{!recipient}">
+								<apex:selectOptions value="{!recipientList}" />
+								<apex:actionSupport event="onchange" action="{!changeRecipient}" reRender="objectFieldsPanel,fieldtags" oncomplete="sizeInputs();" status="recipientStatus" />
+							</apex:selectList>
+							<apex:actionStatus startText="• • •" stopText="" id="recipientStatus" />
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem />
+					<apex:pageBlockSectionItem id="fieldpbsi">
+						<apex:outputLabel for="field" value="Field" />
+						<apex:outputPanel id="objectFieldsPanel">
+							<apex:selectList id="field" size="1" value="{!field}">
+								<apex:selectOptions value="{!objectFields}" />
+								<apex:actionSupport event="onchange" reRender="aliasLabelPanel,aliasPanel,lookupFieldsLabelPanel,lookupFieldsPanel,formatLabelPanel,formatPanel,dateMessages,fieldtags" action="{!changeField}" oncomplete="sizeInputs();" status="objFldStatus" />
+							</apex:selectList>
+							<apex:actionStatus startText="• • •" stopText="" id="objFldStatus" />
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputPanel id="aliasLabelPanel">
+							<apex:outputLabel value="Alias" rendered="{!showAliasOptions}" />
+						</apex:outputPanel>
+						<apex:outputPanel id="aliasPanel">
+							<apex:selectList id="aliases" size="1" rendered="{!showAliasOptions}" value="{!alias}">
+								<apex:selectOptions value="{!aliasOptions}" />
+								<apex:actionSupport event="onchange" action="{!changeFieldTags}" reRender="fieldtags" oncomplete="sizeInputs();" status="aliasStatus" />
+							</apex:selectList>
+							<apex:actionStatus startText="• • •" stopText="" id="aliasStatus" />
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem >
+						<apex:outputPanel id="lookupFieldsLabelPanel">
+							<apex:outputLabel for="lookupFields" value="Lookup Object Field" rendered="{!NOT(lookupFieldsDisabled)}" />
+						</apex:outputPanel>
+						<apex:outputPanel id="lookupFieldsPanel">
+							<apex:selectList id="lookupFields" size="1" value="{!lookupObjectField}" rendered="{!NOT(lookupFieldsDisabled)}">
+								<apex:selectOptions value="{!lookupObjectFields}" />
+								<apex:actionSupport event="onchange" reRender="aliasLabelPanel,aliasPanel,formatLabelPanel,formatPanel,dateMessages,fieldtags" action="{!changeLookupField}" oncomplete="sizeInputs();" status="lkupFldStatus" />
+							</apex:selectList>
+							<apex:actionStatus startText="• • •" stopText="" id="lkupFldStatus" />
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem />
+					<apex:pageBlockSectionItem >
+						<apex:outputPanel id="formatLabelPanel">
+							<apex:outputLabel for="format" value="Format" rendered="{!NOT(formatDisabled)}" />
+						</apex:outputPanel>
+						<apex:outputPanel id="formatPanel">
+							<apex:selectList id="format" size="1" value="{!format}" rendered="{!NOT(formatDisabled)}">
+								<apex:selectOptions value="{!formatOptions}" />
+								<apex:actionSupport event="onchange" reRender="fieldtags" action="{!changeFieldTags}" oncomplete="sizeInputs();" status="formatChangeStatus" />
+							</apex:selectList>
+							<apex:actionStatus startText="• • •" stopText="" id="formatChangeStatus" />
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+					<apex:pageBlockSectionItem />
+					<apex:pageBlockSectionItem >
+						<apex:outputLabel />
+						<apex:outputPanel id="dateMessages">
+							<apex:outputPanel rendered="{!isDateFormat}">
+								* These options change formats based on the user's locale.<br />
+								Day and month names will be determined by the user's locale.<br />
+								Date values passed into Excel will be formatted as specified in the cell formatting.
+							</apex:outputPanel>
+						</apex:outputPanel>
+					</apex:pageBlockSectionItem>
+				</apex:pageBlockSection>
+				<apex:pageBlockSection title="Field Tags" columns="1">
+					<apex:outputPanel id="fieldtags">
+						<apex:repeat value="{!fieldTags}" var="t">
+							<div>
+								<span class="test">{!t}</span>
+								<input readonly="readonly" value="{!t}" onclick="jQuery(this).select();" />
+							</div>
+						</apex:repeat>
+					</apex:outputPanel>
+				</apex:pageBlockSection>
+			</apex:pageBlock>
+		</apex:form>
+	</apex:actionRegion>
+</apex:page>

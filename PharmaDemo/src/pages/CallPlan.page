@@ -1,0 +1,105 @@
+<apex:page standardController="Contact" recordSetvar="people"
+    extensions="CallPlanAdd" tabStyle="Call_Plan__c" >
+    <style>
+.detailList .lista tr td {
+    border-bottom: 1px solid #E3DEB8;
+    color: #333333;
+    padding: 2px 2px 2px 5px;
+    vertical-align: middle;
+}
+</style>
+    <apex:form >
+        <apex:sectionHeader title="Call Plan: {!callplan.name}"
+             />
+
+        <apex:outputPanel id="preview" styleClass="center" layout="block">
+&nbsp;&nbsp; &nbsp;&nbsp;<b>View:</b>&nbsp;&nbsp; 
+
+          <apex:selectList value="{!filterId}" size="1">
+                <apex:actionSupport event="onchange" action="{!changedFilter}" rerender="preview" />
+                <apex:selectOptions value="{!listviewoptions}" />
+            </apex:selectList>
+                &nbsp;&nbsp; 
+                <span>{!resultSize} Contacts, Page : {!pagenumber} of
+            {!pageSize} </span> 
+                &nbsp;&nbsp; 
+
+                <apex:commandLink action="{!previousPage}" rendered="{!hasPrevious}"
+                rerender="preview">&lt;- Previous Page</apex:commandlink>&nbsp;&nbsp; 
+                        <apex:commandLink action="{!nextPage}" rendered="{!hasNext}"
+                    rerender="preview">Next Page -&gt;</apex:commandlink>
+
+
+                    <p></p>
+
+                    <apex:pageBlock title="Customers to Add">
+
+                        <apex:pageBlockButtons >
+                            <apex:commandButton value="{!buttonLabel}" id="buttons"
+                                action="{!doSelAll}" rerender="list,buttons" />
+                            <apex:commandButton value=" Add to Call Plan"
+                            action="{!massInvite}" />
+ <!--                               action="{!massInvite}" rerender="table,buttons" /> -->
+
+
+                        </apex:pageBlockButtons>
+                        <apex:pageBlockSection title="Customers to Add" columns="1">
+                            <apex:pageblocktable id="list" var="a" value="{!cl}"
+                                styleclass="lista">
+                                <!--  header -->
+
+                                <!--  columns -->
+                                <apex:column >
+                                    <apex:inputCheckbox value="{!a.sel}" />
+                                </apex:column>
+                                <apex:column headerValue="Day">
+                                    <apex:selectList value="{!selectedDay}" multiSelect="false" size="1" id="DayList">
+                                        <apex:selectOptions value="{!allDays}" />
+                                    </apex:selectList>
+                                </apex:column>                                                     
+                                <apex:column headerValue="Week">
+                                    <apex:selectList value="{!selectedWeek}" multiSelect="false" size="1" id="WeekList">
+                                        <apex:selectOptions value="{!allDurations}" />
+                                    </apex:selectList>
+                                </apex:column>                                
+                                <apex:column headerValue="Name">
+                                    <apex:outputText value="{!a.con.Name}" />
+                                </apex:column>                                
+                                <apex:column headerValue="Brick">
+                                    <apex:outputText value="{!a.con.Primary_Brick_Name__c}" />
+                                </apex:column>
+                                <apex:column headerValue="Speciality">
+                                    <apex:outputText value="{!a.con.spec__r.name}" />
+                                </apex:column>                                
+                                <apex:column headerValue="Target">
+                                    <apex:outputText value="{!a.con.Target__c}" />
+                                </apex:column>
+                                <apex:column headerValue="Best Time">
+                                    <apex:outputText value="{!a.con.Best_Time__c}" />
+                                </apex:column>
+                                <apex:column headerValue="Indicator">
+                                    <apex:image id="user_graph2" value="http://chart.apis.google.com/chart?cht=gom&chs=45x30&chf=bg,s,FFFFFF&chd=t:{!a.con.pc_Target_Calls__c}" />    
+                                    
+                                </apex:column>
+
+                            </apex:pageblocktable>
+                        </apex:pageBlockSection>
+                        <!--  <apex:panelGrid columns="3">
+                            <span>{!resultSize} Contacts, Page : {!pagenumber} of
+                            {!pageSize} </span>
+                            <apex:commandLink action="{!previousPage}"
+                                rendered="{!hasPrevious}" rerender="preview">&lt;- Previous</apex:commandlink>
+                                <apex:commandLink action="{!nextPage}" rendered="{!hasNext}"
+                                    rerender="preview">Next -&gt;</apex:commandlink>
+                        </apex:panelGrid> -->
+
+                    </apex:pageBlock>
+        </apex:outputPanel>
+
+    </apex:form>
+
+    <div style="display: none;"><apex:dataList var="a"
+        value="{!people}" type="1">
+ {!a.Name} {!a.Primary_Brick_Name__c} {!a.Spec__r.name} {!a.Target__c} {!a.Best_Time__c} {!a.pc_Target_Calls__c} {!a.email}
+ </apex:dataList></div>
+</apex:page>

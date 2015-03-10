@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>WhereVantage_Geocoding__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Links to the address match details for this record</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Links to the address match details for this record</inlineHelpText>
+        <label>WhereVantage Geocoding</label>
+        <referenceTo>WVGeocoding__c</referenceTo>
+        <relationshipLabel>Leads</relationshipLabel>
+        <relationshipName>Leads</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <type>Lookup</type>
+    </fields>
+    <webLinks>
+        <fullName>WVShowOnMap</fullName>
+        <availability>online</availability>
+        <description>Launch the Route Miner application</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Show on Map</masterLabel>
+        <openType>sidebar</openType>
+        <page>WVLeadMapPage</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

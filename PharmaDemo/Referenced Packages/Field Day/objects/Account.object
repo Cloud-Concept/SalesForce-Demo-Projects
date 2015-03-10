@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>WhereVantage_Geocoding__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This gives details for the address match</description>
+        <externalId>false</externalId>
+        <label>Address Match Details</label>
+        <referenceTo>WVGeocoding__c</referenceTo>
+        <relationshipLabel>Accounts</relationshipLabel>
+        <relationshipName>Accounts</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <webLinks>
+        <fullName>WVShowOnMap</fullName>
+        <availability>online</availability>
+        <description>Launch the Field Day application</description>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Show on Map</masterLabel>
+        <openType>sidebar</openType>
+        <page>WVAccountMapPage</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

@@ -1,0 +1,158 @@
+<apex:page standardController="Purchase_Requisition__c" extensions="PurchaseExtension"
+           docType="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" showChat="false" >
+               
+  
+               
+  
+  <apex:composition template="mobile_page">
+    <apex:define name="headerText">{!Purchase_Requisition__c.Resource_Project_Name__c}</apex:define>
+    <apex:define name="headerLinks">
+      <a href="{!URLFOR($Page.mobile_purchases)}" data-icon="back" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Back" />
+      <a href="{!URLFOR($Page.mobile_purchase_edit)}?id={!Purchase_Requisition__c.Id}" data-ajax="false" data-icon="plus" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Edit" />
+    </apex:define>
+    <apex:define name="content">
+      <p>
+            <apex:messages />
+      </p>
+      <section class="layoutSection">
+        <header><h4>Purchase Requisition Details</h4><hr /></header>
+        <apex:form >
+                <apex:actionFunction name="sendToSAP" action="{!sendToSAP}"/>
+        </apex:form>
+        <fieldset>
+          <div class="ui-grid-a">
+            <dl class="ui-block-a">
+              <dt>Purchase Requisition Name:</dt>
+              <dd>{!Purchase_Requisition__c.Name}</dd>
+            </dl>
+            <dl class="ui-block-b">
+              <dt>Owner:</dt>
+              <dd>
+                {!Purchase_Requisition__c.Owner.Name}
+                <apex:image value="{!IF(ISBLANK(smallPhotoUrl), URLFOR($Resource.Mobile, 'images/unknown.jpg'), smallPhotoUrl)}" styleClass="inlineImage" height="48" width="48" />
+              </dd>
+            </dl>
+          </div>
+          <div class="ui-grid-a">
+            <dl class="ui-block-a">
+              <dt>Resource/Project Name:</dt>
+              <dd>{!Purchase_Requisition__c.Resource_Project_Name__c}</dd>
+            </dl>
+            <dl class="ui-block-b">
+              <dt>Vendor:</dt>
+              <dd>{!Purchase_Requisition__c.Vendor__r.Name}</dd>
+            </dl>
+          </div>
+          <div class="ui-grid-a">
+            <dl class="ui-block-a">
+              <dt>Shared Resource:</dt>
+              <dd><apex:outputField value="{!Purchase_Requisition__c.Shared_Resource__c}" /></dd>
+            </dl>
+            <dl class="ui-block-b">
+              <dt>Cost Center:</dt>
+              <dd>{!Purchase_Requisition__c.Cost_Center__c}</dd>
+            </dl>            
+          </div>
+          <div class="ui-grid-a">
+                <dl class="ui-block-a">
+                  <dt>Currency</dt>
+                  <dd><apex:outputField value="{!Purchase_Requisition__c.Currency__c}" /></dd>
+                </dl>
+                <dl class="ui-block-b">
+                  <dt>SAP PR Number</dt>
+                  <dd><apex:outputField value="{!Purchase_Requisition__c.SAP_PurchaseRequestID__c}" /></dd>
+                </dl>              
+            </div>
+                 
+              
+        </fieldset>
+      </section>
+      <section class="layoutSection">
+        <header><h4>Contract Information</h4><hr /></header>
+        <fieldset>
+          <div class="ui-grid-a">
+            <dl class="ui-block-a">
+              <dt>Starting Date:</dt>
+              <dd>{!formattedStart}<span class="hidden">{!Purchase_Requisition__c.Starting_Date__c}</span></dd>
+            </dl>
+            <dl class="ui-block-b">
+              <dt>Ending Date:</dt>
+              <dd>{!formattedEnd}<span class="hidden">{!Purchase_Requisition__c.Ending_Date__c}</span></dd>
+            </dl>
+          </div>
+        </fieldset>
+      </section>
+      <section class="layoutSection">
+        <header><h4>Comments</h4><hr /></header>
+        <fieldset>
+          <div class="ui-grid-a">
+            <dl class="ui-block-a">
+              <dt>Comments:</dt>
+              <dd>{!Purchase_Requisition__c.Comments__c}</dd>
+            </dl>
+          </div>
+          <div class="ui-grid-a">
+            <dl class="ui-block-a">
+              <dt>Created By:</dt>
+              <dd>{!Purchase_Requisition__c.CreatedBy.Name}</dd>
+            </dl>
+            <dl class="ui-block-b">
+              <dt>Last Modified By:</dt>
+              <dd>{!Purchase_Requisition__c.LastModifiedBy.Name}</dd>
+            </dl>
+          </div>
+        </fieldset>
+      </section>
+      <section class="layoutSection">
+        <header><h4>Purchase Requisition Items</h4><hr /></header>
+        <fieldset>
+            <ul data-role="listview" data-inset="true" data-theme="c">
+                <apex:repeat value="{!Purchase_Requisition__c.Purchase_Requisition_Items__r}" var="pri">
+                <li>
+   
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a">
+                            <p>
+                                    <h3>{!pri.Description__c}</h3>
+                                    <strong>Unit Price: </strong>{!pri.Unit_Price__c}
+                                    <strong>Quantity: </strong>{!pri.Quantity__c}
+                            </p>
+                        </div>
+                        <div class="ui-block-b">
+                           <a href="#" id="itemdelete" class="itemdelete" data-id="{!pri.Id}">
+                               <img align="right" style="padding-right:30px;" src="http://icons.iconarchive.com/icons/visualpharm/must-have/16/Delete-icon.png"/>
+                           </a>                           
+                        </div>
+                    </div>
+                </li>
+                </apex:repeat>
+            </ul>
+          </fieldset>
+        <p style="text-align: right;">
+          <a href="#" class="addService" data-id="{!Purchase_Requisition__c.Id}" data-role="button" data-icon="plus" data-inline="true" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Edit">Add Service Item</a>
+        </p>
+        <p style="text-align: right;">
+          <a href="#" data-role="button" data-icon="plus" data-inline="true" data-iconpos="right" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Edit" onclick="$.mobile.showPageLoadingMsg(); sendToSAP();">Send to SAP</a>
+        </p>
+      </section>
+      <section class="layoutSection">
+        <header><h4>Attachments</h4><hr /></header>
+        <fieldset>
+          <ul data-role="listview" data-inset="true" data-theme="c">
+            <apex:repeat value="{!Purchase_Requisition__c.Attachments}" var="attachment">
+            <li>
+              <a href="{!URLFOR($Action.Attachment.Download, attachment.id)}" target="_blank">
+                <h3>{!attachment.Name}</h3>
+              </a>
+            </li>
+            </apex:repeat>
+          </ul>
+        </fieldset>
+      </section>
+      <div data-role="collapsible" data-collapsed="true" data-mini="true">
+          <h3><img src="/img/feeds/feed16.png" align="left"/>&nbsp;&nbsp;Chatter Feed</h3>
+        <chatter:feed entityId="{!Purchase_Requisition__c.Id}" />
+      </div>
+    </apex:define>
+  </apex:composition>
+</apex:page>

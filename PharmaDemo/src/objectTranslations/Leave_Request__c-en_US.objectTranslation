@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Leave Request</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Leave Requests</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Date --></label>
+        <name>Approval_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- ApproverEmployeeID --></label>
+        <name>ApproverEmployeeID__c</name>
+    </fields>
+    <fields>
+        <label><!-- ApproverName --></label>
+        <name>ApproverName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approver --></label>
+        <name>Approver__c</name>
+        <relationshipLabel><!-- Approver Leave Requests --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- From --></label>
+        <name>From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Leave Type --></label>
+        <name>Leave_Type__c</name>
+        <picklistValues>
+            <masterLabel>Sick Leave</masterLabel>
+            <translation><!-- Sick Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sick Leave (average)</masterLabel>
+            <translation><!-- Sick Leave (average) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unpaid Leave</masterLabel>
+            <translation><!-- Unpaid Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacation</masterLabel>
+            <translation><!-- Vacation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Work Accident</masterLabel>
+            <translation><!-- Work Accident --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Approval Message --></label>
+        <name>SAP_Approval_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Approval Status --></label>
+        <name>SAP_Approval_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Create Message --></label>
+        <name>SAP_Create_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP Create Status --></label>
+        <name>SAP_Create_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP_EmloyeeID --></label>
+        <name>SAP_EmloyeeID__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP RequestID --></label>
+        <name>SAP_RequestID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Short Title --></label>
+        <name>Short_Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- To --></label>
+        <name>To__c</name>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <layouts>
+        <layout>Leave Request Layout</layout>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- SAP Information --></label>
+            <section>SAP Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You can only change the approval status if you are the Approver --></errorMessage>
+        <name>Only_Approver_can_Approve</name>
+    </validationRules>
+</CustomObjectTranslation>

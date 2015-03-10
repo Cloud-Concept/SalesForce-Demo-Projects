@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>ActivityRating</fullName>
+        <categories>Flex</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Activity Rating Label. Used in hover details in visualizer</shortDescription>
+        <value>Activity Rating</value>
+    </labels>
+    <labels>
+        <fullName>EdgeLabelEmployee</fullName>
+        <categories>EdgeLabel</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for Employee Edge</shortDescription>
+        <value>Employee</value>
+    </labels>
+    <labels>
+        <fullName>EdgeLabelReportsTo</fullName>
+        <categories>EdgeLabel</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for Reports To Edge</shortDescription>
+        <value>Reports To</value>
+    </labels>
+    <labels>
+        <fullName>EdgeLabelSubsidiary</fullName>
+        <categories>EdgeLabel</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label for Subsidiary Edge</shortDescription>
+        <value>Subsidiary</value>
+    </labels>
+    <labels>
+        <fullName>Hierarchy</fullName>
+        <categories>RelationVizArt</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Tab name of Hierarchy</shortDescription>
+        <value>Account Hierarchy</value>
+    </labels>
+    <labels>
+        <fullName>LastActivityDate</fullName>
+        <categories>Flex</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Last Activity Date Label. Used in hover details in visualizer</shortDescription>
+        <value>Last Activity</value>
+    </labels>
+    <labels>
+        <fullName>NoLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Translation for no</shortDescription>
+        <value>No</value>
+    </labels>
+    <labels>
+        <fullName>RecordType</fullName>
+        <categories>Flex</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Record Type Label. Used in visualizer</shortDescription>
+        <value>Record Type</value>
+    </labels>
+    <labels>
+        <fullName>Relation</fullName>
+        <categories>RelationVizArt</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Tab name of Relation</shortDescription>
+        <value>Relations</value>
+    </labels>
+    <labels>
+        <fullName>RelationVizArt</fullName>
+        <categories>RelationVizArt</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Tab name of Vizart</shortDescription>
+        <value>RelationVizArt</value>
+    </labels>
+    <labels>
+        <fullName>TrgErr_AccountContactMissing</fullName>
+        <categories>Trigger Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error message displayed when user does not populate account and contact fields</shortDescription>
+        <value>Please populate first account and second contact field for account to contact relationships!</value>
+    </labels>
+    <labels>
+        <fullName>TrgErr_AccountMissing</fullName>
+        <categories>Trigger Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error message displayed when user does not populate both account fields</shortDescription>
+        <value>Please populate both account lookup fields for account to account relationships!</value>
+    </labels>
+    <labels>
+        <fullName>TrgErr_AccountsIdentical</fullName>
+        <categories>Trigger Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error message displayed when user wants to relate one account with itself</shortDescription>
+        <value>You cannot relate an account to itself!</value>
+    </labels>
+    <labels>
+        <fullName>TrgErr_ContactMissing</fullName>
+        <categories>Trigger Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error message displayed when user does not populate both contact fields</shortDescription>
+        <value>Please populate both contact lookup fields for contact to contact relationships!</value>
+    </labels>
+    <labels>
+        <fullName>TrgErr_ContactsIdentical</fullName>
+        <categories>Trigger Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error message displayed when user wants to relate one contact with itself</shortDescription>
+        <value>You cannot relate a contact to itself!</value>
+    </labels>
+    <labels>
+        <fullName>TrgErr_DuplicateRecord</fullName>
+        <categories>Trigger Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error message displayed when a duplicate record has been entered.</shortDescription>
+        <value>Duplicate Found: Relationship with given type already exists!</value>
+    </labels>
+    <labels>
+        <fullName>TrgErr_RecordTypeMismatch</fullName>
+        <categories>Trigger Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error message displayed when wrong record type id is given</shortDescription>
+        <value>Record type mismatch: Please select one valid record type!</value>
+    </labels>
+    <labels>
+        <fullName>TrgErr_RelationTypeMissing</fullName>
+        <categories>Trigger Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error message displayed when user does not enter a relationship type</shortDescription>
+        <value>Please select a relationship type!</value>
+    </labels>
+    <labels>
+        <fullName>ViewIconDocumentId</fullName>
+        <categories>Icons</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Document Id of View Icon. Used for objects with auto number name fields</shortDescription>
+        <value>015j0000000e7fY</value>
+    </labels>
+    <labels>
+        <fullName>YesLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Translations for yes</shortDescription>
+        <value>Yes</value>
+    </labels>
+    <labels>
+        <fullName>blankLabel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Translation for Blank</shortDescription>
+        <value>--None--</value>
+    </labels>
+</CustomLabels>

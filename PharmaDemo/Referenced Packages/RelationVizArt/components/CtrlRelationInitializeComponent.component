@@ -1,0 +1,13 @@
+<apex:component controller="ITBrelViz.CtrlRelationTypeColor" allowDML="true">   
+    <apex:form >
+        <apex:pageBlock id="initBlock">
+            <apex:pageBlockSection title="Initialize Configurations" columns="1">
+            	<apex:pageBlockSectionItem >
+	            	<apex:commandButton action="{!initValues}" value="Initialize" status="initStatus" oncomplete="initOhters();" rerender="initBlock"/> 
+	        		<apex:actionStatus startText=" initializing..." stopText="" id="initStatus"/>
+            	</apex:pageBlockSectionItem>           	
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:actionFunction name="initOhters" action="{!initOthers}" rerender="initBlock"/>
+    </apex:form>
+</apex:component>

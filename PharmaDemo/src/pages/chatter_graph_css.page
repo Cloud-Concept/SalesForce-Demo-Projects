@@ -1,0 +1,85 @@
+<apex:page contentType="text/css">
+
+html, body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+#infovis {
+  position: relative;
+  width: 1200px;
+  height: 860px;
+  margin: auto;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  -moz-border-radius: 5px 5px 5px 5px;
+  border: 1px solid #afafaf;
+  margin-top: 4px;
+}
+.detailFrame {
+  -moz-border-radius: 5px 5px 5px 5px;
+  background-color: #dfefff;
+  border: 1px solid #afcfef;
+  padding: 5px 0px 4px 0px;
+  width: 60px;
+}
+.profilePicture {
+  margin-bottom: 2px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.nonprofilePicture {
+  margin-bottom: 2px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: inline-block;
+  background-image: url('/img/sprites/master.png');
+}
+.link {
+  font-family: "Lucida Grande", Verdana;
+  font-size: 0.7em;
+  color: #4f4f4f;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.options {
+  position: absolute;
+  border: 1px solid #cfcfcf;
+  z-index: +10;
+  font-family: "Lucida Grande", Verdana;
+  font-size: 0.7em;
+  color: #4f4f4f;
+}
+.optionsButton {
+  background-color: #dfdfdf;
+  padding: 2px 5px 2px 5px;
+  cursor: pointer;
+  display: none;
+}
+.optionsDialog {
+  display: none;
+  background-color: #efefef;
+  cursor: default;
+  padding: 8px 14px 10px 8px;
+  text-align: left;
+}
+.optionsCustomInput {
+  font-size: 1.0em;
+}
+.optionsBlocker {
+  position: absolute;
+  display: none;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: +5;
+  background-color: #8f8f8f;
+  -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  opacity: 0.6;
+}
+</apex:page>

@@ -1,0 +1,65 @@
+<apex:page controller="Wherevantage.WVAdministrativeSettingsController" action="{!InstantiateSettingsRecord}" >
+<apex:form >
+<apex:pageBlock id="PageBlock">
+<apex:outputLabel dir=""  value="{!$Label.wherevantage__WVAdministration_Intro}"/>
+<p></p>
+<table>
+    <tr>
+        <td>
+            <apex:outputLabel dir=""  value="{!$Label.wherevantage__WVAdministration_AccountRecords}" for="AccountAddress" />
+        </td>
+        <td>
+            <apex:selectList id="AccountAddress" size="1" required="true" value="{!SelectedAccountAddress}">
+                <apex:selectOptions value="{!WhichAccountAddressList}"/>
+                <apex:actionSupport event="onchange" action="{!SelectedAccountAddressChange}" rerender="AccountAddressWarning" />            
+            </apex:selectList>
+            <apex:outputPanel id="AccountAddressWarning">
+                <br /><apex:outputText rendered="{!ShowAccountAddressWarning}" value="Warning: Previously matched records will be matched again for the new address selection. This may take some time to complete."/><br />
+            </apex:outputPanel>                
+        </td>
+    </tr>      
+    <tr> 
+        <td>
+            <apex:outputLabel dir=""  value="{!$Label.wherevantage__WVAdministration_ContactRecords}" for="ContactAddress" />
+        </td>
+        <td>
+            <apex:selectList id="ContactAddress" size="1" required="true" value="{!SelectedContactAddress}">
+                <apex:selectOptions value="{!WhichContactAddressList}"/>
+                <apex:actionSupport event="onchange" action="{!SelectedContactAddressChange}" rerender="ContactAddressWarning" />            
+            </apex:selectList>
+            <apex:outputPanel id="ContactAddressWarning">
+                <br /><apex:outputText rendered="{!ShowContactAddressWarning}" value="Warning: Previously matched records will be matched again for the new address selection. This may take some time to complete."/><br />
+            </apex:outputPanel>                
+        </td>        
+    </tr> 
+    <tr> 
+        <td>
+            <apex:outputLabel dir=""  value="{!$Label.wherevantage__WVAdministration_BackgroundGeocoding}" for="BackgroundGeocoding" />
+        </td>
+        <td>
+            <apex:selectList id="BackgroundGeocoding" size="1" required="true" value="{!SelectedBackgroundGeocoding}">
+                <apex:selectOptions value="{!BackgroundGeocodingList}"/>
+            </apex:selectList>
+        </td>        
+    </tr>
+</table>
+
+<p></p>
+<apex:outputPanel id="out"> 
+<apex:actionStatus startText="{!$Label.wherevantage__WVAdministration_Saving}"  id="saveStatus" >
+<apex:facet name="stop"></apex:facet>
+</apex:actionStatus>
+</apex:outputPanel>
+
+<apex:outputPanel id="SaveMessage">
+    <br /><apex:outputText rendered="{!ShowSaveMessage}" value="Geo-coding is now scheduled to run hourly. If your organization’s data exceeds 250,000 records geo-coding will take more than one day to complete. In this case you may also see warnings that the ApexBatchItems Limit is exceeded."/><br />
+</apex:outputPanel>                
+
+<apex:pageBlockButtons location="top" id="TopButtons">
+    <apex:commandButton value="Save" action="{!SaveRecord}" id="Save" status="saveStatus" rerender="out, AccountAddressWarning, ContactAddressWarning, SaveMessage" />
+    <a href="http://www.wherevantage.com/help/Salesforce/v1.0/adminpage" target="_blank" style="float:right; color:#015BA7;text-decoration:none;font-size:small;vertical-align:text-bottom;">Help for this page <img src="{!$Resource.WVHelpOrange}" style="vertical-align:text-bottom;"/></a>    
+</apex:pageBlockButtons>
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

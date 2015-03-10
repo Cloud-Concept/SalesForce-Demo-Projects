@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Actual_Calls__c</fullName>
+        <externalId>false</externalId>
+        <label>Actual Calls</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Call_Indicator__c</fullName>
+        <externalId>false</externalId>
+        <formula>IMAGE(&quot;http://chart.apis.google.com/chart?cht=gom&amp;chs=45x30&amp;chf=bg,s,F3F3EC&amp;chd=t:&quot; &amp; TEXT(pc_Target_Calls__c ),&quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Call Indicator</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Customer__c</fullName>
+        <externalId>false</externalId>
+        <label>Customer</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipName>TMF1</relationshipName>
+        <relationshipOrder>1</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Frequency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Last_Call_Report_Date__c</fullName>
+        <description>Shows the last call report date with this account for a specific medical rep</description>
+        <externalId>false</externalId>
+        <label>Last Call</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Proposed_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Frequency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>High</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Recall__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Recall</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Reject__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Reject</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Recalled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Target_Calls__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(Frequency__c, &quot;High&quot;),24, 
+IF(ISPICKVAL(Frequency__c, &quot;Medium&quot;),12, 
+IF(ISPICKVAL(Frequency__c, &quot;Low&quot;),8, 0)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Target Calls</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Target__c</fullName>
+        <externalId>false</externalId>
+        <label>Target</label>
+        <referenceTo>Target__c</referenceTo>
+        <relationshipName>TMF</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>ToBeApproved__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>To Be Approved</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Unique_Id__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Concatenation of target (user id) and customer (account id) separated by a pipe: Target__c|Customer__c. This is used to easily calculated actual frequency and will be maintained by a workflow rule.</description>
+        <externalId>false</externalId>
+        <label>Unique Id</label>
+        <length>31</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>User__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot;&amp; Target__r.MedRep__r.Id, Target__r.Name,&quot;_parent&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>User</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>View__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; Id ,IF(TEXT( Status__c) =&apos;Pending&apos;,IMAGE(&quot;/img/icon/custom51_100/gears24.png&quot;, &quot;Pending&quot;),IF(TEXT(Status__c)=&apos;Submitted&apos;,IMAGE(&apos;/img/icon/custom51_100/padlock24.png&apos;, &quot;Locked&quot;),IF(TEXT(Frequency__c)=&apos;High&apos;,IMAGE(&apos;/img/samples/flag_green.gif&apos;,&apos;High&apos;),IF(TEXT(Frequency__c)=&apos;Medium&apos;,IMAGE(&apos;/img/samples/flag_yellow.gif&apos;,&apos;Medium&apos;),IF(TEXT(Frequency__c)=&apos;Low&apos;,IMAGE(&apos;/img/samples/flag_red.gif&apos;,&apos;Medium&apos;),&apos;&apos;))))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>View</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>pc_Target_Calls__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF (Target_Calls__c &gt; 0, ROUND( (Actual_Calls__c / Target_Calls__c) * 100, 0),0)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>% Target Calls</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Target Frequency</label>
+    <listViews>
+        <fullName>AllTargets</fullName>
+        <columns>View__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Target_Calls__c</columns>
+        <columns>Actual_Calls__c</columns>
+        <columns>Call_Indicator__c</columns>
+        <columns>Last_Call_Report_Date__c</columns>
+        <columns>User__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Targets</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>MyApprovedTargets</fullName>
+        <columns>View__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Target_Calls__c</columns>
+        <columns>Actual_Calls__c</columns>
+        <columns>Call_Indicator__c</columns>
+        <columns>Last_Call_Report_Date__c</columns>
+        <columns>Frequency__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>TF__c.ApprovedTargetFrequency</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>My Approved Targets</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>MyPendingTargets</fullName>
+        <columns>View__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Proposed_Frequency__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>TF__c.Pending_Target_Frequency</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </filters>
+        <label>My Pending Targets</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>MyRejectedTargets</fullName>
+        <columns>View__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Proposed_Frequency__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>TF__c.Rejected_Target_Frequency</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Rejected</value>
+        </filters>
+        <label>My Rejected Targets</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>MySubmittedTargets</fullName>
+        <columns>View__c</columns>
+        <columns>Customer__c</columns>
+        <columns>Target_Calls__c</columns>
+        <columns>Actual_Calls__c</columns>
+        <columns>Call_Indicator__c</columns>
+        <columns>Last_Call_Report_Date__c</columns>
+        <columns>Frequency__c</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>TF__c.Submitted_Target_Frequency</value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Submitted</value>
+        </filters>
+        <label>My Submitted Targets</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>TF-{0000000}</displayFormat>
+        <label>TF</label>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Target Frequency</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>ApprovedTargetFrequency</fullName>
+        <active>true</active>
+        <label>Approved Target Frequency</label>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Proposed_Frequency__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Pending_Target_Frequency</fullName>
+        <active>true</active>
+        <label>Pending Target Frequency</label>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Proposed_Frequency__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Rejected_Target_Frequency</fullName>
+        <active>true</active>
+        <label>Rejected Target Frequency</label>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Proposed_Frequency__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Submitted</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Submitted_Target_Frequency</fullName>
+        <active>true</active>
+        <label>Submitted Target Frequency</label>
+        <picklistValues>
+            <picklist>Frequency__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Proposed_Frequency__c</picklist>
+            <values>
+                <fullName>High</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Low</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Medium</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Status__c</picklist>
+            <values>
+                <fullName>Approved</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>View__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>User__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Customer__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Proposed_Frequency__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Active__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <excludedStandardButtons>Forward</excludedStandardButtons>
+        <listViewButtons>Submit</listViewButtons>
+        <listViewButtons>Approve</listViewButtons>
+        <listViewButtons>Reject</listViewButtons>
+        <lookupDialogsAdditionalFields>View__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>User__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Customer__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Actual_Calls__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>View__c</searchFilterFields>
+        <searchFilterFields>User__c</searchFilterFields>
+        <searchFilterFields>Customer__c</searchFilterFields>
+        <searchFilterFields>Status__c</searchFilterFields>
+        <searchFilterFields>Proposed_Frequency__c</searchFilterFields>
+        <searchResultsAdditionalFields>View__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>User__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Customer__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Actual_Calls__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+    <webLinks>
+        <fullName>Approve</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Approve</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/13.0/connection.js&quot;)} 
+
+var records = {!GETRECORDIDS($ObjectType.TF__c)}; 
+var newRecords = []; 
+
+if (records[0] == null) 
+{ 
+alert(&quot;Please select at least one Target&quot;) 
+} 
+else 
+{ 
+for (var n=0; n&lt;records.length; n++) { 
+var c = new sforce.SObject(&quot;TF__c&quot;); 
+c.id = records[n]; 
+c.ToBeApproved__c = &quot;TRUE&quot;; 
+newRecords.push(c); 
+} 
+
+result = sforce.connection.update(newRecords); 
+
+window.location.reload(); 
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Reject</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Reject</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/13.0/connection.js&quot;)}
+
+var records = {!GETRECORDIDS($ObjectType.TF__c)};
+var newRecords = [];
+
+if (records[0] == null)
+{
+alert(&quot;Please select at least one Target&quot;)
+}
+else
+{
+for (var n=0; n&lt;records.length; n++) {
+var c = new sforce.SObject(&quot;TF__c&quot;);
+c.id = records[n];
+c.reject__c = &quot;TRUE&quot;
+newRecords.push(c);
+}
+
+result = sforce.connection.update(newRecords);
+
+window.location.reload();
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/13.0/connection.js&quot;)} 
+
+var records = {!GETRECORDIDS($ObjectType.TF__c)}; 
+var newRecords = []; 
+
+if (records[0] == null) 
+{ 
+alert(&quot;Please select at least one Target&quot;) 
+} 
+else 
+{ 
+for (var n=0; n&lt;records.length; n++) { 
+var c = new sforce.SObject(&quot;TF__c&quot;); 
+c.id = records[n]; 
+c.Status__c = &quot;Submitted&quot;; 
+newRecords.push(c); 
+} 
+
+result = sforce.connection.update(newRecords); 
+
+window.location.reload(); 
+}</url>
+    </webLinks>
+</CustomObject>

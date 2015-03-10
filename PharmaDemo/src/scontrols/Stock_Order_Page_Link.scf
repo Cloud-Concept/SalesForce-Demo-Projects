@@ -1,0 +1,1 @@
+/apex/StockOrderPage?id={!Stock_Order__c.Id}

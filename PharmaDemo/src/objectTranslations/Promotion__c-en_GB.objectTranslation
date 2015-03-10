@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Promotion</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Promotions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- SKU Product --></label>
+        <name>SKU_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- SKU --></label>
+        <name>SKU__c</name>
+        <relationshipLabel><!-- Promotions --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>%</masterLabel>
+            <translation><!-- % --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>£</masterLabel>
+            <translation><!-- £ --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Value --></label>
+        <name>Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wholesaler --></label>
+        <name>Wholesaler__c</name>
+        <relationshipLabel><!-- Promotions --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

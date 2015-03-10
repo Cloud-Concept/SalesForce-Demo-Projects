@@ -1,0 +1,21 @@
+<!-- 
+  Developed by Timba Software Corp. www.timbasoftware.com admin@timbasoftware.com
+-->
+
+<apex:page standardStylesheets="false" controller="BlackBerryApproveRejectFormController" showHeader="false" cache="false" action="{!readFormData}">
+	
+	<apex:include pageName="BlackBerryApprovalStyles" />	
+	
+	<!-- Approval Title -->
+	<div class="approvalHeader {!ObjDetail.objType}">
+		<div class="title">
+			Approval Request<br />
+			<span class="objTitle">{!ObjDetail.Name}</span>
+		</div>
+	</div>
+	<br /><br />
+	<span class="standardFont center"><apex:outputText value="{!ActionStatusMessage}" /></span>
+	<br /><br />
+	<apex:outputLink rendered="{!showBackLink}" value="BlackBerryApproveReject?id={!WORKITEM_ID}" styleClass="standardFont center">Back to Approval Request</apex:outputLink>
+	<apex:outputLink rendered="{!IF(!showBackLink,true,false)}" value="BlackBerryApprovalList" styleClass="standardFont center">Go to approval list</apex:outputLink>
+</apex:page>

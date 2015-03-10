@@ -1,0 +1,307 @@
+<!-- Jonathan Hersh - jhersh@salesforce.com - 2/25/2009 -->
+
+<apex:page controller="twitterforce.tfsetupcontroller" tabstyle="twitter2case_setup__tab">
+	<apex:sectionheader title="{!appname}" subtitle="Setup" />
+		
+	<c:lightbox function="lbconfirm" width="500" title="{!appname}" content="Changes saved successfully." duration="1500" />
+	<c:lightbox function="lbfail" width="500" title="{!appname}" content="Invalid username/password, or Twitter is down." duration="0" />
+	<c:lightbox function="initSetup" width="500" title="{!appname}" content="<iframe src='/apex/twitterforceInitialSetup' style='border: 0; width:460px; min-height: 470px' &gt;&lt;/iframe&gt;" duration="0" />
+	<c:lightbox function="newAcct" width="500" title="{!appname}" content="<iframe src='/apex/twitterforceInitialSetup?newAcct=1' style='border: 0; width:460px; min-height: 170px' &gt;&lt;/iframe&gt;" duration="0" />
+	
+	<apex:form id="theform">
+	<script type="text/javascript">
+		function testLB() {
+			if( {!authfail} == true )
+				lbfail();
+			else
+				lbconfirm();
+		}
+	</script>
+	
+		<apex:pageblock title="Success!" rendered="{!showConfirm}">
+				<apex:outputtext value="Your settings have been successfully saved." />
+		</apex:pageblock>
+		<apex:tabpanel switchtype="server" rendered="{!!showConfirm}">
+		<apex:tab label="Basic Setup">
+		<apex:pageblock title="First Time?" >	
+			<span style="font-size: 110%">
+			Setting up TwitterForce for the first time? Check out the super-simple <a href="#" onclick="initSetup();">first time setup instructions</a>.
+			Also, <a href="https://twitter.com/signup" target="_new">sign up</a> for a Twitter account if you don't already have one. It'll take you 20 seconds.
+			</span>
+		</apex:pageblock>
+		<apex:pageblock id="setuptab" title="Account Settings">
+			<apex:pageblockbuttons >
+				<apex:commandbutton oncomplete="testLB();" rerender="theform" value="Save Account" action="{!doSave}" disabled="{!selectedAcct = '-- Select --'}" />
+				<apex:commandbutton onclick="newAcct();" rerender="theform" value="New Account" />
+				<apex:commandbutton rerender="theform" value="Delete Account" action="{!deleteAcct}" disabled="{!selectedAcct = '-- Select --'}" />
+			</apex:pageblockbuttons>
+			Unable to connect to Twitter? Make sure your <a href="#" onclick="initSetup();">remote sites</a> are set up properly.<br /><br />
+			<apex:pageblocksection showheader="false">
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="accts" value="Select Twitter Account" />
+					<apex:selectList id="accts" value="{!selectedAcct}" size="1">
+						<apex:selectoptions value="{!Accts}" />
+						<apex:actionsupport event="onchange" action="{!switchAcct}" rerender="theform" status="tfStatus" />
+					</apex:selectList>
+				</apex:pageblocksectionitem>
+				<apex:pageblocksectionitem >
+					<apex:actionStatus id="tfStatus">
+						<apex:facet name="start">
+							<apex:image value="/img/waiting_dots.gif" />
+						</apex:facet>
+					</apex:actionStatus>
+				</apex:pageblocksectionitem>
+			</apex:pageblocksection>
+			<apex:pageblocksection title="Twitter Credentials" rendered="{!selectedAcct != '-- Select --'}">
+				<apex:inputfield value="{!ts.twitterforce__Twitter_Username__c}" required="false" />
+				<apex:pageblocksectionitem >
+					<apex:outputlabel value="Profile Image" for="profile" />
+					<apex:image id="profile" value="http://img.tweetimag.es/i/{!ts.twitterforce__Twitter_Username__c}_n" rendered="{!if( LEN( ts.profile_url__c ) > 0, true, false )}" height="48" width="48" />
+				</apex:pageblocksectionitem>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="password" value="Twitter Password" />
+					<apex:inputsecret value="{!ts.twitterforce__Twitter_Password__c}" required="false" redisplay="true" />
+				</apex:pageblocksectionitem>
+				<apex:outputfield value="{!ts.twitterforce__Profile_Name__c}" />
+				<apex:inputfield value="{!ts.twitterforce__Enabled__c}" />
+				<apex:pageblocksectionitem >
+					<apex:outputlabel value="API Remaining" for="apistatus" />
+					<apex:outputtext id="apistatus" value="{!apistatus}" />
+				</apex:pageblocksectionitem>	
+				<apex:inputfield value="{!ts.twitterforce__Primary__c}" />			
+			</apex:pageblocksection>
+			<apex:pageblocksection title="TwitterForce Settings" rendered="{!selectedAcct != '-- Select --'}">
+				<apex:inputfield value="{!ts.twitterforce__Default_Account__c}" required="true" />
+				<apex:inputfield value="{!ts.twitterforce__Default_Ideas_Community__c}" required="true" />
+				<apex:inputfield value="{!ts.twitterforce__Enable_Direct_Messages__c}" />
+				<apex:inputfield value="{!ts.twitterforce__Enable_Friends_Timeline__c}" />
+				<apex:inputfield value="{!ts.twitterforce__Enable_Case_Comments__c}" />
+				<apex:inputfield value="{!ts.twitterforce__Enable_Lead_Activity_History__c}" />
+				<apex:inputfield value="{!ts.twitterforce__Enable_Contact_Activity_History__c}" />
+				<!-- <apex:inputfield value="{!ts.Enable_Twitter_Inquiries__c}" >
+					<apex:actionsupport event="onchange" rerender="setuptab" action="{!checkSetupConfig}" />
+				</apex:inputfield>-->
+			</apex:pageblocksection>
+			<apex:pageblocksection title="Automation Settings" rendered="{!selectedAcct != '-- Select --'}">
+				<apex:inputfield value="{!ts.twitterforce__Enable_Auto_Refresh__c}" />
+				<apex:inputfield value="{!ts.twitterforce__Enable_Auto_Case_Creation__c}" >
+					<apex:actionsupport event="onchange" rerender="setuptab" action="{!checkSetupConfig}" />
+				</apex:inputfield>
+				<apex:inputfield value="{!ts.twitterforce__Enable_Auto_Lead_Creation__c}" />
+				<apex:inputfield value="{!ts.twitterforce__Enable_Auto_Contact_Creation__c}" >
+					<apex:actionsupport event="onchange" rerender="setuptab" action="{!checkSetupConfig}" />
+				</apex:inputfield>
+				<!-- <apex:inputfield value="{!ts.Enable_Auto_Inquiry_Creation__c}" >
+					 <apex:actionsupport event="onchange" rerender="setuptab" action="{!checkSetupConfig}" />
+				</apex:inputfield>-->
+			</apex:pageblocksection>
+			<!-- <apex:pageblocksection title="Step 6. Populate" columns="1">
+				<apex:outputtext value="To populate the Twitter tab with data, use an existing Twitter account or create 2 Twitter accounts, X and Y:" />
+				<ul>
+					<li><strong>Twitter Replies</strong>: The easiest way to get started. Have account Y send a 'reply' to account X. A reply is any message that includes "@[account]", where [account] is the name of the account to send the message to.</li>
+					<li><strong>Direct Messages</strong>: Have account Y 'follow' account X; direct messages can now be sent from X to Y.</li>
+					<li><strong>Friend Timeline</strong>: Updates from any Twitter users you are following will appear on this tab.</li>
+				</ul>
+			</apex:pageblocksection>-->
+		</apex:pageblock>
+		</apex:tab>
+		<apex:tab label="Search Terms">
+		<apex:pageblock title="Twitter Search Terms" rendered="{!!showConfirm}">
+			<apex:pageblockbuttons >
+				<apex:commandbutton oncomplete="lbconfirm();" value="Save" action="{!doSaveSearchTerms}" />
+			</apex:pageblockbuttons>
+			<p>Enter up to {!maxsearch} search terms to monitor on the TwitterForce Search page.</p>
+			<p>TwitterForce now supports location-based searches! Some examples to get you started:
+				<ul>
+					<li><strong>Search Term - Location - Within</strong></li>
+					<li>NYU - 10003 - 15 miles</li>
+					<li>Berkeley - San Francisco - 30 kilometers</li>
+				</ul>
+			</p>
+			<apex:pageblocksection showheader="false">
+			<apex:pageblocktable value="{!tsearch}" var="tse">
+				<apex:column headervalue="Search Term">
+					<apex:inputfield value="{!tse.twitterforce__Search_Term__c}" />
+				</apex:column>
+				<apex:column headervalue="Location (Optional)">
+					<apex:inputfield value="{!tse.twitterforce__Location__c}" />
+				</apex:column>
+				<apex:column headervalue="Within (Optional)">
+					<apex:inputfield value="{!tse.twitterforce__Within__c}" />
+				</apex:column>
+				<apex:column >				
+					<apex:inputfield value="{!tse.twitterforce__Units__c}" />
+				</apex:column>
+				<apex:column headervalue="Enabled">
+					<apex:inputfield value="{!tse.twitterforce__Enabled__c}" />
+				</apex:column>
+			</apex:pageblocktable>
+			</apex:pageblocksection>
+		</apex:pageblock>
+		</apex:tab>
+		<apex:tab label="Release Notes">
+			<apex:pageblock >
+<pre style="font-size: 110%;">
+New in Version 3.60 (1/18/10)
+- Support for Ideas on the Twitterforce and Twitterforce Search pages
+- New 'Default Ideas Community' setting on the setup page
+
+New in Version 3.51 (10/16/09)
+- Fixed an issue when creating a new account on the setup page
+
+New in Version 3.50 (10/9/09)
+- Support for multiple twitter accounts is here! Check out the easy account management options on the setup page.
+- Further streamlined setup page
+
+New in Version 3.31 (10/8/09)
+- Fixed a bug that prevented creating conversations from search results
+
+New in Version 3.30 (9/16/09)
+- TwitterForce has a logo now!
+- Another major backend code rewrite
+- You can create leads and contacts from tweets without first having to import the conversation
+- New setup option to enable auto-contact creation
+- Fixed a few minor display issues in the send tweet lightbox
+- Profile images are now served from http://img.tweetimag.es/, which should guarantee updated profile pictures
+
+New in Version 3.27 (9/14/09)
+- Fixed a few issues with sending a case solution as a tweet
+
+New in Version 3.26 (9/10/09)
+- Public launch on appexchange!
+- TwitterForce tab now has a custom logo
+- Simplified setup page
+
+New in Version 3.25 (9/4/09)
+- Added the "Profile Image" field to Lead, which was missing from the package
+
+New in Version 3.24 (9/1/09) 
+- Twitterforce now shows up to 25 search results per page 
+- New Release Notes tab on the setup page
+
+New in Version 3.21 (8/27/09) 
+- Fixed namespace bugs 
+
+New in Version 3.20 (8/26/09) 
+- Major back-end rewrite; twitterforce should be faster now. It also supports up to 7 search terms! 
+- Solutions created from tweets are now tracked back to the twitter user who suggested them 
+- Leads created from tweets now have profile photos 
+- Misc. bug fixes 
+
+New in Version 3.16 (8/18/09) 
+- TwitterForce is now LIVE and FREE on the appexchange! 
+- Improved handling of login credentials on the setup screen 
+
+New in Version 3.15 (8/14/09) 
+- Added more flexibility around sending tweets - choose on a one-off basis whether to save tweets as an activity or case comment 
+
+New in Version 3.11 (8/13/09) 
+- Rebranding as TwitterForce! 
+- Major branding and user experience updates. Send tweets to contacts and leads inline via lightboxes, without ever leaving the page! 
+- Brand new UI for viewing twitter conversations 
+- NEW - send tweets to contacts from the contact page 
+- Misc. bug fixes 
+
+New in Version 3.0 (8/11/09) - Converse in the Cloud 
+- FINALLY: threaded conversation support! With one click, import entire Twitter conversations into Salesforce and store them in the database. (see screenshot below) 
+- Run advanced analytics on conversations and fully track a conversation's lifecycle. 
+- Many other smaller fixes and improvements 
+
+New in Version 2.84 (7/9/09) 
+- Twitter password field on the setup screen is now masked, as password fields ought to be 
+- The Lead's original tweet is now displayed on the Lead tweet screen 
+- Search autorefresh was breaking the javascript search tabs, so autorefresh has been disabled on the search screen only (it's still fine on the regular twitter tab) 
+- Setup screen now includes the names of all fields you should add to your page layouts 
+
+New in Version 2.83 (7/6/09) 
+- Twitter setup screens now use an AJAXy confirmation lightbox to confirm that your changes have been saved, instead of clearing out most of the page and replacing it with a confirmation 
+
+New in Version 2.82 (7/1/2009) 
+- Fixed a minor issue where the default Twitter account wasn't populating properly on the setup screen 
+- Now uses a more arbitrary version number 
+
+New in Version 2.7 (6/19/2009) 
+- Added a new tab to the Search page that lets you type in a custom search term and get Twitter search results. Then, add cases, solutions, or leads from those results 
+
+New in Version 2.6 (6/8/2009) 
+- Option to enable auto-refreshing Twitter and Search tabs, which will update every 20 seconds with new tweets 
+
+New in Version 2.5 (5/6/2009) 
+- Redesigned UI showing the profile picture, username, and real name of the currently logged in user 
+- Fixed several bugs with displaying profile images in twitter replies, direct messages, and friend timeline 
+
+New in Version 2.4 (5/5/2009) 
+- Option to disable Friend Timeline and Direct Messages to decrease API calls and improve performance 
+- More streamlined setup page 
+- 'Twitter Replies' is now the default tab on the Twitter page 
+
+New in Version 2.3 (5/4/2009) 
+- View your API usage so far, number of API calls remaining, and time until API reset on the Twitter and Setup tabs 
+
+New in Version 2.2 (4/28/2009) 
+- Ability to choose a default Account for new Contacts created via Twitter 
+- New Leads created via Twitter will have the associated tweet copied into the Lead's 'description' field 
+- Twitter tab now has the same button styles as the Search tab 
+
+New in Version 2.1 (4/23/2009) 
+- Create cases/solutions/leads for multiple search results with just one click! 
+
+New in Version 2.0 (4/22/2009) – Search the Cloud 
+- Specify up to 7 search terms and monitor real-time twitter search results for those terms 
+- One-click creation of Cases, Solutions, and Leads from search results 
+- Many other UI and functionality fixes and improvements 
+
+New in Version 1.4 (4/8/2009) - a full view of your outbound communication 
+- Ability to save all outbound tweets to Contacts as tasks on the Contact and Account activity history related lists 
+- Ability to save all outbound tweets to Leads as tasks on the Lead activity history related list 
+- Ability to disable saving tweets as case comments 
+- Create leads from the friends timeline as well as the replies timeline 
+
+New in Version 1.3 (4/7/2009) - The Sales Cloud comes to life! 
+- Support for Leads - create a Lead from an inbound tweet and send outbound tweets to Leads 
+- Auto-create Leads from tweets just like you can auto-create Cases from tweets 
+- Branding update: now "SalesforceCRM for Twitter" 
+- Clearer setup instructions 
+- Many other minor fixes and improvements 
+
+New in Version 1.2 (3/24/2009) 
+- Character counter on outbound tweets now updates as you type 
+- Tabs on the twitter page now switch using ajax for a more responsive user experience 
+- Added some information about API limits to the Setup tab 
+
+New in Version 1.1 
+- Post an update (tweet) to twitter from within salesforce! 
+
+Version 1.0: Bring the Service Cloud to Life 
+- Create cases and solutions from incoming Twitter messages (tweets) 
+- Send outbound tweets from within Salesforce, via Twitter, with case solutions or custom messages 
+- Automatically create case comments based on your outbound tweets 
+
+Coming soon: Conquer the Cloud 
+- Twitter follow/unfollow support 
+- Direct messaging support 
+</pre>
+
+			</apex:pageblock>
+		</apex:tab>
+		<!-- <apex:tab label="Other Information">
+		<apex:pageblock title="Other Information" rendered="{!!showConfirm}">
+			<apex:pageblocksection title="API Limits" columns="1">
+				Twitter limits all requests to its API at 150 per 60 minutes, so it's important to try and
+				limit the number of requests you make. Each time you visit the TwitterForce tab, 3
+				requests are being made:
+				<ul><li>1 request to get your incoming @replies</li>
+				<li>1 request to get your incoming direct messages</li>
+				<li>1 request to get your friends timeline</li></ul>
+				So if you get a message like this - <strong>Error connecting to Twitter</strong> - and you're sure your
+				username and password are correct, chances are that you've gone over the limit. Sorry - you'll have to wait!
+			</apex:pageblocksection>
+			<apex:pageblocksection title="Search API Limits" columns="1">
+				Like other Twitter API requests, Search requests are limited - but at a much higher number than 
+				regular API requests. You will probably not run into the Search API limitation.
+			</apex:pageblocksection>
+		</apex:pageblock>
+		</apex:tab>-->
+		</apex:tabpanel>
+	</apex:form>
+</apex:page>

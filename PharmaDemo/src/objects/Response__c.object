@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Invitation__c</fullName>
+        <externalId>false</externalId>
+        <label>Invitation</label>
+        <referenceTo>Invitation__c</referenceTo>
+        <relationshipLabel>Responses</relationshipLabel>
+        <relationshipName>Responses</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Question_Text__c</fullName>
+        <externalId>false</externalId>
+        <formula>Question__r.Question_Description__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Question Text</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Question_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>CASE(Question__r.Type__c, 
+ &apos;String&apos;, &apos;String&apos;,
+ &apos;Date&apos; , &apos;Date&apos; , 
+ &apos;Boolean&apos;, &apos;Boolean&apos;,
+ &apos;TextArea&apos;, &apos;TextArea&apos;,
+&apos;Radio&apos;, &apos;Radio&apos;,
+&apos;Integer&apos;, &apos;Integer&apos;,
+&apos;Unknown&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Question Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Question__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Question</label>
+        <referenceTo>Question__c</referenceTo>
+        <relationshipLabel>Responses</relationshipLabel>
+        <relationshipName>R00N40000001JAEsEAO</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Response_Bool__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Response Yes No</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Response_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Response Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Response_Number__c</fullName>
+        <description>Used for numbers or radio answers</description>
+        <externalId>false</externalId>
+        <inlineHelpText>used for radio type responses</inlineHelpText>
+        <label>Response Number</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Response__c</fullName>
+        <externalId>false</externalId>
+        <label>Response Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Summary__c</fullName>
+        <description>A summary field that takes the type of response and translates it into Text</description>
+        <externalId>false</externalId>
+        <formula>CASE(Question__r.Type__c , 
+&apos;Boolean&apos;, IF ( Response_Bool__c , &apos;true&apos;, &apos;false&apos;), 
+&apos;String&apos;,  Response__c,
+&apos;TextArea&apos;,  Text_Area__c, 
+&apos;Integer&apos;,  TEXT( Response_Number__c), 
+&apos;Radio&apos;,  TEXT( Response_Number__c), 
+&apos;Date&apos;, TEXT( Response_Date__c),
+
+&apos;Unknown&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>A summary field that takes the type of response and translates it into Text</inlineHelpText>
+        <label>Response Detail</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Text_Area__c</fullName>
+        <externalId>false</externalId>
+        <label>Text Area</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>View__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; Id, IMAGE(&quot;/img/icon/tasks16.gif&quot;, &quot;View&quot;) ,&quot;_parent&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>View</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Response</label>
+    <nameField>
+        <displayFormat>R-{0000}</displayFormat>
+        <label>Response</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Responses</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Question__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Invitation__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Question_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Summary__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

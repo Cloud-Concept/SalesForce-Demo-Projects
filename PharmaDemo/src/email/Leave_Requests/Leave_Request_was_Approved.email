@@ -1,0 +1,14 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<br><div style="font-size: 12pt; ">
+
+
+
+
+
+
+
+<p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">Your request for&nbsp;{!Leave_Request__c.Leave_Type__c} has been&nbsp;{!Leave_Request__c.Approval_Status__c} by&nbsp;{!Leave_Request__c.Approver__c}</p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; "><br></p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">Details :</p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">Type :&nbsp;{!Leave_Request__c.Leave_Type__c}</p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">From {!Leave_Request__c.From__c} to&nbsp;{!Leave_Request__c.To__c}</p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; "><br></p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">Notes from requester :</p><p class="p1"><font face="arial">{!Leave_Request__c.Notes__c}</font></p><p class="p1"><br></p><p class="p1"><br></p><p class="p1"><br></p></div>]]></td>
+</tr>
+</table>

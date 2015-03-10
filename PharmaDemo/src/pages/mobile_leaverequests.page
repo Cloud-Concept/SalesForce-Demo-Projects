@@ -1,0 +1,63 @@
+<apex:page standardController="Leave_Request__c" extensions="LeaveRequestSetExtension" recordSetVar="requests"
+           docType="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" showChat="false" >
+  <apex:messages />
+  <apex:composition template="mobile_page">
+    <apex:define name="headerText">Leave Requests</apex:define>
+    <apex:define name="headerLinks">
+	    <a href="{!URLFOR($Page.mobile_launcher)}" data-icon="home" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Home" />
+	    <a href="{!URLFOR($Page.mobile_leaverequest_edit)}" data-ajax="false" data-icon="plus" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Add" />
+    </apex:define>
+    <apex:define name="content">
+      <apex:form >
+          <!-- Action function to refresh data from SAP -->
+          <apex:actionFunction name="refreshFromSAP" action="{!calloutIbmci}"/>
+	      <div data-role="navbar">
+	        <ul>
+	          <li><a href="{!URLFOR($Page.mobile_leaverequests)}?status=Pending" class="{!IF(status == 'Pending', 'ui-btn-active', '')}">Pending</a></li>
+	          <li><a href="{!URLFOR($Page.mobile_leaverequests)}?status=Approved" class="{!IF(status == 'Approved', 'ui-btn-active', '')}">Approved</a></li>
+	          <li><a href="{!URLFOR($Page.mobile_leaverequests)}?status=Rejected" class="{!IF(status == 'Rejected', 'ui-btn-active', '')}">Rejected</a></li>
+	          <li><a href="{!URLFOR($Page.mobile_leaverequests)}?status=All" class="{!IF(status == 'All', 'ui-btn-active', '')}">All</a></li>
+	        </ul>
+	      </div>
+				<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="d">
+				  <apex:repeat value="{!requests}" var="group">
+				    <li data-role="list-divider">{!group}</li>
+				    <apex:repeat value="{!requests[group]}" var="item">
+				    <li>
+				      <a href="{!URLFOR($Page.mobile_leaverequest)}?id={!item.Id}" data-ajax="false" onclick="$.mobile.showPageLoadingMsg();">
+				        <div style="float:left;padding-right:3px;">
+                            <c:LeaveImage leaverequest="{!item}"/>
+                        </div>
+				        <h2>
+                            <apex:outputText value="{0,date, dd MMM yyyy}">
+                                     <apex:param value="{!item.From__c}" />
+                                    </apex:outputText>
+                                   - 
+                                  <apex:outputText value="{0,date, dd MMM yyyy}">
+                                     <apex:param value="{!item.To__c}" />
+                                    </apex:outputText>
+                        </h2>
+                        <div class="ui-grid-a" style="padding-left:30px;margin-left:0em;">
+                          <div class="ui-block-a subtitle-blue">
+                                {!item.Leave_Type__c}                                                                 
+                            </div>
+                            <div class="ui-block-b">
+                                <!--<p class="ui-li-aside ui-li-desc">{!item.Approval_Status__c}</p>-->
+                                {!item.Approval_Status__c}
+                            </div>
+                          </div>
+				      </a>
+				    </li>
+				    </apex:repeat>
+				  </apex:repeat>
+				</ul>
+          
+              <br/>
+              <br/>
+              <a href="{!URLFOR($Page.mobile_leavebalances)}" data-role="button" data-ajax="true" onclick="$.mobile.showPageLoadingMsg();">Leave Balance</a>
+              <!-- Refresh data from SAP button -->  
+              <a href="#" data-role="button" data-ajax="true" id="refreshFromSAPButton" onclick="$.mobile.showPageLoadingMsg();refreshFromSAP();">Refresh</a>
+      </apex:form>
+    </apex:define>
+  </apex:composition>
+</apex:page>

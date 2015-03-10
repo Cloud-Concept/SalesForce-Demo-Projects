@@ -1,0 +1,67 @@
+<apex:page id="detailpage" showHeader="false" standardController="Leave_Request__c" standardStylesheets="false" cache="false" doctype="html-5.0">
+
+    
+    <apex:composition template="LeaveRequestTemplate">
+    <apex:define name="content">
+    
+    
+<div data-role="page" id="detailpage"  data-theme="a">
+
+    <div data-role="header">
+        <h2>Leave Request</h2>
+        <a href="/apex/LeaveRequests" data-role="button" data-inline="true" data-ajax="false" data-icon="arrow-l">Back</a>
+    </div>
+    
+    <div data-role="content">   
+        <div class="content-primary">
+            <apex:form id="form">
+
+				<!-- LEAVE REQUEST -->
+                <ul data-role="listview" data-inset="true"  data-theme="b">
+                   <li data-role="fieldcontain" style="height:33px;">
+                        <label for="detailpage:template:form:leavetype" style="width:100px;float:left;">Leave Type</label>
+                        <apex:inputField id="leavetype" value="{!Leave_Request__c.Leave_Type__c}" style="width:90px;float:left;"/>
+                   </li>
+                    <li data-role="fieldcontain" style="height:33px;">                    	               
+                        <label for="fromscroller" style="width:100px;float:left;">From</label>
+                        <input type="text" id="fromscroller" style="width:90px;float:left;" value="{!DAY(Leave_Request__c.From__c)}/{!MONTH(Leave_Request__c.From__c)}/{!YEAR(Leave_Request__c.From__c)}"/>                              
+                    </li>
+                    <li data-role="fieldcontain" style="height:33px;">                    
+                        <label for="toscroller" style="width:100px;float:left;">To</label>
+                        <input type="text" id="toscroller" style="width:90px;float:left;" value="{!DAY(Leave_Request__c.To__c)}/{!MONTH(Leave_Request__c.To__c)}/{!YEAR(Leave_Request__c.To__c)}"/>                   
+                    </li>
+                </ul>
+                
+                <!-- NOTES -->
+                <ul data-role="listview" data-inset="true"  data-theme="b">
+                	<li data-role="fieldcontain">
+                		<label for="notes">Notes</label>
+                		<textarea cols="40" rows="8" name="textarea" id="notes">{!Leave_Request__c.Notes__c}</textarea>
+                	</li>
+                </ul>
+                
+                <!-- APPROVER -->
+                <ul data-role="listview" data-inset="true" data-theme="b">
+                	<li data-role="fieldcontain">
+                		<label for="approver">Approver</label>
+                		<input type="text" disabled="true" id="approver" value="{!Leave_Request__c.Approver__r.FirstName} {!Leave_Request__c.Approver__r.LastName}"/>
+                	</li>
+                </ul>
+                
+                 <div id="savebutton" data-role="button">Save</div>
+            
+            	<input type="hidden" id="leaverequestid" value="{!Leave_Request__c.Id}"/>
+            </apex:form>
+        </div>
+        
+    </div>
+    
+    <div data-role="footer">
+        <h4>- - - -</h4>
+    </div>
+    
+</div>
+
+        </apex:define>
+        </apex:composition>
+</apex:page>

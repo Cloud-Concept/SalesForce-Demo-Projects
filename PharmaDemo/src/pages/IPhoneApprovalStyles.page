@@ -1,0 +1,534 @@
+<!-- 
+  Developed by Timba Software Corp. www.timbasoftware.com admin@timbasoftware.com
+-->
+
+<apex:page showHeader="false" standardStylesheets="false" cache="true" title="Salesforce Mobile" >
+	<style id="IPhoneStyles">
+	
+		body {
+			font-family:verdana;
+			font-size:15px;
+			padding:0px;
+			margin:0px;
+			-webkit-text-size-adjust: none;
+		}
+		
+		a {
+			color:#333;
+			margin:4px;
+		}
+		
+		.ApprovalItemsTable,.caption,.thead {
+			width:100%;
+			text-align:left;
+		}
+		
+		td.linksColumn {
+			width:30%;
+			margin-left:2px;
+		}
+		
+		td.relatedToColumn {
+			width:40%;
+			font-weight:700;
+		}
+		
+		td.dateSubmitedColumn {
+			width:30%;
+		}
+		
+		.linksColumn a {
+			text-align: center;
+			width:80%;
+			height:18px;
+			-webkit-border-radius:3px;
+			background-color: #1A70C5;
+			clear:both;
+			font-weight:bold;
+			color:white;
+			border:1px solid #015BA7;
+			padding-top:7px;
+			display:block;
+			margin:6px 6px;
+			text-decoration: none;
+			font-size:8px;
+		}
+		
+		.linksColumn br {
+			display:none;
+			height:0px;
+		}
+		
+		.ApprovalItemsTable .linksColumn {
+			text-align:center;	
+		}
+		
+		.ApprovalItemsTable td {
+			padding-bottom:4px;
+			padding-top:2px;
+		}
+		
+		.ApprovalItemsTable .even {
+			background: #E2E2E2;
+		}
+		
+		.thead {
+			border-bottom:1px solid #000;
+			text-align:left;
+			padding-left:5px;
+			font-weight:700;
+			font-size: 13px;
+		}
+		
+		#ApprovalItemsTableSeparator {
+			height:3px;
+		}
+		
+		.caption {
+			color:#FFF;
+			xpadding-left:31px;
+			padding-top:6px;
+			height:28px;
+			background:#E5C130 url(/img/icon/opportunities24.png) no-repeat 5px 5px;
+		}
+		
+		.caption .titleCaption {
+			margin-left:31px;
+		}
+		
+		.AccountApprovalCaption {
+			background-color:#236FBD;
+			background-image:url(/img/icon/accounts24.png);
+		}
+		
+		.OpportunityApprovalCaption {
+			background-color:#E5C130;
+			background-image:url(/img/icon/opportunities24.png);
+		}
+		
+		.ContactApprovalCaption {
+			background-color:#56458C;
+			background-image:url(/img/icon/contacts24.png);
+		}
+		
+		.LeadApprovalCaption {
+			background-color:#E39321;
+			background-image:url(/img/icon/leads24.png);
+		}
+		
+		.CampaignApprovalCaption {
+			background-color:#C93;
+			background-image:url(/img/icon/campaigns24.png);
+		}
+		
+		.CaseApprovalCaption {
+			background-color:#B7A752;
+			background-image:url(/img/icon/cases24.png);
+		}
+		
+		.ContractApprovalCaption {
+			background-color:#66895F;
+			background-image:url(/img/icon/contracts24.png);
+		}
+		
+		.ProductApprovalCaption {
+			background-color:#317992;
+			background-image:url(/img/icon/products24.png);
+		}
+		
+		.SolutionApprovalCaption {
+			background-color:#567A00;
+			background-image:url(/img/icon/solutions24.png);
+		}
+		
+		.separator {
+			display:inline-block;
+			width:0px;
+			padding:0px;
+			margin:0px;
+			clear:both;
+		}
+		
+		.ApprovalItemsTable td.linksColumn {
+			font-size:10px;
+		}
+		
+		.ApprovalItemsTable td.relatedToColumn {
+			font-size:12px;
+		}
+		
+		.ApprovalItemsTable td.dateSubmitedColumn {
+			font-size:12px;
+		}
+		
+		label,.label {
+			font-weight:700;
+		}
+		
+		.objectDetailTable .label 
+		{
+			width:50%;
+			text-align: right;
+		}
+		
+		.outputCont {
+			/*
+			float:left;
+			overflow:hidden;
+			width:150px;
+			*/
+			padding-left:5px;			
+			text-align:left;			
+			height:20px;
+			display:block;
+		}
+		
+		.objectDetailTable .outputCont {
+			/* width:50% */
+			text-align: left;
+			height: auto !important;
+			padding-top: 2px;
+		}
+		
+		.outputCont,.label {
+			font-family:verdana;
+		}
+		
+		
+		
+		h1,.subTitle {
+			font-family:Verdana;
+			width:100%;
+			clear:both;
+			background-color:#E5C12F;
+			margin-top:4px;
+			margin-bottom:4px;
+			color:#FFF!important;
+			padding:3px;
+		}
+		
+		h2 {
+			font-family:Verdana;
+			width:100%;
+			display:block;
+			clear:both;
+			background-color:#F0ECD1;
+			margin:0px;
+			color:#000;
+			font-size:13px;
+			text-align:center;
+			padding:2px 0px;
+			margin-right:3px !important;
+		}
+		
+		table,td {
+			font-family:Verdana;
+		}
+		
+		.approvalHeader {
+			color:#FFF;
+			font-family:Verdana;
+			padding-top:5px;
+			padding-bottom:5px;
+			width:100%;
+		}
+		
+		.approvalHeader .title {
+			margin-left:40px;
+		}
+		
+		.objTitle {
+			font-weight:700;
+		}
+		
+		.Account {
+			background:#236FBD url(/img/icon/accounts24.png) no-repeat 10px center;
+		}
+		
+		.AccountBgColor {
+			background-color:#236FBD;
+		}
+		
+		.Opportunity {
+			background:#E5C130 url(/img/icon/opportunities24.png) no-repeat 10px center;
+		}
+		
+		.OpportunityBgColor {
+			background-color:#E5C130;
+		}
+		
+		.Contact {
+			background:#56458C url(/img/icon/contacts24.png) no-repeat 10px center;
+		}
+		
+		.ContactBgColor {
+			background-color:#56458C;
+		}
+		
+		.Lead {
+			background:#E39321 url(/img/icon/leads24.png) no-repeat 10px center;
+		}
+		
+		.LeadBgColor {
+			background-color:#E39321;
+		}
+		
+		.Campaign {
+			background:#C93 url(/img/icon/campaigns24.png) no-repeat 10px center;
+		}
+		
+		.CampaingBgColor {
+			background-color:#C93;
+		}
+		
+		.Case {
+			background:#B7A752 url(/img/icon/cases24.png) no-repeat 10px center;
+		}
+		
+		.CaseBgColor {
+			background-color:#B7A752;
+		}
+		
+		.Contract {
+			background:#66895F url(/img/icon/contracts24.png) no-repeat 10px center;
+		}
+		
+		.ContractBgColor {
+			background-color:#66895F;
+		}
+		
+		.Product {
+			background:#317992 url(/img/icon/products24.png) no-repeat 10px center;
+		}
+		
+		.ProductBgColor {
+			background-color:#317992;
+		}
+		
+		.Solution {
+			background:#567A00 url(/img/icon/solutions24.png) no-repeat 10px center;
+		}
+		
+		.SolutionBgColor {
+			background-color:#567A00;
+		}
+		
+		.overallStatusIndicator {
+			width:100%;
+			float:right;
+		}
+		
+		.subTitle {
+			padding:0px !important;
+		}
+		
+		.subTitle .titleText {
+			float:left;
+		}
+		
+		.subTitle table {
+			
+			width:100% !important;
+			margin:0px;
+			padding:0px;
+			font-size: 12px;
+		}
+		
+		.subTitle table td {
+			overflow:hidden;
+		}
+		
+		.statusWrapper {
+			width:75px ;
+			float:right;
+			height:20px;
+			display:block;	
+			padding:2px;		
+		}
+		
+		.labelTop {
+			width:80px;
+			text-align:right;
+			float:right;
+			height:20px;
+			margin-top:5px;
+			font-size:10px;
+			
+		}
+		
+		.objectDetailTable {
+			font-size:11px !important;
+		}
+		
+		.Pendingbg {
+			background:#FFD74B url(/img/icon/pending12.gif) no-repeat 3px center;
+			padding:4px 0px 2px 19px !important;
+			width:55px !important;
+		}
+		
+		.Approvedbg {
+			background:#A1F78D url(/img/icon/approve12.gif) no-repeat 3px center;
+			padding:4px 0px 2px 19px !important;
+			width:58px !important;
+		}
+		
+		.Rejectedbg {
+			background:#FB8A8C url(/img/icon/reject12.gif) no-repeat 3px center;
+			padding:4px 0px 2px 19px !important;
+			width:58px !important;
+		}
+		
+		.detailField {
+			border-bottom:1px solid #000;
+			padding:2px;
+		}
+		
+		.stepDataContainer {
+			width:100%;
+			xpadding:3px 3px 10px;
+		}
+		
+		.stepDataContainer table {
+			margin:3px 3px 10px;
+			font-size: 12px;
+		} 
+		
+		.textAreaComments {
+			width:100%;
+			height:80px;
+		}
+		
+		.commentFormTable {
+			xmargin:15px 4px 4px;
+		}
+		
+		.labelComment {
+			xpadding-left:5px;
+			font-size:10px;
+		}
+		
+		.standardFont {
+			font-family:Verdana;
+		}
+		
+		.center {
+			text-align:center;
+		}
+		
+		label {
+			font-weight:700;
+		}
+		
+		.labelCont {
+			width:50%;
+			
+		}
+		
+		.reassignTable {
+			width:100%;
+			font-size:12px;
+		}
+		
+		.reassignTable td.labelCont {
+			text-align:right;
+		}
+		
+		.outputCont2 {
+			width:50%;
+		}
+		
+		.outputCont2 select {
+			width:90%;
+		}
+		
+		#commentContainer {
+			padding:10px;
+		}
+		
+		#comments {
+			border:1px solid #000;
+		}
+		
+		.errorMessage {
+			color:red;
+			font-family:verdana;
+			text-align:center;
+		}
+		
+		#reassignCaption {
+			font-weight:700;
+			text-align:left;
+			padding:3px;
+			background:#EEEDD1;
+			font-size:12px;			
+		}
+		
+		#header {
+			background:#638658 url(/img/icon/home32.png) no-repeat 1px 6px;
+			padding-left:36px;
+			color:#FFF;
+		}
+		
+		#lower {
+			font-weight:700;
+		}
+		
+		.header {
+			color:#FFF;
+			font-family:Verdana;
+			padding-left:40px;
+			padding-top:5px;
+			background:#638658 url(/img/icon/home32.png) no-repeat 1px 6px;
+			padding-bottom:5px;
+		}
+		/*
+		.greyBtn {
+			font-family:Verdana;
+			color:#FFF;
+			border-right:1px solid #BCBCBC;
+			border-bottom:1px solid #BCBCBC;
+			border-top:1px solid #FFF;
+			border-left:1px solid #FFF;
+			background:#D6D6CE;
+			display:block;
+			font-weight:700;
+			height:15px;
+			float:left;
+			font-size:12px;
+			text-decoration:none;
+			margin:8px;
+			padding:3px;
+		}
+		
+		input.greyBtn {
+			font-family: Verdana;
+			color:#FFFFFF;
+			padding:4px;
+			border-right:1px solid #BCBCBC;
+			border-bottom:1px solid #BCBCBC;
+			border-top:1px solid #FFFFFF;
+			border-left:1px solid #FFFFFF;
+			background: #D6D6CE;
+			margin:8px;
+			display:block;
+			font-weight:bold;			
+			float:left;
+			height:23px !important;
+			text-decoration:none;
+			-webkit-appearance: square-button;
+			-webkit-border-bottom-left-radius: 0px 0px;
+			-webkit-border-bottom-right-radius: 0px 0px;
+			-webkit-border-top-left-radius: 0px 0px;
+			-webkit-border-top-right-radius: 0px 0px;
+		}	
+		*/
+		
+		.greyBtn {
+		
+		}
+		
+		form {
+			margin:0px !important;
+		}
+	</style>
+</apex:page>

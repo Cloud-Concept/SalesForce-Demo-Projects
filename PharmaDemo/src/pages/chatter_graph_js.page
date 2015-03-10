@@ -1,0 +1,232 @@
+<apex:page contentType="text/javascript" controller="ChatterGraphJSController">
+var rgraph;
+var visitedCache = new Object();
+var oldJsonCache = new Object();
+
+function init() {
+  var jsonStr = '{!Json}';
+  if (!verifyJson(jsonStr)) return;
+  var json = eval(jsonStr);
+  
+  var infovis = document.getElementById('infovis');
+  var w = infovis.offsetWidth, h = infovis.offsetHeight;
+  var graphLevelDistance = 150;
+  
+  var canvas = new Canvas('infovisCanvas', {
+    injectInto: 'infovis',
+    width: w,
+    height: h,
+    
+    backgroundCanvas: {
+      styles: {
+        strokeStyle: '#e8e8e8'
+      },
+      impl: {
+        init: function() {},
+        plot: function(canvas, ctx){
+          var times = 6, d = graphLevelDistance;
+          var pi2 = Math.PI * 2;
+          for (var i = 1; i <= times; i++) {
+            ctx.beginPath();
+            ctx.arc(0, 0, i * d, 0, pi2, true);
+            ctx.stroke();
+            ctx.closePath();
+          }
+        }
+      }
+    }
+  });
+  
+  rgraph = new RGraph(canvas, {
+    levelDistance: graphLevelDistance,
+    duration: 1000,
+    transition: Trans.Quart.easeInOut,
+            
+    Edge: {
+      color: '#aaddff', lineWidth: 2
+    },
+    onCreateLabel: function(domElement, node) {
+      var actionElem;
+      var link = document.createElement('a');
+      var frame = document.createElement('div');
+      
+      if (node.id.startsWith('005')) {
+        actionElem = document.createElement('img');
+        actionElem.src = '/userphoto?u=' + node.id + '&v=1&s=T';
+        actionElem.className = 'profilePicture';
+      } else {
+        actionElem = document.createElement('div');
+        actionElem.className = 'nonprofilePicture';
+        actionElem.style.backgroundPosition = getIconPos(node.id);
+        frame.style.backgroundColor = '#efefef';
+        frame.style.borderColor = '#e5c130';
+        frame.style.width = '70px';
+      }
+      actionElem.onclick = function() { nodeOnClick(node) };
+      link.href = '/' + node.id;
+      link.className = 'link';
+      link.target = '_blank';
+      link.innerHTML = node.name;
+      frame.className = 'detailFrame';
+      frame.appendChild(actionElem);
+      frame.appendChild(document.createElement('br'));
+      frame.appendChild(link);
+      domElement.appendChild(frame);
+    },
+    onPlaceLabel: function(domElement, node) {
+      var style = domElement.style;
+      style.left = (parseInt(style.left) - domElement.offsetWidth / 2) + 'px';
+      style.top = (parseInt(style.top) - domElement.offsetHeight / 2) + 'px';
+    }
+  });
+  
+  rgraph.loadJSON(json);
+  rgraph.refresh();
+  
+  hasDifferentAdjacencies(json);
+  visitedCache[rgraph.root] == '';
+  
+  var ob = document.getElementById('optionsButton');
+  ob.style.display = 'block';
+  ob.style.top = '8px';
+  ob.style.left = (infovis.offsetWidth - ob.offsetWidth - 11) + 'px';
+}
+
+//// Rendering helpers
+
+function verifyJson(json) {
+  if (json.startsWith('[')) return true;
+  
+  var errorString = 'An error has occurred.';
+  if (json.startsWith('Exception:')) {
+    errorString += ('\n\n' + json);
+  }
+  alert(errorString);
+}
+
+var iconPos = new Object();
+iconPos['001'] = '-950';
+iconPos['003'] = '-1022';
+iconPos['006'] = '-1238';
+iconPos['00Q'] = '-1166';
+iconPos['500'] = '-986';
+function getIconPos(id) {
+  var pos = iconPos[id.substr(0, 3)];
+  if (pos == null) pos = '-1202';
+  return '0 ' + pos + 'px';
+}
+
+function nodeOnClick(node) {
+  rgraph.onClick(node.id, {hideLabels: false});
+  
+  // Incremental loading
+  if (visitedCache[node.id] == null) {
+    visitedCache[node.id] = '';
+    requestJson(3, node.id, sumJson);
+  }
+}
+
+function hasDifferentAdjacencies(newJson) {
+  var result = false;
+  for (var i = 0; i < newJson.length; i++) {
+    if (oldJsonCache[newJson[i].id] == null || oldJsonCache[newJson[i].id] < newJson[i].adjacencies.length) {
+      result = true;
+      oldJsonCache[newJson[i].id] = newJson[i].adjacencies.length;
+    }
+  }
+  return result;
+}
+
+//// AJAX request
+
+function requestJson(level, center, handler) {
+  var req = new XMLHttpRequest();
+  req.open('POST', 'chatter_graph_json');
+  req.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+  req.onreadystatechange = function() {
+    if (req.readyState == 4) {
+      var jsonString = req.responseText;
+      if (!verifyJson(jsonString)) return;
+      handler(jsonString);
+    }
+  };
+  req.send('level=' + level + '&center=' + center + '&types=' + getIncludeTypes());
+}
+
+//// AJAX response handling
+
+function sumJson(jsonString) {
+  var newJson = eval(jsonString);
+  if (!hasDifferentAdjacencies(newJson)) return;
+  
+  setTimeout(function() {
+    rgraph.op.sum(newJson, {
+      type: 'fade:con',
+      duration: 1000,
+      hideLabels: false,
+      transition: Trans.Quart.easeInOut
+    });
+  }, 1000);
+}
+
+function morphJson(jsonString) {
+  var newJson = eval(jsonString);
+  rgraph.op.morph(newJson, {
+    type: 'fade:con',
+    duration: 1000,
+    hideLabels: false,
+    transition: Trans.Quart.easeInOut
+  });
+  
+  hasDifferentAdjacencies(newJson);
+  visitedCache[rgraph.root] == '';
+}
+
+//// Options dialog
+
+var optionsChanged;
+
+function toggleOptions() {
+  var o = document.getElementById('options');
+  
+  if (o.style.display == 'block') {
+    acceptOptions();
+  } else {
+    optionsChanged = false;
+    document.getElementById('optionsBlocker').style.display = 'block';
+    var b = document.getElementById('optionsButton');
+    o.style.display = 'block';
+    o.style.top = (b.offsetTop + b.offsetHeight - 1) + 'px';
+    o.style.left = (b.offsetLeft + b.offsetWidth - o.offsetWidth + 1) + 'px';
+  }
+}
+
+function acceptOptions() {
+  if (optionsChanged) {
+    visitedCache = new Object();
+    oldJsonCache = new Object();
+    requestJson(3, rgraph.root, morphJson);
+  }
+  document.getElementById('options').style.display='none';
+  document.getElementById('optionsBlocker').style.display = 'none';
+}
+
+function getIncludeTypes() {
+  var types = new Array();
+  var checkboxes = document.getElementById('optionsTable').getElementsByTagName('input');
+  for (var i = 0; i < checkboxes.length; i++) {
+    if (checkboxes[i].type=='checkbox' && checkboxes[i].checked) {
+      types.push(checkboxes[i].value);
+    }
+  }
+  var customTypeValue = document.getElementById('customType').value;
+  var customFilterValue = document.getElementById('customFilter').value;
+  if (customTypeValue != '') {
+    types.push(customTypeValue + ':' + customFilterValue);
+  }
+  return types.join('::');
+}
+
+String.prototype.startsWith = function(str) { return (this.substr(0, str.length) == str); };
+
+</apex:page>

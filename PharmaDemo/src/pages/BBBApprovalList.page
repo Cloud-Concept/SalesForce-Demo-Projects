@@ -1,0 +1,58 @@
+<!-- 
+  Developed by Timba Software Corp. www.timbasoftware.com admin@timbasoftware.com
+-->
+
+<apex:page controller="BlackBerryApprovalListController" showHeader="false" standardStylesheets="false" cache="true" title="Salesforce Mobile" >
+	
+	
+	<apex:include pageName="ApprovalUserAgent" />
+	
+	<apex:repeat value="{!approvalItemsCollection}" var="approvalItems">
+		<div class="approvalHeader {!approvalItems.itemsType}">
+		<div class="title">
+			{!approvalItems.itemsPluralLabel}<br />
+		</div>
+	</div>
+		
+		<table class="thead">
+			<tr>
+				<td class="linksColumn">Action</td>
+				<td class="relatedToColumn">Related to</td>
+				<td class="dateSubmitedColumn">Date Submitted</td>
+			</tr>
+		</table>
+		
+		<apex:dataTable value="{!approvalItems.itemsList}" var="item" styleClass="ApprovalItemsTable" rowClasses="odd, even">
+
+			<apex:column styleClass="linksColumn" >
+				<apex:outputLink value="{!$Page.BBBReassign}" >
+					<apex:param name="id" value="{!item.workitem.id}"/>
+					<apex:outputText value="Reassign"/>
+				</apex:outputLink>
+				<br />
+				<apex:outputLink value="{!$Page.BBBApproveReject}">
+					<apex:param name="id" value="{!item.workitem.id}"/>
+					<apex:outputText value="Approve/Reject"/>
+				</apex:outputLink>
+			</apex:column> 
+	
+			<apex:column styleClass="relatedToColumn">
+				<apex:outputText value="{!item.relatedTo}"/>
+			</apex:column>
+			
+			<apex:column styleClass="dateSubmitedColumn">
+				<apex:outputText value="{!item.dateSubmitted}"/>
+			</apex:column>
+			
+		</apex:dataTable>
+		
+		<div id="ApprovalItemsTableSeparator">
+		</div>
+		
+	</apex:repeat>
+	
+		<apex:outputText rendered="{!noRecordsToShow}" value="No Items to approve" styleClass="standardFont center" />
+
+	<br />
+
+</apex:page>

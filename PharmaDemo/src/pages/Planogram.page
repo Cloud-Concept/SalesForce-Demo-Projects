@@ -1,0 +1,301 @@
+<apex:page standardController="Account" extensions="PlanogramExt" showHeader="false" standardStylesheets="false" cache="false" id="planogram">
+<html>
+    <head>
+        <title>Salesforce Planogram</title>
+        <style type="text/css">
+        
+         	@font-face {
+                    font-family: 'SFFont';
+                    src: url('https://na1.salesforce.com/resource/1322670148000/SFFont')  format('truetype');
+            }
+            
+             
+            *{
+                font-family: 'SFFont', Helvetica, Arial, sans-serif;
+                
+            }
+            
+            
+            body {
+                font-size:8pt;
+                margin:0px auto;
+            }
+
+            #content {
+                margin: 0px auto;
+                width: 1024px;
+                height: 748px;
+                background-image: url('{!URLFOR($Resource.SFPlanogram, 'AppBG.png')}');
+            }
+            
+            #shelfPlan {
+                float: left;
+                border: 0px solid #FF0000;
+                margin-top: 150px;
+                margin-left: 43px;
+                height: 530px;
+                width: 530px;
+                text-align: center;
+                vertical-align: middle;
+            }
+            
+            #productSelection {
+                float: left;
+                margin-top: 140px;
+                height: 550px;
+                margin-left: 45px;
+                width: 380px;
+                border: 0px solid #0000FF;
+                background: #FFFFFF;
+            }
+            
+            table#shelfPlanTable {
+                height: 530px;
+                width: 440px;
+                margin-left:45px;                
+            }
+            
+            table#shelfPlanTable td{
+                text-align: center;
+                vertical-align: middle;
+            }
+            
+            div.droppableArea {
+                border: 2px dashed #1798C1;
+                height: 80px;
+                width: 80px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                margin-top:5px;
+            }
+            
+            #options {
+                height: 80px;
+                margin:1px solid #FF0000;
+            }
+            
+            div.draggable {
+                height: 80px;
+                width: 80px;
+                float:left;
+                padding:5px;
+                border: 2px dashed #fff;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+                margin-top:5px;        
+                z-index: 1;    
+            }
+            
+            #accordion {
+                height: 480px;
+            }
+            
+            .product {
+                font-size: 8pt;
+            }
+            
+            .visible {
+                visibility: visible;
+                width: 90px;
+                height: 90px;
+            }
+            
+            .invisible {
+                visibility: hidden;
+                width: 0px;
+                height: 0px;
+            }
+            
+            p.productId {
+                visibility: hidden;
+            }
+            
+            #hiddenInputFields {
+                visibility: hidden;
+            }
+                  
+            .addordionElement {
+                overflow: scroll; 
+                -webkit-overflow-scrolling: touch;
+            }    
+            
+            .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+                background: #02a0db !important; /* for non-css3 browsers */
+
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#61c8ef', endColorstr='#02a0db') !important; /* for IE */
+                background: -webkit-gradient(linear, left top, left bottom, from(#61c8ef), to(#02a0db)) !important; /* for webkit browsers */
+                background: -moz-linear-gradient(top,  #61c8ef,  #02a0db) !important; /* for firefox 3.6+ */ 
+                border: 1px solid #0288ba !important;
+                color: #ffffff !important;
+                font-weight: bold !important;
+                font-size:14pt !important;
+            }   
+            
+            .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+                color: #ffffff !important;
+                text-decoration: none;
+                font-family: 'SFFont', Helvetica, Arial, sans-serif !important;
+            }
+            
+            .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+            background: #02a0db !important; /* for non-css3 browsers */
+
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#61c8ef', endColorstr='#02a0db') !important; /* for IE */
+                background: -webkit-gradient(linear, left top, left bottom, from(#61c8ef), to(#02a0db)) !important; /* for webkit browsers */
+                background: -moz-linear-gradient(top,  #61c8ef,  #02a0db) !important; /* for firefox 3.6+ */ 
+                border: 1px solid #0288ba !important;
+                color: #ffffff !important;
+                font-size:14pt !important;
+                text-decoration: none;
+            }
+                      
+        </style>
+        
+        <link rel="stylesheet" href="{!URLFOR($Resource.SFPlanogramJQUI, 'themes/base/jquery.ui.all.css')}" />
+        
+        
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="user-scalable=no, width=device-width" name="viewport" />
+        
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script src="{!URLFOR($Resource.SFPlanogramJQUI, 'ui/jquery.ui.core.js')}"></script>
+        <script src="{!URLFOR($Resource.SFPlanogramJQUI, 'ui/jquery.ui.widget.js')}"></script>
+        <script src="{!URLFOR($Resource.SFPlanogramJQUI, 'ui/jquery.ui.mouse.js')}"></script>
+        <script src="{!URLFOR($Resource.SFPlanogramJQUI, 'ui/jquery.ui.resizable.js')}"></script>
+        <script src="{!URLFOR($Resource.SFPlanogramJQUI, 'ui/jquery.ui.accordion.js')}"></script>
+        <script src="{!URLFOR($Resource.SFPlanogramJQUI, 'ui/jquery.ui.draggable.js')}"></script>
+        <script src="{!URLFOR($Resource.SFPlanogramJQUI, 'ui/jquery.ui.droppable.js')}"></script>
+        
+        <script src="{!$Resource.SFPlanogramJQTouch}" />
+        <script src="{!$Resource.SFPlanogramJQUITouch}" />
+        
+        
+        <script type="text/javascript">
+            
+            $(function() {
+                $( "#accordion" ).accordion({
+                    fillSpace: true
+                });
+
+                $( "#accordionResizer" ).resizable({
+                    minHeight: 400,
+                    resize: function() {
+                        $( "#accordion" ).accordion( "resize" );
+                    }
+                });
+                
+                
+                $( "div.draggable" ).draggable({ 
+                    helper: 'clone', 
+                    appendTo: 'body' ,
+                    scroll: false 
+                });
+                                
+                
+                $( "div.droppableArea" ).droppable({
+                    drop: function( event, ui ) {
+                        $(this).html($(ui.draggable).html());
+                        $(this).css('border','none');
+                        var imgs = $(this).find('img');
+                        $(this).find('img').toggleClass('visible');
+                        $(this).find('img').toggleClass('invisible');
+                        updatePlanogramField();
+                    }
+                });
+               
+                
+            });
+            
+            function updatePlanogramField() {
+                var Ids = '';
+                $.each($("div.droppableArea"), function() {
+                    var prodId = $(this).find('.productId').html();
+                    if(prodId==null) {
+                        prodId = '';
+                    } 
+                    Ids += prodId +',';
+                });
+                $("#planogram\\:form\\:hiddenPlanogramField").val(Ids);                 
+            }
+            
+            
+            
+            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+        </script>
+
+
+        
+        
+    </head>
+    <body>
+        <apex:form id="form">
+            <div id="content">
+                <div id="shelfPlan">
+                    <table id="shelfPlanTable" border="0" cellpadding="5" cellspacing="15">
+                        <tr>
+                            <td><center><div id="slot_1" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_2" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_3" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_4" class="droppableArea"></div></center></td>
+                        </tr>
+                        <tr>
+                            <td><center><div id="slot_5" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_6" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_7" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_8" class="droppableArea"></div></center></td>
+                        </tr>
+                        <tr>
+                            <td><center><div id="slot_9" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_10" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_11" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_12" class="droppableArea"></div></center></td>
+                        </tr>
+                        <tr>
+                            <td><center><div id="slot_13" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_14" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_15" class="droppableArea"></div></center></td>
+                            <td><center><div id="slot_16" class="droppableArea"></div></center></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="productSelection">
+                    <div id="productList">
+                        <div id="accordion">
+                            <apex:repeat value="{!ProductCategories}" var="category">
+                                <h3><a href="#">{!category}</a></h3>
+                                <div class="addordionElement">
+                                    <apex:repeat value="{!familyToProductsMapping[category]}" var="product">
+                                    
+                                        <div class="draggable product">
+                                            <img class="visible" src="{!product.Image__c}" />
+                                            <img class="invisible"  src="{!product.Grouped_Image__c}" />
+                                            <p class="productId">{!product.Id}</p>                                          
+                                        </div>
+                                    </apex:repeat>
+                                </div>
+                            </apex:repeat>                          
+                        </div>
+                    </div>
+                    <div id="options">
+                        <br />
+                        <table width="100%">
+                            <tr>
+                                <td><center><apex:commandButton image="{!URLFOR($Resource.SFPlanogram, 'Icons/Buttons/Clear.png')}" action="{!customClear}" value="Clear"/></center></td>
+                                <td><center><apex:commandButton image="{!URLFOR($Resource.SFPlanogram, 'Icons/Buttons/Save.png')}" action="{!customSave}" value="Save"/></center></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>            
+            </div>
+            <div id="hiddenInputFields">
+                <apex:inputField id="hiddenPlanogramField" value="{!Account.AccountPlanogram__c}" />
+            </div>
+            
+            <div onclick="window.href='apex/Planogram'" style="boder: 1px solid #FF0000; height: 100px; position:absolute; top:0px;"></div>
+        </apex:form>
+    </body>
+</html>
+</apex:page>

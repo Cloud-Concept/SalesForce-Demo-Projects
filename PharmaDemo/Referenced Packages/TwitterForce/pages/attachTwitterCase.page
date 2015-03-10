@@ -1,0 +1,21 @@
+<!-- Jonathan Hersh - jhersh@salesforce.com - 3/3/2009 -->
+
+<apex:page controller="twitterforce.attachTwitterController">
+	<apex:form >
+		<apex:pageblock title="Attach to Existing Case">
+			<apex:pageblockbuttons >
+				<apex:commandbutton value="Save" action="{!doSave}" />
+				<apex:commandbutton value="Cancel" action="{!doCancel}" />
+			</apex:pageblockbuttons>
+			<apex:pageblocksection title="Case Detail">
+				<apex:outputfield value="{!c.subject}" />
+				<apex:outputfield value="{!c.contact.twitterforce__Twitter_Username__c}" />
+				<apex:outputfield value="{!c.description}" />
+				<apex:outputfield value="{!c.contact.name}" />
+			</apex:pageblocksection>
+			<apex:pageblocksection title="Choose a Parent Case">
+				<apex:inputfield value="{!c.parentid}" />
+			</apex:pageblocksection>
+		</apex:pageblock>
+	</apex:form>
+</apex:page>

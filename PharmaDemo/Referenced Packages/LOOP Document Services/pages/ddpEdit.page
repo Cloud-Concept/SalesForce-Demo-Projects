@@ -1,0 +1,70 @@
+<apex:page tabStyle="Loop__DDP__c" controller="Loop.ddpContentWorkspaceController" action="{!onload}" title="{!objTitle} Edit: {!objName}">
+	<style>
+		select.article { min-width: 100px; }
+	</style>
+	<apex:sectionHeader title="{!objTitle} Edit" subtitle="{!objName}" />
+	<apex:outputPanel id="pgmsgs">
+		<apex:pageMessages />
+	</apex:outputPanel>
+	<apex:form >
+		<apex:pageBlock mode="edit">
+			<apex:pageBlockButtons location="top">
+				<apex:commandButton value="Save" reRender="pgmsgs" action="{!save}" />
+				<apex:commandButton value="Cancel" action="{!cancel}" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection columns="2">
+				<apex:pageBlockSectionItem rendered="{!$Request.type='orgwideemail'}">
+					<apex:outputLabel for="orgWideEmail" value="{!$ObjectType.Loop__DDP__c.fields.Loop__Org_Wide_Email__c.label}" />
+					<apex:selectList id="orgWideEmail" value="{!orgWideEmailId}" size="1">
+						<apex:selectOptions value="{!orgWideEmails}" />
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="{!$Request.type='objectname'}" helpText="Standard objects not listed need to be set at the DDP Record Type level.">
+					<apex:outputLabel for="objectName" value="{!$ObjectType.Loop__DDP__c.fields.Loop__Object_Name_Link__c.label}" />
+					<apex:selectList id="objectName" value="{!customObjectName}" size="1">
+						<apex:selectOptions value="{!allObjects}" />
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="{!$Request.type='massreport'}" helpText="{!$ObjectType.Loop__DDP__c.fields.Loop__Mass_Email_Report_to__c.inlineHelpText}">
+					<apex:outputLabel for="massReport" value="{!$ObjectType.Loop__DDP__c.fields.Loop__Mass_Email_Report_to__c.label}" />
+					<apex:outputPanel >
+						<apex:selectList id="massReport" value="{!ddp.Loop__MassEmailReport__c}" size="1">
+							<apex:selectOption itemValue="" itemLabel="--None--" />
+							<apex:selectOptions value="{!reports}" />
+						</apex:selectList>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="{!$Request.type='article'}" helpText="{!$ObjectType.Loop__DDP__c.fields.Loop__KA_Optional__c.inlineHelpText}">
+					<apex:outputLabel for="optionalArticles" value="{!$ObjectType.Loop__DDP__c.fields.Loop__KA_Optional__c.label}" />
+					<apex:selectList id="optionalArticles" value="{!optionalArticles}" size="5" multiselect="true" styleClass="article">
+						<apex:selectOptions value="{!articleTypes}" />
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="{!$Request.type='article'}" helpText="{!$ObjectType.Loop__DDP__c.fields.Loop__KA_Separate__c.inlineHelpText}">
+					<apex:outputLabel for="separateArticles" value="{!$ObjectType.Loop__DDP__c.fields.Loop__KA_Separate__c.label}" />
+					<apex:selectList id="optionalArticles" value="{!separateArticles}" size="5" multiselect="true" styleClass="article">
+						<apex:selectOptions value="{!articleTypes}" />
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="{!$Request.type='article'}" helpText="{!$ObjectType.Loop__DDP__c.fields.Loop__KA_Required__c.inlineHelpText}">
+					<apex:outputLabel for="requiredArticles" value="{!$ObjectType.Loop__DDP__c.fields.Loop__KA_Required__c.label}" />
+					<apex:selectList id="requiredArticles" value="{!requiredArticles}" size="5" multiselect="true" styleClass="article">
+						<apex:selectOptions value="{!articleTypes}" />
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+				<apex:inputField value="{!cio.Loop__Storage_Folder__c}" rendered="{!$Request.type='storageFolder'}" />
+				<apex:pageBlockSectionItem rendered="{!$Request.type='storageFolder'}" />
+				<apex:pageBlockSectionItem rendered="{!$Request.type='storageFolder'}">
+					<apex:outputLabel />
+					<apex:outputLink value="{!$Page.Loop__fieldTagger}?id={!cio.Loop__DDP__c}" target="_blank">Field Tagger</apex:outputLink>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="{!$Request.type='dataMapping'}">
+					<apex:outputLabel for="dataMapping" value="{!$ObjectType.Loop__DDP_Integration_Option__c.fields.Loop__Data_Mapping__c.label}" />
+					<apex:selectList id="dataMapping" value="{!dataMappingId}" size="1">
+						<apex:selectOptions value="{!dataMappings}" />
+					</apex:selectList>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

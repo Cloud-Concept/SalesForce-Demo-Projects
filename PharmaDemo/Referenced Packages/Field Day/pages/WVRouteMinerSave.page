@@ -1,0 +1,35 @@
+<apex:page controller="Wherevantage.WVRouteMiner" sidebar="true">
+<apex:sectionHeader title="Save trip" id="sectionHeader"/>
+<apex:form >
+<p></p>
+After saving the trip you can easily load this using the Route Miner iPhone or Blackberry application.
+
+<style type="text/css">
+.definedWidthStyle
+{
+   width: 500px;
+}
+</style>
+
+<apex:pageBlock >
+<apex:pageBlockButtons location="top" id="buttons">
+    <apex:commandButton action="{!TrySaveItinerary}" value="Save" id="SaveButton"/>
+    <apex:commandButton action="{!RouteMinerPage}" value="Cancel"/> 
+</apex:pageBlockButtons>
+
+<apex:outputPanel >
+<apex:pageMessages />
+<table>
+    <tr>
+        <td><apex:outputLabel dir=""  value="Title:" for="title" /></td>
+        <td>
+            <apex:inputText id="title" styleClass="definedWidthStyle" value="{!ActiveItinerary.Summary.Title}"></apex:inputText>
+        </td>
+    </tr>
+</table>
+</apex:outputPanel>
+
+</apex:pageBlock>
+
+</apex:form>
+</apex:page>

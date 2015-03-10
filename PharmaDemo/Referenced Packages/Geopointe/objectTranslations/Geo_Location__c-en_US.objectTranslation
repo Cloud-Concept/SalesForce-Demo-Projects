@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Geo Location</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Geo Locations</value>
+    </caseValues>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to the Geocode object holding all of mapping information for the record. --></help>
+        <label><!-- Geocode --></label>
+        <name>Geocode__c</name>
+        <relationshipLabel><!-- Locations --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- If you collect your own coordinates for your locations, you can put the latitude here. The system will use this location instead of the address on the record. --></help>
+        <label><!-- Latitude --></label>
+        <name>Latitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- If you collect your own coordinates for your locations, you can put the longitude here. The system will use this location instead of the address on the record. --></help>
+        <label><!-- Longitude --></label>
+        <name>Longitude__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>PostalCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates that this is used by the system as a temporary record.  It is not intended to be saved long-term.  The system will periodically clean these records up. --></help>
+        <label><!-- Temporary --></label>
+        <name>Temporary__c</name>
+    </fields>
+    <layouts>
+        <layout>Location Layout</layout>
+        <sections>
+            <label><!-- Map --></label>
+            <section>Map</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Map --></label>
+        <name>Map</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_Records_Geo_Location --></label>
+        <name>Map_Records_Geo_Location</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_newWindow --></label>
+        <name>Map_newWindow</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,44 @@
+<apex:page controller="Wherevantage.WVRouteMiner" sidebar="true">
+<apex:sectionHeader title="Load trip" id="sectionHeader"/>
+
+  <!-- Begin Default Content REMOVE THIS -->
+  <!-- End Default Content REMOVE THIS -->
+<apex:form >
+    <apex:pageBlock >
+  
+    <apex:pageBlockButtons location="top" id="buttons">
+    <apex:commandButton action="{!RouteMinerPage}" value="Cancel"/> 
+    </apex:pageBlockButtons>
+
+    <apex:pageBlockTable value="{!AllItineraries}" var="o">
+
+    <apex:column >
+        <apex:facet name="header"></apex:facet>
+        <apex:commandLink value="Load" action="{!LoadItinerary}">
+        <apex:param name="key" value="{!o.Id}"/>
+        </apex:commandLink> 
+    </apex:column>
+
+    <apex:column >
+        <apex:facet name="header"></apex:facet>
+        <apex:commandLink value="Delete" action="{!DeleteItinerary}">
+        <apex:param name="key" value="{!o.Id}"/>
+        </apex:commandLink> 
+    </apex:column>
+
+    <apex:column >
+        <apex:facet name="header">Trip title</apex:facet>
+        <apex:outputlabel value="{!o.Title}"/> 
+    </apex:column>
+
+    <apex:column >
+        <apex:facet name="header">Last modified</apex:facet>
+        <apex:outputlabel value="{!o.LastModified}"/> 
+    </apex:column>
+                                        
+    </apex:pageBlockTable>
+        
+    </apex:pageBlock>
+</apex:form>
+
+</apex:page>

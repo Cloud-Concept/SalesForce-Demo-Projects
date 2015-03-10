@@ -1,0 +1,9 @@
+<apex:page >
+<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/6S6wC9Epv2I?hl=en&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/OH3UF9Z5dLo?hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+<p></p>
+Field Day is location at work, inside Salesforce on the web or on your iPhone. Using the data you already have in Salesforce you can see leads or opportunities on your map.  Pull up other contacts and accounts nearby. Plan trips and more. We're excited to launch release Field Day and would love any <a href="http://www.wherevantage.com/feedback">feedback</a> you may have.<p></p>
+Check out our <a href="http://www.wherevantage.com/help">help and training</a> pages and don't hesitate to contact us for <a href="http://www.wherevantage.com/support">support.</a><p></p>
+<a href="itms://itunes.apple.com/us/app/field-day-for-salesforce-com/id405889975?mt=8">Download the Field Day iPhone client!</a>
+<p></p>
+<a href="itms://itunes.apple.com/us/app/field-day-for-salesforce-com/id405889975?mt=8"><apex:image id="Apple" value="{!$Resource.Wherevantage__WVAppleStoreLogo}" height="50" /></a>
+</apex:page>

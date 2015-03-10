@@ -1,0 +1,46 @@
+<apex:page id="selectionPage" tabStyle="Action_Plans__tab" standardController="ActionPlan__c" extensions="ActionPlanSelectController" >
+    
+    <script type="text/javascript" src="{!$Resource.ActionPlans_sortable}"></script>
+    
+    <link href="{!$Resource.ActionPlan_ActionPlanSelectStyles}" rel="stylesheet" type="text/css" />
+    
+    <apex:sectionHeader title="New Action Plan" subtitle="Select An Action Plan Template" help="" />
+    <apex:pageBlock title="Select An Action Plan Template" mode="edit">
+    
+        <apex:outputpanel rendered="{!actionPlanTemplates.size > 0}">
+            <table class="sortable" cellpadding="0" cellspacing="0">
+                <tr>
+                    <th>{!$ObjectType.ActionPlanTemplate__c.fields.Name.label}</th>
+                    <th>{!$ObjectType.ActionPlanTemplate__c.fields.Description__c.label}</th>
+                    <th>{!$ObjectType.ActionPlanTemplate__c.fields.lastModifiedDate.label}</th>
+                    <th>{!$ObjectType.ActionPlanTemplate__c.fields.createdById.label}</th>
+                </tr>
+                
+                <apex:repeat value="{!actionPlanTemplates}" var="actionPlan">
+                <tr>
+                    <td width="15%">
+                        <apex:outputPanel rendered="{!$CurrentPage.parameters.refType != null}">
+                            <apex:outputLink value="/apex/ActionPlanCreation?templateId={!actionPlan.Id}&refId={!$CurrentPage.parameters.refId}&refType={!$CurrentPage.parameters.refType}" style="font-weight:bold">{!actionPlan.Name}</apex:outputLink>
+                        </apex:outputPanel>
+                        <apex:outputPanel rendered="!$CurrentPage.parameters.refType == null}">
+                            <apex:outputLink value="/apex/ActionPlanCreation?templateId={!actionPlan.Id}" style="font-weight:bold">{!actionPlan.Name}</apex:outputLink>
+                        </apex:outputPanel>
+                    </td>
+                    <td>{!actionPlan.Description__c}</td>
+                    <td width="15%"><apex:outputField value="{!actionPlan.lastModifiedDate}" /></td>
+                    <td width="15%"><apex:outputField value="{!actionPlan.createdById}" /></td>
+                </tr>
+                </apex:repeat>
+            </table>
+        </apex:outputpanel>
+        
+        <apex:outputpanel rendered="{!actionPlanTemplates.size == 0}" layout="block" style="padding: 15px; text-align: center;">
+        
+            <apex:outputText value="You must create a Action Plan Template to continue." styleClass="errorMsg"/><br/><br/>
+            <button onclick="location.href='/apex/ActionPlanTemplateCreation'" class="btn">Create Action Plan Template</button>
+        
+        </apex:outputpanel>
+        
+    </apex:pageBlock>
+    
+</apex:page>

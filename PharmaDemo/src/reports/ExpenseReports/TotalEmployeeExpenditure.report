@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>SFDC_Expense_Line_Item__c.Amount__c</field>
+    </columns>
+    <currency>GBP</currency>
+    <description>Show total employee expenditure for Current Fiscal Year</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>SFDC_Expense_Header__c.Week_Ending__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Total Employee Expenditure</name>
+    <reportType>CustomEntityCustomEntity$SFDC_Expense_Header__c$SFDC_Expense_Line_Item__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>SFDC_Expense_Header__c.Week_Ending__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

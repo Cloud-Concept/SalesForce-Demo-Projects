@@ -1,0 +1,56 @@
+<apex:page controller="VCSSA.MailBoxController" action="{!init}" showheader="false" sidebar="false" standardStylesheets="true" cache="false">
+
+
+<!-- TODO: buscar como hacer que esta variable tenga https://naX.salesforce.com , no vcssa.naX.salesforce.com y que funcione confiablemente (inclyuendo sandboxes tipo tapp1.salesforce.com 
+esto no sirve: {!LEFT( $Api.Enterprise_Server_URL_25 , FIND('/', $Api.Enterprise_Server_URL_25, 9) )}
+-->
+<apex:variable var="url_salesforce" value="" />
+
+<apex:variable var="url_inboxpage"  value="{!URLFOR($Page.VCSSA__Inbox, null)}" />
+<apex:variable var="url_inboxextra"  value="{!if($CurrentPage.parameters.search!='','&search=1','')}{!if($CurrentPage.parameters.search_text!='','&search_text='+URLENCODE($CurrentPage.parameters.search_text),'')}{!if($CurrentPage.parameters.search_subject!='','&search_subject='+URLENCODE($CurrentPage.parameters.search_subject),'')}{!if($CurrentPage.parameters.search_from!='','&search_from='+URLENCODE($CurrentPage.parameters.search_from),'')}{!if($CurrentPage.parameters.search_tags!='','&search_tags='+URLENCODE($CurrentPage.parameters.search_tags),'')}{!if($CurrentPage.parameters.search_date1!='','&search_date1='+URLENCODE($CurrentPage.parameters.search_date1),'')}{!if($CurrentPage.parameters.search_date2!='','&search_date2='+URLENCODE($CurrentPage.parameters.search_date2),'')}" />
+<apex:variable var="url_inbox"  value="{!url_inboxpage}?aid={!aliasId}&ltags={!ltags}&p={!pageNo}{!url_inboxextra}" />
+<apex:variable var="url_inbox_nosearch"  value="{!url_inboxpage}?aid={!aliasId}&ltags={!ltags}&p={!pageNo}" />
+<apex:variable var="url_inbox1"  value="{!url_inboxpage}?aid={!aliasId}" />
+<apex:variable var="url_inbox2"  value="{!url_inboxpage}?ltags={!ltags}" />
+<apex:variable var="url_inbox3"  value="{!url_inboxpage}?aid={!aliasId}&ltags={!ltags}{!url_inboxextra}" />
+<apex:variable var="url_compose"  value="{!url_inbox}&action=compose&vmode=compose&inboxurl={!URLENCODE(url_inbox)}" /> 
+<apex:variable var="url_composesf"  value="/_ui/core/email/author/EmailAuthor?retURL={!URLENCODE(url_inbox)}&saveURL={!URLENCODE(url_inbox&'&cb=composesf&msg=The+message+was+sent')}" />
+<apex:variable var="url_addresses"  value="{!url_inbox}&vmode=addresses&inboxurl={!URLENCODE(url_inbox)}" />
+<apex:variable var="url_massbind"  value="{!url_inbox}&vmode=massbind&inboxurl={!URLENCODE(url_inbox)}" />
+<apex:variable var="url_back"  value="{! if($CurrentPage.parameters.inboxurl!='',$CurrentPage.parameters.inboxurl,url_inbox) }" />
+<apex:variable var="url_quickreply" value="{!url_inboxpage}?vmode=reply&action=replyall&inboxurl={! URLENCODE(url_inbox) }&ids=" />
+<apex:variable var="url_viewfrominbox" value="{!url_inbox}&vmode=view&action=untag&tags=@unread&inboxurl={!URLENCODE(url_inbox)}&ids=" />
+
+
+<apex:pageBlock >
+
+    <div class="toolbarframe toolbarframeInt">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0"><tr>
+        <td width="100%" align="center">
+            <form>
+                <input type="hidden" name="aid" value="{!aliasId}" />
+                <input type="hidden" name="ltags" value="{!ltags}" />
+                <input type="hidden" name="vmode" value="addresses" />
+                <input type="hidden" name="inboxurl" value="{!url_inbox}" />
+                    <div style="text-align: center;" class="toolbarframeInt">
+                    <b>Name or address:</b> <input type="text" name="search_contact" value="{!search_contact}" id="search_contact" value="" /> &nbsp;
+                    <input type="submit" value="search" class="btn"/>
+                    </div>
+            </form>
+        </td>
+    </tr></table>
+    </div>
+
+        <apex:pageBlockTable value="{!Recipients}" var="c">
+            <apex:column > <a href="{!url_compose}&from_id={!URLENCODE(c.sobjid)}" target="_top">{!c.name}</a></apex:column>
+            <apex:column > {!c.email} </apex:column>
+            <apex:column > {!c.sobjtype} </apex:column>
+        </apex:pageBlockTable>
+	<script type="text/javascript">
+	focusEltId = 'search_contact';
+	try{ document.getElementById(focusEltId).focus() } catch(e) {}
+	</script>
+
+</apex:pageBlock>
+
+</apex:page>

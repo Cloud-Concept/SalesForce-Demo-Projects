@@ -1,0 +1,168 @@
+<apex:component Controller="ITBrelViz.CtrlAccountHierarchy">
+    <apex:attribute name="currentId" description="This is the Account Id for displaying Acccount Hierarchy" type="String" required="true" assignTo="{!currentId}"/>
+	<apex:styleSheet value="{!URLFOR($Resource.ITBrelViz__treeview, 'css/tree.css')}" />
+	<script type="text/javascript">
+	
+	function toggleAction(img,block){
+		if($(block) != null)      
+		{
+			if($(block).getStyle('display') !='none')
+			{
+				$(block).setStyle({
+					  display: 'none'
+				});
+				if(img.className == 'collapseStart'){
+					img.className = 'expandStart';
+				}
+				else if(img.className = 'collapseEnd')
+				{
+					img.className = 'expandEnd';
+				}
+				else
+				{
+					img.className = 'expand';
+				}
+				
+			}
+			else
+			{
+				$(block).setStyle({
+					  display: 'block'
+				});
+				if(img.className == 'expandStart'){
+					img.className = 'collapseStart';
+				}
+				else if(img.className = 'expandEnd')
+				{
+					img.className = 'collapseEnd';
+				}
+				else
+				{
+					img.className = 'collapse';
+				}
+				
+			}
+		}
+	
+	}
+	
+	function allContacts(){
+
+
+		for(i=0; i<$$('div.contactBlock').length; i++)
+		{	
+
+			obj = $$('div.contactBlock')[i];
+			
+			if(obj.style.display!="none")
+			{
+				obj.style.display="none";
+			}
+			else
+			{
+				obj.style.display="block";
+			}
+		}
+		
+	
+	}
+	
+		function allHoverDetails(){
+
+
+		for(i=0; i<$$('span.hDetail').length; i++)
+		{	
+
+			obj = $$('span.hDetail')[i];
+			
+			if(obj.style.display!="none")
+			{
+				obj.style.display="none";
+			}
+			else
+			{
+				obj.style.display="";
+			}
+		}
+		
+	
+	}
+	</script> 
+
+	<apex:inputCheckbox value="{!chkContacts}" onClick="allContacts();" id="conSel" />Show Contacts&nbsp;<apex:inputCheckbox value="{!chkhoverDetails}" onClick="allHoverDetails();" id="hdSel" />Show Details<br/><br/>
+
+    <div class="treeView" style="overflow-y:auto; overflow-x:hidden; max-height:580px;margin-bottom:20px;">
+    		
+
+            <apex:repeat value="{!ObjectStructure}" var="pos" >
+            <apex:repeat value="{!pos.levelFlag}" var="flag" first="0">
+                <apex:image url="/s.gif" height="16" width="20" rendered="{!IF(flag,false,true)}"/>
+                <apex:image url="/s.gif" styleClass="chain" height="16" width="20" rendered="{!IF(flag,true,false)}"/>
+            </apex:repeat>
+
+			
+            <apex:outputText rendered="{!IF(pos.nodeType=='start',true,false)}">
+            	<apex:image url="/s.gif" styleClass="collapseStart" height="16" width="20" title="Click to expand/collapse nested items."  onClick="toggleAction(this,'{!pos.nodeId}')"/>            
+            </apex:outputText>
+
+            <apex:outputText rendered="{!IF(OR(pos.nodeType=='parent',pos.nodeType=='parent_end'),true,false)}">
+                <apex:image url="/s.gif" styleClass="collapse" rendered="{!IF(pos.nodeType=='parent',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="toggleAction(this,'{!pos.nodeId}')"/>
+                <apex:image url="/s.gif" styleClass="collapseEnd" rendered="{!IF(pos.nodeType=='parent_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="toggleAction(this,'{!pos.nodeId}')"/>                
+            </apex:outputText>
+            <apex:outputText rendered="{!IF(OR(pos.nodeType=='child',pos.nodeType=='child_end'),true,false)}">
+                <apex:image url="/s.gif" styleClass="node" rendered="{!IF(pos.nodeType=='child',true,false)}" height="16" width="20" />
+                <apex:image url="/s.gif" styleClass="nodeEnd" rendered="{!IF(pos.nodeType=='child_end',true,false)}" height="16" width="20" />
+            </apex:outputText>
+            <apex:outputText rendered="{!IF(pos.nodeType=='end',true,false)}">
+                <apex:image url="/s.gif" styleClass="nodeEnd" height="16" width="20"/>
+            </apex:outputText>
+
+            &nbsp;<apex:image url="/img/icon/accounts24.png"  height="16" width="16"/>&nbsp;<apex:outputLink value="/{!pos.account.id}" style="{!IF(pos.currentNode,'font-weight: bold;','')}" styleClass="columnHeadActiveBlack" target="_top">Account: {!pos.account.name}</apex:outputLink>
+
+            <span class="hDetail" style="display:none;"><apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')}" value="{!IF(pos.hoverDetailsParsed =='','','(')}{!pos.hoverDetailsParsed}{!IF(pos.hoverDetailsParsed =='','',')')}"/></span>
+
+            <div> </div>
+
+       		 <apex:repeat value="{!pos.contactTreeNodeList}" var="ctn">
+       		 				            		
+	               <div class="contactBlock" style="display:none;">
+			            <apex:repeat value="{!pos.levelFlag}" var="flag" first="0">
+			                <apex:image url="/s.gif" height="16" width="20" rendered="{!IF(flag,false,true)}"/>
+			                <apex:image url="/s.gif" styleClass="chain" height="16" width="20" rendered="{!IF(flag,true,false)}"/>
+			            </apex:repeat>
+
+					    <apex:outputText rendered="{!IF(pos.nodeType=='start',true,false)}">
+			                <apex:image url="/s.gif" height="16" width="20" />               
+			            </apex:outputText>            
+			            <apex:outputText rendered="{!IF(OR(pos.nodeType=='parent',pos.nodeType=='parent_end'),true,false)}">
+			                <apex:image url="/s.gif" styleClass="chain" rendered="{!IF(pos.nodeType=='parent',true,false)}" height="16" width="20" />
+			                <apex:image url="/s.gif" rendered="{!IF(pos.nodeType=='parent_end',true,false)}" height="16" width="20" />                
+			            </apex:outputText>
+			            <apex:outputText rendered="{!IF(OR(pos.nodeType=='child',pos.nodeType=='child_end'),true,false)}">
+			                <apex:image url="/s.gif" styleClass="chain" rendered="{!IF(pos.nodeType=='child',true,false)}" height="16" width="20" />
+			                <apex:image url="/s.gif" rendered="{!IF(pos.nodeType=='child_end',true,false)}" height="16" width="20" />
+			            </apex:outputText>
+			            <apex:outputText rendered="{!IF(pos.nodeType=='end',true,false)}">
+			                <apex:image url="/s.gif" height="16" width="20"/>
+			            </apex:outputText>
+		               	<apex:image url="/s.gif" styleClass="{!IF(ctn.nodeType=='normal','node','nodeEnd')}" height="16" width="20" />&nbsp;<apex:image url="/img/icon/contacts24.png"  height="16" width="16"/>&nbsp;<apex:outputLink value="/{!ctn.contact.id}" styleClass="columnHeadActiveBlack" target="_top">{!ctn.contact.Name}</apex:outputLink><span class="hDetail" style="display:none;"><apex:outputText value=" {!IF(ctn.hoverDetailsParsed =='','','(')}{!ctn.hoverDetailsParsed}{!IF(ctn.hoverDetailsParsed =='','',')')}"/></span><br/>
+	           	 
+	           	</div>
+
+           	</apex:repeat> 
+      
+            <apex:outputText >
+                <div id='{!pos.nodeId}'>  
+	            	<apex:outputText rendered="{!IF(OR(pos.nodeType=='child_end',pos.nodeType=='child'),true,false)}">
+	            	</div>
+	            	</apex:outputText>     
+            </apex:outputText>
+
+            <apex:repeat value="{!pos.closeFlag}" var="close">
+                </div> 
+            </apex:repeat>            
+
+    	</apex:repeat>
+    </div>
+
+</apex:component>

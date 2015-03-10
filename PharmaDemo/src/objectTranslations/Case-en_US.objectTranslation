@@ -1,0 +1,1509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Query</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Queries</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Access</value>
+        </caseValues>
+        <name>case_access</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Access Level</value>
+        </caseValues>
+        <name>case_access_level</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Account</value>
+        </caseValues>
+        <name>case_account</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Alert</value>
+        </caseValues>
+        <name>case_alert</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Asset</value>
+        </caseValues>
+        <name>case_asset</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Assignment Rule</value>
+        </caseValues>
+        <name>case_assignment_rule</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Capture</value>
+        </caseValues>
+        <name>case_capture</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Capture Information</value>
+        </caseValues>
+        <name>case_capture_information</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Capture Page</value>
+        </caseValues>
+        <name>case_capture_page</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Close</value>
+        </caseValues>
+        <name>case_close</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Closed</value>
+        </caseValues>
+        <name>case_closed</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Comment</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Query Comments</value>
+        </caseValues>
+        <name>case_comment</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Comment ID</value>
+        </caseValues>
+        <name>case_comment_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Comment Information</value>
+        </caseValues>
+        <name>case_comment_information</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Company</value>
+        </caseValues>
+        <name>case_company</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Contact</value>
+        </caseValues>
+        <name>case_contact</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Created Date</value>
+        </caseValues>
+        <name>case_created_date</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Creator</value>
+        </caseValues>
+        <name>case_creator</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Currency</value>
+        </caseValues>
+        <name>case_currency</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Custom Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Query Custom Fields</value>
+        </caseValues>
+        <name>case_custom_field</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Description</value>
+        </caseValues>
+        <name>case_description</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Details</value>
+        </caseValues>
+        <name>case_detail</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Detail Link</value>
+        </caseValues>
+        <name>case_detail_link</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Division</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Query Division</value>
+        </caseValues>
+        <name>case_division</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Edit</value>
+        </caseValues>
+        <name>case_edit</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Email</value>
+        </caseValues>
+        <name>case_email</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Query Fields</value>
+        </caseValues>
+        <name>case_field</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query History</value>
+        </caseValues>
+        <name>case_history</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query History ID</value>
+        </caseValues>
+        <name>case_history_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query History Info</value>
+        </caseValues>
+        <name>case_history_info</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query History Owner</value>
+        </caseValues>
+        <name>case_history_owner</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query History Report</value>
+        </caseValues>
+        <name>case_history_report</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query History Status</value>
+        </caseValues>
+        <name>case_history_status</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query ID</value>
+        </caseValues>
+        <name>case_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Information</value>
+        </caseValues>
+        <name>case_information</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Last Modified</value>
+        </caseValues>
+        <name>case_last_modified</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Lifecycle</value>
+        </caseValues>
+        <name>case_lifecycle</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Name</value>
+        </caseValues>
+        <name>case_name</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Number</value>
+        </caseValues>
+        <name>case_number</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Origin</value>
+        </caseValues>
+        <name>case_origin</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Owner</value>
+        </caseValues>
+        <name>case_owner</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Owner Alias</value>
+        </caseValues>
+        <name>case_owner_alias</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Owner Role</value>
+        </caseValues>
+        <name>case_owner_role</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Phone</value>
+        </caseValues>
+        <name>case_phone</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Picklist</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Query Picklists</value>
+        </caseValues>
+        <name>case_picklist</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Priority</value>
+        </caseValues>
+        <name>case_priority</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Queue</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Query Queues</value>
+        </caseValues>
+        <name>case_queue</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Reason</value>
+        </caseValues>
+        <name>case_reason</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Record Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Query Record Types</value>
+        </caseValues>
+        <name>case_record_type</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Record Type ID</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Query Record Type ID</value>
+        </caseValues>
+        <name>case_record_type_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Report</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Query Reports</value>
+        </caseValues>
+        <name>case_report</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Solution</value>
+        </caseValues>
+        <name>case_solution</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Solution ID</value>
+        </caseValues>
+        <name>case_solution_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Splash Page</value>
+        </caseValues>
+        <name>case_splash_page</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Status</value>
+        </caseValues>
+        <name>case_status</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Subject</value>
+        </caseValues>
+        <name>case_subject</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query Type</value>
+        </caseValues>
+        <name>case_type</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Query View</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Query Views</value>
+        </caseValues>
+        <name>case_view</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Queries Detail Page</value>
+        </caseValues>
+        <name>cases_detail_page</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Queries Tab</value>
+        </caseValues>
+        <name>cases_tab</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Related Query</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Related Queries</value>
+        </caseValues>
+        <name>child_case</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Query</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Parent Queries</value>
+        </caseValues>
+        <name>parent_case</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Query ID</value>
+        </caseValues>
+        <name>parent_case_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Adverse Event Current Status --></label>
+        <name>Adverse_Event_Current_Status__c</name>
+        <picklistValues>
+            <masterLabel>Improved</masterLabel>
+            <translation><!-- Improved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Change</masterLabel>
+            <translation><!-- No Change --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resolved</masterLabel>
+            <translation><!-- Resolved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Unknown</masterLabel>
+            <translation><!-- Unknown --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Worsened</masterLabel>
+            <translation><!-- Worsened --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Age --></label>
+        <name>Age__c</name>
+    </fields>
+    <fields>
+        <label><!-- Browser --></label>
+        <name>Browser__c</name>
+        <picklistValues>
+            <masterLabel>Firefox 1.5</masterLabel>
+            <translation><!-- Firefox 1.5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Firefox 1.6</masterLabel>
+            <translation><!-- Firefox 1.6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Firefox 2</masterLabel>
+            <translation><!-- Firefox 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IE 5.0</masterLabel>
+            <translation><!-- IE 5.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IE 6.0</masterLabel>
+            <translation><!-- IE 6.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>IE 7.0</masterLabel>
+            <translation><!-- IE 7.0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netscape 7</masterLabel>
+            <translation><!-- Netscape 7 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Netscape 8</masterLabel>
+            <translation><!-- Netscape 8 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opera 9</masterLabel>
+            <translation><!-- Opera 9 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Safari 3.1</masterLabel>
+            <translation><!-- Safari 3.1 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Bugzilla # --></label>
+        <name>Bugzilla__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Age (Hrs) --></label>
+        <name>Case_Age_Hrs__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case Area --></label>
+        <name>Case_Area__c</name>
+        <picklistValues>
+            <masterLabel>Contracts</masterLabel>
+            <translation><!-- Contracts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Credit</masterLabel>
+            <translation><!-- Credit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoicing</masterLabel>
+            <translation><!-- Invoicing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orders</masterLabel>
+            <translation><!-- Orders --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payments</masterLabel>
+            <translation><!-- Payments --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Case Routing --></label>
+        <name>Case_Routing__c</name>
+        <picklistValues>
+            <masterLabel>Billing</masterLabel>
+            <translation><!-- Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feature Request</masterLabel>
+            <translation><!-- Feature Request --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>General/Technical</masterLabel>
+            <translation><!-- General/Technical --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Concomitant Medical Products --></label>
+        <name>Concomitant_Medical_Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- Congenital anomaly --></label>
+        <name>Congenital_anomaly__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Type --></label>
+        <name>Customer_Type__c</name>
+        <picklistValues>
+            <masterLabel>Enterprise</masterLabel>
+            <translation><!-- Enterprise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home</masterLabel>
+            <translation><!-- Home --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Small and Medium Business</masterLabel>
+            <translation><!-- Small and Medium Business --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DB Days --></label>
+        <name>DB_Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- DOB --></label>
+        <name>DOB__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date adverse event ended --></label>
+        <name>Date_adverse_event_ended__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date adverse event started --></label>
+        <name>Date_adverse_event_started__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date event reported to Novartis employee --></label>
+        <name>Date_event_reported_to_Novartis_employee__c</name>
+    </fields>
+    <fields>
+        <label><!-- Death --></label>
+        <name>Death__c</name>
+    </fields>
+    <fields>
+        <label><!-- Demand For Feature --></label>
+        <name>Demand_For_Feature__c</name>
+        <picklistValues>
+            <masterLabel>Critical</masterLabel>
+            <translation><!-- Critical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Deal Pending</masterLabel>
+            <translation><!-- Deal Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Normal</masterLabel>
+            <translation><!-- Normal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Describe event &amp; any necessary treatment --></label>
+        <name>Describe_event_any_necessary_treatment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disability --></label>
+        <name>Disability__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dose --></label>
+        <name>Dose__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Name --></label>
+        <name>Employee_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Phone --></label>
+        <name>Employee_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Engineering Review --></label>
+        <name>Engineering_Review__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expiration Date --></label>
+        <name>Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Description --></label>
+        <name>Feature_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Feature Request Date --></label>
+        <name>Feature_Request_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Frequency --></label>
+        <name>Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Handling Method --></label>
+        <name>Handling_Method__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fax</masterLabel>
+            <translation><!-- Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>White Mail</masterLabel>
+            <translation><!-- White Mail --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hardware --></label>
+        <name>Hardware__c</name>
+        <picklistValues>
+            <masterLabel>MAC</masterLabel>
+            <translation><!-- MAC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PC</masterLabel>
+            <translation><!-- PC --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Height --></label>
+        <name>Height__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hospitalization - initial or prolonged --></label>
+        <name>Hospitalization_initial_or_prolonged__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indication --></label>
+        <name>Indication__c</name>
+    </fields>
+    <fields>
+        <label><!-- Institution --></label>
+        <name>Institution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Knowledge --></label>
+        <name>Knowledge_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Knowledge --></label>
+        <name>Knowledge__c</name>
+        <picklistValues>
+            <masterLabel>1 - Very Dissatisfied</masterLabel>
+            <translation><!-- 1 - Very Dissatisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Dissatisfied</masterLabel>
+            <translation><!-- 2 - Dissatisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - OK</masterLabel>
+            <translation><!-- 3 - OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Satisfied</masterLabel>
+            <translation><!-- 4 - Satisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Very Satisfied</masterLabel>
+            <translation><!-- 5 - Very Satisfied --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Payment --></label>
+        <name>Last_Payment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Life-threatening --></label>
+        <name>Lifethreatening__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lot No. --></label>
+        <name>Lot_No__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lot Number --></label>
+        <name>Lot_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medical History &amp; Lab/Test data --></label>
+        <name>Medical_History_LabTest_data__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medical Question --></label>
+        <name>Medical_Question__c</name>
+    </fields>
+    <fields>
+        <label><!-- Operating System --></label>
+        <name>Operating_System__c</name>
+        <picklistValues>
+            <masterLabel>AIX</masterLabel>
+            <translation><!-- AIX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FreeBSD</masterLabel>
+            <translation><!-- FreeBSD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HP-UX</masterLabel>
+            <translation><!-- HP-UX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Linux</masterLabel>
+            <translation><!-- Linux --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mac 0S X 10.3</masterLabel>
+            <translation><!-- Mac 0S X 10.3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mac 0S X 10.4 (Tiger)</masterLabel>
+            <translation><!-- Mac 0S X 10.4 (Tiger) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mac 0S X 10.5 (Leopard)</masterLabel>
+            <translation><!-- Mac 0S X 10.5 (Leopard) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows 2000</masterLabel>
+            <translation><!-- Windows 2000 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows 95</masterLabel>
+            <translation><!-- Windows 95 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows NT</masterLabel>
+            <translation><!-- Windows NT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows Vista</masterLabel>
+            <translation><!-- Windows Vista --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Windows XP</masterLabel>
+            <translation><!-- Windows XP --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <name>Origin</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone</masterLabel>
+            <translation><!-- Phone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Territory Manager</masterLabel>
+            <translation><!-- Territory Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Other --></label>
+        <name>Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patient Initials --></label>
+        <name>Patient_Initials__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Billing --></label>
+        <name>Payment_Billing__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Semi-Annually</masterLabel>
+            <translation><!-- Semi-Annually --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Please Specify --></label>
+        <name>Please_Specify__c</name>
+    </fields>
+    <fields>
+        <name>Priority</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Problem --></label>
+        <name>Problem__c</name>
+        <picklistValues>
+            <masterLabel>Balance Incorrect</masterLabel>
+            <translation><!-- Balance Incorrect --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Incorrect Total on Order</masterLabel>
+            <translation><!-- Incorrect Total on Order --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insufficient Funds</masterLabel>
+            <translation><!-- Insufficient Funds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wrong Invoice</masterLabel>
+            <translation><!-- Wrong Invoice --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product Family --></label>
+        <name>Product_Family_KB__c</name>
+        <picklistValues>
+            <masterLabel>Alpha Product</masterLabel>
+            <translation><!-- Alpha Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business Consulting</masterLabel>
+            <translation><!-- Business Consulting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delta Product</masterLabel>
+            <translation><!-- Delta Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Product</masterLabel>
+            <translation><!-- Standard Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Services</masterLabel>
+            <translation><!-- Technical Services --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Queries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Professionalism --></label>
+        <name>Professionalism_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Professionalism --></label>
+        <name>Professionalism__c</name>
+        <picklistValues>
+            <masterLabel>1 - Very Dissatisfied</masterLabel>
+            <translation><!-- 1 - Very Dissatisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Dissatisfied</masterLabel>
+            <translation><!-- 2 - Dissatisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - OK</masterLabel>
+            <translation><!-- 3 - OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Satisfied</masterLabel>
+            <translation><!-- 4 - Satisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Very Satisfied</masterLabel>
+            <translation><!-- 5 - Very Satisfied --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <name>Reason</name>
+        <picklistValues>
+            <masterLabel>Contra-indication query</masterLabel>
+            <translation><!-- Contra-indication query --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Did not understand instructions</masterLabel>
+            <translation><!-- Did not understand instructions --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dosage query</masterLabel>
+            <translation><!-- Dosage query --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New packaging issues</masterLabel>
+            <translation><!-- New packaging issues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Required intervention to prevent permanent impairment/damage --></help>
+        <label><!-- Required intervention --></label>
+        <name>Required_intervention__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resolution --></label>
+        <name>Resolution_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resolution --></label>
+        <name>Resolution__c</name>
+        <picklistValues>
+            <masterLabel>1 - Very Dissatisfied</masterLabel>
+            <translation><!-- 1 - Very Dissatisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Dissatisfied</masterLabel>
+            <translation><!-- 2 - Dissatisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - OK</masterLabel>
+            <translation><!-- 3 - OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Satisfied</masterLabel>
+            <translation><!-- 4 - Satisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Very Satisfied</masterLabel>
+            <translation><!-- 5 - Very Satisfied --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Round Robin ID --></label>
+        <name>Round_Robin_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Route of Admin --></label>
+        <name>Route_of_Admin__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA Compliance --></label>
+        <name>SLA_Compliance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Satisfaction Score --></label>
+        <name>Satisfaction_Score__c</name>
+    </fields>
+    <fields>
+        <label><!-- Send --></label>
+        <name>Send__c</name>
+        <picklistValues>
+            <masterLabel>Email</masterLabel>
+            <translation><!-- Email --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Centrally</masterLabel>
+            <translation><!-- Post Centrally --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Post Locally</masterLabel>
+            <translation><!-- Post Locally --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Sex --></label>
+        <name>Sex__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation><!-- Female --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation><!-- Male --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Shipping Method --></label>
+        <name>Shipping_Method__c</name>
+        <picklistValues>
+            <masterLabel>DHL</masterLabel>
+            <translation><!-- DHL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fedex</masterLabel>
+            <translation><!-- Fedex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UPS</masterLabel>
+            <translation><!-- UPS --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Track It --></label>
+        <name>Shipping_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Request Category --></label>
+        <name>Special_Request_Category__c</name>
+        <picklistValues>
+            <masterLabel>Clinical Trial related</masterLabel>
+            <translation><!-- Clinical Trial related --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Grants related</masterLabel>
+            <translation><!-- Grants related --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speaker Event related</masterLabel>
+            <translation><!-- Speaker Event related --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <name>Status</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Escalated</masterLabel>
+            <translation><!-- Escalated --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Hold</masterLabel>
+            <translation><!-- On Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status Indicator --></label>
+        <name>Status_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sub-Type --></label>
+        <name>Sub_Type__c</name>
+        <picklistValues>
+            <masterLabel>End-User-Functionality</masterLabel>
+            <translation><!-- End-User-Functionality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Installation</masterLabel>
+            <translation><!-- New Installation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Release Notes</masterLabel>
+            <translation><!-- Release Notes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Reporting</masterLabel>
+            <translation><!-- Reporting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Admin Guide</masterLabel>
+            <translation><!-- System Admin Guide --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>System Administrator</masterLabel>
+            <translation><!-- System Administrator --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Question</masterLabel>
+            <translation><!-- Technical Question --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade</masterLabel>
+            <translation><!-- Upgrade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Suspect Product(s) --></label>
+        <name>Suspect_Products__c</name>
+        <picklistValues>
+            <masterLabel>Exelon Patch</masterLabel>
+            <translation><!-- Exelon Patch --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Producct 2</masterLabel>
+            <translation><!-- Producct 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product 3</masterLabel>
+            <translation><!-- Product 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Telephone --></label>
+        <name>Telephone__c</name>
+    </fields>
+    <fields>
+        <label><!-- Therapy Date From --></label>
+        <name>Therapy_Date_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Therapy Date To --></label>
+        <name>Therapy_Date_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tied to revenue? --></label>
+        <name>Tied_to_revenue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Timeliness --></label>
+        <name>Timeliness_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Timeliness --></label>
+        <name>Timeliness__c</name>
+        <picklistValues>
+            <masterLabel>1 - Very Dissatisfied</masterLabel>
+            <translation><!-- 1 - Very Dissatisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2 - Dissatisfied</masterLabel>
+            <translation><!-- 2 - Dissatisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3 - OK</masterLabel>
+            <translation><!-- 3 - OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>4 - Satisfied</masterLabel>
+            <translation><!-- 4 - Satisfied --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5 - Very Satisfied</masterLabel>
+            <translation><!-- 5 - Very Satisfied --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Title --></label>
+        <name>Title__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tracking ID --></label>
+        <name>Tracking_ID__c</name>
+    </fields>
+    <fields>
+        <name>Type</name>
+        <picklistValues>
+            <masterLabel>Complex</masterLabel>
+            <translation><!-- Complex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Simple</masterLabel>
+            <translation><!-- Simple --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Use Again --></label>
+        <name>Use_Again_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Use Again --></label>
+        <name>Use_Again__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Value of Deal --></label>
+        <name>Value_of_Deal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weight --></label>
+        <name>Weight__c</name>
+    </fields>
+    <fields>
+        <label><!-- cv --></label>
+        <name>cv__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to the Geocode object holding all of mapping information for the record. --></help>
+        <label><!-- Geocode --></label>
+        <name>geopointe__Geocode__c</name>
+        <relationshipLabel><!-- Cases --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- twitterId --></label>
+        <name>twitterforce__twitterId__c</name>
+    </fields>
+    <layouts>
+        <layout>Case Layout</layout>
+        <sections>
+            <label><!-- Feedback --></label>
+            <section>Feedback</section>
+        </sections>
+        <sections>
+            <label><!-- Product --></label>
+            <section>Product</section>
+        </sections>
+        <sections>
+            <label><!-- Useful Links --></label>
+            <section>Useful Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Close Case Layout</layout>
+        <layoutType>CaseClose</layoutType>
+        <sections>
+            <label><!-- Product --></label>
+            <section>Product</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Portal Case Layout</layout>
+        <sections>
+            <label><!-- Product --></label>
+            <section>Product</section>
+        </sections>
+        <sections>
+            <label><!-- Useful Links --></label>
+            <section>Useful Links</section>
+        </sections>
+    </layouts>
+    <quickActions>
+        <label><!-- NewChildCase --></label>
+        <name>NewChildCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <recordTypes>
+        <label><!-- Simple --></label>
+        <name>Simple</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Create_Adverse_Event_Case --></label>
+        <name>Create_Adverse_Event_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP --></label>
+        <name>Loop__LOOP</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP_Merge --></label>
+        <name>Loop__LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOPlus --></label>
+        <name>Loop__LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOP_Merge --></label>
+        <name>Loop__Mass_LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOPlus --></label>
+        <name>Loop__Mass_LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Survey --></label>
+        <name>Survey</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map --></label>
+        <name>geopointe__Map</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_Records_Case --></label>
+        <name>geopointe__Map_Records_Case</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_newWindow --></label>
+        <name>geopointe__Map_newWindow</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Tweet --></label>
+        <name>twitterforce__Send_Tweet</name>
+    </webLinks>
+    <workflowTasks>
+        <name>EnbrelAdverseReaction</name>
+        <subject><!-- Enbrel - Adverse Reaction --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

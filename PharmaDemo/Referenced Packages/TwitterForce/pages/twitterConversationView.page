@@ -1,0 +1,147 @@
+<!-- Jonathan Hersh - jhersh@salesforce.com - 8/11/2009 -->
+
+<apex:page standardcontroller="twitterforce__Twitter_Conversation__c" standardstylesheets="false" extensions="twitterforce.twitterConversationViewController" tabstyle="twitterforce__Twitter_Conversation__c">
+	<style type="text/css">
+		#wrapper {
+            background: #99CCFF url({!$Resource.twitterforce__bgClouds}) top center repeat-x;
+            margin:0;
+            width: 100%;
+            /*min-height: 800px;*/
+        }
+		
+		.containerTop{
+            background:url({!$Resource.twitterforce__containerTop}) no-repeat;
+            height:15px; 
+            width:900px;
+            margin:0 auto;
+            margin-top: 30px;
+        }
+        
+        .containerBottom{
+            background:url({!$Resource.twitterforce__containerBottom}) no-repeat;
+            height:18px;
+            width:900px;
+            margin:0 auto;
+        }
+        
+        .container{
+            display:block;
+            background:url({!$Resource.twitterforce__containerMiddle}) center repeat-y;
+            width:860px;
+            margin:0 auto;
+            /*min-height:400px;*/
+            padding: 10px 20px 10px 20px;
+        }
+        
+        .tweetHeader {
+        	font-size:18px;
+			font-weight:bold;
+			padding:5px 0;
+        }
+        
+        .tweetContainer {
+        	width: 100%;
+        	clear: both;
+        	padding: 5px 0 10px 0;
+        	border-bottom: 1px dashed gray;
+        	height: 75px;
+        }
+        
+        .tweetContainer:hover {
+        	background-color: #EEECD1;
+        }
+        
+        .tweetPhoto {
+        	height: 48px;
+        	width: 48px;
+        	margin: 10px 15px 10px 0;
+        	float: left;
+        }
+        
+        .tweetInfo {
+        	height: 48px;
+        	width: 700px;
+        	float: left;
+        }
+        
+        .tweetSFDC {
+        	height: 48px;
+        	float: left;
+        	width: 125px;
+        	margin: 10px 0 10px 0;
+        }
+        
+        .tweetText {
+        	font-size: 16px;
+        	margin: 10px 0 10px 0;
+        	font: Verdana, sans-serif;
+        	float: left;
+        	width: 100%;
+        }
+        
+        .tweetDetails {
+        	font-size: 12px;
+        	color: #333333;
+        	float: left;
+        	font-style: italic;
+        }
+	</style>
+	
+	<c:lightbox function="refreshConfirm" title="{!appname}" content="Conversation has been updated with the latest data from Twitter." width="500" duration="0" />
+	
+	<apex:form id="theform">
+	<div id="wrapper">
+		<apex:sectionheader title="Twitter Conversation" subtitle="{!tc.name}" />
+		
+	<div class="containerTop">
+	&nbsp;
+	</div>
+	
+	<div class="container">
+	        
+	   <div class="content">
+		<apex:pageblock title="">
+			<apex:pageblockbuttons >
+				<apex:commandbutton value="Delete" action="{!delete}" />
+				<apex:commandbutton oncomplete="refreshConfirm();" value="Refresh Conversation" action="{!doRefresh}" rerender="theform" />
+			</apex:pageblockbuttons>
+			<apex:pageblocksection showheader="false">
+				<apex:outputfield value="{!tc.twitterforce__Conversation_Start__c}" />
+				<apex:outputfield value="{!tc.twitterforce__Total_Conversation_Tweets__c}" />
+				<apex:outputfield value="{!tc.twitterforce__Most_Recent_Tweet__c}" />
+				<apex:outputfield value="{!tc.twitterforce__Conversation_Recency__c}" />
+				<apex:outputfield value="{!tc.twitterforce__Conversation_Age_Hours__c}" />
+			</apex:pageblocksection>
+		</apex:pageblock>
+	
+		</div>
+	      
+	</div>
+	
+	<div class="containerBottom">
+	&nbsp;
+	</div>
+	
+	<div class="containerTop">
+	</div>
+	
+	<div class="container">
+		<div class="tweetHeader">Conversation Tweets</div>
+		<apex:repeat value="{!tweets}" var="t">
+			<div class="tweetContainer">
+				<div class="tweetPhoto"><apex:image value="http://img.tweetimag.es/i/{!t.c.twitterforce__Twitter_Username__c}_n" height="48" width="48" /></div>
+				<div class="tweetInfo">
+					<div class="tweetText">{!t.tweet.Message__c}</div>
+					<div class="tweetDetails">{!t.timestamp} from&nbsp;<apex:outputfield value="{!t.tweet.twitterforce__Sender__c}" />&nbsp;via {!t.tweet.Source__c} [<apex:outputlink value="/{!t.tweet.id}" target="_new">View</apex:outputlink>]</div>
+				</div>
+			</div>			
+		</apex:repeat>
+	</div>
+	
+	<div class="containerBottom">
+	&nbsp;
+	</div>
+	</div>
+	</apex:form>
+	
+</apex:page>

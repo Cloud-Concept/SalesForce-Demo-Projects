@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Planogram</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Planograms</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Planogram Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Index --></label>
+        <name>Index__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Group Image --></label>
+        <name>Product_Group_Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Planograms --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Shelfs Top-&gt;Bottom A-&gt;D, Slots 1-&gt;4 Left-&gt;Right --></help>
+        <label><!-- Location on Shelf --></label>
+        <name>Space_Slot_Number__c</name>
+        <picklistValues>
+            <masterLabel>A1</masterLabel>
+            <translation><!-- A1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A2</masterLabel>
+            <translation><!-- A2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A3</masterLabel>
+            <translation><!-- A3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>A4</masterLabel>
+            <translation><!-- A4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B1</masterLabel>
+            <translation><!-- B1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B2</masterLabel>
+            <translation><!-- B2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B3</masterLabel>
+            <translation><!-- B3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>B4</masterLabel>
+            <translation><!-- B4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C1</masterLabel>
+            <translation><!-- C1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C2</masterLabel>
+            <translation><!-- C2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C3</masterLabel>
+            <translation><!-- C3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>C4</masterLabel>
+            <translation><!-- C4 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D1</masterLabel>
+            <translation><!-- D1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D2</masterLabel>
+            <translation><!-- D2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D3</masterLabel>
+            <translation><!-- D3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>D4</masterLabel>
+            <translation><!-- D4 --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

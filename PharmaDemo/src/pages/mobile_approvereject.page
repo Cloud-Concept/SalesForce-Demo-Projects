@@ -1,0 +1,182 @@
+<apex:page controller="BlackBerryApproveRejectController"
+           docType="html-5.0" standardStylesheets="false" 
+            showHeader="false" sidebar="false" showChat="false" cache="false"
+            action="{!redirectDesktops}">
+  <apex:composition template="mobile_template">
+    <apex:define name="mobilepage">
+      <div data-role="page">
+        <div data-role="header" data-theme="b">
+          <h1>Leave Request</h1>
+          <div class="cloud"></div>
+          <a href="/apex/mobile_approvals" data-icon="back" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Back" />
+        </div>
+        <div data-role="content">
+          
+          	  
+                <!-- Header -->
+				<div data-theme="b">
+					<div style="float:left; padding-right:15px;">
+	               		<c:LeaveImage leaverequest="{!leaverequest}"></c:LeaveImage>
+	               	</div>
+					
+					<h3>{!leaverequest.Leave_Type__c}</h3>
+					<div class="ui-grid-a">
+						<div class="ui-block-a subtitle-blue">From</div>
+						<div class="ui-block-b">
+							<apex:outputText value="{0,date, dd MMM yyyy}">
+					         	<apex:param value="{!leaverequest.From__c}" />
+					        </apex:outputText>
+						</div>
+						<div class="ui-block-a subtitle-blue">To</div>
+						<div class="ui-block-b">
+							<apex:outputText value="{0,date, dd MMM yyyy}">
+					         	<apex:param value="{!leaverequest.To__c}" />
+					        </apex:outputText>
+						</div>
+					</div>
+				</div>
+			  <hr/>
+			  <!-- Details -->
+              
+              <div class="ui-grid-a">
+                  <div class="ui-block-a">
+                      <span class="subtitle-blue">Requester :</span><br/>                     
+                     <apex:image value="{!Photolink}"/><br/>
+                      <b>{!leaverequest.Owner.Name}</b>
+                  </div>
+                  <div class="ui-block-b">
+                      <div class="subtitle-blue">Notes :</div>
+                      <div><i>{!leaverequest.Notes__c}</i></div>
+                  </div>
+              </div>
+              
+              <!--
+	          <ul data-role="listview"  data-theme="c" data-dividertheme="d">
+	            <li data-role="list-divider">Details</li>
+	            <li data-role="fieldcontain">
+	            	<div class="ui-grid-a">
+						<div class="ui-block-a subtitle-blue">Name:</div>
+						<div class="ui-block-b">
+							{!leaverequest.Owner.Name}
+						</div>
+					</div>
+	            </li>
+	            <li data-role="fieldcontain">
+	            	
+						<div class="subtitle-blue">Notes:</div><br/>
+						<div>
+							{!leaverequest.Notes__c}
+						</div>
+					
+	            </li>
+              </ul>
+              -->
+              
+            
+				
+              
+			<hr/>
+              
+              <!-- Comments and Approval -->
+            <form data-ajax="false" id="approveRejectForm" action="{!$Page.mobile_approvereject_form}" method="get">
+                <input type="hidden" name="id" value="{!WORKITEM_ID}" />
+                <div class="subtitle-blue">Comments:</div>
+                <div><textarea cols="40" rows="8" name="comments" id="comments"></textarea></div>
+                
+                <hr/>
+                
+                <div class="ui-grid-a">
+	                <div class="ui-block-a">
+                        <button data-icon="check" data-theme="b" onclick="document.getElementById('actionfield').value = 'Approve';document.getElementById('approveRejectForm').submit(); return true;">Approve</button>
+                    </div>
+	                <div class="ui-block-b">
+                        <button data-icon="minus" onclick="document.getElementById('actionfield').value = 'Reject'; document.getElementById('approveRejectForm').submit(); return true;">Reject</button>
+                    </div>
+	            </div>
+             
+             <!-- Hidden fields -->
+             <input type="hidden" name="id" value="{!WORKITEM_ID}" />
+             <input type="hidden" id="actionfield" name="action" />
+                
+              <!--
+                <ul data-inset="false">
+              <li data-role="fieldcontain" data-theme="b">
+                <label for="comments" class="subtitle-blue">Comments:</label>
+                <textarea cols="40" rows="8" name="comments" id="comments"></textarea>
+                <input type="hidden" name="id" value="{!WORKITEM_ID}" />
+                <input type="hidden" id="actionfield" name="action" />  
+              </li>
+              <li data-role="fieldcontain">
+	              <div class="ui-grid-a">
+	                <div class="ui-block-a">
+                    <button data-icon="check" data-theme="b" onclick="document.getElementById('actionfield').value = 'Approve';document.getElementById('approveRejectForm').submit(); return true;">Approve</button>
+                  </div>
+	                <div class="ui-block-b">
+                    <button data-icon="minus" onclick="document.getElementById('actionfield').value = 'Reject'; document.getElementById('approveRejectForm').submit(); return true;">Reject</button>
+                  </div>
+	              </div>
+              </li>
+            </ul>-->
+              
+              
+          </form>
+          
+          <!-- Approval History -->
+            <hr/>
+            
+            <div data-role="collapsible" data-collapsed="true" data-mini="true">
+            <h3>Approval History</h3>
+            <p>
+            
+            
+                <apex:repeat value="{!ProcHistory}" var="step">
+                    <h1><apex:outputText value="{!IF(step.ShowSubmittedTitle,'Approval Rq. Submitted','Approval Step')}" /></h1>
+                    <div class="ui-grid-a">
+                        <div class="ui-block-a subtitle-blue">Date :</div>
+                        <div class="ui-block-b">{!step.stepDate}</div>
+                        <div class="ui-block-a subtitle-blue">Approver :</div>
+                        <div class="ui-block-b">{!step.AssignedTo}</div>
+                        <apex:outputText rendered="{!NOT(ISBLANK(step.Comments))}">
+                            <div class="ui-block-a subtitle-blue">Comments :</div>
+                            <div class="ui-block-b"><i>{!step.Comments}</i></div>
+                        </apex:outputText>
+                    </div>                    
+                    <hr/>
+                </apex:repeat>
+            
+            <!--<ul data-role="listview"  data-theme="c" data-dividertheme="d">
+              <apex:repeat value="{!ProcHistory}" var="step">
+              <li data-role="fieldcontain" data-theme="b">
+                <apex:outputText value="{!IF(step.ShowSubmittedTitle,'Approval Rq. Submitted','Approval Step')}" />
+              </li>
+              <li data-role="fieldcontain">
+                <label for="date">Date:</label>
+                <input type="text" name="date" id="date" value="{!step.stepDate}" disabled="true" />
+              </li>
+              <li data-role="fieldcontain">
+                <label for="status">Status:</label>
+                <input type="text" name="status" id="status" value="{!step.Status}" disabled="true" />
+              </li>
+              <li data-role="fieldcontain">
+                <label for="approver">Approver:</label>
+                <input type="text" name="approver" id="approver" value="{!step.AssignedTo}" disabled="true" />
+              </li>
+              <li data-role="fieldcontain" class="{!IF(step.ShowComments, '', 'hidden')}">
+                <label for="stepcomments">Comments:</label>
+                <textarea cols="40" rows="8" name="stepcomments" id="stepcomments" disabled="true">{!step.Comments}</textarea>
+              </li>
+              </apex:repeat>
+              </ul> -->
+                </p>
+              </div>
+            
+              <!-- Chatter Feed -->
+              <div data-role="collapsible" data-collapsed="true" data-mini="true">
+                  <h3>Chatter Feed</h3>
+                  <chatter:feed entityId="{!leaverequest.id}"/>
+              </div>
+        </div>
+      </div>
+    </apex:define>
+  </apex:composition>
+</apex:page>

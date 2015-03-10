@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Purchase Requisition Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Purchase Requisition Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Purchase Requisition --></label>
+        <name>Purchase_Requisition__c</name>
+        <relationshipLabel><!-- Purchase Requisition Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Code --></label>
+        <name>Service_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service --></label>
+        <name>Service__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Of Measure Code --></label>
+        <name>Unit_Of_Measure_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit Price --></label>
+        <name>Unit_Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unit of Measure --></label>
+        <name>Unit_of_Measure__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

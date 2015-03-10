@@ -1,0 +1,20 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<br><div style="font-size: 12pt; ">
+
+
+
+
+
+
+
+<p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">{!Leave_Request__c.OwnerFullName}&nbsp;has requested your approval for&nbsp;<span style="font-size: 12pt; ">the following Leave Request :</span></p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; "><br></p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">Type :&nbsp;{!Leave_Request__c.Leave_Type__c}</p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">From {!Leave_Request__c.From__c} to&nbsp;{!Leave_Request__c.To__c}</p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; "><br></p><p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">Notes from requester :</p><p class="p1"><font face="arial">{!Leave_Request__c.Notes__c}</font></p><p class="p1"><font face="arial"><br></font></p><p class="p1"><font face="arial"><br></font></p><p class="p1"></p><p class="p2" style="font-size: 12pt; font-family: arial; ">T<span style="font-size: 12pt; ">o approve or reject this item, reply to this email with&nbsp;</span><span style="font-size: 12pt; ">the word APPROVE, APPROVED, YES, REJECT, REJECTED, or NO&nbsp;</span><span style="font-size: 12pt; ">in the first line of the email message, or click this link:</span></p><p></p><p class="p1"><font face="arial"><br></font></p><p class="p1"><font face="arial"><a href="https://c.na7.visual.force.com/apex/mobile_approvereject?id={!Workitem.ID}">Approval page</a></font></p><p class="p1"><font face="arial"><br></font></p>
+<p class="p2" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">&nbsp;</p>
+<p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">If replying via email you can also add comments on the&nbsp;</p>
+<p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">second line. The comments will be stored with the approval&nbsp;</p>
+<p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">request.</p>
+<p class="p2" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; "><br></p>
+<p class="p1" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt; ">Note: For salesforce.com to process your response the word&nbsp;<span style="font-size: 12pt; ">APPROVE, APPROVED, YES, REJECT, REJECTED, or NO must be in&nbsp;</span><span style="font-size: 12pt; ">the very first line of the reply email. Also, any comment&nbsp;</span><span style="font-size: 12pt; ">must be in the second line.</span></p></div>]]></td>
+</tr>
+</table>

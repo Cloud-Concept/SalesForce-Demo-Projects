@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipName>R00N30000002ae4PEAQ</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Conflicting_Field__c</fullName>
+        <externalId>false</externalId>
+        <label>Conflicting Field</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Current Value</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Rejected_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Rejected Value</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Rejected_refId__c</fullName>
+        <externalId>false</externalId>
+        <label>Rejected Reference Id</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Update_applied__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Update applied</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <label>Validated Update</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Conflicting_Field__c</columns>
+        <columns>Current_Value__c</columns>
+        <columns>Rejected_Value__c</columns>
+        <columns>CREATED_DATE</columns>
+        <columns>Update_applied__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Applied_Updates</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Conflicting_Field__c</columns>
+        <columns>Current_Value__c</columns>
+        <columns>Rejected_Value__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Update_applied__c</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Applied Updates</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>To_be_checked</fullName>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Conflicting_Field__c</columns>
+        <columns>Current_Value__c</columns>
+        <columns>Rejected_Value__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Update_applied__c</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <label>To be checked</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>LOG-{000000000}</displayFormat>
+        <label>Update Log Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Validated Updates</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>CREATED_DATE</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Conflicting_Field__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Current_Value__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Rejected_Value__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Account__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Update_applied__c</customTabListAdditionalFields>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+        <listViewButtons>Apply_selected_updates</listViewButtons>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Conflicting_Field__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Current_Value__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Rejected_Value__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Update_applied__c</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Account__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Conflicting_Field__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Current_Value__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Rejected_Value__c</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>Update_applied__c</lookupPhoneDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Account__c</searchFilterFields>
+        <searchFilterFields>Conflicting_Field__c</searchFilterFields>
+        <searchFilterFields>Current_Value__c</searchFilterFields>
+        <searchFilterFields>Rejected_Value__c</searchFilterFields>
+        <searchFilterFields>Update_applied__c</searchFilterFields>
+        <searchResultsAdditionalFields>Account__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Conflicting_Field__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Current_Value__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Rejected_Value__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Update_applied__c</searchResultsAdditionalFields>
+        <searchResultsCustomButtons>Apply_selected_updates</searchResultsCustomButtons>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <webLinks>
+        <fullName>Apply_selected_updates</fullName>
+        <availability>online</availability>
+        <displayType>massActionButton</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Apply selected updates</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <requireRowSelection>true</requireRowSelection>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/13.0/connection.js&quot;)} 
+
+var logRecords = {!GETRECORDIDS( $ObjectType.Update_Log__c)}; 
+var newRecords = []; 
+
+if (logRecords[0] == null) { 
+   alert(&quot;Please select at least one record.&quot;);
+} 
+else { 
+   var errors = []; 
+   for (var n=0; n&lt;logRecords.length; n++) { 
+         var r = new sforce.SObject(&quot;Update_Log__c&quot;); 
+         r.id = logRecords[n]; 
+         r.Update_applied__c = true; 
+         newRecords.push(r);
+   }
+  var result = sforce.connection.update(newRecords); 
+  if (result &amp;&amp; result.length){ 
+       var numFailed = 0; 
+       var numSucceeded = 0; 
+       for (var i = 0; i &lt; result.length; i++){ 
+             var res = result[i]; 
+             if (res &amp;&amp; res.success == &apos;true&apos;){ 
+                numSucceeded++; 
+             } else { 
+                var es = res.getArray(&quot;errors&quot;); 
+                if (es.length &gt; 0) { 
+                   errors.push(es[0].message); 
+                } 
+                numFailed++; 
+             } 
+       } 
+       if (numFailed &gt; 0){ 
+          alert(&quot;Failed: &quot; + numFailed + &quot;\nSucceeded: &quot; + numSucceeded + &quot; \n Due to: &quot; + errors.join(&quot;\n&quot;)); 
+       } else { 
+          alert(&quot;Number of updates applied: &quot; + numSucceeded); 
+       } 
+   }
+   window.location.reload(); 
+}</url>
+    </webLinks>
+</CustomObject>

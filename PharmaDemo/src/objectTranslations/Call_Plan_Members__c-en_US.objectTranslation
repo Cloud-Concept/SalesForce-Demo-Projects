@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Call Plan Member</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Call Plan Members</value>
+    </caseValues>
+    <fields>
+        <label><!-- Appt --></label>
+        <name>Appt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Date --></label>
+        <name>Call_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Plan --></label>
+        <name>Call_Plan__c</name>
+        <relationshipLabel><!-- Members --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Call Report --></label>
+        <name>Call_Report__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Call Plan Members --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Day --></label>
+        <name>Day__c</name>
+        <picklistValues>
+            <masterLabel>Friday</masterLabel>
+            <translation><!-- Friday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monday</masterLabel>
+            <translation><!-- Monday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thursday</masterLabel>
+            <translation><!-- Thursday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuesday</masterLabel>
+            <translation><!-- Tuesday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wednesday</masterLabel>
+            <translation><!-- Wednesday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Day No --></label>
+        <name>Day_no__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Objective --></label>
+        <name>Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promotion --></label>
+        <name>Promotion__c</name>
+    </fields>
+    <fields>
+        <label><!-- UniqueId --></label>
+        <name>UniqueId__c</name>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Week Number --></label>
+        <name>Week_Number__c</name>
+    </fields>
+    <nameFieldLabel><!-- Call Plan Member Name --></nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New --></label>
+        <name>New</name>
+    </webLinks>
+</CustomObjectTranslation>

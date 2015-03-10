@@ -1,0 +1,23 @@
+<apex:page standardController="Call_Report__c" showHeader="true" tabStyle="Call_Report__c" >
+       <style>
+                .activeTab {background-color: #669900; font-weight:bold; color:white; background-image:none}
+                .inactiveTab { background-color: #D8ECF3; font-weight:normal; color:black; background-image:none}
+        </style>
+   <apex:tabPanel switchType="client" selectedTab="name2" id="theTabPanel" tabClass="activeTab" inactiveTabClass="inactiveTab">
+      <apex:tab label="Details" name="Details" id="Details">
+         <apex:detail relatedList="false" title="true"/>
+      </apex:tab>
+      <apex:tab label="Attendees" name="Attendees" id="tabOpenAct">
+         <apex:relatedList subject="{!Call_Report__c}" list="Call_Attendees__r" />
+      </apex:tab>
+      <apex:tab label="Products" name="Products" id="Products">
+         <apex:relatedList subject="{!Call_Report__c}" list="Product_Detail__r" />
+      </apex:tab>      
+      <apex:tab label="Sample Item" name="Sample Items" id="Sample_Items">
+         <apex:relatedList subject="{!Call_Report__c}" list="Sample_Item__r" />
+      </apex:tab>
+         <apex:tab label="Promotional Items" name="Promotional Items" id="Promotional_Items">
+        <apex:relatedList subject="{!Call_Report__c}" list="Promotional_Item__r" />
+      </apex:tab>             
+   </apex:tabPanel>
+</apex:page>

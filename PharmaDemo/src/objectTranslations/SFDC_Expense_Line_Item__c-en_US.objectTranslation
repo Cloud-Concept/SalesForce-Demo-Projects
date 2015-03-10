@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Expense Line Item</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Expense Line Items</value>
+    </caseValues>
+    <fields>
+        <label><!-- Airline Ticket Number --></label>
+        <name>Airline_Ticket_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Airline --></label>
+        <name>Airline__c</name>
+        <picklistValues>
+            <masterLabel>ATA</masterLabel>
+            <translation><!-- ATA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air Canada</masterLabel>
+            <translation><!-- Air Canada --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Air France</masterLabel>
+            <translation><!-- Air France --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Alaska Airlines</masterLabel>
+            <translation><!-- Alaska Airlines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>American Airlines</masterLabel>
+            <translation><!-- American Airlines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>American West</masterLabel>
+            <translation><!-- American West --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>British Airways</masterLabel>
+            <translation><!-- British Airways --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Continental</masterLabel>
+            <translation><!-- Continental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Delta</masterLabel>
+            <translation><!-- Delta --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Midwest Airlines</masterLabel>
+            <translation><!-- Midwest Airlines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Northwest</masterLabel>
+            <translation><!-- Northwest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SAS</masterLabel>
+            <translation><!-- SAS --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>US Airways</masterLabel>
+            <translation><!-- US Airways --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United Airlines</masterLabel>
+            <translation><!-- United Airlines --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Virgin Atlantic</masterLabel>
+            <translation><!-- Virgin Atlantic --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Car Rental --></label>
+        <name>Car_Rental__c</name>
+        <picklistValues>
+            <masterLabel>Alamo</masterLabel>
+            <translation><!-- Alamo --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Avis</masterLabel>
+            <translation><!-- Avis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget</masterLabel>
+            <translation><!-- Budget --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dollar</masterLabel>
+            <translation><!-- Dollar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Enterprise</masterLabel>
+            <translation><!-- Enterprise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Europcar</masterLabel>
+            <translation><!-- Europcar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hertz</masterLabel>
+            <translation><!-- Hertz --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National</masterLabel>
+            <translation><!-- National --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thrifty</masterLabel>
+            <translation><!-- Thrifty --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description/Comment/Attendees --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expense Line Item # --></label>
+        <name>Exp_Line_Item__c</name>
+    </fields>
+    <fields>
+        <label><!-- Expenditure Type --></label>
+        <name>Expenditure_Type__c</name>
+        <picklistValues>
+            <masterLabel>Airfare</masterLabel>
+            <translation><!-- Airfare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dues</masterLabel>
+            <translation><!-- Dues --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gas-Rental Car</masterLabel>
+            <translation><!-- Gas-Rental Car --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hotel</masterLabel>
+            <translation><!-- Hotel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meals</masterLabel>
+            <translation><!-- Meals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mileage</masterLabel>
+            <translation><!-- Mileage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Miscellaneous</masterLabel>
+            <translation><!-- Miscellaneous --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Office Supplies</masterLabel>
+            <translation><!-- Office Supplies --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Parking/Tolls</masterLabel>
+            <translation><!-- Parking/Tolls --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Phone/Fax</masterLabel>
+            <translation><!-- Phone/Fax --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rental Car</masterLabel>
+            <translation><!-- Rental Car --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Software</masterLabel>
+            <translation><!-- Software --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Taxi</masterLabel>
+            <translation><!-- Taxi --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Expense Report --></label>
+        <name>Expense_Header__c</name>
+        <relationshipLabel><!-- Expense Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Line Item Counter --></label>
+        <name>Line_Item_Counter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Meeting --></label>
+        <name>Meeting__c</name>
+        <relationshipLabel><!-- Expense Line Items --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Mileage Rate --></label>
+        <name>Mileage_Rate__c</name>
+    </fields>
+    <fields>
+        <help><!-- If mileage enter the number of miles travelled (include return trip as appropriate), for all other claims enter the actual expenditure in £ --></help>
+        <label><!-- Distance/Value --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <layouts>
+        <layout>Expense Line Item Layout</layout>
+        <sections>
+            <label><!-- Additional Info --></label>
+            <section>Additional Info</section>
+        </sections>
+        <sections>
+            <label><!-- Info 2 --></label>
+            <section>Info 2</section>
+        </sections>
+        <sections>
+            <label><!-- Line Item Header Info --></label>
+            <section>Line Item Header Info</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

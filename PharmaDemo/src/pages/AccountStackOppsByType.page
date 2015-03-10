@@ -1,0 +1,186 @@
+<apex:page standardController="Account" extensions="AccountStackOppsByType" cache="false" id="Page">
+    <apex:includeScript value="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" />
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load('visualization', '1', {packages: ['corechart','table']});
+    </script>
+    <script type="text/javascript">
+        Number.prototype.formatMoney = function(c, d, t){
+            var n = this, c = isNaN(c = Math.abs(c)) ? 2 : c, d = d == undefined ? "," : d, t = t == undefined ? "." : t, s = n < 0 ? "-" : "", i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", j = (j = i.length) > 3 ? j % 3 : 0;
+            return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+        };
+    
+        $j = jQuery.noConflict();
+        $j(document).ready(function() {
+            drawGraphs();        
+            
+            $j('#Page\\:Block\\:Section\\:Form\\:filter').change(function(){
+                drawGraphs();
+            });
+            
+        });
+        
+        function drawGraphs() {
+            drawTable();
+            drawColumnChart();
+            
+        }    
+        
+        function drawColumnChart() {
+            var filterCriteria = $j('#Page\\:Block\\:Section\\:Form\\:filter').val();
+                       
+            AccountStackOppsByType.getFilteredOpportunityDetails('{!Account.Id}', filterCriteria, function(result, event){
+                 
+                var data = new google.visualization.DataTable();
+                
+                var OppTypes = [];
+                var OppStages = [];
+                var GroupedValues = new Object(); // or just {}
+                
+                
+    
+                var size = 0;
+                $j.each(result, function(key, value){
+                    size++;        
+
+                    OppStages.push(key);
+                    
+                    GroupedValues[key] = new Object();
+                    
+                    $j.each(value, function(valueKey, valueValue){
+                    
+                        if(OppTypes.indexOf(valueValue.stageType) < 0) {
+                            OppTypes.push(valueValue.stageType);
+                        }
+                        GroupedValues[key][valueValue.stageType] = valueValue.totalOppValue;
+                 
+    
+                    })
+                    
+                })
+                
+                data.addColumn('string', 'Type');
+                
+                for(var i = 0; i < OppStages.length; i++) {
+                    data.addColumn('number', OppStages[i]);  
+                    data.addColumn({type:'string',role:'tooltip'});                  
+                }
+                
+                
+                var dataRows = [];
+                
+                for(var i = 0; i < OppTypes.length; i++) {
+                    var type = OppTypes[i];
+                    
+                    var row = [type];
+                    
+                    for(var j = 0; j < OppStages.length; j++) {
+                        
+                        
+                        var value = GroupedValues[OppStages[j]][OppTypes[i]];
+                        
+                        
+                        if (typeof value === "undefined") {
+                            value = 0;
+                        }
+                        row.push(value/1000);
+                        row.push(''+ OppStages[j] +': '+ '{!CurrencySymbol}' + value.formatMoney(0, '.', ',') +'k');
+                        
+                    }     
+                    
+                    dataRows.push(row);
+                    
+                }
+                
+                
+                data.addRows(dataRows);
+                new google.visualization.ColumnChart(document.getElementById('OppsByStageTypeStack')).draw(data, {height:300, isStacked:true, chartArea:{top:5,width:"60%"},legend:{position: 'right', textStyle:{fontSize:10}}, vAxis:{format: '{!CurrencySymbol}###,###,###,###k'}})
+  
+            });
+            
+        }
+            
+            
+        function drawTable() {
+            var filterCriteria = $j('#Page\\:Block\\:Section\\:Form\\:filter').val();
+                        
+            AccountStackOppsByType.getFilteredOpportunityDetails('{!Account.Id}', filterCriteria, function(result, event){
+                
+                var data = new google.visualization.DataTable();
+                
+                
+                var OppTypes = [];
+                var OppStages = [];
+                var GroupedValues = new Object(); // or just {}
+                
+                
+    
+                var size = 0;
+                $j.each(result, function(key, value){
+                    size++;        
+
+                    OppStages.push(key);
+                    
+                    GroupedValues[key] = new Object();
+                    
+                    $j.each(value, function(valueKey, valueValue){
+                    
+                        if(OppTypes.indexOf(valueValue.stageType) < 0) {
+                            OppTypes.push(valueValue.stageType);
+                        }
+                        GroupedValues[key][valueValue.stageType] = valueValue.totalOppValue;
+                        //alert('Key' + key + ' Stage Type ' + valueValue.stageType + ' Opp Value ' + valueValue.totalOppValue);
+                        
+                    });
+                    
+                })
+                
+                
+                data.addColumn('string', 'Stage  /  Type'); 
+                for(var i = 0; i < OppTypes.length; i++) {
+                    
+                    data.addColumn('string', OppTypes[i]);
+                }                               
+                data.addRows(OppStages.length);
+                
+                for(var i = 0; i < OppStages.length; i++) {
+                    data.setCell(i, 0, OppStages[i]);
+                    for(var j = 0; j < OppTypes.length; j++) {
+                        var value = GroupedValues[OppStages[i]][OppTypes[j]];
+                        
+                        if (typeof value === "undefined") {
+                            value = 0;
+                        }
+                        data.setCell(i, j + 1, '{!CurrencySymbol}' + value.formatMoney(0, '.', ','));
+                    }
+                }
+                
+                
+                // Create and draw the visualization.
+                visualization = new google.visualization.Table(document.getElementById('OppsByStageTypeTable'));
+                visualization.draw(data, null);
+            });
+            
+        
+        }
+    </script>
+    <br />
+    <apex:pageBlock title="Opportunity Breakdown" id="Block">
+        <apex:pageBlockSection columns="1" id="Section">
+            <apex:form id="Form">
+                <b>Filter By: </b> 
+                <apex:selectList value="{!filterCriteria}" multiselect="false" size="1" id="filter">
+                    <apex:selectOptions value="{!FilterCriteriaOptions}"/>  
+                </apex:selectList>                 
+            </apex:form>
+        </apex:pageBlockSection>
+        <apex:pageBlockSection id="graphsPanel">
+            <apex:pageBlockSectionItem >
+                <div id="OppsByStageTypeTable" />                
+            </apex:pageBlockSectionItem>
+            <apex:pageBlockSectionItem >
+                <div id="OppsByStageTypeStack" />
+            </apex:pageBlockSectionItem>                
+        </apex:pageBlockSection>            
+    </apex:pageBlock>  
+</apex:page>

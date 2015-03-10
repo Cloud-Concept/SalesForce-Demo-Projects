@@ -1,0 +1,4 @@
+<apex:page standardController="Stock_Order__c" extensions="OrderCloneCon" action="{!run}">
+<apex:pageMessages id="messages" showDetail="true"/>
+
+</apex:page>

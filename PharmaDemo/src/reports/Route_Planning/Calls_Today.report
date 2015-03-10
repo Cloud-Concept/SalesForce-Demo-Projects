@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Account</field>
+    </columns>
+    <columns>
+        <field>Contact$Name</field>
+    </columns>
+    <columns>
+        <field>Contact.R00Nj0000003oDKnEAM__r$Location__c.BillingAddress</field>
+    </columns>
+    <columns>
+        <field>Contact.R00Nj0000003oDKnEAM__r$Location__c.BillingCity</field>
+    </columns>
+    <columns>
+        <field>Contact.R00Nj0000003oDKnEAM__r$Location__c.BillingCountry</field>
+    </columns>
+    <columns>
+        <field>Contact.R00Nj0000003oDKnEAM__r$Location__c.BillingState</field>
+    </columns>
+    <columns>
+        <field>Contact.R00Nj0000003oDKnEAM__r$Location__c.BillingStreet</field>
+    </columns>
+    <columns>
+        <field>Contact.R00Nj0000003oDKnEAM__r$Location__c.BillingPostalCode</field>
+    </columns>
+    <columns>
+        <field>Contact$Target__c</field>
+    </columns>
+    <columns>
+        <field>Contact.R00Nj0000003oDKnEAM__r$CallDate__c</field>
+    </columns>
+    <currency>GBP</currency>
+    <format>Tabular</format>
+    <name>Calls Today</name>
+    <reportType>Call__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Contact.R00Nj0000003oDKnEAM__r$CallDate__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Contact.R00Nj0000003oDKnEAM__r$CallDate__c</dateColumn>
+        <endDate>2009-11-08</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2009-11-01</startDate>
+    </timeFrameFilter>
+</Report>

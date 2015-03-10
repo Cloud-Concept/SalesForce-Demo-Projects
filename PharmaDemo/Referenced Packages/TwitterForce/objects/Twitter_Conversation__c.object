@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Conversation_Age_Hours__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>( NOW() - Conversation_Start__c ) * 24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The number of hours since the first tweet in this conversation.</inlineHelpText>
+        <label>Conversation Age (Hours)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Conversation_Recency__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>( NOW() - Most_Recent_Tweet__c ) * 24</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>The number of hours since the most recent Tweet in this conversation.</inlineHelpText>
+        <label>Conversation Recency (Hours)</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Conversation_Start__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Date and time of the first Tweet in this conversation.</inlineHelpText>
+        <label>Conversation Start</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Most_Recent_Tweet__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>Date and time of the most recent Tweet in this conversation.</inlineHelpText>
+        <label>Most Recent Tweet</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Total_Conversation_Tweets__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <inlineHelpText>The total number of Tweets in this conversation.</inlineHelpText>
+        <label>Total Conversation Tweets</label>
+        <summaryForeignKey>Tweet__c.Twitter_Conversation__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <label>Twitter Conversation</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Conversation_Age_Hours__c</columns>
+        <columns>Conversation_Recency__c</columns>
+        <columns>Conversation_Start__c</columns>
+        <columns>Most_Recent_Tweet__c</columns>
+        <columns>Total_Conversation_Tweets__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>TC-{0000}</displayFormat>
+        <label>Twitter Conversation Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Twitter Conversations</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Conversation_Age_Hours__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Conversation_Recency__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Conversation_Start__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Most_Recent_Tweet__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Total_Conversation_Tweets__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <webLinks>
+        <fullName>Refresh_Conversation</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Refresh Conversation</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>function doRefresh() {
+             var box = new parent.SimpleDialog(&quot;hersh&quot;+Math.random(), true);
+             parent.box = box;
+        
+             box.setTitle(&quot;Salesforce CRM for Twitter 3.0&quot;);
+        
+             box.createDialog();
+             box.setWidth(500);
+             
+             box.setContentInnerHTML(&quot;&lt;a href=\&quot;#\&quot; onclick=\&quot;box.hide();\&quot;&gt;Close&lt;/a&gt;&lt;br/&gt;&lt;iframe src=\&quot;/apex/twitterConvoRefresh?id={!Twitter_Conversation__c.Id}\&quot; width=\&quot;100%\&quot; height=\&quot;250\&quot; border=\&quot;0\&quot; style=\&quot;border: 0\&quot;&gt;&lt;/iframe&gt;&quot;);
+
+             box.setupDefaultButtons();
+             
+             box.show();
+        }
+
+doRefresh();</url>
+    </webLinks>
+</CustomObject>

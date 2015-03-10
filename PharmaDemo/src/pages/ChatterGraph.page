@@ -1,0 +1,33 @@
+<apex:page sidebar="false" showHeader="false">
+  <apex:stylesheet value="{!$Page.chatter_graph_css}"/>
+  <apex:includeScript value="{!$Resource.jit_yc_js}"/>
+  <apex:includeScript value="{!$Resource.excanvas_js}"/>
+  <apex:includeScript value="{!$Page.chatter_graph_js}"/>
+  <script>var prevOnload = window.onload; window.onload = function() {prevOnload(); init();}</script>
+  <body onLoad="init();">
+  <div id="infovis">
+    <div id="optionsButton" class="options optionsButton" onClick="toggleOptions()">Options</div>
+    <div id="options" class="options optionsDialog">
+      <b>Include subscriptions:</b>
+      <table id="optionsTable">
+        <tr><td><input type="checkbox" value="User" checked="true" onChange="optionsChanged=true"/></td><td>User profiles</td></tr>
+        <tr><td><input type="checkbox" value="Account" onChange="optionsChanged=true"/></td><td>Accounts</td></tr>
+        <tr><td><input type="checkbox" value="Opportunity:CloseDate>TODAY" onChange="optionsChanged=true"/></td><td>Open opportunities</td></tr>
+        <tr><td><input type="checkbox" value="Contact" onChange="optionsChanged=true"/></td><td>Contacts</td></tr>
+        <tr><td><input type="checkbox" value="Lead" onChange="optionsChanged=true"/></td><td>Leads</td></tr>
+        <tr><td><input type="checkbox" value="Case:isClosed=false" onChange="optionsChanged=true"/></td><td>Open cases</td></tr>
+      </table>
+      <hr/>
+      <b>Custom:</b>
+      <table>
+        <tr><td>Type&nbsp;</td><td><input id="customType" class="optionsCustomInput" onChange="optionsChanged=true"/></td></tr>
+        <tr><td>Filter&nbsp;</td><td><input id="customFilter" class="optionsCustomInput" onChange="optionsChanged=true"/></td></tr>
+      </table>
+      <div style="text-align: center;">
+        <input type="button" onClick="acceptOptions()" value="OK" style="font-size: 1.0em; margin-top: 5px; width: 60px"/>
+      </div>
+    </div>
+    <div id="optionsBlocker" class="optionsBlocker">&nbsp;</div>
+  </div>
+  </body>
+</apex:page>

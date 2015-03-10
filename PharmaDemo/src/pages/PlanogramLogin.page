@@ -1,0 +1,87 @@
+<apex:page standardStyleSheets="false" showHeader="false" cache="false">
+<html>
+    <head>
+        <title>Planogram</title>
+        
+        <link href="{!URLFOR($Resource.SFPlanogram, 'appLogo.png')}" rel="apple-touch-icon" />  
+        
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="user-scalable=no, width=device-width" name="viewport" />
+        
+        <style type="text/css">
+            body {
+                font-size:8pt;
+                margin:0px auto;
+            }
+
+            #content {
+                margin: 0px auto;
+                width: 1024px;
+                height: 748px;
+                background-image: url('{!URLFOR($Resource.SFPlanogram, 'PlanogramLogin.png')}');
+            }
+            
+            input.username, input.password {
+                border: none;
+                font-size:18pt;
+                color:#42bae6;
+                opacity:0.4;
+                height: 40px;
+                margin-top: 375px;
+                margin-left:270px;
+                width: 470px;
+                background: none;
+            }
+            
+            input.password {
+                /*border: 1px solid #fff;*/
+                margin-top: 35px;                
+                
+            }
+            
+            .loginButton {
+                margin-top: 21px;
+                margin-left:636px;            
+            }
+            
+            
+        </style>
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                $("img#loginButton").click(function(){ 
+                    var username = $('#username').val();
+                    var password = $('#password').val();
+                    var url = "https://www.salesforce.com/login.jsp?&un="+username+"&pw="+password+"&startURL=%2Fapex%2FPlanogramAccountSelection";
+                    window.location = url;
+                });
+                
+    
+                
+                $('input:text').click(
+                    function(){
+                        $(this).val('');
+                });
+                
+                $('input:password').click(
+                    function(){
+                        $(this).val('');
+                });
+            });    
+        
+        </script>
+    </head>
+    <body>
+        <apex:form >
+            <div id="content">          
+                <input id="username" type="text" value="" class="username"/>
+                <input id="password" type="password" value="" class="password"/>
+                <img src="{!URLFOR($Resource.SFPlanogram, 'Icons/Buttons/Login.png')}" class="loginButton" id="loginButton" /><!-- 
+                <apex:commandButton id="loginButton" image="{!URLFOR($Resource.SFPlanogram, 'Icons/Buttons/Login.png')}"  styleClass="loginButton"/>
+                 -->                
+            </div>
+        </apex:form>
+        
+    </body>
+</html>
+</apex:page>

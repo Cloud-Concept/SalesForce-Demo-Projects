@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Public</customSettingsVisibility>
+    <description>Setting to define different urls that are used in different visual force pages</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines Description that is shown when hovering over shown linked picture</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <length>30</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>For_ObjectTypes_In_RTable__c</fullName>
+        <deprecated>false</deprecated>
+        <description>List of object types, whether this URL should be show for these object types in the relation table. The object types should be seperated by &quot;,&quot; (comma). In case of Blank, the URL will show on every object type.</description>
+        <externalId>false</externalId>
+        <label>For ObjectTypes In RTable</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Objecttype__c</fullName>
+        <defaultValue>&quot;Account&quot;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Defines the object where the link is displayed</description>
+        <externalId>false</externalId>
+        <label>Objecttype</label>
+        <length>40</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Picture_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the URL to the picture that is shown to reference the related url</description>
+        <externalId>false</externalId>
+        <label>Picture URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>URL__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Defines the url that is referenced</description>
+        <externalId>false</externalId>
+        <label>URL</label>
+        <length>200</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>RelationVizArt URLs</label>
+</CustomObject>

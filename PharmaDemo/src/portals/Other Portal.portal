@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Portal xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <admin>sysadmin.uk-agzhvp5j1uoo.tpjbeihabpcm@pharma.demo</admin>
+    <defaultLanguage>en_US</defaultLanguage>
+    <description>demo</description>
+    <emailSenderAddress>hpaster@salesforce.com</emailSenderAddress>
+    <emailSenderName>hpaster@salesforce.com</emailSenderName>
+    <enableSelfCloseCase>true</enableSelfCloseCase>
+    <forgotPassTemplate>unfiled$public/CustomerPortalCustomerPortalResetPasswordSAMPLE</forgotPassTemplate>
+    <isSelfRegistrationActivated>false</isSelfRegistrationActivated>
+    <newPassTemplate>unfiled$public/CustomerPortalCustomerPortalResetPasswordSAMPLE</newPassTemplate>
+    <newUserTemplate>unfiled$public/CustomerPortalCustomerPortalNewUserLoginInformationSAMPLE</newUserTemplate>
+    <showActionConfirmation>false</showActionConfirmation>
+    <type>CustomerSuccess</type>
+</Portal>

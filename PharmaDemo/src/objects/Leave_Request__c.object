@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Approval_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>ApproverEmployeeID__c</fullName>
+        <externalId>false</externalId>
+        <label>ApproverEmployeeID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ApproverName__c</fullName>
+        <externalId>false</externalId>
+        <label>ApproverName</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Approver__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Approver</label>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>Approver Leave Requests</relationshipLabel>
+        <relationshipName>Approver_Leave_Requests</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>From__c</fullName>
+        <externalId>false</externalId>
+        <label>From</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Leave_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Leave Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Vacation</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Work Accident</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Unpaid Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sick Leave (average)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Notes__c</fullName>
+        <externalId>false</externalId>
+        <label>Notes</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>SAP_Approval_Message__c</fullName>
+        <externalId>false</externalId>
+        <label>SAP Approval Message</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Approval_Status__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>SAP response upon Leave Request being Approved</description>
+        <externalId>false</externalId>
+        <label>SAP Approval Status</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SAP_Create_Message__c</fullName>
+        <externalId>false</externalId>
+        <label>SAP Create Message</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_Create_Status__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Checked if the Leave Request has been successfully created in SAP</description>
+        <externalId>false</externalId>
+        <label>SAP Create Status</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SAP_EmloyeeID__c</fullName>
+        <externalId>false</externalId>
+        <label>SAP_EmloyeeID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SAP_RequestID__c</fullName>
+        <externalId>true</externalId>
+        <label>SAP RequestID</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Short_Title__c</fullName>
+        <description>Formula field summarizing the request. Useful for mobile display</description>
+        <externalId>false</externalId>
+        <formula>TEXT(DAY(From__c)) &amp; &quot; &quot; &amp;
+CASE( MONTH(From__c),
+  1, &quot;Jan&quot;,
+  2, &quot;Feb&quot;,
+  3, &quot;Mar&quot;,
+  4, &quot;Apr&quot;,
+  5, &quot;May&quot;,
+  6, &quot;Jun&quot;,
+  7, &quot;Jul&quot;,
+  8, &quot;Aug&quot;,
+  9, &quot;Sep&quot;,
+ 10, &quot;Oct&quot;,
+ 11, &quot;Nov&quot;,
+ 12, &quot;Dec&quot;,
+&quot;—&quot;) &amp; &quot; &quot; &amp;
+TEXT(YEAR(From__c))
+
+&amp; &apos; : &apos; 
+
+&amp; TEXT(Leave_Type__c)</formula>
+        <label>Short Title</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>To__c</fullName>
+        <externalId>false</externalId>
+        <label>To</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>View__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; Id, IMAGE(&quot;/img/icon/tasks16.gif&quot; ,&quot;View&quot;) ,&quot;_parent&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>View</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Leave Request</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>View__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Leave_Type__c</columns>
+        <columns>Approver__c</columns>
+        <columns>Approval_Status__c</columns>
+        <columns>From__c</columns>
+        <columns>To__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Approved</fullName>
+        <columns>View__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Approval_Date__c</columns>
+        <columns>Leave_Type__c</columns>
+        <columns>Approver__c</columns>
+        <columns>From__c</columns>
+        <columns>To__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Approved</value>
+        </filters>
+        <label>Approved Leave Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Pending</fullName>
+        <columns>View__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Leave_Type__c</columns>
+        <columns>Approver__c</columns>
+        <columns>From__c</columns>
+        <columns>To__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approval_Status__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </filters>
+        <label>Pending Leave Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <listViews>
+        <fullName>Rejected</fullName>
+        <columns>View__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>Approval_Date__c</columns>
+        <columns>Leave_Type__c</columns>
+        <columns>Approver__c</columns>
+        <columns>From__c</columns>
+        <columns>To__c</columns>
+        <columns>Notes__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Approval_Status__c</field>
+            <operation>equals</operation>
+        </filters>
+        <label>Rejected Leave Requests</label>
+        <language>en_US</language>
+    </listViews>
+    <nameField>
+        <displayFormat>LR-{DD}-{MM}-{YYYY}-{000}</displayFormat>
+        <label>Leave Request Name</label>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Leave Requests</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>View__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>CREATEDBY_USER</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Leave_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Approver__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Approval_Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>From__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>To__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Notes__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Only_Approver_can_Approve</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND(ISCHANGED( Approval_Status__c ),  Approver__r.Id  &lt;&gt;   $User.Id ), true, false)</errorConditionFormula>
+        <errorDisplayField>Approval_Status__c</errorDisplayField>
+        <errorMessage>You can only change the approval status if you are the Approver</errorMessage>
+    </validationRules>
+</CustomObject>

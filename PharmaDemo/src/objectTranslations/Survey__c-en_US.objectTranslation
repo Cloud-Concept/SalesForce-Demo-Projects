@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Survey</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Surveys</value>
+    </caseValues>
+    <fields>
+        <label><!-- Completed URL --></label>
+        <name>Completed_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Description to display to the contact that completes the survey --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- How many questions will be presented on each page of the survey --></help>
+        <label><!-- Questions per page --></label>
+        <name>Questions_per_page__c</name>
+    </fields>
+    <fields>
+        <help><!-- The base URL of the site where the user will take the survey. Found in Sites setup. Copy the default web address including any subdirectories into this field. --></help>
+        <label><!-- Site URL --></label>
+        <name>Site_URL__c</name>
+    </fields>
+    <layouts>
+        <layout>Survey Layout</layout>
+        <sections>
+            <label><!-- Description --></label>
+            <section>Description</section>
+        </sections>
+        <sections>
+            <label><!-- Survey Administration Links --></label>
+            <section>Survey Administration Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Close_Survey --></label>
+        <name>Close_Survey</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Edit_Questions --></label>
+        <name>Edit_Questions</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Invite_Contacts --></label>
+        <name>Invite_Contacts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Review_Responses --></label>
+        <name>Review_Responses</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Invitations --></label>
+        <name>Send_Invitations</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,1731 @@
+<apex:page standardStylesheets="false" cache="false" standardController="ModelM__MobileAppConfig__c" extensions="ModelM.AppConfigController,ModelM.App_Config_Controller_JS" showHeader="false" action="{!init}">
+
+    <apex:includeScript value="{!$Resource.ModelM__jQuery}"/>
+    <apex:includeScript value="{!$Resource.ModelM__jQueryUI}"/>    
+    <apex:includeScript value="{!$Resource.ModelM__jPickerJs}"/>    
+    <apex:includeScript value="{!$Resource.ModelM__jNumeric}"/>         
+    <apex:includeScript value="{!$Resource.ModelM__appJs}"/>          
+    <apex:stylesheet value="{!$Resource.ModelM__jPickerCss}" />
+    <apex:stylesheet value="{!$Resource.ModelM__pageCss}" />
+
+    <script>
+    jQuery.noConflict();
+    var packagePrefix = 'ModelM__';
+    jQuery(document).ready(function(){
+        showAsDialog('promptLoading');  
+        jQuery.fn.jPicker.defaults.images.clientPath = "{!URLFOR($Resource.images)}/";
+        var id = '{!id}';
+        var macId = '{!mobileAppConfig.id}';
+        if(id == null || id == ''){
+            id = macId;
+        }
+        
+        var categoryConfigId = null;
+        
+        // load content after select category to edit
+        var landscapeWidth = 640;
+        var landscapeHeight = 413;
+        var portraitWidth = 567;
+        var portraitHeight = 640;
+
+        var defaultLandscapeWidth = 1024; // 1.55151
+        var defaultLandscapeHeight = 612;
+        var defaultPortraitWidth = 768; // 0,885
+        var defaultPortraitHeight = 868;
+        
+        var zoomLandscapeWidth = 1024;
+        var zoomLandscapeHeight = 612;
+        var zoomPortraitWidth = 768;
+        var zoomPortraitHeight = 868;
+        
+        var imgButtonFlag = false;
+
+
+        
+        // functions moved to appJs!!!
+        // add button to layout or remove button from layout
+        function addOrRemoveButton(categoryId, categoryName, eventType){
+            if(typeof categoryId.length == 'undefined' || typeof eventType.length == 'undefined' || typeof categoryName.length == 'undefined' || typeof id.length == 'undefined'){
+                return false;
+            }
+        
+            if(categoryId.length == 0 || eventType.length == 0 || categoryName.length == 0 || id.length == 0){
+                return false;
+            }
+
+            showAsDialog('promptLoading');                     
+            if(eventType == 'added'){
+                ModelM.App_Config_Controller_JS.addMobileCategoryConfigToMAC(id, categoryId, function(result, event){
+                    if(event.status) {
+                        //Record added
+                        // add button to page
+                        jQuery('.selectCategoryList').addClass('editing');                      
+                        jQuery('.selectCategoryForId-'+categoryId).addClass('added');
+                        jQuery('.selectCategoryList').removeClass('editing');
+                        jQuery('.selectCategoryForId-'+categoryId).css('background-color', 'dddddd');                       
+                        var preparedLandscapeButton = setLayoutButton(result.Id, categoryName, categoryId , 0, 0, 'landscape-button');
+                        var preparedPortraitButton = setLayoutButton(result.Id, categoryName, categoryId , 0, 0, 'portrait-button');                
+
+                        if(jQuery('#zoom-layout-customizer').hasClass('portrait') && !jQuery('#promptZoom').hasClass('hidden')){
+                            setLayoutButton(result.Id, categoryName, categoryId , 0, 0, 'zoom-portrait-button');                        
+                        } else if(jQuery('#zoom-layout-customizer').hasClass('landscape') && !jQuery('#promptZoom').hasClass('hidden')){
+                            setLayoutButton(result.Id, categoryName, categoryId , 0, 0, 'zoom-landscape-button');                       
+                        }
+
+                        var cmcId = result.Id;
+                        if(preparedLandscapeButton != false && preparedPortraitButton != false){
+                            // add item to tree category
+                            ModelM.App_Config_Controller_JS.getSubCategories(categoryId, function(result2, event){
+                                if(event.status) {
+                                    jQuery('#category-tree').append('<div id="'+cmcId+'" class="category-tree-item category-id-'+categoryId+'" ><span class="indicator-expand-category pointer-cursor collapsed" style="font-size: 12px;">+</span><span class="pointer-cursor" onclick="selectCategoryMobileConfig(\''+cmcId+'\')"> '+categoryName+'</span></div>');
+                                    jQuery('#selectParentCategory').append('<option value="'+categoryId+'">'+categoryName+'</option>')
+                                    if(result2.size() != 0){
+                                        jQuery.each(result2, function(index,categoryObj){
+                                            jQuery('#category-tree').append('<div id="'+categoryObj.Id+'" onclick="selectSubCategory(\''+categoryObj.Id+'\');" class="hidden pointer-cursor sub-category-tree-item category-id-'+categoryObj.Id+' sub-for-cmcid-'+cmcId+'">'+categoryObj.Name+'</div>');
+                                            jQuery('#selectParentCategory').find('option').each(function(){
+                                                if(jQuery(this).val() == categoryId){
+                                                    jQuery(this).after('<option value="'+categoryObj.Id+'" disabled="disabled">- '+categoryObj.Name+'</option>')
+                                                }
+                                            });
+                                        });                                           
+                                    }
+                                } else {
+                                    showError('Unable to refresh tree category.');
+                                }
+                            });
+                        }                           
+                    } else {
+                        showError('Add buttons action failed.');
+                    }
+                    hideDivDialog('promptLoading');                 
+                });
+            } else if(eventType == 'removed' && typeof jQuery('span.'+categoryId).parent('div').parent('div').attr('id') != 'undefined' && jQuery('span.'+categoryId).parent('div').parent('div').attr('id').length != 0){
+                ModelM.App_Config_Controller_JS.removeMobileCategoryConfigFromMAC(jQuery('span.'+categoryId).parent('div').parent('div').attr('id'), function(result, event){
+                    if(event.status) {
+                        //Record deleted
+                        // remove item from category-tree
+                        var categoryToRemoveFromTree = jQuery('#category-tree').find('div.category-id-'+categoryId);                    
+                        jQuery('#category-tree').find('div.sub-for-cmcid-'+categoryToRemoveFromTree.attr('id')).remove();
+                        categoryToRemoveFromTree.remove();
+                        // remove button from page    
+                        jQuery('.selectCategoryList').addClass('editing');
+                        jQuery('.selectCategoryForId-'+categoryId).removeClass('added');      
+                        jQuery('.selectCategoryList').removeClass('editing');
+                        jQuery('.'+categoryId).parent().parent().draggable("destroy");
+                        jQuery('.'+categoryId).parent().parent().remove();
+                        // load first item to tree
+                        if(jQuery('#category-tree').find('.category-tree-item').length != 0){
+                            jQuery('#category-tree').find('.category-tree-item').first().find('span.pointer-cursor').trigger('click');
+                        } else {
+                            hideDivDialog('promptLoading');                         
+                        }
+                    } else {
+                        showError('Remove button action failed.'); 
+                        hideDivDialog('promptLoading');                                  
+                    }                   
+                });
+            } else {
+                showError('Invalid action.');
+                hideDivDialog('promptLoading');    
+            }
+        }
+        
+        // save dragged button position (drag - stop)
+        function buttonDragged(event, ui){
+            var draggedButton = jQuery(ui.helper);
+            // remove scale before save
+            if(draggedButton.hasClass('zoom-portrait-button') || draggedButton.hasClass('zoom-landscape-button')){
+                scaleLX = defaultLandscapeWidth / zoomLandscapeWidth;
+                scaleLY = defaultLandscapeHeight / zoomLandscapeHeight;
+                scalePX = defaultPortraitWidth / zoomPortraitWidth;
+                scalePY = defaultPortraitHeight / zoomPortraitHeight;                               
+            } else if(draggedButton.hasClass('portrait-button') || draggedButton.hasClass('landscape-button')){
+                scalePX = defaultPortraitWidth / portraitWidth;
+                scalePY = defaultPortraitHeight / portraitHeight;               
+                scaleLX = defaultLandscapeWidth / landscapeWidth;
+                scaleLY = defaultLandscapeHeight / landscapeHeight;
+            } else {
+                showError('Unable to update button position.','Wrong scale.');
+                return false;               
+            }
+            
+            ModelM.App_Config_Controller_JS.saveDraggedButton(
+                draggedButton.attr('id'),
+                ( draggedButton.hasClass('zoom-landscape-button') || draggedButton.hasClass('landscape-button') ) ? (ui.position.left * scaleLX) : '',
+                ( draggedButton.hasClass('zoom-landscape-button') || draggedButton.hasClass('landscape-button') ) ? (ui.position.top  * scaleLY) : '',
+                ( draggedButton.hasClass('zoom-portrait-button') || draggedButton.hasClass('portrait-button') ) ? (ui.position.left * scalePX) : '',
+                ( draggedButton.hasClass('zoom-portrait-button') || draggedButton.hasClass('portrait-button') ) ? (ui.position.top  * scalePY) : '',
+                function(result, event){
+                    if(event.status) {
+                        // 'Button dragged saved'
+                    } else {
+                        showError('Drag button action failed.');   
+                    }
+            });
+        }
+        
+        // remove rubbish from layout and option list)
+        function cleanUp(result){
+        
+            var needToDelete = true;
+            var temporaryButtonId = null;               
+            var temporaryCategoryId = null; 
+            
+            // CLEAN UP BUTTONS
+            jQuery('.custom-button').each(function(){
+                if(jQuery(this).attr('id').length != 0){
+                    needToDelete = true;
+                    temporaryButtonId = jQuery(this).attr('id');
+                    jQuery.each(result, function(index,button){
+                        if(temporaryButtonId == button.Id){
+                            needToDelete = false;
+                            return;
+                        }
+                    });
+                    if(needToDelete){
+                        jQuery(this).draggable("destroy");                          
+                        jQuery(this).remove();
+                    }
+                } else { // invalid button!
+                    jQuery(this).remove();                      
+                }           
+            });
+            
+            jQuery('.selectCategory').each(function(){
+                jQuery('.selectCategoryList').addClass('editing');            
+                if(jQuery(this).attr('value').length != 0){
+                    needToDelete = true;
+                    temporaryCategoryId = jQuery(this).attr('value');
+                    jQuery.each(result, function(index,button){
+                        if(temporaryCategoryId == button[packagePrefix+'CategoryId__r'].Id){
+                            needToDelete = false;
+                            needToCreate = true;                                    
+                            return;
+                        }
+                    });
+                    if(needToDelete){
+                        if(jQuery(this).hasClass("added")){
+                            jQuery(this).removeClass("added");
+                        }                           
+                    }                       
+                } else { // invalid category option!
+                    jQuery(this).remove();                      
+                }
+                jQuery('.selectCategoryList').removeClass('editing');
+            });
+        }
+
+        // function return button (div) for requested params
+        function setLayoutButton(mobileCategoryId, CategoryName, CategoryId, positionX, positionY, buttonExtraClass){
+            if(typeof buttonExtraClass == 'undefined' || buttonExtraClass.length ==0){
+                showError('Unable to set button','Missing parameter.');
+                return false;
+            }
+            
+            if(buttonExtraClass == 'zoom-landscape-button'){
+                scaleX = zoomLandscapeWidth / defaultLandscapeWidth;
+                scaleY = zoomLandscapeHeight / defaultLandscapeHeight;
+                customizer = jQuery('#zoom-layout-customizer'); 
+            } else if(buttonExtraClass == 'zoom-portrait-button'){
+                scaleX = zoomPortraitWidth / defaultPortraitWidth;
+                scaleY = zoomPortraitHeight / defaultPortraitHeight;
+                customizer = jQuery('#zoom-layout-customizer'); 
+            } else if(buttonExtraClass == 'portrait-button'){
+                scaleX = portraitWidth / defaultPortraitWidth;
+                scaleY = portraitHeight / defaultPortraitHeight;
+                customizer = jQuery('#layout-portrait-customizer');         
+            } else if(buttonExtraClass == 'landscape-button'){
+                scaleX = landscapeWidth / defaultLandscapeWidth;
+                scaleY = landscapeHeight / defaultLandscapeHeight;
+                customizer = jQuery('#layout-landscape-customizer');        
+            } else {
+                showError('Unable to set button.','Wrong scale.');
+                return false;               
+            }
+            
+            if(imgButtonSrc != null){
+                var buttonWidth = (parseInt(imgButtonWidth) * scaleX)+'px';
+                var buttonHeigth = (parseInt(imgButtonHeight) *scaleY)+'px';
+                var buttonTextVerticalPostion = '-'+(((parseInt(imgButtonHeight) *scaleY)/2)+5)+'px';                
+                var buttonBackgroundSrc = imgButtonSrc;
+                imgButtonFlag = true;           
+            } else {
+                var buttonWidth = 'auto';
+                var buttonHegith = 'auto';
+                var buttonBackgroundSrc = null;
+                var buttonTextVerticalPostion = 'auto';
+                imgButtonFlag = false;
+            }
+            
+            if( !isNaN(parseInt(jQuery('.alphaButtonText').val())) ){
+                opacityValue = parseInt(jQuery('.alphaButtonText').val());
+            } else {
+                opacityValue = 100;
+            }
+            
+            var divButton = null;
+            if(customizer.find('#'+mobileCategoryId).length == 0){
+            
+                // add button
+                var divButtonString = '<div class="custom-button" id="'+mobileCategoryId+'">';
+                    divButtonString += '<div class="custom-button-actions hidden"><div class="removing-button">X</div></div>';                
+                    divButtonString += '<div class="background-wrapper" style="position: relative; top: 0px; left: 0px; width: 100%; height: 100%;">'
+                    if(buttonBackgroundSrc != null){
+                        divButtonString += '<img src="'+buttonBackgroundSrc+'" class="buttonBackgroundImg">';
+                    }
+                    divButtonString += '</div>';
+                    divButtonString += '<div class="button-text-wrapper" style="position: relative; top: '+(buttonTextVerticalPostion)+'; left: 0px; width: 100%; height: 100%;">';
+                        divButtonString += '<span class="'+CategoryId+'">'+CategoryName+'</span>';
+                    divButtonString += '</div>';
+                divButtonString += '</div>';
+            
+                divButton = jQuery(divButtonString);
+                divButton.draggable({
+                    containment: 'parent',
+                    stop: buttonDragged
+                });
+                customizer.append(divButton);
+            } else {
+                divButton = customizer.find('#'+mobileCategoryId);
+                // update button                
+                divButton.attr('class','').addClass('custom-button').addClass('ui-draggable').addClass(buttonExtraClass);
+                
+                if(buttonBackgroundSrc == null){
+                    if(divButton.find('.buttonBackgroundImg').length != 0){
+                        divButton.find('.buttonBackgroundImg').remove();
+                    }
+                }
+                if(divButton.find('.buttonBackgroundImg').length != 0 && buttonBackgroundSrc != null){
+                    divButton.find('.buttonBackgroundImg').attr('src', buttonBackgroundSrc);                
+                } else if(divButton.find('.buttonBackgroundImg').length == 0 && buttonBackgroundSrc != null){
+                    divButton.find('.background-wrapper').append('<img src="'+buttonBackgroundSrc+'" class="buttonBackgroundImg">');
+                }
+                divButton.find('.button-text-wrapper').css('top', buttonTextVerticalPostion);
+                divButton.find('.button-text-wrapper').css('opacity', (opacityValue/100));
+                divButton.find('.button-text-wrapper').find('span').attr('class','').addClass(CategoryId);
+                divButton.find('.button-text-wrapper').find('span').text(CategoryName);
+            }
+            divButton.css('position','absolute');
+            divButton.css('left', (positionX*scaleX));
+            divButton.css('top', (positionY*scaleY));
+            divButton.css('width', buttonWidth);
+            divButton.css('height', buttonHeigth);  
+            divButton.find('.buttonBackgroundImg').css('width', '100%');
+            divButton.find('.buttonBackgroundImg').css('height', '100%');
+            divButton.find('.button-text-wrapper').css('opacity', (opacityValue/100));
+            divButton.css('color', '#'+jQuery('.buttonTextColorInput').val());
+            divButton.addClass(buttonExtraClass);       
+            return divButton;
+        }
+        
+        // init: get information about buttons 
+        // get information about buttons (from category mobile configuration for requested mobile configuration id
+        // add buttons to layout-customizer
+        function reloadButtons(){
+            showAsDialog('promptLoading');  
+            // RELOAD BUTTONS&LISTS         
+            ModelM.App_Config_Controller_JS.getCategoryConfigurationForMobApp(id, true, function(result, event){
+                if(event.status) {
+                    // remove not existing (in db) buttons from layout and options from category lists
+                    cleanUp(result); 
+                    // reset category select list
+                    // add not existing (layout) buttons to layout
+                    jQuery.each(result, function(index,button){
+                        
+                        // create landscape button
+                        setLayoutButton(button.Id, button[packagePrefix+'CategoryId__r'].Name, button[packagePrefix+'CategoryId__r'].Id, button[packagePrefix+'LandscapeX__c'], button[packagePrefix+'LandscapeY__c'], 'landscape-button');
+                        // create portait button
+                        setLayoutButton(button.Id, button[packagePrefix+'CategoryId__r'].Name, button[packagePrefix+'CategoryId__r'].Id, button[packagePrefix+'PortraitX__c'], button[packagePrefix+'PortraitY__c'], 'portrait-button');
+                        if(!jQuery('.selectCategoryForId-'+button[packagePrefix+'CategoryId__r'].Id).hasClass('added')){
+                            jQuery('.selectCategoryList').addClass('editing');
+                            jQuery('.selectCategoryForId-'+button[packagePrefix+'CategoryId__r'].Id).addClass('added');
+                            jQuery('.selectCategoryList').removeClass('editing');                           
+                        }
+                    });
+                } else if (event.type === 'exception') {    
+                    showError('Unable to load buttons.', event.message);                
+                } else {
+                    showError('Unable to load buttons.', event.message);                
+                }
+                hideDivDialog('promptLoading');            
+            }, {escape:true});
+
+        }
+        
+        
+        
+        jQuery("img").each(function(i, elem){
+            if (jQuery(elem).attr('id').search('imgButton') != -1){
+                if(!jQuery(elem).hasClass('imgButton')){
+                    jQuery(elem).addClass('imgButton')
+                }
+            }
+        });
+
+        if(jQuery('.imgButton').length != 0){
+            var imgButtonSrc = jQuery('.imgButton').attr('src');
+            var imgButtonWidth = jQuery('.imgButton').width();          
+            var imgButtonHeight = jQuery('.imgButton').height();
+        } else {
+            var imgButtonSrc = null;
+            var imgButtonWidth = 0;         
+            var imgButtonHeight = 0;
+        }
+
+        jQuery('.imgButton').load(function(){
+            imgButtonSrc = jQuery(this).attr('src');
+            imgButtonWidth = jQuery(this).width();          
+            imgButtonHeight = jQuery(this).height();
+            reloadButtons()
+        });
+        
+        // scale background images to layout customizer divs
+        if(jQuery('.portrait-to-scale').length != 0){
+            jQuery('.portrait-to-scale').css('width', portraitWidth );
+            jQuery('.portrait-to-scale').css('height', portraitHeight );
+        }
+        if(jQuery('.landscape-to-scale').length != 0){
+            jQuery('.landscape-to-scale').css('width', landscapeWidth );
+            jQuery('.landscape-to-scale').css('height', landscapeHeight );
+        }       
+        
+        // init: add classes and bind plugins to input elemenets
+        jQuery('input[type=text]').each(function(i, elem){
+            if (jQuery(elem).attr('id').search('buttonTextPickColor') != -1){
+                if(!jQuery(elem).hasClass('buttonTextColorInput')){
+                    jQuery(elem).addClass('buttonTextColorInput');    
+                }            
+            }                
+            if (jQuery(elem).attr('id').search('PickColor') != -1){
+                if(!jQuery(elem).hasClass('colorPickerBind')){
+                    bindColorPicker(jQuery(elem));
+                    jQuery(elem).addClass('colorPickerBind');                   
+                }
+            }
+            if (jQuery(elem).attr('id').search('Alpha') != -1){
+                if(!jQuery(elem).hasClass('AlphaInput')){
+                    jQuery(elem).addClass('AlphaInput');            
+                    jQuery(elem).attr('size',3);
+                    jQuery(elem).attr('maxlength',3);
+                    jQuery(elem).numeric(false);
+                    jQuery(elem).focusout(function(event){
+                        var elemVal = parseInt(jQuery(this).val());
+                        if(isNaN(elemVal) || elemVal < 0) {
+                            jQuery(this).val(0);
+                        }
+                        if(!isNaN(elemVal) && elemVal > 100) {
+                            jQuery(this).val(100);
+                        }                       
+                    });
+                }                
+            }
+            if (jQuery(elem).attr('id').search('buttonTextAlpha') != -1){
+                if(!jQuery(elem).hasClass('alphaButtonText')){
+                    jQuery(elem).addClass('alphaButtonText');
+                }         
+            }            
+        });
+        
+        jQuery('.alphaButtonText').focusout(function(){
+            updateTextButtons();
+        })
+        
+        // init: add classes to checkbox elemenets
+        jQuery('input[type=checkbox]').each(function(i, elem){
+            if (jQuery(elem).attr('id').search('bundleCheckbox') != -1){
+                if(!jQuery(elem).hasClass('isBundleCheckbox')){
+                    jQuery(elem).addClass('isBundleCheckbox');
+                }
+            }                   
+        });
+                
+        // init: add classes to select elemenets
+        jQuery("select").each(function(i, elem){
+            // same categories but from different lists
+            if (jQuery(elem).attr('id').search('portraitCategoryList') != -1 || jQuery(elem).attr('id').search('landscapeCategoryList') != -1 || jQuery(elem).attr('id').search('zoomCategoryList') != -1){
+                if(!jQuery(elem).hasClass('selectCategoryList')){
+                    jQuery(elem).addClass('selectCategoryList');
+                }            
+                jQuery('option',elem).each(function(i,cat){
+                    if(!jQuery(cat).hasClass('selectCategory')){
+                        jQuery(cat).addClass('selectCategory');
+                        jQuery(cat).addClass('selectCategoryForId-'+jQuery(cat).attr('value'));
+                    }                    
+                });
+            }
+        });
+        
+        
+
+        
+        // add category to layout: manage three different list
+        jQuery('.selectCategoryList').change(function(){
+            var selectedCatObj = jQuery(this).find("option:selected").first();
+            if(selectedCatObj.length != 0 && !jQuery(this).hasClass('editing') && selectedCatObj.val() != 'SelectCategory'){
+                var categoryId = selectedCatObj.val();
+                var categoryName = selectedCatObj.text();       
+                if(!selectedCatObj.hasClass('added')){
+                // add
+                    addOrRemoveButton(categoryId, categoryName, 'added');
+                } else {
+                // remove
+                    addOrRemoveButton(categoryId, categoryName, 'removed');
+                }
+            }
+            selectedCatObj.focusout();
+            selectedCatObj.attr('selected', 'false');
+            jQuery('.selectCategoryList').val('SelectCategory');
+            jQuery(this).find("option").each(function(){
+                if(jQuery(this).val() == 'SelectCategory'){
+                    jQuery(this).attr('selected', 'true');
+                    return;
+                }
+            });
+            jQuery('.selectCategoryList').focus().blur();
+        }).change();        
+
+        jQuery('.rich-tab-header').live('click', function(){
+            if(jQuery(this).hasClass('rich-tab-disabled')){
+                showError('Cannot open this section.', 'No data to manage.');
+            }
+        });
+
+        // get current category config id
+        jQuery('.category-tree-item').live('click',function(){
+            if(categoryConfigId != jQuery(this).attr('id')){
+                categoryConfigId = jQuery(this).attr('id');
+            }
+        });
+
+        jQuery('.indicator-expand-category').live('click',function(event){
+            event.preventDefault();     
+            if(jQuery(this).parent().attr('id').length !=0){
+                if(jQuery(this).hasClass('collapsed') ){
+                    jQuery(this).removeClass('collapsed').addClass('expanded');
+                    jQuery(this).text('-');             
+                    jQuery('.category-tree-holder').find('.sub-for-cmcid-'+jQuery(this).parent().attr('id')).removeClass('hidden');
+                } else if(jQuery(this).hasClass('expanded') ){
+                    jQuery(this).text('+');
+                    jQuery(this).addClass('collapsed').removeClass('expanded');                    
+                    jQuery('.category-tree-holder').find('.sub-for-cmcid-'+jQuery(this).parent().attr('id')).addClass('hidden');
+                }
+            }
+        
+        });
+
+        jQuery('#collapseCategoryTree').live('click',function(event){
+            event.preventDefault();
+            jQuery('.sub-category-tree-item ').addClass('hidden');
+            jQuery('.indicator-expand-category').addClass('collapsed').removeClass('expanded');
+            jQuery('.indicator-expand-category').text('+');            
+        }); 
+
+        jQuery('#expandCategoryTree').live('click',function(event){
+            event.preventDefault();
+            jQuery('.sub-category-tree-item ').removeClass('hidden');
+            jQuery('.indicator-expand-category').removeClass('collapsed').addClass('expanded');
+            jQuery('.indicator-expand-category').text('-');
+        }); 
+
+        // if bundle: show/hide part of page
+        jQuery('.isBundleCheckbox').live('click',function(){
+            var showHide = jQuery(this).attr('checked');
+            showAsDialog('promptLoading');               
+            jQuery("div").each(function(i, elem){
+                if (jQuery(elem).attr('id').search('cicBlock') != -1){
+                    if(showHide){
+                        jQuery(elem).hide();
+                    } else {
+                        jQuery(elem).show();                    
+                    }
+                    return true;
+                }
+            });     
+
+        });
+        
+        /* TODO: SW
+        jQuery("div").each(function(i, elem){
+            if (jQuery(elem).attr('id').search('giBlock') != -1 && {!!isSubCategorySelected}){
+                jQuery(elem).hide();
+                return true;
+            }
+        }); */
+
+        // if checkbox is set as default clicked, check for others default
+        jQuery('.isDefaultChbx').live('click', function(){
+            if(jQuery(this).attr('checked') == true){
+                ModelM.App_Config_Controller_JS.isOtherDefaultCategoryConfiguration(categoryConfigId, id, function(result, event){
+                    if(event.status) {  
+                        if(result != 0){
+                            showAsDialog('promptOtherDefault');                        
+                        }
+                    } else if (event.type === 'exception') {    
+                        showError('Check if other default configuration exist failed.', event.message);                
+                    } else {
+                        showError('Check if other default configuration exist failed.', event.message);                
+                    }
+                }, {escape:true});     
+            } else {
+                hideDivDialog('promptOtherDefault');              
+            }
+        });
+
+        // button actions: click
+
+        // add top level category dialog
+        jQuery('.addTopLevelCategory').click(function(event){
+            event.preventDefault();
+            showAsDialog('promptAddTopLevelCategory')
+        });
+        // add category dialog
+        jQuery('.addCategory').click(function(event){
+            event.preventDefault();
+            showAsDialog('promptAddCategory');
+        });    
+        // delete (global) dialog     
+        jQuery('.deleteButton').click(function(event){
+            event.preventDefault();
+            showAsDialog('promptDelete');
+        });        
+        // cancel delete (global)         
+        jQuery('#cancelDeleting').click(function(event){
+            event.preventDefault();
+            hideDivDialog('promptDelete');   
+        });
+        
+        
+        /* TODO SW
+        jQuery('.deleteSubButton').click(function(event){
+            event.preventDefault();
+            showAsDialog('promptSubDelete');
+        });
+        jQuery('#cancelSubDeleting').click(function(event){
+            event.preventDefault();
+            hideDivDialog('promptSubDelete');   
+        });
+        */
+        
+        // confirm set as default configuration
+        jQuery('#changeDefaultConfiguration').click(function(event){
+            event.preventDefault();
+            hideDivDialog('promptOtherDefault');               
+        });
+        // cancel set as default configuration
+        jQuery('#cancelDefaultConfiguration').click(function(event){
+            event.preventDefault();
+            hideDivDialog('promptOtherDefault');               
+            jQuery('.isDefaultChbx').attr('checked', false);
+        });
+        // close error box
+        jQuery('#closeError').click(function(event){
+            event.preventDefault();
+            hideDivDialog('promptError');
+            jQuery('#error-msg').text('');
+            jQuery('#error-msg-nofity').text('');
+        });          
+        // confirm add Top Level category
+        jQuery('#saveTopLevelCategory').click(function(event){
+            event.preventDefault();
+            if(jQuery('#new-top-level-cateogry-name').length != 0){
+                var categoryNameField = jQuery('#new-top-level-cateogry-name');
+                if(categoryNameField.val().length > 0 && categoryNameField.val().length < 80){
+                    var categoryName = categoryNameField.val();
+                    ModelM.App_Config_Controller_JS.addCategory(categoryName, '', function(result, event){
+                        if(event.status) {
+                            if(result.Id != null && result.Id != ''){
+                                jQuery('.selectCategoryList').append('<option class="selectCategory selectCategoryForId-'+result.Id+'" value="'+result.Id+'">'+categoryName+'</option>');
+                            }else{
+                                showError('Category already exists. Please use other name and try again.');
+                            }                        
+                        } else {
+                            showError('Add category failed.');                                  
+                        }
+                    });                 
+                    hideDivDialog('promptAddTopLevelCategory');
+                } else {
+                    // invalid input
+                }
+            }
+        });
+        // cancel add top level categories
+        jQuery('#cancelAddTopLevelCategory').click(function(event){
+            event.preventDefault();
+            hideDivDialog('promptAddTopLevelCategory');               
+        });   
+        // confirm add normal category
+        jQuery('#saveCategory').click(function(event){
+            event.preventDefault();
+            if(jQuery('#cateogry-name').length != 0){
+                var categoryNameField = jQuery('#cateogry-name');
+                if(categoryNameField.val().length > 0 && categoryNameField.val().length < 80){
+                    var categoryName = categoryNameField.val();
+                    var parentCategoryId = jQuery("#selectParentCategory option:selected").val();
+                    ModelM.App_Config_Controller_JS.addCategory(categoryName, ( (parentCategoryId.length != 0 && parentCategoryId != 'nonecategory') ? parentCategoryId : ''), function(result, event){
+                        if(event.status) {
+                            if(result.Id != null && result.Id != ''){
+                                if(jQuery('#category-tree').find('.category-id-'+parentCategoryId).length != 0){
+                                    parentTreeItem = jQuery('#category-tree').find('.category-id-'+parentCategoryId);                            
+                                    subForCmcId = parentTreeItem.attr('id');
+                                    parentTreeItem.after('<div id='+result.Id+' onclick="selectSubCategory(\''+result.Id+'\');" class="sub-category-tree-item pointer-cursor category-id-'+result.Id+' sub-for-cmcid-'+subForCmcId+'">'+categoryName+'</div>');
+                                    parentTreeItem.find('.indicator-expand-category').text('-');
+                                    parentTreeItem.find('.indicator-expand-category').removeClass('collapsed');
+                                    parentTreeItem.find('.indicator-expand-category').addClass('expanded');
+                                    jQuery('#category-tree').find('.sub-for-cmcid-'+subForCmcId).removeClass('hidden');
+    
+                                    jQuery('#selectParentCategory').find('option').each(function(){
+                                        if(jQuery(this).val() == parentCategoryId){
+                                            jQuery(this).after('<option value="'+result.Id+'" disabled="disabled">- '+categoryName+'</option>');
+                                        }
+                                    });
+                                } else {
+                                    jQuery('.selectCategoryList').append('<option class="selectCategory selectCategoryForId-'+result.Id+'" value="'+result.Id+'">'+categoryName+'</option>');
+                                    addOrRemoveButton(result.Id, categoryName, 'added');
+                                }
+                            }else{
+                                showError('Category already exists. Please use other name and try again.');
+                            }
+                        } else {
+                            showError('Add category failed.');                                    
+                        }
+                    });         
+                    hideDivDialog('promptAddCategory');
+                } else {
+                    // invalid input
+                }
+            }
+        });
+        // cancel add category
+        jQuery('#cancelAddCategory').click(function(event){
+            event.preventDefault();
+            hideDivDialog('promptAddCategory');               
+        });    
+
+        jQuery('.openZoom').click(function(event){
+            // we have only one "zoom-compositor" (both for portrait and landscape)
+            event.preventDefault();
+            showAsDialog('promptLoading');  
+            errorFlag = false;
+            isPortrait = false;
+            isLandscape = false;
+                        
+            if(jQuery(this).hasClass('landscape-zoom')){
+                currentZoomWidth = zoomLandscapeWidth;
+                currentZoomHeight = zoomLandscapeHeight;
+                backgroundImgDiv = jQuery('.layout-landscape-background').clone();
+                backgroundImgDiv.removeClass('layout-landscape-background');
+                isLandscape = true;             
+                buttonType = 'zoom-landscape-button';
+                jQuery('#zoom-layout-customizer').addClass('landscape').removeClass('portrait');
+            } else if(jQuery(this).hasClass('portrait-zoom')){
+                currentZoomWidth = zoomPortraitWidth;
+                currentZoomHeight = zoomPortraitHeight;
+                backgroundImgDiv = jQuery('.layout-portrait-background').clone();
+                backgroundImgDiv.removeClass('layout-portrait-background');
+                isPortrait = true;              
+                buttonType = 'zoom-portrait-button';
+                jQuery('#zoom-layout-customizer').addClass('portrait').removeClass('landscape');
+            } else {
+                showError('Unable to open zoom.','Invalid zoom type.');
+                errorFlag = true;
+            }
+
+            if(!errorFlag){
+                // set zoom size
+                jQuery('#zoom-layout-customizer').css('width', currentZoomWidth);
+                jQuery('#zoom-layout-customizer').css('height', currentZoomHeight);
+                
+                // reset background img             
+                jQuery('#zoom-layout-customizer').find('.layout-zoom-background').remove();
+                backgroundImgDiv.addClass('layout-zoom-background');
+                jQuery('#zoom-layout-customizer').append(backgroundImgDiv);
+                jQuery('.layout-zoom-background').find('img').attr('class', '');                
+                jQuery('.layout-zoom-background').find('img').css('width', currentZoomWidth);               
+                jQuery('.layout-zoom-background').find('img').css('height', currentZoomHeight);                     
+                
+                // we remove all button from zoom layout        
+                jQuery('#zoom-layout-customizer').find('.custom-button').remove();
+                
+                ModelM.App_Config_Controller_JS.getCategoryConfigurationForMobApp( id, true, function(result, event){
+                    if(event.status) {
+
+                        jQuery.each(result, function(index,button){
+                            // set button
+                            if(isLandscape && !isPortrait) {
+                                setLayoutButton(button.Id, button[packagePrefix+'CategoryId__r'].Name, button[packagePrefix+'CategoryId__r'].Id, button[packagePrefix+'LandscapeX__c'], button[packagePrefix+'LandscapeY__c'], 'zoom-landscape-button');
+                            } else if(!isLandscape && isPortrait) {                     
+                                setLayoutButton(button.Id, button[packagePrefix+'CategoryId__r'].Name, button[packagePrefix+'button.CategoryId__r'].Id, button[packagePrefix+'PortraitX__c'], button[packagePrefix+'PortraitY__c'], 'zoom-portrait-button');
+                            } else {
+                                showError("Unable to create button.","Invalid parameters.")
+                                return false;
+                            }
+                            if(!jQuery('.selectCategoryForId-'+button[packagePrefix+'CategoryId__r'].Id).hasClass('added')){
+                                jQuery('.selectCategoryList').addClass('editing');                              
+                                jQuery('.selectCategoryForId-'+button[packagePrefix+'CategoryId__r'].Id).addClass('added');
+                                jQuery('.selectCategoryList').removeClass('editing');                                   
+                            }                           
+                        });
+                        showAsDialog('promptZoom');                     
+                    } else if (event.type === 'exception') {    
+                        showError('Unable to load buttons.', event.message);                
+                    } else {
+                        showError('Unable to load buttons.', event.message);                
+                    }
+                    hideDivDialog('promptLoading');            
+                }, {escape:true});
+           } else {
+                hideDivDialog('promptLoading');
+           }
+        });  
+        jQuery('#doneZoom').click(function(event){
+            event.preventDefault();
+            // hide zoom            
+            hideDivDialog('promptZoom');
+            // reload buttons positioning
+            reloadButtons();            
+        });
+        jQuery('.reloadLayoutCustomizers').click(function(event){
+            event.preventDefault();
+            // reload buttons positioning
+            reloadButtons();            
+        });
+        
+        jQuery('.custom-button').live('mouseover',function(){
+            if(!jQuery(this).hasClass('button-mouse-over')){
+                jQuery(this).addClass('button-mouse-over');
+                if(jQuery(this).find('.custom-button-actions').length != 0){
+                    jQuery(this).find('.custom-button-actions').removeClass('hidden');
+                }
+            }
+        });
+        jQuery('.custom-button').live('mouseout', function(){
+            if(jQuery(this).hasClass('button-mouse-over')){
+                jQuery(this).removeClass('button-mouse-over');
+                if(jQuery(this).find('.custom-button-actions').length != 0){
+                    jQuery(this).find('.custom-button-actions').addClass('hidden');
+                }
+            }
+        });
+        jQuery('.removing-button').live('click', function(){
+            var customButton = jQuery(this).parents('.custom-button');
+            if(customButton.length != 0){
+                categoryId = customButton.find('span').attr('class');
+                categoryName = customButton.find('span').text();
+            }
+            if(categoryId.length != 0 && categoryName.length != 0){
+                addOrRemoveButton(categoryId, categoryName, 'removed');
+            }           
+        }); 
+        
+        reloadButtons();
+        jQuery('.AlphaInput').each(
+            function(idx, obj) {
+                if( !isNaN(parseInt(jQuery(obj).val()))) {
+                    jQuery(obj).val(parseInt(jQuery(obj).val()));
+                } else {
+                    jQuery(obj).val(100);
+                }
+            }
+        )
+    });
+    
+    function rebindColorPickers(){
+        jQuery('input[type=text]').each(function(i, elem){
+            if (jQuery(elem).attr('id').search('PickColor') != -1){
+                if(!jQuery(elem).hasClass('colorPickerBind')){
+                    bindColorPicker(jQuery(elem));
+                    jQuery(elem).addClass('colorPickerBind');                   
+                }
+            }
+            if (jQuery(elem).attr('id').search('Alpha') != -1){
+                if(!jQuery(elem).hasClass('AlphaInput')){
+                    jQuery(elem).addClass('AlphaInput');            
+                    jQuery(elem).attr('size',3);
+                    jQuery(elem).attr('maxlength',3);
+                    jQuery(elem).numeric(false);
+                    jQuery(elem).focusout(function(event){
+                        var elemVal = parseInt(jQuery(this).val());
+                        if(isNaN(elemVal) || elemVal < 0) {
+                            jQuery(this).val(0);
+                        }
+                        if(!isNaN(elemVal) && elemVal > 100) {
+                            jQuery(this).val(100);
+                        }                       
+                    });
+                }                
+            }
+        });
+        jQuery('input[type=checkbox]').each(function(i, elem){
+            if (jQuery(elem).attr('id').search('isDefault') != -1){
+                if(!jQuery(elem).hasClass('isDefaultChbx')){
+                    jQuery(elem).addClass('isDefaultChbx');
+                }            
+            }                      
+        });
+    }
+    
+    function onCompleteSelectCategory(){
+        rebindColorPickers();
+        jQuery('input[type=checkbox]').each(function(i, elem){  
+            if (jQuery(elem).attr('id').search('bundleCheckbox') != -1){
+                if(!jQuery(elem).hasClass('isBundleCheckbox')){
+                    jQuery(elem).addClass('isBundleCheckbox');
+                }
+            }                   
+            jQuery('.AlphaInput').each(
+                function(idx, obj) {
+                    if( !isNaN(parseInt(jQuery(obj).val()))) {
+                        jQuery(obj).val(parseInt(jQuery(obj).val()));
+                    } else {
+                        jQuery(obj).val(100);
+                    }
+                }
+            )
+        });
+        var showHide = jQuery('.isBundleCheckbox').attr('checked');
+        /*
+        jQuery("div").each(function(i, elem){
+                if (jQuery(elem).attr('id').search('cicBlock') != -1){
+                    if(showHide){
+                        jQuery(elem).hide();
+                    } else {
+                        jQuery(elem).show();                    
+                    }
+                    return true;
+                }
+        */
+        var el = document.getElementById('cicBlock');
+        if(el) {el.style.display='block';}
+        el = document.getElementById('giBlock');
+        if(el) {el.style.display='none';}
+    }
+    
+    function onCompleteSelectSubCategory(){
+        rebindColorPickers();
+
+        var showHide = jQuery('#scOut1');
+        jQuery("#cicBlock").hide();
+        jQuery("#giBlock").show();
+                 
+        
+        var oldSrc = "https://{!orgUrl}/servlet/servlet.FileDownload?file=";
+        var imageId;
+        jQuery("input").each(function(i, elem){
+                if (jQuery(elem).attr('id').search('theHiddenImageId') != -1){
+                        imageId = jQuery(elem).attr('value');
+                }
+        });
+        var newSrc = oldSrc + imageId;
+        jQuery(".categoryImage").attr('src',newSrc);
+    }
+
+    function onCompleteIsBundleCategory(){
+        rebindColorPickers();
+        jQuery('input[type=checkbox]').each(function(i, elem){  
+            if (jQuery(elem).attr('id').search('bundleCheckbox') != -1){
+                if(!jQuery(elem).hasClass('isBundleCheckbox')){
+                    jQuery(elem).addClass('isBundleCheckbox');
+                }
+            }                   
+        });
+                        
+        hideDivDialog('promptLoading');        
+    }    
+    
+    </script>
+    <div id="overlay-disable"></div>
+    
+    <apex:actionStatus id="ajax-status" onstart="showAsDialog('promptLoading');" onstop="hideDivDialog('promptLoading');">
+        <apex:facet name="start">
+            <div id="ajax-loader" style="position: fixed; top:3px; right:5px;" >
+                Loading...
+            </div>
+        </apex:facet>
+    </apex:actionStatus>
+
+    <div id="promptAddTopLevelCategory" class="hidden dialog">
+        <apex:pageBlock title="Category">
+        <div class="padding-box">        
+            <table>
+                <tr><td class="column">
+                    <apex:outputLabel value="Top Level Category Name" /><br/>
+                </td></tr>
+                <tr><td class="column">
+                    <input type="text" id="new-top-level-cateogry-name"/>
+                </td></tr>                     
+            </table>
+            <br/>
+            <div class="wrap">
+                <button class="btn" id="saveTopLevelCategory">Save</button>
+                <button class="btn" id="cancelAddTopLevelCategory">Cancel</button>
+            </div>
+        </div>            
+        </apex:pageBlock>        
+    </div>
+    
+    <div id="promptAddCategory" class="hidden dialog">
+        <apex:pageBlock title="Category">
+        <div class="padding-box">
+            <apex:outputPanel id="promptAddCategoryPanel">         
+            <table>
+                <tr><td class="column">
+                    <apex:outputLabel value="Category Name" /><br/>
+                </td></tr>
+                <tr><td class="column">
+                    <input type="text" id="cateogry-name"/>
+                </td></tr>
+                <tr><td class="column">
+                    <apex:outputLabel value="Select Parent Category" /><br/>
+                        <select id="selectParentCategory">
+                            <option value="nonecategory">None (Top Level Category)</option>
+                            <apex:repeat value="{!categoriesTree}" var="category">
+                                <option value="{!category.category.id}">{!category.category.name}</option>
+                                    <apex:repeat value="{!category.sumCategories}" var="subCategory">
+                                        <option disabled="disabled" value="{!subCategory.category.id}">- {!subCategory.category.name}</option>
+                                    </apex:repeat>                                   
+                            </apex:repeat>
+                        </select>         
+                </td></tr>
+                <tr><td class="column">
+                    
+                </td></tr>                         
+            </table>
+            </apex:outputPanel>
+            <br/>
+            <div class="wrap">
+                <button class="btn" id="saveCategory">Save</button>
+                <button class="btn" id="cancelAddCategory">Cancel</button>
+            </div>
+        </div>
+        </apex:pageBlock>        
+    </div>    
+   
+    <div id="promptDelete" class="hidden dialog">
+        <apex:pageBlock title="Confirm">
+            <div class="padding-box">
+                Are you sure you wish to delete this configuration?<br/><br/>
+                <div class="wrap"> 
+                    <apex:form >
+                    <apex:commandButton action="{!delete}" value="Delete"/>
+                    <button class="btn" id="cancelDeleting">Cancel</button>
+                    </apex:form>
+                </div>
+            </div>
+        </apex:pageBlock>        
+    </div>
+    
+    <div id="promptSubDelete" class="hidden dialog">
+        <apex:pageBlock title="Confirm">
+            <div class="padding-box">
+                Are you sure you wish to delete this Category?<br/><br/>
+                <div class="wrap"> 
+                    <apex:form >
+                    <apex:commandButton action="{!deleteSubCategory}" value="Delete"/>
+                    <button class="btn" id="cancelSubDeleting">Cancel</button>
+                    </apex:form>
+                </div>
+            </div>
+        </apex:pageBlock>        
+    </div>
+
+    <div id="promptOtherActive" class="hidden dialog">
+        <apex:pageBlock title="Warning">
+            <div class="padding-box">        
+                Another active configuration was found. Do you want to make this the new active configuration?<br/><br/>
+                <div class="wrap"> 
+                    <button class="btn" id="changeActiveConfiguration">OK</button>            
+                    <button class="btn" id="cancelActiveConfiguration">Cancel</button>
+                </div>
+            </div>
+        </apex:pageBlock>        
+    </div>
+
+    <div id="promptOtherDefault" class="hidden dialog">
+        <apex:pageBlock title="Warning">
+            <div class="padding-box">        
+                Another category config is currently used as the default config. Do you want to change to this one?<br/><br/>
+                <div class="wrap"> 
+                    <button class="btn" id="changeDefaultConfiguration">OK</button>            
+                    <button class="btn" id="cancelDefaultConfiguration">Cancel</button>
+                </div>
+            </div>
+        </apex:pageBlock>        
+    </div>
+                                
+    <div id="promptError" class="hidden dialog">
+        <apex:pageBlock title="Error">
+            <div class="padding-box">
+                <table>
+                    <tr><td>
+                        <span id="error-msg"></span>
+                    </td></tr>                
+                    <tr><td>
+                        <span id="error-msg-nofity" class="hint"></span>
+                    </td></tr>       
+                </table>
+                <br/>          
+                <div class="wrap"> 
+                    <button class="btn" id="closeError">Close</button>            
+                </div>
+            </div>
+        </apex:pageBlock>        
+    </div>    
+    
+    <div id="promptLoading" class="hidden dialog">
+        <apex:pageBlock title="Processing">
+            <div class="padding-box">        
+                <div class="loading-text">
+                    <img src="{!URLFOR($Resource.ModelM__loading)}"/><br/>
+                    Please wait...            
+                </div>
+            </div>
+        </apex:pageBlock>        
+    </div>        
+
+    <div id="promptZoom" class="hidden dialog">
+        <apex:pageBlock title="Zoom">
+            <div class=" padding-box">
+                <table class="customizer-bottom-table"><tr>
+                    <td class="left">
+                        <button class="btn" id="doneZoom">OK</button>            
+                    </td>
+                    <td class="right">
+                        <apex:form >
+                            <apex:selectList size="1" id="zoomCategoryList">
+                                <apex:selectOptions value="{!categoriesOptions}"/>
+                            </apex:selectList>
+                        </apex:form>
+                    </td>
+                </tr></table>
+                <div id="zoom-layout-customizer" class="compositor-zoom">
+                    
+                </div>
+            </div>            
+        </apex:pageBlock>        
+    </div>
+
+    <script type="text/javascript">
+    function refreshImageButton() {
+        setTimeout(function(){jQuery('.imgButton').trigger('load')}, 1500);
+    }
+    
+    function saveToDraftDebug() {
+        var titleText                = jQuery('input.tmp_title_text').val();
+        var titleBgColor             = jQuery('input.tmp_title_bg_color').val();
+        var titleTextColor           = jQuery('input.tmp_title_text_color').val();
+        var titleTextAlpha           = jQuery('input.tmp_title_text_alpha').val();
+        var introText                = jQuery('input.tmp_intro_text').val();
+        var introTextColor           = jQuery('input.tmp_intro_text_color').val();
+        var introTextAlpha           = jQuery('input.tmp_intro_text_alpha').val();
+        var buttonTextColor          = jQuery('input.tmp_button_text_color').val();
+        var buttonTextAlpha          = jQuery('input.tmp_button_text_alpha').val();
+        var buttonHighlightTextColor = jQuery('input.tmp_button_highlight_text_color').val();
+        var isActiveConfig           = jQuery('input.tmp_is_active_config').is(':checked');
+        var SelectedProfilesString   = jQuery('select.tmp_profile_list').val().join(';');
+        var checkInEnabled           = jQuery('input.tmp_check_in_enabled').is(':checked');
+        saveToDraft(titleText, titleBgColor, titleTextColor, titleTextAlpha, introText, introTextColor, introTextAlpha, buttonTextColor, buttonTextAlpha, buttonHighlightTextColor, isActiveConfig, SelectedProfilesString, checkInEnabled);
+    }
+    </script>
+<apex:form >
+    <apex:pageBlock id="saveTmp"></apex:pageBlock>
+    <apex:actionFunction action="{!saveToDraft}" name="saveToDraft" reRender="saveTmp">
+        <apex:param name="titleText" assignTo="{!mobileAppConfigTemp.ModelM__TitleText__c}" value="" />
+        <apex:param name="titleBgColor" assignTo="{!mobileAppConfigTemp.ModelM__TitleBgColor__c}" value="" />
+        <apex:param name="titleTextColor" assignTo="{!mobileAppConfigTemp.ModelM__TitleTextColor__c}" value="" />
+        <apex:param name="titleTextAlpha" assignTo="{!mobileAppConfigTemp.ModelM__TitleTextAlpha__c}" value="" />
+        <apex:param name="introText" assignTo="{!mobileAppConfigTemp.ModelM__IntroText__c}" value="" />
+        <apex:param name="introTextColor" assignTo="{!mobileAppConfigTemp.ModelM__IntroTextColor__c}" value="" />
+        <apex:param name="introTextAlpha" assignTo="{!mobileAppConfigTemp.ModelM__IntroTextAlpha__c}" value="" />
+        <apex:param name="buttonTextColor" assignTo="{!mobileAppConfigTemp.ModelM__ButtonTextColor__c}" value="" />
+        <apex:param name="buttonTextAlpha" assignTo="{!mobileAppConfigTemp.ModelM__ButtonTextAlpha__c}" value="" />
+        <apex:param name="buttonHighlightTextColor" assignTo="{!mobileAppConfigTemp.ModelM__ButtonHighlightTextColor__c}" value="" />
+        <apex:param name="isActiveConfig" assignTo="{!mobileAppConfigTemp.ModelM__Active__c}" value="" />
+        <apex:param name="SelectedProfilesString" assignTo="{!SelectedProfilesString}" value="" />
+        <apex:param name="checkInEnabled" assignTo="{!mobileAppConfigTemp.ModelM__Check_In_Enabled__c}" value="" />
+    </apex:actionFunction>
+</apex:form>
+
+    <apex:tabPanel switchType="client" value="{!tabInFocuse}">
+        <apex:tab label="App Config" name="AppConfig" id="AppConfig" ontableave="saveToDraftDebug()" ontabenter="refreshImageButton()">    
+        <apex:form >
+            <div class="application-buttons right">
+                <apex:commandButton action="{!saveAll}" value="Save"/>
+                <apex:commandButton action="{!cancelEdit}" value="Cancel"/>
+                <button class="btn deleteButton" id="deleteButton">Delete</button>
+                <apex:messages styleClass="errorMessagesList" />                
+            </div>
+            
+            <div class="user-panel">
+                <div class="user-panel-content">
+
+                    <table><tr>
+                        <td class="column center longPanel">
+                        <apex:outputLabel value="App Configuration Name" /><br/>
+                        <span class="bold">{!mobileAppConfig.Name}</span>
+                        </td>
+                    </tr></table>
+                        
+                </div>
+            </div>
+                
+            <apex:pageBlock title="Main Application Settings">
+            
+                <table class="user-panel-table">
+
+                <!-- first column -->               
+                <tr><td class="column">
+                
+                    <div class="user-panel">
+                        <div class="user-panel-title-text">Application Title</div>
+                        <div class="user-panel-content">
+
+                            <div class="wrap">
+                                <apex:outputLabel value="Application Title Text" /><br/>
+                                <apex:inputText value="{!mobileAppConfigTemp.ModelM__TitleText__c}" styleClass="tmp_title_text"/>
+                            </div>
+                            <table class="colorTable">
+                                <tr>
+                                    <td><apex:outputLabel value="Title Bar Color" /></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><apex:inputField value="{!mobileAppConfigTemp.ModelM__TitleBgColor__c}" id="titleBarPickColor" styleClass="tmp_title_bg_color"/></td>
+                                    <td></td>
+                                </tr>
+                            </table>                            
+                            <table class="colorTable">
+                                    <tr>
+                                        <td><apex:outputLabel value="Title Bar Text Color" /></td>
+                                        <td><apex:outputLabel value="Alpha" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><apex:inputField value="{!mobileAppConfigTemp.ModelM__TitleTextColor__c}" id="titleBarTextPickColor" styleClass="tmp_title_text_color"/></td>
+                                        <td><apex:inputField value="{!mobileAppConfigTemp.ModelM__TitleTextAlpha__c}" id="titleBarTextAlpha" styleClass="tmp_title_text_alpha"/> %</td>
+                                    </tr>
+                            </table>                             
+
+                        </div>
+                    </div>
+                    
+                    <div class="user-panel">
+                        <div class="user-panel-title-text">Logo</div>
+                        <div class="user-panel-content">
+                    
+                            <div class="wrap">          
+                                <apex:outputLabel value="Logo Image" /><br/>
+                                <apex:outputLabel value="Ideal Image Resolution: 150x29" styleClass="hint" /><br/><br/>
+                                <apex:inputFile value="{!logoImage.body}" filename="{!logoImage.name}" />
+                                <apex:commandbutton action="{!uploadLogoImage}" value="Upload"/>
+                            </div>
+                            Preview:
+                            <div class="wrap preview-logo">             
+                                <apex:image id="logoImage" rendered="{!mobileAppConfigTemp.ModelM__LogoAttachmentId__c != ''}" value="https://{!orgUrl}/servlet/servlet.FileDownload?file={!mobileAppConfigTemp.ModelM__LogoAttachmentId__c}" style="width:150px;height:29px;"/>
+                            </div>
+                                
+                        </div>
+                    </div>
+
+                    <div class="user-panel">
+                        <div class="user-panel-title-text">Intro</div>
+                        <div class="user-panel-content">
+                    
+                            <div class="wrap">
+                                <apex:outputLabel value="Intro Text" /><br/>
+                                <apex:inputText value="{!mobileAppConfigTemp.ModelM__IntroText__c}" styleClass="tmp_intro_text"/>
+                            </div>                    
+                            <table class="colorTable">
+                                <tr>
+                                    <td><apex:outputLabel value="Intro Text Color" /></td>
+                                    <td><apex:outputLabel value="Alpha" /></td>
+                                </tr>
+                                <tr>
+                                    <td><apex:inputField value="{!mobileAppConfigTemp.ModelM__IntroTextColor__c}" id="introTextPickColor" styleClass="tmp_intro_text_color"/></td>
+                                    <td><apex:inputField value="{!mobileAppConfigTemp.ModelM__IntroTextAlpha__c}" id="introTextAlpha" styleClass="tmp_intro_text_alpha"/> %</td>
+                                </tr>
+                            </table>                             
+                                
+                        </div>
+                    </div>
+
+                <!-- second column -->              
+                </td><td class="column">
+                    <div class="user-panel">
+                        <div class="user-panel-title-text">Active Configuration Settings</div>
+                        <div class="user-panel-content">
+                        
+                            <div class="wrap">          
+                                <apex:inputCheckbox value="{!mobileAppConfigTemp.ModelM__Check_In_Enabled__c}"  id="checkInEnabled" styleClass="tmp_check_in_enabled"/>
+                                <apex:outputLabel value="Check In" />
+                            </div>
+                            <div class="wrap">          
+                                <apex:inputCheckbox value="{!mobileAppConfigTemp.ModelM__Active__c}"  id="isActiveConfig" styleClass="tmp_is_active_config"/>
+                                <apex:outputLabel value="Active Configuration" />
+                            </div>
+                        
+                            <div class="wrap">          
+                                <apex:selectList value="{!selectedProfiles}" multiselect="true" size="5" styleClass="tmp_profile_list">
+                                    <apex:selectOptions value="{!profileList}"/>
+                                </apex:selectList>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="user-panel">
+                        <div class="user-panel-title-text">Main Button</div>
+                        <div class="user-panel-content">
+                        
+                            <div class="wrap">          
+                                <apex:outputLabel value="Main Button Image" /><br/>
+                                <apex:inputFile value="{!mainButtonImage.body}" filename="{!mainButtonImage.name}" />
+                                <apex:commandbutton action="{!uploadMainButtonImage}" value="Upload"/>
+                            </div>
+                            Preview:
+                            <div class="wrap preview">
+                                <apex:image id="imgButton" rendered="{!mobileAppConfigTemp.ModelM__ButtonDefaultAttachmentId__c != ''}" value="https://{!orgUrl}/servlet/servlet.FileDownload?file={!mobileAppConfigTemp.ModelM__ButtonDefaultAttachmentId__c}" />
+                            </div>
+                            <table class="colorTable">
+                                <tr>
+                                    <td><apex:outputLabel value="Button Text Color" /></td>
+                                    <td><apex:outputLabel value="Alpha" /></td>
+                                </tr>
+                                <tr>
+                                    <td><apex:inputField value="{!mobileAppConfigTemp.ModelM__ButtonTextColor__c}" id="buttonTextPickColor" styleClass="tmp_button_text_color"/></td>
+                                    <td><apex:inputField value="{!mobileAppConfigTemp.ModelM__ButtonTextAlpha__c}" id="buttonTextAlpha" styleClass="tmp_button_text_alpha"/> %</td>
+                                </tr>
+                            </table>    
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="user-panel">
+                        <div class="user-panel-title-text">Main Button Highlight</div>
+                        <div class="user-panel-content">
+
+                            <div class="wrap">          
+                                <apex:outputLabel value="Main Button Highlight Image" /><br/>
+                                <apex:inputFile value="{!mainButtonHighlightImage.body}" filename="{!mainButtonHighlightImage.name}" />
+                                <apex:commandbutton action="{!uploadMainButtonHighlightImage}" value="Upload"/>
+                            </div>
+                            Preview:                    
+                            <div class="wrap preview">
+                                <apex:image id="imgHighlightButton" rendered="{!mobileAppConfigTemp.ModelM__ButtonHighlightAttachmentId__c != ''}" value="https://{!orgUrl}/servlet/servlet.FileDownload?file={!mobileAppConfigTemp.ModelM__ButtonHighlightAttachmentId__c}" />
+                            </div>                    
+                            <table class="colorTable">
+                                <tr>
+                                    <td><apex:outputLabel value="Button Highlight Text Color" /></td>
+                                </tr>
+                                <tr>
+                                    <td><apex:inputField value="{!mobileAppConfigTemp.ModelM__ButtonHighlightTextColor__c}" id="buttonHighlightTextPickColor" styleClass="tmp_button_highlight_text_color"/></td>
+                                </tr>
+                            </table>    
+
+                        </div>
+                    </div>
+
+                </td></tr>
+                </table>
+            </apex:pageBlock>
+        
+            <apex:pageBlock title="Background and Category Button Settings">
+                <apex:tabPanel switchType="client" value="{!tabInFocuseBG}" inactiveTabClass="inactiveWhite" activeTabClass="activeWhite">
+                    <apex:tab label="Landscape" name="tabLandscape"  id="tabLandscape">
+                        <table class="user-panel-table"><tr>
+                        <td class="column">
+
+                            <div class="user-panel">
+                                <div class="user-panel-title-text">Top Level Categories</div>                           
+                                <div class="user-panel-content">
+
+                                    <div class="wrap">         
+                                        Select category name to add/remove from layout
+                                    </div>
+                                    <apex:selectList size="10" id="landscapeCategoryList">
+                                        <apex:selectOptions value="{!categoriesOptions}"/>
+                                    </apex:selectList><br/>
+                                    <button class="btn addTopLevelCategory">Add</button>
+                                                                            
+                                </div>
+                            </div>
+                                                    
+                        </td>
+                        <td class="column">
+                            <div class="user-panel">
+                                <div class="user-panel-title-text">Background</div>                         
+                                <div class="user-panel-content">
+                                                        
+                                    <div class="wrap">
+                                        <apex:outputLabel value="Upload Image Landscape" /><br/>
+                                        <apex:inputFile value="{!landscapeImage.body}" filename="{!landscapeImage.name}" />
+                                        <apex:commandbutton action="{!uploadLandscapeImage}" value="Upload"/><br/>
+                                        <apex:outputLabel value="Landscape background image resolution: 1024x612px at 132dpi" styleClass="hint" /><br/>
+                                    </div>
+                                    <apex:panelGrid columns="1" rendered="{!mobileAppConfigTemp.ModelM__LandscapeAttachmentId__c == ''}">
+                                        <div class="compositor-landscape customizer" id="layout-landscape-customizer">
+                                            <div class="layout-landscape-background">
+    
+                                            </div>
+                                        </div>
+                                    </apex:panelGrid>
+                                    <apex:panelGrid columns="1" rendered="{!mobileAppConfigTemp.ModelM__LandscapeAttachmentId__c != ''}">
+                                        <div class="compositor-landscape customizer" id="layout-landscape-customizer">
+                                            <div class="layout-landscape-background">
+                                                <img class="landscape-to-scale" src="https://{!orgUrl}/servlet/servlet.FileDownload?file={!mobileAppConfigTemp.ModelM__LandscapeAttachmentId__c}"/>
+                                            </div>                                
+                                        </div>
+                                    </apex:panelGrid>
+                                    <table class="customizer-bottom-table"><tr>
+                                        <td class="left">
+                                            <span class="openZoom landscape-zoom">
+                                                <apex:image url="{!URLFOR($Resource.ModelM__images, 'icon_maglens.png')}"/>
+                                            </span>
+                                        </td>
+                                        <td class="right">
+                                            <span class="reloadLayoutCustomizers">
+                                                <apex:image url="{!URLFOR($Resource.ModelM__images, 'icon_rotate.png')}"/>
+                                            </span>                             
+                                        </td>
+                                    </tr></table>
+                                </div>
+                            </div>
+                        </td>
+                        </tr></table>
+                    </apex:tab>
+                    <apex:tab label="Portrait" name="tabPortrait" id="tabPortrait">
+                        <table class="user-panel-table"><tr>
+                        <td class="column">            
+
+                            <div class="user-panel">
+                                <div class="user-panel-title-text">Top Level Categories</div>                           
+                                <div class="user-panel-content">
+
+                                    <div class="wrap">         
+                                        Select category name to add/remove from layout
+                                    </div>
+                                    <apex:selectList size="10" id="portraitCategoryList">
+                                        <apex:selectOptions value="{!categoriesOptions}"/>
+                                    </apex:selectList><br/>
+                                    <button class="btn addTopLevelCategory">Add</button>
+                                                                            
+                                </div>
+                            </div>
+
+                        </td>
+                        <td class="column">
+
+                            <div class="user-panel">
+                                <div class="user-panel-title-text">Background</div>                         
+                                <div class="user-panel-content">
+                                            
+                                    <div class="wrap">
+                                        <apex:outputLabel value="Upload Image Portrait" /><br/>
+                                        <apex:inputFile value="{!portraitImage.body}" filename="{!portraitImage.name}" />
+                                        <apex:commandbutton action="{!uploadPortraitImage}" value="Upload"/><br/>
+                                        <apex:outputLabel value="Portrait background image resolution: 768x868px at 132dpi" styleClass="hint" /><br/>
+                                    </div>
+                                    <apex:panelGrid columns="1" rendered="{!mobileAppConfigTemp.ModelM__PortraitAttachmentId__c == ''}">
+                                        <div class="compositor-portrait customizer" id="layout-portrait-customizer">
+                                            <div class="layout-portrait-background">
+                                            
+                                            </div>                                                                
+                                        </div>
+                                    </apex:panelGrid>
+                                    <apex:panelGrid columns="1" rendered="{!mobileAppConfigTemp.ModelM__PortraitAttachmentId__c != ''}">
+                                        <div class="compositor-portrait customizer" id="layout-portrait-customizer">                            
+                                            <div class="layout-portrait-background">
+                                                <img class="portrait-to-scale" src="https://{!orgUrl}/servlet/servlet.FileDownload?file={!mobileAppConfigTemp.ModelM__PortraitAttachmentId__c}"/>
+                                            </div>                                     
+                                        </div>
+                                    </apex:panelGrid>
+                                    <table class="customizer-bottom-table"><tr>
+                                        <td class="left">
+                                            <span class="openZoom portrait-zoom">
+                                                <apex:image url="{!URLFOR($Resource.ModelM__images, 'icon_maglens.png')}"/>
+                                            </span>
+                                        </td>
+                                        <td class="right">
+                                            <span class="reloadLayoutCustomizers">
+                                                <apex:image url="{!URLFOR($Resource.ModelM__images, 'icon_rotate.png')}"/>
+                                            </span>                             
+                                        </td>
+                                    </tr></table>
+
+                                </div>
+                            </div>
+                                                       
+                        </td>
+                        </tr></table>
+                    </apex:tab>
+                </apex:tabPanel> 
+            </apex:pageBlock>
+            <div class="application-buttons right">
+                <apex:commandButton action="{!saveAll}" value="Save"/>
+                <apex:commandButton action="{!cancelEdit}" value="Cancel"/>
+                <button class="btn deleteButton" id="deleteButton2">Delete</button>
+                <apex:messages styleClass="errorMessagesList" />                                
+            </div>            
+        </apex:form>    
+        </apex:tab>
+        <apex:tab label="Category Config"  name="CategoryConfig" id="CategoryConfig" >  
+            <apex:form >
+            <div class="application-buttons right">
+                <apex:commandButton action="{!saveAll}" value="Save"/>
+                <apex:commandButton action="{!cancelEdit}" value="Cancel"/>
+                <button class="btn deleteButton" id="deleteButton2">Delete</button>
+                <apex:messages styleClass="errorMessagesList" />                              
+            </div>
+            
+            <apex:actionFunction action="{!selectCategoryMobileConfig}" 
+                                 name="selectCategoryMobileConfig" 
+                                 reRender="thePanel,thePanel2,cmcOut1,scOut1,cmcOut2,cmcOut3,cmcOut4,cmcOut5,cmcBck1,cmcBck2,cmcContImg1,cmcContImg2"
+                                 oncomplete="onCompleteSelectCategory();"
+                                 status="ajax-status">
+                <apex:param name="categoryMobileConfigId" assignTo="{!categoryMobileConfigId}" value="" />
+            </apex:actionFunction>
+            
+            <apex:actionFunction action="{!selectSubCategory}" 
+                                 name="selectSubCategory" 
+                                 reRender="thePanel,thePanel2"
+                                 oncomplete="onCompleteSelectSubCategory();"
+                                 status="ajax-status">
+                <apex:param name="categoryId" assignTo="{!categoryId}" value="" />
+            </apex:actionFunction>
+
+
+            <div class="user-panel">
+                <div class="user-panel-content">
+
+                    <table><tr>
+                        <td class="column center longPanel">
+                            <apex:outputLabel value="Category Config " /><br/>
+                            <span class="bold">{!ModelM__MobileAppConfig__c.name}</span>
+                        </td>
+                    </tr></table>
+                        
+                </div>
+            </div>
+            
+            <apex:pageBlock title="Category Settings">
+                <table class="user-panel-table"><tr> 
+                <td class="column">
+                
+                    <div class="user-panel">
+                        <div class="user-panel-title-text">Categories</div>                         
+                        <div class="user-panel-content">                
+                
+                            <div class="wrap">
+                                <button id="collapseCategoryTree" class="btn">Collapse All</button>
+                                <button id="expandCategoryTree" class="btn">Expand All</button>
+                                <button class="btn addCategory">Add</button>                        
+                            </div>
+                            <div id="category-tree" class="category-tree-holder">
+                                <apex:repeat value="{!categoriesTree}" var="category">
+                                    <div id="{!category.categoryMobileConfigId}" class="category-tree-item category-id-{!category.category.id}">
+                                        <span class="indicator-expand-category collapsed pointer-cursor" style="font-size: 12px;">+ </span>                          
+                                        <span class="pointer-cursor" onclick="selectCategoryMobileConfig('{!category.categoryMobileConfigId}');">{!category.category.name}</span>                            
+                                        <apex:outputText rendered="{!category.isDefault}"><span class="defaultIndicator">(DEFAULT)</span></apex:outputText>
+                                    </div>
+                                    <apex:repeat value="{!category.sumCategories}" var="subCategory">
+                                        <div id="{!subCategory.category.id}" onclick="selectSubCategory('{!subCategory.category.id}');" class="hidden sub-category-tree-item pointer-cursor category-id-{!subCategory.category.id} sub-for-cmcid-{!category.categoryMobileConfigId}">{!subCategory.category.name}</div>
+                                    </apex:repeat>                                   
+                                </apex:repeat>
+                            </div>
+                        </div>
+                    </div>                          
+                            
+                </td>
+                <td class="column cmcOutData">
+                    <div class="user-panel">
+                        <div class="user-panel-title-text">Settings</div>                           
+                        <div class="user-panel-content"> 
+                                        
+                            <apex:outputPanel id="thePanel">
+                                <apex:panelGrid columns="2" id="cmcOut1" styleClass="colorTable" rendered="{!!isSubCategorySelected}">
+                                    <apex:outputLabel value="Category Name" />
+                                    <apex:outputLabel value="Button Text Align" />
+                                    <apex:inputText value="{!categoryMobileConfig.CategoryId__r.Name}" disabled="true" id="categoryName"/>
+                                    <apex:selectList id="buttonTextAlign" value="{!categoryMobileConfig.ModelM__Button_Text_Align__c}" style="width: 100px;" size="1">
+                                        <apex:selectOption itemValue="Left" itemLabel="Left"/>
+                                        <apex:selectOption itemValue="Center" itemLabel="Center"/>
+                                        <apex:selectOption itemValue="Right" itemLabel="Right"/>
+                                    </apex:selectList> 
+                                </apex:panelGrid>
+                                <apex:panelGrid columns="1" id="cmcOut12" styleClass="colorTable" rendered="{!(categoryMobileConfig.ModelM__UseCategoryBundle__c && !isSubCategorySelected)}">
+                                    <apex:outputLabel id="labelBundle" value="Bundle Content Id" />
+                                    <apex:inputText id="bundleValue" value="{!categoryMobileConfig.ModelM__CategoryBundleId__c}"/>
+                                </apex:panelGrid>
+                                <apex:panelGrid columns="2" id="cmcOut2" styleClass="colorTable" rendered="{!(!categoryMobileConfig.ModelM__UseCategoryBundle__c && !isSubCategorySelected)}">
+                                    <apex:outputLabel value="Overlay Background Color" />
+                                    <apex:outputLabel value="Alpha" />
+                                    <apex:inputText value="{!categoryMobileConfig.ModelM__OverlayBgColor__c}" id="overlayBackgroundPickColor"/>
+                                    <apex:pageBlockSection ><apex:inputText value="{!categoryMobileConfig.ModelM__OverlayBgAlpha__c}" size="3" id="overlayBackgroundAlpha"/>%</apex:pageBlockSection>
+                                </apex:panelGrid>
+                                <apex:panelGrid columns="1" id="cmcOut3" styleClass="colorTable" rendered="{!(!categoryMobileConfig.ModelM__UseCategoryBundle__c && !isSubCategorySelected)}">
+                                    <apex:outputLabel value="Overlay Text Color" />
+                                    <apex:inputText value="{!categoryMobileConfig.ModelM__OverlayTextColor__c}" id="overlayTextPickColor" />
+                                </apex:panelGrid>
+                                <apex:panelGrid columns="1" id="cmcOut4" rendered="{!(!categoryMobileConfig.ModelM__UseCategoryBundle__c && !isSubCategorySelected)}">
+                                    <apex:outputLabel value="Gallery/Subcategory Heading" />
+                                    <apex:inputText value="{!categoryMobileConfig.ModelM__GalleryHeadingText__c}" />
+                                </apex:panelGrid> 
+                                
+                                <br/>
+                            
+                                <apex:panelGrid columns="3" rendered="{!!isSubCategorySelected}">
+                                    <apex:commandButton action="{!saveCMC}" value="Save"/>  
+                                    <button class="btn" id="cancelButton">Cancel</button>
+                                    <button class="btn" id="deleteButton">Delete</button>
+                                </apex:panelGrid>
+                                                     
+                            </apex:outputPanel>
+                            <apex:outputPanel id="thePanel2">
+                                <apex:panelGrid id="scOut1" styleClass="colorTable" rendered="{!isSubCategorySelected}">
+                                    <apex:inputHidden value="{!selectedCategoryImageId}" id="theHiddenImageId"/>
+                                    <apex:outputLabel value="Category Name" />
+                                    <apex:inputText value="{!selectedCategory.Name}" id="subCategoryName"/>
+                                    <apex:outputLabel value="Category Description" />
+                                    <apex:inputTextarea value="{!selectedCategory.ModelM__Description__c}" id="subCategoryDescription" cols="35" rows="4"/>
+                                    <apex:outputLabel value="Select Parent Category" /><br/>
+                                    <apex:selectList id="selectParentCategory2" value="{!newParentCatForSubcategory}" size="1">
+                                        <apex:selectOptions value="{!perentCategoriesList}"/>
+                                    </apex:selectList> 
+                                    <apex:panelGrid columns="3">
+                                        <apex:commandButton action="{!saveSubCategory}" value="Save"/>
+                                        <apex:commandButton styleClass="cancelButton" action="{!cancelEditSubCategory}" value="Cancel" reRender="thePanel2,thePanel"/>
+                                        <input onclick="showAsDialog('promptSubDelete');" type="button" class="deleteSubButton" value="Delete" /> 
+                                    </apex:panelGrid>
+                                </apex:panelGrid>
+                            </apex:outputPanel>
+                            
+                            
+                            
+                        </div>
+                    </div>                       
+                </td>
+                </tr></table>
+              
+            </apex:pageBlock>
+            </apex:form>
+            <apex:form >
+            <div id="cicBlock" style="display:{!showcic}">
+            <apex:pageBlock id="cicBlock" title="Category Image Configuration">
+
+                <div class="user-panel">
+                    <div class="user-panel-content"> 
+                        <span class="hint">If no background or content list images are uploaded, the default image will be used.</span>
+                    </div>
+                </div>
+                
+                <table class="user-panel-table"><tr>
+                    <td class="column">
+                        <div class="user-panel">
+                            <div class="user-panel-title-text">Landscape Background</div>                           
+                            <div class="user-panel-content"> 
+                                                
+                                <apex:outputLabel value="Category Background Image - Landscape" /><br/>
+                                <apex:inputFile value="{!categoryLandscapeBgImage.body}" filename="{!categoryLandscapeBgImage.name}" />
+                                <apex:commandbutton action="{!uploadCategoryLandscapeBgImage}" value="Upload"/><br/>
+                                <apex:outputLabel value="Category landscape background image resolution: 824x612px at 132dpi" styleClass="hint" /><br/><br/>
+                                <div class="compositor-landscape category-background-landscape cmcOutImg"> 
+                                    <apex:panelGrid columns="1" style="width: 640px; height: 457px;" id="cmcBck2"  border="0" cellspacing="0px" cellpadding="0px">
+                                        <apex:image style="width:100%; height: 100%;" rendered="{!categoryMobileConfig.ModelM__LandscapeAttachmentId__c != ''}" value="https://{!orgUrl}/servlet/servlet.FileDownload?file={!categoryMobileConfig.ModelM__LandscapeAttachmentId__c}" />
+                                    </apex:panelGrid>
+                                </div>
+                                
+                            </div>
+                        </div>                                  
+                    </td>
+                    <td class="column">
+                        <div class="user-panel">
+                            <div class="user-panel-title-text">Portrait Background</div>                            
+                            <div class="user-panel-content"> 
+                                            
+                                <apex:outputLabel value="Category Background Image - Portrait" /><br/>
+                                <apex:inputFile value="{!categoryPortraitBgImage.body}" filename="{!categoryPortraitBgImage.name}" />
+                                <apex:commandbutton action="{!uploadCategoryPortraitBgImage}" value="Upload"/><br/>
+                                <apex:outputLabel value="Category portrait background image resolution: 768x623px at 132dpi" styleClass="hint" /><br/><br/>
+                                <div class="compositor-portrait category-background-portrait cmcOutImg">                     
+                                    <apex:panelGrid columns="1" style="width: 480px; height: 389px;" id="cmcBck1" border="0" cellspacing="0px" cellpadding="0px">
+                                        <apex:image style="width:100%; height: 100%;" rendered="{!categoryMobileConfig.ModelM__PortraitAttachmentId__c != ''}" value="https://{!orgUrl}/servlet/servlet.FileDownload?file={!categoryMobileConfig.ModelM__PortraitAttachmentId__c}" />
+                                    </apex:panelGrid>
+                                </div>
+                            </div>
+                        </div>                                  
+                    </td>
+                </tr></table>
+                <apex:outputPanel rendered="false">
+                <table class="user-panel-table"><tr>
+                    <td class="column">
+                        <div class="user-panel">
+                            <div class="user-panel-title-text">Content List Background </div>                           
+                            <div class="user-panel-content"> 
+                                                
+                                <apex:outputLabel value="Content List Background Image" /><br/>
+                                <apex:inputFile value="{!contentBackgroundImage.body}" filename="{!contentBackgroundImage.name}" />
+                                <apex:commandbutton action="{!uploadContentBackgroundImage}" value="Upload"/><br/><br/>
+                                Preview:
+                                <div class="cmcOutImg preview">                        
+                                    <apex:panelGrid id="cmcContImg1" border="0" cellspacing="0px" cellpadding="0px">
+                                        <apex:image rendered="{!categoryMobileConfig.ModelM__ContentAttachmentId__c != ''}" value="https://{!orgUrl}/servlet/servlet.FileDownload?file={!categoryMobileConfig.ModelM__ContentAttachmentId__c}" />
+                                    </apex:panelGrid>
+                                </div>
+                                
+                            </div>
+                        </div>                              
+                    </td>
+                    <td class="column">
+                        <div class="user-panel">
+                            <div class="user-panel-title-text">Content List Background Overlay</div>                            
+                            <div class="user-panel-content"> 
+                                                
+                                <apex:outputLabel value="Content List Background Overlay Image" /><br/>
+                                <apex:inputFile value="{!contentOverBackgroundImage.body}" filename="{!contentOverBackgroundImage.name}" />
+                                <apex:commandbutton action="{!uploadContentOverBackgroundImage}" value="Upload"/><br/><br/>
+                                Preview:                                
+                                <div class="cmcOutImg preview">
+                                    <apex:panelGrid id="cmcContImg2" border="0" cellspacing="0px" cellpadding="0px" styleClass="fullwidth">
+                                        <apex:image rendered="{!categoryMobileConfig.ModelM__ContentOverAttachmentId__c != ''}" value="https://{!orgUrl}/servlet/servlet.FileDownload?file={!categoryMobileConfig.ModelM__ContentOverAttachmentId__c}" />
+                                    </apex:panelGrid>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr></table>
+                </apex:outputPanel>
+            </apex:pageBlock>
+            </div>
+            <div id="giBlock" style="display:{!giupload};">
+            <apex:pageBlock id="giBlock" title="Gallery Image">
+                <table class="user-panel-table"><tr>
+                    <td class="column">
+                        <div class="user-panel">
+                            <div class="user-panel-content"> 
+                                            
+                                <apex:outputLabel value="Gallery Category Image" /><br/>
+                                <apex:inputFile value="{!galleryCategoryImage.body}" filename="{!galleryCategoryImage.name}" />
+                                <apex:commandbutton action="{!uploadGalleryCategoryImage}" value="Upload"/><br/>
+                                <apex:outputLabel value="Category background image resolution: 136x136px at 132dpi" styleClass="hint" /><br/><br/>
+                                <br/><br/>
+                                              
+                                <apex:panelGrid style="width:136px; height: 136px;" columns="1" id="giPreview" border="0" cellspacing="0px" cellpadding="0px">
+                                    <apex:image styleClass="categoryImage" style="width:136px; height: 136px;" value="https://{!orgUrl}/servlet/servlet.FileDownload?file={!selectedCategoryImageId}" />
+                                </apex:panelGrid>
+                                
+                            </div>
+                        </div>                                  
+                    </td>
+                </tr></table>
+            </apex:pageBlock>
+            </div>
+            
+            <div class="application-buttons right">
+                <apex:commandButton action="{!saveAll}" value="Save"/>
+                <apex:commandButton action="{!cancelEdit}" value="Cancel"/>
+                <button class="btn deleteButton" id="deleteButton2">Delete</button>
+                <apex:messages styleClass="errorMessagesList" />                               
+            </div>               
+            </apex:form>
+        </apex:tab>        
+    </apex:tabPanel>              
+
+    
+</apex:page>

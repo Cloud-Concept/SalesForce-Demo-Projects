@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sample</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Samples</value>
+    </caseValues>
+    <fields>
+        <label><!-- Balance --></label>
+        <name>Balance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost --></label>
+        <name>Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Indicator --></label>
+        <name>Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Left with Customer --></label>
+        <name>Left__c</name>
+    </fields>
+    <fields>
+        <label><!-- Received from Distribution --></label>
+        <name>Received__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reorder Level --></label>
+        <name>Reorder_Level__c</name>
+    </fields>
+    <fields>
+        <label><!-- Transferred from Colleagues --></label>
+        <name>Transfer__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;iframe style=&quot;margin-top: -15px;&quot; src=&quot;/apex/MapMyMeetings&quot;  border=&quot;0&quot; frameborder=&quot;0&quot; height=&quot;450px&quot; scrolling=&quot;no&quot; width=&quot;100%&quot;&gt;&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;lt;br /&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;gt;&lt;/iframe&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>wide</width>
+</HomePageComponent>

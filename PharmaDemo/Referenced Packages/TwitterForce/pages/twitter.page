@@ -1,0 +1,161 @@
+<!-- Created by Simon Fell -->
+<!-- Modified/expanded by Jonathan Hersh - jhersh@salesforce.com - 2/26/2009 -->
+
+<apex:page controller="twitterforce.TwitterController" action="{!autoCreate}" tabstyle="twitterforce__tab">
+<apex:sectionheader subtitle="TwitterForce" title="{!appname}" />
+<apex:form id="theform" >
+	<apex:pageblock title="System Message" id="messageBox" rendered="{!if( LEN( Error ) > 0, true, false )}">
+		<apex:outputtext value="{!Error}" escape="false"/>
+	</apex:pageblock>
+	<apex:pageblock rendered="{!if( LEN( Error ) = 0, true, false )}" id="twitterTab" >
+	<div style="margin-bottom: 10px; display: block; clear: both;">
+		<div style="padding-bottom: 10px; float:left; margin-right: 10px;"><apex:image value="http://img.tweetimag.es/i/{!ts.twitterforce__Twitter_Username__c}_n" /></div>
+		<div style="float:left">
+			<h3>Logged in as&nbsp;
+					<apex:selectList id="accts" value="{!selectedAcct}" size="1">
+						<apex:selectoptions value="{!Accts}" />
+						<apex:actionsupport event="onchange" action="{!switchAcct}" rerender="theform" status="tfStatus" />
+					</apex:selectList> ({!ts.Profile_Name__c})&nbsp;
+			<apex:outputlink value="/apex/twitterforce__tfsetup">Edit</apex:outputlink></h3>&nbsp;
+			<apex:actionStatus id="tfStatus">
+				<apex:facet name="start">
+					<apex:image value="/img/waiting_dots.gif" />
+				</apex:facet>
+			</apex:actionStatus>
+			<br />
+			<apex:outputtext value="API Remaining: {!statusmsg}" />
+		</div>
+	</div>
+	<div style="display:block; clear: both;">
+	To create records based on tweets, first click 'Import Conversation'.
+	<apex:actionpoller action="{!getTweets}" interval="20" rerender="twitterTab" enabled="{!ts.twitterforce__Enable_Auto_Refresh__c}" />
+	<apex:tabpanel switchtype="ajax">
+		<apex:tab label="Twitter Replies" id="repliestab">
+				<apex:pageblocktable value="{!userReplies}" var="s">
+					<apex:column headervalue="Cases">
+		        		<apex:commandButton action="{!s.createCase}" rendered="{!AND( !s.hasCase, s.hasTweet )}" value="Create"/>
+		        		<apex:commandButton action="{!s.viewCase}" styleclass="btnSharing" rendered="{!AND( s.hasCase, s.hasTweet )}" value="View"/>
+		        	</apex:column>
+		        	<apex:column headervalue="Solutions">
+		        		<apex:commandbutton action="{!s.createSol}" rendered="{!AND( !s.hasSolution, s.hasTweet )}" value="Create" />
+		        		<apex:commandbutton action="{!s.viewSol}" styleclass="btnSharing" rendered="{!AND( s.hasSolution, s.hasTweet )}" value="View" />
+		        	</apex:column>
+		        	<apex:column headervalue="Ideas">
+		        		<apex:commandbutton action="{!s.createIdea}" rendered="{!AND( !s.hasIdea, s.hasTweet )}" value="Create" />
+		        		<apex:commandbutton action="{!s.viewIdea}" styleclass="btnSharing" rendered="{!AND( s.hasIdea, s.hasTweet )}" value="View" />
+		        	</apex:column>
+		        	<apex:column headervalue="Leads">
+		       			<apex:commandButton action="{!s.createLead}" rendered="{!!s.hasLead}" value="Create"/>
+						<apex:commandButton action="{!s.viewLead}" styleclass="btnSharing" rendered="{!s.hasLead}" value="View"/>
+					</apex:column>
+					<apex:column headervalue="Contacts">
+		       			<apex:commandButton action="{!s.createContact}" rendered="{!!s.hasContact}" value="Create"/>
+						<apex:commandButton action="{!s.viewContact}" styleclass="btnSharing" rendered="{!s.hasContact}" value="View"/>
+					</apex:column>
+					<!-- <apex:column headervalue="Inquiries" rendered="{!ts.Enable_Twitter_Inquiries__c}">
+						<apex:commandButton action="{!s.createInquiry}" rendered="{!AND( !s.hasInquiry, s.hasTweet )}" value="Create"/>
+						<apex:commandButton action="{!s.viewInquiry}" styleclass="btnSharing" rendered="{!AND( s.hasInquiry, s.hasTweet )}" value="View"/>
+					</apex:column>-->
+					<apex:column >
+						<apex:commandbutton value="Import Conversation" action="{!s.createTweet}" rendered="{!!s.hasTweet}" />
+						<apex:commandbutton value="View Conversation" styleclass="btnSharing" action="{!s.viewConversation}" rendered="{!s.hasTweet}" />
+					</apex:column>
+					<apex:column headervalue="Time" value="{!s.status.createdat}" />
+					<apex:column headervalue="User">
+						<apex:image value="http://img.tweetimag.es/i/{!s.status.user.screenname}_n" height="48" width="48" />
+					</apex:column>
+					<apex:column >
+						<apex:outputlink value="http://twitter.com/{!s.status.user.screenname}" target="_new">{!s.status.user.screenname}</apex:outputlink> ({!s.status.user.name})
+					</apex:column>
+					<apex:column headervalue="Message">
+						<apex:outputtext value="{!s.status.text}" escape="false" />
+					</apex:column>
+				</apex:pageblocktable>
+		</apex:tab>
+		<apex:tab label="Direct Messages" rendered="{!ts.twitterforce__Enable_Direct_Messages__c}">
+			<apex:pageblocktable value="{!messages}" var="m">
+				<apex:column headervalue="Cases">
+		        		<apex:commandButton action="{!m.createCase}" rendered="{!!m.hasCase}" value="Create"/>
+		        		<apex:commandButton action="{!m.viewCase}" styleclass="btnSharing" rendered="{!m.hasCase}" value="View"/>
+		        		<apex:commandButton action="{!m.attachCase}" rendered="{!!m.hasCase}" value="Attach to Parent" />
+		        	</apex:column>
+		        	<apex:column headervalue="Leads">
+		       			<apex:commandButton action="{!m.createLead}" rendered="{!!m.hasLead}" value="Create"/>
+						<apex:commandButton action="{!m.viewLead}" styleclass="btnSharing" rendered="{!m.hasLead}" value="View"/>
+					</apex:column>
+					<apex:column headervalue="Contacts">
+		       			<apex:commandButton action="{!m.createContact}" rendered="{!AND( !m.hasContact, true )}" value="Create"/>
+						<apex:commandButton action="{!m.viewContact}" styleclass="btnSharing" rendered="{!AND( m.hasContact, true )}" value="View"/>
+					</apex:column>
+		        <apex:column headervalue="Time" value="{!m.m.createdat}" />
+		        <apex:column headervalue="Sender">
+						<apex:image value="http://img.tweetimag.es/i/{!m.m.sender.screenname}_n" height="48" width="48" />
+					</apex:column>
+					<apex:column >
+						<apex:outputlink value="http://twitter.com/{!m.m.sender.screenname}" target="_new">{!m.m.sender.screenname}</apex:outputlink> ({!m.m.sender.name})
+					</apex:column>
+					<apex:column headervalue="Message">
+						<apex:outputtext value="{!m.m.text}" escape="false" />
+					</apex:column>
+			</apex:pageblocktable>
+		</apex:tab>
+		<apex:tab label="Friend Timeline" rendered="{!ts.twitterforce__Enable_Friends_Timeline__c}">
+			<apex:pageblocktable value="{!friendsTimeline}" var="s">
+					<apex:column headervalue="Cases">
+		        		<apex:commandButton action="{!s.createCase}" rendered="{!AND( !s.hasCase, s.hasTweet )}" value="Create"/>
+		        		<apex:commandButton action="{!s.viewCase}" styleclass="btnSharing" rendered="{!AND( s.hasCase, s.hasTweet )}" value="View"/>
+		        	</apex:column>
+		        	<apex:column headervalue="Solutions">
+		        		<apex:commandbutton action="{!s.createSol}" rendered="{!AND( !s.hasSolution, s.hasTweet )}" value="Create" />
+		        		<apex:commandbutton action="{!s.viewSol}" styleclass="btnSharing" rendered="{!AND( s.hasSolution, s.hasTweet )}" value="View" />
+		        	</apex:column>
+		        	<apex:column headervalue="Ideas">
+		        		<apex:commandbutton action="{!s.createIdea}" rendered="{!AND( !s.hasIdea, s.hasTweet )}" value="Create" />
+		        		<apex:commandbutton action="{!s.viewIdea}" styleclass="btnSharing" rendered="{!AND( s.hasIdea, s.hasTweet )}" value="View" />
+		        	</apex:column>
+		        	<apex:column headervalue="Leads">
+		       			<apex:commandButton action="{!s.createLead}" rendered="{!!s.hasLead}" value="Create"/>
+						<apex:commandButton action="{!s.viewLead}" styleclass="btnSharing" rendered="{!s.hasLead}" value="View"/>
+					</apex:column>
+					<apex:column headervalue="Contacts">
+		       			<apex:commandButton action="{!s.createContact}" rendered="{!!s.hasContact}" value="Create"/>
+						<apex:commandButton action="{!s.viewContact}" styleclass="btnSharing" rendered="{!s.hasContact}" value="View"/>
+					</apex:column>
+					<!-- <apex:column headervalue="Inquiries" rendered="{!ts.Enable_Twitter_Inquiries__c}">
+						<apex:commandButton action="{!s.createInquiry}" rendered="{!AND( !s.hasInquiry, s.hasTweet )}" value="Create"/>
+						<apex:commandButton action="{!s.viewInquiry}" styleclass="btnSharing" rendered="{!AND( s.hasInquiry, s.hasTweet )}" value="View"/>
+					</apex:column>-->
+					<apex:column >
+						<apex:commandbutton value="Import Conversation" action="{!s.createTweet}" rendered="{!!s.hasTweet}" />
+						<apex:commandbutton value="View Conversation" styleclass="btnSharing" action="{!s.viewConversation}" rendered="{!s.hasTweet}" />
+					</apex:column>
+					<apex:column headervalue="Time" value="{!s.status.createdat}" />
+					<apex:column headervalue="User">
+						<apex:image value="http://img.tweetimag.es/i/{!s.status.user.screenname}_n" height="48" width="48" />
+					</apex:column>
+					<apex:column >
+						<apex:outputlink value="http://twitter.com/{!s.status.user.screenname}" target="_new">{!s.status.user.screenname}</apex:outputlink> ({!s.status.user.name})
+					</apex:column>
+					<apex:column headervalue="Message">
+						<apex:outputtext value="{!s.status.text}" escape="false" />
+					</apex:column>
+				</apex:pageblocktable>
+		</apex:tab>	
+		<apex:tab label="Post a Tweet">
+			<apex:outputtext value="Send a new update to Twitter. 140 character maximum." />
+			<apex:commandbutton value="Send" action="{!doSubmit}" /><br /><br />
+			<apex:pageblocksection showheader="false" columns="1">
+				<apex:pageblocksectionitem >
+					<apex:outputlabel id="countermsg" for="commentbody" value="Message" />
+					<apex:inputfield id="commentbody" value="{!cc.commentbody}" style="height:100px; width:250px;" >
+						<!-- <apex:actionsupport event="onkeydown" action="{!updateCounter}" rerender="countermsg" />
+						<apex:actionsupport event="onkeyup" action="{!updateCounter}" rerender="countermsg" />-->
+					</apex:inputfield>
+				</apex:pageblocksectionitem>
+			</apex:pageblocksection>
+		</apex:tab>
+	</apex:tabpanel>
+	</div>
+	</apex:pageblock>
+</apex:form>
+</apex:page>

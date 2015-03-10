@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Validated Update</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Validated Updates</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Validated Updates --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Conflicting Field --></label>
+        <name>Conflicting_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Value --></label>
+        <name>Current_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rejected Value --></label>
+        <name>Rejected_Value__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rejected Reference Id --></label>
+        <name>Rejected_refId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Update applied --></label>
+        <name>Update_applied__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Apply_selected_updates --></label>
+        <name>Apply_selected_updates</name>
+    </webLinks>
+</CustomObjectTranslation>

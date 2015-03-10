@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Target Frequency</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Target Frequency</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Calls --></label>
+        <name>Actual_Calls__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Indicator --></label>
+        <name>Call_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer --></label>
+        <name>Customer__c</name>
+        <relationshipLabel><!-- Target Frequency --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Frequency --></label>
+        <name>Frequency__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Call --></label>
+        <name>Last_Call_Report_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Frequency --></label>
+        <name>Proposed_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Recall --></label>
+        <name>Recall__c</name>
+    </fields>
+    <fields>
+        <label><!-- Reject --></label>
+        <name>Reject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recalled</masterLabel>
+            <translation><!-- Recalled --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Target Calls --></label>
+        <name>Target_Calls__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target --></label>
+        <name>Target__c</name>
+        <relationshipLabel><!-- Target Frequency --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- To Be Approved --></label>
+        <name>ToBeApproved__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Id --></label>
+        <name>Unique_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Target Calls --></label>
+        <name>pc_Target_Calls__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Approved Target Frequency --></label>
+        <name>ApprovedTargetFrequency</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Pending Target Frequency --></label>
+        <name>Pending_Target_Frequency</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Rejected Target Frequency --></label>
+        <name>Rejected_Target_Frequency</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Submitted Target Frequency --></label>
+        <name>Submitted_Target_Frequency</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Approve --></label>
+        <name>Approve</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reject --></label>
+        <name>Reject</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Submit --></label>
+        <name>Submit</name>
+    </webLinks>
+</CustomObjectTranslation>

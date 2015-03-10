@@ -1,0 +1,32 @@
+<apex:page StandardController="Account">
+<html>
+  <head>
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['gauge']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Open (£)', {!Account.OppValue__c}],
+          ['Won (£)', {!Account.Won_Opportunities__c}]
+        ]);
+
+        var options = {
+          width: 400, height: 300,
+          greenFrom: 250000, greenTo: 300000,        
+          minorTicks: 5,
+          max:300000,
+          title: 'Opportunities'
+        };
+        
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+ </head>
+  <body>
+    <div id='chart_div'></div>
+  </body>
+</html>
+</apex:page>

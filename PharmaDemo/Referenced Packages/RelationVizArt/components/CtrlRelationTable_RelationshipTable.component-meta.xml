@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>18.0</apiVersion>
+    <description>Relationship table to display relationships on account and contact page</description>
+    <label>Relationship Table</label>
+</ApexComponent>

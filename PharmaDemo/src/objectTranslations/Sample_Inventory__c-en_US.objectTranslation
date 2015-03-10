@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Sample Inventory</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sample Inventory</value>
+    </caseValues>
+    <fields>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Qty --></label>
+        <name>Qty__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample --></label>
+        <name>Sample__c</name>
+        <relationshipLabel><!-- Sample Inventory --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Delivered</masterLabel>
+            <translation><!-- Delivered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transferred</masterLabel>
+            <translation><!-- Transferred --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Transfer User --></label>
+        <name>Transfer_User__c</name>
+        <relationshipLabel><!-- Sample Inventory (Transfer User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Sample Inventory (User) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <recordTypes>
+        <label><!-- Inventory --></label>
+        <name>Inventory</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Transfer --></label>
+        <name>Transfer</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

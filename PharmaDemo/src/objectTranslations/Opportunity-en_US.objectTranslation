@@ -1,0 +1,843 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opportunity/Tender</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opportunities/Tenders</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Access</value>
+        </caseValues>
+        <name>opportunity_access</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Access Level</value>
+        </caseValues>
+        <name>opportunity_access_level</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Alert</value>
+        </caseValues>
+        <name>opportunity_alert</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Amount</value>
+        </caseValues>
+        <name>opportunity_amount</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender-based Briefcase</value>
+        </caseValues>
+        <name>opportunity_based_briefcase</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Close Date</value>
+        </caseValues>
+        <name>opportunity_close_date</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Closed</value>
+        </caseValues>
+        <name>opportunity_closed</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Competitor</value>
+        </caseValues>
+        <name>opportunity_competitor</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Competitor Report</value>
+        </caseValues>
+        <name>opportunity_competitor_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Contact</value>
+        </caseValues>
+        <name>opportunity_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Contact Report</value>
+        </caseValues>
+        <name>opportunity_contact_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Contact Role</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Contact Roles</value>
+        </caseValues>
+        <name>opportunity_contact_role</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Creator</value>
+        </caseValues>
+        <name>opportunity_creator</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Currency</value>
+        </caseValues>
+        <name>opportunity_currency</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Description</value>
+        </caseValues>
+        <name>opportunity_description</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Detail Page</value>
+        </caseValues>
+        <name>opportunity_detail_page</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Division</value>
+        </caseValues>
+        <name>opportunity_division</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Edit</value>
+        </caseValues>
+        <name>opportunity_edit</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Fields</value>
+        </caseValues>
+        <name>opportunity_field</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Field History</value>
+        </caseValues>
+        <name>opportunity_field_history</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Field History ID</value>
+        </caseValues>
+        <name>opportunity_field_history_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Field History Report</value>
+        </caseValues>
+        <name>opportunity_field_history_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Forecast</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Forecasts</value>
+        </caseValues>
+        <name>opportunity_forecast</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Forecast Category</value>
+        </caseValues>
+        <name>opportunity_forecast_category</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Forecast Edit</value>
+        </caseValues>
+        <name>opportunity_forecast_edit</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender History</value>
+        </caseValues>
+        <name>opportunity_history</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender History ID</value>
+        </caseValues>
+        <name>opportunity_history_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender History Information</value>
+        </caseValues>
+        <name>opportunity_history_information</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender History Report</value>
+        </caseValues>
+        <name>opportunity_history_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender ID</value>
+        </caseValues>
+        <name>opportunity_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Info</value>
+        </caseValues>
+        <name>opportunity_info</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Information</value>
+        </caseValues>
+        <name>opportunity_information</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Lead Source</value>
+        </caseValues>
+        <name>opportunity_lead_source</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Line Item</value>
+        </caseValues>
+        <name>opportunity_line_item</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Line Item Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Line Item Fields</value>
+        </caseValues>
+        <name>opportunity_line_item_field</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Line Item ID</value>
+        </caseValues>
+        <name>opportunity_line_item_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Name</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Names</value>
+        </caseValues>
+        <name>opportunity_name</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Owner</value>
+        </caseValues>
+        <name>opportunity_owner</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Owner Alias</value>
+        </caseValues>
+        <name>opportunity_owner_alias</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Owner Email</value>
+        </caseValues>
+        <name>opportunity_owner_email</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Partner Report</value>
+        </caseValues>
+        <name>opportunity_partner_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Picklists</value>
+        </caseValues>
+        <name>opportunity_picklists</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Pipeline</value>
+        </caseValues>
+        <name>opportunity_pipeline</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Pipeline Trend</value>
+        </caseValues>
+        <name>opportunity_pipeline_trend</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Quantity</value>
+        </caseValues>
+        <name>opportunity_quantity</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Record Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Record Types</value>
+        </caseValues>
+        <name>opportunity_record_type</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Report</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Reports</value>
+        </caseValues>
+        <name>opportunity_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Schedule Report</value>
+        </caseValues>
+        <name>opportunity_schedule_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Source</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Sources</value>
+        </caseValues>
+        <name>opportunity_source</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Stage</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Stages</value>
+        </caseValues>
+        <name>opportunity_stage</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Stage Duration Report</value>
+        </caseValues>
+        <name>opportunity_stage_duration_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Stage ID</value>
+        </caseValues>
+        <name>opportunity_stage_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Stage Name</value>
+        </caseValues>
+        <name>opportunity_stage_name</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Stage Status</value>
+        </caseValues>
+        <name>opportunity_stage_status</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Status</value>
+        </caseValues>
+        <name>opportunity_status</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Team</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Teams</value>
+        </caseValues>
+        <name>opportunity_team</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Team Member</value>
+        </caseValues>
+        <name>opportunity_team_member</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Team Member ID</value>
+        </caseValues>
+        <name>opportunity_team_member_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Territory</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Territories</value>
+        </caseValues>
+        <name>opportunity_territory</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Territory</value>
+        </caseValues>
+        <name>opportunity_territory_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Trend</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Trends</value>
+        </caseValues>
+        <name>opportunity_trend</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Trend Information</value>
+        </caseValues>
+        <name>opportunity_trend_information</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Trend Report</value>
+        </caseValues>
+        <name>opportunity_trend_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender Type</value>
+        </caseValues>
+        <name>opportunity_type</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Opportunity/Tender View</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity/Tender Views</value>
+        </caseValues>
+        <name>opportunity_view</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Adequacy of Current Position --></label>
+        <name>Adequacy_of_Current_Position__c</name>
+        <picklistValues>
+            <masterLabel>Comfort</masterLabel>
+            <translation><!-- Comfort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concern</masterLabel>
+            <translation><!-- Concern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discomfort</masterLabel>
+            <translation><!-- Discomfort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Euphoria</masterLabel>
+            <translation><!-- Euphoria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fear</masterLabel>
+            <translation><!-- Fear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Great</masterLabel>
+            <translation><!-- Great --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panic</masterLabel>
+            <translation><!-- Panic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secure</masterLabel>
+            <translation><!-- Secure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Worry</masterLabel>
+            <translation><!-- Worry --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Competition --></label>
+        <name>Competition__c</name>
+        <picklistValues>
+            <masterLabel>Competitor 1</masterLabel>
+            <translation><!-- Competitor 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor 2</masterLabel>
+            <translation><!-- Competitor 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor 3</masterLabel>
+            <translation><!-- Competitor 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor 4</masterLabel>
+            <translation><!-- Competitor 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Volume --></label>
+        <name>Current_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hover Details --></label>
+        <name>ITBrelViz__Hover_Details__c</name>
+    </fields>
+    <fields>
+        <name>LeadSource</name>
+        <picklistValues>
+            <masterLabel>Advertisement</masterLabel>
+            <translation><!-- Advertisement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Referral</masterLabel>
+            <translation><!-- Employee Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Referral</masterLabel>
+            <translation><!-- External Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Internal</masterLabel>
+            <translation><!-- Seminar - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Partner</masterLabel>
+            <translation><!-- Seminar - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Show</masterLabel>
+            <translation><!-- Trade Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of mouth</masterLabel>
+            <translation><!-- Word of mouth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- OfflineId --></label>
+        <name>OfflineId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Potential Volume --></label>
+        <name>Potential_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <name>StageName</name>
+        <picklistValues>
+            <masterLabel>Closed Lost</masterLabel>
+            <translation><!-- Closed Lost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Won</masterLabel>
+            <translation><!-- Closed Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Id. Decision Makers</masterLabel>
+            <translation><!-- Id. Decision Makers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Analysis</masterLabel>
+            <translation><!-- Needs Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negotiation/Review</masterLabel>
+            <translation><!-- Negotiation/Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Perception Analysis</masterLabel>
+            <translation><!-- Perception Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal/Price Quote</masterLabel>
+            <translation><!-- Proposal/Price Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospecting</masterLabel>
+            <translation><!-- Prospecting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualification</masterLabel>
+            <translation><!-- Qualification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Proposition</masterLabel>
+            <translation><!-- Value Proposition --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <name>Type</name>
+        <picklistValues>
+            <masterLabel>Existing Business</masterLabel>
+            <translation><!-- Existing Business --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Business</masterLabel>
+            <translation><!-- New Business --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Reference to the Geocode object holding all of mapping information for the record. --></help>
+        <label><!-- Geocode --></label>
+        <name>geopointe__Geocode__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Opportunity Layout</layout>
+        <sections>
+            <label><!-- Miller Heiman Integration --></label>
+            <section>Miller Heiman Integration</section>
+        </sections>
+        <sections>
+            <label><!-- Useful Links --></label>
+            <section>Useful Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <startsWith>Vowel</startsWith>
+    <webLinks>
+        <label><!-- Add_Default_Sales_Team2 --></label>
+        <name>Add_Default_Sales_Team2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Action_Plans --></label>
+        <name>Create_Action_Plans</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Opportunity_Action_Plan --></label>
+        <name>Create_Opportunity_Action_Plan</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP --></label>
+        <name>Loop__LOOP</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP_Merge --></label>
+        <name>Loop__LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOPlus --></label>
+        <name>Loop__LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOP_Merge --></label>
+        <name>Loop__Mass_LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOPlus --></label>
+        <name>Loop__Mass_LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- WVShowOnMap --></label>
+        <name>Wherevantage__WVShowOnMap</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map --></label>
+        <name>geopointe__Map</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_Records_Opportunity --></label>
+        <name>geopointe__Map_Records_Opportunity</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_Records_Opportunity2 --></label>
+        <name>geopointe__Map_Records_Opportunity2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_newWindow --></label>
+        <name>geopointe__Map_newWindow</name>
+    </webLinks>
+</CustomObjectTranslation>

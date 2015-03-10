@@ -1,0 +1,35 @@
+<apex:page standardController="SFDC_Acct_Plan__c" extensions="chatterFiles">
+
+<table> 
+<tr>
+    <apex:repeat value="{!filePosts}" var="c">
+        <td>
+            <apex:pageBlock >
+                <table class="fileItem"><tr><td>
+                <Apex:Image url="/sfc/servlet.shepherd/version/renditionDownload?rendition=THUMB120BY90&versionId={!c.contentDocument.latestPublishedVersionID}&operationContext=CHATTER" rendered="{!c.contentDocument.latestPublishedVersion.fileType == 'JPG' || c.contentDocument.latestPublishedVersion.fileType == 'PNG' || c.contentDocument.latestPublishedVersion.fileType == 'POWER_POINT' || c.contentDocument.latestPublishedVersion.fileType == 'PDF' ||c.contentDocument.latestPublishedVersion.fileType == 'WORD' ||c.contentDocument.latestPublishedVersion.fileType == 'GIF'}"/>
+                <apex:image url="/sfc/images/docicons/doctype_txt_48.png" rendered="{!c.contentDocument.latestPublishedVersion.fileType == 'TEXT'}"/>
+                <apex:image url="/sfc/images/docicons/doctype_zip_48.png" rendered="{!c.contentDocument.latestPublishedVersion.fileType == 'ZIP'}"/>
+                <apex:image url="/sfc/images/docicons/doctype_audio_48.png" rendered="{!c.contentDocument.latestPublishedVersion.fileType == 'MP3'}"/>
+                <apex:image url="/sfc/images/docicons/doctype_unknown_48.png" rendered="{!c.contentDocument.latestPublishedVersion.fileType == 'UNKNOWN'}"/>
+                </td><td>
+                <apex:outputLink value="/{!c.contentDocumentID}" target="_top">{!c.contentDocument.title}</apex:outputLink><br/>
+                <apex:outputText value="{!c.contentDocument.createdBy.name} - {!c.contentDocument.createdDate}"/><br/>
+                
+                </td></tr></table> 
+            </apex:pageBlock>
+        </td>
+    </apex:repeat>
+</tr>
+</table> 
+
+
+<style type="text/css">
+
+.fileItem{
+      height: 110px;
+    width: 175px;
+}
+
+</style>
+
+</apex:page>

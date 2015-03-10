@@ -1,0 +1,17 @@
+<apex:page standardController="Contact" extensions="ContactSamples"> 
+
+    <style> 
+
+        #DIV_Container{padding: 0; margin: 0; background-color: #F3F3EC;} 
+
+    </style> 
+
+    <div id="DIV_Container"> 
+
+        <!-- See http://code.google.com/apis/chart/ for more info on customizing the chart --> 
+        <apex:outputText value="{!Contact.Id}" rendered="false"/>
+        <apex:image url="http://chart.apis.google.com/chart?cht=p3&chs=600x125&chf=bg,s,FFFFFF&chco=236FBD{!chartData}"></apex:image> 
+
+    </div> 
+
+</apex:page>

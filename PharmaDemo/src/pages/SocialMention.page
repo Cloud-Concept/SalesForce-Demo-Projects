@@ -1,0 +1,66 @@
+<apex:page controller="SocialMentionController">
+	<apex:sectionHeader title="Who's talking about you?" subtitle="Using SocialMention.com"/>
+ 
+     <apex:form >
+     <apex:pageBlock > 
+          <apex:pageBlockButtons >
+              <apex:commandButton action="{!searchForMention}" value="Search for Mentions" rerender="resultsPanel" status="status"/>
+          </apex:pageBlockButtons>
+          
+ 
+          <apex:pageBlockSection >
+               <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="searchTerm">Search Term</apex:outputLabel>
+                    <apex:inputText id="searchTerm" value="{!searchTerm}"/>
+               </apex:pageBlockSectionItem>
+          </apex:pageBlockSection>
+
+ 
+          <apex:actionStatus id="status" startText="Searching for mentions...">          
+          <apex:facet name="start">
+                 Searching for mentions... <img src="{!$Resource.spin}"/>       
+            </apex:facet>
+          </apex:actionStatus>
+          
+          
+          <apex:outputPanel id="resultsPanel">
+          <apex:pageMessages />
+          <apex:pageBlock >
+          	<!-- <apex:outputText value="{!searchURL}"/> -->
+          
+          	<apex:pageBlockTable value="{!mentions}" var="mention">          	
+          	    <apex:column width="110px">
+					<apex:commandLink action="{!createNewCase}" value="Create a Case" styleClass="btn">
+                    	<apex:param name="mention_user" value="{!mention.user}"/>					
+                    	<apex:param name="mention_link" value="{!mention.link}"/>
+                    	<apex:param name="mention_source" value="{!mention.source}"/>
+                    	<apex:param name="mention_title" value="{!mention.title}"/>                    	                    	                    	
+					</apex:commandLink>
+					<br/>
+					<br/>					
+					<apex:commandLink action="{!createNewLead}" value="Create a Lead" styleClass="btn">
+                    	<apex:param name="mention_user" value="{!mention.user}"/>					
+                    	<apex:param name="mention_link" value="{!mention.link}"/>
+                    	<apex:param name="mention_source" value="{!mention.source}"/>
+                    	<apex:param name="mention_title" value="{!mention.title}"/>					
+					</apex:commandLink>
+				</apex:column>				
+
+      			<apex:column headerValue="Source">
+      				<apex:image url="{!mention.favicon}" title="{!mention.source}"/>
+      			</apex:column>
+				<apex:column headerValue="User" value="{!mention.user}"/>
+      			<apex:column headerValue="User Picture">
+      				<apex:image url="{!mention.user_link}" title="{!mention.user}"/>
+      			</apex:column>				
+          		<apex:column headerValue="URL">           		          		
+          			<apex:outputLink value="{!mention.link}">{!mention.link}</apex:outputLink>
+          		</apex:column>				      			
+          		<apex:column headerValue="Title" value="{!mention.title}"/> 	          	
+			</apex:pageBlockTable>          		          		
+		  </apex:pageBlock>          		
+          </apex:outputPanel>
+     </apex:pageBlock>
+     </apex:form>
+ 
+</apex:page>

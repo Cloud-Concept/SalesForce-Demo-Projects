@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Call Attendee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Call Attendees</value>
+    </caseValues>
+    <fields>
+        <label><!-- Call Date --></label>
+        <name>Call_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Notes --></label>
+        <name>Call_Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Report --></label>
+        <name>Call_Report__c</name>
+        <relationshipLabel><!-- Attendees --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Call Report --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Month --></label>
+        <name>Month__c</name>
+        <picklistValues>
+            <masterLabel>Apr</masterLabel>
+            <translation><!-- Apr --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aug</masterLabel>
+            <translation><!-- Aug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dec</masterLabel>
+            <translation><!-- Dec --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Feb</masterLabel>
+            <translation><!-- Feb --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jan</masterLabel>
+            <translation><!-- Jan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jul</masterLabel>
+            <translation><!-- Jul --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Jun</masterLabel>
+            <translation><!-- Jun --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mar</masterLabel>
+            <translation><!-- Mar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>May</masterLabel>
+            <translation><!-- May --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nov</masterLabel>
+            <translation><!-- Nov --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oct</masterLabel>
+            <translation><!-- Oct --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sept</masterLabel>
+            <translation><!-- Sept --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Next Call Objective --></label>
+        <name>Next_Call_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Appointment</masterLabel>
+            <translation><!-- Appointment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Face to Face</masterLabel>
+            <translation><!-- Face to Face --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting</masterLabel>
+            <translation><!-- Meeting --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Attendee_List --></label>
+        <name>Attendee_List</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mail_Merge --></label>
+        <name>Mail_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Email --></label>
+        <name>Send_Email</name>
+    </webLinks>
+</CustomObjectTranslation>

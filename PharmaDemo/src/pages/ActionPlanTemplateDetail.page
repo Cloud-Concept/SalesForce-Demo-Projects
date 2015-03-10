@@ -1,0 +1,103 @@
+<apex:page id="detailPage" tabStyle="Action_Plans__tab" standardController="ActionPlanTemplate__c" extensions="ActionPlanTemplateDetailController" >
+    
+    <script type="text/javascript" src="{!$Resource.ActionPlans_sortable}"/>
+    <script type="text/javascript" src="{!$Resource.ActionPlan_ActionPlanTemplateDetailScripts}"/>
+
+    <LINK href="{!$Resource.ActionPlan_ActionPlanTemplateDetailStyles}" rel="stylesheet" type="text/css">
+    
+    <apex:sectionHeader title="Action Plan Template" subtitle="{!actionPlanTemplate.Name}" help="" />
+    
+    <apex:form id="detailForm">
+    
+        <apex:pageBlock id="templateDetail" title="Action Plan Template Detail" mode="detail">
+        
+            <apex:pageBlockButtons >
+                <apex:commandButton action="/apex/ActionPlanTemplateCreation?id={!actionPlanTemplate.Id}" value="Edit"/>
+                <apex:commandButton action="{!deleteTemplate}" value="Delete" onclick="return confirm('Are you sure?');" />
+                <apex:outputLink value="/apex/ActionPlanTemplateCreation?clone=1&Id={!actionPlanTemplate.Id}" styleClass="btn" style="text-decoration:none; padding:2px 5px 2px 5px !important; cursor:pointer ">Clone</apex:outputLink>
+                <apex:commandLink action="/p/share/CustomObjectSharingDetail?parentId={!actionPlanTemplate.Id}" value="Sharing" styleClass="btn" style="text-decoration:none; padding:2px 5px 2px 5px !important; "/>
+                <apex:outputLink value="/apex/ActionPlanCreation?templateId={!actionPlanTemplate.Id}" styleClass="btn" style="text-decoration:none; padding:2px 5px 2px 5px !important; cursor:pointer ">New Action Plan</apex:outputLink>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection title="Information" columns="1">
+                <apex:panelGrid columns="5" columnClasses="labelCol, dataCol spacerCol, labelCol, dataCol" >
+                	<apex:outputText >Owner</apex:outputText>
+                    <apex:outputText >{!actionPlanTemplate.Owner.Name}&nbsp;[<a href="/{!actionPlanTemplate.Id}/a?retURL={!$CurrentPage.URL}" >Change</a>]</apex:outputText>
+                    <apex:outputText />
+                    <apex:outputText />
+                    <apex:outputText />
+                    
+                    <apex:outputText >Action Plan Template Name</apex:outputText>
+                    <apex:outputText >{!actionPlanTemplate.Name}</apex:outputText>
+                    <apex:outputText />
+                    <apex:outputText />
+                    <apex:outputText />
+                    
+                    <apex:outputText >Description</apex:outputText>
+                    <apex:outputText >{!actionPlanTemplate.Description__c}</apex:outputText>
+                    <apex:outputText />
+                    <apex:outputText />
+                    <apex:outputText />
+                </apex:panelGrid>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="taskSection" title="Tasks (Task headers are sortable)" columns="1">
+                 <apex:panelGrid columns="5" columnClasses="labelCol, dataCol, spacerCol, labelCol, dataCol">
+                    <apex:outputText value="Skip Weekends"/>
+                    <apex:outputText ><apex:inputCheckbox value="{!actionPlanTemplate.SkipWeekends__c}"  disabled="true"/></apex:outputText>
+                    <apex:outputText />
+                    <apex:outputText />
+                    <apex:outputText />
+                </apex:panelGrid>
+                
+                <apex:panelGrid columns="5" columnClasses="labelCol, dataCol spacerCol, labelCol, dataCol" rendered="{!(ActionPlanTemplate.SkipDay__c != null && actionPlanTemplate.SkipWeekends__c == true)}">
+                    <apex:outputText value="Skip Day" />
+                    <apex:outputText >{!actionPlanTemplate.SkipDay__c}</apex:outputText>
+                    <apex:outputText />
+                    <apex:outputText />
+                    <apex:outputText />
+                </apex:panelGrid>
+                
+                <apex:dataTable value="{!TemplateTasks}" var="task" id="theTable" styleClass="sortable">
+                    <apex:column id="columnOne" headerValue="{!$ObjectType.APTTaskTemplate__c.fields.Subject__c.label}" value="{!task.Subject__c}" />
+                    <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.APTTaskTemplate__c.label}" value="{!task.APTTaskTemplate__r.Subject__c}" />
+                    <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.DaysFromStart__c.label}" value="{!task.DaysFromStart__c}" />
+                    <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.User__c.label}" value="{!task.User__c}" />
+                    <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.Type__c.label}" value="{!task.Type__c}" />
+                    <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.Priority__c.label}" value="{!task.Priority__c}" />
+                    <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.SendEmail__c.label}" value="{!task.SendEmail__c}" />
+                    <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.Reminder__c.label}" value="{!task.Reminder__c}" />
+					<apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.Comments__c.label}">
+						<apex:outputPanel id="commentPanel" style="display:none">
+                        		<div id="commentContainer" onmouseout="javascript:ActionPlanTemplateDetailScripts.hideComments('{!$Component.theTable.columnOne}');">
+	                        		<div class="hd">
+	                        			<div class="hd-left">Comments</div>
+	                        			<div class="hd-right"><!-- <input class="btn" style="margin-bottom:1px;" type="button" onclick="javascript:ActionPlanTemplateDetailScripts.hideComments('{!$Component.theTable.columnOne}');" title="Close" name="closeCommentPanel" value=" Close "/>--></div>
+	                        		</div>
+	                        		<div class="bd">
+	                        			<textarea readonly="true" id="Comments">{!task.Comments__c}</textarea>
+	                        		</div>
+                        		</div>
+                        	</apex:outputPanel>
+						<apex:outputPanel rendered="{!task.Comments__c != null}">(<a onmouseover="javascript:ActionPlanTemplateDetailScripts.showComments('{!$Component.theTable.columnOne}');" style="text-decoration:underline">...</a>)</apex:outputPanel>
+					</apex:column>
+                </apex:dataTable>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="System Information" columns="1">
+	            <apex:panelGrid columns="7" columnClasses="labelCol, dataCol2, dataCol2, spacerCol, labelCol, dataCol2, dataCol2">
+		            <apex:outputText value="Created By" />
+		            <apex:outputField value="{!ActionPlanTemplate.CreatedById}" />
+		            <apex:outputField value="{!ActionPlanTemplate.CreatedDate}" />
+		            <apex:outputText />
+		            <apex:outputText value="Last Modified By" />
+		            <apex:outputField value="{!ActionPlanTemplate.LastModifiedById}" />
+		            <apex:outputField value="{!ActionPlanTemplate.LastModifiedDate}" />
+	            </apex:panelGrid>
+           	</apex:pageBlockSection>
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+
+</apex:page>

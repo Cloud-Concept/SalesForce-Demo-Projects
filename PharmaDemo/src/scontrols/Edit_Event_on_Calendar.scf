@@ -1,0 +1,24 @@
+<script language ="JavaScript"> 
+var currentURL = parent.frames.location;
+currentURL += ""; // required to convert to real string, otherwise indexOf fails
+
+// Get HTTP GET parameters
+var params = currentURL.substring(currentURL.indexOf("?") + 1).split("&");
+
+// Search for retURL parameter
+var retURL="";
+for (i = 0; i < params.length; i++) {
+	var param = params[i].split("=");
+	if (param[0] == 'retURL') {
+		retURL = param[1];
+	}
+}
+
+var newURL = "/{!Event.Related_Id__c}/e";
+
+if (retURL != "") {
+   newURL += "?retURL=" + retURL;
+}
+
+parent.frames.location.replace(newURL);
+</script>

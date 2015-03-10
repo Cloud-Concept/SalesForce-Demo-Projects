@@ -1,0 +1,106 @@
+<apex:page standardStylesheets="false" controller="BlackBerryApproveRejectController" sidebar="false" showHeader="false" cache="true">
+	
+	<apex:composition template="LeaveRequestTemplate">
+    <apex:define name="content">
+
+
+	<div data-role="page" data-theme="a">
+    
+    
+    <div data-role="header">
+        <h2>{!ObjDetail.Name}</h2>
+        <a href="/apex/MobileApprovalList" data-role="button" data-inline="true" data-ajax="true"  data-transition="flip" data-icon="arrow-l">Back</a>
+    </div>
+    
+    <div data-role="content">
+    
+    
+    
+	
+	<!-- Approval Title -->
+	<div class="approvalHeader {!ObjDetail.objType}">
+		<div class="title">
+			Approval Request<br />
+		</div>
+	</div>
+	
+	<!-- Approval Details -->
+	<ul data-role="listview" data-inset="true"  data-theme="b">
+		<li data-role="list-divider">Details</li>
+		<li data-role="fieldcontain">
+			{!leaverequest.Owner.Name}
+		</li>
+		<li data-role="fieldcontain">
+			{!leaverequest.Leave_Type__c}
+		</li>
+		<li data-role="fieldcontain">
+			<apex:outputText value="{0,date, dd MMM yyyy}">
+				 <apex:param value="{!leaverequest.From__c}" />
+		    </apex:outputText>
+			 - 
+			<apex:outputText value="{0,date, dd MMM yyyy}">
+				 <apex:param value="{!leaverequest.To__c}" />
+		    </apex:outputText>
+		</li>
+		<li data-role="fieldcontain">
+			Notes<br/>
+			{!leaverequest.Notes__c}
+		</li>
+	</ul>
+	
+	
+	<!-- Approval History -->
+	<ul data-role="listview" data-inset="true"  data-theme="b">
+		<li data-role="list-divider">Approval History</li>
+		
+		<apex:repeat value="{!ProcHistory}" var="step">
+			<li data-role="fieldcontain" data-theme="a">
+				<apex:outputText value="{!IF(step.ShowSubmittedTitle,'Approval Rq. Submitted','Approval Step')}" />
+			</li>
+			<li data-role="fieldcontain">
+				{!step.stepDate}			
+			</li>
+			<li data-role="fieldcontain">
+				<apex:outputPanel rendered="{!IF(step.StatusIcon == '---',false,true)}" styleClass="overallStatusIndicator" layout="block">
+								Overall Status : {!step.Status}
+				</apex:outputPanel>
+			</li>
+			<li data-role="fieldcontain">
+				Approver : {!step.AssignedTo}
+			</li>
+			<apex:outputText rendered="{!step.ShowComments}">
+			<li data-role="fieldcontain">
+				Comments :<br/>
+				<i><apex:outputText value="{!step.Comments}" rendered="{!step.ShowComments}" /></i>
+			</li>
+			</apex:outputText>
+		</apex:repeat>
+	</ul>
+	
+	
+	<!-- Approve/Reject Form -->
+	<form id="approveRejectForm" action="{!$Page.MobileApproveRejectForm}" method="get">
+		<ul data-role="listview" data-inset="true"  data-theme="b">
+        	<li data-role="fieldcontain">
+        		Comments<br/>
+        		<textarea name="comments" cols="35" rows="8"></textarea>
+        	</li>
+        </ul>
+        <input type="hidden" name="id" value="{!WORKITEM_ID}" />
+        <input type="hidden" id="actionfield" name="action"></input>	
+     </form>
+	
+	<div class="ui-grid-a">
+		<div class="ui-block-a"><button data-icon="check" onclick="document.getElementById('actionfield').value = 'Approve'; document.getElementById('approveRejectForm').submit(); return true;">Approve</button></div>
+		<div class="ui-block-b"><button data-icon="minus" onclick="document.getElementById('actionfield').value = 'Reject'; document.getElementById('approveRejectForm').submit(); return true;">Reject</button></div>
+	</div>
+	
+	
+	
+	
+	</div>
+	</div>
+	</apex:define>
+	</apex:composition>
+	
+</apex:page>

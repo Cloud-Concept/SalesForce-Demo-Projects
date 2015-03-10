@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ApexPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>18.0</apiVersion>
+    <availableInTouch>false</availableInTouch>
+    <confirmationTokenRequired>false</confirmationTokenRequired>
+    <description>This is the page that does an address match when launched from a standard record. If the address is not found (no good match) then a dialog is shown to the user where they can either select one of the matches and/or enter an updated address.</description>
+    <label>WVAddressMatchPage</label>
+</ApexPage>

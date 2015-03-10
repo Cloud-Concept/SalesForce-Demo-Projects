@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Geopointe Action</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Geopointe Actions</value>
+    </caseValues>
+    <fields>
+        <help><!-- URL - Open the URL of a webpage. This can be a internal salesforce.com page or external website. 
+
+Apex - Invoke custom logic using Apex code.
+
+POST (Visualforce) - Will POST a comma separated string of record Ids (idArray) to the provided URL. --></help>
+        <label><!-- Action Type --></label>
+        <name>Action_Type__c</name>
+        <picklistValues>
+            <masterLabel>Apex</masterLabel>
+            <translation><!-- Apex --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>POST (Visualforce)</masterLabel>
+            <translation><!-- POST (Visualforce) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>URL</masterLabel>
+            <translation><!-- URL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Deprecated. Use the &quot;Available (Web)&quot; and &quot;Available (SF1)&quot; fields to control usage in the app. --></help>
+        <label><!-- Deprecated --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the Apex class for this action. This class must implement the geopointe.ActionHandler interface. --></help>
+        <label><!-- Apex Class --></label>
+        <name>Apex_Class__c</name>
+    </fields>
+    <fields>
+        <help><!-- Record (Map Point) - This action will be a link or button displayed in the detail bubble on the Map page and will only apply to the selected record.
+
+List (Data Set Search) - This action will be applied to all records returned in a Data Set search. --></help>
+        <label><!-- Apply To --></label>
+        <name>Apply_To__c</name>
+        <picklistValues>
+            <masterLabel>List</masterLabel>
+            <translation><!-- List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Record</masterLabel>
+            <translation><!-- Record --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- If checked, this action will be available in the Salesforce1 Geopointe mobile app. Currently only Record actions are supported in the Salesforce1 mobile app. --></help>
+        <label><!-- Available (SF1) --></label>
+        <name>Available_SF1__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, this action will be available in web version of Geopointe. --></help>
+        <label><!-- Available (Web) --></label>
+        <name>Available_Web__c</name>
+    </fields>
+    <fields>
+        <help><!-- For Apex actions this value controls how many records are sent to the receiving Apex class per Apex transaction. If blank, all records are sent in one batch. --></help>
+        <label><!-- Batch Size --></label>
+        <name>Batch_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- New Window - This link will open a new window or tab in the user&apos;s browser.
+
+Same Window - This link will redirect the user away from the current Map page.
+
+Modal - The URL will be opened in a popup (modal) window within the map page. --></help>
+        <label><!-- Behavior --></label>
+        <name>Behavior__c</name>
+        <picklistValues>
+            <masterLabel>Modal Window</masterLabel>
+            <translation><!-- Modal Window --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Window</masterLabel>
+            <translation><!-- New Window --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Same Window</masterLabel>
+            <translation><!-- Same Window --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- In the record detail bubble on the Map page Buttons are displayed first and the Links below. 
+
+Buttons are more prominent and should be used for the most commonly used actions. --></help>
+        <label><!-- Display Type --></label>
+        <name>Display_Type__c</name>
+        <picklistValues>
+            <masterLabel>Button</masterLabel>
+            <translation><!-- Button --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Link</masterLabel>
+            <translation><!-- Link --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The webpage address navigated to when this action is selected. For internal salesforce.com pages it is best to use relative URLs. --></help>
+        <label><!-- Link URL --></label>
+        <name>Link_URL__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select the Map Objects this action can be applied to. --></help>
+        <label><!-- Map Objects --></label>
+        <name>Map_Objects__c</name>
+    </fields>
+    <fields>
+        <help><!-- The height of the modal popup. Values can be defined in pixels such as &quot;800px&quot; or percent of window height, &quot;80%&quot;. Modal window size will be automatically adjusted if the values defined are larger than users viewable window size. --></help>
+        <label><!-- Modal Height --></label>
+        <name>Modal_Height__c</name>
+    </fields>
+    <fields>
+        <help><!-- The width of the modal popup. Values can be defined in pixels such as &quot;800px&quot; or percent of window width, &quot;80%&quot;. Modal window size will be automatically adjusted if the values defined are larger than users viewable window size. --></help>
+        <label><!-- Modal Width --></label>
+        <name>Modal_Width__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name (Translated) --></label>
+        <name>Name_Translated__c</name>
+        <picklistValues>
+            <masterLabel>Placeholder</masterLabel>
+            <translation><!-- Placeholder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Controls the order in which links and buttons are displayed in the action sections on the Map page. --></help>
+        <label><!-- Order --></label>
+        <name>Order__c</name>
+    </fields>
+    <fields>
+        <help><!-- If set, these are default actions included with the Geopointe application. --></help>
+        <label><!-- Standard Action --></label>
+        <name>Standard_Action__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status Message (Translated) --></label>
+        <name>Status_Message_Translated__c</name>
+        <picklistValues>
+            <masterLabel>Placeholder</masterLabel>
+            <translation><!-- Placeholder --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- This text is display while the Apex operation is being executed. Text should be short and descriptive such as: &quot;Loading...&quot;, &quot;Updating Contacts...&quot;, &quot;Processing...&quot;, etc. --></help>
+        <label><!-- Status Message --></label>
+        <name>Status_Message__c</name>
+    </fields>
+    <layouts>
+        <layout>Geopointe Action Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Ubicación</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Ubicaciones</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account External Id --></label>
+        <name>Account_External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Name --></label>
+        <name>Account_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Appt --></label>
+        <name>Appt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Best Time --></label>
+        <name>Best_Time__c</name>
+        <picklistValues>
+            <masterLabel>Friday - AM</masterLabel>
+            <translation><!-- Friday - AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Friday - PM</masterLabel>
+            <translation><!-- Friday - PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monday - AM</masterLabel>
+            <translation><!-- Monday - AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monday - PM</masterLabel>
+            <translation><!-- Monday - PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thursday - AM</masterLabel>
+            <translation><!-- Thursday - AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thursday - PM</masterLabel>
+            <translation><!-- Thursday - PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuesday - AM</masterLabel>
+            <translation><!-- Tuesday - AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuesday - PM</masterLabel>
+            <translation><!-- Tuesday - PM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wednesday - AM</masterLabel>
+            <translation><!-- Wednesday - AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wednesday - PM</masterLabel>
+            <translation><!-- Wednesday - PM --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- BrickId --></label>
+        <name>BrickId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brick --></label>
+        <name>Brick__c</name>
+        <relationshipLabel><!-- Medical Professionals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Call Report --></label>
+        <name>Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact External Id --></label>
+        <name>Contact_External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Name --></label>
+        <name>Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label>Contacto</label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Locations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- County --></label>
+        <name>County__c</name>
+    </fields>
+    <fields>
+        <label><!-- Do Not Call --></label>
+        <name>Do_Not_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email --></label>
+        <name>Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Activity --></label>
+        <name>Last_Activity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Role --></label>
+        <name>Role__c</name>
+        <picklistValues>
+            <masterLabel>Lecturer</masterLabel>
+            <translation><!-- Lecturer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Practitioner</masterLabel>
+            <translation><!-- Practitioner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Speciality --></label>
+        <name>Speciality__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Id --></label>
+        <name>Unique_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Español</nameFieldLabel>
+    <webLinks>
+        <label><!-- Create_Call_Reports --></label>
+        <name>Create_Call_Reports</name>
+    </webLinks>
+</CustomObjectTranslation>

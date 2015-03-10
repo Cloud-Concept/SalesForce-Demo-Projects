@@ -1,0 +1,31 @@
+<apex:page Controller="CallReport_Controller" title="Call Report" tabstyle="Call_Report__c">
+<apex:stylesheet value="{!$Resource.DemoCSS}" />
+ <apex:sectionHeader title="Call Report" subtitle="{!call_report.Next_Call_Objective__c}"/>
+      <apex:form >
+        <apex:pageBlock >
+   
+                        <apex:pageBlockButtons >
+                                      <apex:commandButton action="{!save}" value="Save"/>
+                                      <apex:commandButton action="{!cancel}" value="Cancel" styleClass="btn" id="btnCancel" immediate="true"/>
+                        </apex:pageBlockButtons>
+  
+            <apex:pageBlockSection title="Call">
+                <apex:inputField value="{!Call_Report.Date__c}" required="true"/>
+                <apex:inputField value="{!call_report.Location__c}" required="true"/>
+                <apex:inputField value="{!call_report.Duration__c}" required="true"/>             
+                <apex:inputField value="{!call_report.User__c}"/>
+                <apex:inputField value="{!Call_Report.Type__c}"/>
+                <apex:inputField value="{!call_report.Contact__c}"/>             
+                <apex:inputField value="{!call_report.Accompanied_Call__c}"/>
+                <apex:inputField value="{!Call_Report.Brick__c}"/>
+                <apex:inputField value="{!Call_Report.Guest__c}" styleclass="SFDCFormFieldHalf"/>                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Notes" columns="1" >
+                <apex:inputField value="{!Call_Report.Call_Notes__c}" styleclass="SFDCFormField"></apex:inputField>
+                <apex:inputField value="{!Call_Report.Next_Call_Objective__c}" styleclass="SFDCFormField"></apex:inputField>
+            </apex:pageBlockSection>            
+
+
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

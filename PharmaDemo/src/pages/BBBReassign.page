@@ -1,0 +1,59 @@
+<!-- 
+  Developed by Timba Software Corp. www.timbasoftware.com admin@timbasoftware.com
+-->
+
+<apex:page controller="BlackBerryReassignController" showHeader="false" standardStylesheets="false" cache="true" title="Salesforce Mobile" action="{!perform}">
+
+	<apex:include pageName="ApprovalUserAgent" />	
+	
+	<div class="header">
+		<div class="title">
+			Reassign Approval Request<br />
+			<span class="objTitle">{!relatedTo}</span>
+		</div>
+	</div>
+	
+	<div id="reassignCaption">Reassign Approval Request</div>
+
+	<apex:outputText rendered="{!error}" value="Invalid Approver" styleClass="errorMessage"/>
+
+	<form id="reassignForm" action="{!$Page.BBBReassign}" method="post">
+	<apex:panelGrid columns="2" columnClasses="labelCont, outputCont2" styleClass="reassignTable"> 
+	
+		<apex:outputLabel value="Related To" for="relatedTo"/>
+		<apex:outputText value="{!relatedTo}" id="relatedTo"/>
+		
+		<apex:outputLabel value="Created By" for="createdBy"/>
+		<apex:outputText value="{!createdBy}" id="createdBy"/>
+		
+		<apex:outputLabel value="Assigned Approver" for="assignedApprover"/>
+		<apex:outputText value="{!assignedApprover}" id="assignedApprover"/>
+		
+		<apex:outputLabel value="Approver" for="approver"/>
+		
+		<apex:outputPanel >
+		<select name="approverId" size="1">
+			<apex:repeat value="{!approverLookupList}" var="approverOption">
+				<option value="{!approverOption.value}">{!approverOption.label}</option>
+			</apex:repeat>
+		</select>
+		</apex:outputPanel>		
+	</apex:panelGrid>
+
+	<input type="hidden" name="id" value="{!workItemId}" />
+	<input type="hidden" name="browserRedirect" value="true" />
+	<input type="hidden" name="event" value="Reassign Approval Request" />
+	
+	<table align="center">
+		<tr>
+			<td align="center"><button onclick="document.getElementById('reassignForm').submit(); return true;" class="greyBtn" >Reassign Approval Request</button></td>
+			<td align="center"><button onclick="window.location.href='BBBApprovalList'; return false;" class="greyBtn" >Cancel</button></td>
+		</tr>
+	</table>
+	
+	</form>
+	
+	
+	
+	<!-- <input type="submit" name="event" value="Cancel" class="greyBtn"/> -->
+</apex:page>

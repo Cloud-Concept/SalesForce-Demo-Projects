@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Target</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Targets</value>
+    </caseValues>
+    <fields>
+        <label><!-- MedRep UserName --></label>
+        <name>MedRep_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medical Representative --></label>
+        <name>MedRep__c</name>
+        <relationshipLabel><!-- Targets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Territory --></label>
+        <name>Territory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Identifier --></label>
+        <name>Unique_Identifier__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

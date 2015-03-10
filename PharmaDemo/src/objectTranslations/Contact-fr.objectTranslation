@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <label><!-- Account Target --></label>
+        <name>Account_Target__c</name>
+    </fields>
+    <fields>
+        <label><!-- Advocacy Ladder --></label>
+        <name>Advocacy_Ladder__c</name>
+        <picklistValues>
+            <masterLabel>Advocate</masterLabel>
+            <translation><!-- Advocate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>KOL</masterLabel>
+            <translation><!-- KOL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Visual scoring of the advocacy level of this person. --></help>
+        <label><!-- Advocacy --></label>
+        <name>Advocacy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Annual Sample Allocation --></label>
+        <name>Annual_Sample_Allocation__c</name>
+    </fields>
+    <fields>
+        <label><!-- Appointments --></label>
+        <name>Appointments__c</name>
+    </fields>
+    <fields>
+        <label>Rendez-vous</label>
+        <name>Appt__c</name>
+    </fields>
+    <fields>
+        <label><!-- Best Time --></label>
+        <name>Best_Time__c</name>
+        <picklistValues>
+            <masterLabel>Friday</masterLabel>
+            <translation><!-- Friday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monday</masterLabel>
+            <translation><!-- Monday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thursday</masterLabel>
+            <translation><!-- Thursday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuesday</masterLabel>
+            <translation><!-- Tuesday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wednesday</masterLabel>
+            <translation><!-- Wednesday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Buying Behaviour --></label>
+        <name>Buying_Behaviour__c</name>
+        <picklistValues>
+            <masterLabel>Efficacy</masterLabel>
+            <translation><!-- Efficacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Price Sensitive</masterLabel>
+            <translation><!-- Price Sensitive --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Call Indicator --></label>
+        <name>Call_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Notes --></label>
+        <name>Call_Notes__c</name>
+    </fields>
+    <fields>
+        <label>Entretien</label>
+        <name>Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calls --></label>
+        <name>Calls__c</name>
+    </fields>
+    <fields>
+        <label><!-- Calls this Year --></label>
+        <name>Calls_this_Year__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cardiac Network --></label>
+        <name>Cardiac_Network__c</name>
+    </fields>
+    <fields>
+        <label><!-- Disease Interest --></label>
+        <name>Disease_Interest__c</name>
+        <picklistValues>
+            <masterLabel>Cardio</masterLabel>
+            <translation><!-- Cardio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Diabetes</masterLabel>
+            <translation><!-- Diabetes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>EnT</masterLabel>
+            <translation><!-- EnT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GI</masterLabel>
+            <translation><!-- GI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urology</masterLabel>
+            <translation><!-- Urology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Is the doctor an early adopter --></help>
+        <label><!-- Early Adopter --></label>
+        <name>Early_Adopter__c</name>
+    </fields>
+    <fields>
+        <label>Identification externel</label>
+        <name>External_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Find Nearby --></label>
+        <name>FN__Find_Nearby__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Lat --></label>
+        <name>FN__Lat__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact Lon --></label>
+        <name>FN__Lon__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contact&apos;s Mapping Address --></help>
+        <label><!-- Contact Mapping Address --></label>
+        <name>FN__Mapping_Address__c</name>
+        <picklistValues>
+            <masterLabel>Do Not Map</masterLabel>
+            <translation><!-- Do Not Map --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mailing</masterLabel>
+            <translation><!-- Mailing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Contact&apos;s Mapping Status. --></help>
+        <label><!-- Contact Mapping Status --></label>
+        <name>FN__Mapping_Status__c</name>
+        <picklistValues>
+            <masterLabel>Bad Google Key</masterLabel>
+            <translation><!-- Bad Google Key --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google Exhausted</masterLabel>
+            <translation><!-- Google Exhausted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Located</masterLabel>
+            <translation><!-- Located --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Located Yet</masterLabel>
+            <translation><!-- Not Located Yet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Problem with Address</masterLabel>
+            <translation><!-- Problem with Address --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- FullName --></label>
+        <name>Full_Name_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Name --></label>
+        <name>Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Future Activity Planned --></label>
+        <name>Future_Activity_Planned__c</name>
+    </fields>
+    <fields>
+        <label>Genre</label>
+        <name>Gender__c</name>
+        <picklistValues>
+            <masterLabel>Female</masterLabel>
+            <translation>Femelle</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Male</masterLabel>
+            <translation>Mâle</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Golfer? --></label>
+        <name>Golfer__c</name>
+    </fields>
+    <fields>
+        <label>Catégorie</label>
+        <name>Grade__c</name>
+        <picklistValues>
+            <masterLabel>Clinical Assistant</masterLabel>
+            <translation>Aide Clinique</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hover Details --></label>
+        <name>ITBrelViz__Hover_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Inactive --></label>
+        <name>Inactive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Influence --></label>
+        <name>Influence_Icon__c</name>
+    </fields>
+    <fields>
+        <help><!-- This person&apos;s level of influence on our product usage --></help>
+        <label><!-- Influence --></label>
+        <name>Influence__c</name>
+        <picklistValues>
+            <masterLabel>Moderate</masterLabel>
+            <translation><!-- Moderate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strong</masterLabel>
+            <translation><!-- Strong --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weak</masterLabel>
+            <translation><!-- Weak --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- KOL --></label>
+        <name>KOL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Activity --></label>
+        <name>Last_Activity__c</name>
+    </fields>
+    <fields>
+        <name>LeadSource</name>
+        <picklistValues>
+            <masterLabel>Advertisement</masterLabel>
+            <translation><!-- Advertisement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Referral</masterLabel>
+            <translation><!-- Employee Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Referral</masterLabel>
+            <translation><!-- External Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Internal</masterLabel>
+            <translation><!-- Seminar - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Partner</masterLabel>
+            <translation><!-- Seminar - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Show</masterLabel>
+            <translation><!-- Trade Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of mouth</masterLabel>
+            <translation><!-- Word of mouth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Level of Influence --></label>
+        <name>Level_of_Influence__c</name>
+        <picklistValues>
+            <masterLabel>Advocate</masterLabel>
+            <translation><!-- Advocate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Local</masterLabel>
+            <translation><!-- Local --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>National</masterLabel>
+            <translation><!-- National --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Product Champion</masterLabel>
+            <translation><!-- Product Champion --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Regional</masterLabel>
+            <translation><!-- Regional --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speaker</masterLabel>
+            <translation><!-- Speaker --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Medical Interest --></label>
+        <name>Medical_Interest__c</name>
+        <picklistValues>
+            <masterLabel>1001 - Allergy Clinic(s)</masterLabel>
+            <translation><!-- 1001 - Allergy Clinic(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1006 - Dermatology</masterLabel>
+            <translation><!-- 1006 - Dermatology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1018 - Paediatric</masterLabel>
+            <translation><!-- 1018 - Paediatric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1050 - GUM</masterLabel>
+            <translation><!-- 1050 - GUM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1100 - Eczema Clinic(s)</masterLabel>
+            <translation><!-- 1100 - Eczema Clinic(s) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1101 - Acne</masterLabel>
+            <translation><!-- 1101 - Acne --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1102 - Chief</masterLabel>
+            <translation><!-- 1102 - Chief --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1103 - Buyer</masterLabel>
+            <translation><!-- 1103 - Buyer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1104 - Drug Information</masterLabel>
+            <translation><!-- 1104 - Drug Information --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1105 - Eczema</masterLabel>
+            <translation><!-- 1105 - Eczema --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1106 - Scalp</masterLabel>
+            <translation><!-- 1106 - Scalp --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2001 - Immunology &amp; Allergy</masterLabel>
+            <translation><!-- 2001 - Immunology &amp; Allergy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2006 - Dermatology</masterLabel>
+            <translation><!-- 2006 - Dermatology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2008 - General Medicine, Case History</masterLabel>
+            <translation><!-- 2008 - General Medicine, Case History --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2010 - Geriatrics</masterLabel>
+            <translation><!-- 2010 - Geriatrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2012 - Infectious Diseases, Tropical Diseases</masterLabel>
+            <translation><!-- 2012 - Infectious Diseases, Tropical Diseases --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2018 - Paediatrics</masterLabel>
+            <translation><!-- 2018 - Paediatrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2019 - Paediatric Surgery</masterLabel>
+            <translation><!-- 2019 - Paediatric Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2021 - Bacteriology, Oral &amp; Micro-biology, Virology</masterLabel>
+            <translation><!-- 2021 - Bacteriology, Oral &amp; Micro-biology, Virology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2034 - Venerology</masterLabel>
+            <translation><!-- 2034 - Venerology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2050 - Genito Urinary, Sexual Medicine</masterLabel>
+            <translation><!-- 2050 - Genito Urinary, Sexual Medicine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2051 - Education</masterLabel>
+            <translation><!-- 2051 - Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2053 - Community Medicine</masterLabel>
+            <translation><!-- 2053 - Community Medicine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2056 - Doctors entering general practice within 3 years</masterLabel>
+            <translation><!-- 2056 - Doctors entering general practice within 3 years --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2069 - AIDS/HIV</masterLabel>
+            <translation><!-- 2069 - AIDS/HIV --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2070 - Well Woman&apos;s Medicine</masterLabel>
+            <translation><!-- 2070 - Well Woman&apos;s Medicine --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2071 - Minor Surgery</masterLabel>
+            <translation><!-- 2071 - Minor Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>2090 - Pharmacy</masterLabel>
+            <translation><!-- 2090 - Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3001 - Consultant</masterLabel>
+            <translation><!-- 3001 - Consultant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3002 - Specialist Registrar</masterLabel>
+            <translation><!-- 3002 - Specialist Registrar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3003 - Registrar</masterLabel>
+            <translation><!-- 3003 - Registrar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3004 - Clinical Assistant</masterLabel>
+            <translation><!-- 3004 - Clinical Assistant --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3005 - Professor</masterLabel>
+            <translation><!-- 3005 - Professor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3007 - Associate Specialist</masterLabel>
+            <translation><!-- 3007 - Associate Specialist --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3008 - Action On Manager</masterLabel>
+            <translation><!-- 3008 - Action On Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3009 - Community</masterLabel>
+            <translation><!-- 3009 - Community --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3010 - Outreach</masterLabel>
+            <translation><!-- 3010 - Outreach --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3011 - Paediatric</masterLabel>
+            <translation><!-- 3011 - Paediatric --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3012 - District</masterLabel>
+            <translation><!-- 3012 - District --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3013 - Educational Lead</masterLabel>
+            <translation><!-- 3013 - Educational Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3014 - Hospital</masterLabel>
+            <translation><!-- 3014 - Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3015 - GPSI</masterLabel>
+            <translation><!-- 3015 - GPSI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3016 - Health Visitor</masterLabel>
+            <translation><!-- 3016 - Health Visitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3017 - Liaison</masterLabel>
+            <translation><!-- 3017 - Liaison --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3018 - Matron</masterLabel>
+            <translation><!-- 3018 - Matron --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3019 - Midwife</masterLabel>
+            <translation><!-- 3019 - Midwife --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3020 - Prescriber</masterLabel>
+            <translation><!-- 3020 - Prescriber --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3021 - Extended</masterLabel>
+            <translation><!-- 3021 - Extended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3022 - Supplementary</masterLabel>
+            <translation><!-- 3022 - Supplementary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3023 - Practitioner</masterLabel>
+            <translation><!-- 3023 - Practitioner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3024 - PCDS Member</masterLabel>
+            <translation><!-- 3024 - PCDS Member --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3025 - PCT Business Manager</masterLabel>
+            <translation><!-- 3025 - PCT Business Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3026 - Practice</masterLabel>
+            <translation><!-- 3026 - Practice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3027 - Advisor</masterLabel>
+            <translation><!-- 3027 - Advisor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3028 - Practice Manager</masterLabel>
+            <translation><!-- 3028 - Practice Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3029 - Prescribing Lead</masterLabel>
+            <translation><!-- 3029 - Prescribing Lead --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3030 - School</masterLabel>
+            <translation><!-- 3030 - School --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>3031 - Staff Grade</masterLabel>
+            <translation><!-- 3031 - Staff Grade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Medical Qualifications --></label>
+        <name>Medical_Qualifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medical School --></label>
+        <name>Medical_School__c</name>
+        <picklistValues>
+            <masterLabel>Bristol</masterLabel>
+            <translation><!-- Bristol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Glasgow</masterLabel>
+            <translation><!-- Glasgow --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nottingham</masterLabel>
+            <translation><!-- Nottingham --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Southampton</masterLabel>
+            <translation><!-- Southampton --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>UCL</masterLabel>
+            <translation><!-- UCL --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Month Number --></label>
+        <name>Month_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- New Patients/Month --></label>
+        <name>New_Patients_month__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Appointment --></label>
+        <name>Next_Appointment__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Call Objective --></label>
+        <name>Next_Call_Objective__c</name>
+    </fields>
+    <fields>
+        <label><!-- OldId --></label>
+        <name>OldId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Patients/Month --></label>
+        <name>Patients_Month__c</name>
+    </fields>
+    <fields>
+        <label>Prescriber</label>
+        <name>Prescriber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prescribing Influences --></label>
+        <name>Prescribing_Influences__c</name>
+        <picklistValues>
+            <masterLabel>Age of Drug</masterLabel>
+            <translation><!-- Age of Drug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Availability</masterLabel>
+            <translation><!-- Availability --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cost of Drug</masterLabel>
+            <translation><!-- Cost of Drug --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Speed of Recovery</masterLabel>
+            <translation><!-- Speed of Recovery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technical Data</masterLabel>
+            <translation><!-- Technical Data --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Primary Brick --></label>
+        <name>Primary_Brick_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Brick Name --></label>
+        <name>Primary_Brick_Name__c</name>
+    </fields>
+    <fields>
+        <label>Conservateur?</label>
+        <name>Registrar__c</name>
+    </fields>
+    <fields>
+        <help><!-- The overall status of our company&apos;s relationship with this person --></help>
+        <label><!-- Relationship --></label>
+        <name>Relationship__c</name>
+        <picklistValues>
+            <masterLabel>Excellent</masterLabel>
+            <translation><!-- Excellent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Good</masterLabel>
+            <translation><!-- Good --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hostile</masterLabel>
+            <translation><!-- Hostile --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neutral</masterLabel>
+            <translation><!-- Neutral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None yet</masterLabel>
+            <translation><!-- None yet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Poor</masterLabel>
+            <translation><!-- Poor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Saktrin Sample Cost --></label>
+        <name>Saktrin_Sample_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saktrin Samples --></label>
+        <name>Saktrin_Samples__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saledrin Sample Cost --></label>
+        <name>Saledrin_Sample_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saledrin Samples --></label>
+        <name>Saledrin_Samples__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saloxid Sample Cost --></label>
+        <name>Saloxid_Sample_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- Saloxid Samples --></label>
+        <name>Saloxid_Samples__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Allocation Indicator --></label>
+        <name>Sample_Allocation_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Sample Allocation Used --></label>
+        <name>Sample_Allocation_Used__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Left --></label>
+        <name>Sample_Left__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Spend Allowance --></label>
+        <name>Sample_Spend_Allowance__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Spend Indicator --></label>
+        <name>Sample_Spend_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Spend --></label>
+        <name>Sample_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- Specialty --></label>
+        <name>Spec__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Target Calls --></label>
+        <name>Target_Calls__c</name>
+    </fields>
+    <fields>
+        <label>Cible</label>
+        <name>Target__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation>Haut</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation>Bas</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation>Milieu</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Spend --></label>
+        <name>Total_Spend__c</name>
+    </fields>
+    <fields>
+        <help><!-- Where they studied --></help>
+        <label><!-- University Studied --></label>
+        <name>University_Studied__c</name>
+        <picklistValues>
+            <masterLabel>Cambridge</masterLabel>
+            <translation><!-- Cambridge --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oxford</masterLabel>
+            <translation><!-- Oxford --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Southampton</masterLabel>
+            <translation><!-- Southampton --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- University --></label>
+        <name>University__c</name>
+    </fields>
+    <fields>
+        <help><!-- Links to the address match details for this record --></help>
+        <label><!-- WhereVantage Geocoding --></label>
+        <name>Wherevantage__WhereVantage_Geocoding__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Reference to the Geocode object holding all of mapping information for the record. --></help>
+        <label><!-- Geocode --></label>
+        <name>geopointe__Geocode__c</name>
+        <relationshipLabel><!-- Contacts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- % Sample Spend --></label>
+        <name>pc_Sample_Spend__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Target Calls --></label>
+        <name>pc_Target_Calls__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profile Image URL --></label>
+        <name>twitterforce__Profile_Image_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Profile Image --></label>
+        <name>twitterforce__Profile_Image__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter User ID --></label>
+        <name>twitterforce__Twitter_User_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Twitter Username --></label>
+        <name>twitterforce__Twitter_Username__c</name>
+    </fields>
+    <fields>
+        <label><!-- View on Twitter --></label>
+        <name>twitterforce__View_on_Twitter__c</name>
+    </fields>
+    <layouts>
+        <layout>Contact - Developing Market Layout</layout>
+        <sections>
+            <label><!-- Activity --></label>
+            <section>Activity</section>
+        </sections>
+        <sections>
+            <label><!-- Correspondence Details --></label>
+            <section>Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Key Opinion Leader --></label>
+            <section>Key Opinion Leader</section>
+        </sections>
+        <sections>
+            <label><!-- Profile --></label>
+            <section>Profile</section>
+        </sections>
+        <sections>
+            <label><!-- Quick Links --></label>
+            <section>Quick Links</section>
+        </sections>
+        <sections>
+            <label><!-- Reports --></label>
+            <section>Reports</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contact Layout</layout>
+        <sections>
+            <label>Activité</label>
+            <section>Activity</section>
+        </sections>
+        <sections>
+            <label><!-- Call Notes --></label>
+            <section>Call Notes</section>
+        </sections>
+        <sections>
+            <label>Détails De Correspondance</label>
+            <section>Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Indicators --></label>
+            <section>Indicators</section>
+        </sections>
+        <sections>
+            <label>Généralités</label>
+            <section>Key Opinion Leader</section>
+        </sections>
+        <sections>
+            <label><!-- Profile --></label>
+            <section>Profile</section>
+        </sections>
+        <sections>
+            <label><!-- Relationship --></label>
+            <section>Relationship</section>
+        </sections>
+        <sections>
+            <label>Liens</label>
+            <section>Reports</section>
+        </sections>
+        <sections>
+            <label><!-- Sampling --></label>
+            <section>Sampling</section>
+        </sections>
+        <sections>
+            <label><!-- Visualiser --></label>
+            <section>Visualiser</section>
+        </sections>
+        <sections>
+            <label><!-- twitter --></label>
+            <section>twitter</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contact Layout - Key Account</layout>
+        <sections>
+            <label><!-- Activity --></label>
+            <section>Activity</section>
+        </sections>
+        <sections>
+            <label><!-- Call Notes --></label>
+            <section>Call Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Correspondence Details --></label>
+            <section>Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Key Opinion Leader --></label>
+            <section>Key Opinion Leader</section>
+        </sections>
+        <sections>
+            <label><!-- Profile --></label>
+            <section>Profile</section>
+        </sections>
+        <sections>
+            <label><!-- Relationship --></label>
+            <section>Relationship</section>
+        </sections>
+        <sections>
+            <label><!-- Reports --></label>
+            <section>Reports</section>
+        </sections>
+        <sections>
+            <label><!-- Visualiser --></label>
+            <section>Visualiser</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contact Layout - Marketing</layout>
+        <sections>
+            <label><!-- Activity --></label>
+            <section>Activity</section>
+        </sections>
+        <sections>
+            <label><!-- Correspondence Details --></label>
+            <section>Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Key Opinion Leader --></label>
+            <section>Key Opinion Leader</section>
+        </sections>
+        <sections>
+            <label><!-- Profile --></label>
+            <section>Profile</section>
+        </sections>
+        <sections>
+            <label><!-- Quick Links --></label>
+            <section>Quick Links</section>
+        </sections>
+        <sections>
+            <label><!-- Reports --></label>
+            <section>Reports</section>
+        </sections>
+        <sections>
+            <label><!-- Visualiser --></label>
+            <section>Visualiser</section>
+        </sections>
+        <sections>
+            <label><!-- twitter --></label>
+            <section>twitter</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contact Layout - Sales</layout>
+        <sections>
+            <label><!-- Activity --></label>
+            <section>Activity</section>
+        </sections>
+        <sections>
+            <label><!-- Call Notes --></label>
+            <section>Call Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Correspondence Details --></label>
+            <section>Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Indicators --></label>
+            <section>Indicators</section>
+        </sections>
+        <sections>
+            <label><!-- Key Opinion Leader --></label>
+            <section>Key Opinion Leader</section>
+        </sections>
+        <sections>
+            <label><!-- Profile --></label>
+            <section>Profile</section>
+        </sections>
+        <sections>
+            <label><!-- Relationship --></label>
+            <section>Relationship</section>
+        </sections>
+        <sections>
+            <label><!-- Reports --></label>
+            <section>Reports</section>
+        </sections>
+        <sections>
+            <label><!-- Sampling --></label>
+            <section>Sampling</section>
+        </sections>
+        <sections>
+            <label><!-- Visualiser --></label>
+            <section>Visualiser</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Contact Layout - Service</layout>
+        <sections>
+            <label><!-- Activity --></label>
+            <section>Activity</section>
+        </sections>
+        <sections>
+            <label><!-- Call Notes --></label>
+            <section>Call Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Correspondence Details --></label>
+            <section>Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Key Opinion Leader --></label>
+            <section>Key Opinion Leader</section>
+        </sections>
+        <sections>
+            <label><!-- Reports --></label>
+            <section>Reports</section>
+        </sections>
+        <sections>
+            <label><!-- twitter --></label>
+            <section>twitter</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>PRM Contact Layout</layout>
+        <sections>
+            <label><!-- Contact Profile Data --></label>
+            <section>Contact Profile Data</section>
+        </sections>
+        <sections>
+            <label><!-- Correspondence Details --></label>
+            <section>Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- General --></label>
+            <section>General</section>
+        </sections>
+        <sections>
+            <label><!-- Useful Links --></label>
+            <section>Useful Links</section>
+        </sections>
+    </layouts>
+    <webLinks>
+        <label>Ventes</label>
+        <name>Brick_sales</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Action_Plans --></label>
+        <name>Create_Action_Plans</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Calls --></label>
+        <name>Create_Calls</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Contact_Action_Plan --></label>
+        <name>Create_Contact_Action_Plan</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_Contacts --></label>
+        <name>FN__Map_Contacts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GMI_Show_Map_Button_Contact --></label>
+        <name>GMI_Show_Map_Button_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GMI_Show_Map_Link_Contact --></label>
+        <name>GMI_Show_Map_Link_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP --></label>
+        <name>Loop__LOOP</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP_Merge --></label>
+        <name>Loop__LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOPlus --></label>
+        <name>Loop__LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOP_Merge --></label>
+        <name>Loop__Mass_LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOPlus --></label>
+        <name>Loop__Mass_LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Market_Share --></label>
+        <name>Market_Share</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- WVShowOnMap --></label>
+        <name>Wherevantage__WVShowOnMap</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map --></label>
+        <name>geopointe__Map</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_Records_Contact --></label>
+        <name>geopointe__Map_Records_Contact</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_newWindow --></label>
+        <name>geopointe__Map_newWindow</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Send_Tweet --></label>
+        <name>twitterforce__Send_Tweet</name>
+    </webLinks>
+</CustomObjectTranslation>

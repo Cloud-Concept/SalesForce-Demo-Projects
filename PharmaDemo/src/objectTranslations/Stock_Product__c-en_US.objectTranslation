@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stock Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stock Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Brand Type --></label>
+        <name>Brand_Type__c</name>
+        <picklistValues>
+            <masterLabel>ALLI</masterLabel>
+            <translation><!-- ALLI --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ALLI DISPLAY</masterLabel>
+            <translation><!-- ALLI DISPLAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ALLI PROMO</masterLabel>
+            <translation><!-- ALLI PROMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ANTIGRIPHINE</masterLabel>
+            <translation><!-- ANTIGRIPHINE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIOTENE</masterLabel>
+            <translation><!-- BIOTENE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BIOTENE DISPLAY</masterLabel>
+            <translation><!-- BIOTENE DISPLAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BREATHE RIGHT</masterLabel>
+            <translation><!-- BREATHE RIGHT --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>BREATHE RIGHT DISPLAY</masterLabel>
+            <translation><!-- BREATHE RIGHT DISPLAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COREGA</masterLabel>
+            <translation><!-- COREGA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COREGA DISPLAY</masterLabel>
+            <translation><!-- COREGA DISPLAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>COREGA PROMO</masterLabel>
+            <translation><!-- COREGA PROMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>CORSODYL</masterLabel>
+            <translation><!-- CORSODYL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>LACTACYD</masterLabel>
+            <translation><!-- LACTACYD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NAAPREP</masterLabel>
+            <translation><!-- NAAPREP --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NIQUITIN</masterLabel>
+            <translation><!-- NIQUITIN --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NIQUITIN DISPLAY</masterLabel>
+            <translation><!-- NIQUITIN DISPLAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>NIQUITIN PROMO</masterLabel>
+            <translation><!-- NIQUITIN PROMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PANADOL</masterLabel>
+            <translation><!-- PANADOL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PANADOL DISPLAY</masterLabel>
+            <translation><!-- PANADOL DISPLAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>PARODONTAX</masterLabel>
+            <translation><!-- PARODONTAX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SENSODYNE</masterLabel>
+            <translation><!-- SENSODYNE --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SENSODYNE DISPLAY</masterLabel>
+            <translation><!-- SENSODYNE DISPLAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SENSODYNE PROMO</masterLabel>
+            <translation><!-- SENSODYNE PROMO --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>VALDA</masterLabel>
+            <translation><!-- VALDA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZOVIRAX</masterLabel>
+            <translation><!-- ZOVIRAX --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZOVIRAX DISPLAY</masterLabel>
+            <translation><!-- ZOVIRAX DISPLAY --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>ZOVIRAX PROMO</masterLabel>
+            <translation><!-- ZOVIRAX PROMO --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category --></label>
+        <name>Product_Type__c</name>
+        <picklistValues>
+            <masterLabel>Alli</masterLabel>
+            <translation><!-- Alli --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Analgesic</masterLabel>
+            <translation><!-- Analgesic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corega</masterLabel>
+            <translation><!-- Corega --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Coughs and Colds</masterLabel>
+            <translation><!-- Coughs and Colds --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lactacyd</masterLabel>
+            <translation><!-- Lactacyd --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Niquitin</masterLabel>
+            <translation><!-- Niquitin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oral Care</masterLabel>
+            <translation><!-- Oral Care --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panadol</masterLabel>
+            <translation><!-- Panadol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Smoking Cessation</masterLabel>
+            <translation><!-- Smoking Cessation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zovirax</masterLabel>
+            <translation><!-- Zovirax --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Visible --></label>
+        <name>Visible__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

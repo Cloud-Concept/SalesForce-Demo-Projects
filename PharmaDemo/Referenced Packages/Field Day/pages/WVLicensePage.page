@@ -1,0 +1,6 @@
+<apex:page >
+<center><apex:image id="theImage" value="{!$Resource.Wherevantage__WVFieldDayAboutLogo}" width="305" height="129" /></center>
+<p></p>
+{!$Label.WVNoLicense}
+<br></br>
+</apex:page>

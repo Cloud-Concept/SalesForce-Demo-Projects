@@ -1,0 +1,92 @@
+<apex:page controller="Wherevantage.WVAddressMatching" action="{!Instantiate}"> 
+<apex:form id="form">
+<apex:pageBlock >
+        
+<br/>
+
+<a href="http://www.wherevantage.com/help/Salesforce/v1.0/addressmatchpage" target="_blank" style="float:right; color:#015BA7;text-decoration:none;font-size:small;vertical-align:text-bottom;">Help for this page <img src="{!$Resource.WVHelpOrange}" style="vertical-align:text-bottom;"/></a><br></br><br></br>
+<apex:outputLabel value="Field Day finds the location for accounts, leads and contacts so these can be displayed on the map. This geo-coding is scheduled by your administrator. You can use this form to see which addresses have been geo-coded, and review addresses that were not matched."></apex:outputLabel>
+
+<br/><br/>
+
+<apex:outputPanel id="MatchListDropdown"> 
+<table>
+    <tr>
+        <td><apex:outputLabel dir=""  value="Show address match details for:" for="geocode" /></td>
+        <td>
+        &nbsp;&nbsp;&nbsp;
+        <apex:selectList id="geocode" multiselect="false" value="{!SelectedGeocodeOption}" size="1" >
+            <apex:selectOptions value="{!GeocodeOptionsList}" id="geocodeOptions"  />
+            <apex:actionSupport event="onchange" action="{!SelectedGeocodeOptionChange}" status="GeocodeOptionsStatus" reRender="RecordsSummary, ProcessRecordsButton" />            
+        </apex:selectList>
+        </td>
+    </tr>
+</table>
+</apex:outputPanel>
+
+&nbsp;
+<apex:inputCheckbox value="{!LimitToItemsIOwn}" id="LimitCheckbox">              
+    <apex:actionSupport event="onclick" action="{!SelectedGeocodeOptionChange}" status="GeocodeOptionsStatus" reRender="RecordsSummary, ProcessRecordsButton" />            
+</apex:inputCheckbox>
+
+<apex:outputLabel value="Limit to items I own" for="LimitCheckbox" />
+
+<br/>
+<apex:outputPanel id="GeocodeOptionsStatusPanel"> 
+<apex:actionStatus startText="{!$Label.wherevantage__WV_Loading}"  id="GeocodeOptionsStatus"    >
+<apex:facet name="stop"></apex:facet>
+</apex:actionStatus>
+</apex:outputPanel>
+
+<apex:outputPanel id="RecordsSummary">
+<table>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>{!$Label.WV_NumberOfRecords}&nbsp;&nbsp;{!RecordsMatchedDetail.TotalRecordsDisplay}</td>
+        <td></td>     
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+    </tr>
+    <tr>
+        <td>{!$Label.WV_Processed}</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+<table>
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {!$Label.WV_AddressFound} {!RecordsMatchedDetail.MatchFoundDisplay}
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {!$Label.WV_SkippedAsNoStreetAddress} {!RecordsMatchedDetail.EmptyStreetAddressDisplay}
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        {!$Label.WV_NoGoodMatchFound}&nbsp;
+        <apex:commandLink action="{!NoGoodMatchFoundLink}">{!RecordsMatchedDetail.NoGoodMatchDisplay}</apex:commandlink>
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>
+        {!RecordsMatchedDetail.NotMatchedDisplay} {!$Label.WV_RecordsRemainToBeProcessed}
+        </td>
+    </tr>
+</table>    
+</apex:outputPanel> 
+
+
+</apex:pageBlock>
+</apex:form>
+</apex:page>

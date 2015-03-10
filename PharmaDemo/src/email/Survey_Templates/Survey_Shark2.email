@@ -1,0 +1,9 @@
+Hello {!Contact.FirstName} {!Contact.LastName}, <br />
+<p> It's important to complete this as soon as possible, please take a moment to complete my survey, it's easy and online.</p>
+<p> </p>
+<p>
+Here is the link to begin:  {!Invitation__c.Survey_Link__c}
+</p>
+Thanks,<br />
+{!User.Name}<br />
+{!User.CompanyName}

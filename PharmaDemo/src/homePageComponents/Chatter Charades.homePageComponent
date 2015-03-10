@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HomePageComponent xmlns="http://soap.sforce.com/2006/04/metadata">
+    <body>&lt;script type=&quot;text/javascript&quot; src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;/soap/ajax/15.0/connection.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;/soap/ajax/15.0/apex.js&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot; src=&quot;/apex/jsChatterCharades&quot;&gt;&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;  j$(document).ready(function(){ var parentURL = window.parent.location;j$(&quot;#chatPanel&quot;).html(&apos;&lt;iframe height=&quot;400&quot; width=&quot;275&quot; scrollbars=&quot;none&quot; style=&quot;border: none;    display: block;    height: 400px;    left: -10px;    position: relative;    top: -25px;    width: 225px;&quot; src=&quot;/apex/chatterCharades?p=&apos;+parentURL+&apos;&quot;/&gt;&apos;); }); &lt;/script&gt;&lt;div id=&quot;chatPanel&quot;&gt;&lt;/div&gt;&lt;br&gt;</body>
+    <pageComponentType>htmlArea</pageComponentType>
+    <width>narrow</width>
+</HomePageComponent>

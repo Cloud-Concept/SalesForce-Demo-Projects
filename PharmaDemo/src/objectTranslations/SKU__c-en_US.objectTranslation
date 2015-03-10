@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>SKU</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>SKU&apos;s</value>
+    </caseValues>
+    <fields>
+        <label><!-- Current Stock --></label>
+        <name>Current_Stock__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Custom_Product__c</name>
+        <relationshipLabel><!-- SKU# --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Line Item Quantity --></label>
+        <name>Order_Line_Item_Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pack Size --></label>
+        <name>Pack_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+    </fields>
+    <nameFieldLabel><!-- SKU Number --></nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

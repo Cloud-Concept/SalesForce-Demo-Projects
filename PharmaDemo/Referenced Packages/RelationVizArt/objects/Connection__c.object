@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>This object holds connection</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Account_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This is the link to the first Account.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Parent Relationships</relationshipLabel>
+        <relationshipName>ParentRelationships</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This is the link to the second Account.</description>
+        <externalId>false</externalId>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Child Relationships</relationshipLabel>
+        <relationshipName>ChildRelationships</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Active</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Child_Name_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child Name Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; IF(LEN( Account_2__r.Id ) &gt; 0, Account_2__r.Id, Contact_2__r.Id), IF(LEN( Account_2__r.Id ) &gt; 0,  Child_Name_Text__c , Contact_2__r.FirstName &amp; &quot; &quot; &amp;  Contact_2__r.LastName ), &quot;_parent&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Child Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Child_Object_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(LEN( Account_2__r.Id) &gt; 0, &quot;Account&quot;, &quot;Contact&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Child Object Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Connection_Information__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT( Connection_Type__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Connection Information</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Connection_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is the type of the specified connection.</description>
+        <externalId>false</externalId>
+        <label>Relationship Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Lead Buyer in Group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Influences</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Knows from University</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>is Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cooperates with</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dependent from</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Contact_1__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This is the link to the first Contact.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Parent Relationships</relationshipLabel>
+        <relationshipName>ParentRelationship</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Contact_2__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>This is the link to the second Contact.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Child Relationships</relationshipLabel>
+        <relationshipName>ChildRelationship</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <deprecated>false</deprecated>
+        <description>This is a Description field to add comments about the relation ship.</description>
+        <externalId>false</externalId>
+        <label>Description</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Direction__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Direction</label>
+        <picklist>
+            <picklistValues>
+                <fullName>-----</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&gt;&gt;&gt;</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>&lt;&lt;&lt;</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Edge_Id__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>true</externalId>
+        <label>Edge Id</label>
+        <length>37</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Name_Text__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Name Text</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Name__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; IF(LEN( Account_1__r.Id ) &gt; 0, Account_1__r.Id, Contact_1__r.Id), IF(LEN( Account_1__r.Id ) &gt; 0,  Parent_Name_Text__c , Contact_1__r.FirstName &amp; &quot; &quot; &amp;  Contact_1__r.LastName ), &quot;_parent&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Name</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Object_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF(LEN(Account_1__r.Id) &gt; 0, &quot;Account&quot;, &quot;Contact&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Parent Object Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Relationship_Quality__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Relationship Quality</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Strong</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Weak</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Sub_Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sub Type</label>
+        <picklist>
+            <controllingField>Connection_Type__c</controllingField>
+            <picklistValues>
+                <fullName>Negative</fullName>
+                <controllingFieldValues>Influences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Positive</fullName>
+                <controllingFieldValues>Dependent from</controllingFieldValues>
+                <controllingFieldValues>Influences</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Test</fullName>
+                <controllingFieldValues>Dependent from</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>true</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Relationship</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>Parent_Name__c</columns>
+        <columns>Parent_Object_Type__c</columns>
+        <columns>Connection_Type__c</columns>
+        <columns>Child_Name__c</columns>
+        <columns>Child_Object_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{MMYY}-{0000000000}</displayFormat>
+        <label>Name</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Relationships</pluralLabel>
+    <recordTypes>
+        <fullName>Account_Account</fullName>
+        <active>true</active>
+        <description>Account to Account connection</description>
+        <label>Account-Account</label>
+        <picklistValues>
+            <picklist>Connection_Type__c</picklist>
+            <values>
+                <fullName>Cooperates with</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dependent from</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Influences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Lead Buyer in Group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>is Customer</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Account_Contact</fullName>
+        <active>true</active>
+        <description>Account to Contact connection</description>
+        <label>Account-Contact</label>
+        <picklistValues>
+            <picklist>Connection_Type__c</picklist>
+            <values>
+                <fullName>Cooperates with</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dependent from</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Influences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Knows from University</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Contact_Contact</fullName>
+        <active>true</active>
+        <description>Contact to Contact connection</description>
+        <label>Contact-Contact</label>
+        <picklistValues>
+            <picklist>Connection_Type__c</picklist>
+            <values>
+                <fullName>Cooperates with</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dependent from</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Influences</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Knows from University</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Direction__c</picklist>
+            <values>
+                <fullName>%3C%3C%3C</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>%3E%3E%3E</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>-----</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Relationship_Quality__c</picklist>
+            <values>
+                <fullName>Moderate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Strong</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Weak</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

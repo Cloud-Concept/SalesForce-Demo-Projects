@@ -1,0 +1,73 @@
+<apex:page standardController="Account" extensions="ExtCreateDepartments" >
+    <apex:form id="topForm" >
+        <apex:pageBlock id="Organization" mode="detail" title="Organization">
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Save" action="{!save}" id="save"/>
+                <apex:commandButton value="Cancel" action="{!cancel}" id="cancel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Name" for="accountName"/>
+                    <apex:outputField value="{!Account.Name}" id="accountName"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Type" for="accountType"/>
+                    <apex:outputField value="{!Account.Type}" id="accountType"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Street" for="accountStreet"/>
+                    <apex:outputField value="{!Account.BillingStreet}" id="accountStreet"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Postal Code" for="accountPostalCode"/>
+                    <apex:outputField value="{!Account.BillingPostalCode}" id="accountPostalCode"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="City" for="accountCity"/>
+                    <apex:outputField value="{!Account.BillingCity}" id="accountCity"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="State" for="accountState"/>
+                    <apex:outputField value="{!Account.BillingState}" id="accountState"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Country" for="accountCountry"/>
+                    <apex:outputField value="{!Account.BillingCountry}" id="accountCountry"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:pageBlock id="Departments" title="Departments">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Add" action="{!addNew}" id="add" reRender="departments"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable id="departments" value="{!departments}" var="dp" >
+                    <apex:column headerValue="Type">
+                        <apex:inputField value="{!dp.Department_Type__c}"/>
+                    </apex:column>                    
+                    <apex:column headerValue="Name">
+                        <apex:inputField value="{!dp.Name}"/>
+                    </apex:column>
+                    <apex:column headerValue="Brick">
+                        <apex:inputField value="{!dp.Brick__c}" />
+                    </apex:column>                    
+                    <apex:column headerValue="Street">
+                        <apex:inputField value="{!dp.BillingStreet}"/>
+                    </apex:column>
+                    <apex:column headerValue="Postal Code">
+                        <apex:inputField value="{!dp.BillingPostalCode}"/>
+                    </apex:column>
+                    <apex:column headerValue="City">
+                        <apex:inputField value="{!dp.BillingCity}"/>
+                    </apex:column>
+                    <apex:column headerValue="State">
+                        <apex:inputField value="{!dp.BillingState}"/>
+                    </apex:column>
+                    <apex:column headerValue="Country">
+                        <apex:inputField value="{!dp.BillingCountry}"/>
+                    </apex:column>
+            </apex:pageBlockTable> 
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

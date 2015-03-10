@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Meeting</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Meetings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Agenda --></label>
+        <name>Agenda__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customer Types --></label>
+        <name>Customer_Types__c</name>
+        <picklistValues>
+            <masterLabel>GPs</masterLabel>
+            <translation><!-- GPs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>O &amp; G</masterLabel>
+            <translation><!-- O &amp; G --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Practice Nurses</masterLabel>
+            <translation><!-- Practice Nurses --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Specialists</masterLabel>
+            <translation><!-- Specialists --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Date From --></label>
+        <name>Date_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date To --></label>
+        <name>Date_To__c</name>
+    </fields>
+    <fields>
+        <label><!-- Full Name --></label>
+        <name>Full_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Invitation process --></label>
+        <name>Invitation_process__c</name>
+    </fields>
+    <fields>
+        <label><!-- Linked Location --></label>
+        <name>Linked_Location__c</name>
+        <relationshipLabel><!-- Meetings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Minutes --></label>
+        <name>Minutes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Objectives --></label>
+        <name>Objectives__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Meetings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Venue --></label>
+        <name>Venue__c</name>
+    </fields>
+    <layouts>
+        <layout>Approved Meeting Layout</layout>
+        <sections>
+            <label><!-- Attendee Summary --></label>
+            <section>Attendee Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Symposium Layout</layout>
+        <sections>
+            <label><!-- Attendee Summary --></label>
+            <section>Attendee Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Unapproved Meeting Layout</layout>
+        <sections>
+            <label><!-- Attendee Summary --></label>
+            <section>Attendee Summary</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Approved Meeting --></label>
+        <name>ApprovedMeeting</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Symposium --></label>
+        <name>Symposium</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Unapproved Meeting --></label>
+        <name>UnapprovedMeeting</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

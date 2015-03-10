@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Map Object</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Map Object</value>
+    </caseValues>
+    <fields>
+        <help><!-- The field where the city value exists. --></help>
+        <label><!-- City Field --></label>
+        <name>City_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- City Path --></label>
+        <name>City_Path__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field where the country exists. --></help>
+        <label><!-- Country Field --></label>
+        <name>Country_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country Path --></label>
+        <name>Country_Path__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geocode Batch Size --></label>
+        <name>Geocode_Batch_Size__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field that holds a reference to the Geocode__c object. Until this field is populated, the object cannot be geocoded. --></help>
+        <label><!-- Geocode Field --></label>
+        <name>Geocode_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the amount by which we will be offsetting the geocodes for this object --></help>
+        <label><!-- Geocode Offset --></label>
+        <name>Geocode_Offset__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geocode Path --></label>
+        <name>Geocode_Path__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last date/time that a Geocode Batch job was completed for this object. This values allows batch jobs to perform &quot;delta&quot; loads. --></help>
+        <label><!-- Last Geocode Batch Run --></label>
+        <name>Last_Geocode_Batch_Run__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude Field --></label>
+        <name>Latitude_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude Path --></label>
+        <name>Latitude_Path__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude Field --></label>
+        <name>Longitude_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude Path --></label>
+        <name>Longitude_Path__c</name>
+    </fields>
+    <fields>
+        <help><!-- A SOQL WHERE clause (without including &quot;WHERE&quot;) can be present here to add a hardcoded filter to the Map Object.  This filter will be applied in all circumstances of querying against the Map Object including Geocoding and Mapping. --></help>
+        <label><!-- Map Object Filter --></label>
+        <name>Map_Object_Filter__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field where the &quot;title&quot; of the record resides (e.g. Account Name, Case Number, Opportunity Name, etc.) --></help>
+        <label><!-- Name Field --></label>
+        <name>Name_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name Path --></label>
+        <name>Name_Path__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field where the postal code exists. --></help>
+        <label><!-- Postal Code Field --></label>
+        <name>PostalCode_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code Path --></label>
+        <name>PostalCode_Path__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the query limit this object should use on a map search. &quot;auto&quot; means the system will try and dynamically determine the best limit. --></help>
+        <label><!-- Query Limit --></label>
+        <name>Query_Limit__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies the SOQL relationship by which a query would access to related Map Object --></help>
+        <label><!-- Referenced Map Object Relationship --></label>
+        <name>Referenced_Map_Object_Relationship__c</name>
+    </fields>
+    <fields>
+        <help><!-- Identifies another Map Object where this Map Object should obtain its geocode information. --></help>
+        <label><!-- Referenced Map Object --></label>
+        <name>Referenced_Map_Object__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field where the state value exists. --></help>
+        <label><!-- State Field --></label>
+        <name>State_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- State Path --></label>
+        <name>State_Path__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Active&quot; or &quot;Inactive&quot; defines the status of the Map Object. Inactive Map Objects cannot be used for mapping. --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field where the street address value exists. --></help>
+        <label><!-- Street Field --></label>
+        <name>Street_Field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Path --></label>
+        <name>Street_Path__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Related Opportunities</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Related Opportunities</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Assessment Grid Rating --></label>
+        <name>Assessment_Grid_Rating__c</name>
+        <picklistValues>
+            <masterLabel>Off Formulary - Difficult Access</masterLabel>
+            <translation><!-- Off Formulary - Difficult Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Off Formulary - Easy Access</masterLabel>
+            <translation><!-- Off Formulary - Easy Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Formulary - Difficult Access</masterLabel>
+            <translation><!-- On Formulary - Difficult Access --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Formulary - Easy Access</masterLabel>
+            <translation><!-- On Formulary - Easy Access --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Business Plan --></label>
+        <name>Business_Plan__c</name>
+        <relationshipLabel><!-- Related Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Close Date --></label>
+        <name>CloseDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Name --></label>
+        <name>Opportunity_Name__c</name>
+        <relationshipLabel><!-- Related Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Stage --></label>
+        <name>StageName__c</name>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- New_Related_Opportunity --></label>
+        <name>New_Related_Opportunity</name>
+    </webLinks>
+</CustomObjectTranslation>

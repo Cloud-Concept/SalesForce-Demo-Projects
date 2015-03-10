@@ -1,0 +1,82 @@
+<apex:page id="page" standardController="Purchase_Requisition__c" extensions="PurchaseExtension"
+           docType="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" showChat="false" >
+  <apex:messages />
+  <apex:composition template="mobile_page">
+    <apex:define name="headerText">{!IF(ISBLANK(Purchase_Requisition__c.Id), 'New Purchase Requisition', Purchase_Requisition__c.Resource_Project_Name__c)}</apex:define>
+    <apex:define name="headerLinks">
+      <a href="{!IF(ISBLANK(Purchase_Requisition__c.Id), URLFOR($Page.mobile_purchases), URLFOR($Page.mobile_purchase) + '?id=' + Purchase_Requisition__c.Id)}" data-icon="back" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Back" />
+    </apex:define>
+    <apex:define name="content">
+      <apex:form id="form">
+        <apex:actionFunction action="{!save}" name="save" />
+        <apex:actionFunction action="{!cancel}" name="cancel" />
+        <apex:inputHidden value="{!Purchase_Requisition__c.OwnerId}" />
+	      <section class="layoutSection">
+	        <header><h4>Purchase Requisition Details</h4><hr /></header>
+	        <fieldset>
+            <div class="ui-grid-a">
+              <dl class="ui-block-a">
+                <dt><apex:outputLabel value="Resource/Project Name:" for="project_name" /></dt>
+                <dd><apex:inputField id="project_name" value="{!Purchase_Requisition__c.Resource_Project_Name__c}" /></dd>
+              </dl>
+              <dl class="ui-block-b">
+                <dt><apex:outputLabel value="Vendor:" for="vendor" /></dt>
+                <dd><apex:inputField id="vendor" styleClass="lookupField" value="{!Purchase_Requisition__c.Vendor__c}" /></dd>
+              </dl>
+            </div>
+            <div class="ui-grid-a">
+              <dl class="ui-block-a">
+                <dt><label class="ui-input-text">Shared Resources:</label></dt>
+                <dd>
+                  <apex:outputLabel value="share resources" for="shared" />
+                  <apex:inputField id="shared" value="{!Purchase_Requisition__c.Shared_Resource__c}" />
+                </dd>
+              </dl>
+              <dl class="ui-block-b">
+                <dt><apex:outputLabel value="Cost Center:" for="cost" /></dt>
+                <dd><apex:inputField id="cost" styleClass="costField" value="{!Purchase_Requisition__c.Cost_Center__c}" />
+                  <apex:inputHidden id="costcode" value="{!Purchase_Requisition__c.Cost_Center_Code__c}" /></dd>
+              </dl>
+            </div>
+            <div class="ui-grid-a">
+                <dl class="ui-block-a">
+                  <dt>Currency</dt>
+                  <dd><apex:inputField value="{!Purchase_Requisition__c.Currency__c}" /></dd>
+                </dl>
+            </div>
+	        </fieldset>
+	      </section>
+	      <section class="layoutSection">
+	        <header><h4>Contract Information</h4><hr /></header>
+	        <fieldset>
+	          <div class="ui-grid-a">
+	            <dl class="ui-block-a">
+	              <dt><apex:outputLabel value="Starting Date:" for="starting" /></dt>
+	              <dd><apex:inputField id="starting" styleClass="date" value="{!Purchase_Requisition__c.Starting_Date__c}" /></dd>
+	            </dl>
+	            <dl class="ui-block-b">
+                <dt><apex:outputLabel value="Ending Date:" for="ending" /></dt>
+                <dd><apex:inputField id="ending" styleClass="date" value="{!Purchase_Requisition__c.Ending_Date__c}" /></dd>
+	            </dl>
+	          </div>
+	        </fieldset>
+	      </section>
+	      <section class="layoutSection">
+	        <header><h4>Comments</h4><hr /></header>
+	        <fieldset>
+	          <div class="ui-grid-a">
+	            <dl class="ui-block-a">
+	              <dt><apex:outputLabel value="Comments:" for="comments" /></dt>
+	              <dd><apex:inputField id="comments" value="{!Purchase_Requisition__c.Comments__c}" /></dd>
+	            </dl>
+	          </div>
+	        </fieldset>
+	      </section>
+        <p style="text-align: right;">
+          <a data-role="button" data-icon="check" data-inline="true" data-ajax="true" data-theme="b" onclick="$.mobile.showPageLoadingMsg(); save();">Save</a>
+          <a data-role="button" data-icon="delete" data-inline="true" data-ajax="true" onclick="$.mobile.showPageLoadingMsg(); cancel();">Cancel</a>
+        </p>
+	    </apex:form>
+    </apex:define>
+  </apex:composition>
+</apex:page>

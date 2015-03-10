@@ -1,0 +1,95 @@
+<apex:page standardController="Leave_Request__c" extensions="LeaveRequestExtension"
+           docType="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" showChat="false" >
+  <apex:messages />
+  <apex:composition template="mobile_page">
+    <apex:define name="headerText">{!IF(ISBLANK(req.Id), 'New', 'Edit')}</apex:define>
+    <apex:define name="headerLinks">
+      <a href="{!IF(ISBLANK(Leave_Request__c.Id), URLFOR($Page.mobile_leaverequests), URLFOR($Page.mobile_leaverequest) + '?id=' + Leave_Request__c.Id)}" data-icon="back" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Back" />
+    </apex:define>
+    <apex:define name="content">
+			<apex:form >
+        <apex:actionFunction action="{!save}" name="save" />
+        <apex:actionFunction action="{!cancel}" name="cancel" />
+        <apex:inputHidden value="{!Leave_Request__c.Name}" />
+	      <section class="layoutSection">
+	        <header><h4 style="margin: 0px 25px 8px;">Leave Request</h4><hr /></header>
+	        <fieldset>
+	          <div class="ui-grid-a">
+	            <dl class="ui-block-a" style="padding:0px;margin-left:0em;">
+	              <dt><apex:outputLabel styleClass="subtitle-blue" value="From:" for="from" /></dt>
+	              <dd><apex:inputField style="width:85%" id="from" styleClass="date" value="{!Leave_Request__c.From__c}" /></dd>
+	            </dl>
+	            <dl class="ui-block-b" style="padding:0px;margin-left:0em;">
+	              <dt><apex:outputLabel styleClass="subtitle-blue" value="To:" for="to" /></dt>
+	              <dd><apex:inputField style="width:85%" id="to" styleClass="date" value="{!Leave_Request__c.To__c}" /></dd>
+	            </dl>
+	          </div>
+	          <!--<div class="ui-grid-a">
+	            <dl class="ui-block-a">
+	              <dt><apex:outputLabel value="Type:" for="types" /></dt>
+	              <dd><apex:inputField id="types" value="{!Leave_Request__c.Leave_Type__c}" /></dd>
+	            </dl>
+	            <dl class="ui-block-b">
+	              <dt><apex:outputLabel value="Notes:" for="notes" /></dt>
+	              <dd><apex:inputTextarea cols="40" rows="8" id="notes" value="{!Leave_Request__c.Notes__c}" /></dd>
+	            </dl>
+	          </div>-->
+              <dl style="padding:0px;margin-left:0em;">
+                  <dt><apex:outputLabel value="Type:" for="types" styleClass="subtitle-blue"/></dt>
+	              <dd><apex:inputField id="types" value="{!Leave_Request__c.Leave_Type__c}" /></dd>
+              </dl>
+              <dl style="padding:0px;margin-left:0em;">
+                  <dt><apex:outputLabel styleClass="subtitle-blue" value="Notes:" for="notes" /></dt>
+	              <dd><apex:inputTextarea cols="40" rows="8" id="notes" value="{!Leave_Request__c.Notes__c}" /></dd>
+              </dl>
+	        </fieldset>
+	      </section>
+                
+          <div class="ui-grid-a" style="padding-left:30px;margin-left:0em;">
+              <div class="ui-block-a">
+                  <a data-role="button" data-icon="check" data-inline="true" data-ajax="true" data-theme="b" onclick="$.mobile.showPageLoadingMsg(); save();">Save</a>
+              </div>
+              <div class="ui-block-b">
+                  <a data-role="button" data-icon="delete" data-inline="true" data-ajax="true" onclick="$.mobile.showPageLoadingMsg(); cancel();">Cancel</a>
+              </div>
+          </div>
+				<!--
+                <p style="text-align: right;">
+			    <a data-role="button" data-icon="check" data-inline="true" data-ajax="true" data-theme="b" onclick="$.mobile.showPageLoadingMsg(); save();">Save</a>
+			    <a data-role="button" data-icon="delete" data-inline="true" data-ajax="true" onclick="$.mobile.showPageLoadingMsg(); cancel();">Cancel</a>
+				</p>-->
+      <!-- 
+			  <ul data-role="listview"  data-theme="c" data-dividertheme="d">
+			    <li data-role="list-divider">Details</li>
+			    <li data-role="fieldcontain">
+			      <apex:outputLabel value="Type:" for="type" />
+			      <apex:inputField id="type" value="{!Leave_Request__c.Leave_Type__c}" />
+			    </li>
+			    <li data-role="fieldcontain">
+			      <apex:outputLabel value="From:" for="from" />
+			      <apex:inputField id="from" styleClass="date" value="{!Leave_Request__c.From__c}" />
+			    </li>
+			    <li data-role="fieldcontain">
+			      <apex:outputLabel value="To:" for="to" />
+			      <apex:inputField id="to" styleClass="date" value="{!Leave_Request__c.To__c}" />
+			    </li>
+			    <li data-role="fieldcontain">
+			      <apex:outputLabel value="Notes:" for="notes" />
+			      <apex:inputTextarea cols="40" rows="8" id="notes" value="{!Leave_Request__c.Notes__c}" />
+			    </li>
+			    <li data-role="fieldcontain">
+			      <div class="ui-grid-a">
+			        <div class="ui-block-a">
+			          
+			        </div>
+			        <div class="ui-block-b">
+			          
+			        </div>
+			      </div>
+			    </li>
+			  </ul>
+			   -->
+			</apex:form>
+    </apex:define>
+  </apex:composition>
+</apex:page>

@@ -1,0 +1,19 @@
+<apex:page id="actionPlansLandingPage" tabStyle="Action_Plans__tab">
+
+	<apex:sectionHeader title="Action Plans" subtitle="Home" help=""/>
+    
+    <!-- Tabs -->
+    <div id="rptminitabsall">
+        <div id="rptminitabstabs">
+            <div class="miniTab secondaryPalette">
+                <ul class="miniTabList">
+                    <li class="currentTab"><apex:outputLink id="minitab_0" value="/apex/ActionPlanList">Action Plans</apex:outputLink></li>
+                    <li class="secondaryPalette"><apex:outputLink id="minitab_1" value="/apex/ActionPlanTemplateList">Templates</apex:outputLink></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <apex:ListViews type="ActionPlan__c" />
+    
+</apex:page>

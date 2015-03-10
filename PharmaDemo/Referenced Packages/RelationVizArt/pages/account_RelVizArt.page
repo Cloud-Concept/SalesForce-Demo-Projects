@@ -1,0 +1,87 @@
+<apex:page standardController="Account" extensions="ITBrelViz.ExtGetSession" apiVersion="18.0" standardStylesheets="true" showHeader="false" cache="true">
+    <style type="text/css">
+        .bPageBlock .pbBody {border:0px; -webkit-border-bottom-right-radius: 0px; border-top:0px; border-bottom:0px; border-right:0px; border-left:0px; margin-bottom:0px; padding-bottom:0px; margin-right:0px; padding-right:0px; border-style:none}      
+        .bPageBlock {border:0px; border-top:0px; -webkit-border-bottom-right-radius: 0px; border-bottom:0px; border-right:0px; border-left:0px; margin-bottom:0px; padding-bottom:0px; margin-right:0px; padding-right:0px; border-style:none}
+    </style>
+    <style>
+        .activeTab {background-color: #236FBD; color:white; background-image:none; border-color: white;}
+        .inactiveTab { background-color: white; color:black; background-image:none; border-color: white;}
+    </style>
+    <script type="text/javascript" src="{!$Resource.ITB_SWFObject}"></script>
+    <script type="text/javascript">
+
+
+            var swfVersionStr = "10.0.0";
+            var xiSwfUrlStr = "";//"playerProductInstall.swf";
+            var flashvars = {
+                contentId: "{!$Resource.ITBrelationshipVisualizer}",
+			    sid: "{!UserSessionId}",
+			    surl: "{!$Api.Partner_Server_URL_170}",
+			    id: "{!account.id}",
+			    sobject: "Account"
+            };
+            var params = {};
+            params.quality = "high";
+            params.bgcolor = "#ffffff";
+            params.allowscriptaccess = "sameDomain";
+            params.allowfullscreen = "true";
+            params.wmode = "window";
+            var attributes = {};
+            attributes.id = "RelationVizArt_loader";
+            attributes.name = "RelationVizArt_loader";
+            attributes.align = "middle";
+            swfobject.embedSWF(
+                "{!$Resource.ITBrelationshipVisualizerLoader}", "flashContent", 
+                "100%", "600", 
+                swfVersionStr, xiSwfUrlStr, 
+                flashvars, params, attributes);
+ 			swfobject.createCSS("#flashContent", "display:block;text-align:left;height:600px;width:100%");
+        </script>
+    <apex:form >
+        <apex:inputHidden value="{!Account.Name}"/>
+        <apex:pageBlock id="buttons" tabStyle="Account" mode="maindetail" rendered="{!IF(AccountShowRelateButtons,true, false)}">
+            <apex:pageBlockSection >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Relate Account" style="font-weight:bold" for="relateAccount"/>
+                    <apex:outputLink value="{!RelateAccountAccountUrl}" id="relateAccount" target="_top">
+                        <apex:image url="/img/icon/accounts24.png"/>
+                    </apex:outputLink>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Relate Contact" style="font-weight:bold" for="relateContact"/>
+                    <apex:outputLink value="{!RelateAccountContactUrl}" id="relateContact" target="_top">
+                        <apex:image url="/img/icon/contacts24.png"/>
+                    </apex:outputLink>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:form > 
+        <apex:actionFunction name="launch" action="{!launch}" reRender="buttons" id="viewRelationships"/>
+        <apex:tabPanel switchType="client" value="{!activeTab}" id="theTabPanel" height="650px" tabClass="activeTab" inactiveTabClass="inactiveTab">                                 
+            
+            <apex:tab label="{!$Label.itbrelviz__Relation}" name="relations" id="relations" switchType="client" style="background-color: white; border-color: white;" rendered="{!IF(relationAccountTab=='yes',true, false)}">      
+                <c:CtrlRelationTable_RelationshipTable id="accountRelations" objectType="Account"/>
+            </apex:tab>
+    
+            <apex:tab label="{!$Label.itbrelviz__Hierarchy}" name="accountHierarchy" id="accountHierarchy" switchType="client" style="background-color: white; border-color: white;" rendered="{!IF(hierarchyAccountTab=='yes',true, false)}">        
+               <c:CtrlAccountHierarchy_TreeComponent currentId="{!account.Id}" />          
+            </apex:tab> 
+
+            <apex:tab label="{!$Label.itbrelviz__RelationVizArt}" name="relationVizArt" id="relationVizArt"  switchType="client" style="background-color: white; border-color: white; padding:0;" rendered="{!IF(vizArtAccountTab=='yes',true, false)}">       
+                <apex:outputPanel id="flashContent" layout="inline">
+	                <div id="flashContent">
+			        	<p>
+				        	To view this page ensure that Adobe Flash Player version 
+							10.0.0 or greater is installed. 
+						</p>
+						<a href="http://www.adobe.com/go/getflashplayer">
+	                    	<img src="https://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
+	                 	</a>
+			        </div>
+                </apex:outputPanel>     
+            </apex:tab>                         
+        </apex:tabPanel>    
+    </apex:form>
+
+</apex:page>

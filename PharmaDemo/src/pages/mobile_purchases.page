@@ -1,0 +1,54 @@
+<apex:page standardController="Purchase_Requisition__c" extensions="PurchaseSetController" recordSetVar="item"
+           docType="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" showChat="false" >
+  <apex:messages />
+  <apex:composition template="mobile_page">
+    <apex:define name="headerText">Purchase Requisitions</apex:define>
+    <apex:define name="headerLinks">
+      <a href="{!URLFOR($Page.mobile_launcher)}" data-icon="home" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Home" />
+      <a href="{!URLFOR($Page.mobile_purchase_edit)}" data-ajax="false" data-role="button" data-icon="plus" data-iconpos="notext" data-wrapperels="span"/>
+    </apex:define>
+    <apex:define name="content">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="{!URLFOR($Page.mobile_purchases)}?status=Draft" class="{!IF(status == 'Draft', 'ui-btn-active', '')}">Draft</a></li>
+          <li><a href="{!URLFOR($Page.mobile_purchases)}?status=Pending" class="{!IF(status == 'Pending', 'ui-btn-active', '')}">Pending</a></li>
+          <li><a href="{!URLFOR($Page.mobile_purchases)}?status=Approved" class="{!IF(status == 'Approved', 'ui-btn-active', '')}">Approved</a></li>
+          <li><a href="{!URLFOR($Page.mobile_purchases)}?status=All" class="{!IF(status == 'All', 'ui-btn-active', '')}">All</a></li>
+        </ul>
+      </div>
+      <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="d">
+        <apex:repeat value="{!purchases}" var="group">
+          <li data-role="list-divider">{!group}</li>
+          <apex:repeat value="{!purchases[group]}" var="purchase">
+          <li>
+            <a href="{!URLFOR($Page.mobile_purchase)}?id={!purchase.Id}" data-ajax="false" onclick="$.mobile.showPageLoadingMsg();">
+	            <p class="ui-li-aside ui-li-desc">{!purchase.Approval_Status__c}</p>
+	            <h2>{!purchase.Resource_Project_Name__c}</h2>
+	            <p class="subtitle-blue">
+	              <apex:outputText value="{0,date, dd MMM yyyy}">
+	                 <apex:param value="{!purchase.Starting_Date__c}" />
+	                </apex:outputText>
+	               - 
+	              <apex:outputText value="{0,date, dd MMM yyyy}">
+	                 <apex:param value="{!purchase.Ending_Date__c}" />
+	                </apex:outputText>
+	            </p>
+	            <p><strong>Vendor:</strong> {!purchase.Vendor__r.Name}</p>
+	            <p><strong>Cost Centor:</strong> {!purchase.Cost_Center__c}</p>
+            </a>
+          </li>
+          </apex:repeat>
+        </apex:repeat>
+      </ul>
+    </apex:define>
+    <apex:define name="footer">
+      <div data-role="footer" data-theme="c">
+        <div data-role="controlgroup" data-type="horizontal">
+          <a href="{!URLFOR($Page.mobile_purchase_edit)}" data-ajax="false" data-role="button" data-icon="plus">New Purchase Requisition</a>
+          <!--<a href="#" data-role="button" data-icon="plus">New Software</a>
+          <a href="#" data-role="button" data-icon="search" disabled="true">History</a>-->
+        </div>
+      </div>
+    </apex:define>
+  </apex:composition>
+</apex:page>

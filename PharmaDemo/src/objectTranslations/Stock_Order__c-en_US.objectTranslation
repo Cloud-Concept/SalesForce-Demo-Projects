@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Stock Order</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Stock Orders</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Stock Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Clone Order --></label>
+        <name>Clone_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Stock Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Delivery Date --></label>
+        <name>Delivery_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Date --></label>
+        <name>Order_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Line Items --></label>
+        <name>Order_Line_Items__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Type --></label>
+        <name>Order_Type__c</name>
+        <picklistValues>
+            <masterLabel>Presales</masterLabel>
+            <translation><!-- Presales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Routine</masterLabel>
+            <translation><!-- Routine --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Price List --></label>
+        <name>Price_List_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price List --></label>
+        <name>Price_List__c</name>
+        <relationshipLabel><!-- Stock Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Reason --></label>
+        <name>Reason__c</name>
+        <picklistValues>
+            <masterLabel>Account on Hold</masterLabel>
+            <translation><!-- Account on Hold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Error in data</masterLabel>
+            <translation><!-- Error in data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Stock Availability</masterLabel>
+            <translation><!-- Stock Availability --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dispatched</masterLabel>
+            <translation><!-- Dispatched --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submitted</masterLabel>
+            <translation><!-- Submitted --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Total Cost --></label>
+        <name>Total_Cost__c</name>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wholesaler --></label>
+        <name>Wholesaler_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wholesaler --></label>
+        <name>Wholesaler__c</name>
+        <relationshipLabel><!-- Stock Orders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Your Reference --></label>
+        <name>Your_Reference__c</name>
+    </fields>
+    <layouts>
+        <layout>Stock Order Layout</layout>
+        <sections>
+            <label><!-- Signature --></label>
+            <section>Signature</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Stock Order Name --></nameFieldLabel>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- CreateOrderNew --></label>
+        <name>CreateOrderNew</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Order --></label>
+        <name>Create_Order</name>
+    </webLinks>
+</CustomObjectTranslation>

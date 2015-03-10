@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Meeting Budget</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Meeting Budgets</value>
+    </caseValues>
+    <fields>
+        <label><!-- Amount --></label>
+        <name>Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Item --></label>
+        <name>Item__c</name>
+        <picklistValues>
+            <masterLabel>Food</masterLabel>
+            <translation><!-- Food --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Location</masterLabel>
+            <translation><!-- Location --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Travel</masterLabel>
+            <translation><!-- Travel --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Meeting --></label>
+        <name>Meeting1__c</name>
+        <relationshipLabel><!-- Meeting Budgets --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

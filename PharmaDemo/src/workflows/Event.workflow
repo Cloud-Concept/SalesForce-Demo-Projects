@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>CSR_Visit_Closed</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>CSR_Call_Closed</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>CSR Visit Closed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>CSR_Visit_Made</fullName>
+        <field>Subject</field>
+        <formula>&quot;CSR - Visit Made&quot;</formula>
+        <name>CSR - Visit Made</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Call</fullName>
+        <field>RecordTypeId</field>
+        <lookupValue>Call</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Call</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Call_Count</fullName>
+        <field>Count__c</field>
+        <formula>Weekday__c</formula>
+        <name>Call Count</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>No_Doctor_Seen</fullName>
+        <field>Doctors_Seen__c</field>
+        <literalValue>0</literalValue>
+        <name>No Doctor Seen</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Appointment</fullName>
+        <actions>
+            <name>Call</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Event.Subject</field>
+            <operation>notEqual</operation>
+            <value>Appointment</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Event.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Appointment</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CSR - Visit Complete</fullName>
+        <actions>
+            <name>CSR_Visit_Closed</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Call_Count</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Event.Closed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>CSR - Visit Made</fullName>
+        <actions>
+            <name>CSR_Visit_Made</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Event.Visit_Made__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>No Doctor Seen</fullName>
+        <actions>
+            <name>No_Doctor_Seen</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Event.Met_Doctor__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

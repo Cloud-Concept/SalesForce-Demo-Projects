@@ -1,0 +1,110 @@
+<apex:component controller="ITBrelViz.CtrlRelationTable">     
+    
+    <apex:attribute name="objectType" description="This value defines the object type where the VizArt starts from." type="String" required="true" assignTo="{!objectType}" />
+    {!EmptyValue} <!-- value to use getter method as init method -->    
+    <div style="overflow-y:auto; overflow-x:hidden; max-height:600px;">
+	    <apex:pageBlock id="PB_relations" tabStyle="Account" mode="maindetail" rendered="true">
+	        <apex:outputPanel id="relTable">     
+	            <apex:commandButton action="{!showHideFilters}" value="{!FilterButtonLabel}" reRender="relTable" /> 
+				<hr style="border:0.5px solid black;" width="100%" align="center"/>                    
+	            <apex:outputPanel rendered="{!renderFilter}" id="filters">  
+	                <!-- <apex:commandButton action="{!filterResults}" value="Refresh" reRender="relTable" /> -->
+	                <table width="100%">
+	                    <tr width="100%">
+	                        <td align="center">
+	                            <apex:inputCheckbox value="{!filter_primary}"/><b><apex:outputText value="Primary"/></b>
+	                        </td>
+	                        <td align="center">
+	                            <apex:inputCheckbox value="{!filter_conTypes}"/><b><apex:outputText value="Relationship Type"/></b>
+	                        </td>
+	                        <td align="center">
+	                            <apex:inputCheckbox value="{!filter_conSubTypes}"/><b><apex:outputText value="Sub Type"/></b>
+	                        </td>
+	                        <td align="center">
+	                            <apex:inputCheckbox value="{!filter_directions}"/><b><apex:outputText value="Direction"/></b>
+	                        </td>
+	                        <td align="center">
+	                            <apex:inputCheckbox value="{!filter_objectTypes}"/><b><apex:outputText value="Object Type"/></b>
+	                        </td>
+	                    </tr>
+	                    <tr width="100%" style="vertical-align:top">
+	                        <td align="center">
+	                            <apex:selectRadio value="{!filterOnPrimary}">
+	                                <apex:selectOptions value="{!list_filterOnPrimary_options}"/>
+	                            </apex:selectRadio>
+	                        </td>
+	                        <td align="center">
+	                            <apex:selectList value="{!list_conTypes}" multiselect="true" size="4">
+	                                <apex:selectOptions value="{!list_conTypes_options}"/>
+	                            </apex:selectList> 
+	                        </td>
+	                        <td align="center">
+	                            <apex:selectList value="{!list_conSubTypes}" multiselect="true" size="4">
+	                                <apex:selectOptions value="{!list_conSubTypes_options}"/>
+	                            </apex:selectList>
+	                        </td>
+	                        <td align="center">
+	                            <apex:selectList value="{!list_directions}" multiselect="true" size="4">
+	                                <apex:selectOptions value="{!list_directions_options}"/>
+	                            </apex:selectList>
+	                        </td>
+	                        <td align="center">
+	                            <apex:selectList value="{!list_objectTypes}" multiselect="true" size="4">
+	                                <apex:selectOptions value="{!list_objectTypes_options}"/>
+	                            </apex:selectList>
+	                        </td>
+	                    </tr>   
+	                </table>
+					<hr style="border:0.5px solid black;" width="100%" align="center"/>
+	            </apex:outputPanel> 
+	            
+	            <apex:outputPanel id="result">  
+	                <div style="overflow-y:auto; overflow-x:auto; max-height:600px;" >
+	                    <apex:pageBlockTable value="{!list_relations}" var="r"> 
+	                        <apex:column >    
+	                        	<apex:facet name="header">Action</apex:facet>                      
+	                            <apex:outputLink value="{!r.editLink}" id="editLink" target="_parent">Edit</apex:outputLink>
+	                            <apex:repeat value="{!r.list_urls}" var="link">
+	                                <apex:outputText value="  "/>
+	                                <apex:outputLink value="{!link.ITBrelViz__URL__c}" id="urlLink" target="_parent" title="{!link.ITBrelViz__Description__c}">
+	                                    <apex:image value="{!link.ITBrelViz__Picture_URL__c}" width="16" height="16" alt="image" rendered="{!IF(ISBLANK(link.ITBrelViz__Picture_URL__c),false,true)}"/>
+	                                    <apex:outputText value="{!link.ITBrelViz__Description__c}" rendered="{!IF(ISBLANK(link.ITBrelViz__Picture_URL__c),true,false)}" />
+	                                </apex:outputLink>                                      
+	                            </apex:repeat>
+	                             
+	                            <!-- 
+	                                <apex:outputText value="  "/>
+	                                <apex:outputLink value="" id="deleteLink">{!r.deleteLink}</apex:outputLink>
+	                             -->
+	                        </apex:column>
+	                        <apex:column > 
+	                            <apex:facet name="header">Primary</apex:facet>                          
+	                            <apex:inputCheckbox disabled="true" value="{!r.primary}"/>
+	                        </apex:column>                                                                      
+	                        <apex:column > 
+	                            <apex:facet name="header">Relationship Type</apex:facet>
+	                            {!r.edge.label} 
+	                        </apex:column>
+	                        <apex:column >
+	                            <apex:facet name="header">Sub Type</apex:facet>
+	                            {!r.edge.conSubType}
+	                        </apex:column>
+	                        <apex:column >
+	                            <apex:facet name="header">Direction</apex:facet>
+	                            {!r.direction}
+	                        </apex:column>
+	                        <apex:column >
+	                            <apex:facet name="header">Name</apex:facet>
+	                            <apex:outputLink value="/{!r.node.Id}" id="viewNodeLink" target="_parent">{!r.node.name}</apex:outputLink>
+	                        </apex:column>
+	                        <apex:column >
+	                            <apex:facet name="header">Object Type</apex:facet>
+	                            {!r.node.objectType}
+	                        </apex:column>
+	                    </apex:pageBlockTable>
+	                </div>
+	            </apex:outputPanel> 
+	        </apex:outputPanel>         
+	       </apex:pageBlock>
+       </div>
+</apex:component>

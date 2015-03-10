@@ -1,0 +1,42 @@
+<apex:page controller="LeaveBalanceSetExtension"
+           docType="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" showChat="false" >
+  <apex:messages />
+  <apex:composition template="mobile_page">
+    <apex:define name="headerText">Leave Balances</apex:define>
+    <apex:define name="headerLinks">
+        <a href="{!URLFOR($Page.mobile_leaverequests)}" data-icon="back" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Home" />        
+    </apex:define>
+    <apex:define name="content">
+      <apex:form >
+          <!-- Action function to refresh data from SAP -->
+          <apex:actionFunction name="refreshFromSAP" action="{!calloutIbmci}"/>
+
+                <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="d">
+                  
+                    <li data-role="list-divider">Balances</li>
+                    <apex:repeat value="{!balances}" var="item">
+                    <li>
+                      <div>
+ 
+                        <h2>
+                            {!item.TimeAccountTypeName__c}
+                        </h2>
+                        <div class="ui-grid-a" style="padding-left:30px;margin-left:0em;">
+                          <div class="ui-block-a subtitle-blue">
+                                Valid until 
+                                  <apex:outputText value="{0,date, dd MMM yyyy}">
+                                     <apex:param value="{!item.DeductionEndDate__c}" />
+                                  </apex:outputText>                                                                 
+                            </div>
+                            <div class="ui-block-b">
+                                Entitlement {!item.BalanceEntitlementQuantity__c} days
+                            </div>
+                          </div>
+                      </div>
+                    </li>
+                    </apex:repeat>
+                </ul>
+      </apex:form>
+    </apex:define>
+  </apex:composition>
+</apex:page>

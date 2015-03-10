@@ -1,0 +1,64 @@
+<apex:page controller="BlackBerryApprovalListController" 
+           docType="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" showChat="false" cache="false" >
+  <apex:messages />
+  
+
+  
+  <apex:composition template="mobile_template">
+    <apex:define name="mobilepage">
+      <apex:form >
+	      <div data-role="page">
+	        <div data-role="header" data-theme="b">
+	          <h1>Approvals</h1>
+	          <div class="cloud"></div>
+	          <a href="{!URLFOR($Page.mobile_launcher)}" data-icon="home" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Home" />
+	          <a href="{!URLFOR($Page.mobile_approvals)}" data-ajax="false" data-icon="refresh" data-iconpos="notext" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Refresh" />
+	        </div>
+	        <!-- 
+	        <div data-role="navbar">
+	          <ul>
+	            <li><apex:commandLink value="All" action="{!showAll}" styleClass="{!IF(status == null, 'ui-btn-active', '')}" /></li>
+	            <li><apex:commandLink value="Pending" action="{!showPending}" styleClass="{!IF(status == 'Pending', 'ui-btn-active', '')}" /></li>
+	            <li><apex:commandLink value="Approved" action="{!showApproved}" styleClass="{!IF(status == 'Approved', 'ui-btn-active', '')}" /></li>
+	            <li><apex:commandLink value="Rejected" action="{!showRejected}" styleClass="{!IF(status == 'Rejected', 'ui-btn-active', '')}" /></li>
+	          </ul>
+	        </div>
+	         -->
+	        <div data-role="content">
+	          <ul data-role="listview"  data-theme="c" data-dividertheme="d">
+	            <apex:repeat value="{!approvalItemsCollection}" var="approvalItems">
+					      <!-- Object Type Header -->
+					      <li data-role="list-divider">To Approve {!approvalItems.itemsPluralLabel}</li>
+					      <!-- List of item to approve for object -->
+					      <apex:repeat value="{!approvalItems.itemsList}" var="item">
+	                <li>
+	                <!-- Approve / Reject Link -->
+	                  <a href="{!URLFOR($Page.mobile_approvereject)}?id={!item.workitem.id}" class="subtitle-blue" data-ajax="false">
+	                  	<div style="float:left;">
+	                  		<!--<apex:image url="{!URLFOR($Resource.NestlePOCResources, 'OffSiteWorkColored.png')}" width="32" height="32" />-->
+                        <c:LeaveImage leaverequest="{!item.leaverequest}" purchase="{!item.purchase}" />
+                        <apex:outputText value="{!item.leaverequest.owner.Name}" rendered="{!NOT(item.isPurchase)}" />
+                        <apex:outputText value="{!item.purchase.owner.Name}" rendered="{!item.isPurchase}" />
+                        <br/>
+                        <apex:outputText value="{0,date, dd MMM yyyy}" styleClass="subtitle-blue">
+                          <apex:param value="{!IF(item.isPurchase, item.purchase.Starting_Date__c, item.leaverequest.From__c)}" />
+					              </apex:outputText>
+                        <span class="subtitle-blue">-</span> 
+                        <apex:outputText value="{0,date, dd MMM yyyy}" styleClass="subtitle-blue">
+                          <apex:param value="{!IF(item.isPurchase, item.purchase.Ending_Date__c, item.leaverequest.To__c)}" />
+					              </apex:outputText><br/>
+                        <apex:outputText value="{!item.leaverequest.Leave_Type__c}" rendered="{!NOT(item.isPurchase)}" styleClass="subtitle-gray" />
+                        <apex:outputText value="{!item.purchase.Resource_Project_Name__c}" rendered="{!item.isPurchase}" styleClass="subtitle-gray" />
+					            </div>
+	                  </a>
+	                </li>
+	              </apex:repeat>
+	            </apex:repeat>
+	          </ul>
+	          <!-- <apex:outputText rendered="{!noRecordsToShow}" value="No Items to approve" /> -->
+	        </div>
+	      </div>
+      </apex:form>
+    </apex:define>
+  </apex:composition>
+</apex:page>

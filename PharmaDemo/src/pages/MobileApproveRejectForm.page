@@ -1,0 +1,28 @@
+<apex:page standardStylesheets="false" controller="BlackBerryApproveRejectFormController" showHeader="false" cache="false" action="{!readFormData}">
+	
+	<apex:composition template="LeaveRequestTemplate">
+    <apex:define name="content">
+
+
+	<div data-role="page" data-theme="a">
+    
+    
+    <div data-role="header">
+        <h2>Finished</h2>
+    </div>
+    
+    <div data-role="content">
+    
+    	<center>
+    		<br/><br/>
+    		<apex:outputText value="{!ActionStatusMessage}" /><br/><br/>
+    		<a href="/apex/MobileApprovalList" data-role="button" data-icon="home" data-inline="true" data-ajax="false">Back</a>
+    	</center>
+    	
+    
+    </div>
+    </div>
+    
+    </apex:define>
+    </apex:composition>
+</apex:page>

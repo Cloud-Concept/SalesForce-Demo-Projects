@@ -1,0 +1,9 @@
+<apex:page Controller="Event_Controller">
+<apex:form >
+
+                <apex:inputField value="{!call.CallReportId__c}"/>   
+</apex:form >
+<script>
+window.parent.location.replace("/apex/CallReportView?id="&{!call.CallReportId__c);
+</script>
+</apex:page>

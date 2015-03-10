@@ -1,0 +1,1850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Medical reps use this object to log their time off periods like vacation or sick days.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>All_Day__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>If checked please select time off category in 1/4 picklist.</description>
+        <externalId>false</externalId>
+        <label>All Day</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Please enter a reminder description for this entry, this is for your own record.</inlineHelpText>
+        <label>Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>End_Date__c</fullName>
+        <description>Days between Start Date and End Date will be filled out</description>
+        <externalId>false</externalId>
+        <label>End Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>Entry will use this as start date to insert times out of territory</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Entry will use this as start date to insert times out of territory</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Type_First_Quarter__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select a time off category for the first quarter of the day. Use this when you select all day.</inlineHelpText>
+        <label>1/4</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paternity/Maternity Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type_Fourth_Quarter__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select a time off category for the fourth quarter of the day.</inlineHelpText>
+        <label>4/4</label>
+        <picklist>
+            <controllingField>All_Day__c</controllingField>
+            <picklistValues>
+                <fullName>Sick Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vacation Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emergency Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Holiday</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paternity/Maternity Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congratulatory Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compassionate Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Replacement Off</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Convention</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company Meeting</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conference</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teambuilding</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pharma Event</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bereavement Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compensate Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type_Second_Quarter__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select a time off category for the second quarter of the day.</inlineHelpText>
+        <label>2/4</label>
+        <picklist>
+            <controllingField>All_Day__c</controllingField>
+            <picklistValues>
+                <fullName>Sick Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vacation Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emergency Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Holiday</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paternity/Maternity Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congratulatory Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compassionate Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Replacement Off</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Convention</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company Meeting</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conference</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teambuilding</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pharma Event</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bereavement Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compensate Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type_Third_Quarter__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Select a time off category for the third quarter of the day.</inlineHelpText>
+        <label>3/4</label>
+        <picklist>
+            <controllingField>All_Day__c</controllingField>
+            <picklistValues>
+                <fullName>Sick Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Vacation Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Emergency Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annual Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Holiday</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Paternity/Maternity Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Congratulatory Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compassionate Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Replacement Off</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Convention</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Company Meeting</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Conference</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Training</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Teambuilding</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pharma Event</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Others</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bereavement Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Compensate Leave</fullName>
+                <controllingFieldValues>unchecked</controllingFieldValues>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <description>Indicates type of record: Open = unlocked record, Closed = locked record, Submit = submit record</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submit</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>View__c</fullName>
+        <externalId>false</externalId>
+        <formula>HYPERLINK(&quot;/&quot; &amp; Id , IMAGE(&quot;/img/icon/tasks16.gif&quot; ,&quot;View&quot;) ,&quot;_parent&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>View</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Time off Territory</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Type_First_Quarter__c</columns>
+        <columns>Type_Second_Quarter__c</columns>
+        <columns>Type_Third_Quarter__c</columns>
+        <columns>Type_Fourth_Quarter__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>All_Day__c</columns>
+        <columns>Type__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>MyTimemanagement</fullName>
+        <columns>Type_First_Quarter__c</columns>
+        <columns>Type_Second_Quarter__c</columns>
+        <columns>Type_Third_Quarter__c</columns>
+        <columns>Type_Fourth_Quarter__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>All_Day__c</columns>
+        <columns>Type__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>CURRENCY_ISO_CODE</field>
+            <operation>equals</operation>
+        </filters>
+        <label>My Time Management</label>
+    </listViews>
+    <nameField>
+        <displayFormat>{YYYYMMDD}-{00}</displayFormat>
+        <label>Id</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Time off Territory</pluralLabel>
+    <recordTypes>
+        <fullName>Submit</fullName>
+        <active>true</active>
+        <description>Submit record which contains a date until time entries get locked</description>
+        <label>Submit</label>
+        <picklistValues>
+            <picklist>Type_First_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Fourth_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Second_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Third_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Submit</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Submit_Locked</fullName>
+        <active>true</active>
+        <description>Ensures that the user cannot change a submit record anymore.</description>
+        <label>Submit Locked</label>
+        <picklistValues>
+            <picklist>Type_First_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Fourth_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Second_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Third_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Submit</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Time_Off</fullName>
+        <active>true</active>
+        <description>A time off territory entry where the user is still able to make modifications as long as he did not submit time entries.</description>
+        <label>Time Off</label>
+        <picklistValues>
+            <picklist>Type_First_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Fourth_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Second_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Third_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Time_Off_Locked</fullName>
+        <active>true</active>
+        <description>Locked time off territory entry where the user cannot change it anymore. This record type is used after the user submitted his time entries.</description>
+        <label>Time Off Locked</label>
+        <picklistValues>
+            <picklist>Type_First_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Fourth_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Second_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_Third_Quarter__c</picklist>
+            <values>
+                <fullName>Annual Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bereavement Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Company Meeting</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compassionate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compensate Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Congratulatory Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Convention</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Emergency Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Others</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Paternity%2FMaternity Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pharma Event</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Holiday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Replacement Off</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sick Leave</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teambuilding</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Training</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Vacation Leave</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type__c</picklist>
+            <values>
+                <fullName>Closed</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>View__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Description__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Start_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>End_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>All_Day__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type_First_Quarter__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type_Second_Quarter__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type_Third_Quarter__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Type_Fourth_Quarter__c</customTabListAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>Check_End_Date_get_Start_Date</fullName>
+        <active>true</active>
+        <description>Checks that end date is greater than start date</description>
+        <errorConditionFormula>IF( NOT(ISNULL(Start_Date__c)),
+IF(End_Date__c &lt; Start_Date__c, true,false),
+false)</errorConditionFormula>
+        <errorDisplayField>Start_Date__c</errorDisplayField>
+        <errorMessage>Please enter a valid start date that is less or equal to end date.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Enforce_Type</fullName>
+        <active>true</active>
+        <description>Enforce first quarter type</description>
+        <errorConditionFormula>AND(OR(ISNULL(TEXT(Type_First_Quarter__c)), LEN(TEXT(Type_First_Quarter__c))=0), NOT ISPICKVAL( Type__c , &apos;Submit&apos;), All_Day__c  )</errorConditionFormula>
+        <errorDisplayField>Type_First_Quarter__c</errorDisplayField>
+        <errorMessage>Please enter a time off type for the first quarter.</errorMessage>
+    </validationRules>
+</CustomObject>

@@ -1,0 +1,139 @@
+<!-- Jonathan Hersh - jhersh@salesforce.com - 8/12/2009 -->
+
+<apex:page showheader="false" controller="twitterforce.sendTweetController">
+<style type="text/css">
+	body { background-color: #f5f5f5; }
+</style>
+<script type="text/javascript">
+	function updateCounter( which, recip ) {
+		var length;
+		
+		if( which == 1 )
+			length = document.getElementById("j_id0:theform:leadblock:j_id6:j_id12:commentbody").value;
+		else if( which == 2 )
+			length = document.getElementById("j_id0:theform:contactblock:j_id17:j_id23:commentbody").value;
+		else if( which == 3 )
+			length = document.getElementById("j_id0:theform:caseblock:casecommentsection:j_id39:commentbody").value;
+		//else
+		//	length = document.getElementById("j_id0:theform:inquiryblock:inquirysection:j_id40:commentbody").value;
+			
+		length = 140 - length.length - recip.length - 2;
+		
+		document.getElementById("counterSpan"+ which).innerHTML = length + " characters remaining";
+	}
+</script>
+
+<div style="width: 650px; background-color: #F5F5F5;">
+<apex:form id="theform">
+	<apex:pageblock tabstyle="Contact" title="System Message" rendered="{!if( LEN( Error ) > 0, true, false )}">
+		<apex:outputtext value="{!Error}" escape="false" />
+	</apex:pageblock>
+	<apex:pageblock tabstyle="Lead" id="leadblock" title="Send a Tweet" rendered="{!if( AND( whotype == 'lead', LEN( Error ) = 0 ), true, false )}">
+			<apex:pageblockbuttons >
+			 	<apex:commandbutton value="Send" action="{!doSubmit}" rerender="theform" />
+				<!-- <apex:commandbutton value="Cancel" onclick="parent.box.hide();" />-->
+			</apex:pageblockbuttons>
+			<apex:pageblocksection showheader="false" columns="1">
+				<apex:outputtext value="This text will be sent, as a public reply, to Twitter user @{!recip}." />
+				<span id="counterSpan1"></span>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="accts" value="Send From Account" />
+					<apex:selectList id="accts" value="{!selectedAcct}" size="1">
+						<apex:selectoptions value="{!Accts}" />
+					</apex:selectList>
+				</apex:pageblocksectionitem>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel id="countermsg" for="commentbody" value="Message" />
+					<apex:inputfield onkeyup="updateCounter(1,'{!recip}');" onkeydown="updateCounter(1);" id="commentbody" value="{!cc.commentbody}" style="height:100px; width:250px;" />
+				</apex:pageblocksectionitem>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="saveActivity" value="Save this Tweet as an Activity on the Lead" />
+					<apex:inputcheckbox id="saveActivity" value="{!saveActivity}" />
+				</apex:pageblocksectionitem>
+			</apex:pageblocksection>
+		</apex:pageblock>
+	<apex:pageblock tabstyle="Contact" id="contactblock" title="Send a Tweet" rendered="{!if( AND( whotype == 'contact', LEN( Error ) = 0 ), true, false )}">
+			<apex:pageblockbuttons >
+			 	<apex:commandbutton value="Send" action="{!doSubmit}" rerender="theform" />
+				<!-- <apex:commandbutton value="Cancel" onclick="top.box.hide();" />-->
+			</apex:pageblockbuttons>
+			<apex:pageblocksection showheader="false" columns="1">
+				<apex:outputtext value="This text will be sent, as a public reply, to Twitter user @{!recip}." />
+				<span id="counterSpan2"></span>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="accts" value="Send From Account" />
+					<apex:selectList id="accts" value="{!selectedAcct}" size="1">
+						<apex:selectoptions value="{!Accts}" />
+					</apex:selectList>
+				</apex:pageblocksectionitem>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel id="countermsg" for="commentbody" value="Message" />
+					<apex:inputfield onkeyup="updateCounter(2,'{!recip}');" onkeydown="updateCounter(2);" id="commentbody" value="{!cc.commentbody}" style="height:100px; width:250px;" />
+				</apex:pageblocksectionitem>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="saveActivity" value="Save this Tweet as an Activity on the Contact" />
+					<apex:inputcheckbox id="saveActivity" value="{!saveActivity}" />
+				</apex:pageblocksectionitem>
+			</apex:pageblocksection>
+		</apex:pageblock>
+	<apex:pageblock tabstyle="Case" id="caseblock" title="Send a Tweet" rendered="{!if( AND( whotype == 'case', LEN( Error ) = 0 ), true, false )}">
+			<apex:pageblockbuttons >
+			 	<apex:commandbutton value="Send" action="{!doSubmit}" rerender="theform" />
+				<!-- <apex:commandbutton value="Cancel" onclick="parent.box.hide();" />-->
+			</apex:pageblockbuttons>
+			<apex:pageblocksection title="Attach a Case Solution" columns="1">
+				Attach a Solution to this Case to populate this picklist.
+				<apex:pageblocksectionitem >
+					<apex:outputlabel value="Solution Name" for="csol" />
+					<apex:selectList value="{!selectedSol}" size="1" multiselect="false" id="csol">
+		   	 	 		<apex:selectOptions value="{!CaseSols}"/>
+		   	 	 		<apex:actionSupport event="onchange" action="{!copySol}" rerender="casecommentsection" />
+		   	 		</apex:selectList>
+		   	 	</apex:pageblocksectionitem>
+			</apex:pageblocksection>
+			<apex:pageblocksection title="Tweet Detail" columns="1" id="casecommentsection">
+				<apex:outputtext value="This text will be sent, as a public reply, to Twitter user @{!recip}." />
+				<span id="counterSpan3"></span>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="accts" value="Send From Account" />
+					<apex:selectList id="accts" value="{!selectedAcct}" size="1">
+						<apex:selectoptions value="{!Accts}" />
+					</apex:selectList>
+				</apex:pageblocksectionitem>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel id="countermsg" for="commentbody" value="Message" />
+					<apex:inputfield onkeyup="updateCounter(3,'{!recip}');" onkeydown="updateCounter(3);" id="commentbody" value="{!cc.commentbody}" style="height:100px; width:250px;" />
+				</apex:pageblocksectionitem>
+			</apex:pageblocksection>
+			<apex:pageblocksection showheader="false">
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="saveActivity" value="Save this Tweet as an Activity on the Case Contact" />
+					<apex:inputcheckbox id="saveActivity" value="{!saveActivity}" />
+				</apex:pageblocksectionitem>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="saveComment" value="Save this Tweet as a Case Comment" />
+					<apex:inputcheckbox id="saveComment" value="{!saveComment}" />
+				</apex:pageblocksectionitem>
+			</apex:pageblocksection>
+	</apex:pageblock>
+	<!-- <apex:pageblock tabstyle="Twitter_Inquiry__c" id="inquiryblock" title="Send a Tweet" rendered="{!AND( whotype == 'inquiry', LEN( error ) == 0 )}">
+		<apex:pageblockbuttons >
+			 <apex:commandbutton value="Send" action="{!doSubmit}" rerender="theform" />
+			 <!-- DEMOHACK <apex:commandbutton value="Insert Inquiry Link" action="{!copyInquiryLink}" rerender="inquirysection"/>
+		</apex:pageblockbuttons>
+		<apex:pageblocksection showheader="false" columns="1" id="inquirysection">
+				<apex:outputtext value="This text will be sent, as a public reply, to Twitter user @{!recip}." />
+				<span id="counterSpan4"></span>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel id="countermsg" for="commentbody" value="Message" />
+					<apex:inputfield onkeyup="updateCounter(4,'{!recip}');" onkeydown="updateCounter(4);" id="commentbody" value="{!cc.commentbody}" style="height:100px; width:250px;" />
+				</apex:pageblocksectionitem>
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="saveActivity" value="Save this Tweet as an Activity on the Inquiry" />
+					<apex:inputcheckbox id="saveActivity" value="{!saveActivity}" />
+				</apex:pageblocksectionitem>
+		</apex:pageblocksection>
+	</apex:pageblock>-->
+</apex:form>
+</div>
+</apex:page>

@@ -1,0 +1,81 @@
+<apex:page standardController="Price_List__c" extensions="pricelistmgmt" >
+<apex:form >
+ <apex:detail relatedList="false" inlineEdit="true" rendered="true"/>
+ <apex:pageblock title="SKU Pricing Rules" id="Pricing" >
+ <apex:pageblockTable value="{!pricingedit}" var="a" rendered="{!editPrice}">
+     <apex:column headerValue="Action">
+         <apex:commandButton value="Add Rule" action="{!addRule}" reRender="Pricing"><apex:param name="rule" value="{a.sku__c}"/></apex:commandButton>
+         <apex:commandButton value="Save Rules" action="{!saveRules}" reRender="Pricing"><apex:param name="rule" value="{a.sku__c}"/></apex:commandButton>
+     </apex:column>
+     <apex:column value="{!a.SKU__c}"/>
+     <apex:column value="{!a.SKU__r.Description__c}"/>
+     <apex:column width="350">
+         <apex:pageblocktable value="{!pricerules}" var="b" width="350">
+             <apex:column headervalue="Discount %"><apex:inputField value="{!b.Discount__c}"/></apex:column>
+             <apex:column headervalue="Min Volume"><apex:inputfield value="{!b.Min_Volume__c}"/></apex:column>
+             <apex:column headervalue="Max Volume"><apex:inputfield value="{!b.Max_Volume__c}"/></apex:column>
+         </apex:pageblocktable>
+     </apex:column>
+     
+ </apex:pageblockTable>
+ 
+ </apex:pageblock>
+ 
+ <table width="100%">
+ <tr>
+ <td>
+ <apex:pageBlock title="SKU's in Price List">
+     <apex:pageblockButtons ><apex:commandButton action="{!save}" value="Save"/></apex:pageblockButtons>
+     <apex:pageblockTable value="{!PLS}" var="p" id="skusinlist">
+         <apex:column headervalue="Action">
+             <apex:commandButton value="Del" reRender="skusinlist" action="{!removesku}" ><apex:param name="remid" value="{!p.SKU__c}"/></apex:commandButton>
+             <apex:commandButton value="Edit" reRender="Pricing" action="{!editconditions}" rendered="{!IF(p.id== null, false, true)}"><apex:param name="edid" value="{!p.SKU__c}"/></apex:commandButton>
+         </apex:column>
+         
+         <apex:column value="{!p.SKU__c}"/>
+         <apex:column value="{!p.SKU__r.Description__c}"/>
+         <apex:column value="{!p.SKU__r.Custom_Product__c}"/>
+         <apex:column value="{!p.SKU__r.Price__c}"/>
+         <apex:column headerValue="New Price"><apex:inputField value="{!p.Price__c}" style="width: 40px;"/></apex:column>
+     </apex:pageblockTable>
+ 
+ </apex:pageBlock>
+ </td>
+ <td width="55%">
+ 
+ <apex:outputtext value="{!iddebug}"/>
+  <apex:pageBlock title="All SKUs">
+      <apex:pageblockTable value="{!allskus}" var="s" id="alltables">
+          <apex:column width="90" headerValue="Action">
+              <apex:commandButton action="{!showskus}" reRender="alltables" value="{!IF(s.Visible__c == true, 'Hide', 'Show')}">
+              <apex:param name="pid" value="{!s.id}"/>
+              </apex:commandButton> 
+              <apex:commandButton action="{!addskus}" value="Add All" reRender="skusinlist">
+              <apex:param name="allid" value="{!s.id}"/>
+              </apex:commandButton>
+          </apex:column>
+          
+          <apex:column value="{!s.name}"  width="120" headerValue="Product Category"/>
+          <apex:column headerValue="SKU Details">
+          <apex:pageblockTable value="{!s.SKU_s__r}" var="r" rendered="{!s.Visible__c}" id="subtables">
+          <apex:column headerValue="Action">
+              <apex:commandButton value="Add" action="{!addskus}" reRender="skusinlist">
+              <apex:param name="skuid" value="{!s.id}-{!r.id}"/>
+              </apex:commandButton>
+              
+          </apex:column>
+          <apex:column value="{!r.name}"/>
+          <apex:column value="{!r.Description__c}"/>
+          <apex:column value="{!r.Price__c}"/>
+          
+          </apex:pageblockTable>
+          
+          </apex:column>
+         
+      </apex:pageblockTable>
+ </apex:pageBlock>
+ </td>
+ </tr>
+ </table>
+ </apex:form>
+</apex:page>

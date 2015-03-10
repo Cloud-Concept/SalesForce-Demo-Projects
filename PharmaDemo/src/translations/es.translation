@@ -1,0 +1,2766 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- Action Plans --></label>
+        <name>Action_Plan</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- CSR --></label>
+        <name>CSR</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Chatter Delete Blocker --></label>
+        <name>Chatter_Delete_Blocker</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Chatter RSS --></label>
+        <name>Chatter_RSS</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Collaborate --></label>
+        <name>Collaborate</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Expenses --></label>
+        <name>Expenses</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Leave Requests --></label>
+        <name>Leave_Requests</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Offline Order Entry --></label>
+        <name>Offline_Order_Entry</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Ordering --></label>
+        <name>Ordering</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Account Management --></label>
+        <name>PharmaAccountManagement</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Activity Management --></label>
+        <name>PharmaActivityManagement</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Marketing --></label>
+        <name>PharmaMarketing</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Segmentation --></label>
+        <name>PharmaSegmentation</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Collateral --></label>
+        <name>Pharma_Content</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Data Validation/Management --></label>
+        <name>Pharma_Data_Validation</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Ideas --></label>
+        <name>Pharma_Ideas</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Campaigns --></label>
+        <name>Pharma_Meetings</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Purchase Requisitions --></label>
+        <name>Purchase_Requisitions</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Surveys --></label>
+        <name>Survey_Shark</name>
+    </customApplications>
+    <customLabels>
+        <label>Volver al</label>
+        <name>GMI_BackTo</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, generar una clave de API de Google Maps</label>
+        <name>GMI_GenerateKey</name>
+    </customLabels>
+    <customLabels>
+        <label>es</label>
+        <name>GMI_GoogleLanguageCode</name>
+    </customLabels>
+    <customLabels>
+        <label>Ubicación se muestra mediante la dirección</label>
+        <name>GMI_LocalAddressFound</name>
+    </customLabels>
+    <customLabels>
+        <label>No se ha encontrado la dirección de Google</label>
+        <name>GMI_LocalAddressNotFound</name>
+    </customLabels>
+    <customLabels>
+        <label>Muestran en Google</label>
+        <name>GMI_LocalShowMap</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, actualice la GoogleMapsInternational con un nuevo componente clave que puede ser generada a partir de</label>
+        <name>GMI_UpdateComponent</name>
+    </customLabels>
+    <customLabels>
+        <label>La URL del sitio web es necesario</label>
+        <name>GMI_WebsiteNeeded</name>
+    </customLabels>
+    <customLabels>
+        <label>http://maps.google.es</label>
+        <name>GMI_googleMapURL</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Activity Rating Label. Used in hover details in visualizer --></label>
+        <name>ITBrelViz__ActivityRating</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label for Employee Edge --></label>
+        <name>ITBrelViz__EdgeLabelEmployee</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label for Reports To Edge --></label>
+        <name>ITBrelViz__EdgeLabelReportsTo</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Label for Subsidiary Edge --></label>
+        <name>ITBrelViz__EdgeLabelSubsidiary</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Tab name of Hierarchy --></label>
+        <name>ITBrelViz__Hierarchy</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Last Activity Date Label. Used in hover details in visualizer --></label>
+        <name>ITBrelViz__LastActivityDate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Translation for no --></label>
+        <name>ITBrelViz__NoLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Record Type Label. Used in visualizer --></label>
+        <name>ITBrelViz__RecordType</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Tab name of Relation --></label>
+        <name>ITBrelViz__Relation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Tab name of Vizart --></label>
+        <name>ITBrelViz__RelationVizArt</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message displayed when user does not populate account and contact fields --></label>
+        <name>ITBrelViz__TrgErr_AccountContactMissing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message displayed when user does not populate both account fields --></label>
+        <name>ITBrelViz__TrgErr_AccountMissing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message displayed when user wants to relate one account with itself --></label>
+        <name>ITBrelViz__TrgErr_AccountsIdentical</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message displayed when user does not populate both contact fields --></label>
+        <name>ITBrelViz__TrgErr_ContactMissing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message displayed when user wants to relate one contact with itself --></label>
+        <name>ITBrelViz__TrgErr_ContactsIdentical</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message displayed when a duplicate record has been entered. --></label>
+        <name>ITBrelViz__TrgErr_DuplicateRecord</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message displayed when wrong record type id is given --></label>
+        <name>ITBrelViz__TrgErr_RecordTypeMismatch</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error message displayed when user does not enter a relationship type --></label>
+        <name>ITBrelViz__TrgErr_RelationTypeMissing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Document Id of View Icon. Used for objects with auto number name fields --></label>
+        <name>ITBrelViz__ViewIconDocumentId</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Translations for yes --></label>
+        <name>ITBrelViz__YesLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Translation for Blank --></label>
+        <name>ITBrelViz__blankLabel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Attach To --></label>
+        <name>Loop__DDP_Attach_To</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Breadcrumb --></label>
+        <name>Loop__DDP_Breadcrumb</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Cancel --></label>
+        <name>Loop__DDP_Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Delivery --></label>
+        <name>Loop__DDP_Delivery</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Instructions --></label>
+        <name>Loop__DDP_Instructions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP None --></label>
+        <name>Loop__DDP_None</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Optional Docs --></label>
+        <name>Loop__DDP_Optional_Docs</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Reminders and Expirations --></label>
+        <name>Loop__DDP_RemindExpires</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Run --></label>
+        <name>Loop__DDP_Run</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Select --></label>
+        <name>Loop__DDP_Select</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Select Contact --></label>
+        <name>Loop__DDP_Select_Contact</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- DDP Select Library --></label>
+        <name>Loop__DDP_Select_Library</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Loop Edit Label --></label>
+        <name>Loop__Loop_Edit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NewButton --></label>
+        <name>NewButton</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NoOpportunities --></label>
+        <name>NoOpportunities</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NoStrengths --></label>
+        <name>NoStrengths</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NoThreats --></label>
+        <name>NoThreats</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NoWeaknesses --></label>
+        <name>NoWeaknesses</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Opportunities --></label>
+        <name>Opportunities</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Strengths --></label>
+        <name>Strengths</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Threats --></label>
+        <name>Threats</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Weaknesses --></label>
+        <name>Weaknesses</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Accounts --></label>
+        <name>Wherevantage__WVAccounts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Account Records --></label>
+        <name>Wherevantage__WVAdministration_AccountRecords</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WVAdministration_BackgroundGeocoding --></label>
+        <name>Wherevantage__WVAdministration_BackgroundGeocoding</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Billing Address --></label>
+        <name>Wherevantage__WVAdministration_BillingAddress</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contact records --></label>
+        <name>Wherevantage__WVAdministration_ContactRecords</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WVAdministration_GeocodingHourly --></label>
+        <name>Wherevantage__WVAdministration_GeocodingHourly</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WVAdministration_GeocodingNightly --></label>
+        <name>Wherevantage__WVAdministration_GeocodingNightly</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WVAdministration_GeocodingNone --></label>
+        <name>Wherevantage__WVAdministration_GeocodingNone</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Aministration Page Introduction --></label>
+        <name>Wherevantage__WVAdministration_Intro</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mailing Address --></label>
+        <name>Wherevantage__WVAdministration_MailingAddress</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Other Address --></label>
+        <name>Wherevantage__WVAdministration_OtherAddress</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saving --></label>
+        <name>Wherevantage__WVAdministration_Saving</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shipping Address --></label>
+        <name>Wherevantage__WVAdministration_ShippingAddress</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WVBingMapsKey --></label>
+        <name>Wherevantage__WVBingMapsKey</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Contacts --></label>
+        <name>Wherevantage__WVContacts</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Leads --></label>
+        <name>Wherevantage__WVLeads</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- NoLicense --></label>
+        <name>Wherevantage__WVNoLicense</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WVOpportunities --></label>
+        <name>Wherevantage__WVOpportunities</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_AddressFound --></label>
+        <name>Wherevantage__WV_AddressFound</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cancel --></label>
+        <name>Wherevantage__WV_AddressMatchPage_Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- City --></label>
+        <name>Wherevantage__WV_AddressMatchPage_City</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Find Address --></label>
+        <name>Wherevantage__WV_AddressMatchPage_FindAddress</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Postal Code --></label>
+        <name>Wherevantage__WV_AddressMatchPage_PostalCode</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Requesting --></label>
+        <name>Wherevantage__WV_AddressMatchPage_Requesting</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Results --></label>
+        <name>Wherevantage__WV_AddressMatchPage_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save And Map --></label>
+        <name>Wherevantage__WV_AddressMatchPage_SaveAndMap</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- StateOrProvince --></label>
+        <name>Wherevantage__WV_AddressMatchPage_State</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Street --></label>
+        <name>Wherevantage__WV_AddressMatchPage_Street</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_EmptyStreetAddress --></label>
+        <name>Wherevantage__WV_EmptyStreetAddress</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_HaveResult --></label>
+        <name>Wherevantage__WV_HaveResult</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_InProgress --></label>
+        <name>Wherevantage__WV_InProgress</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Internal Error --></label>
+        <name>Wherevantage__WV_InternalError</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_Loading --></label>
+        <name>Wherevantage__WV_Loading</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Match found --></label>
+        <name>Wherevantage__WV_MatchFound</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_NoExactMatch --></label>
+        <name>Wherevantage__WV_NoExactMatch</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No good match --></label>
+        <name>Wherevantage__WV_NoGoodMatch</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_NoGoodMatchFound --></label>
+        <name>Wherevantage__WV_NoGoodMatchFound</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_NoMatches --></label>
+        <name>Wherevantage__WV_NoMatches</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Not matched --></label>
+        <name>Wherevantage__WV_NotMatched</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_NumberOfRecords --></label>
+        <name>Wherevantage__WV_NumberOfRecords</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_Processed --></label>
+        <name>Wherevantage__WV_Processed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_RecordsRemainToBeProcessed --></label>
+        <name>Wherevantage__WV_RecordsRemainToBeProcessed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_Save --></label>
+        <name>Wherevantage__WV_Save</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_SaveAndNext --></label>
+        <name>Wherevantage__WV_SaveAndNext</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_SkipRecord --></label>
+        <name>Wherevantage__WV_SkipRecord</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- WV_SkippedAsNoStreetAddress --></label>
+        <name>Wherevantage__WV_SkippedAsNoStreetAddress</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- API Access is not enabled for your user account. --></label>
+        <name>geopointe__API_Access_is_not_enabled_for_your_user_account</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Account Name --></label>
+        <name>geopointe__Account_Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Action --></label>
+        <name>geopointe__Action</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Actions --></label>
+        <name>geopointe__Actions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Activate --></label>
+        <name>geopointe__Activate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Indicate if setting is Active. --></label>
+        <name>geopointe__Active</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add --></label>
+        <name>geopointe__Add</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add All to Route --></label>
+        <name>geopointe__Add_All_to_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add Filter --></label>
+        <name>geopointe__Add_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add Shapes to Map --></label>
+        <name>geopointe__Add_Shapes_to_Map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add custom shapes to the map that can act as boundaries for searches. --></label>
+        <name>geopointe__Add_custom_shapes_to_the_map_that_can_act</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add to Campaign --></label>
+        <name>geopointe__Add_to_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Records must be plotted on the map to launch the Add To Campaign functionality. --></label>
+        <name>geopointe__Add_to_Campaign_Records_must_be_plotted</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add to Map --></label>
+        <name>geopointe__Add_to_Map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Add to Route --></label>
+        <name>geopointe__Add_to_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Adding Layer --></label>
+        <name>geopointe__Adding_Layer</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Adding Shape --></label>
+        <name>geopointe__Adding_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Address --></label>
+        <name>geopointe__Address</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Address Search --></label>
+        <name>geopointe__Address_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All --></label>
+        <name>geopointe__All</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All Records --></label>
+        <name>geopointe__All_Records</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All Records were successfully added to the Current Route list. --></label>
+        <name>geopointe__All_Records_were_successfully_added_to_the_Current_Route_list</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All Tabs --></label>
+        <name>geopointe__All_Tabs</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- All Users --></label>
+        <name>geopointe__All_Users</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Apply Action To --></label>
+        <name>geopointe__Apply_Action_To</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Approximately --></label>
+        <name>geopointe__Approximately</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- April --></label>
+        <name>geopointe__April</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Are you sure you want to continue? --></label>
+        <name>geopointe__Are_you_sure_you_want_to_continue</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Are you sure you want to delete the following route? --></label>
+        <name>geopointe__Are_you_sure_you_want_to_delete_the_following_route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Are you sure you want to delete the record: --></label>
+        <name>geopointe__Are_you_sure_you_want_to_delete_the_record</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Are you sure you want to delete the selected location? --></label>
+        <name>geopointe__Are_you_sure_you_want_to_delete_the_selected_location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Ascending (ASC) --></label>
+        <name>geopointe__Ascending_ASC</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Assignment Plan Details --></label>
+        <name>geopointe__Assignment_Plan_Details</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Assignments --></label>
+        <name>geopointe__Assignments</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- August --></label>
+        <name>geopointe__August</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Auto --></label>
+        <name>geopointe__Auto</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Available in Visualize --></label>
+        <name>geopointe__Available_in_Visualize</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Avoid Highways --></label>
+        <name>geopointe__Avoid_Highways</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Avoid Tolls --></label>
+        <name>geopointe__Avoid_Tolls</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Back to Geopointe Settings --></label>
+        <name>geopointe__Back_to_Geopointe_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Back to Search --></label>
+        <name>geopointe__Back_to_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Bar --></label>
+        <name>geopointe__Bar</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Bicycle --></label>
+        <name>geopointe__Bicycle</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Bicycling --></label>
+        <name>geopointe__Bicycling</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Border Opacity --></label>
+        <name>geopointe__Border_Opacity</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Bottom --></label>
+        <name>geopointe__Bottom</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Zip Codes By State --></label>
+        <name>geopointe__By</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Calculate Drive Distance? --></label>
+        <name>geopointe__Calculate_Drive_Distance</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Calculating Route --></label>
+        <name>geopointe__Calculating_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Calendar Day in Month --></label>
+        <name>geopointe__Calendar_Day_in_Month</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Calendar Day in Week --></label>
+        <name>geopointe__Calendar_Day_in_Week</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Calendar Month --></label>
+        <name>geopointe__Calendar_Month</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Calendar Month in Year --></label>
+        <name>geopointe__Calendar_Month_in_Year</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Calendar Year --></label>
+        <name>geopointe__Calendar_Year</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cancel --></label>
+        <name>geopointe__Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Center Map --></label>
+        <name>geopointe__Center_Map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Center and Zoom Map --></label>
+        <name>geopointe__Center_and_Zoom_Map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Center of Map for Last Nearby Search --></label>
+        <name>geopointe__Center_of_Map_for_Last_Radial_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Chart Type --></label>
+        <name>geopointe__Chart_Type</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Check In --></label>
+        <name>geopointe__Check_In</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Check In Successful! --></label>
+        <name>geopointe__Check_In_Successful</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Check Out --></label>
+        <name>geopointe__Check_Out</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Check Out Successful! --></label>
+        <name>geopointe__Check_Out_Successful</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Checking In --></label>
+        <name>geopointe__Checking_In</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Checking Out --></label>
+        <name>geopointe__Checking_Out</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Choose --></label>
+        <name>geopointe__Choose_a_field_then_click_Select_Labels_followed_by_a</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- City --></label>
+        <name>geopointe__City</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Clear Existing --></label>
+        <name>geopointe__Clear_Existing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Clear Results --></label>
+        <name>geopointe__Clear_Results</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Clear Route --></label>
+        <name>geopointe__Clear_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Click on the map to start building a shape. --></label>
+        <name>geopointe__Click_on_the_map_to_start_building_a_shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Close --></label>
+        <name>geopointe__Close</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Close Tabs on Search --></label>
+        <name>geopointe__Close_Tabs_on_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Collapse Panel --></label>
+        <name>geopointe__Collapse_Panel</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Color --></label>
+        <name>geopointe__Color</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Color Markers By --></label>
+        <name>geopointe__Color_Markers_By</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Column --></label>
+        <name>geopointe__Column</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Company --></label>
+        <name>geopointe__Company</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Connection timeout. --></label>
+        <name>geopointe__Connection_timeout</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Country --></label>
+        <name>geopointe__Country</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cross Filter --></label>
+        <name>geopointe__Cross_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Cross Object Filters --></label>
+        <name>geopointe__Cross_Object_Filters</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Data Set --></label>
+        <name>geopointe__Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Data Set Access --></label>
+        <name>geopointe__Data_Set_Access</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Confirmation message when deactiving a Data Set. --></label>
+        <name>geopointe__Data_Set_Deactive_Confirm</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Describes what a Data Set is. --></label>
+        <name>geopointe__Data_Set_Definition</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Confirmation message when deleting a Data Set. --></label>
+        <name>geopointe__Data_Set_Delete_Confirm</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Data Set Fields --></label>
+        <name>geopointe__Data_Set_Fields</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Zip Codes Data Set Name State --></label>
+        <name>geopointe__Data_Set_Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Data Set Selection --></label>
+        <name>geopointe__Data_Set_Selection</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Data Set Settings --></label>
+        <name>geopointe__Data_Set_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Data Sets --></label>
+        <name>geopointe__Data_Sets</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The day in the month. Not day time. --></label>
+        <name>geopointe__Day</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Deactivate --></label>
+        <name>geopointe__Deactivate</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- December --></label>
+        <name>geopointe__December</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Del --></label>
+        <name>geopointe__Del</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete --></label>
+        <name>geopointe__Delete</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete Route --></label>
+        <name>geopointe__Delete_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Delete Shape --></label>
+        <name>geopointe__Delete_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Deleting... --></label>
+        <name>geopointe__Deleting</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Deleting Data Set --></label>
+        <name>geopointe__Deleting_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Deleting Location --></label>
+        <name>geopointe__Deleting_Location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Deleting Route --></label>
+        <name>geopointe__Deleting_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Deleting Shape --></label>
+        <name>geopointe__Deleting_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Demographics --></label>
+        <name>geopointe__Demographics</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Demographics Legend --></label>
+        <name>geopointe__Demographics_Legend</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Descending (DESC) --></label>
+        <name>geopointe__Descending_DESC</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Description --></label>
+        <name>geopointe__Description</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Detailed Directions --></label>
+        <name>geopointe__Detailed_Directions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Directions --></label>
+        <name>geopointe__Directions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Distance --></label>
+        <name>geopointe__Distance</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Draw Mode --></label>
+        <name>geopointe__Draw_Mode</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Drive Distance --></label>
+        <name>geopointe__Drive_Distance</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Driving --></label>
+        <name>geopointe__Driving</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Duplicate Shape --></label>
+        <name>geopointe__Duplicate_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit --></label>
+        <name>geopointe__Edit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit Assignment --></label>
+        <name>geopointe__Edit_Assignment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit Assignment Area --></label>
+        <name>geopointe__Edit_Assignment_Area</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit Data Set --></label>
+        <name>geopointe__Edit_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit this Route at Google Maps --></label>
+        <name>geopointe__Edit_this_Route_at_Google_Maps</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit this Route at MapQuest.com --></label>
+        <name>geopointe__Edit_this_Route_at_MapQuest</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Enter a Name and Short Description for the shape --></label>
+        <name>geopointe__Enter_a_Name_and_Short_Description_for_the_shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Everywhere --></label>
+        <name>geopointe__Entire_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- EntriesEntries --></label>
+        <name>geopointe__Entries</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Error loading related data --></label>
+        <name>geopointe__Error_loading_related_data</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Export CSV --></label>
+        <name>geopointe__Export_CSV</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Export KML --></label>
+        <name>geopointe__Export_KML</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Fastest --></label>
+        <name>geopointe__Fastest</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- February --></label>
+        <name>geopointe__February</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Field --></label>
+        <name>geopointe__Field</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Field Filter --></label>
+        <name>geopointe__Field_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Field Filters --></label>
+        <name>geopointe__Field_Filters</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Fill Opacity --></label>
+        <name>geopointe__Fill_Opacity</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Filter --></label>
+        <name>geopointe__Filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Filter Logic --></label>
+        <name>geopointe__Filter_Logic</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Filters --></label>
+        <name>geopointe__Filters</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- First --></label>
+        <name>geopointe__First</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Friday --></label>
+        <name>geopointe__Friday</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- From --></label>
+        <name>geopointe__From</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Geocode Quality --></label>
+        <name>geopointe__Geocode_Quality</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Get Route --></label>
+        <name>geopointe__Get_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Go Here --></label>
+        <name>geopointe__Go_Here</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Go to Map --></label>
+        <name>geopointe__Go_to_Map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Go to Parent Record --></label>
+        <name>geopointe__Go_to_Parent_Record</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Go to Shape --></label>
+        <name>geopointe__Go_to_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Go to Visualize --></label>
+        <name>geopointe__Go_to_Visualize</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Google&apos;s Public Transportation directions can only support two route locations. --></label>
+        <name>geopointe__Google_Public_Transportation_directions_can_only_support_two_route_locations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Google limits Routes to 10 locations when you are not using a Google Premier --></label>
+        <name>geopointe__Google_limits_Routes_to_10_locations_when_you_are_not_using_a_Google_Premier</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Google limits Routes to 25 locations. Please reduce the number... --></label>
+        <name>geopointe__Google_limits_Routes_to_25_locations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Granularity --></label>
+        <name>geopointe__Granularity</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Group By --></label>
+        <name>geopointe__Group_By</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Help --></label>
+        <name>geopointe__Help</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Use this button to add all records in the list to your route. --></label>
+        <name>geopointe__Help_Add_All_To_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- If leads or contacts are on the map, this button will launch... --></label>
+        <name>geopointe__Help_Add_To_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- allows you to enter the name of a city, state, or other... --></label>
+        <name>geopointe__Help_Address_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Adds a layer of bicycling trails to the map... --></label>
+        <name>geopointe__Help_Bicycling</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The blue polygon puts the map in to Draw mode. Click the map... --></label>
+        <name>geopointe__Help_Blue_Polygon</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Tells Geopointe to keep or remove existing points from the map on the next... --></label>
+        <name>geopointe__Help_Clear_Exisiting</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Upon completion of a Data Set search this will close... --></label>
+        <name>geopointe__Help_Close_Tabs_on_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Choose a field and the system will asisgn a pin color... --></label>
+        <name>geopointe__Help_Color_Markers_By</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Controls who has access to the Data Set. Only you or all users. Only ... --></label>
+        <name>geopointe__Help_Data_Set_Edit_Access</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Check this box to make this Data Set available in the Visualize... --></label>
+        <name>geopointe__Help_Data_Set_Edit_Available_in_Visualize</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Choose a field and the system will asisgn a pin color .... --></label>
+        <name>geopointe__Help_Data_Set_Edit_Color_Markers_By</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Set the default color for Data Set markers on the map. --></label>
+        <name>geopointe__Help_Data_Set_Edit_Marker_Color</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The Name of the Data Set --></label>
+        <name>geopointe__Help_Data_Set_Edit_Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Check this box to make the address in the search result table under... --></label>
+        <name>geopointe__Help_Data_Set_Edit_One_Column_Address</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This section allows you to customize and save additional... --></label>
+        <name>geopointe__Help_Data_Set_Edit_Overview</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Allows you to apply a quick filter to see all of the records in the Data Set... --></label>
+        <name>geopointe__Help_Data_Set_Edit_Show_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- These are additional fields that will be returned when... --></label>
+        <name>geopointe__Help_Data_Set_Fields1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Name and Address fields are always returned and do not need to be added. --></label>
+        <name>geopointe__Help_Data_Set_Fields2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- These are the filters applied to the currently selected Data Set... --></label>
+        <name>geopointe__Help_Data_Set_Filters1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Use the down arrow on the Add Filter button to add advanced filter logic... --></label>
+        <name>geopointe__Help_Data_Set_Filters2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This will display options to Save or Save As the Data Set based on... --></label>
+        <name>geopointe__Help_Data_Set_Save</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Choose a Data Set to define what Salesforce data to search. --></label>
+        <name>geopointe__Help_Data_Set_Selection</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Opens a panel that allows you to customize additional settings for this... --></label>
+        <name>geopointe__Help_Data_Set_Settings_Icon_Gear</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- For the selected Data Set this allows you to apply a quick filter... --></label>
+        <name>geopointe__Help_Data_Set_Show_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shows/hides a section to let you modify the filters for this Data Set. --></label>
+        <name>geopointe__Help_Data_Set_Show_Hide_Filters</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The Demographics feature provides access to an information layer... --></label>
+        <name>geopointe__Help_Demographics1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- To add a layer, choose the following --></label>
+        <name>geopointe__Help_Demographics2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- When all three selections are made, the map will draw... --></label>
+        <name>geopointe__Help_Demographics3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Choose a level of granularity from State, County,... --></label>
+        <name>geopointe__Help_Demographics_Granularity</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Choose an available metric. --></label>
+        <name>geopointe__Help_Demographics_Metric</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Choose a source year. Available years are 2010, 2011, 2015... --></label>
+        <name>geopointe__Help_Demographics_Year</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This search will attempt to map all records... --></label>
+        <name>geopointe__Help_Entire_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Export the records in the list to a CSV (Excel) file. --></label>
+        <name>geopointe__Help_Export_CSV</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Export the records in the list to a KML file... --></label>
+        <name>geopointe__Help_Export_KML</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The open hand tool allows you to interact with the map... --></label>
+        <name>geopointe__Help_Hand_Tool</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Do not show the sidebar and make the map as wide as possible... --></label>
+        <name>geopointe__Help_Hide_Sidebar</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Layers are defined by your Administrator and can be used to add additional... --></label>
+        <name>geopointe__Help_KML_Layers1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Layer Names with a green dot next to them --></label>
+        <name>geopointe__Help_KML_Layers2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- indicate layers that are displayed on the map. --></label>
+        <name>geopointe__Help_KML_Layers3</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Some layers may load automatically during map load as defined... --></label>
+        <name>geopointe__Help_KML_Layers4</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- &apos;Auto&apos; will maximize the size of the map based on the dimensions... --></label>
+        <name>geopointe__Help_Map_Height</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This is the position and zoom level of the map when this page loads. --></label>
+        <name>geopointe__Help_Map_Start1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You can change the start position by positioning the map to... --></label>
+        <name>geopointe__Help_Map_Start2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Data Sets have a default color associated with them. Override the color for... --></label>
+        <name>geopointe__Help_Marker_Color</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mapped pins will be numbered making it easier to correspond ... --></label>
+        <name>geopointe__Help_Number_Map_Pins</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- A list of your personal saved shapes. To save a shape draw one on the map... --></label>
+        <name>geopointe__Help_Personal_Shapes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Pinned Tabs are map control tabs that will always be visible... --></label>
+        <name>geopointe__Help_Pinned_Tabs</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- allows you to search for businesses and landmarks... --></label>
+        <name>geopointe__Help_Places_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- When selected, the list of results below the map will include... --></label>
+        <name>geopointe__Help_Radial_Search_Calc_Drive_Distance</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- A Nearby search will query a circular area around a given point... --></label>
+        <name>geopointe__Help_Radial_Search_Overview</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- When selected, the search results will include a circle representing... --></label>
+        <name>geopointe__Help_Radial_Search_Show_Radius</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Define the distance you want to search in miles or kilometers. --></label>
+        <name>geopointe__Help_Radial_Search_Within</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Use the mouse scrollwheel to zoom in/out on the map... --></label>
+        <name>geopointe__Help_Scrollwheel_Zoom</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This advanced search option will allow you to draw complex shapes... --></label>
+        <name>geopointe__Help_Shape_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The selected tab will automatically open on page load. --></label>
+        <name>geopointe__Help_Start_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Adds a layer of real-time traffic information to the map... --></label>
+        <name>geopointe__Help_Traffic</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Adds a layer of public transit information to the map... --></label>
+        <name>geopointe__Help_Transit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- When this page loads the map will attempt to center... --></label>
+        <name>geopointe__Help_Use_Geolocation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This will search and map all records in the selected Data Set that... --></label>
+        <name>geopointe__Help_Viewable_Area</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Adds a layer of weather information from weather.com to the map... --></label>
+        <name>geopointe__Help_Weather</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Here --></label>
+        <name>geopointe__Here</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Hide Filters --></label>
+        <name>geopointe__Hide_Filters</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Hide Sidebar --></label>
+        <name>geopointe__Hide_Sidebar</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Hour --></label>
+        <name>geopointe__Hour</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Hours --></label>
+        <name>geopointe__Hours</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- If this error continues please contact Arrowpointe support. --></label>
+        <name>geopointe__If_this_error_continues_please_contact_Arrowpointe_support</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- If this is a Data Set search tab please ensure --></label>
+        <name>geopointe__If_this_is_a_Data_Set_search_tab_please_ensure</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Increase the Fill Opacity to see more distinct colors --></label>
+        <name>geopointe__Increase_the_Fill_Opacity_to</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- January --></label>
+        <name>geopointe__January</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- July --></label>
+        <name>geopointe__July</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- June --></label>
+        <name>geopointe__June</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Kilometers --></label>
+        <name>geopointe__Kilometers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Last --></label>
+        <name>geopointe__Last</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Latitude --></label>
+        <name>geopointe__Latitude</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There was an error launching Add To Campaign. If the issue persists... --></label>
+        <name>geopointe__Launch_Add_to_Campaign_Error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Layers --></label>
+        <name>geopointe__Layers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Layers Error --></label>
+        <name>geopointe__Layers_Error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Legend --></label>
+        <name>geopointe__Legend</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Loading --></label>
+        <name>geopointe__Loading</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Loading Route --></label>
+        <name>geopointe__Loading_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Loading all records in the Data Set --></label>
+        <name>geopointe__Loading_all_records_in_the_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Loading records within the map bounds --></label>
+        <name>geopointe__Loading_records_within_the_map_bounds</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Location --></label>
+        <name>geopointe__Location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Location Name --></label>
+        <name>geopointe__Location_Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Location Successfully Saved --></label>
+        <name>geopointe__Location_Successfully_Saved</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- LOCATION SUMMARY --></label>
+        <name>geopointe__Location_Summary</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Location successfully added to the Current Route list. --></label>
+        <name>geopointe__Location_successfully_added_to_the_Current_Route_list</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Longitude --></label>
+        <name>geopointe__Longitude</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- MapQuest limits Optimized Routes to 25 locations --></label>
+        <name>geopointe__MapQuest_limits_Optimized_Routes_to_25_locations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Map Actions --></label>
+        <name>geopointe__Map_Actions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Map Height --></label>
+        <name>geopointe__Map_Height</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Map Legend --></label>
+        <name>geopointe__Map_Legend</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Map Object --></label>
+        <name>geopointe__Map_Object</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Mapped Data --></label>
+        <name>geopointe__Mapped_Data</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- March --></label>
+        <name>geopointe__March</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Marker Color --></label>
+        <name>geopointe__Marker_Color</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Max Value --></label>
+        <name>geopointe__Max_Value</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- May --></label>
+        <name>geopointe__May</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Me --></label>
+        <name>geopointe__Me</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Metric --></label>
+        <name>geopointe__Metric</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Miles --></label>
+        <name>geopointe__Miles</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Abbreviation for minute --></label>
+        <name>geopointe__Min</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Min Value --></label>
+        <name>geopointe__Min_Value</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Abbreviation for minutes --></label>
+        <name>geopointe__Mins</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Monday --></label>
+        <name>geopointe__Monday</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- More Filters --></label>
+        <name>geopointe__More_Filters</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- My Data Sets --></label>
+        <name>geopointe__My_Data_Sets</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- My Locations --></label>
+        <name>geopointe__My_Locations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- My Locations allows you to save locations that are separat... --></label>
+        <name>geopointe__My_Locations_Help1</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You can add items to My Locations by right clicking on the... --></label>
+        <name>geopointe__My_Locations_Help2</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- My Personal Geopointe Settings --></label>
+        <name>geopointe__My_Personal_Geopointe_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- My Records --></label>
+        <name>geopointe__My_Records</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- My Settings --></label>
+        <name>geopointe__My_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- My Shapes --></label>
+        <name>geopointe__My_Shapes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Name --></label>
+        <name>geopointe__Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Nearby Search --></label>
+        <name>geopointe__Nearby_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- New Assignment --></label>
+        <name>geopointe__New_Assignment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- New Assignment Area --></label>
+        <name>geopointe__New_Assignment_Area</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- New Data Set --></label>
+        <name>geopointe__New_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- New Route --></label>
+        <name>geopointe__New_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Next --></label>
+        <name>geopointe__Next</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No data available in table --></label>
+        <name>geopointe__No_data_available_in_table</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No matching records found --></label>
+        <name>geopointe__No_matching_records_found</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No records have been mapped. --></label>
+        <name>geopointe__No_records_have_been_mapped</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No records were found --></label>
+        <name>geopointe__No_records_were_found</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No results found for --></label>
+        <name>geopointe__No_results_found_for</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- No results were found that met your search criteria. --></label>
+        <name>geopointe__No_results_were_found_that_met_your_search_criteria</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- None --></label>
+        <name>geopointe__None</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- November --></label>
+        <name>geopointe__November</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Number Map Pins --></label>
+        <name>geopointe__Number_Map_Pins</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Object Name --></label>
+        <name>geopointe__Object_Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- October --></label>
+        <name>geopointe__October</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Off --></label>
+        <name>geopointe__Off</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- On --></label>
+        <name>geopointe__On</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- On Account Team --></label>
+        <name>geopointe__On_Account_Team</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- One Column Address --></label>
+        <name>geopointe__One_Column_Address</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Only first 1000 Shapes Listed --></label>
+        <name>geopointe__Only_first_1000_Shapes_Listed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The operand in a filter --></label>
+        <name>geopointe__Operator</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Optimize --></label>
+        <name>geopointe__Optimize</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Optimize Route --></label>
+        <name>geopointe__Optimize_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Optimize Route will efficiently order the stops... --></label>
+        <name>geopointe__Optimize_Route_will_efficiently_order</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Order By --></label>
+        <name>geopointe__Order_By</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Originating record successfully updated! --></label>
+        <name>geopointe__Originating_record_successfully_updated</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Other --></label>
+        <name>geopointe__Other</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Other Shapes --></label>
+        <name>geopointe__Other_Shapes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Overwrite Route --></label>
+        <name>geopointe__Overwrite_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Performing a Radial Search --></label>
+        <name>geopointe__Performing_a_Radial_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Performing a Shape Search --></label>
+        <name>geopointe__Performing_a_Shape_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Pie --></label>
+        <name>geopointe__Pie</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Pinned Tabs --></label>
+        <name>geopointe__Pinned_Tabs</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Places --></label>
+        <name>geopointe__Places</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Places Search --></label>
+        <name>geopointe__Places_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please Wait --></label>
+        <name>geopointe__Please_Wait</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please contact Arrowpointe Support if you continue to see this error. --></label>
+        <name>geopointe__Please_contact_Arrowpointe_Support_if_you_continue_to_see_this_error</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please contact your system administrator to setup Layers. --></label>
+        <name>geopointe__Please_contact_your_system_administrator_to_setup_Layers</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please ensure GPS functionality is enabled for this device. --></label>
+        <name>geopointe__Please_ensure_GPS_functionality</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please enter a name for this Location --></label>
+        <name>geopointe__Please_enter_a_name_for_this_Location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please give the Route a Name --></label>
+        <name>geopointe__Please_give_the_Route_a_Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please perform a Data Set search before applying this action. --></label>
+        <name>geopointe__Please_perform_a_Data_Set_search_before_applying_this_action</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Please select an Operator value before adding the filter. --></label>
+        <name>geopointe__Please_select_an_Operator_value_before_adding_the_filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Postal Code --></label>
+        <name>geopointe__Postal_Code</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Preferences --></label>
+        <name>geopointe__Preferences</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Previous --></label>
+        <name>geopointe__Previous</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Print this Route To PDF --></label>
+        <name>geopointe__Print_this_Route_To_PDF</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Processing --></label>
+        <name>geopointe__Processing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Public Transit --></label>
+        <name>geopointe__Public_Transit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Check In --></label>
+        <name>geopointe__Quick_Check_In</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Check In Help --></label>
+        <name>geopointe__Quick_Check_In_Help</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Check Out --></label>
+        <name>geopointe__Quick_Check_Out</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Check Out Help --></label>
+        <name>geopointe__Quick_Check_Out_Help</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Save --></label>
+        <name>geopointe__Quick_Save</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Radial Search --></label>
+        <name>geopointe__Radial_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Record Actions --></label>
+        <name>geopointe__Record_Actions</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Record Id --></label>
+        <name>geopointe__Record_Id</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Record Name --></label>
+        <name>geopointe__Record_Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove --></label>
+        <name>geopointe__Remove</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove All --></label>
+        <name>geopointe__Remove_All</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove All Shapes --></label>
+        <name>geopointe__Remove_All_Shapes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove Route Tab --></label>
+        <name>geopointe__Remove_Route_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove route from map --></label>
+        <name>geopointe__Remove_route_from_map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Resetting map into Search mode --></label>
+        <name>geopointe__Resetting_map_into_Search_mode</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Restrict Results to Map&apos;s Viewable Area --></label>
+        <name>geopointe__Restrict_Results_to_Maps_Viewable_Area</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Retrieving Records --></label>
+        <name>geopointe__Retrieving_Records</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The opposite of Left --></label>
+        <name>geopointe__Right</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Route Deleted --></label>
+        <name>geopointe__Route_Deleted</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Route Detail --></label>
+        <name>geopointe__Route_Detail</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Route Execution --></label>
+        <name>geopointe__Route_Execution</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Route Not Saved --></label>
+        <name>geopointe__Route_Not_Saved</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Route Options --></label>
+        <name>geopointe__Route_Options</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Route Overview Map --></label>
+        <name>geopointe__Route_Overview_Map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Route Successfully Saved --></label>
+        <name>geopointe__Route_Successfully_Saved</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Route locations cannot be re-sequenced when optimized routing is on. --></label>
+        <name>geopointe__Route_locations_cannot_be_resequenced</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Routes --></label>
+        <name>geopointe__Routes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Run Route --></label>
+        <name>geopointe__Run_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Same Location Markers Help --></label>
+        <name>geopointe__Same_Location_Markers_Help</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saturday --></label>
+        <name>geopointe__Saturday</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save --></label>
+        <name>geopointe__Save</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save As --></label>
+        <name>geopointe__Save_As</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save Location --></label>
+        <name>geopointe__Save_Location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save Route --></label>
+        <name>geopointe__Save_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save Shape --></label>
+        <name>geopointe__Save_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Save to My Locations --></label>
+        <name>geopointe__Save_to_My_Locations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saved Route Owned by --></label>
+        <name>geopointe__Saved_Route_Owned_by</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saved Routes --></label>
+        <name>geopointe__Saved_Routes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saved Shapes --></label>
+        <name>geopointe__Saved_Shapes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saving --></label>
+        <name>geopointe__Saving</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saving Data Set --></label>
+        <name>geopointe__Saving_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saving Location --></label>
+        <name>geopointe__Saving_Location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saving Route --></label>
+        <name>geopointe__Saving_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saving Settings --></label>
+        <name>geopointe__Saving_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Saving Shape --></label>
+        <name>geopointe__Saving_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Scrollwheel Zoom --></label>
+        <name>geopointe__Scrollwheel_Zoom</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search --></label>
+        <name>geopointe__Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Center --></label>
+        <name>geopointe__Search_Center</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search From --></label>
+        <name>geopointe__Search_From</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Nearby --></label>
+        <name>geopointe__Search_Nearby</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Searching --></label>
+        <name>geopointe__Searching</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select --></label>
+        <name>geopointe__Select</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select Field --></label>
+        <name>geopointe__Select_Field</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select Remove to continue. --></label>
+        <name>geopointe__Select_Remove_to_continue</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select a Map Object to base the Assignment Plan --></label>
+        <name>geopointe__Select_a_Map_Object_to_base_the_Assignment_Plan</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select the Show Data Set button on a tab to add search results to the map. --></label>
+        <name>geopointe__Select_the_Show_Data_Set_button</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- asfd --></label>
+        <name>geopointe__Select_the_field_name_to_return_to_the_list_of_fields</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Selected Records --></label>
+        <name>geopointe__Selected_Records</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Selected Tab --></label>
+        <name>geopointe__Selected_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- September --></label>
+        <name>geopointe__September</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Set Starting Position --></label>
+        <name>geopointe__Set_Starting_Position</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Settings --></label>
+        <name>geopointe__Settings</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Settings Icon Gear --></label>
+        <name>geopointe__Settings_Icon_Gear</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shape --></label>
+        <name>geopointe__Shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shape Deleted --></label>
+        <name>geopointe__Shape_Deleted</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shape Field --></label>
+        <name>geopointe__Shape_Field</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shape Search --></label>
+        <name>geopointe__Shape_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shape Successfully Added To Map --></label>
+        <name>geopointe__Shape_Successfully_Added_To_Map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shape Successfully Saved --></label>
+        <name>geopointe__Shape_Successfully_Saved</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Share on Feed --></label>
+        <name>geopointe__Share_on_Feed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Share on Feed Help --></label>
+        <name>geopointe__Share_on_Feed_Help</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shortest --></label>
+        <name>geopointe__Shortest</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show --></label>
+        <name>geopointe__Show</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show All Mapped Points --></label>
+        <name>geopointe__Show_All_Mapped_Points</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show Filter --></label>
+        <name>geopointe__Show_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show Legend --></label>
+        <name>geopointe__Show_Legend</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show Radius --></label>
+        <name>geopointe__Show_Radius</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show Route --></label>
+        <name>geopointe__Show_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Show route on map --></label>
+        <name>geopointe__Show_route_on_map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Showing --></label>
+        <name>geopointe__Showing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Something didn&apos;t work quite right --></label>
+        <name>geopointe__Something_didnt_work_quite_right</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sponsored Result --></label>
+        <name>geopointe__Sponsored_Result</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Stacking --></label>
+        <name>geopointe__Stacking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Start Tab --></label>
+        <name>geopointe__Start_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Starting Latitude --></label>
+        <name>geopointe__Starting_Latitude</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Starting Longitude --></label>
+        <name>geopointe__Starting_Longitude</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Starting Map Position --></label>
+        <name>geopointe__Starting_Map_Position</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Starting Zoom --></label>
+        <name>geopointe__Starting_Zoom</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- State/Province --></label>
+        <name>geopointe__State_Province</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Street --></label>
+        <name>geopointe__Street</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Street View --></label>
+        <name>geopointe__Street_View</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sub Grouping --></label>
+        <name>geopointe__Sub_Grouping</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Sunday --></label>
+        <name>geopointe__Sunday</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The KmlLayer is invalid. --></label>
+        <name>geopointe__The_KmlLayer_is_invalid</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The document exceeds the limit of supported features. --></label>
+        <name>geopointe__The_document_exceeds_the_limit_of_supported_features</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The document is not a well formed KML, KMZ, or GEORSS file. --></label>
+        <name>geopointe__The_document_is_not_a_well_formed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The file is too large. --></label>
+        <name>geopointe__The_file_is_too_large</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The layer could not be added to the map. --></label>
+        <name>geopointe__The_layer_could_not_be_added_to_the_map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The map&apos;s center will... --></label>
+        <name>geopointe__The_maps_center_will</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The route list has been modified... --></label>
+        <name>geopointe__The_route_list_has_been_modified</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The tabs and fields shown here are driven by the configuration... --></label>
+        <name>geopointe__The_tabs_and_fields_shown_here_are_driven_by_the_configuration</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There are more related records than displayed here.. --></label>
+        <name>geopointe__There_are_more_related_records_than_displayed_here</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There are no Actions available for the mapped data. --></label>
+        <name>geopointe__There_are_no_Actions_available</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There are too many points mapped to add... --></label>
+        <name>geopointe__There_are_too_many_points_mapped_to_add</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There must be Data Sets visible on the map to perform this action. --></label>
+        <name>geopointe__There_must_be_Data_Sets_visible_on_the_map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There was an error processing the Drive Distance request. --></label>
+        <name>geopointe__There_was_an_error_processing_the_Drive_Distance_request</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There was an error processing your request --></label>
+        <name>geopointe__There_was_an_error_processing_your_request</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There was an error processing your request. If this issue --></label>
+        <name>geopointe__There_was_an_error_processing_your_request_If_this_issue</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- There was an error re-sequencing the Route Locations. --></label>
+        <name>geopointe__There_was_an_error_resequencing_the_Route_Locations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This Data Set has no filters. --></label>
+        <name>geopointe__This_Data_Set_has_no_filters</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This Layer is currently displayed on the map. --></label>
+        <name>geopointe__This_Layer_is_currently_displayed_on_the_map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This Shape is used in Geopointe Assignment Plans --></label>
+        <name>geopointe__This_Shape_is_used_in_Geopointe_Assignment_Plans</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This action cannot be applied to the selected tab. --></label>
+        <name>geopointe__This_action_cannot_be_applied_to_the_selected_tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This action could not be applied to the selected tab. --></label>
+        <name>geopointe__This_action_could_not_be_applied_to_the_selected_tab</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This field has already been selected. --></label>
+        <name>geopointe__This_field_has_already_been_selected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This record has no related data on its Page Layout --></label>
+        <name>geopointe__This_record_has_no_related_data_on_its_Page_Layout</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This will DELETE the selected Shape and remove it from your list --></label>
+        <name>geopointe__This_will_DELETE_the_selected_Shape_and_remove_it_from_your_list</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This will DELETE the selected Shape and clear the Shape field on the record --></label>
+        <name>geopointe__This_will_DELETE_the_selected_shape_and_clear_the_Shape_field_on_the_record</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This will clear the route locations listed below and remove the route... --></label>
+        <name>geopointe__This_will_clear_the_route_locations_listed_below_and_remove_the_route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This will overwrite the existing saved route.. --></label>
+        <name>geopointe__This_will_overwrite_the_existing_saved_route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This will remove all shapes from the map. --></label>
+        <name>geopointe__This_will_remove_all_shapes_from_the_map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Thumbnails --></label>
+        <name>geopointe__Thumbnails</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Thursday --></label>
+        <name>geopointe__Thursday</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Time --></label>
+        <name>geopointe__Time</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- To perform a search you must be zoomed into at least level --></label>
+        <name>geopointe__To_perform_a_search_you_must_be_zoomed_into</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Toggle Bicycling Off --></label>
+        <name>geopointe__Toggle_Bicycling_Off</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Toggle Bicycling On --></label>
+        <name>geopointe__Toggle_Bicycling_On</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Toggle Traffic Off --></label>
+        <name>geopointe__Toggle_Traffic_Off</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Toggle Traffic On --></label>
+        <name>geopointe__Toggle_Traffic_On</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Toggle Transit Off --></label>
+        <name>geopointe__Toggle_Transit_Off</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Toggle Transit On --></label>
+        <name>geopointe__Toggle_Transit_On</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Toggle Weather Off --></label>
+        <name>geopointe__Toggle_Weather_Off</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Toggle Weather On --></label>
+        <name>geopointe__Toggle_Weather_On</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Tools --></label>
+        <name>geopointe__Tools</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total Distance and Time --></label>
+        <name>geopointe__Total_Distance_and_Time</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total Route Distance --></label>
+        <name>geopointe__Total_Route_Distance</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Total Route Time --></label>
+        <name>geopointe__Total_Route_Time</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Traffic --></label>
+        <name>geopointe__Traffic</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Transit --></label>
+        <name>geopointe__Transit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Tuesday --></label>
+        <name>geopointe__Tuesday</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The Type of an object. Not the act of typing. --></label>
+        <name>geopointe__Type</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to Check In --></label>
+        <name>geopointe__Unable_to_Check_In</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to Check Out --></label>
+        <name>geopointe__Unable_to_Check_Out</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to access GPS. Please ensure locations services are enabled for this app. --></label>
+        <name>geopointe__Unable_to_access_GPS</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Uh oh. It looks like something is not working right and we --></label>
+        <name>geopointe__Unable_to_add_location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to build route --></label>
+        <name>geopointe__Unable_to_build_route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to fetch the file. --></label>
+        <name>geopointe__Unable_to_fetch_the_file</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to locate accurate position for --></label>
+        <name>geopointe__Unable_to_locate_accurate_position_for</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to locate position. --></label>
+        <name>geopointe__Unable_to_locate_position</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to locate position due to timeout. --></label>
+        <name>geopointe__Unable_to_locate_position_due_to_timeout</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to locate the file. Make sure it is a publically accessible URL. --></label>
+        <name>geopointe__Unable_to_locate_the_file</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to perform Action as no records were selected. --></label>
+        <name>geopointe__Unable_to_perform_Action_as_no_records_were_selected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Uh oh. It looks like something is not working right and we are unable to --></label>
+        <name>geopointe__Unable_to_route_location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Uh oh. It looks like something is not working right and we --></label>
+        <name>geopointe__Unable_to_search_locations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to set starting map position. Please reload the page and try again. --></label>
+        <name>geopointe__Unable_to_set_starting_map_position</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unique Id --></label>
+        <name>geopointe__Unique_Id</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Units --></label>
+        <name>geopointe__Units</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Updating Members --></label>
+        <name>geopointe__Updating_Members</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Updating Originating Record --></label>
+        <name>geopointe__Updating_Originating_Record</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Use Geolocation --></label>
+        <name>geopointe__Use_Geolocation</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- The value in a filter. --></label>
+        <name>geopointe__Value</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- View Details --></label>
+        <name>geopointe__View_Details</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- View in Salesforce --></label>
+        <name>geopointe__View_in_Salesforce</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- View on Google Maps --></label>
+        <name>geopointe__View_on_Google_Maps</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- View on MapQuest --></label>
+        <name>geopointe__View_on_MapQuest</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Map View --></label>
+        <name>geopointe__Viewable_Area</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Walking --></label>
+        <name>geopointe__Walking</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Weather --></label>
+        <name>geopointe__Weather</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Wednesday --></label>
+        <name>geopointe__Wednesday</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Range --></label>
+        <name>geopointe__Within</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Year --></label>
+        <name>geopointe__Year</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You are currently on zoom level --></label>
+        <name>geopointe__You_are_currently_on_zoom_level</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You can view this shape by selecting the &apos;Go To Shape&apos; button below --></label>
+        <name>geopointe__You_can_view_this_shape_by_selecting</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You do not have any saved routes... --></label>
+        <name>geopointe__You_do_not_have_any_saved_routes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You have selected --></label>
+        <name>geopointe__You_have_selected</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You must have at least 2 route locations selected to save a Route --></label>
+        <name>geopointe__You_must_have_at_least_2_route_locations</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- You must have created a route by clicking Get Route... --></label>
+        <name>geopointe__You_must_have_created_a_route_by_clicking_Get_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Your browser does not support determination of your current location --></label>
+        <name>geopointe__Your_browser_does_not_support_determination_of_your_current_location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Your browser failed to determine your current location --></label>
+        <name>geopointe__Your_browser_failed_to_determine_your_current_location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Your route was optimized... --></label>
+        <name>geopointe__Your_route_was_optimized</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Zoom and Center --></label>
+        <name>geopointe__Zoom_and_Center</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Zoom to Show --></label>
+        <name>geopointe__Zoom_to_Show</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- and it could not be added to the route. --></label>
+        <name>geopointe__and_it_could_not_be_added_to_the_route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- contains --></label>
+        <name>geopointe__contains</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- does not contain --></label>
+        <name>geopointe__does_not_contain</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- equals --></label>
+        <name>geopointe__equals</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- excludes --></label>
+        <name>geopointe__excludes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- greater or equal --></label>
+        <name>geopointe__greater_or_equal</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- greater than --></label>
+        <name>geopointe__greater_than</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- has already been added to the map. --></label>
+        <name>geopointe__has_already_been_added_to_the_map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- includes --></label>
+        <name>geopointe__includes</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- less or equal --></label>
+        <name>geopointe__less_or_equal</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- less than --></label>
+        <name>geopointe__less_than</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- not equal to --></label>
+        <name>geopointe__not_equal_to</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- of --></label>
+        <name>geopointe__of</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- starts with --></label>
+        <name>geopointe__starts_with</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- to --></label>
+        <name>geopointe__to</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- was successfully added to the Current Route list. --></label>
+        <name>geopointe__was_succesfully_added_to_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- with --></label>
+        <name>geopointe__with</name>
+    </customLabels>
+    <customPageWebLinks>
+        <label><!-- RSS2ChatterLink --></label>
+        <name>RSS2ChatterLink</name>
+    </customPageWebLinks>
+    <customTabs>
+        <label><!-- About Survey Shark --></label>
+        <name>About_Survey_Shark</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Action Plans --></label>
+        <name>Action_Plans</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- About --></label>
+        <name>ChatterDeleteManager_About</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Chatter Assassin --></label>
+        <name>Chatter_Assassin</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Chatter Graph --></label>
+        <name>Chatter_Graph</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- International Mapping Setup --></label>
+        <name>International_Mapping_Setup</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Offline Order Entry Installation --></label>
+        <name>Offline_Order_Entry_Installation</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Planogram Setup --></label>
+        <name>Planogram_Setup</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Social Web --></label>
+        <name>Social_Web</name>
+    </customTabs>
+    <quickActions>
+        <label><!-- LogACall --></label>
+        <name>LogACall</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewAccount --></label>
+        <name>NewAccount</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewCase --></label>
+        <name>NewCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewContact --></label>
+        <name>NewContact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewEvent --></label>
+        <name>NewEvent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewGroup --></label>
+        <name>NewGroup</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewLead --></label>
+        <name>NewLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewNote --></label>
+        <name>NewNote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewOpportunity --></label>
+        <name>NewOpportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewTask --></label>
+        <name>NewTask</name>
+    </quickActions>
+    <reportTypes>
+        <description><!-- Accounts with Contacts with Content Reviews --></description>
+        <label><!-- Accounts with Contacts with Content Reviews --></label>
+        <name>Accounts_with_Contacts_with_Content_Reviews</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+        <sections>
+            <label><!-- Content Reviews --></label>
+            <name>Content Reviews</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Accounts with Referrals --></description>
+        <label><!-- Accounts with Referrals --></label>
+        <name>Accounts_with_Referrals</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Referral --></label>
+            <name>Referral</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Business Plan Activities --></description>
+        <label><!-- Business Plan Activities --></label>
+        <name>Business_Plan_Activities</name>
+        <sections>
+            <label><!-- Activity --></label>
+            <name>Activity</name>
+        </sections>
+        <sections>
+            <label><!-- Business Plans --></label>
+            <name>Business Plans</name>
+        </sections>
+        <sections>
+            <label><!-- Objectives --></label>
+            <name>Objectives</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Call --></description>
+        <label><!-- Call --></label>
+        <name>Call</name>
+        <sections>
+            <label><!-- Call --></label>
+            <name>Call</name>
+        </sections>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+        <sections>
+            <label><!-- Location --></label>
+            <name>Location</name>
+        </sections>
+        <sections>
+            <label><!-- Product --></label>
+            <name>Product</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Coverage and Frequency --></description>
+        <label><!-- Coverage and Frequency --></label>
+        <name>Coverage_and_Frequency</name>
+        <sections>
+            <label><!-- Calls --></label>
+            <name>Calls</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Speciality --></label>
+                <name>Speciality</name>
+            </columns>
+            <label><!-- Customer --></label>
+            <name>Customer</name>
+        </sections>
+        <sections>
+            <label><!-- Target Frequency --></label>
+            <name>Target Frequency</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Sales --></description>
+        <label><!-- Sales --></label>
+        <name>Sales</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Product --></label>
+            <name>Product</name>
+        </sections>
+        <sections>
+            <label><!-- Sales --></label>
+            <name>Sales</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Targets --></description>
+        <label><!-- Targets --></label>
+        <name>Targets</name>
+        <sections>
+            <label><!-- Attendees --></label>
+            <name>Attendees</name>
+        </sections>
+        <sections>
+            <label><!-- Call Report --></label>
+            <name>Call Report</name>
+        </sections>
+        <sections>
+            <label><!-- Targets --></label>
+            <name>Targets</name>
+        </sections>
+    </reportTypes>
+    <scontrols>
+        <label><!-- Edit Event on Calendar --></label>
+        <name>Edit_Event_on_Calendar</name>
+    </scontrols>
+    <scontrols>
+        <label><!-- Edit Event on Calendar1 --></label>
+        <name>Edit_Event_on_Calendar1</name>
+    </scontrols>
+    <scontrols>
+        <label><!-- Open Call Report from Event --></label>
+        <name>Open_Call_Report_from_Event</name>
+    </scontrols>
+    <scontrols>
+        <label><!-- Relevant Account News from Google News --></label>
+        <name>Relevant_Account_News_from_Google_News</name>
+    </scontrols>
+    <scontrols>
+        <label><!-- SAP Credit Control --></label>
+        <name>SAP_Credit_Control</name>
+    </scontrols>
+    <scontrols>
+        <label><!-- Stock Order Page Link --></label>
+        <name>Stock_Order_Page_Link</name>
+    </scontrols>
+</Translations>

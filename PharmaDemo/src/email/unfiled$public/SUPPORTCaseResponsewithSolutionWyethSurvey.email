@@ -1,0 +1,20 @@
+Dear {!Account.FirstName}
+
+Thank you for calling the SMA call centre, please find enclosed a summary of you query and answer
+
+{!Case.Solution_Description}   
+
+We value your opinion and would be grateful if you could complete the following survey
+
+http://www.clicktools.com/survey?iv=b411616084dcfa3&q1={!Case.AccountId}&q2={!Case.Id}
+
+Please also take the time to visit our website where you can find valuable information about our products, view common questions and submit queries
+
+Thank you,   
+{!User.Name} 
+{!Organization.Name}   
+
+Your comment:   
+{!Case.Description} 
+
+{!Case.Solution_Attachments}

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Business Plan</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Business Plans</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Goals --></label>
+        <name>Account_Goals__c</name>
+    </fields>
+    <fields>
+        <label><!-- Account Type --></label>
+        <name>Account_Type__c</name>
+        <picklistValues>
+            <masterLabel>Existing Customer</masterLabel>
+            <translation><!-- Existing Customer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Customer</masterLabel>
+            <translation><!-- New Customer --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <lookupFilter>
+            <errorMessage><!-- Contact&apos;s primary location must be same as Primary Account on Business Plan --></errorMessage>
+            <informationalMessage><!-- Contact&apos;s primary location must be same as Primary Account on Business Plan --></informationalMessage>
+        </lookupFilter>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Business Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Key Business Problems --></label>
+        <name>Key_Business_Problems__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last FY Product Sales --></label>
+        <name>Last_FY_Product_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Plan Revision --></label>
+        <name>Last_Plan_Revision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunities --></label>
+        <name>Opportunities__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organisation --></label>
+        <name>Organisation__c</name>
+        <relationshipLabel><!-- Business Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Organisations --></label>
+        <name>Organisations__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan FY Product Sales Goal --></label>
+        <name>Plan_FY_Product_Sales_Goal__c</name>
+    </fields>
+    <fields>
+        <label><!-- Plan Status --></label>
+        <name>Plan_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Started</masterLabel>
+            <translation><!-- Not Started --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Review</masterLabel>
+            <translation><!-- Review --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Planning Year --></label>
+        <name>Planning_Year__c</name>
+        <picklistValues>
+            <masterLabel>FY2005</masterLabel>
+            <translation><!-- FY2005 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FY2006</masterLabel>
+            <translation><!-- FY2006 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FY2007</masterLabel>
+            <translation><!-- FY2007 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FY2008</masterLabel>
+            <translation><!-- FY2008 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FY2009</masterLabel>
+            <translation><!-- FY2009 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>FY2010</masterLabel>
+            <translation><!-- FY2010 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Potential Barriers --></label>
+        <name>Potential_Barriers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Sales Growth --></label>
+        <name>Product_Sales_Growth__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Business Plans --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Stakeholders --></label>
+        <name>Stakeholders__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strengths --></label>
+        <name>Strengths__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strengths to Leverage --></label>
+        <name>Strengths_to_Leverage__c</name>
+    </fields>
+    <fields>
+        <label><!-- Threats --></label>
+        <name>Threats__c</name>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <fields>
+        <label><!-- Weaknesses --></label>
+        <name>Weaknesses__c</name>
+    </fields>
+    <layouts>
+        <layout>Business Plan Layout</layout>
+        <sections>
+            <label><!-- Chatter Files --></label>
+            <section>Chatter Files</section>
+        </sections>
+        <sections>
+            <label><!-- Indicators --></label>
+            <section>Indicators</section>
+        </sections>
+        <sections>
+            <label><!-- Links --></label>
+            <section>Links</section>
+        </sections>
+        <sections>
+            <label><!-- SWOT Anaysis --></label>
+            <section>SWOT Anaysis</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Activities_Report --></label>
+        <name>Activities_Report</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Sales --></label>
+        <name>Sales</name>
+    </webLinks>
+</CustomObjectTranslation>

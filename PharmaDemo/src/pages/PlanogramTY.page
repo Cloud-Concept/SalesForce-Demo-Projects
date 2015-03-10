@@ -1,0 +1,5 @@
+<apex:page showHeader="false">
+<html>
+    <img src="{!URLFOR($Resource.SFPlanogram, 'TY.png')}" onclick="window.location='/apex/PlanogramAccountSelection'"/>
+</html>
+</apex:page>

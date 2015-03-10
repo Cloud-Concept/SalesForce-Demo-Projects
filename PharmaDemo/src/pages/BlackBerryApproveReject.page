@@ -1,0 +1,116 @@
+<!-- 
+  Developed by Timba Software Corp. www.timbasoftware.com admin@timbasoftware.com
+-->
+
+<apex:page standardStylesheets="false" controller="BlackBerryApproveRejectController" sidebar="false" showHeader="false" cache="true">
+	
+	<apex:include pageName="BlackBerryApprovalStyles" />
+	
+	<!-- Approval Title -->
+	<div class="approvalHeader {!ObjDetail.objType}">
+		<div class="title">
+			Approval Request<br />
+			<span class="objTitle">{!ObjDetail.Name}</span>
+		</div>
+	</div>
+	
+	<h2>Approve / Reject Approval Request</h2>
+	<!-- Approval Object Detail -->
+	<table cellpadding="0" cellspacing="0" border="0">
+		<apex:outputText escape="false" value="{!formattedObjectDetail}" />		
+	</table>
+	
+	<!-- Approval History -->
+	<h2>Approval History</h2>	
+	<table cellpadding="0" cellspacing="0" border="0" width="100%">	
+	<apex:repeat value="{!ProcHistory}" var="step">
+		<tr>
+			<td colspan="2" class="subTitle {!ObjDetail.objType}BgColor">
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">
+					<tr>
+						<td width="50%" >
+							<apex:outputText value="{!IF(step.ShowSubmittedTitle,'Approval Rq. Submitted','Approval Step')}" styleClass="titleText" />
+						</td>
+						<td width="50%" >
+							<apex:outputPanel rendered="{!IF(step.StatusIcon == '---',false,true)}" styleClass="overallStatusIndicator" layout="block">
+								<span class="statusWrapper {!step.Status}bg">{!step.Status}</span>
+								<div class="labelTop">Overall Status:</div>
+							</apex:outputPanel>						
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="stepDataContainer">
+				<table width="100%" cellpadding="0" cellspacing="0" border="0">		
+					<tr>
+						<td width="50%" class="detailField"><strong>Date:</strong> {!step.StepDate}</td>
+						<td width="50%" class="detailField" align="right"><strong>Status:</strong> {!step.Status}</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="detailField" width="100%"><strong>Assigned To:</strong>&nbsp;{!step.AssignedTo}</td>			
+					</tr>
+					<tr>
+						<td colspan="2" class="detailField" width="100%"><strong>Actual Approver:</strong>&nbsp;{!step.AssignedTo}</td>
+					</tr>
+					<tr>
+						<td colspan="2"><strong><apex:outputText value="Comments:" rendered="{!step.ShowComments}" /></strong></td>			
+					</tr>
+					<tr>
+						<td colspan="2" class="detailField" width="100%">
+							<apex:outputText value="{!step.Comments}" rendered="{!step.ShowComments}" />
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+		
+	</apex:repeat>
+	</table>
+	
+	<h2>Approve / Reject / Comment</h2>
+		
+	<form action="{!$Page.BlackBerryApproveRejectForm}" method="get">
+		<input type="hidden" name="id" value="{!WORKITEM_ID}" />
+		<table cellpadding="0" cellspacing="0" border="0" width="100%" class="commentFormTable">
+			<tr>
+				<td colspan="2" height="15"></td>
+			</tr>
+			<tr>
+				<td valign="top" width="25%" class="labelComment"  align="right">
+					<strong>Comments:</strong>
+				</td>
+				<td valign="top" width="80%">
+					<textarea name="comments" cols="38" rows="8"></textarea>						
+				</td>
+			</tr>
+			<tr>
+				<td valign="top" width="25%" class="labelComment" align="right">
+					<strong>Action:</strong>
+				</td>
+				<td>
+					<table width="100%">
+						<tr>
+							<td  height="15" width="100%" colspan="2"></td>
+						</tr>
+						<tr>
+							<td colspan="2" width="100%"><INPUT type="radio" name="action" value="Approve" /> Approve </td>							
+						</tr>
+						<tr>
+							<td  colspan="2" width="100%"><INPUT type="radio" name="action" value="Reject" /> Reject</td>
+						</tr>
+						<tr>
+							<td  height="15" width="100%" colspan="2"></td>
+						</tr>
+						<tr>
+							<td height="15"><INPUT type="submit" name="submit" value="Submit" class="greyBtn" /></td>
+							<td height="25"><apex:outputLink value="BlackBerryApprovalList" styleClass="greyBtn" >Cancel </apex:outputLink></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>					
+	</form>
+	
+</apex:page>

@@ -1,0 +1,32 @@
+<!-- 
+  Developed by Timba Software Corp. www.timbasoftware.com admin@timbasoftware.com
+-->
+
+<apex:page showHeader="false" standardStylesheets="false" cache="true" title="Salesforce Mobile"  >
+
+	<apex:include pageName="IPhoneApprovalStyles" />
+
+	<apex:include pageName="BBBApprovalStyles" />
+	
+	<script type="text/javascript">
+		/**
+		 * Approval Cross Browsing 
+		 * Iphone and BlackBerry
+		 * @author glacordelle
+		 */
+		if(navigator.userAgent.indexOf("iPhone") != -1) 
+		{
+			var bbbStyles = document.getElementById('BBBStyles');
+			bbbStyles.parentNode.removeChild(bbbStyles);
+			document.write('<meta name="viewport" content="width=330; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"></meta>');
+		} 
+		else
+		{
+			var iPhoneStyles = document.getElementById('IPhoneStyles');
+			document.write('<meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"></meta>');
+			iPhoneStyles.parentNode.removeChild(iPhoneStyles);
+			
+		}
+	</script>
+	
+</apex:page>

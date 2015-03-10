@@ -1,0 +1,19 @@
+<apex:page >
+
+<br/><br/>
+
+	1) Installation link for Adobe AIR : <a href="http://get.adobe.com/air/" target="_blank">Get Adobe AIR here</a>
+	
+	<br/><br/>
+	
+	2) Install the Offline Order Entry application : <a href="{!URLFOR($Resource.OfflineOrderEntryInstaller, '/OfflineOrderEntry.air')}">Click here to install the Offline Order Entry application.<a>
+	
+	<br/><br/>
+	
+	3) Full installation, configuration and demo guide : <a href="{!URLFOR($Resource.OfflineOrderEntryGuide)}">Click here<a>
+	
+	
+ 	
+
+
+</apex:page>

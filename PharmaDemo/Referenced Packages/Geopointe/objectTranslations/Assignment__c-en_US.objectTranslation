@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DELETE ME (Assignment)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DELETE ME</value>
+    </caseValues>
+    <fields>
+        <label><!-- Geopointe Assignment Plan --></label>
+        <name>Assignment_Plan__c</name>
+        <relationshipLabel><!-- Geopointe Assignments --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Geopointe Shape --></label>
+        <name>Shape__c</name>
+        <relationshipLabel><!-- Deprecated --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- DELETE ME --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Geopointe Assignment Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

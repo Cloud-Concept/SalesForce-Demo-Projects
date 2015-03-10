@@ -1,0 +1,63 @@
+<!-- 
+  Developed by Timba Software Corp. www.timbasoftware.com admin@timbasoftware.com
+-->
+
+<apex:page controller="BlackBerryApprovalListController" showHeader="false" standardStylesheets="false" cache="true" title="Salesforce Mobile" >
+	
+	<script language="javascript" type="text/javascript">
+		if(!window.blackberry){
+			window.location.href='{!$Page.BBBApprovalList}';
+		}
+	</script>
+
+	<apex:include pageName="BlackBerryApprovalStyles" />
+	
+	<meta name="viewport" content="width=330; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"></meta>
+	
+	<apex:repeat value="{!approvalItemsCollection}" var="approvalItems">
+		<div class="caption {!approvalItems.itemsType}ApprovalCaption">
+			<apex:outputText value="{!approvalItems.itemsPluralLabel}"/>
+		</div>
+		
+		<table class="thead">
+			<tr>
+				<td class="linksColumn">Action</td>
+				<td class="relatedToColumn">Related to</td>
+				<td class="dateSubmitedColumn">Date Submitted</td>
+			</tr>
+		</table>
+		
+		<apex:dataTable value="{!approvalItems.itemsList}" var="item" styleClass="ApprovalItemsTable">
+
+			<apex:column styleClass="linksColumn" >
+				<apex:outputLink value="{!$Page.BlackBerryReassign}">
+					<apex:param name="id" value="{!item.workitem.id}"/>
+					<apex:outputText value="Reassign"/>
+				</apex:outputLink>
+				<span class="separator"></span>
+				<apex:outputLink value="{!$Page.BlackBerryApproveReject}">
+					<apex:param name="id" value="{!item.workitem.id}"/>
+					<apex:outputText value="Approve/Reject"/>
+				</apex:outputLink>
+			</apex:column> 
+	
+			<apex:column styleClass="relatedToColumn">
+				<apex:outputText value="{!item.relatedTo}"/>
+			</apex:column>
+			
+			<apex:column styleClass="dateSubmitedColumn">
+				<apex:outputText value="{!item.dateSubmitted}"/>
+			</apex:column>
+			
+		</apex:dataTable>
+		
+		<div id="ApprovalItemsTableSeparator">
+		</div>
+		
+	</apex:repeat>
+	
+		<apex:outputText rendered="{!noRecordsToShow}" value="No Items to approve" styleClass="standardFont center" />
+
+	<br />
+
+</apex:page>

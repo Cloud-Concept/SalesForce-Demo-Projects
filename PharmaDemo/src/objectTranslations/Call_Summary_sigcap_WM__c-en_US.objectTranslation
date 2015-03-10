@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Call Summary</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Call Summaries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accompanied Call --></label>
+        <name>Accompanied_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Adoption - 1 --></label>
+        <name>Adoption_1__c</name>
+        <picklistValues>
+            <masterLabel>Aware</masterLabel>
+            <translation><!-- Aware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Has Prescribed</masterLabel>
+            <translation><!-- Has Prescribed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interested</masterLabel>
+            <translation><!-- Interested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repeat Use</masterLabel>
+            <translation><!-- Repeat Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trial Use</masterLabel>
+            <translation><!-- Trial Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Will Prescribe</masterLabel>
+            <translation><!-- Will Prescribe --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Adoption - 2 --></label>
+        <name>Adoption_2__c</name>
+        <picklistValues>
+            <masterLabel>Aware</masterLabel>
+            <translation><!-- Aware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Has Prescribed</masterLabel>
+            <translation><!-- Has Prescribed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interested</masterLabel>
+            <translation><!-- Interested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repeat Use</masterLabel>
+            <translation><!-- Repeat Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trial Use</masterLabel>
+            <translation><!-- Trial Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Will Prescribe</masterLabel>
+            <translation><!-- Will Prescribe --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Adoption - 3 --></label>
+        <name>Adoption_3__c</name>
+        <picklistValues>
+            <masterLabel>Aware</masterLabel>
+            <translation><!-- Aware --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Has Prescribed</masterLabel>
+            <translation><!-- Has Prescribed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interested</masterLabel>
+            <translation><!-- Interested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Repeat Use</masterLabel>
+            <translation><!-- Repeat Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trial Use</masterLabel>
+            <translation><!-- Trial Use --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Will Prescribe</masterLabel>
+            <translation><!-- Will Prescribe --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- BrickId --></label>
+        <name>Brick__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Notes --></label>
+        <name>Call_Notes__c</name>
+        <picklistValues>
+            <masterLabel>Comparative Data</masterLabel>
+            <translation><!-- Comparative Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Efficacy</masterLabel>
+            <translation><!-- Efficacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pathology</masterLabel>
+            <translation><!-- Pathology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tolerability/Safety</masterLabel>
+            <translation><!-- Tolerability/Safety --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Closed --></label>
+        <name>Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact - 1 --></label>
+        <name>Contact_1__c</name>
+        <relationshipLabel><!-- Call Summaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact - 2 --></label>
+        <name>Contact_2__c</name>
+        <relationshipLabel><!-- Call Summaries (Contact - 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact - 3 --></label>
+        <name>Contact_3__c</name>
+        <relationshipLabel><!-- Call Summaries (Contact - 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>Date_Time__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration (mins) --></label>
+        <name>Duration__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20</masterLabel>
+            <translation><!-- 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25</masterLabel>
+            <translation><!-- 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45</masterLabel>
+            <translation><!-- 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60</masterLabel>
+            <translation><!-- 60 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <relationshipLabel><!-- Call Summaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Lot Number - 1 --></label>
+        <name>Lot_Number_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lot Number - 2 --></label>
+        <name>Lot_Number_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lot Number - 3 --></label>
+        <name>Lot_Number_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Next Call Objective --></label>
+        <name>Next_call_Objective__c</name>
+        <picklistValues>
+            <masterLabel>Comparative Data</masterLabel>
+            <translation><!-- Comparative Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discuss Efficacy</masterLabel>
+            <translation><!-- Discuss Efficacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provide Comparative Data</masterLabel>
+            <translation><!-- Provide Comparative Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tolerability/Safety</masterLabel>
+            <translation><!-- Tolerability/Safety --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- # Actual Attendees --></label>
+        <name>Number_Actual_Attendees__c</name>
+    </fields>
+    <fields>
+        <label><!-- # Planned Attendees --></label>
+        <name>Number_Planned_Attendees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product - 1 --></label>
+        <name>Product_1__c</name>
+        <relationshipLabel><!-- Call Summaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product - 2 --></label>
+        <name>Product_2__c</name>
+        <relationshipLabel><!-- Call Summaries (Product - 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product - 3 --></label>
+        <name>Product_3__c</name>
+        <relationshipLabel><!-- Call Summaries (Product - 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Promo Quantity - 1 --></label>
+        <name>Promo_Quantity_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promo Quantity - 2 --></label>
+        <name>Promo_Quantity_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promo Quantity - 3 --></label>
+        <name>Promo_Quantity_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promotional Product - 1 --></label>
+        <name>Promotional_Product_1__c</name>
+        <relationshipLabel><!-- Call Summaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Promotional Product - 2 --></label>
+        <name>Promotional_Product_2__c</name>
+        <relationshipLabel><!-- Call Summaries (Promotional Product - 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Promotional Product - 3 --></label>
+        <name>Promotional_Product_3__c</name>
+        <relationshipLabel><!-- Call Summaries (Promotional Product - 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Promotional Product Cost - 1 --></label>
+        <name>Promotional_Product_Cost_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promotional Product Cost - 2 --></label>
+        <name>Promotional_Product_Cost_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Promotional Product Cost - 3 --></label>
+        <name>Promotional_Product_Cost_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample - 1 --></label>
+        <name>Sample_1__c</name>
+        <relationshipLabel><!-- Call Summaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sample - 2 --></label>
+        <name>Sample_2__c</name>
+        <relationshipLabel><!-- Call Summaries (Sample - 2) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sample - 3 --></label>
+        <name>Sample_3__c</name>
+        <relationshipLabel><!-- Call Summaries (Sample - 3) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Sample Quantity - 1 --></label>
+        <name>Sample_Quantity_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Quantity - 2 --></label>
+        <name>Sample_Quantity_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sample Quantity - 3 --></label>
+        <name>Sample_Quantity_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status - 1 --></label>
+        <name>Status_1__c</name>
+        <picklistValues>
+            <masterLabel>Left</masterLabel>
+            <translation><!-- Left --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status - 2 --></label>
+        <name>Status_2__c</name>
+        <picklistValues>
+            <masterLabel>Left</masterLabel>
+            <translation><!-- Left --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Status - 3 --></label>
+        <name>Status_3__c</name>
+        <picklistValues>
+            <masterLabel>Left</masterLabel>
+            <translation><!-- Left --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Requested</masterLabel>
+            <translation><!-- Requested --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>1:1</masterLabel>
+            <translation><!-- 1:1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appointment</masterLabel>
+            <translation><!-- Appointment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting</masterLabel>
+            <translation><!-- Meeting --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Call Summary Layout</layout>
+        <sections>
+            <label><!-- Attendees --></label>
+            <section>Attendees</section>
+        </sections>
+        <sections>
+            <label><!-- Call Details --></label>
+            <section>Call Details</section>
+        </sections>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Product - 1 --></label>
+            <section>Product - 1</section>
+        </sections>
+        <sections>
+            <label><!-- Product -2 --></label>
+            <section>Product -2</section>
+        </sections>
+        <sections>
+            <label><!-- Promo - 1 --></label>
+            <section>Promo - 1</section>
+        </sections>
+        <sections>
+            <label><!-- Promo - 2 --></label>
+            <section>Promo - 2</section>
+        </sections>
+        <sections>
+            <label><!-- Promo - 3 --></label>
+            <section>Promo - 3</section>
+        </sections>
+        <sections>
+            <label><!-- Proudct -3 --></label>
+            <section>Proudct -3</section>
+        </sections>
+        <sections>
+            <label><!-- Sample - 3 --></label>
+            <section>Sample - 3</section>
+        </sections>
+        <sections>
+            <label><!-- Sample -1 --></label>
+            <section>Sample -1</section>
+        </sections>
+        <sections>
+            <label><!-- Sample -2 --></label>
+            <section>Sample -2</section>
+        </sections>
+        <sections>
+            <label><!-- Signature --></label>
+            <section>Signature</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

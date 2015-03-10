@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Geopointe Route Share --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Geopointe Route Share --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Route --></label>
+        <name>Route__c</name>
+        <relationshipLabel><!-- Geopointe Route Shares --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Geopointe Route Shares --></relationshipLabel>
+    </fields>
+    <gender><!-- Feminine --></gender>
+    <layouts>
+        <layout>Geopointe Route Share Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Geopointe Route Share Name --></nameFieldLabel>
+</CustomObjectTranslation>

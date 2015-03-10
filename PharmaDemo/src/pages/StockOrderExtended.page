@@ -1,0 +1,61 @@
+<apex:page standardController="Stock_Order__c" extensions="StockOrderExtension" 
+    action="{!LoadProductStructure}" standardStylesheets="true">
+     
+    <apex:includeScript value="{!$Resource.TreeLib}"/>
+
+    <apex:form >
+        <apex:detail relatedList="false" inlineEdit="true"/>   
+
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton value="Calculate Pricing"  />            
+                <apex:commandButton value="Submit" action="{!SaveOrderLineItems}" />
+                <apex:commandButton value="Close" action="{!CloseOrder}" />
+            </apex:pageBlockButtons>
+        
+            <apex:pageBlockSection title="Order Line Items" columns="2" collapsible="false">
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel >Total Volume</apex:outputLabel>
+                    <apex:outputText value="{0, number, #,##0.00}">
+                        <apex:param value="{!TotalOrderVol}" />
+                    </apex:outputText>
+                </apex:pageblockSectionItem>
+                <apex:pageblockSectionItem >
+                    <apex:outputLabel >Total Cost</apex:outputLabel>
+                    <apex:outputText value="{0, number, £#,##0.00}">
+                        <apex:param value="{!TotalOrderCost}" />
+                    </apex:outputText>
+                </apex:pageblockSectionItem>
+            </apex:pageBlockSection>
+            
+            <br/>
+            
+            <apex:variable value="1" var="rowNum"/>
+            
+            <apex:panelGroup >
+                <apex:commandButton style="width: 80px;" value="Collapse All" onclick="HideAll2('{!ListSize}');return false;" reRender="setupPanel" />
+                <apex:commandButton style="width: 80px;" value="Show All" onclick="ShowAll2('{!ListSize}');return false;" reRender="setupPanel" />
+            </apex:panelGroup>
+           
+            <table border="0" id="treeTable" width="100%">
+                <tr>
+                    <td width="50%">
+                        <apex:repeat value="{!stProducts}" var="st" first="0" rows="{!HalfListSize}">
+                            <c:OrderLineItemsList rowNum="{!VALUE(rowNum)}" st="{!st}" />
+                            <apex:variable var="rowNum" value="{!VALUE(rowNum) + 1}"/>
+                        </apex:repeat>
+                    </td>
+                    <td>
+                        <apex:repeat value="{!stProducts}" var="st" first="{!HalfListSize}">
+                            <c:OrderLineItemsList rowNum="{!VALUE(rowNum)}" st="{!st}" />
+                            <apex:variable var="rowNum" value="{!VALUE(rowNum) + 1}"/>
+                        </apex:repeat>
+                    </td>
+                </tr>
+               
+            </table>
+            
+        </apex:pageBlock>
+    </apex:form>
+  
+</apex:page>

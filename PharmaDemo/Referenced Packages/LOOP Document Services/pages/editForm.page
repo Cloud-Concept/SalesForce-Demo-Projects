@@ -1,0 +1,350 @@
+<apex:page standardController="Loop__DDP__c" extensions="Loop.editFormExt" title="Form Edit: {!ddp.Name}" id="ap">
+<style>
+	div.bgdl {
+		height: 41px;
+		padding-left: 4px;
+		height: 38px;
+		border-bottom: 3px solid #178AFF;
+		margin-top: -15px;
+	}
+	ul.tabs {
+		padding: 0;
+		margin: 0;
+	}
+	ul.tabs li {
+		float: left;
+		border-color: #BBBBBB #BBBBBB transparent;
+		border-style: solid;
+		border-width: 1px 1px 0 1px;
+		background-color: #F1F1F1;
+		-moz-border-radius: 4px 4px 0 0;
+		-webkit-border-radius: 4px 4px 0 0;
+		display: inline-block;
+		padding: 0 8px;
+		height: 32px;
+		margin: 5px 0 -3px 5px;
+	}
+	ul.tabs li div.outer {
+		padding-bottom: 2px;
+		font-weight: bold;
+		margin-right: -13px;
+		padding: 8px 8px 4px 0;
+	}
+	ul.tabs li div.outer div {
+		line-height: normal;
+		margin: 0;
+		padding 0;
+	}
+	ul.tabs li div.outer div a { text-decoration: none; }
+	span.defaultspan span a, span.defaultspan a { text-decoration: none; }
+	ul.tabs li.selectedTab {
+		/*height: 35px;*/
+		border-bottom: 3px solid #E2E7EF;
+		border-color: #178AFF #178AFF #E2E7EF;
+		background: -moz-linear-gradient(90deg,#E2E7EF,#FFFFFF);
+		background: -webkit-gradient(linear, center bottom, center top, from(#E2E7EF), to(#FFFFFF));
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF, endColorstr=#E2E7EF)";
+	}
+	ul.tabs li.notSelectedTab {
+		border-bottom: 3px solid #178AFF;
+	}
+	div.dlPageBlock {
+		border-top: 3px solid #178AFF;
+		-moz-border-radius: 4px 4px 4px 4px;
+		-webkit-border-radius: 4px 4px 4px 4px;
+	}
+	div.dlPageBlock div.pbSubheader.tertiaryPalette {
+		margin-top: 0;
+		border-width: 0;
+	}
+	body .pbBody table.list tr.topAlign td { vertical-align: top; }
+	.invisible { display: none; }
+	div.jqInfo {
+		position: absolute;
+		display: none;
+		border: 3px solid #A4CAEE;
+		background-color: #FFFFFF;
+		width: 205px;
+		padding: 10px;
+	}
+	div.jqInfo ul {
+		padding: 0;
+		margin: 10px 0px 5px 25px;
+	}
+	img.jqInfoIcon {
+		vertical-align: top;
+		cursor: pointer;
+	}
+	.pointer { cursor: pointer; }
+</style>
+<apex:includeScript value="https://apps.drawloop.com/scripts/jquery-code.js" />
+<apex:includeScript value="https://apps.drawloop.com/scripts/jquery.ui.js" />
+<script type="text/javascript">
+	jQuery.noConflict();
+	function sortHandle(event, ui) {
+		jQuery('[id="ap:af:pb:fpbs:pbt:tb"] tr').each( function(i) {
+			jQuery(this).find('[id$="fieldOrder"]').val(i);
+		});
+	}
+	function listValuesVisibility(e) {
+		if (e.value == 'Drop Down' || e.value == 'Edit Drop Down' || e.value == 'Radio'
+				|| e.value == 'Radio Inline' || e.value == 'Checkbox' || e.value == 'Checkbox Inline')
+			jQuery(e).parent().parent().parent().find('[id$="listItems"],[id$="listItemsHelp"]').show();
+		else
+			jQuery(e).parent().parent().parent().find('[id$="listItems"],[id$="listItemsHelp"]').hide();
+	}
+	function keyUp(event) {
+		if (event.keyCode == 38 || event.keyCode == 40) {
+			if (event.target.type != 'textarea' || event.ctrlKey) {
+				var target = jQuery(event.target);
+				var targetId = target.attr('id').split(':').pop();
+				var a = target.parent();
+				while (!a.is('tr'))
+					a = a.parent();
+				switch (event.keyCode) {
+					case 38:
+						a = a.prev();
+						break;
+					case 40:
+						a = a.next();
+						break;
+				}
+				a.find('[id$=":'+targetId+'"]').select();
+			}
+		}
+	}
+</script>
+<apex:outputPanel id="js">
+	<script type="text/javascript">
+		jQuery(function () {
+			jQuery('[id="ap:af:pb:fpbs"]').addClass('dlPageBlock');
+			jQuery('div.selectedTab').parent().addClass('selectedTab');
+			jQuery('div.notSelectedTab').parent().addClass('notSelectedTab');
+			jQuery('[id="ap:af:pb:fpbs:pbt:tb"]').sortable({ axis: 'y', items: 'tr', cursor: 'move' }).bind('sortstop', sortHandle);
+			jQuery('[id$=":fieldType"]').each(function() {
+				listValuesVisibility(this);
+			});
+			jQuery('body').click(function(e) { if (!jQuery(e.target).hasClass('jqInfoIcon')) jQuery('#listHelp,#validationHelp').hide(); });
+			jQuery('#validationHelp li').click(function(e) {
+				if (jQuery('#validationHelp').attr('val'))
+					jQuery('[id="'+jQuery('#validationHelp').attr('val')+'"]').text(jQuery(e.target).attr('val'));
+			});
+			jQuery('#listHelp li').click(function(e) {
+				if (jQuery('#listHelp').attr('val'))
+					jQuery('[id="'+jQuery('#listHelp').attr('val')+'"]').text(jQuery(e.target).attr('val').replace(/\|/g, '\n'));
+			});
+			jQuery('form.myForm input, form.myForm textarea').live('keyup', keyUp);
+		});
+	</script>
+</apex:outputPanel>
+	<apex:sectionHeader title="Form Edit" subtitle="{!ddp.Name}" help="http://support.drawloop.com/loop-platform/4-edit-forms/" />
+	<apex:outputPanel id="pageMsgs">
+		<apex:pageMessages />
+	</apex:outputPanel>
+	<apex:form id="af" styleClass="myForm">
+		<apex:actionFunction name="addStep" reRender="stepsDiv,pageMsgs,js" action="{!addStep}">
+			<apex:param value="" assignTo="{!newStepName}" name="newStepName" />
+		</apex:actionFunction>
+		<apex:actionFunction name="changeStep" reRender="fpbs,stepsDiv,pageMsgs,js" action="{!changeStep}">
+			<apex:param value="" assignTo="{!selectedStepId}" name="selectedStepId" />
+		</apex:actionFunction>
+		<apex:pageBlock title="Form Edit" mode="edit" id="pb">
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Save and Run" action="{!saveAndRun}" reRender="pageMsgs,quickSaveStatus,js" style="border: 2px solid green;" rendered="{!ddp.RecordType.Name=='Form'}" />
+				<apex:commandButton value="Load New Fields"
+					title="Any new fields added to your DDP Files will be added to the first step of the form."
+					action="{!loadNewFields}" reRender="pageMsgs,fpbs,js"
+					onclick="jQuery('[id=\'ap:af:pb:processing\']').show(); jQuery('[id=\''+this.id+'\']').attr('disabled', true).addClass('btnDisabled');"
+					oncomplete="jQuery('[id=\'ap:af:pb:processing\']').hide(); jQuery('[id=\''+this.id+'\']').attr('disabled', false).removeClass('btnDisabled');" />
+				<apex:commandButton value="Quick Save" action="{!quickSave}" reRender="pageMsgs,quickSaveStatus,fpbs,js" />
+				<apex:commandButton value="Save" action="{!save}" reRender="pageMsgs,quickSaveStatus,fpbs,js" />
+				<apex:commandButton value="Cancel" action="{!cancel}" immediate="true" />
+			</apex:pageBlockButtons>
+			<apex:outputPanel id="processing" layout="block" style="display: none; text-align: center;">
+				<apex:image alt="processing" value="https://apps.drawloop.com/images/widgets/throbber.gif" />
+			</apex:outputPanel>
+			<apex:pageBlockSection columns="1" id="pbs">
+				<apex:pageBlockSectionItem rendered="{!AND(showEditFormMessage,ddp.RecordType.Name='Form')}" >
+					<apex:pageMessage severity="info" summary="Click Save and Run to test. You can edit your DDP form fields below. For help, click the Help for this Page link at the top right corner of this page.">
+						<apex:commandLink value="Remove this message." style="margin-left: 8px; font-size: 80%;" action="{!hideEditFormMessage}" rerender="pbs" status="removeMessage" />
+						<apex:actionStatus id="removeMessage" startText="• • •" stopText="" style="font-size: 80%;" />
+					</apex:pageMessage>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem rendered="{!AND(showEditFormMessage,ddp.RecordType.Name!='Form')}" >
+					<apex:pageMessage severity="info" summary="You can edit your DDP form fields below. For help, click the Help for this Page link at the top right corner of this page.">
+						<apex:commandLink value="Remove this message." style="margin-left: 8px; font-size: 80%;" action="{!hideEditFormMessage}" rerender="pbs" status="removeMessage2" />
+						<apex:actionStatus id="removeMessage2" startText="• • •" stopText="" style="font-size: 80%;" />
+					</apex:pageMessage>
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputPanel styleClass="pbInfo" layout="block" id="quickSaveStatus">
+						<apex:outputPanel rendered="{!quickSaved}" id="quickSaveSpan">
+							Save was successful.
+							<script>jQuery('[id$=":quickSaveSpan"]').delay(2000).fadeOut(1000)</script>
+						</apex:outputPanel>
+					</apex:outputPanel>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:outputPanel styleClass="bgdl" layout="block" id="stepsDiv">
+				<apex:dataList value="{!steps}" var="s" styleClass="tabs" style="float: none;">
+					<apex:outputPanel layout="block" styleClass="outer {!IF(s.s.Id==selectedStepId,'selectedTab','notSelectedTab')}">
+						<div>
+							<apex:actionFunction name="renameStep{!s.s.Id}" reRender="stepPanel,stepsDiv,pageMsgs,js" action="{!s.changeStepName}">
+								<apex:param value="" assignTo="{!s.s.Name}" name="newName" />
+							</apex:actionFunction>
+							<span class="pointer" onclick="changeStep('{!s.s.Id}');">{!s.s.Name}</span>
+							<apex:image value="https://apps.drawloop.com/images/icons/platform/edit.gif"
+								style="padding: 0 2px;" styleClass="pointer" alt="edit"
+								onclick="var sn = prompt('Step Name','{!s.s.Name}'); if (sn) renameStep{!s.s.Id}(sn); else return false;" />
+							<apex:commandLink rerender="stepPanel,stepsDiv,fpbs,pageMsgs,js"
+								onclick="if (!confirm('Are you sure?')) return false;" action="{!deleteStep}">
+								<apex:param value="{!s.s.Id}" assignTo="{!selectedStepId}" name="deleteStep" />
+								<apex:image alt="del" value="https://apps.drawloop.com/images/icons/platform/cross.png" />
+							</apex:commandLink>
+						</div>
+					</apex:outputPanel>
+				</apex:dataList>
+				<ul class="tabs">
+					<li>
+						<div class="outer {!IF(selectedStepId=='ignored','selectedTab','notSelectedTab')} pointer">
+							<span style="padding-right: 5px;" onclick="changeStep('ignored');">ignored fields</span>
+						</div>
+					</li>
+					<li onclick="var ns = prompt('Step Name'); if (ns) addStep(ns); else return false;">
+						<div class="outer pointer notSelectedTab"><span style="padding-right: 5px;">
+							<img src="https://apps.drawloop.com/graphics/icons/add_16.gif" />
+							add step
+						</span></div>
+					</li>
+				</ul>
+			</apex:outputPanel>
+			<apex:outputPanel layout="block" id="pbsOP" style="clear: both; margin-top: -3px;">
+				<apex:pageBlockSection title="{!$ObjectType.Loop__Form_Field__c.labelPlural}" collapsible="false" id="fpbs" columns="1">
+					<apex:outputPanel >
+						<apex:selectList size="1" value="{!moveToStep}">
+							<apex:selectOption itemLabel="--move to--" itemValue="" />
+							<apex:selectOptions value="{!stepOptions}" />
+							<apex:actionSupport event="onchange" action="{!moveFields}" reRender="fpbs,pageMsgs,js"
+								onsubmit="if (jQuery('[id$=\':selected\']:checked').size()==0) { alert('No fields selected.'); this.value = ''; return false; }" />
+						</apex:selectList>
+						<apex:commandButton value="ignore" action="{!moveFields}" reRender="fpbs,pageMsgs,js" title="ignore selected fields"
+							onclick="if (jQuery('[id$=\':selected\']:checked').size()==0) { alert('No fields selected.'); return false; }"
+							rendered="{!NOT(selectedStepId='ignored')}">
+							<apex:param value="ignored" assignTo="{!moveToStep}" name="ignore" />
+						</apex:commandButton>
+						<apex:commandButton value="delete" action="{!deleteFields}" reRender="fpbs,pageMsgs,js"
+							onclick="if (jQuery('[id$=\':selected\']:checked').size()==0) { alert('No fields selected.'); return false; }"
+							rendered="{!selectedStepId='ignored'}" />
+						<apex:outputPanel rendered="{!selectedStepId=='ignored'}">
+							Fields in this section will not be included in the web form.
+						</apex:outputPanel>
+					</apex:outputPanel>
+					<apex:pageBlockTable value="{!fields}" var="f" id="pbt" rowClasses="topAlign">
+						<apex:column id="fieldSelect" style="width: 25px;">
+							<apex:inputCheckbox value="{!f.isSelected}" id="selected" />
+						</apex:column>
+						<apex:column headerValue="{!$ObjectType.Loop__Form_Field__c.fields.Loop__Tag__c.label}" style="cursor: move;">
+							<apex:outputField value="{!f.f.Loop__Tag__c}" id="fieldTag" />
+							<apex:inputHidden value="{!f.f.Loop__Order__c}" id="fieldOrder" />
+						</apex:column>
+						<apex:column headerValue="{!$ObjectType.Loop__Form_Field__c.fields.Name.label}" rendered="{!NOT(selectedStepId='ignored')}">
+							<apex:inputField value="{!f.f.Name}" required="true" />
+						</apex:column>
+						<apex:column headerValue="{!$ObjectType.Loop__Form_Field__c.fields.Loop__Type__c.label}" rendered="{!NOT(selectedStepId='ignored')}">
+							<apex:inputField value="{!f.f.Loop__Type__c}" required="true" id="fieldType" onchange="listValuesVisibility(this);" />
+						</apex:column>
+						<apex:column headerValue="{!$ObjectType.Loop__Form_Field__c.fields.Loop__Default_Value__c.label}" rendered="{!NOT(selectedStepId='ignored')}">
+							<apex:outputPanel id="defaultPanel" styleClass="defaultspan">
+								<apex:outputPanel style="white-space: nowrap;">
+									<apex:inputField value="{!f.f.Loop__Default_Value__c}" rendered="{!NOT(f.sfDefault)}" />
+									<apex:commandLink rendered="{!NOT(f.sfDefault)}" rerender="defaultPanel,pageMsgs,js">
+										<apex:param value="true" assignTo="{!f.sfDefault}" name="useSfDefault" />
+										<img class="lookupIcon" title="select platform value" src="/s.gif"
+											onmouseover="jQuery(this).addClass('lookupIconOn');" onmouseout="jQuery(this).removeClass('lookupIconOn');" />
+									</apex:commandLink>
+								</apex:outputPanel>
+								<apex:outputPanel style="white-space: nowrap;" layout="block">
+									<apex:selectList size="1" value="{!f.sfObject}" rendered="{!f.sfDefault}">
+										<apex:selectOptions value="{!sfObjects}" />
+										<apex:actionSupport event="onchange" rerender="sfFields,pageMsgs,js" action="{!f.changeObject}" status="changeObject">
+											<apex:param value="{!f.sfObject}" name="sfObject" />
+										</apex:actionSupport>
+									</apex:selectList>
+									<apex:actionStatus id="changeObject" startText="• • •" stopText="" />
+								</apex:outputPanel>
+								<apex:outputPanel style="white-space: nowrap;">
+									<apex:selectList size="1" value="{!f.sfField}" rendered="{!f.sfDefault}" id="sfFields">
+										<apex:selectOptions value="{!f.sfFields}" />
+										<apex:actionSupport event="onchange" rerender="addDays" />
+									</apex:selectList>
+									<apex:outputPanel id="addDays">
+										<apex:inputText value="{!f.todayPlus}" title="additional days" style="width: 50px;" rendered="{!AND(f.sfField='Today+',f.sfDefault)}" />
+									</apex:outputPanel>
+									<apex:commandLink rendered="{!f.sfDefault}" rerender="defaultPanel,pageMsgs,js">
+										<apex:param value="false" assignTo="{!f.sfDefault}" name="useSfDefault" />
+										<apex:param value="" assignTo="{!f.f.Loop__Default_Value__c}" name="default" />
+										<apex:image value="https://apps.drawloop.com/images/icons/platform/cross.png" title="use text value" />
+									</apex:commandLink>
+								</apex:outputPanel>
+							</apex:outputPanel>
+						</apex:column>
+						<apex:column headerValue="{!$ObjectType.Loop__Form_Field__c.fields.Loop__Help_Text__c.label}" rendered="{!NOT(selectedStepId='ignored')}">
+							<apex:inputField value="{!f.f.Loop__Help_Text__c}" />
+						</apex:column>
+						<apex:column style="white-space: nowrap;" headerValue="{!$ObjectType.Loop__Form_Field__c.fields.Loop__List_Values__c.label}" rendered="{!NOT(selectedStepId='ignored')}">
+							<apex:inputField value="{!f.f.Loop__List_Values__c}" style="display: none;" id="listItems" />
+							<apex:image styleClass="jqInfoIcon" value="https://apps.drawloop.com/images/icons/platform/information.png" id="listItemsHelp"
+								onclick="var o = jQuery(this).position(); jQuery('#listHelp').css({ top:o.top, left:o.left+16 }).attr('val',jQuery(this).prev().attr('id')).toggle();" />
+						</apex:column>
+						<apex:column style="white-space: nowrap;" headerValue="{!$ObjectType.Loop__Form_Field__c.fields.Loop__Validation__c.label}" rendered="{!NOT(selectedStepId='ignored')}">
+							<apex:inputField value="{!f.f.Loop__Validation__c}" />
+							<apex:image styleClass="jqInfoIcon" alt="info" value="https://apps.drawloop.com/images/icons/platform/information.png"
+								onclick="var o = jQuery(this).position(); jQuery('#validationHelp').css({ top:o.top, left:o.left+16 }).attr('val',jQuery(this).prev().attr('id')).toggle();" />
+						</apex:column>
+						<apex:column headerValue="{!$ObjectType.Loop__Form_Field__c.fields.Loop__Error_Message__c.label}" rendered="{!NOT(selectedStepId='ignored')}">
+							<apex:inputField value="{!f.f.Loop__Error_Message__c}" />
+						</apex:column>
+					</apex:pageBlockTable>
+					<apex:outputPanel layout="block" style="padding-left: 10px; font-weight: bold;" rendered="{!noFields}">
+						No fields exist for this step.
+					</apex:outputPanel>
+				</apex:pageBlockSection>
+			</apex:outputPanel>
+		</apex:pageBlock>
+	</apex:form>
+	<div class="jqInfo" id="listHelp" val="">
+		Each item must be on its own line.  An item can contain a separate display and pass value by separating the values with a comma.
+		<ul>
+			<li class="pointer" val="Alabama,AL|Alaska,AK|Arizona,AZ|Arkansas,AR|California,CA|Colorado,CO|Connecticut,CT|Delaware,DE|Florida,FL|Georgia,GA|Hawaii,HI|Idaho,ID|Illinois,IL|Indiana,IN|Iowa,IA|Kansas,KS|Kentucky,KY|Louisiana,LA|Maine,ME|Maryland,MD|Massachusetts,MA|Michigan,MI|Minnesota,MN|Mississippi,MS|Missouri,MO|Montana,MT|Nebraska,NE|Nevada,NV|New Hampshire,NH|New Jersey,NJ|New Mexico,NM|New York,NY|North Carolina,NC|North Dakota,ND|Ohio,OH|Oklahoma,OK|Oregon,OR|Pennsylvania,PA|Rhode Island,RI|South Carolina,SC|South Dakota,SD|Tennessee,TN|Texas,TX|Utah,UT|Vermont,VT|Virginia,VA|Washington,WA|West Virginia,WV|Wisconsin,WI|Wyoming,WY"
+				>States</li>
+			<li class="pointer" val="1|2|3|4|5">Numbers 1 to 5</li>
+			<li class="pointer" val="One,1|Two,2|Three,3|Four,4|Five,5">Text/Numbers 1 to 5</li>
+			<li class="pointer" val="One|Two|Three|Four|Five">Text 1 to 5</li>
+		</ul>
+	</div>
+	<div class="jqInfo" id="validationHelp" val="">
+		<span>This can be any regular expression you wish to use to validate this field.</span><br />
+		<br />
+		<a target="_blank" href="http://regexlib.com/CheatSheet.aspx">Regular Expression Cheatsheet</a><br />
+		<br />
+		<span>Below is sample "required" validation.  To make any of them not required, replace the "^" at the beginning with "(^" and the "$" at the end with "$)|^$"</span>
+		<ul>
+			<li class="pointer" val="^\d+$">Integer</li>
+			<li class="pointer" val="^(((January|February|March|April|May|June|July|August|September|October|November|December)(\s)([1-9]|0[1-9]|[12][0-9]|3[01]),(\s)([12][0-9]{3}))|(^(([1-9]|0[1-9]|1[012])[/\-]{1,1}([1-9]|0[1-9]|[12][0-9]|3[01])[/\-]{1,1}([12][0-9]{3}|[01][0-9]{1}))))$">
+				Date</li>
+			<li class="pointer" val="^((^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$))$">
+				Email Address</li>
+			<li class="pointer" val="^\d+(?:\.\d{0,2})?$">Number</li>
+			<li class="pointer" val="^([0-9]*|\d*\.\d{1}?\d*)%$">Percent</li>
+			<!--li class="pointer" val="">Range (replace # with numbers)</li-->
+			<li class="pointer" val="^(\\$)(\d{1,3}(\,\d{3})*|([1-9]+\d*))(.\d{1,2})?$">
+				U.S. Currency</li>
+			<li class="pointer" val="^(1|\+1)?(\-|\.)?(\()?\d{3}(\))?(\s)?(-|\.)?\d{3}(-|\.)?\d{4}(\s)?((x|ext|ext.|extension)?(\s)?(\d{1,5}))?$">
+				U.S. Phone Number</li>
+			<li class="pointer" val="^\d{5}(-\d{4})?$">Zip Code</li>
+			<li class="pointer" val="^([\s\S]){1,50}$">String</li>
+			<li class="pointer" val="^s?https?:\/\/[-_.!~*'()a-zA-Z0-9;\/?:\@&=+\$,%#]+$">
+				URL</li>
+		</ul>
+	</div>
+</apex:page>

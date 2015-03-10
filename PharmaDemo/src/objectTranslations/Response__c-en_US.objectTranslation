@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Response</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Responses</value>
+    </caseValues>
+    <fields>
+        <label><!-- Invitation --></label>
+        <name>Invitation__c</name>
+        <relationshipLabel><!-- Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Question Text --></label>
+        <name>Question_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Question Type --></label>
+        <name>Question_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Question --></label>
+        <name>Question__c</name>
+        <relationshipLabel><!-- Responses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Response Yes No --></label>
+        <name>Response_Bool__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Date --></label>
+        <name>Response_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- used for radio type responses --></help>
+        <label><!-- Response Number --></label>
+        <name>Response_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Response Text --></label>
+        <name>Response__c</name>
+    </fields>
+    <fields>
+        <help><!-- A summary field that takes the type of response and translates it into Text --></help>
+        <label><!-- Response Detail --></label>
+        <name>Summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text Area --></label>
+        <name>Text_Area__c</name>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <layouts>
+        <layout>Response Layout</layout>
+        <sections>
+            <label><!-- New Section --></label>
+            <section>New Section</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Die Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Eine Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Die Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Die Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Eine Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Die Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Der Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Einer Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Der Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Der Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Einer Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Bestellung</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Den Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Bestellungen</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Bestellungen</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Zugriff</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_access</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Zugriffsebene</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_access_level</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Hinweis</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_alert</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Betrag</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_amount</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-basierte Aktenkoffer</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_based_briefcase</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung -Schlusstermin</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_close_date</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung geschlossen</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_closed</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Mitbewerber</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_competitor</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Kontaktrolle</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_contact_role</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung erstellt von</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_creator</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Währung</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_currency</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Beschreibung</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bestellung-Beschreibung</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_description</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Abteilung</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bestellung-Abteilung</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_division</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung bearbeiten</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_edit</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Feld</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bestellung-Felder</value>
+        </caseValues>
+        <gender>Neuter</gender>
+        <name>opportunity_field</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Prognose</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_forecast</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Prognosekategorie</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_forecast_category</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Verlauf</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_history</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Verlaufs-ID</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_history_id</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Verlaufsinformationen</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_history_information</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-ID</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_id</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Info</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_info</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Information</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_information</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung Lead-Quelle</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_lead_source</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Belegposten</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_line_item</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Belegpostenfeld</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bestellung-Belegpostenfelder</value>
+        </caseValues>
+        <gender>Neuter</gender>
+        <name>opportunity_line_item_field</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Belegposten-ID</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_line_item_id</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Name</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bestellung-Namen</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_name</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Inhaber</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_owner</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Inhaberalias</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_owner_alias</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Inhaber-E-Mail</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_owner_email</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Auswahlliste</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_picklists</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Pipeline</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_pipeline</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Menge</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_quantity</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Datensatztyp</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bestellung-Datensatztypen</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_record_type</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Bericht</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_report</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Phase</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bestellung-Phasen</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_stage</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Phasenname</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_stage_name</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Phasenstatus</value>
+        </caseValues>
+        <gender>Neuter</gender>
+        <name>opportunity_stage_status</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Status</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_status</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Teammitglied</value>
+        </caseValues>
+        <gender>Neuter</gender>
+        <name>opportunity_team_member</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Teammitglied-ID</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_team_member_id</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Region</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_territory</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Typ</value>
+        </caseValues>
+        <gender>Masculine</gender>
+        <name>opportunity_type</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Ansicht</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bestellung-Ansichten</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_view</name>
+    </fields>
+    <fields>
+        <label><!-- Adequacy of Current Position --></label>
+        <name>Adequacy_of_Current_Position__c</name>
+        <picklistValues>
+            <masterLabel>Comfort</masterLabel>
+            <translation><!-- Comfort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Concern</masterLabel>
+            <translation><!-- Concern --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discomfort</masterLabel>
+            <translation><!-- Discomfort --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Euphoria</masterLabel>
+            <translation><!-- Euphoria --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fear</masterLabel>
+            <translation><!-- Fear --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Great</masterLabel>
+            <translation><!-- Great --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>OK</masterLabel>
+            <translation><!-- OK --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Panic</masterLabel>
+            <translation><!-- Panic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Secure</masterLabel>
+            <translation><!-- Secure --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Worry</masterLabel>
+            <translation><!-- Worry --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Competition --></label>
+        <name>Competition__c</name>
+        <picklistValues>
+            <masterLabel>Competitor 1</masterLabel>
+            <translation><!-- Competitor 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor 2</masterLabel>
+            <translation><!-- Competitor 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor 3</masterLabel>
+            <translation><!-- Competitor 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Competitor 4</masterLabel>
+            <translation><!-- Competitor 4 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Current Volume --></label>
+        <name>Current_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hover Details --></label>
+        <name>ITBrelViz__Hover_Details__c</name>
+    </fields>
+    <fields>
+        <name>LeadSource</name>
+        <picklistValues>
+            <masterLabel>Advertisement</masterLabel>
+            <translation>Werbung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Referral</masterLabel>
+            <translation>Mitarbeiterempfehlung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Referral</masterLabel>
+            <translation>Externe Empfehlung</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation>Sonstiges</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation>PR</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Internal</masterLabel>
+            <translation>Internes Seminar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Partner</masterLabel>
+            <translation>Partnerseminar</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Show</masterLabel>
+            <translation>Messe</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of mouth</masterLabel>
+            <translation>Mundpropaganda</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- OfflineId --></label>
+        <name>OfflineId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Potential Volume --></label>
+        <name>Potential_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <name>StageName</name>
+        <picklistValues>
+            <masterLabel>Closed Lost</masterLabel>
+            <translation><!-- Closed Lost --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Won</masterLabel>
+            <translation><!-- Closed Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Id. Decision Makers</masterLabel>
+            <translation><!-- Id. Decision Makers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Needs Analysis</masterLabel>
+            <translation><!-- Needs Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negotiation/Review</masterLabel>
+            <translation><!-- Negotiation/Review --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Perception Analysis</masterLabel>
+            <translation><!-- Perception Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Proposal/Price Quote</masterLabel>
+            <translation><!-- Proposal/Price Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Prospecting</masterLabel>
+            <translation><!-- Prospecting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Qualification</masterLabel>
+            <translation><!-- Qualification --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Proposition</masterLabel>
+            <translation><!-- Value Proposition --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <name>Type</name>
+        <picklistValues>
+            <masterLabel>Existing Business</masterLabel>
+            <translation>Existierender Kunde</translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Business</masterLabel>
+            <translation>Neuer Kunde</translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Reference to the Geocode object holding all of mapping information for the record. --></help>
+        <label><!-- Geocode --></label>
+        <name>geopointe__Geocode__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <gender>Feminine</gender>
+    <layouts>
+        <layout>Opportunity Layout</layout>
+        <sections>
+            <label><!-- Miller Heiman Integration --></label>
+            <section>Miller Heiman Integration</section>
+        </sections>
+        <sections>
+            <label>Nützliche Links</label>
+            <section>Useful Links</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Standard --></label>
+        <name>Standard</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- Add_Default_Sales_Team2 --></label>
+        <name>Add_Default_Sales_Team2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Action_Plans --></label>
+        <name>Create_Action_Plans</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Opportunity_Action_Plan --></label>
+        <name>Create_Opportunity_Action_Plan</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP --></label>
+        <name>Loop__LOOP</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP_Merge --></label>
+        <name>Loop__LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOPlus --></label>
+        <name>Loop__LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOP_Merge --></label>
+        <name>Loop__Mass_LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOPlus --></label>
+        <name>Loop__Mass_LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- WVShowOnMap --></label>
+        <name>Wherevantage__WVShowOnMap</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map --></label>
+        <name>geopointe__Map</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_Records_Opportunity --></label>
+        <name>geopointe__Map_Records_Opportunity</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_Records_Opportunity2 --></label>
+        <name>geopointe__Map_Records_Opportunity2</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_newWindow --></label>
+        <name>geopointe__Map_newWindow</name>
+    </webLinks>
+</CustomObjectTranslation>

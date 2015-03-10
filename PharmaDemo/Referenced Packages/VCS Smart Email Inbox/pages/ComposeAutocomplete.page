@@ -1,0 +1,19 @@
+<apex:page controller="VCSSA.MailBoxController" showheader="false" sidebar="false" contentType="text/javascript" action="{!initLongProcess}">
+<apex:outputPanel layout="none" rendered="{!islongprocess==0}">
+<apex:repeat value="{!JSItems}" var="m">
+{! m.email&'|'&m.sobjid&'|'&m.sobjtype&'|'&m.name }
+</apex:repeat>
+
+</apex:outputPanel>
+<apex:outputPanel layout="none" rendered="{!islongprocess==1}">
+	longprocess_continue
+	
+	[{!actionj.DEBUG}]
+</apex:outputPanel>
+<apex:outputPanel layout="none" rendered="{!islongprocess==2}">
+	longprocess_stop
+
+	[{!actionj.DEBUG}]
+</apex:outputPanel>
+
+</apex:page>

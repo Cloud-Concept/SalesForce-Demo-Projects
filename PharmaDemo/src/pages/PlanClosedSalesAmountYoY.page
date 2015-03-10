@@ -1,0 +1,30 @@
+<apex:page standardcontroller="SFDC_Acct_Plan__c" extensions="PlanDashboardsController" showheader="false">
+
+<html>
+  <head>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Fiscal Year');
+        data.addColumn('number', 'Sales');
+        <apex:outputText value="{!closedSalesAmountYoY}" />
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, {width: 500, height: 200, title: 'Plan Sales, Year over Year', 
+                          legend: {position: 'none'},
+                          hAxis: {title: 'Fiscal Year'}, 
+                          vAxis: {title: 'Value', minValue: 0, format:'£#,###' }});
+      }
+ </script>
+  </head>
+
+  <body>
+    <div id="chart_div"></div>
+  </body>
+</html>
+
+</apex:page>

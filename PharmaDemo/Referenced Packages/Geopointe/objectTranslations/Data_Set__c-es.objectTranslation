@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Data Set --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Data Set --></value>
+    </caseValues>
+    <fields>
+        <help><!-- When checked, this Data Set becomes available on the Map tab. --></help>
+        <label>Disponible (Mapas)</label>
+        <name>Available_Maps__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, this Data Set becomes available on the Visualize tab. --></help>
+        <label>Disponible (Visualize)</label>
+        <name>Available_Visualize__c</name>
+    </fields>
+    <fields>
+        <label>Colores marcadores por</label>
+        <name>Color_Markers_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- The HEX color that the data set markers should be in --></help>
+        <label>Color</label>
+        <name>Color__c</name>
+    </fields>
+    <fields>
+        <label><!-- Data Set Name --></label>
+        <name>Data_Set_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Filter Logic --></label>
+        <name>Filter_Logic__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, the system will output a formatted address in 1 column of the data table. --></help>
+        <label><!-- Formatted Address for Data Table --></label>
+        <name>Formatted_Address_for_Data_Table__c</name>
+    </fields>
+    <fields>
+        <label><!-- Map Icon Height (in pixels) --></label>
+        <name>Map_Icon_Height__c</name>
+    </fields>
+    <fields>
+        <help><!-- Internet address of an icon you&apos;d like to use for this data set. It is recommended this file be accessible via HTTPS (e.g. The Documents tab in Salesforce is a good place for these files) --></help>
+        <label><!-- Map Icon URL --></label>
+        <name>Map_Icon_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Map Icon Width (in pixels) --></label>
+        <name>Map_Icon_Width__c</name>
+    </fields>
+    <fields>
+        <help><!-- The name of the map object this data set is based upon. The value in this field should match the value in the corresponding Map Object record (including being in lower case). --></help>
+        <label><!-- Map Object --></label>
+        <name>Map_Object__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marker Icon --></label>
+        <name>Marker_Icon__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marker Type --></label>
+        <name>Marker_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- If this value is checked, the data set will automatically filter for records where OwnerID is the running user. --></help>
+        <label><!-- &quot;My&quot; Records --></label>
+        <name>My_Records__c</name>
+    </fields>
+    <fields>
+        <help><!-- This value controls how many of the selected fields are displayed in the search results table under the map. For example, if &apos;5&apos; is selected, the first 5 fields the current user has access to will be displayed in the table. --></help>
+        <label><!-- Number of Fields Displayed in Table --></label>
+        <name>Number_of_Fields_Displayed_in_Table__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies whether the Order By should be done in an Ascending or Descending manner. --></help>
+        <label><!-- Order By Direction --></label>
+        <name>Order_By_Direction__c</name>
+    </fields>
+    <fields>
+        <help><!-- The field that the system should order the query by when performing a query using this Data Set. If a value is not specified, the system defaults to sorting by the field you specified as the &quot;Name Field&quot; above. --></help>
+        <label><!-- Order By Field --></label>
+        <name>Order_By_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the ID of the Data Set owner.  For public data sets, this will be the Org ID. For private ones, this will be a user ID. --></help>
+        <label><!-- Owner ID --></label>
+        <name>Owner_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies the Profile IDs that have access to Geopointe. If this field is null, it means that there is no restriction based upon user profile --></help>
+        <label><!-- Profile Access --></label>
+        <name>Profile_Access__c</name>
+    </fields>
+    <fields>
+        <help><!-- Specifies the Public Group IDs that have access to this Data Set.  If this field is null, it means that the Data Set has no restrictions based upon Public Group. --></help>
+        <label><!-- Public Group Access --></label>
+        <name>Public_Group_Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- Show Filter --></label>
+        <name>Show_Filter__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;Active&quot; or &quot;Inactive&quot; defines the status of the Data Set. Inactive Data Sets cannot be used for mapping. --></help>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <gender><!-- Feminine --></gender>
+</CustomObjectTranslation>

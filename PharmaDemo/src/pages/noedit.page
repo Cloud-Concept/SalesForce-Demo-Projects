@@ -1,0 +1,6 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Call Report is Locked</h1>
+Sorry. No detail of a Call Report can be amended once locked
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

@@ -1,0 +1,21 @@
+<apex:page standardController="Contact" recordSetVar="contacts" tabStyle="Event" extensions="createMultipleContactEventRecords" action="{!createCallReports}">
+    <apex:sectionHeader title="New" subtitle="Calls"/>
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="1" title="Calls">
+                <apex:pageBlockTable value="{!calls}" var="o">
+                    <apex:column headerValue="Date">
+                        <a href="/{!o.Id}" target="_top">{!o.StartDate__c}</a>
+                    </apex:column>
+                    <apex:column value="{!o.WhoId}"/>                    
+                    <apex:column value="{!o.AccountId}"/>
+                    <apex:column value="{!o.Location}"/>                    
+                    <apex:column value="{!o.Postal_Code__c}"/>                    
+                    <apex:column value="{!o.OwnerId}"/>
+                    <apex:column value="{!o.Subject}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

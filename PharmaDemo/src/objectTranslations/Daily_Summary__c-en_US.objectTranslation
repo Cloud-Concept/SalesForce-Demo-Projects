@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Monthly Summary</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Monthly Summaries</value>
+    </caseValues>
+    <fields>
+        <label><!-- Calls --></label>
+        <name>Calls__c</name>
+    </fields>
+    <fields>
+        <label><!-- Days --></label>
+        <name>Days__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Submit Date --></label>
+        <name>Last_Submit_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medical Rep --></label>
+        <name>Medical_Rep__c</name>
+        <relationshipLabel><!-- Monthly Summaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Month --></label>
+        <name>Month__c</name>
+    </fields>
+    <fields>
+        <label><!-- On Territory --></label>
+        <name>On_Territory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Period --></label>
+        <name>Period__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target --></label>
+        <name>Target__c</name>
+        <relationshipLabel><!-- Monthly Summaries --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Annual Leave</masterLabel>
+            <translation><!-- Annual Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bereavement Leave</masterLabel>
+            <translation><!-- Bereavement Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Meeting</masterLabel>
+            <translation><!-- Company Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compassionate Leave</masterLabel>
+            <translation><!-- Compassionate Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compensate Leave</masterLabel>
+            <translation><!-- Compensate Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conference</masterLabel>
+            <translation><!-- Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congratulatory Leave</masterLabel>
+            <translation><!-- Congratulatory Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Convention</masterLabel>
+            <translation><!-- Convention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency Leave</masterLabel>
+            <translation><!-- Emergency Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>On Territory</masterLabel>
+            <translation><!-- On Territory --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paternity/Maternity Leave</masterLabel>
+            <translation><!-- Paternity/Maternity Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharma Event</masterLabel>
+            <translation><!-- Pharma Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Holiday</masterLabel>
+            <translation><!-- Public Holiday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replacement Off</masterLabel>
+            <translation><!-- Replacement Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sick Leave</masterLabel>
+            <translation><!-- Sick Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teambuilding</masterLabel>
+            <translation><!-- Teambuilding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacation Leave</masterLabel>
+            <translation><!-- Vacation Leave --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

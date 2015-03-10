@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Route</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Routes</value>
+    </caseValues>
+    <fields>
+        <help><!-- Google Only --></help>
+        <label><!-- Avoid Highways --></label>
+        <name>Avoid_Highways__c</name>
+    </fields>
+    <fields>
+        <help><!-- MapQuest Only --></help>
+        <label><!-- Avoid Tolls --></label>
+        <name>Avoid_Tolls__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, this route was generated from the calendar. This field is maintained systematically and should not be manually changed. --></help>
+        <label><!-- Calendar Route --></label>
+        <name>Calendar_Route__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date this route is scheduled for. --></help>
+        <label><!-- Date --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Draggable --></label>
+        <name>Draggable__c</name>
+    </fields>
+    <fields>
+        <label><!-- Locations 1 --></label>
+        <name>Locations_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Locations 2 --></label>
+        <name>Locations_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Locations 3 --></label>
+        <name>Locations_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mapping Provider --></label>
+        <name>Mapping_Provider__c</name>
+        <picklistValues>
+            <masterLabel>Google</masterLabel>
+            <translation><!-- Google --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>MapQuest</masterLabel>
+            <translation><!-- MapQuest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Optimized --></label>
+        <name>Optimized__c</name>
+    </fields>
+    <fields>
+        <label><!-- Route Type --></label>
+        <name>Route_Type__c</name>
+        <picklistValues>
+            <masterLabel>fastest</masterLabel>
+            <translation><!-- fastest --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>optimized</masterLabel>
+            <translation><!-- optimized --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>pedestrian</masterLabel>
+            <translation><!-- pedestrian --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>shortest</masterLabel>
+            <translation><!-- shortest --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates that this is used by the system as a temporary record. It is not intended to be saved long-term. The system will periodically clean these records up. --></help>
+        <label><!-- Temporary --></label>
+        <name>Temporary__c</name>
+    </fields>
+    <fields>
+        <help><!-- MapQuest only --></help>
+        <label><!-- Thumb Maps --></label>
+        <name>Thumb_Maps__c</name>
+    </fields>
+    <fields>
+        <label><!-- Units --></label>
+        <name>Units__c</name>
+        <picklistValues>
+            <masterLabel>k</masterLabel>
+            <translation><!-- k --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>m</masterLabel>
+            <translation><!-- m --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Route Layout</layout>
+        <sections>
+            <label><!-- - hidden = --></label>
+            <section>- hidden =</section>
+        </sections>
+        <sections>
+            <label><!-- Locations XML --></label>
+            <section>Locations XML</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

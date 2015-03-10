@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CampaignSharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <ownerRules>
+        <fullName>SitesUsers</fullName>
+        <sharedTo>
+            <group>SitesUsers</group>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+        <campaignAccessLevel>Read</campaignAccessLevel>
+        <name>Sites Users</name>
+    </ownerRules>
+</CampaignSharingRules>

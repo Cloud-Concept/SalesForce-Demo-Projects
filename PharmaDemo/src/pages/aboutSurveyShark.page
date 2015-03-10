@@ -1,0 +1,66 @@
+<apex:page >
+	<apex:pageblock >
+		<p>This is a useful example application, it demonstrates how to
+		build a survey app on Force.com and Sites.</p>
+<br />
+<h4>Included in this application</h4>
+		<p>A <b>Survey</b> object contains one or more <b>Question</b>
+		objects and forms the basis for the survey content.</p>
+
+		<p>The <b>Invitation</b> object asks a contact to attend to the
+		survey. This is the object that forms the basis for asking a contact
+		to fill in the data for a particular survey</p>
+
+		<p>Data is stored in <b>Response</b> objects when the survey is
+		complete</p>
+
+		<p>There are links or buttons for often performed operations.
+		<ul>
+			<li>A button to mass edit questions</li>
+			<li>a link to close a survey and delete outstanding invitations
+			, called close survey</li>
+
+			<li>a link on the invitation to preview / take the survey, this
+			can be included in email templates</li>
+
+			<li>a link to mass create invitations</li>
+			<li>a link to mass send invitations</li>
+
+		</ul>
+		</p>
+<p>
+In addition to the objects, pages and code, the package includes two simple email templates that will allow you to customize your own email 
+invitaion templates.  These templates, and any template in the survey folder are available to be used by the link that allows you to send mass emails to 
+the contacts in the invite list.
+</p>
+<br />
+<h4>Typical Usage</h4><ul>
+
+<li>Build a Survey record that contains a description and a landing page ( thank you page), specify the number of questions per page</li>
+<li>Click the button on the Survey detail page to Edit Questions, add a few questions to your survey</li>
+<li>Click the button to create invitations that will be used to define who will be requested to take the survey</li>
+<li>Click the link to Send Invitations, this will allow you to specify the template and which invitations should be sent</li>
+<li>Build your own custom reports to summarize the responses as they roll in</li>
+</ul>
+
+	<p>
+	<br />
+<h4>Setup Steps</h4>
+<br />After install this package you must configure your site so that the survey can be completed by contacts that 
+are invited to provide information to be recorded in your database</p>
+<ul>
+ 
+ <strong>The Force.com site user must have the following permissions enabled:</strong>
+			<li>Read and edit the invite	 object</li>
+			<li>Read, create and edit the	response object</li>
+			<li>Read the survey and	question objects</li>
+			<li>Read the Contact standard object</li>
+		</ul>
+		
+		<p>To edit the profile for the Force.com Site User profile, please click on 
+		<a href="/0DM/o" >Setup | Develop | Sites</a> | then click on the Site Label for your site. 
+		Locate and click on the button labeled Public Access Settings, then click Edit to 
+		adjust your site profile to include the above permissions.   
+		The profile should already have surveyWizard page listed in the allowed pages section.</p>
+	</apex:pageblock>
+</apex:page>

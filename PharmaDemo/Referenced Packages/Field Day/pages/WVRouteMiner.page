@@ -1,0 +1,639 @@
+<apex:page controller="Wherevantage.WVRouteMiner" action="{!CheckLicense}"
+	sidebar="false">
+
+	<apex:form >
+
+		<!-- The following are parameters used for exchanging data with the APEX controller -->
+		<!-- Current map bounding box -->
+		<apex:inputhidden id="boundingTopLeftLat" value="{!TopLeftLatitude}" />
+		<apex:inputhidden id="boundingTopTeftLong" value="{!TopLeftLongitude}" />
+		<apex:inputhidden id="boundingBottomRightLat"
+			value="{!BottomRightLatitude}" />
+		<apex:inputhidden id="boundingBottomRightLong"
+			value="{!BottomRightLongitude}" />
+
+		<script> 
+        var boundingTopLeftLat = document.getElementById("{!JSINHTMLENCODE($Component.boundingTopLeftLat)}");
+        var boundingTopLeftLong = document.getElementById("{!JSINHTMLENCODE($Component.boundingTopTeftLong)}");
+        var boundingBottomRightLat = document.getElementById("{!JSINHTMLENCODE($Component.boundingBottomRightLat)}");
+        var boundingBottomRightLong = document.getElementById("{!JSINHTMLENCODE($Component.boundingBottomRightLong)}");
+        
+        var activeItinerary;
+        var inNewItineraryMode = {!NewItineraryMode};     
+    </script>
+
+		<!-- Itinerary XML String -->
+		<apex:inputhidden id="itineraryXml" value="{!ItineraryXml}" />
+
+		<style type="text/css">
+.VEAPI_Pushpin {
+	text-decoration: none;
+}
+
+#routelist {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	width: 97%;
+}
+
+#routelist li {
+	margin: 0 3px 3px 3px;
+	padding: 0.4em 1.5em;
+	font-size: 1.0em;
+	line-height: 1.5em;
+}
+
+#routelist li span {
+	position: absolute;
+	margin-left: -1.3em;
+}
+
+.closeButton {
+	position: absolute;
+	left: 240px;
+	visibility: visible;
+}
+
+.customOpenIcon {
+	background-image: url("{!$Resource.WVIconOpen}") !important;
+	height: 22px;
+	width: 22px;
+	margin-top: -11px !important;
+	margin-left: -11px !important;
+}
+
+.customNewIcon {
+	background-image: url("{!$Resource.WVIconNew}") !important;
+	height: 22px;
+	width: 22px;
+	margin-top: -11px !important;
+	margin-left: -11px !important;
+}
+
+.customSaveIcon {
+	background-image: url("{!$Resource.WVIconSave}") !important;
+	height: 22px;
+	width: 22px;
+	margin-top: -11px !important;
+	margin-left: -11px !important;
+}
+
+.customTrashIcon {
+	background-image: url("{!$Resource.WVIconTrash}") !important;
+	height: 22px;
+	width: 22px;
+	margin-top: -11px !important;
+	margin-left: -11px !important;
+}
+
+#DisplayTrip {
+	display: none;
+}
+
+#WelcomePane {
+	visibility: visible;
+	position: absolute;
+	top: 130px;
+	left: 10px;
+}
+
+#TripPane {
+	display: none;
+}
+
+#TripPaneBox {
+	border-style: solid;
+	border-width: 2px;
+	width: 230px;
+}
+
+#TripPaneText {
+	position: inherit;
+	margin: 10px;
+}
+
+#itineraryColumn {
+	padding: 10px;
+	width: 250px;
+	position: absolute;
+}
+
+#mapIFrameDisplay {
+	margin-left: 260px;
+	position: relative;
+	height: 400px;
+	border-width: 0px;
+}
+
+#main {
+	padding: 10px;
+	margin-left: 260px;
+}
+</style>
+
+		<script>
+    
+    var j$ = jQuery.noConflict();   
+                    
+    j$(function() {
+        j$('#new')       
+            .button({ text: false, icons: { primary: 'customNewIcon' }})
+            .click( function( event ) { 
+                event.preventDefault(); 
+
+                var okToClear = true;
+
+                if( unsavedChanges )
+                {
+                    okToClear = confirm("You have unsaved changes.\n\nClick OK if you still wish to create a new trip.");
+                }
+                
+                if( okToClear )
+                {
+                    mapIFrame.GetMapBoundingBox(); 
+                    SaveLastBestMapView();
+                    ClearRoute();
+                    CreateNewItinerary();
+                    unsavedChanges = false;
+                    document.getElementById("TripPane").style.display = 'inline';
+                    document.getElementById("WelcomePane").style.display = 'none';            
+                }
+        });
+        j$('#open')       
+            .button({ text: false, icons: { primary: 'customOpenIcon' }})
+            .click( function( event ) { event.preventDefault(); SetItineraryXml(); 
+            LoadItinerariesPage();
+        });
+        j$('#save')
+            .button({ text: false, icons: { primary: 'customSaveIcon' }})            
+            .click( function( event ) { 
+                        
+            event.preventDefault(); 
+            
+            if( j$('#routelist li').size() == 0 )
+            {
+                alert('You need to add one or more stops before saving a trip');
+            }
+            else
+            {
+                mapIFrame.GetMapBoundingBox(); 
+                SaveLastBestMapView();
+                SetItineraryXml(); 
+                unsavedChanges = false; //as we're saving now
+                
+                if( inNewItineraryMode )
+                {
+                    SaveNewItinerary();
+                }
+                else
+                {
+                    SaveItinerary();
+                }
+            }
+        });
+        j$('#trash')
+            .button({ text: false, icons: { primary: 'customTrashIcon' }})
+            .click( function( event ) { 
+            event.preventDefault();  
+            
+            var okToClear;
+
+            if( j$('#routelist li').size() > 0 )
+            {
+	            okToClear = confirm("Please click OK to confirm that you wish to clear the waypoints for the trip.");
+	            
+	            if( okToClear )
+	            {
+	                unsavedChanges = true;
+	                ClearRoute(); 
+	            }
+            }        
+        });
+    });
+            
+      j$(function() {        
+            j$("#routelist").sortable({
+           update: function(event, ui) { InvalidateRoute(); }
+        });        
+            j$("#routelist").disableSelection();
+      });
+                                                      
+      function setActiveTab(tabName) 
+      {
+        if (RichFaces && RichFaces.panelTabs[ResultsTabPanel]) 
+        {
+            var tabs = RichFaces.panelTabs[ResultsTabPanel];
+            for (var i = 0; i < tabs.length; i++) 
+            {
+                if (tabs[i].name == tabName) 
+                {
+                    RichFaces.switchTab(ResultsTabPanel, tabs[i].id, tabs[i].name);
+                    break;
+                }
+            }
+        }
+     }
+    
+    function handleKeyForFindPlaceOrAddress(event)
+    {
+        var keyCode;
+     
+        if (event && event.which)
+        {     
+            // Use for Firefox and Chrome     
+            keyCode = event.which;     
+        } 
+        else 
+        {         
+            // Use for IE         
+            keyCode = event.keyCode;     
+        }
+     
+        if (keyCode == 13)
+        {     
+            try
+            {
+                event.preventDefault(); 
+            }
+            catch(error) //catch error for IE
+            {
+                event.cancelBubble = true;
+                event.returnValue = false;            
+            }
+            
+            Geocode();
+        }
+    }        
+    
+</script>
+
+		<div id="itineraryColumn"><apex:outputPanel id="RecordsListDropdown">
+			<apex:outputLabel dir="" value="Showing: " for="geocode" />
+                        &nbsp;&nbsp;&nbsp;
+                        <apex:selectList id="geocode"
+				multiselect="false" value="{!SelectedGeocodeOption}" size="1">
+				<apex:selectOptions value="{!RecordOptionsList}" id="recordOptions" />
+				<apex:actionSupport event="onchange" status="counterStatus"
+					action="{!SelectionToRecordType}"
+					oncomplete="mapIFrame.UpdateForBoundingBox();" rerender="none" />
+			</apex:selectList>
+			<br />
+			<apex:inputCheckbox value="{!LimitToItemsIOwn}"
+				onclick="mapIFrame.UpdateForBoundingBox();" id="LimitCheckbox" />
+			<apex:outputLabel value="Limit to items I own" for="LimitCheckbox" />
+		</apex:outputPanel>
+		<p></p>
+		<span id="containToolbar">
+		<button id="new">New trip</button>
+		<button id="open">Open trip</button>
+		<button id="save">Save trip</button>
+		<button id="trash">Clear all waypoints for this trip</button>
+		</span> <!-- Simple status display to let the user know that we're updating the map with new SF data -->
+		<apex:outputPanel id="StatusDisplay">
+			<apex:actionStatus id="counterStatus">
+				<apex:facet name="start">
+					<apex:image url="{!$Resource.Wherevantage__WVWaitIcon}" />
+				</apex:facet>
+				<apex:facet name="stop">
+					<br></br>
+				</apex:facet>
+			</apex:actionStatus>
+		</apex:outputPanel>
+
+		<p></p>
+		<apex:outputPanel id="TipSection">
+			<apex:outputLabel id="ItineraryStartLabel" value="Trip: "
+				rendered="{!EditItineraryMode}" />
+			<apex:outputLabel id="ItineraryTitle"
+				value="{!ActiveItinerary.Summary.Title}"
+				rendered="{!EditItineraryMode}" />
+			<script>
+                var inNewItineraryMode = {!NewItineraryMode};
+            </script>
+		</apex:outputPanel>
+		<p></p>
+		<apex:commandButton value="Calculate Route" id="CalculateRoute"
+			onclick="CalculateRoute(true);" status="counterStatus"
+			rerender="none" /> <br />
+		<div id="DisplayTrip"><input type="checkbox"
+			id="MapOnlyRouteStops" onclick="mapIFrame.FilterMapToStops();" /> <label
+			for="MapOnlyRouteStops" id="MapOnlyRouteStopsLabel">Show
+		stops only
+		<p />
+		</label> <span id="TripLeftPaneSummary"></span></div>
+
+		<div id="TripPane"><br />
+		<div id="TripPaneBox">
+		<div id="TripPaneText"><br />
+		Add stops to create a trip by clicking a map pushpin and then "Add to
+		trip".<br />
+		<br />
+		</div>
+		</div>
+		</div>
+
+		<div id="WelcomePane">
+		<p /><apex:image url="{!$Resource.Wherevantage__WVWelcomePaneImage}" />
+		<p />
+		</div>
+		<div id="DisplayRouteList" class="routelist">
+		<ul id="routelist"></ul>
+		</div>
+		</div>
+		<div id="mapIFrameDisplay" class="mapIFrameDisplay"><iframe
+			id="VEMapIFrame" name="VEMapIFrame" src="{!$Resource.WVMapIFrame_js}"
+			frameborder="no" scrolling="no"
+			style="position: relative; width: 100%; height: 400px;"></iframe></div>
+		<div id="main"><apex:outputPanel id="QueryStatus">
+			<apex:outputLabel dir=""
+				value="Map display limited to the first 100 records"
+				for="mapDisplay" id="LimitLabel" rendered="{!NearbyLimitReached}" />
+			<br />
+		</apex:outputPanel> <input id="SearchInputValue" type="text"
+			onkeypress="handleKeyForFindPlaceOrAddress(event)"
+			style="width: 255px" /> <input type="button" name="BingSearch"
+			value="Find place or address" class="btn" onclick="Geocode();" /> <input
+			type="button" name="BingClear" value="Clear" class="btn"
+			onclick="ClearGeocode();" /> <a
+			href="http://www.wherevantage.com/help/Salesforce/v1.0/mainpage"
+			target="_blank"
+			style="float: right; color: #015BA7; text-decoration: none; font-size: small; vertical-align: text-bottom;">Help
+		for this page <img src="{!$Resource.WVHelpOrange}"
+			style="vertical-align: text-bottom;" /></a>
+
+		<p></p>
+		<apex:tabPanel switchType="client" selectedTab="Search"
+			id="ResultsTabPanel">
+			<apex:tab label="Search" name="search" id="tabOne">
+
+				<apex:pageBlock >
+					<apex:pageBlockTable value="{!NearbyRecords}" var="rec"
+						id="SearchTabResults">
+						<apex:column >
+							<a onclick='NoPrompt();'
+								href='javascript:AddSalesforceTableItemToRoute("{!rec.id}","{!rec.name}");'>Add
+							to trip</a>
+						</apex:column>
+						<apex:column headervalue="Name">
+							<a onclick='NoPrompt();'
+								href='javascript:WVNavigateToDetailsPage("{!rec.id}");'>{!rec.name}</a>
+						</apex:column>
+						<apex:column value="{!rec.SearchTable.SubTitle}"
+							headervalue="{!SubtitleHeader}" rendered="{!ShowSubtitleHeader}" />
+						<apex:column value="{!rec.SearchTable.CustomField1}"
+							headervalue="{!CustomField1Header}"
+							rendered="{!ShowCustomField1Header}" />
+						<apex:column value="{!rec.SearchTable.CustomField2}"
+							headervalue="{!CustomField2Header}"
+							rendered="{!ShowCustomField2Header}" />
+						<apex:column value="{!rec.SearchTable.CustomField3}"
+							headervalue="{!CustomField3Header}"
+							rendered="{!ShowCustomField3Header}" />
+						<apex:column value="{!rec.SearchTable.CustomField4}"
+							headervalue="{!CustomField4Header}"
+							rendered="{!ShowCustomField4Header}" />
+						<apex:column value="{!rec.Address.AddressLine}"
+							headervalue="Street Address" />
+						<apex:column value="{!rec.Address.Locality}" headervalue="City" />
+						<apex:column value="{!rec.Address.AdminDistrict}"
+							headervalue="State/Province" />
+					</apex:pageBlockTable>
+				</apex:pageBlock>
+
+			</apex:tab>
+			<apex:tab label="Route" name="route" id="tabTwo">
+				<apex:pageBlock id="RouteResultsTab">
+					<div class="RouteAccordion">
+					<div id="routeResultsAccordion"></div>
+					</div>
+				</apex:pageBlock>
+			</apex:tab>
+		</apex:tabPanel></div>
+
+		<p></p>
+
+		<!-- The following function renders returned pushpins for the bounding box -->
+		<apex:actionFunction name="RenderPushpinsForBoundingBox"
+			action="{!CreatePushpinLocationArray}" status="counterStatus"
+			rerender="outputPanel,QueryStatus,SearchTabResults" />
+
+		<!-- The following function kicks of the itinerary save process -->
+		<apex:actionFunction name="SaveItinerary"
+			action="{!NavigateToSaveItineraryForm}" />
+		<apex:actionFunction name="SaveNewItinerary"
+			action="{!NavigateToNewSaveItineraryForm}" />
+		<apex:actionFunction name="LoadItinerariesPage"
+			action="{!LoadItinerariesPage}" />
+		<apex:actionFunction name="CreateNewItinerary"
+			action="{!CreateNewItinerary}" rerender="TipSection" />
+		<apex:actionFunction name="SaveLastBestMapView"
+			action="{!SaveLastBestMapView}" rerender="none" />
+		<apex:actionFunction name="WVNavigateToDetailsPage"
+			action="{!NavigateToDetailsPage}" rerender="none">
+			<apex:param name="key" value="" />
+		</apex:actionFunction>
+
+		<script src="/soap/ajax/15.0/connection.js" type="text/javascript"></script>
+		<script src="/soap/ajax/15.0/apex.js" type="text/javascript"></script>
+
+		<apex:includeScript value="{!URLFOR($Resource.Wherevantage__JQuery, 'js/jquery-1.4.2.min.js')}" />
+		<apex:includeScript value="{!URLFOR($Resource.Wherevantage__JQuery, 'js/jquery-ui-1.8.2.custom.min.js')}" />
+		<apex:stylesheet value="{!URLFOR($Resource.Wherevantage__JQuery, 'css/ui-lightness/jquery-ui-1.8.2.custom.css')}" />
+
+		<apex:includeScript value="{!$Resource.Wherevantage__WVUtility_js}" />
+		<apex:includeScript value="{!$Resource.Wherevantage__WVFieldDayCore_js}" />
+
+		<script>
+        
+    var ResultsTabPanel = '{!$Component.ResultsTabPanel}';
+            
+    function loadMap(domId) 
+    {
+        var bestMapView;
+        
+        if( {!AfterRedirect} )
+        {
+            var boundingTopLeftLatLong = mapIFrame.GetVELatLong(boundingTopLeftLat.value, boundingTopLeftLong.value);
+            var boundingBottomRightLatLong = mapIFrame.GetVELatLong(boundingBottomRightLat.value, boundingBottomRightLong.value);                        
+                        
+            bestMapView = mapIFrame.GetVELatLongRectangle(boundingTopLeftLatLong, boundingBottomRightLatLong);                                            
+        }
+        else
+        {
+            var boundingTopLeftLatitude = {!ParamTopLeftLatitude};
+            var boundingTopLeftLongitude = {!ParamTopLeftLongitude};
+            var boundingTopLeftLatLong = mapIFrame.GetVELatLong(boundingTopLeftLatitude, boundingTopLeftLongitude);
+            
+            var boundingBottomRightLatitude = {!ParamBottomRightLatitude};
+            var boundingBottomRightLongitude = {!ParamBottomRightLongitude};
+            var boundingBottomRightLatLong = mapIFrame.GetVELatLong(boundingBottomRightLatitude , boundingBottomRightLongitude);                        
+                        
+            bestMapView = mapIFrame.GetVELatLongRectangle(boundingTopLeftLatLong, boundingBottomRightLatLong);
+        }
+        
+        mapIFrame.InitializeIcons();
+        mapIFrame.GetMap("{!$Label.WVBingMapsKey}", bestMapView);
+    }
+
+    var salesforceOnLoadHandler;
+    
+    if( window.onload )
+    {
+        salesforceOnLoadHandler = window.onload;
+    }
+          
+    var mapIFrame = window.frames["VEMapIFrame"];
+          
+    window.onload=function()
+    {                
+        loadMap('mapDisplay');
+
+        PopulateItineraryFromSalesforce();        
+        CalculateRoute(false);
+        
+        unsavedChanges = false;
+        registerOnBeforeUnload("You have unsaved changes.");
+             
+        if( salesforceOnLoadHandler )
+        {
+            salesforceOnLoadHandler();
+        }
+    }
+
+    var allowPrompt = true;
+    
+    //Handle page unload, including prompting the user to save changes if need be
+    var registerOnBeforeUnload = (function()
+    {
+        return function(message)
+        {
+            window.onbeforeunload = function(e)
+            {                            
+                if( allowPrompt )
+                {
+                    e = e || window.event;
+                    if (unsavedChanges)
+                    {
+                        // For IE and Firefox
+                        if (e)
+                        {
+                            e.returnValue = message;
+                        }
+                        // For Safari
+                        return message;
+                    }
+                }
+                else
+                {
+                    allowPrompt = true;
+                }
+            };
+        };
+    })();
+
+    function NoPrompt()
+    {
+       allowPrompt = false;
+    }
+
+    //Return the standard record dropdown
+    function GetGeocodeDropdown()
+    {
+        return document.getElementById('{!$Component.geocode}');
+    }
+
+    //Return the route icon path
+    function GetRouteIcon()
+    {
+        return "{!JSINHTMLENCODE($Resource.WVTrip)}";
+    }
+        
+    //Return the appropriate icon for a record type
+    // ACCOUNT, LEAD, CONTACT, OPPORTUNITY, MAP_RESULT }
+    function GetIconForRecordType(recordType)
+    { 
+        switch( recordType )
+        {
+            case 0: 
+                return "{!JSINHTMLENCODE($Resource.WVAccountsIcon)}";
+                break;
+            case 1: 
+                return "{!JSINHTMLENCODE($Resource.WVLeadsIcon)}";
+                break;
+            case 2: 
+                return "{!JSINHTMLENCODE($Resource.WVContactsIcon)}";
+                break;
+            case 3: 
+                return "{!JSINHTMLENCODE($Resource.WVOpportunitiesIcon)}";
+                break;
+            default:
+                return "{!JSINHTMLENCODE($Resource.WVMapIcon)}";
+        }        
+    }
+    
+    function SetBoundingBox(topLeft, bottomRight)
+    {
+        boundingTopLeftLat.value = topLeft.Latitude;
+        boundingTopLeftLong.value = topLeft.Longitude;
+        boundingBottomRightLat.value = bottomRight.Latitude;
+        boundingBottomRightLong.value = bottomRight.Longitude;
+    }
+    
+</script>
+		<p></p>
+
+		<script>function PopulateItineraryFromSalesforce()
+    {
+    <apex:repeat value="{!ActiveItinerary.Stops}" var="ad">             
+          window.frames["VEMapIFrame"].AddToRoute("{!ad.StandardRecordId}", 
+                "{!JSINHTMLENCODE(ad.DisplayName)}", 
+                "{!JSINHTMLENCODE(ad.Subtitle)}",
+                new window.frames["VEMapIFrame"].VELatLongFromStrings('{!ad.MapDisplayLatitude}', '{!ad.MapDisplayLongitude}'),
+                new window.frames["VEMapIFrame"].VELatLongFromStrings('{!ad.RouteLatitude}', '{!ad.RouteLongitude}'),
+                new window.frames["VEMapIFrame"].VELatLongFromStrings('{!ad.BestMapViewTopLeftLatitude}', '{!ad.BestMapViewTopLeftLongitude}'),
+                new window.frames["VEMapIFrame"].VELatLongFromStrings('{!ad.BestMapViewBottomRightLatitude}', '{!ad.BestMapViewBottomRightLongitude}'),
+                {!ad.ParentRecordTypeOrdinal}, {!ad.LogCall} );                                    
+    </apex:repeat>
+    }
+
+</script>
+
+		<apex:outputPanel id="outputPanel">
+
+			<script> 
+            var salesforceRecordDetail = []; 
+            //The salesforce record array is an associatiave array
+            var salesforceRecordArray = new Object();
+            var standardRecordType = {!StandardRecordTypeOrdinal};
+</script>
+
+			<apex:repeat value="{!NearbyRecords}" var="ad">
+				<!-- Pushing item into Javascript array -->
+				<script>
+salesforceRecordArray["{!ad.Id}"] = ["{!JSINHTMLENCODE(ad.Name)}","{!ad.GeocodeResult.GeocodeLocationForMapDisplay.Latitude}","{!ad.GeocodeResult.GeocodeLocationForMapDisplay.Longitude}","{!ad.Id}","{!ad.GeocodeResult.GeocodeLocationForRouting.Latitude}","{!ad.GeocodeResult.GeocodeLocationForRouting.Longitude}","{!ad.GeocodeResult.BestMapView.TopLeftLatLong.Latitude}","{!ad.GeocodeResult.BestMapView.TopLeftLatLong.Longitude}","{!ad.GeocodeResult.BestMapView.BottomRightLatLong.Latitude}","{!ad.GeocodeResult.BestMapView.BottomRightLatLong.Longitude}","{!JSINHTMLENCODE(ad.Subtitle)}",standardRecordType];
+            </script>
+			</apex:repeat>
+
+			<script>
+                        
+            if( {!RenderLocations} )
+            {            
+                window.frames["VEMapIFrame"].RenderPushpins("{!$Resource.Wherevantage__WVCluster}", salesforceRecordArray);
+            }
+
+            GetGeocodeDropdown().disabled = false;
+
+            function SetItineraryXml()
+            {
+                var myItineraryXml = document.getElementById("{!JSINHTMLENCODE($Component.itineraryXml)}");                
+                myItineraryXml.value = SerializeItineraryXml();                
+            }
+                                    
+        </script>
+
+
+		</apex:outputPanel>
+
+	</apex:form>
+</apex:page>

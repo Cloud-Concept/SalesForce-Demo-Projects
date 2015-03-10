@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Profile_Image_URL__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Profile Image URL</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Profile_Image__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>IF( Twitter_Username__c != null, IMAGE( &quot;http://img.tweetimag.es/i/&quot; &amp; Twitter_Username__c &amp; &quot;_n&quot;, Twitter_Username__c, 48, 48 ), &quot;&quot; )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Profile Image</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Twitter_User_ID__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Twitter User ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Twitter_Username__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Twitter Username</label>
+        <length>50</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>View_on_Twitter__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>if( LEN( Twitter_Username__c ) &gt; 0, HYPERLINK(&quot;http://twitter.com/&quot; &amp; Twitter_Username__c, &quot;View on Twitter&quot;), &quot;&quot;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>View on Twitter</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <webLinks>
+        <fullName>Send_Tweet</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send Tweet</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>function launchTweet() {
+             var box = new parent.SimpleDialog(&quot;hersh&quot;+Math.random(), true);
+             parent.box = box;
+        
+             box.setTitle(&quot;TwitterForce 3.60&quot;);
+        
+             box.createDialog();
+             box.setWidth(700);
+             
+             box.setContentInnerHTML(&quot;&lt;a href=\&quot;#\&quot; onclick=\&quot;box.hide();\&quot;&gt;Close&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;iframe src=\&quot;/apex/twitterforce__sendTweet?recipient={!Contact.Twitter_Username__c}&amp;whoid={!Contact.Id}&amp;whotype=contact\&quot; border=\&quot;0\&quot; style=\&quot;border: 0; background: #F5F5F5;\&quot; width=\&quot;650px\&quot; height=\&quot;300px\&quot; /&gt;&quot;);
+
+             box.setupDefaultButtons();
+             
+             box.show();
+}
+
+launchTweet();</url>
+    </webLinks>
+</CustomObject>

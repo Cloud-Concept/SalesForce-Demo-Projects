@@ -1,0 +1,30 @@
+<apex:page StandardController="Account">
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Product');
+        data.addColumn('number', 'Sales');
+        data.addRows(3);
+        data.setValue(0, 0, 'Saledrin');
+        data.setValue(0, 1, {!Account.Product_1_Brick_Sales__c});
+        data.setValue(1, 0, 'Saktrin');
+        data.setValue(1, 1, {!Account.Product_2_Brick_Sales__c})
+        data.setValue(2, 0, 'Saloxid');
+        data.setValue(2, 1, {!Account.Product_3_Brick_Sales__c})       
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, {width: 450, height: 300, title: 'Sales', is3D:'TRUE'});
+      }
+    </script>
+  </head>
+
+  <body>
+    <div id="chart_div"></div>
+  </body>
+</html>
+</apex:page>

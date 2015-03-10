@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>PharmaForce</letterhead>
+    <name>Nexium Faxsheet</name>
+    <style>freeForm</style>
+    <subject>Nexium Factsheet</subject>
+    <textOnly>Whether you&apos;re about to start acid reflux disease treatment with NEXIUM or you&apos;ve taken it for a while, it&apos;s important to know what NEXIUM offers.NEXIUM helps relieve heartburn 
+In fact, for many people, one NEXIUM pill a day provides relief from persistent, frequent heartburn symptoms — day or night. Your results with NEXIUM may vary.NEXIUM can heal potential damage that acid reflux disease may cause
+Over time, acid reflux can damage your esophagus, and this can lead to a potentially serious condition called erosive esophagitis. Only a doctor can diagnose this condition. NEXIUM can heal this damage within 4 to 8 weeks. Your results with NEXIUM may vary.The more you understand about how NEXIUM can both relieve heartburn symptoms and heal possible damage, the more you&apos;ll want to have a conversation with your doctor.
+For more information click here</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,55 @@
+<apex:component controller="ITBrelViz.CtrlRelationTypeColor" allowDML="true">
+    <apex:includeScript value="{!URLFOR($Resource.ITBrelViz__ITBrelationshipColor, 'jscolor/jscolor.js')}"/>
+    
+    <apex:form > 
+        <apex:pageBlock >
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton action="{!Edit}" value="Edit" rendered="{!detailMode}"/>
+                <apex:commandButton action="{!Save}" value="Save" rendered="{!!detailMode}"/>
+                <apex:commandButton action="{!Cancel}" value="Cancel" rendered="{!!detailMode}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Manage Relation Type Colors" columns="1" rendered="{!detailMode}">
+                <apex:pageBlockTable value="{!list_RelationTypeColors}" var="item">
+                    <apex:column >
+                        <apex:facet name="header">Relation Type</apex:facet>
+                        {!item.RelationType}
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Standard</apex:facet>
+                        {!IF(item.Standard, "Yes", "No")}
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Edge Color</apex:facet>
+                        <apex:inputText value="{!item.HexColor}" styleClass="color" disabled="true"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Comment</apex:facet>
+                        {!item.Comment}
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Manage Relation Type Colors" columns="1" collapsible="false" rendered="{!!detailMode}">
+                <apex:pageBlockTable value="{!list_RelationTypeColors}" var="item">
+                    <apex:column >
+                        <apex:facet name="header">Relation Type</apex:facet>
+                        {!item.RelationType}
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Standard</apex:facet>
+                        {!IF(item.Standard, "Yes", "No")}
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Edge Color</apex:facet>
+                        <apex:inputText value="{!item.HexColor}" styleClass="color"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Comment</apex:facet>
+                        {!item.Comment}
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:component>

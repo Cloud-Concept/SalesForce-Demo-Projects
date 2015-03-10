@@ -1,0 +1,296 @@
+<apex:page tabStyle="DDP_Forms__tab" controller="Loop.editFormExt" title="{!ddp.Name}" id="ap" showHeader="{!showHeader}" sidebar="{!showSidebar}" action="{!loadform}">
+<apex:stylesheet value="https://apps.drawloop.com/css/jquery.ui/jquery-ui-themeroller.css" />
+<style>
+	div.bgdl {
+		height: 41px;
+		padding-left: 4px;
+		height: 38px;
+		border-bottom: 3px solid #319431;
+	}
+	ul.tabs {
+		padding: 0;
+		margin: 0;
+	}
+	ul.tabs li {
+		float: left;
+		border-color: #BBBBBB #BBBBBB transparent;
+		border-style: solid;
+		border-width: 1px 1px 0 1px;
+		background-color: #F1F1F1;
+		-moz-border-radius: 4px 4px 0 0;
+		-webkit-border-radius: 4px 4px 0 0;
+		display: block;
+		padding: 0 8px;
+		height: 32px;
+		margin: 5px 0 -3px 5px;
+	}
+	ul.tabs li div.outer {
+		padding-bottom: 2px;
+		font-weight: bold;
+		margin-right: -13px;
+		padding: 8px 8px 4px 0;
+		cursor: pointer;
+	}
+	ul.tabs li div.outer div {
+		line-height: normal;
+		margin: 0;
+		padding-right: 7px;;
+	}
+	ul.tabs li div.outer div a { text-decoration: none; }
+	span.defaultspan span a, span.defaultspan a { text-decoration: none; }
+	ul.tabs li.selectedTab {
+		border-bottom: 3px solid #F8F8F8;
+		border-color: #319431 #319431 #F8F8F8;
+		background: -moz-linear-gradient(90deg,#F8F8F8,#FFFFFF);
+		background: -webkit-gradient(linear, center bottom, center top, from(#F8F8F8), to(#FFFFFF));
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFFFFF, endColorstr=#F8F8F8)";
+	}
+	ul.tabs li.notSelectedTab {
+		border-bottom: 3px solid #319431;
+	}
+	div.dlPageBlock {
+		border-top: 3px solid #178AFF;
+		-moz-border-radius: 4px 4px 4px 4px;
+		-webkit-border-radius: 4px 4px 4px 4px;
+	}
+	div.dlPageBlock div.pbSubheader.tertiaryPalette {
+		margin-top: 0;
+		border-width: 0;
+	}
+	body .pbBody table.list tr.topAlign td { vertical-align: top; }
+	.invisible { display: none; }
+	img.ui-datepicker-trigger { cursor: pointer; }
+	table.inline input {
+		margin-top: 0;
+		vertical-align: sub;
+	}
+</style>
+<apex:includeScript value="https://apps.drawloop.com/scripts/jquery-code.js" />
+<apex:includeScript value="https://apps.drawloop.com/scripts/jquery.datepicker.js" />
+<apex:includeScript value="/support/console/22.0/integration.js"/>
+<script type="text/javascript">
+	jQuery.noConflict();
+	
+	// BEGIN SERVICE CLOUD CONSOLE SCRIPT
+	isSubmitted = false;
+	thisTabId = null;
+	primaryTabId = null;
+	redirect = null;
+	function resetPreviousTab(result) {
+		if (result.success == true)
+			sforce.console.getEnclosingTabId(refreshTab);
+	}
+	function refreshTab(result) {
+		sforce.console.refreshSubtabById(result.id);
+	}
+	function openSubTab(result) { 
+		sforce.console.openSubtab(result.id, window.location.href+'&previousTabId='+thisTabId+'&isSubTab=true', true, '', null, resetPreviousTab, '');
+	};
+	function getTabId(result) {
+		return result.id
+	}
+	function cancelClick() {
+		if (sforce.console.isInConsole()) {
+			sforce.console.closeTab(thisTabId);
+			return false;
+		}
+		jQuery('[id="aPage:aForm"]').attr('target', '_top');
+		return true;
+	}
+	function receiveMessage(e) {
+		var pattern = /(^https:\/\/[^.\/]+.drawloop.com)|(^http:\/\/localhost:1948)/gi;
+		if (pattern.test(e.origin))
+		{
+			if ((/^https:/gi).test(e.data))
+			{
+				redirect = e.data;
+				sforce.console.getEnclosingPrimaryTabId(function(result) {
+					sforce.console.openSubtab(
+						result.id,
+						redirect,
+						true,
+						'DDP {!JSENCODE($Label.site.powered_by)} Drawloop',
+						thisTabId
+					);
+				});
+			}
+			else
+			{
+				if (e.data != 'closeTab')
+					alert(e.data);
+				sforce.console.refreshSubtabById('{!JSENCODE($Request.previousTabId)}', false, function(){
+					sforce.console.closeTab(thisTabId);
+				});
+			}
+		}
+		else
+		{
+			alert('Invalid message.');
+		}
+	}
+	function breadcrumbClick() {
+		if (sforce.console.isInConsole()) {
+			if (isSubmitted) {
+				sforce.console.refreshSubtabById('{!JSENCODE(previousTabId)}', false, function(){
+					sforce.console.closeTab(thisTabId);
+				});
+			}
+			else {
+				sforce.console.closeTab(thisTabId);
+			}
+			return false;
+		}
+		return true;
+	}
+	// END SERVICE CLOUD CONSOLE SCRIPT
+</script>
+<apex:outputPanel id="js">
+	<script type="text/javascript">
+		jQuery(function () {
+			if (sforce.console.isInConsole()) {
+		    	if ('{!JSENCODE($Request.isSubTab)}' != 'true') {
+			    	sforce.console.getEnclosingTabId(function(result){
+			    		thisTabId=result.id;
+			    		sforce.console.getEnclosingPrimaryTabId(openSubTab);
+			    	});
+			    	return false;
+		    	}
+		    	else {
+			    	sforce.console.setTabTitle('DDP {!JSENCODE($Label.site.powered_by)} Drawloop');
+			    	sforce.console.getEnclosingTabId(function(result){thisTabId=result.id;});
+			    	if (window.addEventListener)
+			    	{
+			    		window.addEventListener('message',receiveMessage,false);
+			    	}
+			    	else
+			    	{
+			    		window.attachEvent('onmessage', receiveMessage);
+			    	}
+			    	jQuery('#dlContainer').show();
+		    	}
+		    }
+		    else
+		    	jQuery('#dlContainer').show();
+			
+			jQuery('div.selectedTab').parent().addClass('selectedTab');
+			jQuery('div.notSelectedTab').parent().addClass('notSelectedTab');
+			jQuery('input.date:visible').datepicker({buttonImage: 'https://apps.drawloop.com/images/icons/calendar.png', showOn: 'both', buttonImageOnly: true});
+			jQuery('[id="ap:af:pb:pbs"] input:first').select();
+		});
+	</script>
+</apex:outputPanel>
+    <apex:form id="af">
+		<apex:outputPanel id="frameSpan">
+	    	<div class="bPageTitle"><div class="ptBreadcrumb">
+				<apex:outputLink rendered="{!NOT(objId='')}" value="/{!objId}" onclick="return breadcrumbClick();">
+					« {!HTMLENCODE($Label.loop__DDP_Breadcrumb)} {!HTMLENCODE(objectLabel)}
+				</apex:outputLink>
+				<apex:commandLink value="« Back to Form Selection" rendered="{!objId=''}" /><br />
+		    	<apex:commandLink value="« Edit Form" action="{!editForm}" rendered="{!AND(isOwner,objId='')}" /><br />
+		    	<apex:commandLink value="« Back to {!$ObjectType.Loop__DDP__c.label} Detail" rendered="{!AND(isOwner,objId='')}" action="{!cancel}" />
+	    	</div></div>
+	    </apex:outputPanel>
+        <apex:outputPanel id="pageMsgs">
+			<apex:pageMessages />
+		</apex:outputPanel>
+        <apex:actionFunction name="changeStep" reRender="af,loopInputs,js,pageMsgs" action="{!changeStep}" status="tabsStatus">
+            <apex:param value="" assignTo="{!selectedStepId}" name="selectedStepId" />
+        </apex:actionFunction>
+        <apex:actionFunction name="changeStep2" reRender="af,loopInputs,js,pageMsgs" action="{!changeStep}" status="buttonStatus">
+            <apex:param value="" assignTo="{!selectedStepId}" name="selectedStepId" />
+        </apex:actionFunction>
+        <apex:outputPanel rendered="{!showForm}">
+	        <apex:outputPanel styleClass="bgdl" layout="block">
+				<apex:dataList value="{!steps}" var="s" styleClass="tabs" style="float: left;">
+					<apex:outputPanel layout="block" styleClass="outer {!IF(s.s.Id==selectedStepId,'selectedTab','notSelectedTab')}" onclick="changeStep('{!s.s.Id}');">
+						<div>
+							<span>{!s.s.Name}</span>
+						</div>
+					</apex:outputPanel>
+				</apex:dataList>
+				<apex:outputPanel style="float: left; margin: 11px;">
+					<apex:actionStatus startText="• • •" stopText="" id="tabsStatus" />
+				</apex:outputPanel>
+			</apex:outputPanel>
+	        <apex:outputPanel layout="block" id="pbOP" style="clear: both; margin-top: -3px;">
+		        <apex:pageBlock id="pb" mode="edit">
+		            <apex:pageBlockButtons >
+			            <apex:commandButton styleClass="nextBtn" value="Previous" rendered="{!previousStepId != null}" onclick="changeStep2('{!previousStepId}'); return false;" />
+			            <apex:commandButton styleClass="nextBtn" value="Next" rendered="{!nextStepId != null}" onclick="changeStep2('{!nextStepId}'); return false;" />
+			            <apex:commandButton styleClass="nextBtn" value="Run DDP" rendered="{!nextStepId == null}" reRender="af,loopInputs,pageMsgs,js" action="{!submitForm}" onclick="isSubmitted = true;" status="buttonStatus"
+			            	oncomplete="if ('{!allowFormSubmit}' == 'true') { jQuery('input.date').datepicker('destroy'); jQuery('[id=\'ap:af\']').hide(); jQuery('#myForm').submit(); jQuery('[id=\'ap:frameSpan\']').show(); }" />
+		            	<apex:actionStatus startText="• • •" stopText="" id="buttonStatus" />
+		            </apex:pageBlockButtons>
+					<apex:pageBlockSection columns="1" id="pbs">
+						<apex:repeat value="{!fields}" var="f">
+							<apex:pageBlockSectionItem helpText="{!f.f.Loop__Help_Text__c}" labelStyle="width: 20%;">
+			                    <apex:outputPanel >
+				                    <apex:outputLabel value="{!f.f.Name}" for="textField" rendered="{!OR(f.f.Loop__Type__c='',f.f.Loop__Type__c='Text',f.f.Loop__Type__c='Email',f.f.Loop__Type__c='View')}" />
+				                    <apex:outputLabel value="{!f.f.Name}" for="dateField" rendered="{!f.f.Loop__Type__c='Date'}" />
+				                    <apex:outputLabel value="{!f.f.Name}" for="dropField" rendered="{!OR(f.f.Loop__Type__c='Drop Down',f.f.Loop__Type__c='Edit Drop Down')}" />
+				                    <apex:outputLabel value="{!f.f.Name}" for="radioField" rendered="{!OR(f.f.Loop__Type__c='Radio',f.f.Loop__Type__c='Radio Inline')}" />
+				                    <apex:outputLabel value="{!f.f.Name}" for="checkboxField" rendered="{!OR(f.f.Loop__Type__c='Checkbox',f.f.Loop__Type__c='Checkbox Inline')}" />
+				                    <apex:outputLabel value="{!f.f.Name}" for="memoField" rendered="{!f.f.Loop__Type__c='Memo'}" />
+				                    <apex:outputLabel value="{!f.f.Name}" for="richTextField" rendered="{!f.f.Loop__Type__c='Rich Text'}" />
+			                    </apex:outputPanel>
+			                    <apex:outputPanel >
+				                    <apex:inputText id="textField" value="{!f.fvalue}" rendered="{!OR(f.f.Loop__Type__c='',f.f.Loop__Type__c='Text',f.f.Loop__Type__c='Email')}" style="width: 200px;" />
+				                    <apex:outputPanel rendered="{!f.f.Loop__Type__c='Date'}">
+				                        <apex:inputText id="dateField" styleClass="date" value="{!f.fvalue}" style="width: 200px;" />
+				                    </apex:outputPanel>
+				                    <apex:selectList id="dropField" size="1" value="{!f.fvalue}" rendered="{!OR(f.f.Loop__Type__c='Drop Down',f.f.Loop__Type__c='Edit Drop Down')}">
+				                        <apex:selectOptions value="{!f.options}" />
+				                    </apex:selectList>
+				                    <apex:selectRadio id="radioField" value="{!f.fvalue}" layout="{!IF(f.f.Loop__Type__c='Radio','pageDirection','lineDirection')}" rendered="{!OR(f.f.Loop__Type__c='Radio',f.f.Loop__Type__c='Radio Inline')}" styleClass="{!IF(f.f.Loop__Type__c='Radio','','inline')}">
+				                    	<apex:selectOptions value="{!f.options}" />
+				                    </apex:selectRadio>
+				                    <apex:selectCheckboxes id="checkboxField" value="{!f.listValue}" layout="{!IF(f.f.Loop__Type__c='Checkbox','pageDirection','lineDirection')}" rendered="{!OR(f.f.Loop__Type__c='Checkbox',f.f.Loop__Type__c='Checkbox Inline')}">
+				                    	<apex:selectOptions value="{!f.options}" />
+				                    </apex:selectCheckboxes>
+				                    <apex:inputTextarea id="memoField" value="{!f.fvalue}" rendered="{!f.f.Loop__Type__c='Memo'}" style="width: 200px;" />
+				                    <apex:inputTextarea id="richTextField" value="{!f.fvalue}" rendered="{!f.f.Loop__Type__c='Rich Text'}" richText="true" />
+				                    <apex:outputText value="{!f.fvalue}" rendered="{!f.f.Loop__Type__c='View'}" />
+				                    <apex:outputPanel rendered="{!f.showError}" styleClass="errorMsg" layout="block">
+				                    	{!f.errorMessage}
+				                    </apex:outputPanel>
+			                    </apex:outputPanel>
+			                </apex:pageBlockSectionItem>
+			            </apex:repeat>
+		            </apex:pageBlockSection>
+				</apex:pageBlock>
+			</apex:outputPanel>
+		</apex:outputPanel>
+    </apex:form>
+    <form method="POST" id="myForm" style="height: 0px" target="lpIframe" action="{!loopUrl}/SFLogin.aspx">
+    	<input type="hidden" name="sessionid" value="{!sessionId}" />
+        <input type="hidden" name="location" value="{!IF(partnerServerUrl='',$Api.Partner_Server_URL_200,partnerServerUrl)}" />
+		<input type="hidden" name="auto" value="true" />
+    	<apex:outputPanel id="loopInputs">
+			<input type="hidden" name="next" value="{!formUrl}" id="loopNext" />
+	    	<apex:repeat value="{!steps}" var="s">
+		    	<apex:repeat value="{!s.fields}" var="f">
+		    		<apex:outputPanel rendered="{!AND(f.f.Loop__Type__c != 'Memo', f.f.Loop__Type__c != 'Rich Text')}">
+			    		<input type="hidden" value="{!f.fvalue}" name="frm:{!f.f.Tag__c}" />
+		    		</apex:outputPanel>
+		    		<apex:outputPanel rendered="{!OR(f.f.Loop__Type__c == 'Memo',f.f.Loop__Type__c == 'Rich Text')}">
+		    			<textarea style="display: none;" name="frm:{!f.f.Tag__c}">{!HTMLENCODE(f.fvalue)}</textarea>
+		    		</apex:outputPanel>
+		    	</apex:repeat>
+	    	</apex:repeat>
+	    	<apex:repeat value="{!looplusParams}" var="lp">
+	    		<input type="hidden" value="{!lp.value}" name="{!lp.label}" />
+	    	</apex:repeat>
+    	</apex:outputPanel>
+    </form>
+    <apex:outputPanel id="frameSpan" style="display: none;">
+    	<apex:form >
+	    	<div class="bPageTitle"><div class="ptBreadcrumb">
+				<apex:outputLink rendered="{!NOT(objId='')}" value="/{!objId}" onclick="return breadcrumbClick();" style="display: block;">
+					« Back to {!objectLabel}
+				</apex:outputLink>
+				<apex:commandLink value="« Back to Form" oncomplete="jQuery('[id=\'ap:frameSpan\']').hide();" action="{!reloadForm}" rerender="af,js,frameSpan,pb,pageMsgs" />
+	    	</div></div>
+    	</apex:form>
+	    <apex:iframe id="lpIframe" frameborder="0" rendered="true" height="600" scrolling="true" />
+    </apex:outputPanel>
+</apex:page>

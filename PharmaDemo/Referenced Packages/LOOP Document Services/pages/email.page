@@ -1,0 +1,195 @@
+<apex:page controller="Loop.emailExt" tabStyle="Task" id="emailPage" title="Task - Send an Email">
+    <apex:includeScript value="{!$Resource.Loop__JQuery}" />
+    <apex:includeScript value="{!$Resource.Loop__JQuery_UI}" />
+    <apex:stylesheet value="https://apps.drawloop.com/css/jquery.ui/jquery-ui-themeroller.css" />
+    <script>
+        jQuery.noConflict();
+        jQuery(document).ready(function()
+        {
+            jQuery('div#attachFile').dialog({
+                modal: true,
+                width: 600,
+                height: 500,
+                autoOpen: false,
+                overlay: {
+                    opacity: 0.3,
+                    background: "black"
+                }
+            });
+        });
+        var delim = ";";
+        function pickupValue(additionalToValue, ccValue, bccValue)
+        {
+            var addto = document.getElementById('emailPage:emailForm:emailBlock:editPage:addTo:p24');
+            if(additionalToValue != '') {
+                if (addto.value != '') {
+                    addto.value += delim;
+                }
+                addto.value += additionalToValue;
+            }
+            var cc = document.getElementById('emailPage:emailForm:emailBlock:editPage:cc:p4');
+            if(ccValue != '') {
+                if (cc.value != '') {
+                    cc.value += delim;
+                }
+                cc.value += ccValue;
+            }
+            var bcc = document.getElementById('emailPage:emailForm:emailBlock:editPage:bcc:p5');
+            if(bccValue != '') {
+                if (bcc.value != '') {
+                    bcc.value += delim;
+                }
+                bcc.value += bccValue;
+            }
+            closePopup();
+        }
+        function pop(location, title, w, h)
+        {
+            openPopup(location, title, w, h, 'width='+w+',height='+h+',scrollbars=yes,toolbar=no,status=no,directories=no,menubar=no,resizable=yes', true);
+        }
+        function disableRichText() {
+        	a = '[id="emailPage:emailForm:emailBlock:editPage:richText:richTextArea___Frame"]';
+            a = jQuery(jQuery(a).get(0).contentDocument);
+            a.find('#xToolbar').hide();
+			a = a.find('iframe').get(0);
+            if (a)
+            {
+	            jQuery(a.contentDocument).find('body').append('<div style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.1; background-color: #000;"></div>');
+	            jQuery(a).css('height', '100%');
+            }
+        }
+    </script>
+    <apex:form id="emailForm">
+        <apex:sectionHeader title="Task" subtitle="Send an Email" />
+        <apex:pageMessages />
+        <apex:pageblock id="emailBlock">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton title="Send" alt="Send" value="Send" action="{!sendEmail}" />
+                <!--apex:commandButton title="Select Template" rendered="false" alt="Select Template" value="Select Template" onclick="pop('/email/author/templateselector.jsp', 'template', 600, 300);" /-->
+                <apex:commandButton title="Attach File" alt="Attach File" value="Attach File" onclick="jQuery('div#attachFile').dialog('open');" reRender="attachments" />
+                <!--apex:commandButton title="Check Spelling" rendered="false" alt="Check Spelling" value="Check Spelling" action="" /-->
+                <apex:commandButton title="Cancel" alt="Cancel" value="Cancel" action="{!cancel}" immediate="true" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection title="Edit Email" collapsible="false" columns="1" id="editPage">
+                <!--apex:pageBlockSectionItem rendered="false" id="editSection">
+                    <apex:outputLabel for="format" value="Email Format" />
+                    <apex:outputText id="format">
+                        {!editMode} [<apex:commandLink value="Switch to {!nonEditMode}" action="{!toggleMode}"  onclick="return confirm('This will remove your email template. Continue?');" /> ]
+                    </apex:outputText>
+                </apex:pageBlockSectionItem-->
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="p2" value="To" />
+                    <apex:inputField value="{!taskRecord.WhoId}" id="p2" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="p3" value="Related To" />
+                    <apex:inputfield value="{!taskRecord.WhatId}" id="p3" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="addTo">
+                    <apex:outputLink value="javascript: openPopup('/_ui/core/email/author/EmailCCBccLookup', 'CCBCCLookup', 420, 490, 'width=420,height=490,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no', true);">
+                        <apex:outputLabel style="cursor: pointer;" for="p24" value="Additional To:" />
+                    </apex:outputLink>
+                    <apex:inputTextarea id="p24" cols="65" value="{!addto}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="cc">
+                    <apex:outputLink value="javascript: openPopup('/_ui/core/email/author/EmailCCBccLookup', 'CCBCCLookup', 420, 490, 'width=420,height=490,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no', true);">
+                        <apex:outputLabel style="cursor: pointer;" for="p4" value="CC:" />
+                    </apex:outputLink>
+                    <apex:inputTextarea id="p4" cols="65" value="{!cc}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem id="bcc">
+                    <apex:outputLink value="javascript: openPopup('/_ui/core/email/author/EmailCCBccLookup', 'CCBCCLookup', 420, 490, 'width=420,height=490,toolbar=no,status=no,directories=no,menubar=no,resizable=yes,scrollable=no', true);">
+                        <apex:outputLabel style="cursor: pointer;" for="p5" value="BCC:" />
+                    </apex:outputLink>
+                    <apex:inputTextarea id="p5" cols="65" value="{!bcc}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel for="p6" value="Subject" />
+                    <apex:inputText id="p6" size="70" value="{!subject}" disabled="{!richText}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!richText}" id="richText">
+                    <apex:outputLabel for="p7" value="Body" />
+                    <!--apex:outputText id="p7" value="{!template.htmlValue}" escape="false" /-->
+                    <apex:outputPanel >
+	                    <apex:inputTextarea cols="93" rows="15" richText="true" value="{!template.htmlValue}" disabled="true" id="richTextArea" />
+	                    <script>
+	                    	var intvl = setInterval(function() {
+	                    		if (window.FCKeditorAPI)
+	                    		{
+	                    			disableRichText();
+	                    			clearInterval(intvl);
+	                    		}
+	                    	}, 200);
+	                    </script>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem rendered="{!NOT(richText)}">
+                    <apex:outputLabel for="text" value="Body" />
+                    <apex:inputTextarea cols="93" rows="15" richText="false" value="{!plainTextBody}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:pageblock>
+        <apex:pageBlock title="Attachments" id="attachmentspb">
+            <apex:pageBlockButtons location="top">
+                <apex:commandButton title="Attach File" alt="Attach File" value="Attach File" onclick="jQuery('div#attachFile').dialog('open');" reRender="attachmentspb" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!attachments}" var="attachment" id="attachmentspbt">
+                <apex:column width="40px">
+                    <apex:facet name="header">Action</apex:facet>
+                    <apex:commandLink action="{!del}" value="Del">
+                        <apex:param name="delId" value="{!attachment.id}" />
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">File</apex:facet>
+                    <apex:outputLink value="/servlet/servlet.FileDownload?file={!attachment.id}">{!attachment.name}</apex:outputLink>
+                </apex:column>
+                <apex:column >
+                    <apex:facet name="header">Size</apex:facet>
+                    {!ROUND(attachment.bodylength/1000,0)} KB
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    <div style="display: none;">
+        <div id="attachFile" title="Attach File">
+            <apex:form >
+                <apex:actionRegion >
+                    <apex:pageBlock id="filesPB">
+                        <apex:pageBlockButtons location="top">
+                            <apex:outputLabel for="folder" value="File Location " />&nbsp;
+                            <apex:selectList id="folder" size="1" value="{!folderId}">
+                                <apex:selectOption itemLabel="My Personal Documents" itemValue="{!$User.Id}" />
+                                <!--apex:selectOption itemLabel="My Computer" itemValue="bob" /-->
+                                <apex:selectOptions value="{!folders}" />
+                                <apex:actionSupport event="onchange" rerender="files" action="{!changeFolder}" />
+                            </apex:selectList>&nbsp;
+                        </apex:pageBlockButtons>
+                        <div style="overflow-y: auto; max-height: 400px;">
+                            <apex:pageBlockTable value="{!files}" var="file" id="files">
+                                <apex:column >
+                                    <apex:facet name="header">Name</apex:facet>
+                                    <apex:commandLink action="{!addDocId}" value="{!file.name}">
+                                        <apex:param name="fileId" value="{!file.id}" />
+                                    </apex:commandLink>
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">Author</apex:facet>
+                                    {!file.CreatedBy.Alias}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">Size</apex:facet>
+                                    {!ROUND(file.bodylength/1000,0)} KB
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">Internal Use Only</apex:facet>
+                                    <apex:inputCheckbox value="{!file.isinternaluseonly}" disabled="true" />
+                                </apex:column>
+                            </apex:pageBlockTable>
+                        </div>
+                    </apex:pageBlock>
+                </apex:actionRegion>
+            </apex:form>
+        </div>
+    </div>
+</apex:page>

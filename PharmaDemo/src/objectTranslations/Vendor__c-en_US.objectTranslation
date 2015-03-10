@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Vendor</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vendors</value>
+    </caseValues>
+    <fields>
+        <label><!-- Additional Information --></label>
+        <name>Additional_Information__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- POrg --></label>
+        <name>Co_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- City Code such as AR --></help>
+        <label><!-- Country Code --></label>
+        <name>Country_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- DelF --></label>
+        <name>DelF__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group --></label>
+        <name>Group__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Search Term --></label>
+        <name>Search_Term__c</name>
+    </fields>
+    <fields>
+        <label><!-- SuSet --></label>
+        <name>SuSet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Code --></label>
+        <name>Vendor_Code__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,52 @@
+﻿<apex:page showHeader="false" id="template" controller="LeaveRequestDetailController" standardStylesheets="false" cache="false" doctype="html-5.0">
+    <head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"/>
+    <apex:stylesheet value="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"/>
+    <!-- <apex:stylesheet value="{!$Resource.CapuccinoMobileTheme}"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />-->
+    <apex:stylesheet value="{!URLFOR($Resource.MobiScroller, '/css/mobiscroll-2.0.custom.min.css')}"/>    
+    <apex:includeScript value="http://code.jquery.com/jquery-1.7.1.min.js" />
+    <apex:includeScript value="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js" />
+    <apex:includescript value="{!URLFOR($Resource.MobiScroller, '/js/mobiscroll-2.0.custom.min.js')}" />
+    
+    
+    <!-- Leave Detail Function bindings -->
+    <script type="text/javascript">
+        
+        $('#detailpage').live('pageinit', function(event){
+        	
+        	//date scroller
+            $("#fromscroller").scroller({ preset: 'date', dateFormat: 'd/m/yy', dateOrder: 'D dd M yy' });
+            $("#toscroller").scroller({ preset: 'date', dateFormat: 'd/m/yy', dateOrder: 'D dd M yy' });
+            
+            //save button
+            $("#savebutton").click(
+            	function() {
+            		//get the values from the form
+            		var leavetype = $("[id$=leavetype]").val();
+	            	var fromdate = $("#fromscroller").scroller('getDate');
+	            	var todate = $("#toscroller").scroller('getDate');
+	            	var id = $("#leaverequestid").val();
+	            	var notes = $("#notes").val();
+	            	
+	            	//save to salesforce
+	            	LeaveRequestDetailController.saveLeaveRequest(
+	            		id,
+			            leavetype,
+			            fromdate.toUTCString﻿(),
+			            todate.toUTCString﻿(),
+			            notes,
+			            function(result, event) {
+			            	alert("Saved");
+			            }
+	            	); 	
+            	}
+            );
+            
+        });
+    </script>
+    
+    </head>
+    <apex:insert name="content"/>
+
+</apex:page>

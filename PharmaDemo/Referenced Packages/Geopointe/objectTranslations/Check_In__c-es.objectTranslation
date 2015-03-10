@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Check-In --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Check-In --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Check-Ins --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Used to map the address fields on the Check In map object.  Since a Check-In has no address, we have to specify blank fields. --></help>
+        <label><!-- Blank --></label>
+        <name>Blank__c</name>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Check-Ins --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The ID of the Chatter Feed Item that was submitted for this Check Out. --></help>
+        <label><!-- Chatter ID - Check Out --></label>
+        <name>Chatter_ID_Check_Out__c</name>
+    </fields>
+    <fields>
+        <help><!-- The ID of the Chatter Feed Item that was submitted for this CheckIn --></help>
+        <label><!-- Chatter ID --></label>
+        <name>Chatter_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether or not the request wanted the Check In to post to the Chatter feed. --></help>
+        <label><!-- Chatter This --></label>
+        <name>Chatter_This__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Out Distance from Check In (km) --></label>
+        <name>Check_Out_Distance_from_Check_In_km__c</name>
+    </fields>
+    <fields>
+        <label><!-- Check Out Distance from Check In (miles) --></label>
+        <name>Check_Out_Distance_from_Check_In_miles__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Check-Ins --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- Upon a successful checkin, the distance is calculated from the user&apos;s actual location to the location of the record they checked into (in kilometers). --></help>
+        <label><!-- Distance from What ID (kilometers) --></label>
+        <name>Distance_from_What_ID_kilometers__c</name>
+    </fields>
+    <fields>
+        <help><!-- Upon a successful checkin, the distance is calculated from the user&apos;s actual location to the location of the record they checked into (in miles). --></help>
+        <label><!-- Distance from What ID (miles) --></label>
+        <name>Distance_from_What_ID_miles__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geo Location --></label>
+        <name>Geo_Location__c</name>
+        <relationshipLabel><!-- Check-Ins --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Geocode --></label>
+        <name>Geocode__c</name>
+        <relationshipLabel><!-- Check-Ins --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The headline for the record that is displayed on the maps. --></help>
+        <label><!-- Headline --></label>
+        <name>Headline__c</name>
+    </fields>
+    <fields>
+        <label><!-- Lead --></label>
+        <name>Lead__c</name>
+        <relationshipLabel><!-- Check-Ins --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Map Link - Check Out --></label>
+        <name>Map_Link_Check_Out__c</name>
+    </fields>
+    <fields>
+        <label><!-- Map Link --></label>
+        <name>Map_Link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Check-Ins --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The ID of the Task Item that was created for this CheckIn --></help>
+        <label><!-- Task ID --></label>
+        <name>Task_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- A Salesforce ID referring to the record that the check-in is against --></help>
+        <label><!-- What ID --></label>
+        <name>What_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- If a What ID is entered into the record, this field should be populated with the Name of that record.  If not, this field can be populated with text describing what was being checked into. --></help>
+        <label><!-- What (Text) --></label>
+        <name>What_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Time of the Check-Out --></help>
+        <label><!-- When - Check Out --></label>
+        <name>When_Check_Out__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date Time of the Check-In --></help>
+        <label><!-- When --></label>
+        <name>When__c</name>
+    </fields>
+    <fields>
+        <help><!-- The latitude of the Check Out location. --></help>
+        <label><!-- Where - Check Out (Latitude) --></label>
+        <name>Where_Check_Out_Latitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- The longitude of the Check In location. --></help>
+        <label><!-- Where - Check Out (Longitude) --></label>
+        <name>Where_Check_Out_Longitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- The latitude of the location. --></help>
+        <label><!-- Where (Latitude) --></label>
+        <name>Where_Latitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- The longitude of the location --></help>
+        <label><!-- Where (Longitude) --></label>
+        <name>Where_Longitude__c</name>
+    </fields>
+    <fields>
+        <help><!-- A reference to the user performing the check-in. --></help>
+        <label><!-- Who --></label>
+        <name>Who__c</name>
+        <relationshipLabel><!-- Check-Ins --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Why - Check Out --></label>
+        <name>Why_Text_Check_Out__c</name>
+    </fields>
+    <fields>
+        <help><!-- An optional place to put comments related to the check-in --></help>
+        <label><!-- Why (Text) --></label>
+        <name>Why_Text__c</name>
+    </fields>
+    <fields>
+        <help><!-- A reason for or type of check-in --></help>
+        <label><!-- Why (Type) --></label>
+        <name>Why_Type__c</name>
+        <picklistValues>
+            <masterLabel>Mobile Check-In</masterLabel>
+            <translation><!-- Mobile Check-In --></translation>
+        </picklistValues>
+    </fields>
+    <gender><!-- Feminine --></gender>
+    <layouts>
+        <layout>Check-In Layout</layout>
+        <sections>
+            <label><!-- - hidden - --></label>
+            <section>- hidden -</section>
+        </sections>
+        <sections>
+            <label><!-- CheckIn Information --></label>
+            <section>CheckIn Information</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Record # --></nameFieldLabel>
+</CustomObjectTranslation>

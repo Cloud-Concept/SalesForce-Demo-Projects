@@ -1,0 +1,4 @@
+<apex:page controller="ITBrelViz.CtrlConfiguration" showHeader="true" sideBar="true"  title="Settings for RelationVizArt">
+    <c:CtrlRelationTypeColorComponent />
+    <c:CtrlRelationInitializeComponent />
+</apex:page>

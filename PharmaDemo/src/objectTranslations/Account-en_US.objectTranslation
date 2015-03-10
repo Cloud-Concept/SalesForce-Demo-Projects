@@ -1,0 +1,1260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Customer</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Customers</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Access</value>
+        </caseValues>
+        <name>account_access</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Access Level</value>
+        </caseValues>
+        <name>account_access_level</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Creator</value>
+        </caseValues>
+        <name>account_creator</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Currency</value>
+        </caseValues>
+        <name>account_currency</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Description</value>
+        </caseValues>
+        <name>account_description</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Detail Page</value>
+        </caseValues>
+        <name>account_detail_page</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Division</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Division</value>
+        </caseValues>
+        <name>account_division</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Edit</value>
+        </caseValues>
+        <name>account_edit</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Fax</value>
+        </caseValues>
+        <name>account_fax</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Fields</value>
+        </caseValues>
+        <name>account_field</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer General</value>
+        </caseValues>
+        <name>account_general</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Hierarchy</value>
+        </caseValues>
+        <name>account_hierarchy</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer ID</value>
+        </caseValues>
+        <name>account_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Information</value>
+        </caseValues>
+        <name>account_information</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Name</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Names</value>
+        </caseValues>
+        <name>account_name</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Number</value>
+        </caseValues>
+        <name>account_number</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Owner Alias</value>
+        </caseValues>
+        <name>account_owner_alias</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Owner Role</value>
+        </caseValues>
+        <name>account_owner_role</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Ownership</value>
+        </caseValues>
+        <name>account_ownership</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Phone</value>
+        </caseValues>
+        <name>account_phone</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Rating</value>
+        </caseValues>
+        <name>account_rating</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Record Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Record Types</value>
+        </caseValues>
+        <name>account_record_type</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Report</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Reports</value>
+        </caseValues>
+        <name>account_report</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Sharing</value>
+        </caseValues>
+        <name>account_sharing</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Site</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Sites</value>
+        </caseValues>
+        <name>account_site</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Team</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Teams</value>
+        </caseValues>
+        <name>account_team</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Team Member</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Team Members</value>
+        </caseValues>
+        <name>account_team_member</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Team Member ID</value>
+        </caseValues>
+        <name>account_team_member_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Territory</value>
+        </caseValues>
+        <name>account_territory</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Tool</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Tools</value>
+        </caseValues>
+        <name>account_tool</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Types</value>
+        </caseValues>
+        <name>account_type</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Customer View</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Customer Views</value>
+        </caseValues>
+        <name>account_view</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Billing County</value>
+        </caseValues>
+        <name>billing_state_account</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Billing Postal Code</value>
+        </caseValues>
+        <name>billing_zip_account</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Customer</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Parent Customers</value>
+        </caseValues>
+        <name>parent_account</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Customer Division</value>
+        </caseValues>
+        <name>parent_account_division</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Customer ID</value>
+        </caseValues>
+        <name>parent_account_id</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Customer Site</value>
+        </caseValues>
+        <name>parent_account_site</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Shipping County</value>
+        </caseValues>
+        <name>shipping_state_account</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Shipping Postal Code</value>
+        </caseValues>
+        <name>shipping_zip_account</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>County</value>
+        </caseValues>
+        <name>state_account</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Postal Code</value>
+        </caseValues>
+        <name>zip_account</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- AccountPlanogram --></label>
+        <name>AccountPlanogram__c</name>
+    </fields>
+    <fields>
+        <name>AccountSource</name>
+        <picklistValues>
+            <masterLabel>Advertisement</masterLabel>
+            <translation><!-- Advertisement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Referral</masterLabel>
+            <translation><!-- Employee Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Referral</masterLabel>
+            <translation><!-- External Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Internal</masterLabel>
+            <translation><!-- Seminar - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Partner</masterLabel>
+            <translation><!-- Seminar - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Show</masterLabel>
+            <translation><!-- Trade Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of mouth</masterLabel>
+            <translation><!-- Word of mouth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account Location --></label>
+        <name>Account_Location__c</name>
+    </fields>
+    <fields>
+        <label><!-- Active --></label>
+        <name>Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- Actual Calls --></label>
+        <name>Actual_Calls__c</name>
+    </fields>
+    <fields>
+        <label><!-- Beds --></label>
+        <name>Beds__c</name>
+    </fields>
+    <fields>
+        <label><!-- Best Time Today --></label>
+        <name>Best_Time_Today__c</name>
+    </fields>
+    <fields>
+        <label><!-- Best Time --></label>
+        <name>Best_Time__c</name>
+        <picklistValues>
+            <masterLabel>Friday</masterLabel>
+            <translation><!-- Friday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monday</masterLabel>
+            <translation><!-- Monday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Thursday</masterLabel>
+            <translation><!-- Thursday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tuesday</masterLabel>
+            <translation><!-- Tuesday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wednesday</masterLabel>
+            <translation><!-- Wednesday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- BrickId --></label>
+        <name>BrickId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brick Name --></label>
+        <name>Brick_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brick --></label>
+        <name>Brick__c</name>
+        <relationshipLabel><!-- Organisations --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Call Indicator --></label>
+        <name>Call_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Customers --></label>
+        <name>Customers__c</name>
+    </fields>
+    <fields>
+        <label><!-- Day of Week --></label>
+        <name>Day_of_Week__c</name>
+    </fields>
+    <fields>
+        <label><!-- Department Type --></label>
+        <name>Department_Type__c</name>
+        <picklistValues>
+            <masterLabel>Cardiology</masterLabel>
+            <translation><!-- Cardiology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gastroenterology</masterLabel>
+            <translation><!-- Gastroenterology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Gynaecology</masterLabel>
+            <translation><!-- Gynaecology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Haematology</masterLabel>
+            <translation><!-- Haematology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nephrology</masterLabel>
+            <translation><!-- Nephrology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Neurology</masterLabel>
+            <translation><!-- Neurology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Obstetrics</masterLabel>
+            <translation><!-- Obstetrics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Oncology</masterLabel>
+            <translation><!-- Oncology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ophthalmology</masterLabel>
+            <translation><!-- Ophthalmology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Orthopaedics</masterLabel>
+            <translation><!-- Orthopaedics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Urology</masterLabel>
+            <translation><!-- Urology --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Dispensing? --></label>
+        <name>Dispensing__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Id --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- External Parent Id --></label>
+        <name>External_Parent_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Find Nearby --></label>
+        <name>FN__Find_Nearby__c</name>
+    </fields>
+    <fields>
+        <label><!-- Latitude --></label>
+        <name>FN__Lat__c</name>
+    </fields>
+    <fields>
+        <label><!-- Longitude --></label>
+        <name>FN__Lon__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mapping Status --></label>
+        <name>FN__Mapping_Status__c</name>
+        <picklistValues>
+            <masterLabel>Bad Google Key</masterLabel>
+            <translation><!-- Bad Google Key --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Google Exhausted</masterLabel>
+            <translation><!-- Google Exhausted --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Located</masterLabel>
+            <translation><!-- Located --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Located Yet</masterLabel>
+            <translation><!-- Not Located Yet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Problem with Address</masterLabel>
+            <translation><!-- Problem with Address --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Mapping Address --></label>
+        <name>FN__Which_Address__c</name>
+        <picklistValues>
+            <masterLabel>Billing</masterLabel>
+            <translation><!-- Billing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Do Not Map</masterLabel>
+            <translation><!-- Do Not Map --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipping</masterLabel>
+            <translation><!-- Shipping --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hover Details --></label>
+        <name>ITBrelViz__Hover_Details__c</name>
+    </fields>
+    <fields>
+        <name>Industry</name>
+        <picklistValues>
+            <masterLabel>Agriculture</masterLabel>
+            <translation><!-- Agriculture --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Apparel</masterLabel>
+            <translation><!-- Apparel --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Banking</masterLabel>
+            <translation><!-- Banking --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Biotechnology</masterLabel>
+            <translation><!-- Biotechnology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Chemicals</masterLabel>
+            <translation><!-- Chemicals --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Communications</masterLabel>
+            <translation><!-- Communications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Construction</masterLabel>
+            <translation><!-- Construction --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Consulting</masterLabel>
+            <translation><!-- Consulting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Education</masterLabel>
+            <translation><!-- Education --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Electronics</masterLabel>
+            <translation><!-- Electronics --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Energy</masterLabel>
+            <translation><!-- Energy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Engineering</masterLabel>
+            <translation><!-- Engineering --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Entertainment</masterLabel>
+            <translation><!-- Entertainment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Environmental</masterLabel>
+            <translation><!-- Environmental --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Finance</masterLabel>
+            <translation><!-- Finance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Food &amp; Beverage</masterLabel>
+            <translation><!-- Food &amp; Beverage --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Government</masterLabel>
+            <translation><!-- Government --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Healthcare</masterLabel>
+            <translation><!-- Healthcare --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospitality</masterLabel>
+            <translation><!-- Hospitality --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Insurance</masterLabel>
+            <translation><!-- Insurance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Machinery</masterLabel>
+            <translation><!-- Machinery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manufacturing</masterLabel>
+            <translation><!-- Manufacturing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Media</masterLabel>
+            <translation><!-- Media --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not For Profit</masterLabel>
+            <translation><!-- Not For Profit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Recreation</masterLabel>
+            <translation><!-- Recreation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retail</masterLabel>
+            <translation><!-- Retail --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipping</masterLabel>
+            <translation><!-- Shipping --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Technology</masterLabel>
+            <translation><!-- Technology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telecommunications</masterLabel>
+            <translation><!-- Telecommunications --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transportation</masterLabel>
+            <translation><!-- Transportation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Utilities</masterLabel>
+            <translation><!-- Utilities --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Last Call Report Date --></label>
+        <name>Last_Call_Report_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- List Size --></label>
+        <name>List_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Open Opportunity Value --></label>
+        <name>OppValue__c</name>
+    </fields>
+    <fields>
+        <label><!-- Order Template --></label>
+        <name>Order_Template__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <name>Ownership</name>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Private</masterLabel>
+            <translation><!-- Private --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public</masterLabel>
+            <translation><!-- Public --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subsidiary</masterLabel>
+            <translation><!-- Subsidiary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Person Account Brick Name --></label>
+        <name>Person_Account_Brick_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price List --></label>
+        <name>Price_List__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product 1 Sales --></label>
+        <name>Product1_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product 2 Sales --></label>
+        <name>Product2_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product 3 Sales --></label>
+        <name>Product3_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product 1 Brick Sales --></label>
+        <name>Product_1_Brick_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product 2 Brick Sales --></label>
+        <name>Product_2_Brick_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product 3 Brick Sales --></label>
+        <name>Product_3_Brick_Sales__c</name>
+    </fields>
+    <fields>
+        <name>Rating</name>
+        <picklistValues>
+            <masterLabel>Cold</masterLabel>
+            <translation><!-- Cold --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hot</masterLabel>
+            <translation><!-- Hot --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Warm</masterLabel>
+            <translation><!-- Warm --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Relationship Indicator --></label>
+        <name>Relationship_Indicator__c</name>
+    </fields>
+    <fields>
+        <label><!-- Relationship --></label>
+        <name>Relationship__c</name>
+        <picklistValues>
+            <masterLabel>Friend</masterLabel>
+            <translation><!-- Friend --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Indifferent</masterLabel>
+            <translation><!-- Indifferent --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Interested</masterLabel>
+            <translation><!-- Interested --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Target Calls --></label>
+        <name>Target_Calls__c</name>
+    </fields>
+    <fields>
+        <label><!-- Target --></label>
+        <name>Target__c</name>
+        <picklistValues>
+            <masterLabel>High</masterLabel>
+            <translation><!-- High --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Low</masterLabel>
+            <translation><!-- Low --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medium</masterLabel>
+            <translation><!-- Medium --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Training? --></label>
+        <name>Training__c</name>
+    </fields>
+    <fields>
+        <name>Type</name>
+        <picklistValues>
+            <masterLabel>Acute Trust</masterLabel>
+            <translation><!-- Acute Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Beacon Practice</masterLabel>
+            <translation><!-- Beacon Practice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dental Surgery</masterLabel>
+            <translation><!-- Dental Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Independent Practice</masterLabel>
+            <translation><!-- Independent Practice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opticians</masterLabel>
+            <translation><!-- Opticians --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organisation</masterLabel>
+            <translation><!-- Organisation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Outlet</masterLabel>
+            <translation><!-- Outlet --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Patient</masterLabel>
+            <translation><!-- Patient --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharmacy</masterLabel>
+            <translation><!-- Pharmacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Care Group</masterLabel>
+            <translation><!-- Primary Care Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Primary Care Trust</masterLabel>
+            <translation><!-- Primary Care Trust --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Retailer</masterLabel>
+            <translation><!-- Retailer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Strategic Health Authority</masterLabel>
+            <translation><!-- Strategic Health Authority --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Surgery</masterLabel>
+            <translation><!-- Surgery --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wholesaler</masterLabel>
+            <translation><!-- Wholesaler --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Address Match Details --></label>
+        <name>Wherevantage__WhereVantage_Geocoding__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Wholesaler Type --></label>
+        <name>Wholesaler_Type__c</name>
+        <picklistValues>
+            <masterLabel>All In</masterLabel>
+            <translation><!-- All In --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blocked</masterLabel>
+            <translation><!-- Blocked --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cooperatives</masterLabel>
+            <translation><!-- Cooperatives --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not All In</masterLabel>
+            <translation><!-- Not All In --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Won Opportunities --></label>
+        <name>Won_Opportunities__c</name>
+    </fields>
+    <fields>
+        <help><!-- Reference to the Geocode object holding all of mapping information for the record. --></help>
+        <label><!-- Geocode --></label>
+        <name>geopointe__Geocode__c</name>
+        <relationshipLabel><!-- Accounts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- % Target Calls --></label>
+        <name>pc_Target_Calls__c</name>
+    </fields>
+    <layouts>
+        <layout>Brick Layout</layout>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Indicators --></label>
+            <section>Indicators</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Department Layout</layout>
+        <sections>
+            <label><!-- Fields --></label>
+            <section>Fields</section>
+        </sections>
+        <sections>
+            <label><!-- Hierachy --></label>
+            <section>Hierachy</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Medical Professional Layout</layout>
+        <layoutType>PersonAccount</layoutType>
+        <sections>
+            <label><!-- Activity --></label>
+            <section>Activity</section>
+        </sections>
+        <sections>
+            <label><!-- Call Notes --></label>
+            <section>Call Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Correspondence Details --></label>
+            <section>Correspondence Details</section>
+        </sections>
+        <sections>
+            <label><!-- Key Opinion Leader --></label>
+            <section>Key Opinion Leader</section>
+        </sections>
+        <sections>
+            <label><!-- Location --></label>
+            <section>Location</section>
+        </sections>
+        <sections>
+            <label><!-- Primary Location --></label>
+            <section>Primary Location</section>
+        </sections>
+        <sections>
+            <label><!-- Sampling --></label>
+            <section>Sampling</section>
+        </sections>
+        <sections>
+            <label><!-- Visualiser --></label>
+            <section>Visualiser</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Organisation - Developing Market Layout</layout>
+        <sections>
+            <label><!-- Activity --></label>
+            <section>Activity</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Targeting --></label>
+            <section>Customer Targeting</section>
+        </sections>
+        <sections>
+            <label><!-- Location --></label>
+            <section>Location</section>
+        </sections>
+        <sections>
+            <label><!-- Map --></label>
+            <section>Map</section>
+        </sections>
+        <sections>
+            <label><!-- Organisation Information --></label>
+            <section>Organisation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Other --></label>
+            <section>Other</section>
+        </sections>
+        <sections>
+            <label><!-- Reports --></label>
+            <section>Reports</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Organisation Layout</layout>
+        <sections>
+            <label><!-- Activity --></label>
+            <section>Activity</section>
+        </sections>
+        <sections>
+            <label><!-- ERP --></label>
+            <section>ERP</section>
+        </sections>
+        <sections>
+            <label><!-- Hierachy --></label>
+            <section>Hierachy</section>
+        </sections>
+        <sections>
+            <label><!-- Location --></label>
+            <section>Location</section>
+        </sections>
+        <sections>
+            <label><!-- Map --></label>
+            <section>Map</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity Indicators --></label>
+            <section>Opportunity Indicators</section>
+        </sections>
+        <sections>
+            <label><!-- Orders --></label>
+            <section>Orders</section>
+        </sections>
+        <sections>
+            <label><!-- Organisation Information --></label>
+            <section>Organisation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Other --></label>
+            <section>Other</section>
+        </sections>
+        <sections>
+            <label><!-- Planogram --></label>
+            <section>Planogram</section>
+        </sections>
+        <sections>
+            <label><!-- Reports --></label>
+            <section>Reports</section>
+        </sections>
+        <sections>
+            <label><!-- Visualiser --></label>
+            <section>Visualiser</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Wholesaler Layout</layout>
+        <sections>
+            <label><!-- Location --></label>
+            <section>Location</section>
+        </sections>
+        <sections>
+            <label><!-- Organisation Information --></label>
+            <section>Organisation Information</section>
+        </sections>
+        <sections>
+            <label><!-- Reports --></label>
+            <section>Reports</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Brick --></label>
+        <name>Brick</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Department --></label>
+        <name>Department</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Organisation --></label>
+        <name>Organisation</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Wholesaler --></label>
+        <name>Wholesaler</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- AddressCheck --></label>
+        <name>AddressCheck</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Brick_Sales --></label>
+        <name>Brick_Sales</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Call_Rate --></label>
+        <name>Call_Rate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Account_Action_Plan --></label>
+        <name>Create_Account_Action_Plan</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Action_Plans --></label>
+        <name>Create_Action_Plans</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Calls --></label>
+        <name>Create_Calls</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_Accounts --></label>
+        <name>FN__Map_Accounts</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GMI_Show_Map_Button_Account --></label>
+        <name>GMI_Show_Map_Button_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GMI_Show_Map_Link_Account --></label>
+        <name>GMI_Show_Map_Link_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Hospital_Group_Activity --></label>
+        <name>Hospital_Group_Activity</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP --></label>
+        <name>Loop__LOOP</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP_Merge --></label>
+        <name>Loop__LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOPlus --></label>
+        <name>Loop__LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOP_Merge --></label>
+        <name>Loop__Mass_LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOPlus --></label>
+        <name>Loop__Mass_LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Manage_Departments --></label>
+        <name>Manage_Departments</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Market_Share --></label>
+        <name>Market_Share</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Referrals --></label>
+        <name>Referrals</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- WVShowOnMap --></label>
+        <name>Wherevantage__WVShowOnMap</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map --></label>
+        <name>geopointe__Map</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_Records_Account --></label>
+        <name>geopointe__Map_Records_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Map_newWindow --></label>
+        <name>geopointe__Map_newWindow</name>
+    </webLinks>
+    <workflowTasks>
+        <name>ChaseAccount</name>
+        <subject><!-- Chase  Account --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

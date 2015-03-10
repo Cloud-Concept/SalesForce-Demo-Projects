@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Request a contact to take a survey</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Normal Survey Invite</name>
+    <style>none</style>
+    <subject>Please Take my survey : {!Invitation__c.subject__c}</subject>
+    <textOnly>Hello {!Contact.FirstName} {!Contact.LastName}, 
+Please take a moment to complete my survey, it&apos;s easy and online.
+ 
+Here is the link to begin: {!Invitation__c.Survey_Link__c}
+
+Thanks,
+{!User.Name}
+{!User.CompanyName}</textOnly>
+    <type>custom</type>
+</EmailTemplate>

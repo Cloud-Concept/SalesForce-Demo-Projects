@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Temp --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Temp --></value>
+    </caseValues>
+    <fields>
+        <label><!-- Boolean 1 --></label>
+        <name>Boolean_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Boolean 2 --></label>
+        <name>Boolean_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Boolean 3 --></label>
+        <name>Boolean_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Boolean 4 --></label>
+        <name>Boolean_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Boolean 5 --></label>
+        <name>Boolean_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency 1 --></label>
+        <name>Currency_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency 2 --></label>
+        <name>Currency_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency 3 --></label>
+        <name>Currency_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateTime 1 --></label>
+        <name>DateTime_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateTime 2 --></label>
+        <name>DateTime_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- DateTime 3 --></label>
+        <name>DateTime_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 1 --></label>
+        <name>Date_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 2 --></label>
+        <name>Date_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date 3 --></label>
+        <name>Date_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integer 1 --></label>
+        <name>Integer_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integer 2 --></label>
+        <name>Integer_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Integer 3 --></label>
+        <name>Integer_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Long Text 1 --></label>
+        <name>Long_Text_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Long Text 2 --></label>
+        <name>Long_Text_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Long Text 3 --></label>
+        <name>Long_Text_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Long Text 4 --></label>
+        <name>Long_Text_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Long Text 5 --></label>
+        <name>Long_Text_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Multi Picklist 1 --></label>
+        <name>Multi_Picklist_1__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Number (12,6) 1 --></label>
+        <name>Number_12_6_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number (12,6) 2 --></label>
+        <name>Number_12_6_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number (12,6) 3 --></label>
+        <name>Number_12_6_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Picklist 1 --></label>
+        <name>Picklist_1__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Text 1 --></label>
+        <name>Text_1__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text 2 --></label>
+        <name>Text_2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text 3 --></label>
+        <name>Text_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text 4 --></label>
+        <name>Text_4__c</name>
+    </fields>
+    <fields>
+        <label><!-- Text 5 --></label>
+        <name>Text_5__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Add To Campaign</masterLabel>
+            <translation><!-- Add To Campaign --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Print Route</masterLabel>
+            <translation><!-- Print Route --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>View-Based Map</masterLabel>
+            <translation><!-- View-Based Map --></translation>
+        </picklistValues>
+    </fields>
+    <gender><!-- Feminine --></gender>
+    <layouts>
+        <layout>Temp Layout</layout>
+        <sections>
+            <label><!-- - hidden - --></label>
+            <section>- hidden -</section>
+        </sections>
+        <sections>
+            <label><!-- Data --></label>
+            <section>Data</section>
+        </sections>
+    </layouts>
+    <nameFieldLabel><!-- Record # --></nameFieldLabel>
+</CustomObjectTranslation>

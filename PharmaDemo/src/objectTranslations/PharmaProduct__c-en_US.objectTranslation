@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Group --></label>
+        <name>Group__c</name>
+        <picklistValues>
+            <masterLabel>Acular</masterLabel>
+            <translation><!-- Acular --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Botox</masterLabel>
+            <translation><!-- Botox --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Glucotrol</masterLabel>
+            <translation><!-- Glucotrol --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Lumigan</masterLabel>
+            <translation><!-- Lumigan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Natrelle</masterLabel>
+            <translation><!-- Natrelle --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Refresh</masterLabel>
+            <translation><!-- Refresh --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Restasis</masterLabel>
+            <translation><!-- Restasis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Zymar</masterLabel>
+            <translation><!-- Zymar --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- LY Sales --></label>
+        <name>LY_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary --></label>
+        <name>Primary_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Sales --></label>
+        <name>Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Secondary --></label>
+        <name>Secondary_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- TY Sales --></label>
+        <name>TY_Sales__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Detail</masterLabel>
+            <translation><!-- Detail --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Product Layout</layout>
+        <sections>
+            <label><!-- Detail count by Position --></label>
+            <section>Detail count by Position</section>
+        </sections>
+        <sections>
+            <label><!-- Sales --></label>
+            <section>Sales</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

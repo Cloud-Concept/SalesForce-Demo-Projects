@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>Owner</fullName>
+        <field>OwnerId</field>
+        <lookupValue>FufillmentQueue</lookupValue>
+        <lookupValueType>Queue</lookupValueType>
+        <name>Owner</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Submitted</fullName>
+        <field>Status__c</field>
+        <literalValue>Submitted</literalValue>
+        <name>Submitted</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Status</fullName>
+        <actions>
+            <name>Owner</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Submitted</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Stock_Order__c.Status__c</field>
+            <operation>equals</operation>
+            <value>Open</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Stock_Order__c.Total_Cost__c</field>
+            <operation>greaterThan</operation>
+            <value>GBP 0</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

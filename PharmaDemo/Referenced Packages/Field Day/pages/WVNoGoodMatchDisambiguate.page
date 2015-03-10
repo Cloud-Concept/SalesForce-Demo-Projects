@@ -1,0 +1,107 @@
+<apex:page Controller="Wherevantage.WVNoGoodMatchResults" standardStylesheets="true" id="WVNoGoodMatchDisambiguate" >
+<apex:sectionHeader title="Address Matching" id="sectionHeader"/>
+
+<p></p>
+
+<style type="text/css">
+.definedWidthStyle
+{
+   width: 300px;
+}
+</style>
+
+<script>
+
+    function FindAddressOnEnter(event)
+    {
+        var keyCode;
+     
+        if (event && event.which)
+        {     
+            // Use for Firefox and Chrome     
+            keyCode = event.which;     
+        } 
+        else 
+        {         
+            // Use for IE         
+            keyCode = event.keyCode;     
+        }
+     
+        if (keyCode == 13)
+        {     
+            try
+            {
+                event.preventDefault(); 
+            }
+            catch(error) //catch error for IE
+            {
+                event.cancelBubble = true;
+                event.returnValue = false;            
+            }
+            
+            var FindAddressButton = document.getElementById('{!$Component.Form.PageBlock.BottomButtons.FindAddress}');
+            FindAddressButton.click();
+        }
+    }        
+
+</script>
+
+<apex:form id="Form">
+<apex:pageBlock id="PageBlock">
+<apex:outputPanel id="MainPanel">
+<table>
+    <tr>
+        <td><apex:outputLabel dir=""  value="{!$Label.wherevantage__WV_AddressMatchPage_Street}" for="street" /></td>
+        <td>
+            <apex:inputTextArea id="street" rows="3" styleClass="definedWidthStyle" value="{!Street}"></apex:inputTextArea>
+        </td>
+    </tr>
+    <tr>
+        <td><apex:outputLabel dir=""  value="{!$Label.wherevantage__WV_AddressMatchPage_City}" for="city" /></td><td><apex:inputText id="city" value="{!City}" onkeypress="FindAddressOnEnter(event)"/></td>
+    </tr>
+    <tr>
+        <td><apex:outputLabel dir=""  value="{!$Label.wherevantage__WV_AddressMatchPage_State}" for="state" /></td><td><apex:inputText id="state" value="{!StateOrProvince}" onkeypress="FindAddressOnEnter(event)"/></td>
+    </tr>
+    <tr>
+        <td><apex:outputLabel dir=""  value="{!$Label.wherevantage__WV_AddressMatchPage_PostalCode}" for="postalCode"  /></td><td><apex:inputText id="postalCode" value="{!PostalCode}" onkeypress="FindAddressOnEnter(event)"/></td>
+    </tr>
+    <tr>
+        <td><p></p></td>
+    </tr>
+    <tr>
+        <td>
+        </td>
+        <td>
+            <apex:outputPanel id="out"> 
+            <apex:actionStatus startText="{!$Label.wherevantage__WV_AddressMatchPage_Requesting}"  id="counterStatus"    >
+            <apex:facet name="stop">{!Status}</apex:facet>
+            </apex:actionStatus>
+            </apex:outputPanel>
+        </td>
+    </tr>
+
+    <tr>
+        <td><apex:outputLabel dir=""  value="{!$Label.wherevantage__WV_AddressMatchPage_Results}" for="results" /></td>
+        <td><apex:selectList id="results" multiselect="false"  styleClass="definedWidthStyle" value="{!SelectedResult}" size="4" >
+            <apex:actionSupport event="onchange" action="{!CheckSaveStatus}" reRender="SaveButton, SaveAndNextButton" />
+            <apex:selectOptions value="{!AddressResultOptionsList}" id="resultsList" />
+            </apex:selectList>
+        </td>
+    </tr>     
+</table>
+</apex:outputPanel>
+  
+<apex:pageBlockButtons location="bottom" id="BottomButtons">
+    <apex:commandButton value="{!$Label.wherevantage__WV_AddressMatchPage_FindAddress}" action="{!RefreshFindAddressResults}" status="counterStatus"   id="FindAddress"  reRender="PageBlock"  />
+</apex:pageBlockButtons>
+
+<apex:pageBlockButtons location="top" id="TopButtons">
+    <apex:commandButton action="{!Save}" disabled="{!DisableSave}" value="{!$Label.wherevantage__WV_Save}" id="SaveButton"/>
+    <apex:commandButton action="{!SaveAndNext}" disabled="{!DisableSaveAndNext}" value="{!$Label.wherevantage__WV_SaveAndNext}" id="SaveAndNextButton"/>
+    <apex:commandButton action="{!SkipRecord}"  disabled="{!DisableSkipRecord}" value="{!$Label.wherevantage__WV_SkipRecord}" id="SkipRecordButton"/>
+    <apex:commandButton action="{!Cancel}" value="{!$Label.wherevantage__WV_AddressMatchPage_Cancel}"/>
+    <a href="http://www.wherevantage.com/help/Salesforce/v1.0/disambiguationpage" target="_blank" style="float:right; color:#015BA7;text-decoration:none;font-size:small;vertical-align:text-bottom;">Help for this page <img src="{!$Resource.WVHelpOrange}" style="vertical-align:text-bottom;"/></a><br></br><br></br>
+</apex:pageBlockButtons>
+</apex:pageBlock>                     
+</apex:form>
+</apex:page>

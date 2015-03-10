@@ -1,0 +1,168 @@
+<apex:page contentType="text/css">
+body a:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
+.thumbnail {
+  border: 1px solid transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+input[disabled=true].ui-input-text,
+textarea[disabled=true].ui-input-text {
+  background-color: #FCF8E3;
+  border-color: #FBEED5;
+  color: #C09853;
+  font-weight: bold;
+}
+.hidden {
+  display: none !important;
+}
+
+/*Jon Berry change the height of the header*/
+.ui-header {
+  overflow: hidden;
+  height:6.0em;}
+
+
+.ui-header .ui-title {
+  margin: 1.5em 30% 1em;
+  
+}
+.ui-header .ui-btn-icon-notext {
+  top:1.5em;
+  
+}
+.cloud {
+
+  /*background-image: url('/img/touch/headerCloud.png');*/
+  /*background-image: url({!URLFOR($Resource.Mobile, 'images/headerLogo.png')});*/
+  background-repeat: no-repeat;
+  width: 465px;
+  height: 75px;
+  position: absolute;
+  left: 60%;
+  bottom: 0px;
+}
+#datePicker,
+.dateFormat {
+  display: none !important;
+}
+
+.subtitle-blue {
+  color:#146AB9;
+}
+.subtitle-grey {
+  color:#C0C0C0;
+}
+img.logo {
+    margin: 20px auto;
+    display: block;
+}
+
+section.layoutSection {
+  margin-bottom: 20px;
+}
+
+section.layoutSection header h4 {
+    font-weight: bold;
+    font-size: 16px;
+    border-bottom: 3px solid #2489CE;
+    padding: 0 0 8px;
+    margin: 20px 25px 8px;
+    display: inline-block;
+}
+
+section.layoutSection header hr {
+    height: 1px;
+    padding-left: 25px;
+    border: 0px solid gainsboro;  
+    margin-top: -11px;
+}
+
+section.layoutSection fieldset {
+  margin: 0px 25px;
+}
+
+.layoutSection fieldset dl {
+  padding: 12px 0;
+  border-bottom: 1px solid #C9CCCD;
+  position: relative;
+}
+
+.layoutSection .ui-grid-a {
+  display: -webkit-box;
+  vertical-align: baseline;
+}
+
+.layoutSection .ui-block-a, .layoutSection .ui-block-b {
+  float: none;
+}
+
+.layoutSection .ui-block-a {
+  margin-right: 10px;
+}
+
+.layoutSection dl dt {
+  color: #8F989B;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 12px;
+  margin-bottom: 4px;
+}
+
+.layoutSection dl dd {
+  width: 90%;
+  font-size: 15px;
+  color: #146AB9;
+  line-height: 14px;
+  -webkit-margin-start: 0px;
+  margin-start: 0px;
+  min-height: 20px;
+}
+
+.layoutSection dl dd img.inlineImage {
+    max-height: 48px;
+    max-width: 48px;
+    position: absolute;
+    top: 7px;
+    right: 10px;
+}
+
+@media screen and (max-width: 479px) {
+  .layoutSection dl dd img {
+    display: none;
+  }
+}
+
+.layoutSection dl dd a {
+  color: #2489CE;
+  text-decoration: none;
+}
+
+.ui-footer .ui-controlgroup-horizontal {
+  margin: .5em 0;
+  text-align: center;
+}
+
+.lookupIcon {
+  display: none !important;
+}
+
+#launcher span.launcherIcons {
+    height: 32px;
+    width: 32px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    background-color: transparent;
+    margin-left: -16px;
+}
+
+/*Notes for Jon Berry
+.sample {
+    background-image: url({!URLFOR($Resource.Mobile, 'images/mobile_noise.png')});
+}
+*/
+
+</apex:page>

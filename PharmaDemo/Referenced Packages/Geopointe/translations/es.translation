@@ -1,0 +1,2104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- Geopointe --></label>
+        <name>Geopointe</name>
+    </customApplications>
+    <customLabels>
+        <label>API de acceso no está habilitada para su cuenta de usuario. Por favor, póngase en contacto con su administrador si cree que está recibiendo este mensaje por error.</label>
+        <name>API_Access_is_not_enabled_for_your_user_account</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre de cuenta</label>
+        <name>Account_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Acción</label>
+        <name>Action</name>
+    </customLabels>
+    <customLabels>
+        <label>Acciones</label>
+        <name>Actions</name>
+    </customLabels>
+    <customLabels>
+        <label>Activar</label>
+        <name>Activate</name>
+    </customLabels>
+    <customLabels>
+        <label>Vigente</label>
+        <name>Active</name>
+    </customLabels>
+    <customLabels>
+        <label>Agregar</label>
+        <name>Add</name>
+    </customLabels>
+    <customLabels>
+        <label>Agregar todo a la Ruta</label>
+        <name>Add_All_to_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Agregar Filtro</label>
+        <name>Add_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label>Agregar Formas a ver Mapa</label>
+        <name>Add_Shapes_to_Map</name>
+    </customLabels>
+    <customLabels>
+        <label>Añadir formas personalizadas para el mapa que puede actuar como límites para las búsquedas.</label>
+        <name>Add_custom_shapes_to_the_map_that_can_act</name>
+    </customLabels>
+    <customLabels>
+        <label>Agregar a la Campaña</label>
+        <name>Add_to_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label>Los registros deben ser ploteados en el mapa para poner en marcha la opción Agregar a la campaña de la funcionalidad.</label>
+        <name>Add_to_Campaign_Records_must_be_plotted</name>
+    </customLabels>
+    <customLabels>
+        <label>Añadir a Mapa</label>
+        <name>Add_to_Map</name>
+    </customLabels>
+    <customLabels>
+        <label>Incluir a la Ruta</label>
+        <name>Add_to_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Adición de capa</label>
+        <name>Adding_Layer</name>
+    </customLabels>
+    <customLabels>
+        <label>Adición de Forma</label>
+        <name>Adding_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label>Dirección</label>
+        <name>Address</name>
+    </customLabels>
+    <customLabels>
+        <label>Búsqueda de direcciones</label>
+        <name>Address_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Todo</label>
+        <name>All</name>
+    </customLabels>
+    <customLabels>
+        <label>Todos los Registros</label>
+        <name>All_Records</name>
+    </customLabels>
+    <customLabels>
+        <label>Todos los registros se han añadido correctamente a la lista de ruta actual.</label>
+        <name>All_Records_were_successfully_added_to_the_Current_Route_list</name>
+    </customLabels>
+    <customLabels>
+        <label>Todas las Pestañas</label>
+        <name>All_Tabs</name>
+    </customLabels>
+    <customLabels>
+        <label>Todos los Usuarios</label>
+        <name>All_Users</name>
+    </customLabels>
+    <customLabels>
+        <label>Aplicar Medidas Para</label>
+        <name>Apply_Action_To</name>
+    </customLabels>
+    <customLabels>
+        <label>Aproximadamente</label>
+        <name>Approximately</name>
+    </customLabels>
+    <customLabels>
+        <label>Abril</label>
+        <name>April</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Está seguro que desea continuar?</label>
+        <name>Are_you_sure_you_want_to_continue</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Está seguro que desea eliminar la siguiente ruta?</label>
+        <name>Are_you_sure_you_want_to_delete_the_following_route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Are you sure you want to delete the record: --></label>
+        <name>Are_you_sure_you_want_to_delete_the_record</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Seguro que quieres eliminar la ubicación seleccionada?</label>
+        <name>Are_you_sure_you_want_to_delete_the_selected_location</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Ascending (ASC) --></label>
+        <name>Ascending_ASC</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Assignment Plan Details --></label>
+        <name>Assignment_Plan_Details</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Assignments --></label>
+        <name>Assignments</name>
+    </customLabels>
+    <customLabels>
+        <label>Agosto</label>
+        <name>August</name>
+    </customLabels>
+    <customLabels>
+        <label>Auto</label>
+        <name>Auto</name>
+    </customLabels>
+    <customLabels>
+        <label>Disponible en Visualize</label>
+        <name>Available_in_Visualize</name>
+    </customLabels>
+    <customLabels>
+        <label>Para Evitar Autopistas</label>
+        <name>Avoid_Highways</name>
+    </customLabels>
+    <customLabels>
+        <label>Evitar Peajes</label>
+        <name>Avoid_Tolls</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Back to Geopointe Settings --></label>
+        <name>Back_to_Geopointe_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label>Volver a Búsqueda</label>
+        <name>Back_to_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Barra</label>
+        <name>Bar</name>
+    </customLabels>
+    <customLabels>
+        <label>Bicicleta</label>
+        <name>Bicycle</name>
+    </customLabels>
+    <customLabels>
+        <label>Montar en bicicleta</label>
+        <name>Bicycling</name>
+    </customLabels>
+    <customLabels>
+        <label>Opacidad Frontera</label>
+        <name>Border_Opacity</name>
+    </customLabels>
+    <customLabels>
+        <label>Fondo</label>
+        <name>Bottom</name>
+    </customLabels>
+    <customLabels>
+        <label>Por</label>
+        <name>By</name>
+    </customLabels>
+    <customLabels>
+        <label>Calcular Drive Distancia?</label>
+        <name>Calculate_Drive_Distance</name>
+    </customLabels>
+    <customLabels>
+        <label>Cálculo de Ruta</label>
+        <name>Calculating_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Día del Calendario Mes</label>
+        <name>Calendar_Day_in_Month</name>
+    </customLabels>
+    <customLabels>
+        <label>Día del Calendario en la Semana</label>
+        <name>Calendar_Day_in_Week</name>
+    </customLabels>
+    <customLabels>
+        <label>Mes Civil</label>
+        <name>Calendar_Month</name>
+    </customLabels>
+    <customLabels>
+        <label>Mes Calendario de Año</label>
+        <name>Calendar_Month_in_Year</name>
+    </customLabels>
+    <customLabels>
+        <label>Año Calendario</label>
+        <name>Calendar_Year</name>
+    </customLabels>
+    <customLabels>
+        <label>Cancelar</label>
+        <name>Cancel</name>
+    </customLabels>
+    <customLabels>
+        <label>Centro Mapa</label>
+        <name>Center_Map</name>
+    </customLabels>
+    <customLabels>
+        <label>Centrar y hacer zoom Mapa</label>
+        <name>Center_and_Zoom_Map</name>
+    </customLabels>
+    <customLabels>
+        <label>Centro del mapa para anterior Búsqueda Radial</label>
+        <name>Center_of_Map_for_Last_Radial_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Tipo de Gráfico</label>
+        <name>Chart_Type</name>
+    </customLabels>
+    <customLabels>
+        <label>Registrarse</label>
+        <name>Check_In</name>
+    </customLabels>
+    <customLabels>
+        <label>Registrarse es Exitoso!!</label>
+        <name>Check_In_Successful</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Check Out --></label>
+        <name>Check_Out</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Check Out Successful! --></label>
+        <name>Check_Out_Successful</name>
+    </customLabels>
+    <customLabels>
+        <label>Control de entrada de</label>
+        <name>Checking_In</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Checking Out --></label>
+        <name>Checking_Out</name>
+    </customLabels>
+    <customLabels>
+        <label>Escoja un campo, haga clic en Seleccionar. Las etiquetas seguido por un &quot;&gt;&quot; indican que hay más campos disponibles.</label>
+        <name>Choose_a_field_then_click_Select_Labels_followed_by_a</name>
+    </customLabels>
+    <customLabels>
+        <label>Ciudad</label>
+        <name>City</name>
+    </customLabels>
+    <customLabels>
+        <label>Borrar Existentes</label>
+        <name>Clear_Existing</name>
+    </customLabels>
+    <customLabels>
+        <label>Borrar Resultados</label>
+        <name>Clear_Results</name>
+    </customLabels>
+    <customLabels>
+        <label>Claro Ruta</label>
+        <name>Clear_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Haga clic en el mapa para empezar a construir una forma.</label>
+        <name>Click_on_the_map_to_start_building_a_shape</name>
+    </customLabels>
+    <customLabels>
+        <label>Cerrar</label>
+        <name>Close</name>
+    </customLabels>
+    <customLabels>
+        <label>Cerrar Pestañas en Buscar</label>
+        <name>Close_Tabs_on_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Contraer el Panel</label>
+        <name>Collapse_Panel</name>
+    </customLabels>
+    <customLabels>
+        <label>Color</label>
+        <name>Color</name>
+    </customLabels>
+    <customLabels>
+        <label>Marcadores de Color Mediante</label>
+        <name>Color_Markers_By</name>
+    </customLabels>
+    <customLabels>
+        <label>Columna</label>
+        <name>Column</name>
+    </customLabels>
+    <customLabels>
+        <label>Empresa</label>
+        <name>Company</name>
+    </customLabels>
+    <customLabels>
+        <label>Tiempo de espera de conexión.</label>
+        <name>Connection_timeout</name>
+    </customLabels>
+    <customLabels>
+        <label>País</label>
+        <name>Country</name>
+    </customLabels>
+    <customLabels>
+        <label>Filtro Cruzado</label>
+        <name>Cross_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label>Filtros de Object Cruz</label>
+        <name>Cross_Object_Filters</name>
+    </customLabels>
+    <customLabels>
+        <label>Conjunto de Datos</label>
+        <name>Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label>Set de acceso a datos</label>
+        <name>Data_Set_Access</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Está seguro de que desea desactivar este registro? Desactivación de un conjunto de datos no permitirá que sea utilizada en los mapas, pero mantendrá el registro en el sistema en caso de que desee activarlo más tarde.</label>
+        <name>Data_Set_Deactive_Confirm</name>
+    </customLabels>
+    <customLabels>
+        <label>Un conjunto de datos se tiene que ver con un objeto de mapa y define los campos y los filtros que se utilizarán para el mapa resultante. Varios conjuntos de datos pueden
+existir para el mismo objeto de mapa.</label>
+        <name>Data_Set_Definition</name>
+    </customLabels>
+    <customLabels>
+        <label>¿Está seguro que desea eliminar este registro? Eliminación de un conjunto de datos no permitirá que sea utilizada en sus mapas. Si usted piensa que usted puede ser que desee asignar este conjunto de datos nuevo, se recomienda dejarlo como inactivo en lugar de eliminarlo.</label>
+        <name>Data_Set_Delete_Confirm</name>
+    </customLabels>
+    <customLabels>
+        <label>Conjunto de datos Campos</label>
+        <name>Data_Set_Fields</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre del conjunto de datos</label>
+        <name>Data_Set_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Selección del Conjunto de Datos</label>
+        <name>Data_Set_Selection</name>
+    </customLabels>
+    <customLabels>
+        <label>Configuración del conjunto de datos</label>
+        <name>Data_Set_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label>Conjuntos de Datos</label>
+        <name>Data_Sets</name>
+    </customLabels>
+    <customLabels>
+        <label>Fecha</label>
+        <name>Day</name>
+    </customLabels>
+    <customLabels>
+        <label>Desactivar</label>
+        <name>Deactivate</name>
+    </customLabels>
+    <customLabels>
+        <label>Diciembre</label>
+        <name>December</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminar</label>
+        <name>Del</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminar</label>
+        <name>Delete</name>
+    </customLabels>
+    <customLabels>
+        <label>Borrar Ruta</label>
+        <name>Delete_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminar Forma</label>
+        <name>Delete_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Deleting... --></label>
+        <name>Deleting</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminación de conjunto de datos</label>
+        <name>Deleting_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminación Ubicación</label>
+        <name>Deleting_Location</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminación de la Ruta</label>
+        <name>Deleting_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminación de Forma</label>
+        <name>Deleting_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label>Demografía</label>
+        <name>Demographics</name>
+    </customLabels>
+    <customLabels>
+        <label>Demografía Leyenda</label>
+        <name>Demographics_Legend</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Descending (DESC) --></label>
+        <name>Descending_DESC</name>
+    </customLabels>
+    <customLabels>
+        <label>Descripción</label>
+        <name>Description</name>
+    </customLabels>
+    <customLabels>
+        <label>Instrucciones Detalladas</label>
+        <name>Detailed_Directions</name>
+    </customLabels>
+    <customLabels>
+        <label>Instrucciones</label>
+        <name>Directions</name>
+    </customLabels>
+    <customLabels>
+        <label>Distancia</label>
+        <name>Distance</name>
+    </customLabels>
+    <customLabels>
+        <label>Dibujar Modo</label>
+        <name>Draw_Mode</name>
+    </customLabels>
+    <customLabels>
+        <label>Drive Distancia</label>
+        <name>Drive_Distance</name>
+    </customLabels>
+    <customLabels>
+        <label>Conducción</label>
+        <name>Driving</name>
+    </customLabels>
+    <customLabels>
+        <label>Duplicar Forma</label>
+        <name>Duplicate_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label>Editar</label>
+        <name>Edit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit Assignment --></label>
+        <name>Edit_Assignment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Edit Assignment Area --></label>
+        <name>Edit_Assignment_Area</name>
+    </customLabels>
+    <customLabels>
+        <label>Editar conjunto de datos</label>
+        <name>Edit_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label>Editar esta Ruta en Google Maps</label>
+        <name>Edit_this_Route_at_Google_Maps</name>
+    </customLabels>
+    <customLabels>
+        <label>Editar esta Ruta en MapQuest.com</label>
+        <name>Edit_this_Route_at_MapQuest</name>
+    </customLabels>
+    <customLabels>
+        <label>Introduzca un nombre y una breve descripción de la forma</label>
+        <name>Enter_a_Name_and_Short_Description_for_the_shape</name>
+    </customLabels>
+    <customLabels>
+        <label>Todo el Conjunto de Datos</label>
+        <name>Entire_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label>entradas</label>
+        <name>Entries</name>
+    </customLabels>
+    <customLabels>
+        <label>Datos relacionados con la carga de error</label>
+        <name>Error_loading_related_data</name>
+    </customLabels>
+    <customLabels>
+        <label>CSV Export</label>
+        <name>Export_CSV</name>
+    </customLabels>
+    <customLabels>
+        <label>Exportación KML</label>
+        <name>Export_KML</name>
+    </customLabels>
+    <customLabels>
+        <label>Más Rápido</label>
+        <name>Fastest</name>
+    </customLabels>
+    <customLabels>
+        <label>Febrero</label>
+        <name>February</name>
+    </customLabels>
+    <customLabels>
+        <label>Campo</label>
+        <name>Field</name>
+    </customLabels>
+    <customLabels>
+        <label>Filtro de Campo</label>
+        <name>Field_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Field Filters --></label>
+        <name>Field_Filters</name>
+    </customLabels>
+    <customLabels>
+        <label>Rellene Opacidad</label>
+        <name>Fill_Opacity</name>
+    </customLabels>
+    <customLabels>
+        <label>Filtrar</label>
+        <name>Filter</name>
+    </customLabels>
+    <customLabels>
+        <label>Lógica de Filtro</label>
+        <name>Filter_Logic</name>
+    </customLabels>
+    <customLabels>
+        <label>Filtros</label>
+        <name>Filters</name>
+    </customLabels>
+    <customLabels>
+        <label>Primero</label>
+        <name>First</name>
+    </customLabels>
+    <customLabels>
+        <label>Viernes</label>
+        <name>Friday</name>
+    </customLabels>
+    <customLabels>
+        <label>Desde</label>
+        <name>From</name>
+    </customLabels>
+    <customLabels>
+        <label>Calidad Geocode</label>
+        <name>Geocode_Quality</name>
+    </customLabels>
+    <customLabels>
+        <label>Obtener Ruta</label>
+        <name>Get_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Vaya Aquí</label>
+        <name>Go_Here</name>
+    </customLabels>
+    <customLabels>
+        <label>Ir a Mapa</label>
+        <name>Go_to_Map</name>
+    </customLabels>
+    <customLabels>
+        <label>Ir al registro de Padres</label>
+        <name>Go_to_Parent_Record</name>
+    </customLabels>
+    <customLabels>
+        <label>Ir a la forma</label>
+        <name>Go_to_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label>Ir a Visualize</label>
+        <name>Go_to_Visualize</name>
+    </customLabels>
+    <customLabels>
+        <label>Direcciones de transporte público de Google sólo pueden soportar dos ubicaciones de ruta. Reduzca la cantidad de poblaciones de la ruta.</label>
+        <name>Google_Public_Transportation_directions_can_only_support_two_route_locations</name>
+    </customLabels>
+    <customLabels>
+        <label>Google limita Rutas 10 ubicaciones cuando usted no está utilizando una licencia de Google Premier. Geopointe sólo utiliza la licencia de Google Premier en producción, no en Areneros. Reduzca la cantidad de poblaciones de la ruta.</label>
+        <name>Google_limits_Routes_to_10_locations_when_you_are_not_using_a_Google_Premier</name>
+    </customLabels>
+    <customLabels>
+        <label>Google limita Rutas a 25 localidades. Reduzca la cantidad de poblaciones de la ruta.</label>
+        <name>Google_limits_Routes_to_25_locations</name>
+    </customLabels>
+    <customLabels>
+        <label>Granularidad</label>
+        <name>Granularity</name>
+    </customLabels>
+    <customLabels>
+        <label>Agrupar Por</label>
+        <name>Group_By</name>
+    </customLabels>
+    <customLabels>
+        <label>Ayudar</label>
+        <name>Help</name>
+    </customLabels>
+    <customLabels>
+        <label>Utilice este botón para agregar todos los registros en la lista a la ruta. Sólo añadir un máximo de 40 puntos.</label>
+        <name>Help_Add_All_To_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Si los cables o los contactos están en el mapa, este botón se iniciará un complemento a la campaña de asistente que le permite encontrar los registros en el mapa y las ponen en una campaña de marketing. Este botón sólo aparece si tiene la autoridad para trabajar con campañas.</label>
+        <name>Help_Add_To_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label>Permite introducir el nombre de una ciudad, estado, u otra información de la dirección y rápidamente volver a posicionar el mapa para esta ubicación.</label>
+        <name>Help_Address_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Agrega una capa de senderos en bicicleta al mapa. Esto sólo está disponible en ciertos lugares y en determinados niveles de zoom.</label>
+        <name>Help_Bicycling</name>
+    </customLabels>
+    <customLabels>
+        <label>El polígono azul pone el mapa en el modo Draw. Haga clic en el mapa para empezar a construir una forma. Doble clic o conectar el último punto de la forma que el punto de partida para terminar la figura.</label>
+        <name>Help_Blue_Polygon</name>
+    </customLabels>
+    <customLabels>
+        <label>Le dice Geopointe conservar o eliminar puntos existentes de el mapa en la siguiente búsqueda.</label>
+        <name>Help_Clear_Exisiting</name>
+    </customLabels>
+    <customLabels>
+        <label>Al término de una búsqueda de conjunto de datos esto cerrará las pestañas abiertas.</label>
+        <name>Help_Close_Tabs_on_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Escoja un campo y el sistema le asignará un color pin a los resultados para cada valor único en el campo elegido.</label>
+        <name>Help_Color_Markers_By</name>
+    </customLabels>
+    <customLabels>
+        <label>Controla quién tiene acceso al conjunto de datos. Sólo usted oa todos los usuarios. Sólo los administradores verán esta opción.</label>
+        <name>Help_Data_Set_Edit_Access</name>
+    </customLabels>
+    <customLabels>
+        <label>Marque esta casilla para que este conjunto de datos disponible en la pestaña Visualizar y Geopointe Analytics.</label>
+        <name>Help_Data_Set_Edit_Available_in_Visualize</name>
+    </customLabels>
+    <customLabels>
+        <label>Escoja un campo y el sistema le asignará un color pin a los resultados para cada valor único en el campo elegido.</label>
+        <name>Help_Data_Set_Edit_Color_Markers_By</name>
+    </customLabels>
+    <customLabels>
+        <label>Ajuste el color por defecto para los marcadores Conjunto de datos en el mapa.</label>
+        <name>Help_Data_Set_Edit_Marker_Color</name>
+    </customLabels>
+    <customLabels>
+        <label>El nombre del conjunto de datos</label>
+        <name>Help_Data_Set_Edit_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Marque esta casilla para que la dirección en la tabla de resultados de búsqueda bajo el mapa en la utilización de una columna. Campos si no se controla, como la calle, la ciudad, etc estarán en su propia columna.</label>
+        <name>Help_Data_Set_Edit_One_Column_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>Esta sección te permite personalizar y guardar los ajustes adicionales acerca de un conjunto de datos</label>
+        <name>Help_Data_Set_Edit_Overview</name>
+    </customLabels>
+    <customLabels>
+        <label>Permite aplicar un filtro rápido para ver todos los registros del conjunto de datos o sólo los registros que el usuario actual posee.</label>
+        <name>Help_Data_Set_Edit_Show_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label>Estos son campos adicionales que serán devueltos cuando se realiza una búsqueda de conjunto de datos.</label>
+        <name>Help_Data_Set_Fields1</name>
+    </customLabels>
+    <customLabels>
+        <label>Campos de Nombre y Dirección siempre se devuelven y no necesitan que se añade.</label>
+        <name>Help_Data_Set_Fields2</name>
+    </customLabels>
+    <customLabels>
+        <label>Estos son los filtros aplicados al conjunto de datos seleccionado. Para quitar un filtro, seleccione el enlace Del lado del filtro que desea eliminar. Filtros adicionales se pueden agregar al seleccionar el botón Añadir filtro.</label>
+        <name>Help_Data_Set_Filters1</name>
+    </customLabels>
+    <customLabels>
+        <label>Utilice la flecha abajo en el botón Añadir filtro para agregar lógica filtro avanzado, tales como (1 OR 2) AND 3 o transversales filtros objeto hijo como &quot;Cuentas con Oportunidades, donde la cantidad es mayor que 5000&quot;.</label>
+        <name>Help_Data_Set_Filters2</name>
+    </customLabels>
+    <customLabels>
+        <label>Esto mostrará las opciones de Guardar o Guardar como conjunto de datos basado en los cambios que ha realizado.</label>
+        <name>Help_Data_Set_Save</name>
+    </customLabels>
+    <customLabels>
+        <label>Elegir un conjunto de datos para definir lo que los datos de Salesforce para buscar. Un conjunto de datos se basa en un objeto (por ejemplo, cuentas) y define los campos para volver y filtros de consulta a aplicar. Puede crear grupos de datos personales en la pestaña Mi configuración. Administradores de ellos crean en la ficha Configuración Geopointe.</label>
+        <name>Help_Data_Set_Selection</name>
+    </customLabels>
+    <customLabels>
+        <label>Abre un panel que te permite personalizar los ajustes adicionales para este conjunto de datos.</label>
+        <name>Help_Data_Set_Settings_Icon_Gear</name>
+    </customLabels>
+    <customLabels>
+        <label>Para el conjunto de datos seleccionado este le permite aplicar un filtro rápido para ver todos los registros del conjunto de datos o sólo los registros que posee.</label>
+        <name>Help_Data_Set_Show_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label>Muestra / oculta una sección que le permite modificar los filtros para este conjunto de datos.</label>
+        <name>Help_Data_Set_Show_Hide_Filters</name>
+    </customLabels>
+    <customLabels>
+        <label>La función de Demografía proporciona acceso a una capa de información que contiene la información del censo de Estados Unidos (proporcionado por Nielsen) de los últimos años, así como proyecciones a 5 años.</label>
+        <name>Help_Demographics1</name>
+    </customLabels>
+    <customLabels>
+        <label>Para agregar una capa, seleccione la siguiente</label>
+        <name>Help_Demographics2</name>
+    </customLabels>
+    <customLabels>
+        <label>Cuando se realizan las tres selecciones, el mapa se dibuje la capa usando una escala de 12 colores uniformemente distribuida por los valores mínimo y máximo en el formulario. Puede modificar los valores mínimos y máximos para cambiar la escala. Para modificar la propia capa, existen controles deslizantes de opacidad que afectan el relleno y las fronteras.</label>
+        <name>Help_Demographics3</name>
+    </customLabels>
+    <customLabels>
+        <label>Elija un nivel de granularidad del Estado, Condado, Sector Censal o Censo Bloque Group.</label>
+        <name>Help_Demographics_Granularity</name>
+    </customLabels>
+    <customLabels>
+        <label>Elija una métrica disponible.</label>
+        <name>Help_Demographics_Metric</name>
+    </customLabels>
+    <customLabels>
+        <label>Elija un año de origen. Años disponibles son 2010, 2011, 2015 (proyectada desde los datos de 2010) y 2016 (proyectado a partir de datos de 2011)</label>
+        <name>Help_Demographics_Year</name>
+    </customLabels>
+    <customLabels>
+        <label>Esta búsqueda tratará de asignar todos los registros del conjunto de datos seleccionado.</label>
+        <name>Help_Entire_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label>Exportar los registros de la lista a un archivo CSV (Excel).</label>
+        <name>Help_Export_CSV</name>
+    </customLabels>
+    <customLabels>
+        <label>Exportar los registros de la lista a un archivo KML. Los archivos KML son archivos de datos geográficos que pueden ser leídos por muchas aplicaciones como Google Earth, Google Maps y ArcGIS de ESRI.</label>
+        <name>Help_Export_KML</name>
+    </customLabels>
+    <customLabels>
+        <label>La herramienta de mano abierta le permite interactuar con el mapa con normalidad y desactivar el modo de dibujo.</label>
+        <name>Help_Hand_Tool</name>
+    </customLabels>
+    <customLabels>
+        <label>No volver a mostrar la barra lateral y hacer el mapa lo más amplio posible. Entra en vigor la próxima vez que esta página se actualiza.</label>
+        <name>Help_Hide_Sidebar</name>
+    </customLabels>
+    <customLabels>
+        <label>Las capas se definen por su administrador y se puede utilizar para agregar información adicional en la parte superior del mapa, tales como límites de la ciudad, la ubicación de las tiendas, o las rutas de tránsito.</label>
+        <name>Help_KML_Layers1</name>
+    </customLabels>
+    <customLabels>
+        <label>Los nombres de capa con un punto verde junto a ellos</label>
+        <name>Help_KML_Layers2</name>
+    </customLabels>
+    <customLabels>
+        <label>indicar las capas que se muestran en el mapa.</label>
+        <name>Help_KML_Layers3</name>
+    </customLabels>
+    <customLabels>
+        <label>Algunas capas pueden cargar automáticamente durante mapa de carga definidos por el administrador.</label>
+        <name>Help_KML_Layers4</name>
+    </customLabels>
+    <customLabels>
+        <label>&apos;Auto&apos; maximizará el tamaño del mapa en función de las dimensiones de su pantalla. Valores numéricos darán el mapa una altura fija en píxeles.</label>
+        <name>Help_Map_Height</name>
+    </customLabels>
+    <customLabels>
+        <label>Esta es la posición y el nivel de zoom del mapa cuando esta página se carga.</label>
+        <name>Help_Map_Start1</name>
+    </customLabels>
+    <customLabels>
+        <label>Puede cambiar la posición de inicio colocando el mapa a su ubicación de inicio preferida y luego seleccionando el botón &apos;Set posición inicial&apos;.</label>
+        <name>Help_Map_Start2</name>
+    </customLabels>
+    <customLabels>
+        <label>Conjuntos de datos tienen un color predeterminado asociado con ellos. Reemplace el color para su próxima búsqueda mediante esta opción.</label>
+        <name>Help_Marker_Color</name>
+    </customLabels>
+    <customLabels>
+        <label>Numerarse los pins asignadas serán por lo que es más fácil para que se corresponda con los datos de la lista los datos de los mapas.</label>
+        <name>Help_Number_Map_Pins</name>
+    </customLabels>
+    <customLabels>
+        <label>Una lista de sus formas personales guardados. Para guardar una forma de dibujar uno en el mapa, haga clic en la forma, y después seleccione el botón Guardar en la ventana emergente.</label>
+        <name>Help_Personal_Shapes</name>
+    </customLabels>
+    <customLabels>
+        <label>Aquí Pinned son fichas de control de mapa que siempre va a ser visible al abrir y cerrar los paneles de control del mapa.</label>
+        <name>Help_Pinned_Tabs</name>
+    </customLabels>
+    <customLabels>
+        <label>Le permite buscar negocios y lugares de interés. A los lugares mas buscados no quitarán los marcadores en Definir datos en el mapa y la búsqueda del conjunto de datos no se eliminarán los marcadores de una búsqueda Places.</label>
+        <name>Help_Places_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Cuando se selecciona, la lista de resultados por debajo del mapa incluirá una columna de la medición de la distancia en coche desde el punto de contexto para el destino. Esta es una, respuesta inteligente en tiempo real desde el proveedor de la cartografía.</label>
+        <name>Help_Radial_Search_Calc_Drive_Distance</name>
+    </customLabels>
+    <customLabels>
+        <label>A Radial Search consultará un área circular alrededor de un punto dado. El centro del círculo se define por el &quot;contexto&quot;.</label>
+        <name>Help_Radial_Search_Overview</name>
+    </customLabels>
+    <customLabels>
+        <label>Cuando se selecciona, los resultados de la búsqueda incluirán un círculo que representa el área de búsqueda.</label>
+        <name>Help_Radial_Search_Show_Radius</name>
+    </customLabels>
+    <customLabels>
+        <label>Definir la distancia que desea buscar en millas o kilómetros.</label>
+        <name>Help_Radial_Search_Within</name>
+    </customLabels>
+    <customLabels>
+        <label>Utilice la rueda del ratón para acercar o alejar el mapa. Entra en vigor la próxima vez que esta página se actualiza.</label>
+        <name>Help_Scrollwheel_Zoom</name>
+    </customLabels>
+    <customLabels>
+        <label>Esta opción de búsqueda avanzada le permitirá dibujar formas complejas en el mapa y buscar dentro de sus límites. Si no hay formas están en el mapa se le llevará a un panel para dibujar formas en el mapa. La flecha hacia abajo proporciona opciones para agregar más formas para el mapa o eliminar todas las formas.</label>
+        <name>Help_Shape_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>La ficha seleccionada se abrirá automáticamente al cargar la página.</label>
+        <name>Help_Start_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label>Agrega una capa de información de tráfico en tiempo real para el mapa. Esto sólo está disponible en ciertos lugares y en determinados niveles de zoom.</label>
+        <name>Help_Traffic</name>
+    </customLabels>
+    <customLabels>
+        <label>Agrega una capa de información del transporte público al mapa. Esto sólo está disponible en ciertos lugares y en determinados niveles de zoom.</label>
+        <name>Help_Transit</name>
+    </customLabels>
+    <customLabels>
+        <label>Cuando esta página se carga el mapa intentará centrarse en su ubicación actual.</label>
+        <name>Help_Use_Geolocation</name>
+    </customLabels>
+    <customLabels>
+        <label>Esto buscará y mapear todos los registros del conjunto de datos seleccionado que se encuentran dentro del área visible actualmente del mapa. Zoom in / out para cambiar la zona en la que desea buscar.</label>
+        <name>Help_Viewable_Area</name>
+    </customLabels>
+    <customLabels>
+        <label>Añade una capa de información sobre el clima de weather.com al mapa. Una vez añadido, los usuarios pueden hacer clic para ver los detalles del tiempo. Esto sólo está disponible en ciertos lugares y en determinados niveles de zoom.</label>
+        <name>Help_Weather</name>
+    </customLabels>
+    <customLabels>
+        <label>Aquí</label>
+        <name>Here</name>
+    </customLabels>
+    <customLabels>
+        <label>Ocultar Filtros</label>
+        <name>Hide_Filters</name>
+    </customLabels>
+    <customLabels>
+        <label>Ocultar Barra Lateral</label>
+        <name>Hide_Sidebar</name>
+    </customLabels>
+    <customLabels>
+        <label>Hora</label>
+        <name>Hour</name>
+    </customLabels>
+    <customLabels>
+        <label>Horas</label>
+        <name>Hours</name>
+    </customLabels>
+    <customLabels>
+        <label>Si el error persiste, por favor póngase en contacto con soporte Arrowpointe.</label>
+        <name>If_this_error_continues_please_contact_Arrowpointe_support</name>
+    </customLabels>
+    <customLabels>
+        <label>Si se trata de una ficha de búsqueda Conjunto de datos asegúrese de que los resultados de la búsqueda son visibles en el mapa.</label>
+        <name>If_this_is_a_Data_Set_search_tab_please_ensure</name>
+    </customLabels>
+    <customLabels>
+        <label>Aumente la opacidad de relleno para ver más colores distintos</label>
+        <name>Increase_the_Fill_Opacity_to</name>
+    </customLabels>
+    <customLabels>
+        <label>Enero</label>
+        <name>January</name>
+    </customLabels>
+    <customLabels>
+        <label>Julio</label>
+        <name>July</name>
+    </customLabels>
+    <customLabels>
+        <label>Junio</label>
+        <name>June</name>
+    </customLabels>
+    <customLabels>
+        <label>Kilómetros</label>
+        <name>Kilometers</name>
+    </customLabels>
+    <customLabels>
+        <label>Último</label>
+        <name>Last</name>
+    </customLabels>
+    <customLabels>
+        <label>Latitud</label>
+        <name>Latitude</name>
+    </customLabels>
+    <customLabels>
+        <label>Hubo un error al lanzar Agregar a la Campaña. Si el problema persiste, póngase en contacto con el administrador.</label>
+        <name>Launch_Add_to_Campaign_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Capas</label>
+        <name>Layers</name>
+    </customLabels>
+    <customLabels>
+        <label>Capas Error</label>
+        <name>Layers_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Leyenda</label>
+        <name>Legend</name>
+    </customLabels>
+    <customLabels>
+        <label>Cargando</label>
+        <name>Loading</name>
+    </customLabels>
+    <customLabels>
+        <label>Cargando Ruta</label>
+        <name>Loading_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Cargando todos los registros del conjunto de datos</label>
+        <name>Loading_all_records_in_the_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label>Cargando registros dentro de los límites del mapa</label>
+        <name>Loading_records_within_the_map_bounds</name>
+    </customLabels>
+    <customLabels>
+        <label>Ubicación</label>
+        <name>Location</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre del Lugar</label>
+        <name>Location_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Ubicación guardado correctamente</label>
+        <name>Location_Successfully_Saved</name>
+    </customLabels>
+    <customLabels>
+        <label>Localización Resumen</label>
+        <name>Location_Summary</name>
+    </customLabels>
+    <customLabels>
+        <label>Ubicación añadida a la lista de ruta actual.</label>
+        <name>Location_successfully_added_to_the_Current_Route_list</name>
+    </customLabels>
+    <customLabels>
+        <label>Longitud</label>
+        <name>Longitude</name>
+    </customLabels>
+    <customLabels>
+        <label>Límites MapQuest Optimizado Rutas a 25 localidades. Reduzca la cantidad de poblaciones de la ruta.</label>
+        <name>MapQuest_limits_Optimized_Routes_to_25_locations</name>
+    </customLabels>
+    <customLabels>
+        <label>Mapa Acciones</label>
+        <name>Map_Actions</name>
+    </customLabels>
+    <customLabels>
+        <label>Mapa Altura</label>
+        <name>Map_Height</name>
+    </customLabels>
+    <customLabels>
+        <label>Leyenda del Mapa</label>
+        <name>Map_Legend</name>
+    </customLabels>
+    <customLabels>
+        <label>Mapa del Objeto</label>
+        <name>Map_Object</name>
+    </customLabels>
+    <customLabels>
+        <label>Datos Asignadas</label>
+        <name>Mapped_Data</name>
+    </customLabels>
+    <customLabels>
+        <label>Marzo</label>
+        <name>March</name>
+    </customLabels>
+    <customLabels>
+        <label>Color de Marcador</label>
+        <name>Marker_Color</name>
+    </customLabels>
+    <customLabels>
+        <label>Valor Máximo</label>
+        <name>Max_Value</name>
+    </customLabels>
+    <customLabels>
+        <label>Mayo</label>
+        <name>May</name>
+    </customLabels>
+    <customLabels>
+        <label>Me</label>
+        <name>Me</name>
+    </customLabels>
+    <customLabels>
+        <label>Métrico</label>
+        <name>Metric</name>
+    </customLabels>
+    <customLabels>
+        <label>Miles</label>
+        <name>Miles</name>
+    </customLabels>
+    <customLabels>
+        <label>Minuto</label>
+        <name>Min</name>
+    </customLabels>
+    <customLabels>
+        <label>Min Valor</label>
+        <name>Min_Value</name>
+    </customLabels>
+    <customLabels>
+        <label>Minutos</label>
+        <name>Mins</name>
+    </customLabels>
+    <customLabels>
+        <label>Lunes</label>
+        <name>Monday</name>
+    </customLabels>
+    <customLabels>
+        <label>Más Filtros</label>
+        <name>More_Filters</name>
+    </customLabels>
+    <customLabels>
+        <label>Mis Conjuntos de Datos</label>
+        <name>My_Data_Sets</name>
+    </customLabels>
+    <customLabels>
+        <label>Mis Lugares</label>
+        <name>My_Locations</name>
+    </customLabels>
+    <customLabels>
+        <label>Mis lugares le permite guardar ubicaciones que están separados de sus conjuntos de datos normales.</label>
+        <name>My_Locations_Help1</name>
+    </customLabels>
+    <customLabels>
+        <label>Puede agregar artículos a Mis lugares haciendo clic derecho sobre el mapa y seleccionando &quot;Guardar en Mis localizaciones&quot; opción o puede realizar una búsqueda de dirección, seleccione el marcador en el mapa, y luego elige &quot;Guardar en Mis Lugares&quot; en el mapa sección Acciones.</label>
+        <name>My_Locations_Help2</name>
+    </customLabels>
+    <customLabels>
+        <label>Mis Opciones Geopointe Personal</label>
+        <name>My_Personal_Geopointe_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label>Mis Registros</label>
+        <name>My_Records</name>
+    </customLabels>
+    <customLabels>
+        <label>Mis Opciones</label>
+        <name>My_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label>Mis Formas</label>
+        <name>My_Shapes</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre</label>
+        <name>Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Nearby Search --></label>
+        <name>Nearby_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- New Assignment --></label>
+        <name>New_Assignment</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- New Assignment Area --></label>
+        <name>New_Assignment_Area</name>
+    </customLabels>
+    <customLabels>
+        <label>Nuevo Conjunto de Datos</label>
+        <name>New_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label>Nueva Ruta</label>
+        <name>New_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Siguiente</label>
+        <name>Next</name>
+    </customLabels>
+    <customLabels>
+        <label>Ningún dato disponible en esta tabla</label>
+        <name>No_data_available_in_table</name>
+    </customLabels>
+    <customLabels>
+        <label>No se encontraron resultados</label>
+        <name>No_matching_records_found</name>
+    </customLabels>
+    <customLabels>
+        <label>No hay registros han sido asignadas.</label>
+        <name>No_records_have_been_mapped</name>
+    </customLabels>
+    <customLabels>
+        <label>No se encontraron registros</label>
+        <name>No_records_were_found</name>
+    </customLabels>
+    <customLabels>
+        <label>No se encontraron resultados</label>
+        <name>No_results_found_for</name>
+    </customLabels>
+    <customLabels>
+        <label>No se encontraron resultados que corresponden con tus criterios de búsqueda. Puedes intentarlo de nuevo mediante la exposición de un área más grande en el mapa antes de buscar.</label>
+        <name>No_results_were_found_that_met_your_search_criteria</name>
+    </customLabels>
+    <customLabels>
+        <label>Ninguno</label>
+        <name>None</name>
+    </customLabels>
+    <customLabels>
+        <label>Noviembre</label>
+        <name>November</name>
+    </customLabels>
+    <customLabels>
+        <label>Número Mapa Pasadores</label>
+        <name>Number_Map_Pins</name>
+    </customLabels>
+    <customLabels>
+        <label>Nombre del Objeto</label>
+        <name>Object_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Octubre</label>
+        <name>October</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Off --></label>
+        <name>Off</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- On --></label>
+        <name>On</name>
+    </customLabels>
+    <customLabels>
+        <label>El equipo de cuentas</label>
+        <name>On_Account_Team</name>
+    </customLabels>
+    <customLabels>
+        <label>Una Columna Dirección</label>
+        <name>One_Column_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>Sólo los primeros 1000 Formas cotizadas</label>
+        <name>Only_first_1000_Shapes_Listed</name>
+    </customLabels>
+    <customLabels>
+        <label>Operador</label>
+        <name>Operator</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Optimize --></label>
+        <name>Optimize</name>
+    </customLabels>
+    <customLabels>
+        <label>Optimizar la Ruta</label>
+        <name>Optimize_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Optimize Route will efficiently order the stops... --></label>
+        <name>Optimize_Route_will_efficiently_order</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Order By --></label>
+        <name>Order_By</name>
+    </customLabels>
+    <customLabels>
+        <label>Record Originarios actualizado correctamente!</label>
+        <name>Originating_record_successfully_updated</name>
+    </customLabels>
+    <customLabels>
+        <label>Otro</label>
+        <name>Other</name>
+    </customLabels>
+    <customLabels>
+        <label>Otras Formas</label>
+        <name>Other_Shapes</name>
+    </customLabels>
+    <customLabels>
+        <label>Sobrescribir la ruta</label>
+        <name>Overwrite_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Realización un busca de la radio</label>
+        <name>Performing_a_Radial_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Realización un busca de la forma</label>
+        <name>Performing_a_Shape_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Circular</label>
+        <name>Pie</name>
+    </customLabels>
+    <customLabels>
+        <label>Aquí Pinned</label>
+        <name>Pinned_Tabs</name>
+    </customLabels>
+    <customLabels>
+        <label>Lugares</label>
+        <name>Places</name>
+    </customLabels>
+    <customLabels>
+        <label>Lugares Buscar</label>
+        <name>Places_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Espere por favor</label>
+        <name>Please_Wait</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, póngase en contacto con Soporte Arrowpointe si continúa viendo este error.</label>
+        <name>Please_contact_Arrowpointe_Support_if_you_continue_to_see_this_error</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, póngase en contacto con el administrador del sistema para configurar Capas.</label>
+        <name>Please_contact_your_system_administrator_to_setup_Layers</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor asegúrese de la funcionalidad GPS está habilitada para este dispositivo.</label>
+        <name>Please_ensure_GPS_functionality</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, introduzca un nombre para esta ubicación</label>
+        <name>Please_enter_a_name_for_this_Location</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor dar la ruta de un nombre</label>
+        <name>Please_give_the_Route_a_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>There must be Data Sets visible on the map to perform this action.</label>
+        <name>Please_perform_a_Data_Set_search_before_applying_this_action</name>
+    </customLabels>
+    <customLabels>
+        <label>Por favor, seleccione un valor de operación, antes de la adición del filtro.</label>
+        <name>Please_select_an_Operator_value_before_adding_the_filter</name>
+    </customLabels>
+    <customLabels>
+        <label>Código Postal</label>
+        <name>Postal_Code</name>
+    </customLabels>
+    <customLabels>
+        <label>Preferencias</label>
+        <name>Preferences</name>
+    </customLabels>
+    <customLabels>
+        <label>Anterior</label>
+        <name>Previous</name>
+    </customLabels>
+    <customLabels>
+        <label>Imprimir esta Ruta a PDF</label>
+        <name>Print_this_Route_To_PDF</name>
+    </customLabels>
+    <customLabels>
+        <label>Procesando</label>
+        <name>Processing</name>
+    </customLabels>
+    <customLabels>
+        <label>Transporte Público</label>
+        <name>Public_Transit</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Check In --></label>
+        <name>Quick_Check_In</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Check In Help --></label>
+        <name>Quick_Check_In_Help</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Check Out --></label>
+        <name>Quick_Check_Out</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Check Out Help --></label>
+        <name>Quick_Check_Out_Help</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Quick Save --></label>
+        <name>Quick_Save</name>
+    </customLabels>
+    <customLabels>
+        <label>Buscar el radio</label>
+        <name>Radial_Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Grabar Acciones</label>
+        <name>Record_Actions</name>
+    </customLabels>
+    <customLabels>
+        <label>Registro de Identificación</label>
+        <name>Record_Id</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Record Name --></label>
+        <name>Record_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminar</label>
+        <name>Remove</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Remove All --></label>
+        <name>Remove_All</name>
+    </customLabels>
+    <customLabels>
+        <label>Eliminar Todas las Formas</label>
+        <name>Remove_All_Shapes</name>
+    </customLabels>
+    <customLabels>
+        <label>Retire la Lengüeta Ruta</label>
+        <name>Remove_Route_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label>Retire la ruta de mapa</label>
+        <name>Remove_route_from_map</name>
+    </customLabels>
+    <customLabels>
+        <label>Restablecimiento de mapa en el modo de búsqueda</label>
+        <name>Resetting_map_into_Search_mode</name>
+    </customLabels>
+    <customLabels>
+        <label>Restringir resultados de Área de visualización del mapa</label>
+        <name>Restrict_Results_to_Maps_Viewable_Area</name>
+    </customLabels>
+    <customLabels>
+        <label>Registros Recuperación</label>
+        <name>Retrieving_Records</name>
+    </customLabels>
+    <customLabels>
+        <label>Derecha</label>
+        <name>Right</name>
+    </customLabels>
+    <customLabels>
+        <label>Ruta eliminados</label>
+        <name>Route_Deleted</name>
+    </customLabels>
+    <customLabels>
+        <label>Detalle de Ruta</label>
+        <name>Route_Detail</name>
+    </customLabels>
+    <customLabels>
+        <label>Ejecución Ruta</label>
+        <name>Route_Execution</name>
+    </customLabels>
+    <customLabels>
+        <label>Ruta no guardado</label>
+        <name>Route_Not_Saved</name>
+    </customLabels>
+    <customLabels>
+        <label>Opciones de Ruta</label>
+        <name>Route_Options</name>
+    </customLabels>
+    <customLabels>
+        <label>Ruta General Mapa</label>
+        <name>Route_Overview_Map</name>
+    </customLabels>
+    <customLabels>
+        <label>Ruta guardado correctamente</label>
+        <name>Route_Successfully_Saved</name>
+    </customLabels>
+    <customLabels>
+        <label>Ubicaciones de ruta pueden no ser re-secuenciados cuando enrutamiento optimizado está encendido.</label>
+        <name>Route_locations_cannot_be_resequenced</name>
+    </customLabels>
+    <customLabels>
+        <label>Rutas</label>
+        <name>Routes</name>
+    </customLabels>
+    <customLabels>
+        <label>Ejecutar Ruta</label>
+        <name>Run_Route</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Same Location Markers Help --></label>
+        <name>Same_Location_Markers_Help</name>
+    </customLabels>
+    <customLabels>
+        <label>Sábado</label>
+        <name>Saturday</name>
+    </customLabels>
+    <customLabels>
+        <label>Guardar</label>
+        <name>Save</name>
+    </customLabels>
+    <customLabels>
+        <label>Guardar Como</label>
+        <name>Save_As</name>
+    </customLabels>
+    <customLabels>
+        <label>Ahorra Ubicación</label>
+        <name>Save_Location</name>
+    </customLabels>
+    <customLabels>
+        <label>Ahorra Ruta</label>
+        <name>Save_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Ahorra Forma</label>
+        <name>Save_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label>Guardar en Mis Localizaciones</label>
+        <name>Save_to_My_Locations</name>
+    </customLabels>
+    <customLabels>
+        <label>Ruta Guardada Poseído</label>
+        <name>Saved_Route_Owned_by</name>
+    </customLabels>
+    <customLabels>
+        <label>Rutas Guardadas</label>
+        <name>Saved_Routes</name>
+    </customLabels>
+    <customLabels>
+        <label>Formas Guardadas</label>
+        <name>Saved_Shapes</name>
+    </customLabels>
+    <customLabels>
+        <label>Salvo</label>
+        <name>Saving</name>
+    </customLabels>
+    <customLabels>
+        <label>Ahorro Conjunto de datos</label>
+        <name>Saving_Data_Set</name>
+    </customLabels>
+    <customLabels>
+        <label>Guardar la ubicación</label>
+        <name>Saving_Location</name>
+    </customLabels>
+    <customLabels>
+        <label>Guardando la Ruta</label>
+        <name>Saving_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Almacenamiento de los ajustes</label>
+        <name>Saving_Settings</name>
+    </customLabels>
+    <customLabels>
+        <label>Ahorrar Forma</label>
+        <name>Saving_Shape</name>
+    </customLabels>
+    <customLabels>
+        <label>Voluta Ampliar</label>
+        <name>Scrollwheel_Zoom</name>
+    </customLabels>
+    <customLabels>
+        <label>Buscar</label>
+        <name>Search</name>
+    </customLabels>
+    <customLabels>
+        <label>Centro de Búsqueda</label>
+        <name>Search_Center</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search From --></label>
+        <name>Search_From</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Search Nearby --></label>
+        <name>Search_Nearby</name>
+    </customLabels>
+    <customLabels>
+        <label>Búsqueda</label>
+        <name>Searching</name>
+    </customLabels>
+    <customLabels>
+        <label>Seleccionar</label>
+        <name>Select</name>
+    </customLabels>
+    <customLabels>
+        <label>Seleccione el campo</label>
+        <name>Select_Field</name>
+    </customLabels>
+    <customLabels>
+        <label>Seleccione &apos;Borrar&apos; para continuar.</label>
+        <name>Select_Remove_to_continue</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select a Map Object to base the Assignment Plan --></label>
+        <name>Select_a_Map_Object_to_base_the_Assignment_Plan</name>
+    </customLabels>
+    <customLabels>
+        <label>Seleccione el botón Mostrar conjunto de datos en una ficha para agregar los resultados de búsqueda al mapa.</label>
+        <name>Select_the_Show_Data_Set_button</name>
+    </customLabels>
+    <customLabels>
+        <label>Seleccione el nombre del campo para volver a la lista de campos. Elija un operador, introduzca un valor de filtro, y luego haga clic en el botón Agregar Filtro.</label>
+        <name>Select_the_field_name_to_return_to_the_list_of_fields</name>
+    </customLabels>
+    <customLabels>
+        <label>Registros Seleccionados</label>
+        <name>Selected_Records</name>
+    </customLabels>
+    <customLabels>
+        <label>Tab Seleccionado</label>
+        <name>Selected_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label>Septiembre</label>
+        <name>September</name>
+    </customLabels>
+    <customLabels>
+        <label>Establecer la Posición de Inicio</label>
+        <name>Set_Starting_Position</name>
+    </customLabels>
+    <customLabels>
+        <label>Configuración</label>
+        <name>Settings</name>
+    </customLabels>
+    <customLabels>
+        <label>Icono de las configuraciones (Rueda Dentada)</label>
+        <name>Settings_Icon_Gear</name>
+    </customLabels>
+    <customLabels>
+        <label>Forma</label>
+        <name>Shape</name>
+    </customLabels>
+    <customLabels>
+        <label>Forma eliminados</label>
+        <name>Shape_Deleted</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shape Field --></label>
+        <name>Shape_Field</name>
+    </customLabels>
+    <customLabels>
+        <label>Forma Buscar</label>
+        <name>Shape_Search</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Shape Successfully Added To Map --></label>
+        <name>Shape_Successfully_Added_To_Map</name>
+    </customLabels>
+    <customLabels>
+        <label>Forma guardado correctamente</label>
+        <name>Shape_Successfully_Saved</name>
+    </customLabels>
+    <customLabels>
+        <label>Compartir en Feed</label>
+        <name>Share_on_Feed</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Share on Feed Help --></label>
+        <name>Share_on_Feed_Help</name>
+    </customLabels>
+    <customLabels>
+        <label>Más Corta</label>
+        <name>Shortest</name>
+    </customLabels>
+    <customLabels>
+        <label>Mostrar</label>
+        <name>Show</name>
+    </customLabels>
+    <customLabels>
+        <label>Mostrar todos los puntos asignados</label>
+        <name>Show_All_Mapped_Points</name>
+    </customLabels>
+    <customLabels>
+        <label>Filtro Muestre</label>
+        <name>Show_Filter</name>
+    </customLabels>
+    <customLabels>
+        <label>Mostrar Leyenda</label>
+        <name>Show_Legend</name>
+    </customLabels>
+    <customLabels>
+        <label>Mostrar Radius</label>
+        <name>Show_Radius</name>
+    </customLabels>
+    <customLabels>
+        <label>Mostrar Ruta</label>
+        <name>Show_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Mostrar ruta en el mapa</label>
+        <name>Show_route_on_map</name>
+    </customLabels>
+    <customLabels>
+        <label>Mostrando</label>
+        <name>Showing</name>
+    </customLabels>
+    <customLabels>
+        <label>Algo no funciona del todo bien</label>
+        <name>Something_didnt_work_quite_right</name>
+    </customLabels>
+    <customLabels>
+        <label>Resultado Patrocinado</label>
+        <name>Sponsored_Result</name>
+    </customLabels>
+    <customLabels>
+        <label>Apilamiento</label>
+        <name>Stacking</name>
+    </customLabels>
+    <customLabels>
+        <label>Comience Tab</label>
+        <name>Start_Tab</name>
+    </customLabels>
+    <customLabels>
+        <label>A Partir Latitud</label>
+        <name>Starting_Latitude</name>
+    </customLabels>
+    <customLabels>
+        <label>A Partir Longitud</label>
+        <name>Starting_Longitude</name>
+    </customLabels>
+    <customLabels>
+        <label>Posición Inicial</label>
+        <name>Starting_Map_Position</name>
+    </customLabels>
+    <customLabels>
+        <label>A Partir de Zoom</label>
+        <name>Starting_Zoom</name>
+    </customLabels>
+    <customLabels>
+        <label>Estado / Provincia</label>
+        <name>State_Province</name>
+    </customLabels>
+    <customLabels>
+        <label>Calle</label>
+        <name>Street</name>
+    </customLabels>
+    <customLabels>
+        <label>Vista de la calle</label>
+        <name>Street_View</name>
+    </customLabels>
+    <customLabels>
+        <label>Agrupación Sub</label>
+        <name>Sub_Grouping</name>
+    </customLabels>
+    <customLabels>
+        <label>Domingo</label>
+        <name>Sunday</name>
+    </customLabels>
+    <customLabels>
+        <label>El KmlLayer no es válida.</label>
+        <name>The_KmlLayer_is_invalid</name>
+    </customLabels>
+    <customLabels>
+        <label>El documento excede el límite de las funciones compatibles.</label>
+        <name>The_document_exceeds_the_limit_of_supported_features</name>
+    </customLabels>
+    <customLabels>
+        <label>El documento no es un KML bien formado, KMZ o GeoRSS archivo.</label>
+        <name>The_document_is_not_a_well_formed</name>
+    </customLabels>
+    <customLabels>
+        <label>El archivo es demasiado grande.</label>
+        <name>The_file_is_too_large</name>
+    </customLabels>
+    <customLabels>
+        <label>La capa no puede ser añadido al mapa.</label>
+        <name>The_layer_could_not_be_added_to_the_map</name>
+    </customLabels>
+    <customLabels>
+        <label>El centro del mapa se puede utilizar como el punto central para la búsqueda radial.</label>
+        <name>The_maps_center_will</name>
+    </customLabels>
+    <customLabels>
+        <label>La lista de rutas ha sido modificado y las direcciones que sea necesario actualizar. Seleccione el botón Obtener Ruta para actualizar la ruta.</label>
+        <name>The_route_list_has_been_modified</name>
+    </customLabels>
+    <customLabels>
+        <label>Las fichas y los campos que se muestran aquí son impulsados ​​por la configuración de su diseño de página para este registro. Para modificar estos campos, consulte con su administrador para modificar el diseño de la página.</label>
+        <name>The_tabs_and_fields_shown_here_are_driven_by_the_configuration</name>
+    </customLabels>
+    <customLabels>
+        <label>Hay más registros relacionados que se muestra aquí. Visite el siguiente enlace para ver todo el conjunto de datos.</label>
+        <name>There_are_more_related_records_than_displayed_here</name>
+    </customLabels>
+    <customLabels>
+        <label>No hay acciones disponibles para los datos asignados.</label>
+        <name>There_are_no_Actions_available</name>
+    </customLabels>
+    <customLabels>
+        <label>Hay demasiados puntos asignados a agregar en la lista de rutas</label>
+        <name>There_are_too_many_points_mapped_to_add</name>
+    </customLabels>
+    <customLabels>
+        <label>Debe haber conjuntos de datos visibles en el mapa para realizar esta acción.</label>
+        <name>There_must_be_Data_Sets_visible_on_the_map</name>
+    </customLabels>
+    <customLabels>
+        <label>Hubo un error al procesar la solicitud Drive Distancia.</label>
+        <name>There_was_an_error_processing_the_Drive_Distance_request</name>
+    </customLabels>
+    <customLabels>
+        <label>Hubo un error al procesar la solicitud</label>
+        <name>There_was_an_error_processing_your_request</name>
+    </customLabels>
+    <customLabels>
+        <label>Hubo un error al procesar la solicitud. Si este problema persiste, póngase en contacto con</label>
+        <name>There_was_an_error_processing_your_request_If_this_issue</name>
+    </customLabels>
+    <customLabels>
+        <label>Hubo un error re-secuenciación de las ubicaciones de ruta. Sin embargo, la ruta actual en el mapa y las indicaciones a continuación se han optimizado.</label>
+        <name>There_was_an_error_resequencing_the_Route_Locations</name>
+    </customLabels>
+    <customLabels>
+        <label>Este conjunto de datos no tiene filtros.</label>
+        <name>This_Data_Set_has_no_filters</name>
+    </customLabels>
+    <customLabels>
+        <label>Esta capa está siendo visualizada en el mapa.</label>
+        <name>This_Layer_is_currently_displayed_on_the_map</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This Shape is used in Geopointe Assignment Plans --></label>
+        <name>This_Shape_is_used_in_Geopointe_Assignment_Plans</name>
+    </customLabels>
+    <customLabels>
+        <label>Esta acción no se puede aplicar a la ficha seleccionada.</label>
+        <name>This_action_cannot_be_applied_to_the_selected_tab</name>
+    </customLabels>
+    <customLabels>
+        <label>Esta acción no se podría aplicar a la ficha seleccionada.</label>
+        <name>This_action_could_not_be_applied_to_the_selected_tab</name>
+    </customLabels>
+    <customLabels>
+        <label>Este campo ya ha sido elegido.</label>
+        <name>This_field_has_already_been_selected</name>
+    </customLabels>
+    <customLabels>
+        <label>Este registro no tiene datos relacionados en su Presentación de página</label>
+        <name>This_record_has_no_related_data_on_its_Page_Layout</name>
+    </customLabels>
+    <customLabels>
+        <label>Esto eliminará la forma seleccionada y eliminarlo de su lista de formas guardados.</label>
+        <name>This_will_DELETE_the_selected_Shape_and_remove_it_from_your_list</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- This will DELETE the selected Shape and clear the Shape field on the record --></label>
+        <name>This_will_DELETE_the_selected_shape_and_clear_the_Shape_field_on_the_record</name>
+    </customLabels>
+    <customLabels>
+        <label>Esto borrará las ubicaciones de ruta que figuran a continuación y eliminar la ruta del mapa.</label>
+        <name>This_will_clear_the_route_locations_listed_below_and_remove_the_route</name>
+    </customLabels>
+    <customLabels>
+        <label>Esto sobrescribirá la ruta guardada existente. Para guardar una nueva copia, haga clic en Cancelar y selecciona Guardar como en lugar.</label>
+        <name>This_will_overwrite_the_existing_saved_route</name>
+    </customLabels>
+    <customLabels>
+        <label>Esto eliminará todas las formas del mapa.</label>
+        <name>This_will_remove_all_shapes_from_the_map</name>
+    </customLabels>
+    <customLabels>
+        <label>Miniaturas</label>
+        <name>Thumbnails</name>
+    </customLabels>
+    <customLabels>
+        <label>Jueves</label>
+        <name>Thursday</name>
+    </customLabels>
+    <customLabels>
+        <label>Tiempo</label>
+        <name>Time</name>
+    </customLabels>
+    <customLabels>
+        <label>Para realizar una búsqueda debe hacer zoom en por lo menos el nivel</label>
+        <name>To_perform_a_search_you_must_be_zoomed_into</name>
+    </customLabels>
+    <customLabels>
+        <label>Andar en bicicleta Toggle Off</label>
+        <name>Toggle_Bicycling_Off</name>
+    </customLabels>
+    <customLabels>
+        <label>Andar en bicicleta Toggle On</label>
+        <name>Toggle_Bicycling_On</name>
+    </customLabels>
+    <customLabels>
+        <label>Alternar Tráfico Off</label>
+        <name>Toggle_Traffic_Off</name>
+    </customLabels>
+    <customLabels>
+        <label>Tráfico Toggle On</label>
+        <name>Toggle_Traffic_On</name>
+    </customLabels>
+    <customLabels>
+        <label>Alternar Tránsito Off</label>
+        <name>Toggle_Transit_Off</name>
+    </customLabels>
+    <customLabels>
+        <label>Cambia el Tránsito En</label>
+        <name>Toggle_Transit_On</name>
+    </customLabels>
+    <customLabels>
+        <label>Alternar Tiempo Off</label>
+        <name>Toggle_Weather_Off</name>
+    </customLabels>
+    <customLabels>
+        <label>Alternar Tiempo El</label>
+        <name>Toggle_Weather_On</name>
+    </customLabels>
+    <customLabels>
+        <label>Instrumentos</label>
+        <name>Tools</name>
+    </customLabels>
+    <customLabels>
+        <label>Tiempo Total ya Distancia</label>
+        <name>Total_Distance_and_Time</name>
+    </customLabels>
+    <customLabels>
+        <label>Total de Ruta Distance</label>
+        <name>Total_Route_Distance</name>
+    </customLabels>
+    <customLabels>
+        <label>Tiempo Total de la Ruta</label>
+        <name>Total_Route_Time</name>
+    </customLabels>
+    <customLabels>
+        <label>Tráfico</label>
+        <name>Traffic</name>
+    </customLabels>
+    <customLabels>
+        <label>Tránsito</label>
+        <name>Transit</name>
+    </customLabels>
+    <customLabels>
+        <label>Martes</label>
+        <name>Tuesday</name>
+    </customLabels>
+    <customLabels>
+        <label>Tipo</label>
+        <name>Type</name>
+    </customLabels>
+    <customLabels>
+        <label>Incapaz de Registrarse</label>
+        <name>Unable_to_Check_In</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Unable to Check Out --></label>
+        <name>Unable_to_Check_Out</name>
+    </customLabels>
+    <customLabels>
+        <label>No se puede acceder GPS. Por favor asegúrese de servicios ubicaciones están habilitadas para esta aplicación.</label>
+        <name>Unable_to_access_GPS</name>
+    </customLabels>
+    <customLabels>
+        <label>Uh oh. Parece que algo no está funcionando bien y no pudimos añadir esta ubicación. Por favor, inténtelo de nuevo pronto.</label>
+        <name>Unable_to_add_location</name>
+    </customLabels>
+    <customLabels>
+        <label>No se puede generar la ruta</label>
+        <name>Unable_to_build_route</name>
+    </customLabels>
+    <customLabels>
+        <label>Imposible obtener el archivo.</label>
+        <name>Unable_to_fetch_the_file</name>
+    </customLabels>
+    <customLabels>
+        <label>No se puede localizar la posición exacta para</label>
+        <name>Unable_to_locate_accurate_position_for</name>
+    </customLabels>
+    <customLabels>
+        <label>No se puede localizar la posición.</label>
+        <name>Unable_to_locate_position</name>
+    </customLabels>
+    <customLabels>
+        <label>No se puede localizar la posición debido al tiempo de espera.</label>
+        <name>Unable_to_locate_position_due_to_timeout</name>
+    </customLabels>
+    <customLabels>
+        <label>No se puede localizar el archivo. Asegúrese de que se trata de una URL de acceso público.</label>
+        <name>Unable_to_locate_the_file</name>
+    </customLabels>
+    <customLabels>
+        <label>No se puede realizar ninguna acción como registros fueron seleccionados.</label>
+        <name>Unable_to_perform_Action_as_no_records_were_selected</name>
+    </customLabels>
+    <customLabels>
+        <label>Parece que algo no está funcionando bien y que no son capaces de dirigir la ubicación seleccionada en este momento. Por favor, inténtelo de nuevo pronto.</label>
+        <name>Unable_to_route_location</name>
+    </customLabels>
+    <customLabels>
+        <label>Parece que algo no está funcionando bien y no somos capaces de buscar lugares en este momento. Por favor, inténtelo de nuevo pronto.</label>
+        <name>Unable_to_search_locations</name>
+    </customLabels>
+    <customLabels>
+        <label>No se puede establecer a partir la posición del mapa. Por favor, recargue la página e inténtelo de nuevo.</label>
+        <name>Unable_to_set_starting_map_position</name>
+    </customLabels>
+    <customLabels>
+        <label>Id Unique</label>
+        <name>Unique_Id</name>
+    </customLabels>
+    <customLabels>
+        <label>Unidades</label>
+        <name>Units</name>
+    </customLabels>
+    <customLabels>
+        <label>Miembros Actualizando</label>
+        <name>Updating_Members</name>
+    </customLabels>
+    <customLabels>
+        <label>Actualización de origen Record</label>
+        <name>Updating_Originating_Record</name>
+    </customLabels>
+    <customLabels>
+        <label>Utilice Geolocalización</label>
+        <name>Use_Geolocation</name>
+    </customLabels>
+    <customLabels>
+        <label>Valor</label>
+        <name>Value</name>
+    </customLabels>
+    <customLabels>
+        <label>Ver detalles</label>
+        <name>View_Details</name>
+    </customLabels>
+    <customLabels>
+        <label>Ver en Salesforce</label>
+        <name>View_in_Salesforce</name>
+    </customLabels>
+    <customLabels>
+        <label>Ver en Google Maps</label>
+        <name>View_on_Google_Maps</name>
+    </customLabels>
+    <customLabels>
+        <label>Ver en MapQuest</label>
+        <name>View_on_MapQuest</name>
+    </customLabels>
+    <customLabels>
+        <label>Área de Visualización</label>
+        <name>Viewable_Area</name>
+    </customLabels>
+    <customLabels>
+        <label>A Pie</label>
+        <name>Walking</name>
+    </customLabels>
+    <customLabels>
+        <label>Clima</label>
+        <name>Weather</name>
+    </customLabels>
+    <customLabels>
+        <label>Miércoles</label>
+        <name>Wednesday</name>
+    </customLabels>
+    <customLabels>
+        <label>Dentro</label>
+        <name>Within</name>
+    </customLabels>
+    <customLabels>
+        <label>Año</label>
+        <name>Year</name>
+    </customLabels>
+    <customLabels>
+        <label>Usted se encuentra en el nivel de zoom</label>
+        <name>You_are_currently_on_zoom_level</name>
+    </customLabels>
+    <customLabels>
+        <label>Usted puede ver esta forma seleccionando el botón &apos;Ir a forma&apos; abajo</label>
+        <name>You_can_view_this_shape_by_selecting</name>
+    </customLabels>
+    <customLabels>
+        <label>Usted no tiene ninguna ruta guardada. Una vez hecho, la opción de utilizar las rutas estará aquí.</label>
+        <name>You_do_not_have_any_saved_routes</name>
+    </customLabels>
+    <customLabels>
+        <label>Ha seleccionado</label>
+        <name>You_have_selected</name>
+    </customLabels>
+    <customLabels>
+        <label>Debe haber al menos 2 lugares en la ruta seleccionada para guardar una ruta</label>
+        <name>You_must_have_at_least_2_route_locations</name>
+    </customLabels>
+    <customLabels>
+        <label>Debe haber creado una ruta, haga clic en Obtener ruta antes de que un PDF se puede generar.</label>
+        <name>You_must_have_created_a_route_by_clicking_Get_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>Su navegador no soporta la determinación de su ubicación actual.</label>
+        <name>Your_browser_does_not_support_determination_of_your_current_location</name>
+    </customLabels>
+    <customLabels>
+        <label>Su navegador no determinó su ubicación actual</label>
+        <name>Your_browser_failed_to_determine_your_current_location</name>
+    </customLabels>
+    <customLabels>
+        <label>Su ruta se ha optimizado y los lugares fueron re-secuenciado para estar en el orden más óptima.</label>
+        <name>Your_route_was_optimized</name>
+    </customLabels>
+    <customLabels>
+        <label>Zoom y Centro</label>
+        <name>Zoom_and_Center</name>
+    </customLabels>
+    <customLabels>
+        <label>Zoom para Mostrar</label>
+        <name>Zoom_to_Show</name>
+    </customLabels>
+    <customLabels>
+        <label>y no se podría añadir a la ruta.</label>
+        <name>and_it_could_not_be_added_to_the_route</name>
+    </customLabels>
+    <customLabels>
+        <label>contiene</label>
+        <name>contains</name>
+    </customLabels>
+    <customLabels>
+        <label>no contiene</label>
+        <name>does_not_contain</name>
+    </customLabels>
+    <customLabels>
+        <label>igual a</label>
+        <name>equals</name>
+    </customLabels>
+    <customLabels>
+        <label>excluye</label>
+        <name>excludes</name>
+    </customLabels>
+    <customLabels>
+        <label>mayor o igual</label>
+        <name>greater_or_equal</name>
+    </customLabels>
+    <customLabels>
+        <label>mayor que</label>
+        <name>greater_than</name>
+    </customLabels>
+    <customLabels>
+        <label>ya se ha añadido al mapa.</label>
+        <name>has_already_been_added_to_the_map</name>
+    </customLabels>
+    <customLabels>
+        <label>incluye</label>
+        <name>includes</name>
+    </customLabels>
+    <customLabels>
+        <label>menor o igual</label>
+        <name>less_or_equal</name>
+    </customLabels>
+    <customLabels>
+        <label>menor que</label>
+        <name>less_than</name>
+    </customLabels>
+    <customLabels>
+        <label>no igual a</label>
+        <name>not_equal_to</name>
+    </customLabels>
+    <customLabels>
+        <label>de</label>
+        <name>of</name>
+    </customLabels>
+    <customLabels>
+        <label>comienza por</label>
+        <name>starts_with</name>
+    </customLabels>
+    <customLabels>
+        <label>a</label>
+        <name>to</name>
+    </customLabels>
+    <customLabels>
+        <label>fue agregado a la lista de ruta actual.</label>
+        <name>was_succesfully_added_to_Route</name>
+    </customLabels>
+    <customLabels>
+        <label>con</label>
+        <name>with</name>
+    </customLabels>
+    <customPageWebLinks>
+        <label><!-- Geopointe Setup --></label>
+        <name>Geopointe_Setup</name>
+    </customPageWebLinks>
+    <customTabs>
+        <label>Geopointe Configuración</label>
+        <name>Geopointe_Setup</name>
+    </customTabs>
+    <customTabs>
+        <label>Mapa</label>
+        <name>Map</name>
+    </customTabs>
+    <customTabs>
+        <label>Mis Opciones</label>
+        <name>My_Settings</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Visualize --></label>
+        <name>Visualize</name>
+    </customTabs>
+    <quickActions>
+        <label><!-- Check In --></label>
+        <name>Check_In</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- Check Out --></label>
+        <name>Check_Out</name>
+    </quickActions>
+</Translations>

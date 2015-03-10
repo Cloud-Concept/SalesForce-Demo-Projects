@@ -1,0 +1,219 @@
+<apex:page id="editPage" tabStyle="Action_Plans__tab" standardController="ActionPlan__c" extensions="ActionPlanCreationController" standardStylesheets="false">
+    
+    <script type="text/javascript" src="{!$Resource.ActionPlan_ActionPlanCreationScripts}"></script>
+    <link href="{!$Resource.ActionPlan_ActionPlanCreationStyles}" rel="stylesheet" type="text/css" />
+
+    <apex:outputPanel layout="block" rendered="{!!hasRelated}">
+    </apex:outputPanel>
+    
+    <apex:sectionHeader title="Action Plans" subtitle="New Action Plan" help="" />
+    
+    <apex:form id="apForm">
+    
+        <apex:outputPanel rendered="{!(actionPlan.Id != null)}">
+            <apex:inputHidden value="{!actionPlan.Id}" id="Id" />
+        </apex:outputPanel>
+        
+        <apex:pageBlock id="editBlock" title="Action Plan Details" mode="edit">
+        
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!checkCycleDependent}" value="Save"/>
+                <apex:commandButton immediate="true" action="/apex/ActionPlanList" value="Cancel" />
+            </apex:pageBlockButtons>
+            
+            <!-- Information Section -->
+            <apex:pageBlockSection id="informationSection" title="Information" columns="2">
+            
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Action Plan Name" for="Name"/>
+                    <apex:inputField value="{!actionPlan.Name}" id="Name" required="true" /> 
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!IF(Completed > 0, true, false)}">
+                    <apex:outputLabel value="Plan Start Date"/>
+                    <apex:outputField value="{!actionPlan.StartDate__c}"/>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem rendered="{!IF(Completed == 0, true, false)}">
+                    <apex:outputLabel value="Plan Start Date" for="StartDate"/>
+                    <apex:inputField id="StartDate" required="true" value="{!actionPlan.StartDate__c}"/>
+                </apex:pageBlockSectionItem> 
+                
+            </apex:pageBlockSection>
+            <!-- End Information Section -->
+            
+            <!--  Start Related Section --> 
+            <apex:pageBlockSection id="RelatedSection" title="Related {!relatedObjName}" columns="2" rendered="{!hasRelated}">
+            	
+                <apex:pageBlockSectionItem >
+                    <apex:repeat value="{!relatedObjNameList}" var="objName" first="0" rows="10">
+                        - {!objName}<br/>
+                    </apex:repeat>
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:repeat value="{!relatedObjNameList}" var="objName" first="9" rows="10">
+                        - {!objName}<br/>
+                    </apex:repeat>
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection id="LookupSection" title="Related Object" rendered="{!!hasRelated}" columns="2">
+                <apex:outputText rendered="{!IF(actionPlan.Account__c != null || actionPlan.Contact__c != null || actionPlan.Lead__c != null || actionPlan.Opportunity__c != null, false, true)}">
+                    <select id="typeLookup" name="typeLookup" onchange="javascript: ActionPlanCreationScripts.switchLookup()">
+                        <option value="account">{!$ObjectType.Account.label}</option>
+                        <option value="contact">Contact</option>
+                        <option value="lead">{!$ObjectType.Lead.label}</option>
+                        <option value="opportunity">Opportunity</option>
+                    </select>                           
+                </apex:outputText>
+             
+                 <apex:outputText rendered="{!IF(actionPlan.Account__c != null || actionPlan.Contact__c != null || actionPlan.Lead__c != null || actionPlan.Opportunity__c != null , false, true)}">
+                 <!-- <apex:outputText rendered="{!IF(actionPlan.Account__c != null ||  actionPlan.Lead__c != null, false, true)}">-->
+                     
+                     <apex:outputPanel id="aLookup"> 
+                         <apex:pageBlockSectionItem id="aLookupSection"><apex:inputField id="aName" value="{!actionPlan.Account__c}" /></apex:pageBlockSectionItem>
+                     </apex:outputPanel>
+                     
+                     <apex:outputPanel id="lLookup" style="display:none">
+                         <apex:pageBlockSectionItem id="lLookupSection"><apex:inputField id="lName" value="{!actionPlan.Lead__c}" /></apex:pageBlockSectionItem>
+                     </apex:outputPanel>
+    
+                     <apex:outputPanel id="cLookup" style="display:none">
+                         <apex:pageBlockSectionItem id="cLookupSection"><apex:inputField id="cName" value="{!actionPlan.Contact__c}" /></apex:pageBlockSectionItem>
+                     </apex:outputPanel>
+                     
+                     <apex:outputPanel id="oLookup" style="display:none">
+                         <apex:pageBlockSectionItem id="oLookupSection"><apex:inputField id="oName" value="{!actionPlan.Opportunity__c}" /></apex:pageBlockSectionItem>
+                     </apex:outputPanel>
+                                                                                            
+                 </apex:outputText>
+             
+                 <apex:outputText id="relatedToOutput" rendered="{!IF(actionPlan.Account__c != null || actionPlan.Contact__c != null || actionPlan.Lead__c != null || actionPlan.Opportunity__c != null, true, false)}">
+                     <apex:outputField value="{!actionPlan.Account__c}" rendered="{!(actionPlan.Account__c != null)}" />
+                     <apex:outputField value="{!actionPlan.Contact__c}" rendered="{!(actionPlan.Contact__c != null)}" />
+                     <apex:outputField value="{!actionPlan.Lead__c}" rendered="{!(actionPlan.Lead__c != null)}" />
+                     <apex:outputField value="{!actionPlan.Opportunity__c}" rendered="{!(actionPlan.Opportunity__c != null)}" />
+                 </apex:outputText>
+                 <apex:messages id="mymsg" styleClass="errorMsg"></apex:messages>
+            </apex:pageBlockSection>
+            <!--  End Related Section -->
+            
+            <!-- Tasks Section -->
+            <apex:pageBlockSection id="taskSection" title="Tasks" columns="1"> 
+            
+                <apex:panelGrid columns="2">
+                    <apex:outputText ><apex:inputCheckbox value="{!ActionPlan.SkipWeekends__c}" id="skipWeekendCheckbox" onclick="javascript:ActionPlanCreationScripts.checkSkipWeekend()"/></apex:outputText>
+                    <apex:outputText value="Skip weekends when generating task due dates"/>
+                </apex:panelGrid>
+                
+                <apex:panelGrid columns="2" id="skipDayTable">
+                    <apex:outputText >Default weekend due dates to </apex:outputText>
+                    <apex:outputText ><apex:pageBlockSectionItem ><apex:inputField value="{!ActionPlan.SkipDay__c}" /></apex:pageBlockSectionItem></apex:outputText>
+                </apex:panelGrid>
+                <apex:outputPanel rendered="{!ActionPlan.Action_Plan_Template__c != null}"><apex:inputHidden value="{!ActionPlan.Action_Plan_Template__c}" /></apex:outputPanel>
+                
+                <br />
+                
+                <apex:outputPanel id="taskList">
+                    <apex:dataTable value="{!Tasks}" var="task" id="taskTable" columnClasses="first,second,third,fourth,fifth,sixth" styleClass="taskTable">
+                        
+                        <apex:column id="columnOne" headerValue="Action" styleClass="first">
+                             <apex:commandLink rerender="taskList" immediate="true" action="{!removeTask}" > 
+                                  Remove
+                                  <apex:param name="remove" value="{!$Component.taskTable.columnOne}"/>
+                                  
+                              </apex:commandLink>
+                        </apex:column>
+                        
+                        <apex:column headerValue="{!$ObjectType.APTaskTemplate__c.fields.Subject__c.label}"><apex:pageBlockSectionItem ><apex:inputField required="true" value="{!task.Subject__c}"/></apex:pageBlockSectionItem></apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTaskTemplate__c.fields.APTaskTemplate__c.label}" rendered="{!IF(TaskSize > 1, true, false)}">
+                            <apex:selectList id="dependent" value="{!task.Dependent__c}" multiselect="false" size="1" onchange="javascript:ActionPlanCreationScripts.checkDependent('{!$Component.taskTable.dependent}');">
+                                <apex:selectOptions value="{!SubjectItems}" />
+                            </apex:selectList>
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTaskTemplate__c.fields.DaysFromStart__c.label}"><apex:pageBlockSectionItem ><apex:inputField value="{!task.DaysFromStart__c}" style="width:30px"/></apex:pageBlockSectionItem></apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTaskTemplate__c.fields.User__c.label}" ><apex:pageBlockSectionItem ><apex:inputField required="true" value="{!task.User__c}"/></apex:pageBlockSectionItem></apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTaskTemplate__c.fields.Type__c.label}"><apex:pageBlockSectionItem ><apex:inputField required="true" value="{!task.Type__c}"/></apex:pageBlockSectionItem></apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTaskTemplate__c.fields.Priority__c.label}"><apex:pageBlockSectionItem ><apex:inputField required="true" value="{!task.Priority__c}"/></apex:pageBlockSectionItem></apex:column>
+                        <apex:column >
+                            <apex:facet name="header">{!$ObjectType.APTaskTemplate__c.fields.SendEmail__c.label} <a onclick="javascript:ActionPlanCreationScripts.checkEmail(1);" class="all-none">all</a> | <a onclick="javascript:ActionPlanCreationScripts.checkEmail(0);" class="all-none">none</a></apex:facet>
+                            <apex:pageBlockSectionItem id="emailSection"><apex:inputField id="email" value="{!task.SendEmail__c}"/></apex:pageBlockSectionItem>
+                        </apex:column>
+                        <apex:column >
+                            <apex:facet name="header">{!$ObjectType.APTaskTemplate__c.fields.Reminder__c.label} <a onclick="javascript:ActionPlanCreationScripts.checkReminder(1);" class="all-none">all</a> | <a onclick="javascript:ActionPlanCreationScripts.checkReminder(0);" class="all-none">none</a></apex:facet>
+                            <apex:pageBlockSectionItem id="reminderSection"><apex:inputField id="reminder" value="{!task.Reminder__c}"/></apex:pageBlockSectionItem>
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTaskTemplate__c.fields.Comments__c.label}">
+                            <apex:outputPanel id="commentPanel" style="display:none">
+                                <div id="commentContainer">
+                                    <div class="hd">
+                                        <div class="hd-left">Comments</div>
+                                        <div class="hd-right"><input class="btn" style="margin-bottom:1px;" type="button" onclick="javascript:ActionPlanCreationScripts.hideComments('{!$Component.taskTable.columnOne}');" title="Close" name="closeCommentPanel" value=" Close "/></div>
+                                    </div>
+                                    <div class="bd">
+                                        <apex:inputField id="Comments" value="{!task.Comments__c}" onchange="document.getElementById('{!$Component.taskTable.columnOne}:commentLink').innerHTML= '...'"/>
+                                    </div>
+                                </div>
+                            </apex:outputPanel>
+                            (<a id="{!$Component.taskTable.columnOne}:commentLink" onclick="javascript:ActionPlanCreationScripts.showComments('{!$Component.taskTable.columnOne}');" style="text-decoration:underline"><apex:outputText rendered="{!task.Comments__c != null}">...</apex:outputText><apex:outputText rendered="{!task.Comments__c == null}">add</apex:outputText></a>)
+                        </apex:column>
+                    </apex:dataTable>
+                    <br/>
+                    <apex:outputPanel rendered="{!(ErrorMsg != null)}" styleClass="errorMessage"><span style="font-weight:bold;">Error:</span> {!ErrorMsg}<br /><br /></apex:outputPanel>
+                </apex:outputPanel>
+                
+                <apex:panelGrid columns="2">
+                    <apex:outputText >
+                        <apex:commandLink action="{!addTask}" rerender="taskList" style="font-weight:bold"status="taskStatus">
+                            Add New Task
+                            <apex:param name="add" value="1"/>
+                        </apex:commandLink>
+                    </apex:outputText>
+                    <apex:outputText style="color:#cc0000 !important;">&nbsp;<apex:actionStatus id="taskStatus" startText="(loading...)" stopText=""  /></apex:outputText>
+                </apex:panelGrid>
+                
+            </apex:pageBlockSection>
+            <!-- End Tasks Section -->
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    <script>
+        ActionPlanCreationScripts.checkSkipWeekend();
+    </script>
+    
+    <apex:outputPanel rendered="{!!hasRelated}">
+        <!-- Client Ref -->
+        <apex:outputPanel rendered="{!(refType == 'Account')}">
+        <script>
+            ActionPlanCreationScripts.lookupAccount();
+        </script>
+        </apex:outputPanel>
+        <!-- End Client Ref -->
+        
+        <!-- Lead Ref -->
+        <apex:outputPanel rendered="{!(refType == 'Lead')}">
+        <script>
+            ActionPlanCreationScripts.lookupLeads();
+        </script>
+        </apex:outputPanel>
+        <!-- End Lead Ref -->
+        
+        <!-- Contact Ref -->
+        <apex:outputPanel rendered="{!(refType == 'Contact')}">
+        <script>
+            ActionPlanCreationScripts.lookupContact();
+        </script>
+        </apex:outputPanel>
+        <!-- End Lead Ref -->
+        
+        <!-- Lead Ref -->
+        <apex:outputPanel rendered="{!(refType == 'Opportunity')}">
+        <script>
+            ActionPlanCreationScripts.lookupOpportunity();
+        </script>
+        </apex:outputPanel>
+        <!-- End Lead Ref -->        
+     </apex:outputPanel> 
+</apex:page>

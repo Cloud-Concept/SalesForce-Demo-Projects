@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Territory xmlns="http://soap.sforce.com/2006/04/metadata">
+    <accountAccessLevel>Edit</accountAccessLevel>
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Scotland</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Scotland</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentTerritory>UK255438</parentTerritory>
+</Territory>

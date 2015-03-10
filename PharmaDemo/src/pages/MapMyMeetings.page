@@ -1,0 +1,283 @@
+<apex:page showHeader="false" cache="false">
+    <html>
+        <head>
+            <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+            <style type="text/css">
+                body { margin: 0; padding: 0 }
+                #map_canvas { 
+                    height: 350px; 
+                    width:100%;
+                    border: 1px solid #1797C0; 
+                    overflow: hidden;
+                }
+                
+                #map_routedetails {
+                    border: 1px solid #1797C0; 
+                    margin-left: 10px;
+                    padding: 10px;
+                    height: 330px; 
+                    overflow: auto;
+                }
+                
+                .bPageBlock  {
+                    background-color: #236FBD;
+                    border-color: #1797C0;
+                }
+                
+                a:link, a:visited, a:active, a:hover {
+                    color: #015BA7;
+                }
+
+            </style>
+            <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true" />
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" />
+            <script type="text/javascript">
+                var __sfdcSessionId = '{!GETSESSIONID()}';      
+            </script>
+            <script src="../../soap/ajax/22.0/connection.js" type="text/javascript" />
+            <script type="text/javascript">
+        
+                var latlng = null;
+                var watchProcess = null;
+                var map = null;
+                var fromDate = null;
+                var myTasks = [];
+                var geocoder = new google.maps.Geocoder();
+                var iterator = 0;
+                var directionDisplay;
+                var directionsService = new google.maps.DirectionsService();
+                var openInfowindow = null;
+                var userId = null;
+                
+                userId = '{!$User.id}';
+                
+            
+                function initialize() {
+                    directionsDisplay = new google.maps.DirectionsRenderer({suppressInfoWindows:true, suppressMarkers:true});
+                    latlng = new google.maps.LatLng(-34.397, 150.644);
+                    var myOptions = {
+                        zoom: 8,
+                        center: latlng,
+                        scrollwheel: false,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+                    //setTimeout('initiate_watchlocation()',100);
+                    initSF();
+                    directionsDisplay.setMap(map);
+                    
+                    google.maps.event.addListener(map, 'click', function() {
+                        if(openInfowindow != null) {
+                            openInfowindow.close();
+                        }
+                    });
+                    
+                    //refreshMarkers();
+                }
+        
+                function initiate_watchlocation() {
+                    if (watchProcess == null) {  
+                        watchProcess = navigator.geolocation.watchPosition(handle_geolocation_query, handle_errors);  
+                    }   
+                }  
+  
+                function stop_watchlocation() {
+                    if (watchProcess != null)  
+                    {  
+                        navigator.geolocation.clearWatch(watchProcess);  
+                        watchProcess = null;  
+                    }    
+                }  
+  
+                function handle_errors(error)  
+                {  
+                    switch(error.code)  
+                    {  
+                        case error.PERMISSION_DENIED: alert("user did not share geolocation data");  
+                        break;  
+                        case error.POSITION_UNAVAILABLE: alert("could not detect current position");  
+                        break;  
+                        case error.TIMEOUT: alert("retrieving position timedout");  
+                        break;  
+                        default: alert("unknown error");  
+                        break;  
+                    }  
+                }  
+  
+                function handle_geolocation_query(position) {
+                    latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                    //map.panTo(latlng);  
+                }  
+        
+        
+                function refreshMarkers() {
+                    //alert(__sfdcSessionId);
+                }
+        
+        
+                function initSF() {
+                    //function contains all code to execute after page is rendered  
+                    var tasksCallback = { 
+                        onSuccess: tasksQuerySuccess,
+                        onFailure: queryFailed
+                    };
+                    
+                    //var fromDate = '<apex:outputText value="{0,date,yyyy-MM-dd}"><apex:param value="{!NOW()}" /></apex:outputText>' + 'T00:00:00.000Z';
+                    fromDate = '<apex:outputText value="{0,date,yyyy-MM-dd}"><apex:param value="{!NOW()}" /></apex:outputText>';
+                    //var toDate = '<apex:outputText value="{0,date,yyyy-MM-dd}"><apex:param value="{!NOW()}" /></apex:outputText>' + 'T23:59:59.000Z';
+                    
+                    
+                    var query = 'Select e.id, e.Type, e.Subject, e.StartDateTime, e.Owner.Name, e.OwnerId, e.EndDateTime, e.DurationInMinutes, e.Description, e.Account.BillingCountry, e.Account.BillingPostalCode, e.Account.BillingState, e.Account.BillingCity, e.Account.BillingStreet, e.Account.Name, e.AccountId From Event e where e.Account.Name != null and e.OwnerId = \''+ userId +'\' and ActivityDate =' + fromDate + ' order by e.StartDateTime ASC';
+                    
+                    sforce.connection.query(query, tasksCallback);
+                }
+        
+        
+    
+                function tasksQuerySuccess(queryResult){
+                    if (queryResult.size > 0) {
+                        tasks = queryResult.getArray('records');
+                        iterator = 0;
+                        for(var i = 0; i < tasks.length; i++){
+                            myTasks[i] = tasks[i];
+                  
+                            var address = '' + tasks[i].Account.BillingStreet + ', ' + tasks[i].Account.BillingPostalCode + ' ' + tasks[i].Account.BillingCity + ', ' + tasks[i].Account.BillingCountry + '';
+                            
+                            
+                            geocoder.geocode( {'address': address}, function(results, status) {
+                                if (status == google.maps.GeocoderStatus.OK) {
+                                    var myAddress = '' + myTasks[iterator].Account.BillingStreet + ', ' + myTasks[iterator].Account.BillingPostalCode + ' ' + myTasks[iterator].Account.BillingCity + ', ' + myTasks[iterator].Account.BillingCountry + '';
+                                    if(myTasks[iterator].Account.BillingStreet == null) {
+                                        myAddress = '' + myTasks[iterator].Account.BillingPostalCode + ' ' + myTasks[iterator].Account.BillingCity + ', ' + myTasks[iterator].Account.BillingCountry + '';
+                                    }
+                                    
+                                    var contentString = '<div class="infoWindow">'+
+                                                        '<table>' +
+                                                        '<tr><td><b>Account:</b></td><td><a href="../' + myTasks[iterator].AccountId + '" target="_parent">'+ myTasks[iterator].Account.Name +'</a></td></tr>' +
+                                                        '<tr><td><b>Address:</b></td><td>'+ myAddress  +
+                                                        '<tr><td><b>Subject:</b></td><td>'+ myTasks[iterator].Subject +'</td></tr>' +
+                                                        '<tr><td><b>Time:</b></td><td>'+ myTasks[iterator].StartDateTime.replace(fromDate+'T','').replace(':00.000Z','') + ' to ' + myTasks[iterator].EndDateTime.replace(fromDate+'T','').replace(':00.000Z','') + '</td></tr>' +
+                                                        '<tr><td><b></b></td><td align="right"><a href="../' + myTasks[iterator].Id + '" target="_parent">View Meeting Details</a></td></tr>' +
+                                                        '</table>' +
+                                                        '</div>';
+                        
+                                    var infowindow = new google.maps.InfoWindow({
+                                        content: contentString
+                                    });
+            
+                                    var marker = new google.maps.Marker({
+                                        map: map,
+                                        position: results[0].geometry.location,
+                                        setAnimation: google.maps.Animation.DROP,
+                                        icon: 'http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=' + String.fromCharCode(65 + iterator) + '|FF776B|000000'
+                                    });
+            
+                                    google.maps.event.addListener(marker, 'click', function() {
+                                        if(openInfowindow != null) {
+                                            openInfowindow.close();
+                                        }
+                                        infowindow.open(map,marker);
+                                        openInfowindow = infowindow;
+                                        
+                                    });
+                            if(iterator == (myTasks.length - 1)) {
+                                calcRoute();
+                            }       
+                            
+                                    
+                            iterator++; 
+                            } else {
+                                //alert("Geocode was not successful for the following reason: " + status);
+                            }
+                        });
+                        
+                    }
+                } 
+            }
+            
+            function calcRoute() {
+                var startAddress = null;
+                var endAddress = null;
+                var waypts = [];    
+                
+                for(var i = 0; i < myTasks.length; i++) {
+                    var address = '' + myTasks[i].Account.BillingStreet + ', ' + myTasks[i].Account.BillingPostalCode + ' ' + myTasks[i].Account.BillingCity + ', ' + myTasks[i].Account.BillingCountry + '';
+                    if(i== 0) {
+                        startAddress = address;
+                    } 
+                    
+                    else if(i == (myTasks.length - 1)) {
+                        endAddress = address;
+                    }
+                    else {
+                        waypts.push({location:address,stopover:true});
+                    }           
+                }
+                
+                
+                
+                var request = {
+                    origin: startAddress, 
+                    destination: endAddress,
+                    waypoints: waypts,
+                    optimizeWaypoints: true,
+                    travelMode: google.maps.DirectionsTravelMode.DRIVING
+                };
+                
+                directionsService.route(request, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                        
+                        
+                        
+                        var route = response.routes[0];
+                        
+                        /*
+                        // For each route, display summary information.
+                        for (var i = 0; i < route.legs.length; i++) {
+                            //alert(route.legs[i]);
+                        
+                          var routeSegment = i + 1;
+                          $("#map_routedetails").append("<br /><br /><h3>Segment " + routeSegment + ":</h3><br /><br />");
+                          $("#map_routedetails").append(route.legs[i].start_address + " to ");
+                          $("#map_routedetails").append(route.legs[i].end_address + "<br />");
+                          $("#map_routedetails").append(route.legs[i].distance.text + "<br />");
+                          $("#map_routedetails").append(route.legs[i].duration.text);
+                        }
+                        */
+                        
+                        
+                    } else {
+                        alert('Touble Finding Directions');
+                    }
+                });
+            }
+        
+            function queryFailed(error) {
+                alert("An error occured:\n" + error);
+            }
+    
+        
+        
+
+        </script>
+        
+
+        </head>
+        <body onload="initialize()">
+            <apex:pageBlock title="Today's Meetings">
+            <table width="100%">
+                <tr>
+                    <td width="100%"><div id="map_canvas"></div></td>
+                    <!--
+                    <td width="80%"><div id="map_canvas"></div></td>                     
+                    <td width="30%" valign="top"><div id="map_routedetails"><h2>Driving Directions:</h2></div></td>
+                     -->
+                    
+                </tr>
+            </table>
+            
+            </apex:pageBlock>                       
+        </body>
+    </html>
+</apex:page>

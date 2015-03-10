@@ -1,0 +1,20 @@
+<apex:page standardController="Account" extensions="ITBrelViz.ExtGetSession" apiVersion="18.0" standardStylesheets="true" showHeader="false" cache="true">
+
+    <script type="text/javascript">
+
+			var isiPad = navigator.userAgent.match(/iPad/i) != null;
+
+			if(isiPad){
+				var url ='{!$Page.account_RelVizArt_IPAD}' + '?id=' + '{!account.Id}';
+				 window.location.href=url;	
+			}
+			else{
+				var url ='{!$Page.account_RelVizArt}' + '?id=' + '{!account.Id}';
+				 window.location.href=url;	
+
+			}
+
+        </script>
+
+
+</apex:page>

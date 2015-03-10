@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Purchase Requisition</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Purchase Requisitions</value>
+    </caseValues>
+    <fields>
+        <label><!-- Approval Status --></label>
+        <name>Approval_Status__c</name>
+        <picklistValues>
+            <masterLabel>Approved</masterLabel>
+            <translation><!-- Approved --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Draft</masterLabel>
+            <translation><!-- Draft --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected</masterLabel>
+            <translation><!-- Rejected --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contract Details --></label>
+        <name>Contract_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Center Code --></label>
+        <name>Cost_Center_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Cost Center --></label>
+        <name>Cost_Center__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency_ISO --></label>
+        <name>Currency_ISO__c</name>
+    </fields>
+    <fields>
+        <label><!-- Currency --></label>
+        <name>Currency__c</name>
+        <picklistValues>
+            <masterLabel>British Pound</masterLabel>
+            <translation><!-- British Pound --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>European Euro</masterLabel>
+            <translation><!-- European Euro --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Swiss Franc</masterLabel>
+            <translation><!-- Swiss Franc --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>United States Dollar</masterLabel>
+            <translation><!-- United States Dollar --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ending Date --></label>
+        <name>Ending_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please indicate the resource or project --></help>
+        <label><!-- Resource/Project Name --></label>
+        <name>Resource_Project_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP PR Message --></label>
+        <name>SAP_PR_Message__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP PR Registered --></label>
+        <name>SAP_PR_Registered__c</name>
+    </fields>
+    <fields>
+        <label><!-- SAP PurchaseRequestID --></label>
+        <name>SAP_PurchaseRequestID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shared Resource --></label>
+        <name>Shared_Resource__c</name>
+    </fields>
+    <fields>
+        <label><!-- Starting Date --></label>
+        <name>Starting_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Total --></label>
+        <name>Total__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor Code --></label>
+        <name>Vendor_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Vendor --></label>
+        <name>Vendor__c</name>
+        <relationshipLabel><!-- Purchase Requisitions --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Purchase Requisition Layout</layout>
+        <sections>
+            <label><!-- Comments --></label>
+            <section>Comments</section>
+        </sections>
+        <sections>
+            <label><!-- SAP Info --></label>
+            <section>SAP Info</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please add comments to this purchase requisition --></errorMessage>
+        <name>No_blank_comments</name>
+    </validationRules>
+</CustomObjectTranslation>

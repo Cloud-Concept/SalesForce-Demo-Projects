@@ -1,0 +1,43 @@
+<apex:page standardController="Account" cache="false" standardStylesheets="false" extensions="AccountPlanogramExt">
+    <style>
+        #planogram {
+            background: url('{!URLFOR($Resource.SFPlanogram, 'Shelf.png')}') no-repeat;
+            width: 520px;
+            height: 520px;
+            padding-top: 22px;
+            padding-left: 15px;
+        }   
+        
+        .planogramTile {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #1798C1;
+        }
+        
+        #planogramTable td {
+            width: 75px;
+            height: 75px;
+            border: none;
+        }
+        
+        #planogramTable td img {
+            width: 75px;
+            height: 75px;
+        }
+       
+    </style> 
+    <apex:variable var="index" value="{!1}"/>
+    <div id="planogram">
+        <table id="planogramTable" border="0" cellpadding="5" cellspacing="15">
+            <tr>
+            <apex:repeat value="{!planogramEntries}" var="Planogram">
+                <td class="">
+                    <apex:outputText value="{!Planogram.Product_Group_Image__c}" escape="false" />
+                </td>
+                <apex:outputText value="{!'</tr></tr>'}" escape="false" rendered="{!(index==4) || (index==8) || (index==12)}" />                
+                <apex:variable var="index" value="{!index + 1}"/>
+            </apex:repeat>
+            </tr>
+        </table>
+    </div>
+</apex:page>

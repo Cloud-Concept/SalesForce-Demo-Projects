@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Time off Territory</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Time off Territory</value>
+    </caseValues>
+    <fields>
+        <label><!-- All Day --></label>
+        <name>All_Day__c</name>
+    </fields>
+    <fields>
+        <help><!-- Please enter a reminder description for this entry, this is for your own record. --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- End Date --></label>
+        <name>End_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Entry will use this as start date to insert times out of territory --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select a time off category for the first quarter of the day. Use this when you select all day. --></help>
+        <label><!-- 1/4 --></label>
+        <name>Type_First_Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Annual Leave</masterLabel>
+            <translation><!-- Annual Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bereavement Leave</masterLabel>
+            <translation><!-- Bereavement Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Meeting</masterLabel>
+            <translation><!-- Company Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compassionate Leave</masterLabel>
+            <translation><!-- Compassionate Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compensate Leave</masterLabel>
+            <translation><!-- Compensate Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conference</masterLabel>
+            <translation><!-- Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congratulatory Leave</masterLabel>
+            <translation><!-- Congratulatory Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Convention</masterLabel>
+            <translation><!-- Convention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency Leave</masterLabel>
+            <translation><!-- Emergency Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paternity/Maternity Leave</masterLabel>
+            <translation><!-- Paternity/Maternity Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharma Event</masterLabel>
+            <translation><!-- Pharma Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Holiday</masterLabel>
+            <translation><!-- Public Holiday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replacement Off</masterLabel>
+            <translation><!-- Replacement Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sick Leave</masterLabel>
+            <translation><!-- Sick Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teambuilding</masterLabel>
+            <translation><!-- Teambuilding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacation Leave</masterLabel>
+            <translation><!-- Vacation Leave --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select a time off category for the fourth quarter of the day. --></help>
+        <label><!-- 4/4 --></label>
+        <name>Type_Fourth_Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Annual Leave</masterLabel>
+            <translation><!-- Annual Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bereavement Leave</masterLabel>
+            <translation><!-- Bereavement Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Meeting</masterLabel>
+            <translation><!-- Company Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compassionate Leave</masterLabel>
+            <translation><!-- Compassionate Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compensate Leave</masterLabel>
+            <translation><!-- Compensate Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conference</masterLabel>
+            <translation><!-- Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congratulatory Leave</masterLabel>
+            <translation><!-- Congratulatory Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Convention</masterLabel>
+            <translation><!-- Convention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency Leave</masterLabel>
+            <translation><!-- Emergency Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paternity/Maternity Leave</masterLabel>
+            <translation><!-- Paternity/Maternity Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharma Event</masterLabel>
+            <translation><!-- Pharma Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Holiday</masterLabel>
+            <translation><!-- Public Holiday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replacement Off</masterLabel>
+            <translation><!-- Replacement Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sick Leave</masterLabel>
+            <translation><!-- Sick Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teambuilding</masterLabel>
+            <translation><!-- Teambuilding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacation Leave</masterLabel>
+            <translation><!-- Vacation Leave --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select a time off category for the second quarter of the day. --></help>
+        <label><!-- 2/4 --></label>
+        <name>Type_Second_Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Annual Leave</masterLabel>
+            <translation><!-- Annual Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bereavement Leave</masterLabel>
+            <translation><!-- Bereavement Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Meeting</masterLabel>
+            <translation><!-- Company Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compassionate Leave</masterLabel>
+            <translation><!-- Compassionate Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compensate Leave</masterLabel>
+            <translation><!-- Compensate Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conference</masterLabel>
+            <translation><!-- Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congratulatory Leave</masterLabel>
+            <translation><!-- Congratulatory Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Convention</masterLabel>
+            <translation><!-- Convention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency Leave</masterLabel>
+            <translation><!-- Emergency Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paternity/Maternity Leave</masterLabel>
+            <translation><!-- Paternity/Maternity Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharma Event</masterLabel>
+            <translation><!-- Pharma Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Holiday</masterLabel>
+            <translation><!-- Public Holiday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replacement Off</masterLabel>
+            <translation><!-- Replacement Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sick Leave</masterLabel>
+            <translation><!-- Sick Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teambuilding</masterLabel>
+            <translation><!-- Teambuilding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacation Leave</masterLabel>
+            <translation><!-- Vacation Leave --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Select a time off category for the third quarter of the day. --></help>
+        <label><!-- 3/4 --></label>
+        <name>Type_Third_Quarter__c</name>
+        <picklistValues>
+            <masterLabel>Annual Leave</masterLabel>
+            <translation><!-- Annual Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Bereavement Leave</masterLabel>
+            <translation><!-- Bereavement Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Company Meeting</masterLabel>
+            <translation><!-- Company Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compassionate Leave</masterLabel>
+            <translation><!-- Compassionate Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compensate Leave</masterLabel>
+            <translation><!-- Compensate Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Conference</masterLabel>
+            <translation><!-- Conference --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Congratulatory Leave</masterLabel>
+            <translation><!-- Congratulatory Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Convention</masterLabel>
+            <translation><!-- Convention --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency Leave</masterLabel>
+            <translation><!-- Emergency Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Others</masterLabel>
+            <translation><!-- Others --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Paternity/Maternity Leave</masterLabel>
+            <translation><!-- Paternity/Maternity Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pharma Event</masterLabel>
+            <translation><!-- Pharma Event --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Holiday</masterLabel>
+            <translation><!-- Public Holiday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Replacement Off</masterLabel>
+            <translation><!-- Replacement Off --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sick Leave</masterLabel>
+            <translation><!-- Sick Leave --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Teambuilding</masterLabel>
+            <translation><!-- Teambuilding --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Training</masterLabel>
+            <translation><!-- Training --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Vacation Leave</masterLabel>
+            <translation><!-- Vacation Leave --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>Closed</masterLabel>
+            <translation><!-- Closed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Open</masterLabel>
+            <translation><!-- Open --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Submit</masterLabel>
+            <translation><!-- Submit --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <layouts>
+        <layout>Locked</layout>
+        <sections>
+            <label><!-- Time off Category --></label>
+            <section>Time off Category</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Unlocked</layout>
+        <sections>
+            <label><!-- Time off Category --></label>
+            <section>Time off Category</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Submit --></label>
+        <name>Submit</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Submit Locked --></label>
+        <name>Submit_Locked</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Time Off --></label>
+        <name>Time_Off</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Time Off Locked --></label>
+        <name>Time_Off_Locked</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Please enter a valid start date that is less or equal to end date. --></errorMessage>
+        <name>Check_End_Date_get_Start_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter a time off type for the first quarter. --></errorMessage>
+        <name>Enforce_Type</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>DELETE ME (Assignment Plan)</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>DELETE ME</value>
+    </caseValues>
+    <fields>
+        <help><!-- This is the Geopointe Assignment field on your Standard or Custom object that will be populated with the matching Geopointe Assignment record. --></help>
+        <label><!-- Custom Assignment Field --></label>
+        <name>Custom_Assignment_Field__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is an the Custom Object you create that links Geopointe Assignments (geographic areas) to the standard or custom object in your system. This object you create should have Master-Detail to Geopointe Assignment and your custom/standard object. --></help>
+        <label><!-- Custom Assignment Object --></label>
+        <name>Custom_Assignment_Object__c</name>
+    </fields>
+    <fields>
+        <help><!-- Short description for this Assignment Plan. --></help>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date and time the last Assignment batch job ran. This field should not be modified by users. --></help>
+        <label><!-- Last Batch Run Date --></label>
+        <name>Last_Batch_Run_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- API Name of the Map Object this Assignment Plan will run against. --></help>
+        <label><!-- Map Object --></label>
+        <name>Map_Object__c</name>
+    </fields>
+    <fields>
+        <help><!-- A SOQL WHERE clause (without including &quot;WHERE&quot;) can be present here to add a hardcoded filter to the Assignment Plan. --></help>
+        <label><!-- SOQL Filter --></label>
+        <name>SOQL_Filter__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Geopointe Assignment Plan Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Call Report</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Call Report</value>
+    </caseValues>
+    <fields>
+        <label><!-- Accompanied Call --></label>
+        <name>Accompanied_Call__c</name>
+    </fields>
+    <fields>
+        <label><!-- Attendees --></label>
+        <name>Attendees__c</name>
+    </fields>
+    <fields>
+        <label><!-- Brick --></label>
+        <name>Brick__c</name>
+        <relationshipLabel><!-- Call Report --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- CallDate --></label>
+        <name>CallDate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Call Notes --></label>
+        <name>Call_Notes__c</name>
+        <picklistValues>
+            <masterLabel>Comparative Data</masterLabel>
+            <translation><!-- Comparative Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Efficacy</masterLabel>
+            <translation><!-- Efficacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pathology</masterLabel>
+            <translation><!-- Pathology --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tolerability/Safety</masterLabel>
+            <translation><!-- Tolerability/Safety --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Call Report --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Closed --></label>
+        <name>Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Call Report --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Convert --></label>
+        <name>Convert__c</name>
+    </fields>
+    <fields>
+        <label><!-- Counted For Target Actual --></label>
+        <name>Counted_For_Target_Actual__c</name>
+    </fields>
+    <fields>
+        <label><!-- Counted for Account Frequency --></label>
+        <name>Counted_for_Account_Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date/Time --></label>
+        <name>Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Duration (mins) --></label>
+        <name>Duration__c</name>
+        <picklistValues>
+            <masterLabel>0</masterLabel>
+            <translation><!-- 0 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10</masterLabel>
+            <translation><!-- 10 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15</masterLabel>
+            <translation><!-- 15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20</masterLabel>
+            <translation><!-- 20 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>25</masterLabel>
+            <translation><!-- 25 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>30</masterLabel>
+            <translation><!-- 30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>45</masterLabel>
+            <translation><!-- 45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>5</masterLabel>
+            <translation><!-- 5 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>60</masterLabel>
+            <translation><!-- 60 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- FullName --></label>
+        <name>FullName__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geocode --></label>
+        <name>Geocode__c</name>
+        <relationshipLabel><!-- Call Report --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- I accompanied by a guest, select accompanied call and add their name here --></help>
+        <label><!-- Guest --></label>
+        <name>Guest__c</name>
+    </fields>
+    <fields>
+        <label><!-- LocationId --></label>
+        <name>LocationId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Location --></label>
+        <name>Location__c</name>
+        <relationshipLabel><!-- Call Report --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Med rep target --></label>
+        <name>Med_rep_target__c</name>
+        <relationshipLabel><!-- Call Report --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Next Call Objective --></label>
+        <name>Next_Call_Objective__c</name>
+        <picklistValues>
+            <masterLabel>Comparative Data</masterLabel>
+            <translation><!-- Comparative Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Discuss Efficacy</masterLabel>
+            <translation><!-- Discuss Efficacy --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Provide Comparative Data</masterLabel>
+            <translation><!-- Provide Comparative Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tolerability/Safety</masterLabel>
+            <translation><!-- Tolerability/Safety --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Objective --></label>
+        <lookupFilter>
+            <errorMessage><!-- Can only link to an active Objective --></errorMessage>
+        </lookupFilter>
+        <name>Objective__c</name>
+        <relationshipLabel><!-- Call Report --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- SummaryId --></label>
+        <name>SummaryId__c</name>
+    </fields>
+    <fields>
+        <label><!-- Time --></label>
+        <name>Time__c</name>
+        <picklistValues>
+            <masterLabel>08:00</masterLabel>
+            <translation><!-- 08:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08:15</masterLabel>
+            <translation><!-- 08:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08:30</masterLabel>
+            <translation><!-- 08:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>08:45</masterLabel>
+            <translation><!-- 08:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09:00</masterLabel>
+            <translation><!-- 09:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09:15</masterLabel>
+            <translation><!-- 09:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09:30</masterLabel>
+            <translation><!-- 09:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>09:45</masterLabel>
+            <translation><!-- 09:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:00</masterLabel>
+            <translation><!-- 10:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:15</masterLabel>
+            <translation><!-- 10:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:30</masterLabel>
+            <translation><!-- 10:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>10:45</masterLabel>
+            <translation><!-- 10:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:00</masterLabel>
+            <translation><!-- 11:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:15</masterLabel>
+            <translation><!-- 11:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:30</masterLabel>
+            <translation><!-- 11:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>11:45</masterLabel>
+            <translation><!-- 11:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:00</masterLabel>
+            <translation><!-- 12:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:15</masterLabel>
+            <translation><!-- 12:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:30</masterLabel>
+            <translation><!-- 12:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>12:45</masterLabel>
+            <translation><!-- 12:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13:00</masterLabel>
+            <translation><!-- 13:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13:15</masterLabel>
+            <translation><!-- 13:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13:30</masterLabel>
+            <translation><!-- 13:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>13:45</masterLabel>
+            <translation><!-- 13:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14:00</masterLabel>
+            <translation><!-- 14:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14:15</masterLabel>
+            <translation><!-- 14:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14:30</masterLabel>
+            <translation><!-- 14:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>14:45</masterLabel>
+            <translation><!-- 14:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15:00</masterLabel>
+            <translation><!-- 15:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15:15</masterLabel>
+            <translation><!-- 15:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15:30</masterLabel>
+            <translation><!-- 15:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>15:45</masterLabel>
+            <translation><!-- 15:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16:00</masterLabel>
+            <translation><!-- 16:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16:15</masterLabel>
+            <translation><!-- 16:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16:30</masterLabel>
+            <translation><!-- 16:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>16:45</masterLabel>
+            <translation><!-- 16:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17:00</masterLabel>
+            <translation><!-- 17:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17:15</masterLabel>
+            <translation><!-- 17:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17:30</masterLabel>
+            <translation><!-- 17:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>17:45</masterLabel>
+            <translation><!-- 17:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18:00</masterLabel>
+            <translation><!-- 18:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18:15</masterLabel>
+            <translation><!-- 18:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18:30</masterLabel>
+            <translation><!-- 18:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>18:45</masterLabel>
+            <translation><!-- 18:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19:00</masterLabel>
+            <translation><!-- 19:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19:15</masterLabel>
+            <translation><!-- 19:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19:30</masterLabel>
+            <translation><!-- 19:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>19:45</masterLabel>
+            <translation><!-- 19:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20:00</masterLabel>
+            <translation><!-- 20:00 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20:15</masterLabel>
+            <translation><!-- 20:15 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20:30</masterLabel>
+            <translation><!-- 20:30 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>20:45</masterLabel>
+            <translation><!-- 20:45 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>21:00</masterLabel>
+            <translation><!-- 21:00 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>1:1</masterLabel>
+            <translation><!-- 1:1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Appointment</masterLabel>
+            <translation><!-- Appointment --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mailing</masterLabel>
+            <translation><!-- Mailing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Meeting</masterLabel>
+            <translation><!-- Meeting --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Telephone</masterLabel>
+            <translation><!-- Telephone --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>eDetail</masterLabel>
+            <translation><!-- eDetail --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Call Report --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- View --></label>
+        <name>View__c</name>
+    </fields>
+    <layouts>
+        <layout>Appointment Page Layout</layout>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Call Report Layout</layout>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Signature --></label>
+            <section>Signature</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Locked Call Report Layout</layout>
+        <sections>
+            <label><!-- Notes --></label>
+            <section>Notes</section>
+        </sections>
+        <sections>
+            <label><!-- Signature --></label>
+            <section>Signature</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Appointment --></label>
+        <name>Appointment</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Call Report --></label>
+        <name>CallReport</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Locked Call Report --></label>
+        <name>Locked_Call_Report</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Active_Campaign --></label>
+        <name>Active_Campaign</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Additional_Attendees --></label>
+        <name>Additional_Attendees</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Capture_Call_Report_Details --></label>
+        <name>Capture_Call_Report_Details</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close --></label>
+        <name>Close</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Wizard --></label>
+        <name>Wizard</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Bestellung-Produkt</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung-Produktbeschreibung</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bestellung-Produktbeschreibung</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_product_description</name>
+    </fields>
+    <fields>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>false</plural>
+            <value>Bestellung Product Information</value>
+        </caseValues>
+        <caseValues>
+            <caseType>Nominative</caseType>
+            <plural>true</plural>
+            <value>Bestellung-Produktinformationen</value>
+        </caseValues>
+        <gender>Feminine</gender>
+        <name>opportunity_product_information</name>
+    </fields>
+    <fields>
+        <label><!-- OpportunityOfflineId --></label>
+        <name>OpportunityOfflineId__c</name>
+    </fields>
+    <gender>Neuter</gender>
+</CustomObjectTranslation>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Contact$Account</field>
+    </columns>
+    <columns>
+        <field>Contact.R00Nj0000003oDKnEAM__r$CallDate__c</field>
+    </columns>
+    <columns>
+        <field>Contact.R00Nj0000003oDKnEAM__r.Product_Detail__r$Product__c</field>
+    </columns>
+    <currency>GBP</currency>
+    <filter>
+        <criteriaItems>
+            <column>Contact.R00Nj0000003oDKnEAM__r.Product_Detail__r$Product__c.Name__c</column>
+            <operator>equals</operator>
+            <value>Product 2</value>
+        </criteriaItems>
+        <language>en_US</language>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Contact.R00Nj0000003oDKnEAM__r$Brick__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Product 2 Calls</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Call__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>Contact$Birthdate</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

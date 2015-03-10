@@ -1,0 +1,95 @@
+<apex:page id="thePage" standardController="SFDC_Acct_Plan__c" extensions="BusinessPlanContactExtension" tabStyle="SFDC_Acct_Plan__c">
+<apex:sectionHeader title="Select additional contacts for Business Plan">
+<apex:form >
+<apex:commandButton id="addContact" action="{!goback}" value="Return to Business Plan" rerender="selCont" >
+
+</apex:commandButton> 
+<apex:outputText >&nbsp;</apex:outputText>
+</apex:form>
+</apex:sectionHeader>
+      <apex:form id="addedMembers" >
+<apex:outputText >&nbsp;</apex:outputText>
+    <apex:pageBlock title="Attendees" id="Attendees">
+      <apex:pageBlockButtons location="top">
+        <apex:actionFunction action="{!removeContacts}" id="removeContacts" name="removeContacts" rerender="addedMembers,addMemberForm">
+          <apex:param name="firstParam" assignTo="{!removeContactIds}" value=""/>
+        </apex:actionFunction>
+        <apex:commandButton value="Remove Contact" id="RemoveButton" rerender="addedMembers,addMemberForm" onclick="
+        var ids='';
+        var aForm = document.getElementById('{!$Component.addedMembers}');
+        for (i = 0;i<aForm.elements.length; i++) {
+          if((aForm.elements[i].name=='selected') && aForm.elements[i].checked) {
+            ids+=aForm.elements[i].value+',';
+          }
+        }
+        var ret = removeContacts(ids);
+        "/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockTable value="{!Attendees}" columnsWidth="5%,20%,5%,20%,20%,20%" var="Call_Attendees__c" id="ContactTable1" headerClass="headerRow">
+        <apex:column id="contactId" headerValue="">
+          <input type="checkbox" name="selected" value="{!Call_Attendees__c.id}"/>
+        </apex:column>
+        <apex:column id="contactName1" headerValue="Name">
+          <apex:outputLink id="Contact_name" value="/{!Call_Attendees__c.Contact__c}">{!Call_Attendees__c.Contact__r.Name}</apex:outputLink>
+        </apex:column>
+        <apex:column headerValue="KOL">
+          <apex:outputField id="KOL" value="{!Call_Attendees__c.contact__r.KOL__c}"/>
+        </apex:column>        
+        <apex:column headerValue="Speciality">
+          <apex:outputField id="Speciality" value="{!Call_Attendees__c.contact__r.Spec__c}"/>
+        </apex:column>    
+        <apex:column headerValue="Phone">
+          <apex:outputField id="Contact_phone" value="{!Call_Attendees__c.Contact__r.Phone}"/>
+        </apex:column>                                                     
+      </apex:pageBlockTable> 
+    </apex:pageBlock>
+  </apex:form>
+  <apex:form id="addMemberForm">  
+    <apex:actionFunction action="{!addSingleContact}" id="addSingleContact" name="addSingleContact">
+      <apex:param name="firstParam" assignTo="{!singleContactId}" value=""/>
+    </apex:actionFunction>
+    <apex:pageBlock mode="edit" title="Search Contacts">
+      <apex:pageBlockSection columns="2">
+        <apex:inputField id="singleContactId" value="{!SFDC_Acct_Plan__c.Contact__c}"/>
+        <apex:commandButton rerender="ContactTable" value="Add Contact" id="AddContact" onclick="addContacts(document.getElementById('{!$Component.singleContactId}' + '_lkid').value);"/>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+    <apex:pageBlock title="Possible Contacts" mode="edit">
+      <apex:actionFunction action="{!addContacts}" id="addContacts" name="addContacts" rerender="addedMembers,addMemberForm">
+        <apex:param name="firstParam" assignTo="{!addContactIds}" value=""/>
+      </apex:actionFunction>
+      <apex:pageBlockButtons location="top">
+        <apex:commandButton value="Add Contacts" id="AddButton" rerender="addedMembers,addMemberForm" onclick="
+        var ids='';
+        var aForm = document.getElementById('{!$Component.addMemberForm}');
+        for (i = 0;i<aForm.elements.length; i++) {
+          if((aForm.elements[i].name=='select') && aForm.elements[i].checked) {
+            ids+=aForm.elements[i].value+',';
+          }
+        }
+        var ret = addContacts(ids);
+        "/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockTable value="{!AccountContacts}" columnsWidth="10%,10%,20%,20%, 20%, 20%" var="contact" id="ContactTable" headerClass="headerRow">
+        <apex:column id="contactId" headerValue="">
+          <input type="checkbox" name="select" value="{!contact.contact__c}"/>
+        </apex:column>
+        <apex:column id="contactName" headerValue="Name">
+          <apex:outputLink id="Contact_name" value="/{!contact.Contact__c}">{!contact.Contact__r.Name}</apex:outputLink>
+        </apex:column>      
+       <apex:column headerValue="KOL">
+          <apex:outputField id="KOL" value="{!contact.contact__r.KOL__c}"/>
+        </apex:column>                         
+        <apex:column headerValue="Speciality">
+          <apex:outputField id="Speciality" value="{!contact.contact__r.Spec__c}"/>
+        </apex:column>
+        <apex:column headerValue="Phone">
+          <apex:outputField id="Phone" value="{!contact.contact__r.Phone}"/>
+        </apex:column> 
+        <apex:column headerValue="Last Activity">
+          <apex:outputField id="Last_activity" value="{!contact.contact__r.Last_Activity__c}"/>
+        </apex:column>                                                     
+      </apex:pageBlockTable> 
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

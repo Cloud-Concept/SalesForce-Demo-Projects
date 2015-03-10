@@ -1,0 +1,28 @@
+<apex:page controller="BlackBerryApproveRejectFormController" action="{!readFormData}"
+           docType="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" showChat="false" >
+  <apex:messages />
+  <apex:composition template="mobile_template">
+    <apex:define name="mobilepage">
+      <div data-role="page">
+        <div data-role="header" data-theme="b">
+          <h1>Success</h1>
+          <div class="cloud"></div>
+          <a href="{!URLFOR($Page.mobile_launcher)}" data-icon="home" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Home" />
+          <a href="{!URLFOR($Page.mobile_approvals)}" data-icon="grid" data-iconpos="notext" data-direction="reverse" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="List" />
+        </div>
+        <div data-role="content">
+          <apex:outputText value="{!ActionStatusMessage}" />
+          <br /><br />
+          <div class="ui-grid-a">
+            <div class="ui-block-a">
+              <a href="{!URLFOR($Page.mobile_launcher)}" data-role="button" data-icon="home">Application Launcher</a>
+            </div>
+            <div class="ui-block-b">
+              <a href="{!URLFOR($Page.mobile_approvals)}" data-role="button" data-icon="grid">Approval List</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </apex:define>
+  </apex:composition>
+</apex:page>

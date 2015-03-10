@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Document xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>To get the arrows to sort properly in views, load them initially in the correct sequence of negative to positive. The the sort is on the object ID--assigned desc sequentially. If you need to rearrange, change the labels and replace the document.</description>
+    <internalUseOnly>false</internalUseOnly>
+    <name>arrows-down-3</name>
+    <public>true</public>
+</Document>

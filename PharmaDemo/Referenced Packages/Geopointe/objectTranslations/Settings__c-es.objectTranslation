@@ -1,0 +1,519 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value><!-- Settings --></value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value><!-- Settings --></value>
+    </caseValues>
+    <fields>
+        <help><!-- When checked, an Export to CSV button will appear with the map results that allows the user to download the data to a CSV (Excel) file. --></help>
+        <label><!-- Allow Export CSV --></label>
+        <name>Allow_Export_CSV__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, an Export to KML button will appear with the map results that allows the user to download the data to a KML (Google Earth) file. --></help>
+        <label><!-- Allow Export KML --></label>
+        <name>Allow_Export_KML__c</name>
+    </fields>
+    <fields>
+        <help><!-- When set, the results of the Geocode job will be Chattered to a Chatter Group you specify. --></help>
+        <label><!-- (deprecated) --></label>
+        <name>Chatter_Batch_Geocode_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- The record ID for the Chatter Group that will be sent notifications from the application. --></help>
+        <label><!-- (deprecated) --></label>
+        <name>Chatter_Group_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, a check-in submission in Geopointe Mobile will also create a Completed Task. --></help>
+        <label><!-- Check-In Creates Task --></label>
+        <name>Check_In_Creates_Task__c</name>
+    </fields>
+    <fields>
+        <help><!-- Upon Check-In, the Subject field will be prefixed by the value entered here. If no value is entered, the system will default to using &quot;Check-In: &quot; --></help>
+        <label><!-- Check-In Task Subject Prefix --></label>
+        <name>Check_In_Task_Subject_Prefix__c</name>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <help><!-- If check, map control tabs will automatically be closed when a Data Set search is performed. --></help>
+        <label><!-- Close Tabs on Search --></label>
+        <name>Close_Tabs_on_Search__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter the ISO code of your default country.  When mapping, if your data does not have a country value, this value is used. --></help>
+        <label><!-- Default Country Code --></label>
+        <name>Default_Country_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, the Entire Data Set button will not appear on the Map page. You might want to do this if you have large data sets and want to stop your users from running the queries without using proximity. --></help>
+        <label><!-- Disable Entire Dataset Search --></label>
+        <name>Disable_Entire_Dataset_Search__c</name>
+    </fields>
+    <fields>
+        <help><!-- When set to true, the system will email results to the running user upon completion of each Geocode Batch Run. The running user is typically the one who scheduled the process to run. --></help>
+        <label><!-- Email Batch Geocode Results --></label>
+        <name>Email_Batch_Geocode_Results__c</name>
+    </fields>
+    <fields>
+        <help><!-- The size of the batches used for Geocoding. --></help>
+        <label><!-- (deprecated) --></label>
+        <name>Geocode_Batch_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hide Install Google Maps Message --></label>
+        <name>Hide_Install_Google_Maps_Message__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, the Salesforce sidebar will be removed Geopointe pages. --></help>
+        <label><!-- Hide Sidebar --></label>
+        <name>Hide_Sidebar__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last time the batch job to clean up Geo Location temp records was run --></help>
+        <label><!-- Last Geo Location Cleanup --></label>
+        <name>Last_Geo_Location_Cleanup__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last time the Geocode Cleanup routine was launched --></help>
+        <label><!-- Last Geocode Cleanup --></label>
+        <name>Last_Geocode_Cleanup__c</name>
+    </fields>
+    <fields>
+        <help><!-- The record ID of the last Geo Location record used.  This setting is kept for each user. --></help>
+        <label><!-- Last Location Used --></label>
+        <name>Last_Location_Used__c</name>
+    </fields>
+    <fields>
+        <help><!-- Holds the last time permissions we retrieved from the Arrowpointe Org. --></help>
+        <label><!-- Last Org Info Update (Get Perms) --></label>
+        <name>Last_Org_Info_Update_Get_Perms__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last time the subscriber information was sent to the Arrowpointe org. --></help>
+        <label><!-- Last Org Info Update (Send Info) --></label>
+        <name>Last_Org_Info_Update_Send_Info__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last time the batch job to clean up Route__c records was run --></help>
+        <label><!-- Last Route Cleanup --></label>
+        <name>Last_Route_Cleanup__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Saved Route Used --></label>
+        <name>Last_Saved_Route_Used__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Search Type --></label>
+        <name>Last_Search_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last time the batch job to clean up Temp__c records was run --></help>
+        <label><!-- Last Temp Cleanup --></label>
+        <name>Last_Temp_Cleanup__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Geopointe license expiration date. --></help>
+        <label><!-- License Expiration Date --></label>
+        <name>License_Expiration_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- The License Status value from the Arrowpointe LMA. This is used to help determine the mapping key that is used. --></help>
+        <label><!-- License Status --></label>
+        <name>License_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- When set to true, the system will create an Activity upon completion of each Geocode Batch Run. Use the Activity Views that were packaged with the system to help you locate the Geopointe activities easily. --></help>
+        <label><!-- Log Batch Geocode Results --></label>
+        <name>Log_Batch_Geocode_Results__c</name>
+    </fields>
+    <fields>
+        <label><!-- Map Height --></label>
+        <name>MapHeight__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last height used by the end-user. This setting is kept for each user. --></help>
+        <label><!-- Map Height --></label>
+        <name>Map_Height__c</name>
+    </fields>
+    <fields>
+        <label><!-- Map Start Tab --></label>
+        <name>Map_Start_Tab__c</name>
+    </fields>
+    <fields>
+        <help><!-- The selected Map Type on load of the map page. Map, Satellite, Hybrid, etc. --></help>
+        <label><!-- Map Type --></label>
+        <name>Map_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- The mapping provider the subscriber is using. --></help>
+        <label><!-- Mapping Provider --></label>
+        <name>Mapping_Provider__c</name>
+    </fields>
+    <fields>
+        <help><!-- Use this value to set a maximum search nearby radius for your organization. This is useful if you have a large database and want to protect your users from running queries on too large an area. --></help>
+        <label><!-- Maximum Radius (for Search Nearby) --></label>
+        <name>Maximum_Search_Nearby_Radius__c</name>
+    </fields>
+    <fields>
+        <help><!-- The minimum zoom a user must be in to search the map bounds for data set data. With MapQuest or Google, the zoom level furthest out is always 0. The system will not allow you to use a zoom level lower than 2 for MapQuest or 3 for Google. --></help>
+        <label><!-- Minimum Zoom (for Viewable Area Search) --></label>
+        <name>Minimum_Zoom_search_map_bounds__c</name>
+    </fields>
+    <fields>
+        <help><!-- Saves the type of map on mobile (SF1). &apos;street&apos;, &apos;hybrid&apos; --></help>
+        <label><!-- Mobile Map Type --></label>
+        <name>Mobile_Map_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile SF1 Last Accessed --></label>
+        <name>Mobile_SF1_Last_Accessed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile Search Range --></label>
+        <name>Mobile_Search_Range__c</name>
+    </fields>
+    <fields>
+        <label><!-- Mobile Show Traffic --></label>
+        <name>Mobile_Show_Traffic__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, the system will send a notification for every scheduled Geocode run even if there are no records to process. --></help>
+        <label><!-- Notify If No Records To Process --></label>
+        <name>Notify_If_No_Records_To_Process__c</name>
+    </fields>
+    <fields>
+        <help><!-- When checked, the pins on the maps will be individually numbered. --></help>
+        <label><!-- Number Map Pins --></label>
+        <name>Number_Map_Pins__c</name>
+    </fields>
+    <fields>
+        <label><!-- Organization Name --></label>
+        <name>Organization_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Perm (API) --></label>
+        <name>Perm_API__c</name>
+    </fields>
+    <fields>
+        <label><!-- Perm (Assignment Plans) --></label>
+        <name>Perm_Assignment_Plans__c</name>
+    </fields>
+    <fields>
+        <help><!-- Permission as to whether or not they can change the mapping provider in the org. --></help>
+        <label><!-- Perm (Change Provider) --></label>
+        <name>Perm_Change_Provider__c</name>
+    </fields>
+    <fields>
+        <label><!-- Perm (Data Cleansing) --></label>
+        <name>Perm_Data_Cleansing__c</name>
+    </fields>
+    <fields>
+        <label><!-- Perm (Disable Geocoding) --></label>
+        <name>Perm_Disable_Geocoding__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether they can access the Maps tab. --></help>
+        <label><!-- Perm (Maps) --></label>
+        <name>Perm_Maps__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether or not the organization has access to Geopointe Mobile --></help>
+        <label><!-- Perm (Mobile) --></label>
+        <name>Perm_Mobile__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether they can access the SpatialKey Connector functionality for Analytics --></help>
+        <label><!-- Perm (SpatialKey) --></label>
+        <name>Perm_SpatialKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Perm (Visualize) --></label>
+        <name>Perm_Visualize__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pinned Tabs --></label>
+        <name>Pinned_Tabs__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, and if user is posting the Check In to the feed, attach an image of the check in location on the User or Object feed where the check in occurred. --></help>
+        <label><!-- Post Check-In Image to Feed --></label>
+        <name>Post_Check_In_Image_to_Feed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Code --></label>
+        <name>Postal_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact Email --></label>
+        <name>Primary_Contact_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact Name --></label>
+        <name>Primary_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Primary Contact Phone --></label>
+        <name>Primary_Contact_Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, Check In will happen automatically when publisher actions is selected --></help>
+        <label><!-- Quick Check In --></label>
+        <name>Quick_Check_In__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, Check Out will happen automatically when publisher actions is selected --></help>
+        <label><!-- Quick Check Out --></label>
+        <name>Quick_Check_Out__c</name>
+    </fields>
+    <fields>
+        <help><!-- True or false to indicate whether the user would like to avoid highways in their route. This setting is kept for each user. --></help>
+        <label><!-- Route Avoid Highways --></label>
+        <name>Route_Avoid_Highways__c</name>
+    </fields>
+    <fields>
+        <help><!-- True or false to indicate whether the user would like to avoid toll roads in their route. This setting is kept for each user. --></help>
+        <label><!-- Route Avoid Tolls --></label>
+        <name>Route_Avoid_Tolls__c</name>
+    </fields>
+    <fields>
+        <label><!-- Route Locale --></label>
+        <name>Route_Locale__c</name>
+    </fields>
+    <fields>
+        <label><!-- Route Optimized --></label>
+        <name>Route_Optimized__c</name>
+    </fields>
+    <fields>
+        <help><!-- True or false to indicate whether the user would like to include thumbnail map images in their route. This setting is kept for each user. --></help>
+        <label><!-- Route Thumb Maps --></label>
+        <name>Route_Thumb_Maps__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last type of route run (fastest, shortest, pedestrian, optimized).  This setting is kept for each user. --></help>
+        <label><!-- Route Type --></label>
+        <name>Route_Type__c</name>
+    </fields>
+    <fields>
+        <help><!-- The unit for routing. &quot;m&quot; for miles or &quot;k&quot; for kilometers. This setting is kept for each user. --></help>
+        <label><!-- Route Unit --></label>
+        <name>Route_Unit__c</name>
+    </fields>
+    <fields>
+        <help><!-- The admin username for this SpatialKey organization --></help>
+        <label><!-- SK Admin User --></label>
+        <name>SK_Admin_User__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether or not end-users are allowed to send their Private Data Sets to Analytics. Uncheck this box if you want to control the fields that can be sent to Analytics. If unchecked, only public Data Sets will be available for end-users to select. --></help>
+        <label><!-- SK Allow Private Data Sets --></label>
+        <name>SK_Allow_Private_Data_Sets__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether to allow the user&apos;s on the Geopointe trial access to Analytics --></help>
+        <label><!-- SK Allow Trial Users --></label>
+        <name>SK_Allow_Trial_Users__c</name>
+    </fields>
+    <fields>
+        <label><!-- SK Columns Per Data Set --></label>
+        <name>SK_Columns_Per_Data_Set__c</name>
+    </fields>
+    <fields>
+        <label><!-- SK Data Limit --></label>
+        <name>SK_Data_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- SK Data Sets Per User --></label>
+        <name>SK_Data_Sets_Per_User__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates whether this system is aligned with a SpatialKey Enterprise system --></help>
+        <label><!-- SK Enterprise --></label>
+        <name>SK_Enterprise__c</name>
+    </fields>
+    <fields>
+        <help><!-- The assigned SpatialKey host name. --></help>
+        <label><!-- SK Host Name --></label>
+        <name>SK_Host_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Spatial Key API token for this org. --></help>
+        <label><!-- SK Organization API Key --></label>
+        <name>SK_Organization_API_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Spatial Key Admin API Key for this org. --></help>
+        <label><!-- SK Organization Admin API Key --></label>
+        <name>SK_Organization_Admin_API_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- The SpatialKey Organization ID. This is the unique identifier that comes from SK. --></help>
+        <label><!-- SK Organization Id --></label>
+        <name>SK_Organization_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The SpatialKey Organization Name. This will be the same as the Organization Name when created, but this is stored in case the Organization Name changes. --></help>
+        <label><!-- SK Organization Name --></label>
+        <name>SK_Organization_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Spatial Key Secret key/token. --></help>
+        <label><!-- SK Organization Secret Key --></label>
+        <name>SK_Organization_Secret_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether the user can push org-wide datasets to SpatialKey --></help>
+        <label><!-- SK Push Org Data Sets --></label>
+        <name>SK_Push_Org_Data_Sets__c</name>
+    </fields>
+    <fields>
+        <label><!-- SK Terms Accepted By --></label>
+        <name>SK_Terms_Accepted_By__c</name>
+    </fields>
+    <fields>
+        <help><!-- The IP Address from when the Terms were accepted. --></help>
+        <label><!-- SK Terms Accepted IP --></label>
+        <name>SK_Terms_Accepted_IP__c</name>
+    </fields>
+    <fields>
+        <help><!-- When the terms were accepted. --></help>
+        <label><!-- SK Terms Accepted Timestamp --></label>
+        <name>SK_Terms_Accepted_Timestamp__c</name>
+    </fields>
+    <fields>
+        <help><!-- Whether the terms of use have been accepted. --></help>
+        <label><!-- SK Terms Accepted --></label>
+        <name>SK_Terms_Accepted__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of tier 1 licenses for the SpatialKey connector --></help>
+        <label><!-- SK Tier 1 Licenses --></label>
+        <name>SK_Tier_1_Licenses__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of tier 2 licenses for the SpatialKey connector --></help>
+        <label><!-- SK Tier 2 Licenses --></label>
+        <name>SK_Tier_2_Licenses__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of tier 3 licenses for the SpatialKey connector --></help>
+        <label><!-- SK Tier 3 Licenses --></label>
+        <name>SK_Tier_3_Licenses__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of tier 4 licenses for the SpatialKey connector --></help>
+        <label><!-- SK Tier 4 Licenses --></label>
+        <name>SK_Tier_4_Licenses__c</name>
+    </fields>
+    <fields>
+        <help><!-- The number of tier 5 licenses for the SpatialKey connector --></help>
+        <label><!-- SK Tier 5 Licenses --></label>
+        <name>SK_Tier_5_Licenses__c</name>
+    </fields>
+    <fields>
+        <label><!-- SK User API Key --></label>
+        <name>SK_User_API_Key__c</name>
+    </fields>
+    <fields>
+        <help><!-- The unique ID for the user assigned by SpatialKey --></help>
+        <label><!-- SK User Id --></label>
+        <name>SK_User_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Analytics tier assigned to a specific user.  This takes up an Analytics &quot;License&quot;. --></help>
+        <label><!-- SK User Tier --></label>
+        <name>SK_User_Tier__c</name>
+    </fields>
+    <fields>
+        <help><!-- Default Off will not display same location markers. Default On will display a circle containing a number indicating how many records are at the same location on the map. --></help>
+        <label><!-- Same Location Markers --></label>
+        <name>Same_Location_Markers__c</name>
+    </fields>
+    <fields>
+        <help><!-- The ID of the record in the CronTrigger table that holds the schedule of geocodes. --></help>
+        <label><!-- Schedule ID (Geocode) --></label>
+        <name>Schedule_ID_Geocode__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last data set used in a search nearby or search within query. This setting is kept for each user. --></help>
+        <label><!-- Search Nearby Data Set --></label>
+        <name>Search_Nearby_Data_Set__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last choice in a search nearby query as to whether they want drive times calculated This setting is kept for each user. --></help>
+        <label><!-- Search Nearby Drive Calc --></label>
+        <name>Search_Nearby_Drive_Calc__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last range used in a search nearby query. This setting is kept for each user. --></help>
+        <label><!-- Search Nearby Range --></label>
+        <name>Search_Nearby_Range__c</name>
+    </fields>
+    <fields>
+        <help><!-- User setting as to whether or show the radius overlay --></help>
+        <label><!-- Search Nearby Show Overlay --></label>
+        <name>Search_Nearby_Show_Overlay__c</name>
+    </fields>
+    <fields>
+        <help><!-- The last unit used (&apos;miles&apos; or &apos;kilometers&apos;) in a search nearby query. This setting is kept for each user. --></help>
+        <label><!-- Search Nearby Unit --></label>
+        <name>Search_Nearby_Unit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Share Check In on Feed --></label>
+        <name>Share_Check_In_on_Feed__c</name>
+    </fields>
+    <fields>
+        <help><!-- The starting Latitude for the map --></help>
+        <label><!-- Starting Lat --></label>
+        <name>Starting_Lat__c</name>
+    </fields>
+    <fields>
+        <help><!-- The starting Longitude for the map --></help>
+        <label><!-- Starting Lng --></label>
+        <name>Starting_Lng__c</name>
+    </fields>
+    <fields>
+        <help><!-- The starting Zoom level for the map --></help>
+        <label><!-- Starting Zoom --></label>
+        <name>Starting_Zoom__c</name>
+    </fields>
+    <fields>
+        <label><!-- State/Province --></label>
+        <name>State_Province__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street --></label>
+        <name>Street__c</name>
+    </fields>
+    <fields>
+        <help><!-- If checked, the system will detect whether your browser has &quot;geo location&quot; support. If it does, the system will position you at your current location by default upon entering the Maps tab. --></help>
+        <label><!-- Use Geolocation --></label>
+        <name>Use_Geolocation__c</name>
+    </fields>
+    <fields>
+        <help><!-- When enabled, you will be able to use the scroll wheel on your mouse to zoom in/out on the map. --></help>
+        <label><!-- Use Scrollwheel Zoom --></label>
+        <name>Use_Scrollwheel_Zoom__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visualize Region --></label>
+        <name>Visualize_Region__c</name>
+    </fields>
+    <fields>
+        <label><!-- Visualize Show Data Table --></label>
+        <name>Visualize_Show_Data_Table__c</name>
+    </fields>
+    <gender><!-- Feminine --></gender>
+</CustomObjectTranslation>

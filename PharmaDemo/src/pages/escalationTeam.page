@@ -1,0 +1,2 @@
+<apex:page showHeader="false" sidebar="false" controller="escalationTeamCont" action="{!salesTeamAssemble}">
+</apex:page>

@@ -1,0 +1,24 @@
+<table cellpadding="5" width="550" height="400" cellspacing="5" border="0" >
+<tr height="400" valign="top" >
+<td locked="0" style=" font-family:arial; bLabel:main; color:#000000; font-size:12pt; bEditID:r3st1; background-color:#FFFFFF;" aEditID="c1r1" tEditID="c1r1" >
+<![CDATA[Dear {!Account.FirstName}
+<br>
+<br>Thank you for calling the SMA call centre, please find enclosed a summary of you query and answer
+<br>
+<br>{!Case.Solution_Description}   
+<br>
+<br>We value your opinion and would be grateful if you could complete the following <a href="http://www.clicktools.com/survey?iv=b411616084dcfa3&amp;q1={!Case.AccountId}&amp;q2={!Case.Id}">survey
+</a><br><br>Please also take the time to visit our <a href="http://www.seforce.net/hpaster/wyeth/help.html">website</a> where you can find
+valuable information about our products, view common questions and
+submit queries
+<br>
+<br>Thank you,   
+<br>{!User.Name} 
+<br>{!Organization.Name}   
+<br>
+<br>Your comment:   
+<br>{!Case.Description} 
+<br>
+<br>{!Case.Solution_Attachments}]]></td>
+</tr>
+</table>

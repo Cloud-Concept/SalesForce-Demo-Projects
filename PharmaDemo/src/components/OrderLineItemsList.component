@@ -1,0 +1,78 @@
+<apex:component >
+    
+    <apex:attribute name="rowNum" type="Integer" description="Row counter"/>
+    <apex:attribute name="st" type="stockProductClass" description="Product Class Item"/>
+    
+    <apex:componentBody >
+        <apex:pageBlock >
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <a style="cursor: pointer;" onClick="javascript: Toggle(this, 'ad{!rowNum}');">
+                            <img id="imgAd{!rowNum}" src="{!IF(st.spExpand = false, URLFOR($Resource.treeViewImages, 'plus.gif'), URLFOR($Resource.treeViewImages, 'minus.gif'))}" />&nbsp;<b>{!st.spName}</b></a>&nbsp;<span style="{!IF(st.spHasPromotion, 'background-color: #FFF200', '')}">{!st.spPromoHeader}</span>
+                        <div style="{!IF(st.spExpand = false, 'display:none;', '')}" id="divad{!rowNum}">
+                            <apex:pageBlockTable value="{!st.skus}" var="sku">
+                                <apex:column >
+                                    <apex:facet name="header">SKU</apex:facet>
+                                        {!sku.skuName}
+                                </apex:column>
+                                <apex:column >
+                                    <apex:facet name="header">Description</apex:facet>
+                                        {!sku.skuDescription}
+                                </apex:column>
+                               
+                                <apex:column >
+                                    <apex:facet name="header">Wholesaler</apex:facet>
+                                        <apex:selectList value="{!sku.skuWholesaler}" size="1">
+                                            <apex:selectOptions value="{!st.spWholesalers}" />
+                                        </apex:selectList>
+                                </apex:column>
+
+
+ 
+<!--  
+                               <apex:column >
+                                    <apex:facet name="header">Pricelist</apex:facet>
+                                        <apex:selectList value="{!sku.skuSelectedPriceList}" size="1">
+                                            <apex:selectOptions value="{!sku.skuPriceLists}" />
+                                        </apex:selectList>                                   
+                                </apex:column>
+-->                                     
+                                <apex:column style="text-align: right;">
+                                    <apex:facet name="header">Price</apex:facet>
+                                        <apex:outputText value="{0, number, £#,##0.00}">
+                                            <apex:param value="{!sku.skuPrice}" />
+                                        </apex:outputText>
+                                </apex:column>
+                                <apex:column style="text-align: right;">
+                                    <apex:facet name="header">New Price</apex:facet>
+                                       <apex:outputText value="{0, number, £#,##0.00}">
+                                            <apex:param value="{!sku.skuNewPrice}" />
+                                       </apex:outputText>
+                                </apex:column>
+                                <apex:column style="text-align: right;">
+                                    <apex:facet name="header">#1 Vol.</apex:facet>
+                                        {!sku.skuOrder1Vol}
+                                </apex:column>
+                                <apex:column style="text-align: right;">
+                                    <apex:facet name="header">#2 Vol.</apex:facet>
+                                        {!sku.skuOrder2Vol}
+                                </apex:column>
+                                <apex:column style="text-align: right;">
+                                    <apex:facet name="header">Quantity</apex:facet>
+                                        <apex:inputText value="{!sku.skuOrderLineItemQuantity}" size="4" />
+                                </apex:column>
+                                <apex:column style="text-align: right;">
+                                    <apex:facet name="header">Free</apex:facet>
+                                        <apex:inputText value="{!sku.skuOrderFreeVol}" size="4" />
+                                </apex:column>                                
+                                
+                            </apex:pageBlockTable>
+                         </div>
+                     </td>
+                 </tr>
+             </table>
+         </apex:pageBlock>
+     </apex:componentBody>
+    
+</apex:component>

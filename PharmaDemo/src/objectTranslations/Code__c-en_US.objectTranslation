@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Code</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Code</value>
+    </caseValues>
+    <fields>
+        <label><!-- COD_ID_CEGEDIM --></label>
+        <name>COD_ID_CEGEDIM__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Last Update --></label>
+        <name>Last_Update__c</name>
+    </fields>
+    <fields>
+        <label><!-- List Code --></label>
+        <name>List_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- List Label --></label>
+        <name>List_Label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Long Description --></label>
+        <name>Long_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Short Description --></label>
+        <name>Short_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid From --></label>
+        <name>Valid_From__c</name>
+    </fields>
+    <fields>
+        <label><!-- Valid To --></label>
+        <name>Valid_To__c</name>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

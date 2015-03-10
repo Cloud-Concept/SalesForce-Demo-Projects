@@ -1,0 +1,50 @@
+<apex:page tabStyle="Product2" controller="PlanogramSetup">
+    {!resourceID}
+    <apex:sectionHeader title="Planogram" subtitle="Planogram Setup Wizard"/>
+    <apex:pageBlock title="Planogram Setup" rendered="{!NOT(productsCreated)}">
+        <p>The Salesforce Planogram uses the standard Product Object, you can customize those Products displayed in the planogram using the Image, Grouped Image and Available in Planogram Fields.</p>
+        <p>
+        If you need to get the generic version and its products up and running quickly you will need to ensure that the following values are added to the Product Family Picklist:
+        <ul>
+            <li>Sassy Light</li>
+            <li>Sassy Juice</li>
+            <li>Sassy Sport</li>
+            <li>Sassy Fizz</li>
+        </ul>
+        Once Those Product Families are added see below.
+        </p>
+
+    </apex:pageBlock>
+    <apex:pageBlock title="Products Created" rendered="{!productsCreated}">
+        <p>
+            Your Products have Been Setup, they can be edited at anytime under the products tab. Products are split by product family in the application and only those marked as availble to planogram are shown.
+        </p>
+    </apex:pageBlock>
+    <apex:form >
+        <apex:pageBlock title="Create Products" rendered="{!NOT(productsCreated)}">
+            <p>The default products for the Salesforce Planogram need to be added, Please click the 'Create Products' button to create a selection of products.</p><br />
+                <apex:pageBlocktable value="{!products}" var="product">
+                    <apex:column >
+                        <apex:facet name="header">Product Name</apex:facet>
+                        <apex:outputField value="{!product.Name}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Product Family</apex:facet>
+                        <apex:outputField value="{!product.Family}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Image</apex:facet>
+                        <apex:image value="{!product.Image__c}"/>
+                    </apex:column>
+                    <apex:column >
+                        <apex:facet name="header">Gouped Image</apex:facet>
+                        <apex:image value="{!product.Grouped_Image__c}" />
+                    </apex:column>
+                </apex:pageBlocktable>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Insert Products" action="{!CreateProducts}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

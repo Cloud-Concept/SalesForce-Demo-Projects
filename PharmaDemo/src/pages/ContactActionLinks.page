@@ -1,0 +1,53 @@
+<apex:page standardController="Contact" showHeader="false" extensions="ContactActionLinkExtension">
+
+<script>
+
+    function roll_over(img_name, img_src) {
+
+    document[img_name].src = img_src;
+
+    }
+
+</script>
+
+<apex:form >
+
+<table cellspacing="2" cellpadding="2" width="100%" bgcolor="#F3F3EC" border="0" align="center">
+
+<tr valign="top">
+
+
+
+
+<td align="center"><apex:outputLink value="{!urlFor($Page.Callreport, null, [type='Appointment', accountid=contact.Accountid, contactid = Contact.id])}"target="_top" id="img2" onmouseover="roll_over('img2', '{!$Resource.SetApptOn}')" onmouseout="roll_over('img2', '{!$Resource.SetApptOff}')">
+
+<IMG SRC="{!$Resource.SetApptOff}" NAME="img2" BORDER="0"></IMG>
+</apex:outputLink></td>
+
+
+<td><apex:image url="{!$Resource.ActionLinkSpacer}"/></td>
+
+<td align="center"><apex:commandLink action="{!urlFor($Page.Callreport, null, [type='1:1', accountid=contact.Accountid, contactid = Contact.id])}"target="_top" id="img4" onmouseover="roll_over('img4', '{!$Resource.AddCallReportOn}')" onmouseout="roll_over('img4', '{!$Resource.AddCallReportOff}')">
+
+<IMG SRC="{!$Resource.AddCallReportOff}" NAME="img4" BORDER="0"></IMG>
+</apex:commandlink></td>
+
+<td align="center"><apex:commandLink action="{!sendEmail}" id="img3" onmouseover="roll_over('img3', '{!$Resource.SendEmailOn}')" onmouseout="roll_over('img3', '{!$Resource.SendEmailOff}')">
+
+<IMG SRC="{!$Resource.SendEmailOff}" NAME="img3" BORDER="0"></IMG>
+</apex:commandlink></td>
+
+<td><apex:image url="{!$Resource.ActionLinkSpacer}"/></td>
+
+<td align="center"><apex:commandLink action="{!sendContent}" id="img5" onmouseover="roll_over('img5', '{!$Resource.SendContentOn}')" onmouseout="roll_over('img5', '{!$Resource.SendContentOff}')">
+
+<IMG SRC="{!$Resource.SendContentOff}" NAME="img5" BORDER="0"></IMG>
+</apex:commandlink></td>
+
+</tr>
+
+</table>
+
+</apex:form>
+
+</apex:page>

@@ -1,0 +1,55 @@
+<apex:page standardController="Account" extensions="SWOTExtension">
+    <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" />
+    <script type="text/javascript">
+        j$ = jQuery.noConflict();
+        j$(document).ready(function() {
+            var iframe = j$(parent.document.getElementById(window.name));
+            iframe.height(j$(document).height());
+        });
+        function save(field, type) {
+            SWOTExtension.saveitem(document.getElementById(field).value, type, '{!Account.Id}', function() {
+                parent.document.location.reload();
+            });
+        };
+    </script>
+    <apex:pageBlock id="swot">
+        <apex:pageBlockSection id="section" columns="2">
+            <apex:pageBlockTable value="{!s}" id="strengthTable" var="item">
+                <apex:column value="{!item.Name}" headerValue="{!$Label.Strengths}" />
+                <apex:facet name="footer">
+                    <apex:form id="strengthForm">
+                        <apex:inputText id="strengthDesc" />
+                        <apex:commandButton value="{!$Label.NewButton}" onclick="save('{!$Component.swot.section.strengthTable.strengthForm.strengthDesc}', 'Strength'); return false;" />
+                    </apex:form>
+                </apex:facet>
+            </apex:pageBlockTable>
+            <apex:pageBlockTable value="{!w}" var="item" id="weaknessTable">
+                <apex:column value="{!item.Name}" headerValue="{!$Label.Weaknesses}" />
+                <apex:facet name="footer">
+                    <apex:form id="weaknessForm">
+                        <apex:inputText id="weaknessDesc" />
+                        <apex:commandButton value="{!$Label.NewButton}" onclick="save('{!$Component.swot.section.weaknessTable.weaknessForm.weaknessDesc}', 'Weakness'); return false;" />
+                    </apex:form>
+                </apex:facet>
+            </apex:pageBlockTable>
+            <apex:pageBlockTable value="{!o}" var="item" id="opportunityTable">
+                <apex:column value="{!item.Name}" headerValue="{!$Label.Opportunities}" />
+                <apex:facet name="footer">
+                    <apex:form id="opportunityForm">
+                        <apex:inputText id="opportunityDesc" />
+                        <apex:commandButton value="{!$Label.NewButton}" onclick="save('{!$Component.swot.section.opportunityTable.opportunityForm.opportunityDesc}', 'Opportunity'); return false;" />
+                    </apex:form>
+                </apex:facet>
+            </apex:pageBlockTable>
+            <apex:pageBlockTable value="{!t}" var="item" id="threatTable">
+                <apex:column value="{!item.Name}" headerValue="{!$Label.Threats}" />
+                <apex:facet name="footer">
+                    <apex:form id="threatForm">
+                        <apex:inputText id="threatDesc" />
+                        <apex:commandButton value="{!$Label.NewButton}" onclick="save('{!$Component.swot.section.threatTable.threatForm.threatDesc}', 'Threat'); return false;" />
+                    </apex:form>
+                </apex:facet>
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

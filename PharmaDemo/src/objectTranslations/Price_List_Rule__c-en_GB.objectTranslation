@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Price List Rule</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Price List Rules</value>
+    </caseValues>
+    <fields>
+        <label><!-- Discount --></label>
+        <name>Discount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Maximum Volume --></label>
+        <name>Max_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Minimum Volume --></label>
+        <name>Min_Volume__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price List SKU --></label>
+        <name>Price_List_SKU__c</name>
+        <relationshipLabel><!-- Price List Rules --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

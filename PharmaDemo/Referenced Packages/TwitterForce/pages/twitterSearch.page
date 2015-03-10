@@ -1,0 +1,184 @@
+<!-- Jonathan Hersh - jhersh@salesforce.com - 4/20/2009 -->
+
+<apex:page controller="twitterforce.TwitterSearchController" tabstyle="SalesforceCRM_for_Twitter_Search__tab">
+	<script type="text/javascript" src="{!$Resource.tabber}" />
+	<!-- <apex:includeScript value="{!$Resource.jquery}"/>-->
+	<link rel="stylesheet" type="text/css" href="{!$Resource.tabberstyle}" />
+	
+	<!-- <script type="text/javascript">
+	/*	$(document).ready(function() {
+   			$(".tabbertab").hide();
+   			$(".tabbertab:first").show();
+   			$(".navItemLink:first").addClass("active");
+   			
+   			$(".navItemLink").click(function() {
+   				var tmp = $(this).attr("id");
+   				$(".tabbertab").hide();
+   				$(".navItemLink").removeClass("active");
+   				
+   				$(this).addClass("active");
+   				$(".tabbertab")
+   					.filter( function() { return $(this).attr("id") == tmp; } )
+   					.fadeIn(175);
+   			});
+ 		});*/
+	</script>
+	
+	<style type="text/css">
+		/*div.navBox {
+			width: 65%;
+			min-height: 25px;
+			border: 1px solid black;
+			background-color: #669966;
+			margin: 10px auto;
+			padding: 5px;
+			border-radius: 5px;
+		}
+		
+		div.navItem {
+			float: left;
+			font-size: 140%;
+			margin-left: 20px;
+		}
+		
+		div.navItem a.navItemLink {
+			text-decoration: none;
+			padding: 3px;
+			font-weight: bold;
+			color: white;
+		}
+		
+		div.navItem a:hover, .active {
+			border-bottom: 2px solid white;
+		}*/
+	</style>-->
+	
+	<apex:sectionheader title="{!appname}" subtitle="Search"/>
+	
+	<apex:pageblock title="System Message" id="messageBox" rendered="{!if( LEN( Error ) > 0, true, false )}">
+		<apex:outputtext value="{!Error}" escape="false" />
+	</apex:pageblock>
+	<apex:tabpanel switchtype="ajax" rendered="{!if( LEN( Error ) = 0, true, false )}">
+	<apex:tab label="Search Term Results">	
+	To create records based on tweets, first click 'Import Conversation'.
+		<apex:form id="twitterTab">
+		<apex:pageblock title="" >	
+		<!-- <div class="navBox">
+				<div class="navItem">Browse Search Results:</div>
+			<apex:repeat value="{!searchResults}" var="sr">
+				<div class="navItem">
+					<a id="{!sr.term}" class="navItemLink" href="#">{!sr.term}</a>
+				</div>
+			</apex:repeat>
+		</div>	-->
+		<div class="tabber">
+			<apex:repeat value="{!searchResults}" var="sr">
+				<div class="tabbertab" title="Search: {!sr.term.search_term__c}" id="{!sr.term.search_term__c}">
+					<!-- <apex:outputtext rendered="{!LEN( sr.term.location__c ) > 0}">
+						<p style="font-size: 120%">This is a location-based search. Location: <strong>{!sr.term.Location__c}</strong>, within <strong>{!sr.term.Within__c} {!sr.term.Units__c}</strong></p>
+						<br/>
+					</apex:outputtext>-->
+					<apex:pageblocktable value="{!sr.sr}" var="s">
+						<apex:column headervalue="Cases">
+		        		<apex:commandButton action="{!s.createCase}" rendered="{!AND( !s.hasCase, s.hasTweet )}" value="Create"/>
+		        		<apex:commandButton action="{!s.viewCase}" styleclass="btnSharing" rendered="{!AND( s.hasCase, s.hasTweet )}" value="View"/>
+			        	</apex:column>
+			        	<apex:column headervalue="Solutions">
+			        		<apex:commandbutton action="{!s.createSol}" rendered="{!AND( !s.hasSolution, s.hasTweet )}" value="Create" />
+			        		<apex:commandbutton action="{!s.viewSol}" styleclass="btnSharing" rendered="{!AND( s.hasSolution, s.hasTweet )}" value="View" />
+			        	</apex:column>
+			        	<apex:column headervalue="Ideas">
+			        		<apex:commandbutton action="{!s.createIdea}" rendered="{!AND( !s.hasIdea, s.hasTweet )}" value="Create" />
+			        		<apex:commandbutton action="{!s.viewIdea}" styleclass="btnSharing" rendered="{!AND( s.hasIdea, s.hasTweet )}" value="View" />
+			        	</apex:column>
+			        	<apex:column headervalue="Leads">
+			       			<apex:commandButton action="{!s.createLead}" rendered="{!!s.hasLead}" value="Create"/>
+							<apex:commandButton action="{!s.viewLead}" styleclass="btnSharing" rendered="{!s.hasLead}" value="View"/>
+						</apex:column>
+						<apex:column headervalue="Contacts">
+		       				<apex:commandButton action="{!s.createContact}" rendered="{!!s.hasContact}" value="Create"/>
+							<apex:commandButton action="{!s.viewContact}" styleclass="btnSharing" rendered="{!s.hasContact}" value="View"/>
+						</apex:column>
+						<!-- <apex:column headervalue="Inquiries" rendered="{!ts.Enable_Twitter_Inquiries__c}">
+							<apex:commandButton action="{!s.createInquiry}" rendered="{!AND( !s.hasInquiry, true )}" value="Create"/>
+							<apex:commandButton action="{!s.viewInquiry}" styleclass="btnSharing" rendered="{!AND( s.hasInquiry, true )}" value="View"/>
+						</apex:column>-->
+						<apex:column >
+							<apex:commandbutton value="Import Conversation" action="{!s.createTweet}" rendered="{!!s.hasTweet}" />
+							<apex:commandbutton value="View Conversation" styleclass="btnSharing" action="{!s.viewConversation}" rendered="{!s.hasTweet}" />
+						</apex:column>
+						<apex:column headervalue="Time" value="{!s.sr.createdat}" />
+						<apex:column headervalue="User">
+							<apex:image height="48" width="48" value="http://img.tweetimag.es/i/{!s.sr.user.screenname}_n" />
+						</apex:column>
+						<apex:column >
+							<apex:outputlink value="http://twitter.com/{!s.sr.user.screenname}" target="_new">{!s.sr.user.screenname}</apex:outputlink> ({!s.sr.user.name})
+						</apex:column>
+						<apex:column headervalue="Message">
+							<apex:outputtext escape="false" value="{!s.sr.htmltext}" />
+						</apex:column>
+					</apex:pageblocktable>
+				</div>
+			</apex:repeat>
+			</div>
+			</apex:pageblock>
+		</apex:form>
+	</apex:tab>
+	<apex:tab label="Custom Search">
+	To create records based on tweets, first click 'Import Conversation'.
+	<apex:form id="twitterTab2">
+		<apex:pageblock title="Custom Search">
+			<apex:pageblockbuttons location="top">
+				<apex:commandbutton value="Search" action="{!customSearch}" rerender="customresults" />
+			</apex:pageblockbuttons>
+			<apex:pageblocksection showheader="false">
+				<apex:pageblocksectionitem >
+					<apex:outputlabel for="searchstr" value="Search Term" />
+					<apex:inputtext id="searchstr" value="{!searchstr}" />
+				</apex:pageblocksectionitem>
+				<apex:inputText style="display:none" />
+			</apex:pageblocksection>
+		</apex:pageblock>
+	</apex:form>
+	<apex:form id="customresults">
+		<apex:pageblock title="Search Results" rendered="{!if( LEN( searchstr ) > 0, true, false )}">
+			<apex:pageblocktable value="{!customsearch.sr}" var="s">
+						<!-- <apex:column >
+							<apex:inputcheckbox value="{!s.action}" />
+						</apex:column>-->
+						<apex:column headervalue="Cases">
+		        		<apex:commandButton action="{!s.createCase}" rendered="{!AND( !s.hasCase, s.hasTweet )}" value="Create"/>
+		        		<apex:commandButton action="{!s.viewCase}" styleclass="btnSharing" rendered="{!AND( s.hasCase, s.hasTweet )}" value="View"/>
+			        	</apex:column>
+			        	<apex:column headervalue="Solutions">
+			        		<apex:commandbutton action="{!s.createSol}" rendered="{!AND( !s.hasSolution, s.hasTweet )}" value="Create" />
+			        		<apex:commandbutton action="{!s.viewSol}" styleclass="btnSharing" rendered="{!AND( s.hasSolution, s.hasTweet )}" value="View" />
+			        	</apex:column>
+			        	<apex:column headervalue="Leads">
+			       			<apex:commandButton action="{!s.createLead}" rendered="{!!s.hasLead}" value="Create"/>
+							<apex:commandButton action="{!s.viewLead}" styleclass="btnSharing" rendered="{!s.hasLead}" value="View"/>
+						</apex:column>
+						<apex:column headervalue="Contacts">
+		       				<apex:commandButton action="{!s.createContact}" rendered="{!!s.hasContact}" value="Create"/>
+							<apex:commandButton action="{!s.viewContact}" styleclass="btnSharing" rendered="{!s.hasContact}" value="View"/>
+						</apex:column>
+						<apex:column >
+							<apex:commandbutton value="Import Conversation" action="{!s.createTweet}" rendered="{!!s.hasTweet}" />
+							<apex:commandbutton value="View Conversation" styleclass="btnSharing" action="{!s.viewConversation}" rendered="{!s.hasTweet}" />
+						</apex:column>
+						<apex:column headervalue="Time" value="{!s.sr.createdat}" />
+						<apex:column headervalue="User">
+							<apex:image height="48" width="48" value="http://img.tweetimag.es/i/{!s.sr.user.screenname}_n" />
+						</apex:column>
+						<apex:column >
+							<apex:outputlink value="http://twitter.com/{!s.sr.user.screenname}" target="_new">{!s.sr.user.screenname}</apex:outputlink> ({!s.sr.user.name})
+						</apex:column>
+						<apex:column headervalue="Message">
+							<apex:outputtext escape="false" value="{!s.sr.htmltext}" />
+						</apex:column>
+					</apex:pageblocktable>
+		</apex:pageblock>
+	</apex:form>
+	</apex:tab>
+	</apex:tabpanel>
+</apex:page>

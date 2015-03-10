@@ -1,0 +1,31 @@
+<apex:page standardController="AppLauncher__c" extensions="AppLauncherSetExtension" recordSetVar="apps"
+           docType="html-5.0" standardStylesheets="false" showHeader="false" sidebar="false" showChat="false" >
+  <apex:messages />
+  <apex:composition template="mobile_page">
+    <apex:define name="headerText">PharmaForce Apps</apex:define>
+    <apex:define name="content">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="{!URLFOR($Page.mobile_launcher)}?category=HR" class="{!IF(cat == 'HR', 'ui-btn-active', '')}">HR</a></li>
+          <li><a href="{!URLFOR($Page.mobile_launcher)}?category=Purchasing" class="{!IF(cat == 'Purchasing', 'ui-btn-active', '')}">Purchasing</a></li>
+          <li><a href="{!URLFOR($Page.mobile_launcher)}?category=Sales" class="{!IF(cat == 'Sales', 'ui-btn-active', '')}">Sales</a></li>
+          <li><a href="{!URLFOR($Page.mobile_launcher)}?category=Projects" class="{!IF(cat == 'Projects', 'ui-btn-active', '')}">Projects</a></li>
+          <!-- <li><a href="{!URLFOR($Page.mobile_launcher)}?category=All" class="{!IF(cat == 'All', 'ui-btn-active', '')}">All</a></li> -->
+        </ul>
+      </div>
+      <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="d">
+        <apex:repeat value="{!apps}" var="group">
+          <li data-role="list-divider">{!group}</li>
+          <apex:repeat value="{!apps[group]}" var="app">
+          <li>
+            <a href="{!app.Url__c}" data-ajax="false" style="padding-left: 55px;">
+              <img src="{!NULLVALUE(app.Icon__c, '/s.gif')}" width="32" alt="{!app.Name}" class="ui-li-icon" />
+              <h2>{!app.Name}</h2>
+            </a>
+          </li>
+          </apex:repeat>
+        </apex:repeat>
+      </ul>
+    </apex:define>
+  </apex:composition>
+</apex:page>

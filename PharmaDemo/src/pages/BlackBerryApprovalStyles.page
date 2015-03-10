@@ -1,0 +1,388 @@
+<!-- 
+  Developed by Timba Software Corp. www.timbasoftware.com admin@timbasoftware.com
+-->
+
+<apex:page showHeader="false" standardStylesheets="false" cache="true" title="Salesforce Mobile" >
+<style id="BBBStyles">
+	* {
+	font-family:verdana;
+	font-size:10px;
+	}
+	
+	a {
+	color:#333;
+	margin:4px;
+	}
+	
+	.ApprovalItemsTable,.caption,.thead {
+	width:100%;
+	text-align:left;
+	}
+	
+	.linksColumn {
+	width:190px;
+	}
+	
+	.relatedToColumn {
+	width:150px;
+	font-weight:700;
+	}
+	
+	.thead {
+	border-bottom:1px solid #000;
+	text-align:left;
+	padding-left:5px;
+	font-weight:700;
+	}
+	
+	#ApprovalItemsTableSeparator {
+	height:10px;
+	}
+	
+	.caption {
+	color:#FFF;
+	padding-left:28px;
+	padding-top:5px;
+	height:28px;
+	background:#E5C130 url(/img/icon/opportunities24.png) no-repeat 2px 2px;
+	}
+	
+	.AccountApprovalCaption {
+	background-color:#236FBD;
+	background-image:url(/img/icon/accounts24.png);
+	}
+	
+	.OpportunityApprovalCaption {
+	background-color:#E5C130;
+	background-image:url(/img/icon/opportunities24.png);
+	}
+	
+	.ContactApprovalCaption {
+	background-color:#56458C;
+	background-image:url(/img/icon/contacts24.png);
+	}
+	
+	.LeadApprovalCaption {
+	background-color:#E39321;
+	background-image:url(/img/icon/leads24.png);
+	}
+	
+	.CampaignApprovalCaption {
+	background-color:#C93;
+	background-image:url(/img/icon/campaigns24.png);
+	}
+	
+	.CaseApprovalCaption {
+	background-color:#B7A752;
+	background-image:url(/img/icon/cases24.png);
+	}
+	
+	.ContractApprovalCaption {
+	background-color:#66895F;
+	background-image:url(/img/icon/contracts24.png);
+	}
+	
+	.ProductApprovalCaption {
+	background-color:#317992;
+	background-image:url(/img/icon/products24.png);
+	}
+	
+	.SolutionApprovalCaption {
+	background-color:#567A00;
+	background-image:url(/img/icon/solutions24.png);
+	}
+	
+	.separator {
+	display:inline-block;
+	width:2px;
+	}
+	
+	label,.label {
+	width:200px;
+	text-align:right;
+	float:left;
+	overflow:hidden;
+	height:20px;
+	display:block;
+	font-weight:700;
+	font-size:6px;
+	}
+	
+	.outputCont {
+	padding-left:5px;
+	width:150px;
+	text-align:left;
+	float:left;
+	overflow:hidden;
+	height:20px;
+	font-size:6px;
+	display:block;
+	}
+	
+	.outputCont,.label {
+	font-family:verdana;
+	}
+	
+	.greyBtn {
+	font-family:Verdana;
+	color:#FFF;
+	border-right:1px solid #BCBCBC;
+	border-bottom:1px solid #BCBCBC;
+	border-top:1px solid #FFF;
+	border-left:1px solid #FFF;
+	background:#7A7A72;
+	display:block;
+	font-weight:700;
+	height:15px;
+	float:left;
+	font-size:9px;
+	text-decoration:none;
+	margin:8px;
+	padding:3px;
+	}
+	
+	h1,.subTitle {
+	font-family:Verdana;
+	width:100%;
+	display:block;
+	clear:both;
+	font-size:12px;
+	background-color:#E5C12F;
+	margin-top:4px;
+	margin-bottom:4px;
+	color:#FFF!important;
+	padding:3px;
+	}
+	
+	h2 {
+	font-family:Verdana;
+	width:100%;
+	display:block;
+	clear:both;
+	font-size:12px;
+	background-color:#F0ECD1;
+	margin-top:4px;
+	margin-bottom:4px;
+	color:#000;
+	text-align:center;
+	padding:3px;
+	}
+	
+	table,td {
+	display:block;
+	font-family:Verdana;
+	font-size:6px;
+	}
+	
+	.approvalHeader {
+	color:#FFF;
+	font-family:Verdana;
+	padding-left:40px;
+	font-size:8px;
+	padding-top:5px;
+	padding-bottom:5px;
+	}
+	
+	.objTitle {
+	font-weight:700;
+	font-size:14px!important;
+	}
+	
+	.Account {
+	background:#236FBD url(/img/icon/accounts24.png) no-repeat 10px center;
+	}
+	
+	.AccountBgColor {
+	background-color:#236FBD;
+	}
+	
+	.Opportunity {
+	background:#E5C130 url(/img/icon/opportunities24.png) no-repeat 10px center;
+	}
+	
+	.OpportunityBgColor {
+	background-color:#E5C130;
+	}
+	
+	.Contact {
+	background:#56458C url(/img/icon/contacts24.png) no-repeat 10px center;
+	}
+	
+	.ContactBgColor {
+	background-color:#56458C;
+	}
+	
+	.Lead {
+	background:#E39321 url(/img/icon/leads24.png) no-repeat 10px center;
+	}
+	
+	.LeadBgColor {
+	background-color:#E39321;
+	}
+	
+	.Campaign {
+	background:#C93 url(/img/icon/campaigns24.png) no-repeat 10px center;
+	}
+	
+	.CampaingBgColor {
+	background-color:#C93;
+	}
+	
+	.Case {
+	background:#B7A752 url(/img/icon/cases24.png) no-repeat 10px center;
+	}
+	
+	.CaseBgColor {
+	background-color:#B7A752;
+	}
+	
+	.Contract {
+	background:#66895F url(/img/icon/contracts24.png) no-repeat 10px center;
+	}
+	
+	.ContractBgColor {
+	background-color:#66895F;
+	}
+	
+	.Product {
+	background:#317992 url(/img/icon/products24.png) no-repeat 10px center;
+	}
+	
+	.ProductBgColor {
+	background-color:#317992;
+	}
+	
+	.Solution {
+	background:#567A00 url(/img/icon/solutions24.png) no-repeat 10px center;
+	}
+	
+	.SolutionBgColor {
+	background-color:#567A00;
+	}
+	
+	.overallStatusIndicator {
+	width:100%;
+	float:right;
+	}
+	
+	.subTitle .titleText {
+	float:left;
+	}
+	
+	.statusWrapper {
+	width:40px;
+	float:right;
+	height:20px;
+	display:block;
+	padding:2px 2px 2px 19px;
+	}
+	
+	.labelTop {
+	width:135px;
+	text-align:right;
+	float:right;
+	height:20px;
+	}
+	
+	.Pendingbg {
+	background:#FFD74B url(/img/icon/pending12.gif) no-repeat 3px center;
+	}
+	
+	.Approvedbg {
+	background:#A1F78D url(/img/icon/approve12.gif) no-repeat 3px center;
+	}
+	
+	.Rejectedbg {
+	background:#FB8A8C url(/img/icon/reject12.gif) no-repeat 3px center;
+	}
+	
+	.detailField {
+	border-bottom:1px solid #000;
+	padding:2px;
+	}
+	
+	.stepDataContainer {
+	width:100%;
+	padding:3px 3px 10px;
+	}
+	
+	.textAreaComments {
+	width:100%;
+	height:80px;
+	}
+	
+	.commentFormTable {
+	margin:15px 4px 4px;
+	}
+	
+	.labelComment {
+	padding-left:5px;
+	}
+	
+	.standardFont {
+	font-family:Verdana;
+	font-size:8px;
+	}
+	
+	.center {
+	text-align:center;
+	}
+	
+	label {
+	font-weight:700;
+	font-size:6px;
+	display:block;
+	}
+	
+	.labelCont {
+	width:200px;
+	text-align:right;
+	float:left;
+	overflow:hidden;
+	height:20px;
+	}
+	
+	#commentContainer {
+	padding:10px;
+	}
+	
+	#comments {
+	border:1px solid #000;
+	}
+	
+	.errorMessage {
+	color:red;
+	font-family:verdana;
+	text-align:center;
+	}
+	
+	#reassignCaption {
+		font-weight:700;
+		text-align:left;
+		padding-left:3px;
+		background:#EEEDD1;
+	}
+	
+	#header {
+		background:#638658 url(/img/icon/home32.png) no-repeat 1px 6px;
+		padding-left:36px;
+		color:#FFF;
+	}
+	
+	#lower {
+		font-size:25px;
+		font-weight:700;
+	}
+	
+	.header {
+		color:#FFF;
+		font-family:Verdana;
+		padding-left:40px;
+		font-size:8px;
+		padding-top:5px;
+		background:#638658 url(/img/icon/home32.png) no-repeat 1px 6px;
+		padding-bottom:5px;
+	}
+	
+</style>
+</apex:page>

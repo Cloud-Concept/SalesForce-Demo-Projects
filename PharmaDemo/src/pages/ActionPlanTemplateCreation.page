@@ -1,0 +1,119 @@
+<apex:page id="editPage" tabStyle="Action_Plans__tab" standardController="ActionPlanTemplate__c" extensions="ActionPlanTemplateCreationController" >
+    
+	<script type="text/javascript" src="{!$Resource.ActionPlan_ActionPlanTemplateCreationScripts}"/>
+    
+    <LINK href="{!$Resource.ActionPlan_ActionPlanTemplateCreationStyles}" rel="stylesheet" type="text/css">
+    
+    <apex:sectionHeader title="Action Plan Templates Edit" subtitle="New Action Plan Template" help="" />
+    
+    <apex:form id="templateForm">
+        
+        <apex:outputPanel rendered="{!(actionPlanTemplate.Id != null)}">
+            <apex:inputHidden value="{!actionPlanTemplate.Id}" id="Id" />
+        </apex:outputPanel>
+        
+        <apex:pageBlock id="editBlock" title="Action Plan Template Edit" mode="edit">
+        
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!checkCycleDependent}" value="Save"/>
+                <apex:commandButton action="{!cancelTemplate}" value="Cancel" immediate="true"/>
+                <!-- <apex:commandButton action="{!saveTemplateAndNew}" value="Save & New" /> -->
+                <!-- <apex:outputLink value="/apex/ActionPlanTemplateList" styleClass="btn" style="text-decoration:none; padding:2px 5px 2px 5px !important; cursor:pointer ">Cancel</apex:outputLink>-->
+            </apex:pageBlockButtons>
+            
+            <!-- Information Section -->
+            <apex:pageBlockSection id="informationSection" title="Information" columns="2">
+                <table width="100%">
+                    <tr>
+                        <td class="labelCol" style="white-space:nowrap">Action Plan Template Name</td>
+                        <td class="dataCol" colspan="3"><apex:pageBlockSectionItem ><apex:inputField required="true" id="name" value="{!actionPlanTemplate.Name}" /></apex:pageBlockSectionItem></td>
+                    </tr>
+                    <tr>
+                        <td class="labelCol">Description</td>
+                        <td class="dataCol" colspan="3"><apex:pageBlockSectionItem ><apex:inputField id="description" value="{!actionPlanTemplate.Description__c}" style="width:300px"/></apex:pageBlockSectionItem></td>
+                    </tr>
+                </table>
+            </apex:pageBlockSection>
+            <!-- End Information Section -->
+            
+            <!-- Tasks Section -->
+            <apex:pageBlockSection id="taskSection" title="Tasks" columns="1"> 
+            
+                <apex:panelGrid columns="2">
+                    <apex:outputText ><apex:inputCheckbox value="{!actionPlanTemplate.SkipWeekends__c}"  id="skipWeekendCheckbox" onclick="ActionPlanTemplateCreationScripts.checkSkipWeekend();"/></apex:outputText>
+                    <apex:outputText value="Skip weekends when generating task due dates"/>
+                </apex:panelGrid>
+                
+                <apex:panelGrid columns="2" id="skipDayTable">
+                    <apex:outputText >Default weekend due dates to </apex:outputText> 
+                    <apex:outputText ><apex:pageBlockSectionItem ><apex:inputField value="{!actionPlanTemplate.SkipDay__c}" /></apex:pageBlockSectionItem></apex:outputText>
+                </apex:panelGrid>
+                
+                <br />                
+                
+                <apex:outputPanel id="taskList">
+                    <apex:dataTable value="{!TemplateTasks}" var="task" id="taskTable" columnClasses="first,second,third,fourth,fifth,sixth, seventh, eighth" styleClass="taskTable">
+                        <apex:column id="columnOne" headerValue="Action" styleClass="first">
+                             <apex:commandLink rerender="taskList" immediate="true" action="{!removeTemplateTask}" > 
+                                  Remove 
+                                  <apex:param name="remove" value="{!$Component.taskTable.columnOne}"/>
+                              </apex:commandLink>
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.Subject__c.label}"><apex:pageBlockSectionItem id="subjectSection"><apex:inputField id="subject" required="true" value="{!task.Subject__c}" /></apex:pageBlockSectionItem></apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.APTTaskTemplate__c.label}" rendered="{!IF(TemplateTaskSize > 1, true, false)}" >
+                            <apex:selectList id="dependent" value="{!task.Dependent__c}" multiselect="false" size="1" onchange="javascript:ActionPlanTemplateCreationScripts.checkDependent('{!$Component.taskTable.dependent}');">
+                                <apex:selectOptions value="{!TemplateSubjectItems}" />
+                            </apex:selectList>
+                        </apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.DaysFromStart__c.label}"><apex:pageBlockSectionItem ><apex:inputField required="true" value="{!task.DaysFromStart__c}" style="width:50px"/></apex:pageBlockSectionItem></apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.User__c.label}"><apex:pageBlockSectionItem ><apex:inputField required="false" value="{!task.User__c}" /></apex:pageBlockSectionItem></apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.Type__c.label}"><apex:pageBlockSectionItem ><apex:inputField required="true" value="{!task.Type__c}"/></apex:pageBlockSectionItem></apex:column>
+                        <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.Priority__c.label}"><apex:pageBlockSectionItem ><apex:inputField required="true" value="{!task.Priority__c}"/></apex:pageBlockSectionItem></apex:column>
+                        <apex:column >
+                        	<apex:facet name="header">{!$ObjectType.APTTaskTemplate__c.fields.SendEmail__c.label} <a onclick="javascript:ActionPlanTemplateCreationScripts.checkEmail(1);" class="all-none">all</a> | <a onclick="javascript:ActionPlanTemplateCreationScripts.checkEmail(0);" class="all-none">none</a></apex:facet>
+                        	<apex:pageBlockSectionItem id="emailSection"><apex:inputField id="email" value="{!task.SendEmail__c}"/></apex:pageBlockSectionItem>
+                        </apex:column>
+                        <apex:column id="reminderColumn">
+                        	<apex:facet name="header">{!$ObjectType.APTTaskTemplate__c.fields.Reminder__c.label} <a onclick="javascript:ActionPlanTemplateCreationScripts.checkReminder(1);" class="all-none">all</a> | <a onclick="javascript:ActionPlanTemplateCreationScripts.checkReminder(0);" class="all-none">none</a></apex:facet>
+                        	<apex:pageBlockSectionItem id="reminderSection"><apex:inputField id="reminder" value="{!task.Reminder__c}"/></apex:pageBlockSectionItem>
+                        </apex:column>
+                        
+                        <apex:column headerValue="{!$ObjectType.APTTaskTemplate__c.fields.Comments__c.label}">
+                        	<apex:outputPanel id="commentPanel" style="display:none">
+                        		<div id="commentContainer">
+	                        		<div class="hd">
+	                        			<div class="hd-left">Comments</div>
+	                        			<div class="hd-right"><input class="btn" style="margin-bottom:1px;" type="button" onclick="javascript:ActionPlanTemplateCreationScripts.hideComments('{!$Component.taskTable.columnOne}');" title="Close" name="closeCommentPanel" value=" Close "/></div>
+	                        		</div>
+	                        		<div class="bd">
+	                        			<apex:inputField id="Comments" value="{!task.Comments__c}" onchange="document.getElementById('{!$Component.taskTable.columnOne}-commentLink').innerHTML= '...'"/>
+	                        		</div>
+                        		</div>
+                        	</apex:outputPanel>
+                        	(<a id="{!$Component.taskTable.columnOne}-commentLink" onclick="javascript:ActionPlanTemplateCreationScripts.showComments('{!$Component.taskTable.columnOne}');" style="text-decoration:underline"><apex:outputText rendered="{!task.Comments__c != null}">...</apex:outputText><apex:outputText rendered="{!task.Comments__c == null}">add</apex:outputText></a>)
+                        </apex:column>
+                        
+                    </apex:dataTable>
+                    <br/>
+                    <apex:outputPanel rendered="{!(ErrorMsg != null)}" styleClass="errorMessage"><span style="font-weight:bold;">Error:</span> {!ErrorMsg}<br/><br/></apex:outputPanel>
+                </apex:outputPanel>
+                
+                <apex:panelGrid columns="2">
+                    <apex:outputText ><apex:commandLink action="{!addTemplateTask}" rerender="taskList" status="taskStatus" style="font-weight:bold">
+                        Add New Task
+                        <apex:param name="add" value="1"/>
+                    </apex:commandLink></apex:outputText>
+                    <apex:outputText style="color:#cc0000 !important;">&nbsp;<apex:actionStatus id="taskStatus" startText="(loading...)" stopText=""  /></apex:outputText>
+                </apex:panelGrid>
+                
+                
+            </apex:pageBlockSection>
+            <!-- End Tasks Section -->
+            
+        </apex:pageBlock>
+        
+    </apex:form>
+    <script>
+        ActionPlanTemplateCreationScripts.checkSkipWeekend();
+    </script>
+</apex:page>
